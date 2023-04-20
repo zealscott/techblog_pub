@@ -104,12 +104,6 @@ if (!doNotTrack) {
   "itemListElement": [, 
     {
       "@type": "ListItem",
-      "position":  2 ,
-      "name": "Misc",
-      "item": "https://tech.zealscott.com/misc/"
-    }, 
-    {
-      "@type": "ListItem",
       "position":  3 ,
       "name": "在服务器上部署 Jupyter Notebook",
       "item": "https://tech.zealscott.com/misc/jupyter-notebook/"
@@ -127,7 +121,7 @@ if (!doNotTrack) {
   "keywords": [
     "coding"
   ],
-  "articleBody": "安装 Ananconda  使用命令行安装  1  wget wget https://repo.continuum.io/archive/Anaconda3-5.2.0-Linux-x86_64.sh    注意，选择安装路径时，如果想要所有用户都能使用，则安装在usr/local/ananconda3目录下 注意修改/etc/profile.d下的conda.sh，指定环境变量（在登入另外的用户时会提醒） 更改源。创建~/.condarc文件，输入  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  channels: - defaults show_channel_urls: true channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud    至此，已经完成 python、conda 及 jupyter-notebook 的安装。  部署远程云服务  生成Jupyter Notebook配置文件  1  jupyter notebook --generate-config     生成的配置文件，后来用来设置服务器的配置\n  设置Jupyter Notebook密码\n 设置密码用于设置服务器配置，以及登录Jupyter。打开Python终端，输入以下：    1 2 3 4  from IPython.lib import passwd passwd() Enter password: Verify password:    设置服务器配置文件  1  vim ~/.jupyter/jupyter_notebook_config.py    在末尾增加以下几行配置信息（此配置信息，也可在启动Jupyter时在参数中添加，但我认为那样看起来比较乱）  1 2 3 4 5  c.NotebookApp.ip = '*' #所有绑定服务器的IP都能访问，若想只在特定ip访问，输入ip地址即可 c.NotebookApp.port = 8888 #将端口设置为自己喜欢的吧，默认是8888 c.NotebookApp.open_browser = False #我们并不想在服务器上直接打开Jupyter Notebook，所以设置成False c.NotebookApp.notebook_dir = '/scott/data' #这里是设置Jupyter的根目录，若不设置将默认root的根目录，不安全 c.NotebookApp.allow_root = True # 为了安全，Jupyter默认不允许以root权限启动jupyter     启动Jupyter 远程服务器  1  nohup jupyter-notebook \u0026   这里使用 nohup 是想在 ssh 窗口关闭后继续运行，同时使用后台运行的方式。\n 最后，在本地输入 ip:8888 即可运行服务器上的 jupyter notebook。 若需要关闭，直接强行关闭端口  1  fuser -k 8888/tcp   ",
+  "articleBody": "安装 Ananconda  使用命令行安装  1  wget wget https://repo.continuum.io/archive/Anaconda3-5.2.0-Linux-x86_64.sh    注意，选择安装路径时，如果想要所有用户都能使用，则安装在usr/local/ananconda3目录下 注意修改/etc/profile.d下的conda.sh，指定环境变量（在登入另外的用户时会提醒） 更改源。创建~/.condarc文件，输入  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  channels: - defaults show_channel_urls: true channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud    至此，已经完成 python、conda 及 jupyter-notebook 的安装。  部署远程云服务  生成Jupyter Notebook配置文件  1  jupyter notebook --generate-config     生成的配置文件，后来用来设置服务器的配置\n  设置Jupyter Notebook密码\n 设置密码用于设置服务器配置，以及登录Jupyter。打开Python终端，输入以下：    1 2 3 4  from IPython.lib import passwd passwd() Enter password: Verify password:    设置服务器配置文件  1  vim ~/.jupyter/jupyter_notebook_config.py    在末尾增加以下几行配置信息（此配置信息，也可在启动Jupyter时在参数中添加，但我认为那样看起来比较乱）  1 2 3 4 5  c.NotebookApp.ip = '*' #所有绑定服务器的IP都能访问，若想只在特定ip访问，输入ip地址即可 c.NotebookApp.port = 8888 #将端口设置为自己喜欢的吧，默认是8888 c.NotebookApp.open_browser = False #我们并不想在服务器上直接打开Jupyter Notebook，所以设置成False c.NotebookApp.notebook_dir = '/scott/data' #这里是设置Jupyter的根目录，若不设置将默认root的根目录，不安全 c.NotebookApp.allow_root = True # 为了安全，Jupyter默认不允许以root权限启动jupyter    启动Jupyter 远程服务器  1  nohup jupyter-notebook \u0026   这里使用 nohup 是想在 ssh 窗口关闭后继续运行，同时使用后台运行的方式。\n 最后，在本地输入 ip:8888 即可运行服务器上的 jupyter notebook。 若需要关闭，直接强行关闭端口  1  fuser -k 8888/tcp   ",
   "wordCount" : "140",
   "inLanguage": "en",
   "datePublished": "2020-04-22T22:31:03+08:00",
@@ -382,7 +376,7 @@ custom_channels:
 c.NotebookApp.port <span class="o">=</span> <span class="m">8888</span> <span class="c1">#将端口设置为自己喜欢的吧，默认是8888</span>
 c.NotebookApp.open_browser <span class="o">=</span> False <span class="c1">#我们并不想在服务器上直接打开Jupyter Notebook，所以设置成False</span>
 c.NotebookApp.notebook_dir <span class="o">=</span> <span class="s1">&#39;/scott/data&#39;</span> <span class="c1">#这里是设置Jupyter的根目录，若不设置将默认root的根目录，不安全</span>
-c.NotebookApp.allow_root <span class="o">=</span> True <span class="c1"># 为了安全，Jupyter默认不允许以root权限启动jupyter </span>
+c.NotebookApp.allow_root <span class="o">=</span> True <span class="c1"># 为了安全，Jupyter默认不允许以root权限启动jupyter</span> 
 </code></pre></td></tr></table>
 </div>
 </div><ul>

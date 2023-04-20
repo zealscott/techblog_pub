@@ -104,12 +104,6 @@ if (!doNotTrack) {
   "itemListElement": [, 
     {
       "@type": "ListItem",
-      "position":  2 ,
-      "name": "Deep Learning",
-      "item": "https://tech.zealscott.com/deeplearning/"
-    }, 
-    {
-      "@type": "ListItem",
       "position":  3 ,
       "name": "梯度下降原理及理解",
       "item": "https://tech.zealscott.com/deeplearning/misc/gradientdescent/"
@@ -127,7 +121,7 @@ if (!doNotTrack) {
   "keywords": [
     "deep learning"
   ],
-  "articleBody": "代价函数 为了量化我们神经网络的拟合效果，我们定义一个代价函数：\n$$C(w,b) = \\frac {1}{2n}\\sum\\limits_{x}||y(x)-a||^2$$\n我们训练算法的目的，就是最小化权值和偏置的代价函数$C(w,b) $。\n针对代价函数，我们试着回答以下两个问题：\n  为什么不直接采用分类（识别）正确的数量作为评价指标呢？\n 这是因为在神经网络中，被正确分类的图像数量所关于权值和偏置的函数并不是一个平滑的函数。\n大多数情况下，对权值和偏置的微小变动完全不会影响被正确分类的图像数量，这让我们很难去解决如何改变权重和偏置来取得进改进的性能。\n   为什么要用二次函数呢？\n 代价函数并不是唯一的，不同的代价函数的评价指标也是不同的。但二次函数是使用得最广泛的，并且具有特殊的语义–均方误差（MSE）。我们接下来还会看到更多的代价函数，在计算时就会知道二次函数的优越性了。\n   为什么要梯度下降？ 我们现在的目标是想要找到$C$的全局最小值。当然，对于简单的二次型函数，我们很快就能找到最小值。但回想一下我们是怎么做的呢？\n一种方法就是直接用偏导去找极值点。但如果变量很多，比如神经网络至少有上千个变量和偏置，计算非常复杂。\n另外一种方法是使用梯度下降。考虑我们目前有两个变量$v_1，v_2$，当我们在$v_1和v_2$方向分别移动一个很小的量（沿着梯度方向），这时候会发生如下变化：\n$$\\Delta C\\approx \\frac{\\partial C}{\\partial v_1}\\Delta v_1 +\\frac{\\partial C}{\\partial v_2}\\Delta v_2 $$\n我们需要使用一种方法选择$\\Delta v_1和\\Delta v_2$使得$\\Delta C$为负，这样我们就可以使得$C$不断减小，逼近最小值。我们用$\\nabla C$来表示梯度向量，即：\n$$\\nabla C \\equiv (\\frac{\\partial C}{\\partial v_1},\\frac{\\partial C}{\\partial v_2})^T$$\n因此$\\Delta C$可以被重写为：\n$$\\Delta C\\approx \\nabla C \\cdot \\Delta v$$\n这个式子有着很重要的意义：我们发现$\\nabla C$将$v$的变化关联为$C$的变化，正如我们期望的用梯度表示。并且，我们知道了如何选取$\\Delta v$才能让$\\Delta C$为负数。假设我们选取：\n$$\\Delta v = -\\eta \\nabla C$$\n这里的$\\eta$是一个很小的正数，我们称为学习速率。方程告诉我们，$\\Delta C\\approx \\nabla C \\cdot \\Delta v = -\\eta ||\\nabla C||^2$。由于$ ||\\nabla C||^2 \\ge0$，这保证了$\\Delta C \\le 0$。即，如果我们按照方程的规则去改变$v$，那么$C$会一直减小，不会增加。因此我们可以计算$\\Delta v$，来移动点的位置：\n$$v \\rightarrow {v}' = v - \\eta \\nabla C$$\n然后我们用它再次更新来计算下一次移动，因此我们迭代进行，就可以获得一个全局的最小值。\n思考：\n 由上面的公式，是不是我们增大学习速率$\\eta$，就能使$\\Delta C$变得更小，使得梯度下降速率更快呢？\n​\t可惜不是的。当$\\eta$过大时，上面的等式$\\Delta C\\approx \\nabla C \\cdot \\Delta v$就不再成立，因此要选择合适的学习速率尤其重要。\n Batch gradient descent（BGD） 在神经网络中如何引用梯度下降算法去学习呢？我们很容易得到以下方程：\n$$w_k \\rightarrow {w_k}' = w_k - \\eta \\frac {\\partial C}{\\partial w_k} $$ $$b_l \\rightarrow {b_l}' = b_l - \\eta \\frac {\\partial C}{\\partial b_l} $$\n注意，我们的代价函数为$C = \\frac {1}{n} \\sum _x C_x $，它是遍历每个样本代价$C_x = \\frac {||y(x - a)||^2}{2}$的平均值。因此，我们需要为每个训练样本输入单独计算梯度值$\\nabla C_x$，然后求平均值。但当训练输入的数量过大时会花费很长时间，这样会使得学习变得相当缓慢。\n但是，在输入样本不太大时，这种方法（BGD）是经常被采用的。\nStochastic gradient descent（SGD） 随机梯度下降的算法能加速学习。其思想就是通过选取小量训练输入样本来计算$\\nabla C_x$，进而估算$\\nabla C$。通过计算少量样本的平均值我们可以快速得到一个对于实际梯度$\\nabla C$很好的估算，这有助于加速梯度下降，进而加速学习过程。\n例如我们可以随机选取小量的$m$个训练输入来工作。我们将这些训练输入记做$X_1,X_2,…X_m$，并称为mini-batch。假设样本数量$m$足够大，我们期望$\\nabla C_{X_j}$的平均值大致相当于整个$\\nabla C_x$的平均值，即：\n$$\\frac {\\sum _{j=1}^m \\nabla C_{x_j}}{m} \\approx \\frac {\\sum _x^m \\nabla C_x}{n} = \\nabla C$$\n实验证明这种方法（Mini-batch BGD）能较快的收敛到一个较小的值。\n",
+  "articleBody": "代价函数 为了量化我们神经网络的拟合效果，我们定义一个代价函数：\n$$C(w,b) = \\frac {1}{2n}\\sum\\limits_{x}||y(x)-a||^2$$\n我们训练算法的目的，就是最小化权值和偏置的代价函数$C(w,b) $。\n针对代价函数，我们试着回答以下两个问题：\n  为什么不直接采用分类（识别）正确的数量作为评价指标呢？\n 这是因为在神经网络中，被正确分类的图像数量所关于权值和偏置的函数并不是一个平滑的函数。\n大多数情况下，对权值和偏置的微小变动完全不会影响被正确分类的图像数量，这让我们很难去解决如何改变权重和偏置来取得进改进的性能。\n   为什么要用二次函数呢？\n 代价函数并不是唯一的，不同的代价函数的评价指标也是不同的。但二次函数是使用得最广泛的，并且具有特殊的语义–均方误差（MSE）。我们接下来还会看到更多的代价函数，在计算时就会知道二次函数的优越性了。\n   为什么要梯度下降？ 我们现在的目标是想要找到$C$的全局最小值。当然，对于简单的二次型函数，我们很快就能找到最小值。但回想一下我们是怎么做的呢？\n一种方法就是直接用偏导去找极值点。但如果变量很多，比如神经网络至少有上千个变量和偏置，计算非常复杂。\n另外一种方法是使用梯度下降。考虑我们目前有两个变量$v_1，v_2$，当我们在$v_1和v_2$方向分别移动一个很小的量（沿着梯度方向），这时候会发生如下变化：\n$$\\Delta C\\approx \\frac{\\partial C}{\\partial v_1}\\Delta v_1 +\\frac{\\partial C}{\\partial v_2}\\Delta v_2 $$\n我们需要使用一种方法选择$\\Delta v_1和\\Delta v_2$使得$\\Delta C$为负，这样我们就可以使得$C$不断减小，逼近最小值。我们用$\\nabla C$来表示梯度向量，即：\n$$\\nabla C \\equiv (\\frac{\\partial C}{\\partial v_1},\\frac{\\partial C}{\\partial v_2})^T$$\n因此$\\Delta C$可以被重写为：\n$$\\Delta C\\approx \\nabla C \\cdot \\Delta v$$\n这个式子有着很重要的意义：我们发现$\\nabla C$将$v$的变化关联为$C$的变化，正如我们期望的用梯度表示。并且，我们知道了如何选取$\\Delta v$才能让$\\Delta C$为负数。假设我们选取：\n$$\\Delta v = -\\eta \\nabla C$$\n这里的$\\eta$是一个很小的正数，我们称为学习速率。方程告诉我们，$\\Delta C\\approx \\nabla C \\cdot \\Delta v = -\\eta ||\\nabla C||^2$。由于$ ||\\nabla C||^2 \\ge0$，这保证了$\\Delta C \\le 0$。即，如果我们按照方程的规则去改变$v$，那么$C$会一直减小，不会增加。因此我们可以计算$\\Delta v$，来移动点的位置：\n$$v \\rightarrow {v}’ = v - \\eta \\nabla C$$\n然后我们用它再次更新来计算下一次移动，因此我们迭代进行，就可以获得一个全局的最小值。\n思考：\n 由上面的公式，是不是我们增大学习速率$\\eta$，就能使$\\Delta C$变得更小，使得梯度下降速率更快呢？\n​\t可惜不是的。当$\\eta$过大时，上面的等式$\\Delta C\\approx \\nabla C \\cdot \\Delta v$就不再成立，因此要选择合适的学习速率尤其重要。\n Batch gradient descent（BGD） 在神经网络中如何引用梯度下降算法去学习呢？我们很容易得到以下方程：\n$$w_k \\rightarrow {w_k}’ = w_k - \\eta \\frac {\\partial C}{\\partial w_k} $$ $$b_l \\rightarrow {b_l}’ = b_l - \\eta \\frac {\\partial C}{\\partial b_l} $$\n注意，我们的代价函数为$C = \\frac {1}{n} \\sum _x C_x $，它是遍历每个样本代价$C_x = \\frac {||y(x - a)||^2}{2}$的平均值。因此，我们需要为每个训练样本输入单独计算梯度值$\\nabla C_x$，然后求平均值。但当训练输入的数量过大时会花费很长时间，这样会使得学习变得相当缓慢。\n但是，在输入样本不太大时，这种方法（BGD）是经常被采用的。\nStochastic gradient descent（SGD） 随机梯度下降的算法能加速学习。其思想就是通过选取小量训练输入样本来计算$\\nabla C_x$，进而估算$\\nabla C$。通过计算少量样本的平均值我们可以快速得到一个对于实际梯度$\\nabla C$很好的估算，这有助于加速梯度下降，进而加速学习过程。\n例如我们可以随机选取小量的$m$个训练输入来工作。我们将这些训练输入记做$X_1,X_2,…X_m$，并称为mini-batch。假设样本数量$m$足够大，我们期望$\\nabla C_{X_j}$的平均值大致相当于整个$\\nabla C_x$的平均值，即：\n$$\\frac {\\sum _{j=1}^m \\nabla C_{x_j}}{m} \\approx \\frac {\\sum _x^m \\nabla C_x}{n} = \\nabla C$$\n实验证明这种方法（Mini-batch BGD）能较快的收敛到一个较小的值。\n",
   "wordCount" : "169",
   "inLanguage": "en",
   "datePublished": "2019-09-01T20:57:00+08:00",
@@ -297,7 +291,7 @@ if (!doNotTrack) {
 <p>这个式子有着很重要的意义：我们发现$\nabla C$将$v$的变化关联为$C$的变化，正如我们期望的用梯度表示。并且，我们知道了如何选取$\Delta v$才能让$\Delta C$为负数。假设我们选取：</p>
 <p>$$\Delta v = -\eta \nabla C$$</p>
 <p>这里的$\eta$是一个很小的正数，我们称为<strong>学习速率</strong>。方程告诉我们，$\Delta C\approx \nabla C \cdot \Delta v = -\eta ||\nabla C||^2$。由于$ ||\nabla C||^2 \ge0$，这保证了$\Delta C \le 0$。即，如果我们按照方程的规则去改变$v$，那么$C$会一直减小，不会增加。因此我们可以计算$\Delta v$，来移动点的位置：</p>
-<p>$$v \rightarrow  {v}' = v - \eta \nabla C$$</p>
+<p>$$v \rightarrow  {v}&rsquo; = v - \eta \nabla C$$</p>
 <p>然后我们用它再次更新来计算下一次移动，因此我们迭代进行，就可以获得一个全局的最小值。</p>
 <p>思考：</p>
 <blockquote>
@@ -306,8 +300,8 @@ if (!doNotTrack) {
 </blockquote>
 <h1 id="batch-gradient-descentbgd">Batch gradient descent（BGD）<a hidden class="anchor" aria-hidden="true" href="#batch-gradient-descentbgd">#</a></h1>
 <p>在神经网络中如何引用梯度下降算法去学习呢？我们很容易得到以下方程：</p>
-<p>$$w_k \rightarrow  {w_k}' = w_k - \eta \frac {\partial C}{\partial w_k} $$
-$$b_l \rightarrow  {b_l}' = b_l - \eta \frac {\partial C}{\partial b_l} $$</p>
+<p>$$w_k \rightarrow  {w_k}&rsquo; = w_k - \eta \frac {\partial C}{\partial w_k} $$
+$$b_l \rightarrow  {b_l}&rsquo; = b_l - \eta \frac {\partial C}{\partial b_l} $$</p>
 <p>注意，我们的代价函数为$C = \frac {1}{n} \sum _x C_x $，它是遍历每个样本代价$C_x = \frac {||y(x - a)||^2}{2}$的平均值。因此，我们需要为每个训练样本输入单独计算梯度值$\nabla C_x$，然后求平均值。但当训练输入的数量过大时会花费很长时间，这样会使得学习变得相当缓慢。</p>
 <p>但是，在输入样本不太大时，这种方法（BGD）是经常被采用的。</p>
 <h1 id="stochastic-gradient-descentsgd">Stochastic gradient descent（SGD）<a hidden class="anchor" aria-hidden="true" href="#stochastic-gradient-descentsgd">#</a></h1>

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Scott&#39;Log</title>
+    <title>ZealScott</title>
     <link>https://tech.zealscott.com/</link>
-    <description>Recent content on Scott&#39;Log</description>
+    <description>Recent content on ZealScott</description>
     <image>
       <url>https://tech.zealscott.com/papermod-cover.png</url>
       <link>https://tech.zealscott.com/papermod-cover.png</link>
@@ -16,7 +16,7 @@
       <pubDate>Tue, 13 Oct 2020 20:44:01 +0800</pubDate>
       
       <guid>https://tech.zealscott.com/deeplearning/misc/loss/</guid>
-      <description>Kullback-Leibler divergence Information theory  Quantify information of intuition1  Likely events should have low information content Less likely events should have higher information content Independent events should have additive information. For example, finding out that a tossed coin has come up as heads twice should convey twice as much information as finding out that a tossed coin has come up as heads once.   Self-information  $I(x)=-\log P(x)$ Deals only with a single outcome   Shannon entropy  $H(\mathrm{x})=\mathbb{E}_{\mathrm{x} \sim P}[I(x)]=-\mathbb{E}_{\mathrm{x} \sim P}[\log P(x)]$ Quantify the amount of uncertainty in an entire probability distribution    KL divergence and cross-entropy  Measure how different two distributions over the same random variable $x$  $D_{\mathrm{KL}}(P | Q)=\mathbb{E}_{\mathrm{x} \sim P}\left[\log \frac{P(x)}{Q(x)}\right]=\mathbb{E}_{\mathrm{x} \sim P}[\log P(x)-\log Q(x)]$   Properities  Non-negative.</description>
+      <description>Kullback-Leibler divergence Information theory  Quantify information of intuition1  Likely events should have low information content Less likely events should have higher information content Independent events should have additive information. For example, finding out that a tossed coin has come up as heads twice should convey twice as much information as finding out that a tossed coin has come up as heads once.   Self-information  $I(x)=-\log P(x)$ Deals only with a single outcome   Shannon entropy  $H(\mathrm{x})=\mathbb{E}_{\mathrm{x} \sim P}[I(x)]=-\mathbb{E}_{\mathrm{x} \sim P}[\log P(x)]$ Quantify the amount of uncertainty in an entire probability distribution    KL divergence and cross-entropy  Measure how different two distributions over the same random variable $x$  $D_{\mathrm{KL}}(P | Q)=\mathbb{E}{\mathrm{x} \sim P}\left[\log \frac{P(x)}{Q(x)}\right]=\mathbb{E}{\mathrm{x} \sim P}[\log P(x)-\log Q(x)]$   Properities  Non-negative.</description>
     </item>
     
     <item>

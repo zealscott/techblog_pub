@@ -11,13 +11,13 @@
 假设我们只使用一个神经元与一个输出神经元，定义代价函数为：
 $$C = \frac{(y-a)^2}{2}$$
 使用链式法则计算权重和偏置的导数：
-$$\frac{\partial C}{\partial w}= (a-y)\sigma&#39;(z)x$$
-$$\frac{\partial C}{\partial b} = (a-y)\sigma&#39;(z)$$
+$$\frac{\partial C}{\partial w}= (a-y)\sigma&rsquo;(z)x$$
+$$\frac{\partial C}{\partial b} = (a-y)\sigma&rsquo;(z)$$
 假设我们训练输入为$x = 1$，目标输出为$y = 0$，可以看见此时输入输出差距很大，则带入：
-$$\frac{\partial C}{\partial w}= a\sigma&#39;(z)$$
-$$\frac{\partial C}{\partial b} = a\sigma&#39;(z)$$
+$$\frac{\partial C}{\partial w}= a\sigma&rsquo;(z)$$
+$$\frac{\partial C}{\partial b} = a\sigma&rsquo;(z)$$
 回忆一下$\sigma$函数：
-可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\sigma&#39;(z)$就很小了。这就是学习缓慢的原因。
+可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\sigma&rsquo;(z)$就很小了。这就是学习缓慢的原因。
 交叉熵代价函数 因此，我们引入交叉熵代价函数，我们希望这个函数能弥补我们之前遇到的问题（在差距较大时学习缓慢）：
 $$C = -\frac{1}{n}\sum\limits _x [y\ln a&#43;(1-y)\ln (1-a)]$$
 这个函数的表达式看起来十分晦涩难懂，首先我们来看它为什么能成为一个代价函数。
@@ -107,13 +107,13 @@ if (!doNotTrack) {
 假设我们只使用一个神经元与一个输出神经元，定义代价函数为：
 $$C = \frac{(y-a)^2}{2}$$
 使用链式法则计算权重和偏置的导数：
-$$\frac{\partial C}{\partial w}= (a-y)\sigma&#39;(z)x$$
-$$\frac{\partial C}{\partial b} = (a-y)\sigma&#39;(z)$$
+$$\frac{\partial C}{\partial w}= (a-y)\sigma&rsquo;(z)x$$
+$$\frac{\partial C}{\partial b} = (a-y)\sigma&rsquo;(z)$$
 假设我们训练输入为$x = 1$，目标输出为$y = 0$，可以看见此时输入输出差距很大，则带入：
-$$\frac{\partial C}{\partial w}= a\sigma&#39;(z)$$
-$$\frac{\partial C}{\partial b} = a\sigma&#39;(z)$$
+$$\frac{\partial C}{\partial w}= a\sigma&rsquo;(z)$$
+$$\frac{\partial C}{\partial b} = a\sigma&rsquo;(z)$$
 回忆一下$\sigma$函数：
-可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\sigma&#39;(z)$就很小了。这就是学习缓慢的原因。
+可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\sigma&rsquo;(z)$就很小了。这就是学习缓慢的原因。
 交叉熵代价函数 因此，我们引入交叉熵代价函数，我们希望这个函数能弥补我们之前遇到的问题（在差距较大时学习缓慢）：
 $$C = -\frac{1}{n}\sum\limits _x [y\ln a&#43;(1-y)\ln (1-a)]$$
 这个函数的表达式看起来十分晦涩难懂，首先我们来看它为什么能成为一个代价函数。
@@ -136,13 +136,13 @@ why cost function   $C &gt; 0$
 假设我们只使用一个神经元与一个输出神经元，定义代价函数为：
 $$C = \frac{(y-a)^2}{2}$$
 使用链式法则计算权重和偏置的导数：
-$$\frac{\partial C}{\partial w}= (a-y)\sigma&#39;(z)x$$
-$$\frac{\partial C}{\partial b} = (a-y)\sigma&#39;(z)$$
+$$\frac{\partial C}{\partial w}= (a-y)\sigma&rsquo;(z)x$$
+$$\frac{\partial C}{\partial b} = (a-y)\sigma&rsquo;(z)$$
 假设我们训练输入为$x = 1$，目标输出为$y = 0$，可以看见此时输入输出差距很大，则带入：
-$$\frac{\partial C}{\partial w}= a\sigma&#39;(z)$$
-$$\frac{\partial C}{\partial b} = a\sigma&#39;(z)$$
+$$\frac{\partial C}{\partial w}= a\sigma&rsquo;(z)$$
+$$\frac{\partial C}{\partial b} = a\sigma&rsquo;(z)$$
 回忆一下$\sigma$函数：
-可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\sigma&#39;(z)$就很小了。这就是学习缓慢的原因。
+可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\sigma&rsquo;(z)$就很小了。这就是学习缓慢的原因。
 交叉熵代价函数 因此，我们引入交叉熵代价函数，我们希望这个函数能弥补我们之前遇到的问题（在差距较大时学习缓慢）：
 $$C = -\frac{1}{n}\sum\limits _x [y\ln a&#43;(1-y)\ln (1-a)]$$
 这个函数的表达式看起来十分晦涩难懂，首先我们来看它为什么能成为一个代价函数。
@@ -161,12 +161,6 @@ why cost function   $C &gt; 0$
   "itemListElement": [, 
     {
       "@type": "ListItem",
-      "position":  2 ,
-      "name": "Deep Learning",
-      "item": "https://tech.zealscott.com/deeplearning/"
-    }, 
-    {
-      "@type": "ListItem",
       "position":  3 ,
       "name": "交叉熵与 softmax ",
       "item": "https://tech.zealscott.com/deeplearning/misc/softmax/"
@@ -180,11 +174,11 @@ why cost function   $C &gt; 0$
   "@type": "BlogPosting",
   "headline": "交叉熵与 softmax ",
   "name": "交叉熵与 softmax ",
-  "description": "二次代价函数 之前我们一直使用二次代价函数，貌似在一定程度上也挺work。但其实，当输入值与目标值差距很大时，二次代价函数就不是很恰当了；**这是因为当差距很大时，此函数的学习速率会很慢。**我们可以通过一个简单的例子观察这种变化：\n假设我们只使用一个神经元与一个输出神经元，定义代价函数为：\n$$C = \\frac{(y-a)^2}{2}$$\n使用链式法则计算权重和偏置的导数：\n$$\\frac{\\partial C}{\\partial w}= (a-y)\\sigma'(z)x$$\n$$\\frac{\\partial C}{\\partial b} = (a-y)\\sigma'(z)$$\n假设我们训练输入为$x = 1$，目标输出为$y = 0$，可以看见此时输入输出差距很大，则带入：\n$$\\frac{\\partial C}{\\partial w}= a\\sigma'(z)$$\n$$\\frac{\\partial C}{\\partial b} = a\\sigma'(z)$$\n回忆一下$\\sigma$函数：\n可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\\sigma'(z)$就很小了。这就是学习缓慢的原因。\n交叉熵代价函数 因此，我们引入交叉熵代价函数，我们希望这个函数能弥补我们之前遇到的问题（在差距较大时学习缓慢）：\n$$C = -\\frac{1}{n}\\sum\\limits _x [y\\ln a+(1-y)\\ln (1-a)]$$\n这个函数的表达式看起来十分晦涩难懂，首先我们来看它为什么能成为一个代价函数。\nwhy cost function   $C \u0026gt; 0$\n代价函数需要满足非负性。\n在求和中，由于$y、a\\in [0,1]$，因此都是负数，在前面加上一个负号就变为正数。\n  在神经元输出接近目标值时，代价函数接近于0\n我们假设$y = 0 , a \\approx 0 $，则带入可发现$C\\approx 0$\n同样，在$y = 1,a \\approx 1$，也发现$C \\approx 0$",
+  "description": "二次代价函数 之前我们一直使用二次代价函数，貌似在一定程度上也挺work。但其实，当输入值与目标值差距很大时，二次代价函数就不是很恰当了；**这是因为当差距很大时，此函数的学习速率会很慢。**我们可以通过一个简单的例子观察这种变化：\n假设我们只使用一个神经元与一个输出神经元，定义代价函数为：\n$$C = \\frac{(y-a)^2}{2}$$\n使用链式法则计算权重和偏置的导数：\n$$\\frac{\\partial C}{\\partial w}= (a-y)\\sigma\u0026rsquo;(z)x$$\n$$\\frac{\\partial C}{\\partial b} = (a-y)\\sigma\u0026rsquo;(z)$$\n假设我们训练输入为$x = 1$，目标输出为$y = 0$，可以看见此时输入输出差距很大，则带入：\n$$\\frac{\\partial C}{\\partial w}= a\\sigma\u0026rsquo;(z)$$\n$$\\frac{\\partial C}{\\partial b} = a\\sigma\u0026rsquo;(z)$$\n回忆一下$\\sigma$函数：\n可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\\sigma\u0026rsquo;(z)$就很小了。这就是学习缓慢的原因。\n交叉熵代价函数 因此，我们引入交叉熵代价函数，我们希望这个函数能弥补我们之前遇到的问题（在差距较大时学习缓慢）：\n$$C = -\\frac{1}{n}\\sum\\limits _x [y\\ln a+(1-y)\\ln (1-a)]$$\n这个函数的表达式看起来十分晦涩难懂，首先我们来看它为什么能成为一个代价函数。\nwhy cost function   $C \u0026gt; 0$\n代价函数需要满足非负性。\n在求和中，由于$y、a\\in [0,1]$，因此都是负数，在前面加上一个负号就变为正数。\n  在神经元输出接近目标值时，代价函数接近于0\n我们假设$y = 0 , a \\approx 0 $，则带入可发现$C\\approx 0$\n同样，在$y = 1,a \\approx 1$，也发现$C \\approx 0$",
   "keywords": [
     "deep learning"
   ],
-  "articleBody": "二次代价函数 之前我们一直使用二次代价函数，貌似在一定程度上也挺work。但其实，当输入值与目标值差距很大时，二次代价函数就不是很恰当了；**这是因为当差距很大时，此函数的学习速率会很慢。**我们可以通过一个简单的例子观察这种变化：\n假设我们只使用一个神经元与一个输出神经元，定义代价函数为：\n$$C = \\frac{(y-a)^2}{2}$$\n使用链式法则计算权重和偏置的导数：\n$$\\frac{\\partial C}{\\partial w}= (a-y)\\sigma'(z)x$$\n$$\\frac{\\partial C}{\\partial b} = (a-y)\\sigma'(z)$$\n假设我们训练输入为$x = 1$，目标输出为$y = 0$，可以看见此时输入输出差距很大，则带入：\n$$\\frac{\\partial C}{\\partial w}= a\\sigma'(z)$$\n$$\\frac{\\partial C}{\\partial b} = a\\sigma'(z)$$\n回忆一下$\\sigma$函数：\n可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\\sigma'(z)$就很小了。这就是学习缓慢的原因。\n交叉熵代价函数 因此，我们引入交叉熵代价函数，我们希望这个函数能弥补我们之前遇到的问题（在差距较大时学习缓慢）：\n$$C = -\\frac{1}{n}\\sum\\limits _x [y\\ln a+(1-y)\\ln (1-a)]$$\n这个函数的表达式看起来十分晦涩难懂，首先我们来看它为什么能成为一个代价函数。\nwhy cost function   $C  0$\n代价函数需要满足非负性。\n在求和中，由于$y、a\\in [0,1]$，因此都是负数，在前面加上一个负号就变为正数。\n  在神经元输出接近目标值时，代价函数接近于0\n我们假设$y = 0 , a \\approx 0 $，则带入可发现$C\\approx 0$\n同样，在$y = 1,a \\approx 1$，也发现$C \\approx 0$\n因此，满足这个性质。\n  交叉熵是非负的，并且在神经元达到很好的正确率时会接近于0，这就是我们想要的代价函数的性质。\nwhy works 接下来我们就要来搞清楚为什么交叉熵代价函数能比二次代价函数更好地避免学习速率下降的问题：\n我们对其求权重$w$的偏导数：\n$$\\begin{eqnarray*} \\frac{\\partial C}{\\partial w_j} \u0026=\u0026 -\\frac{1}{n}\\sum\\limits _x [\\frac{y}{\\sigma(z)}-\\frac{(1-y)}{1-\\sigma(z)}]\\frac{d \\sigma(z)}{dz}\\frac{\\partial z}{\\partial w_j} \\\\ \u0026=\u0026 -\\frac{1}{n}\\sum\\limits _x [\\frac{y}{\\sigma(z)}-\\frac{(1-y)}{1-\\sigma(z)}]\\sigma'(z)x_j \\\\ \u0026=\u0026 \\frac{1}{n} \\sum\\limits _x \\frac {\\sigma'(z)x_j}{\\sigma(z)(1-\\sigma(z))}(\\sigma(z) - y) \\end{eqnarray*} $$ 由于我们使用sigmoid函数，因此$\\sigma(z)= 1/(1+e^{-z})$，很容易得到$\\sigma'(z) = \\sigma(z)(1-\\sigma(z))$。带入可约去：\n$$ \\frac{\\partial C}{\\partial w_j} =\\frac{1}{n} \\sum\\limits _xx_j(\\sigma(z) - y) $$\n**这是一个优美的公式，它告诉我们权重学习的速率受到$\\sigma(z)- y$的影响，也就是输出中的误差的控制：在误差较大时有更大的学习速度。**因此，这个代价函数还避免了像二次代价函数中类似$\\sigma'(z)$导致学习缓慢的问题（因为我们把它约去了）。\n类似的，我们也可以计算出关于偏置的偏导数，可以验证得到：\n$$ \\frac{\\partial C}{\\partial b} =\\frac{1}{n} \\sum\\limits _x(\\sigma(z) - y) $$\n再一次验证了交叉熵代价函数的优越性。\n这里需要注意：当我们选择不同的代价函数时，也需要选择不同的学习速率，并不能通过相同的学习速率去比较不同的代价函数。\n然而，我们比较不同的代价函数在犯错误较大时的学习速度，并不要求学习速率一定一致，因为交叉熵代价函数在犯错误时学习得更快，这个现象并不依赖于如何设置学习速率。\n二元熵 我们已经证明了当$y=0$或者$y=1$时如果有$\\sigma(z) = y$，那么交叉熵很小。但如果$y$可以取[0,1]中的所有数字呢？\n可以证明，交叉熵对所有训练输入在$\\sigma(z) \\approx y$依然有最小值。此时的交叉熵被称为二元熵（Binary entropy function）：\n$$C = -\\frac{1}{n}\\sum\\limits _x [y\\ln y+(1-y)\\ln (1-y)]$$\none more thing 我们已经推导了一层神经元的公式，现在扩展到多层多元神经网络。借用这里的公式，我们知道：\n$$\\begin{eqnarray*} \\frac {\\partial C}{\\partial w_{jk}^L} \u0026=\u0026 a_k^{L-1}\\delta_j^L \\\\ \u0026=\u0026 a_k^{L-1} \\frac {\\partial C}{\\partial a_j^l} \\sigma'(z_j^L) \\\\ \u0026=\u0026 a_k^{L-1} (a_j^L - y_j)\\end{eqnarray*} $$\n这里，$\\sigma'(z)$就消失了，因此避免了学习缓慢的问题。\n可以证明，如果输出层使用线性神经元，这时候使用二次代价函数就会是不错的选择。\n直观理解 我们知道，交叉熵是来源于信息论，但我们不去追踪那些琐碎的细节，就算是从直观上，我们也能推导得到这个公式：\n我们的目的就是在进行反向传播时，计算的关于$w$和$b$的偏导能不受$\\sigma ‘$的影响，因此我们可以想象这样一个偏导数(不包含$\\sigma’$)：\n$$\\frac{\\partial C}{\\partial w_j} = x_j(a-y)$$\n$$\\frac{\\partial C}{\\partial b} = (a-y)$$\n如果我们选择的代价函数满足这些条件，那么他们就能以简单的方式呈现我们想要的特性：初始误差越大，神经元学习的越快。\n由链式法则：\n$$\\frac{\\partial C}{\\partial b} = \\frac{\\partial C}{\\partial a}\\sigma ‘(z) $$\n使用$\\sigma’(z) = \\sigma(z)(1-\\sigma(z)) = a(1-a)$\n$$\\frac{\\partial C}{\\partial b} = \\frac{\\partial C}{\\partial a} a(1-a) $$\n对比可得：\n$$\\frac{\\partial C}{\\partial a} = \\frac{a-y }{a(1-a)}$$\n对其进行积分：\n$$C = -[y\\ln a+(1-y)\\ln (1-a)]+const$$\n这就是对于一个训练样本$x$对代价函数的贡献，我们很容易推广到所有样本的平均，这就确定了交叉熵的形式。\n实现 实现就比理论简单多了，我们只需要定义这样一个函数：\n1 2 3 4 5 6 7 8 9 10 11 12 13 14  class CrossEntropyCost(object): @staticmethod def fn(a, y): \"\"\"Return the cost associated with an output ``a`` and desired output ``y``. Note that np.nan_to_num is used to ensure numerical stability. In particular, if both ``a`` and ``y`` have a 1.0 in the same slot, then the expression (1-y)*np.log(1-a) returns nan. The np.nan_to_num ensures that that is converted to the correct value (0.0). \"\"\" return np.sum(np.nan_to_num(-y*np.log(a)-(1-y)*np.log(1-a)))   softmax softmax是为神经网络定义了一种新的输出层，回想一下，我们之前的神经网络都是使用sigmoid fuction,而我们将会看见，softmax激活函数会有一些特别的好处。\n首先定义这个函数，第$j$个神经元的激活值为：\n$$a_j^L = \\frac{e^{z_j^L}}{\\sum _k e^{z^L_k}}$$\n由表达式可以看见，以前的激活值只是将输出值直接作用于sigmoid function上，而softmax函数则将激活值与所有神经元的输出值联系在一起。\n性质 概率分布函数  我们不难看出，所有神经元的激活值加起来为1：  $$\\sum\\limits _j a_j^L = \\frac{\\sum_j e^L_j}{\\sum _k e^{Z^L_k}} =1$$\n 方程同样保证了输出激活值都是正数–因为指数函数都是正的。  将这两点结合起来，我们可以将softmax funciton看成是一个概率分布函数。\n这样的理解是很直观的，因为在很多问题中，能够将激活值$a_j^L$理解为正确输出为$j$的概率估计是非常方便的。\n而作为对比，如果输出层是sigmoid function，则没有这样一个关于输出激活值的简单解释。\n单调性 现在我们来考虑softmax的单调性。\n  当$j= k$时：\n$$\\frac{\\partial a_j^L}{\\partial z_k^L} = \\frac{e^{z_j^L}(\\sum e^{z_k^L})- e^{2z_j^L}}{(\\sum e^{z_k^L})^2} = a_j^L(1-a_j^L)0$$\n  当$j \\ne k$时：\n$$\\frac{\\partial a_j^L}{\\partial z_k^L} = -a_j^L a_k^L  因此，增加$z_j^L$的值会提高对应的输出激活值并降低所有其他的输出激活值。\n非局部性 sigmoid function的一个好处是对应的带权输入$a_j^L = \\sigma(z_j^L)$，然而，对应softmax active function，任何特定的输出激活值依赖于所有的带权输入。\n逆转softmax层 如果我们已知有一个使用softmax active function的神经网络，激活值$a_j^L$已知，可以由定义很容易的证明其带权输入为：\n$$z_j^L = \\ln a_j^L + C$$\n其中$C$是独立于$j$的常数。\n学习缓慢问题 我们目前只定义了一个激活函数，而我们关心这个激活函数与学习速率的关系。\n对数似然代价函数 首先定义一个对数似然代价函数(log-likehood):\n$$C = -\\ln a_y^L = - \\sum _ky_k\\log a_k$$\n其中，当$y_k$取目标值时为1，其余为0。\n对于这个函数，我们可以想象：\n 当网络表现得很好地时，估计的对应概率$a_k^L$与1非常接近，那么代价函数会很小； 当网络表现得很糟糕，则对应的概率$a_k^L$与0非常接近，那么代价函数会很大。  所以说对数似然函数也是我们满足期待的代价函数条件。\n推导 那么这个代价函数作用在softmax active function上时，表现如何呢？\n对于$b_j^L$，我们可以求偏导：\n$$\\begin{eqnarray*} \\frac{\\partial C}{\\partial b_j^L} \u0026=\u0026 \\frac{\\partial C}{\\partial z_j^L} \\frac{\\partial z_j^L}{\\partial b_j^L} \\\\ \u0026=\u0026 \\frac{\\partial C}{\\partial z_j^L} \\\\ \u0026=\u0026 -\\sum_k y_k \\frac{1}{a_k} \\frac {\\partial a_k^L}{\\partial z_j^L} \\\\ \u0026=\u0026 -y_j \\frac {1}{a_j^L} \\frac {\\partial a_j^L}{\\partial z_j^L} - \\sum_{k\\ne j} y_k \\frac {1}{a_k^L} \\frac {\\partial a_k^L}{\\partial z_j^L} \\\\ \u0026=\u0026 -y_j \\frac {1}{a_j^L} a_j^L(1-a_j^L) + \\sum_{k\\ne j} y_k \\frac {1}{a_k^L}a_j^La_k^L \\\\ \u0026=\u0026 -y_j (1-a_j^L) + \\sum_{k\\ne j} y_k a_j^L \\\\ \u0026=\u0026 -y_i + a_j^L \\sum y_k \\\\ \u0026=\u0026 a_j^L - y_i \\end{eqnarray*}$$ 同理，我们可以得到$w_j^L$的偏导： $$\\begin{eqnarray*} \\frac{\\partial C}{\\partial w_j^L} \u0026=\u0026 \\frac{\\partial C}{\\partial z_j^L} \\frac{\\partial z_j^L}{\\partial w_j^L} \\\\ \u0026=\u0026 \\frac{\\partial C}{\\partial z_j^L} a_k^{L-1} \\\\ \u0026=\u0026 a_k^{L-1} (a_j^L - y_i)\\end{eqnarray*}$$\n通过推导，我们发现通过这种方法计算反向传播会异常简单。\n我们发现，用softmax active fuction + log-likehood代价函数得到的偏导和之前用corss entropy function+sigmoid function得到的式子几乎一样。我们后面会发现，这种相似性很有用。\n总之，我们验证了使用softmax fuction + log-likehood组合也能避免学习缓慢的问题。\n从一种更为通用的视角来看，虽然这两种组合在实际应用中都不错，但softmax fuction + log-likehood更适用于那些需要将输出激活值解释为概率的场景。\nwhy softmax 另外一个值得思考的问题是，为什么这个函数叫柔性最大值？\n在Quora上有一个很好地解释，简单来说，就是:\n it highlights the largest input and suppresses all the significantly smaller ones.\n 参考资料 neuralnetworksanddeeplearning\n",
+  "articleBody": "二次代价函数 之前我们一直使用二次代价函数，貌似在一定程度上也挺work。但其实，当输入值与目标值差距很大时，二次代价函数就不是很恰当了；**这是因为当差距很大时，此函数的学习速率会很慢。**我们可以通过一个简单的例子观察这种变化：\n假设我们只使用一个神经元与一个输出神经元，定义代价函数为：\n$$C = \\frac{(y-a)^2}{2}$$\n使用链式法则计算权重和偏置的导数：\n$$\\frac{\\partial C}{\\partial w}= (a-y)\\sigma’(z)x$$\n$$\\frac{\\partial C}{\\partial b} = (a-y)\\sigma’(z)$$\n假设我们训练输入为$x = 1$，目标输出为$y = 0$，可以看见此时输入输出差距很大，则带入：\n$$\\frac{\\partial C}{\\partial w}= a\\sigma’(z)$$\n$$\\frac{\\partial C}{\\partial b} = a\\sigma’(z)$$\n回忆一下$\\sigma$函数：\n可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\\sigma’(z)$就很小了。这就是学习缓慢的原因。\n交叉熵代价函数 因此，我们引入交叉熵代价函数，我们希望这个函数能弥补我们之前遇到的问题（在差距较大时学习缓慢）：\n$$C = -\\frac{1}{n}\\sum\\limits _x [y\\ln a+(1-y)\\ln (1-a)]$$\n这个函数的表达式看起来十分晦涩难懂，首先我们来看它为什么能成为一个代价函数。\nwhy cost function   $C  0$\n代价函数需要满足非负性。\n在求和中，由于$y、a\\in [0,1]$，因此都是负数，在前面加上一个负号就变为正数。\n  在神经元输出接近目标值时，代价函数接近于0\n我们假设$y = 0 , a \\approx 0 $，则带入可发现$C\\approx 0$\n同样，在$y = 1,a \\approx 1$，也发现$C \\approx 0$\n因此，满足这个性质。\n  交叉熵是非负的，并且在神经元达到很好的正确率时会接近于0，这就是我们想要的代价函数的性质。\nwhy works 接下来我们就要来搞清楚为什么交叉熵代价函数能比二次代价函数更好地避免学习速率下降的问题：\n我们对其求权重$w$的偏导数：\n$$\\begin{eqnarray*} \\frac{\\partial C}{\\partial w_j} \u0026=\u0026 -\\frac{1}{n}\\sum\\limits _x [\\frac{y}{\\sigma(z)}-\\frac{(1-y)}{1-\\sigma(z)}]\\frac{d \\sigma(z)}{dz}\\frac{\\partial z}{\\partial w_j} \\\\ \u0026=\u0026 -\\frac{1}{n}\\sum\\limits _x [\\frac{y}{\\sigma(z)}-\\frac{(1-y)}{1-\\sigma(z)}]\\sigma'(z)x_j \\\\ \u0026=\u0026 \\frac{1}{n} \\sum\\limits _x \\frac {\\sigma'(z)x_j}{\\sigma(z)(1-\\sigma(z))}(\\sigma(z) - y) \\end{eqnarray*} $$ 由于我们使用sigmoid函数，因此$\\sigma(z)= 1/(1+e^{-z})$，很容易得到$\\sigma’(z) = \\sigma(z)(1-\\sigma(z))$。带入可约去：\n$$ \\frac{\\partial C}{\\partial w_j} =\\frac{1}{n} \\sum\\limits _xx_j(\\sigma(z) - y) $$\n**这是一个优美的公式，它告诉我们权重学习的速率受到$\\sigma(z)- y$的影响，也就是输出中的误差的控制：在误差较大时有更大的学习速度。**因此，这个代价函数还避免了像二次代价函数中类似$\\sigma’(z)$导致学习缓慢的问题（因为我们把它约去了）。\n类似的，我们也可以计算出关于偏置的偏导数，可以验证得到：\n$$ \\frac{\\partial C}{\\partial b} =\\frac{1}{n} \\sum\\limits _x(\\sigma(z) - y) $$\n再一次验证了交叉熵代价函数的优越性。\n这里需要注意：当我们选择不同的代价函数时，也需要选择不同的学习速率，并不能通过相同的学习速率去比较不同的代价函数。\n然而，我们比较不同的代价函数在犯错误较大时的学习速度，并不要求学习速率一定一致，因为交叉熵代价函数在犯错误时学习得更快，这个现象并不依赖于如何设置学习速率。\n二元熵 我们已经证明了当$y=0$或者$y=1$时如果有$\\sigma(z) = y$，那么交叉熵很小。但如果$y$可以取[0,1]中的所有数字呢？\n可以证明，交叉熵对所有训练输入在$\\sigma(z) \\approx y$依然有最小值。此时的交叉熵被称为二元熵（Binary entropy function）：\n$$C = -\\frac{1}{n}\\sum\\limits _x [y\\ln y+(1-y)\\ln (1-y)]$$\none more thing 我们已经推导了一层神经元的公式，现在扩展到多层多元神经网络。借用这里的公式，我们知道：\n$$\\begin{eqnarray*} \\frac {\\partial C}{\\partial w_{jk}^L} \u0026=\u0026 a_k^{L-1}\\delta_j^L \\\\ \u0026=\u0026 a_k^{L-1} \\frac {\\partial C}{\\partial a_j^l} \\sigma’(z_j^L) \\\\ \u0026=\u0026 a_k^{L-1} (a_j^L - y_j)\\end{eqnarray*} $$\n这里，$\\sigma’(z)$就消失了，因此避免了学习缓慢的问题。\n可以证明，如果输出层使用线性神经元，这时候使用二次代价函数就会是不错的选择。\n直观理解 我们知道，交叉熵是来源于信息论，但我们不去追踪那些琐碎的细节，就算是从直观上，我们也能推导得到这个公式：\n我们的目的就是在进行反向传播时，计算的关于$w$和$b$的偏导能不受$\\sigma ‘$的影响，因此我们可以想象这样一个偏导数(不包含$\\sigma'$)：\n$$\\frac{\\partial C}{\\partial w_j} = x_j(a-y)$$\n$$\\frac{\\partial C}{\\partial b} = (a-y)$$\n如果我们选择的代价函数满足这些条件，那么他们就能以简单的方式呈现我们想要的特性：初始误差越大，神经元学习的越快。\n由链式法则：\n$$\\frac{\\partial C}{\\partial b} = \\frac{\\partial C}{\\partial a}\\sigma ‘(z) $$\n使用$\\sigma’(z) = \\sigma(z)(1-\\sigma(z)) = a(1-a)$\n$$\\frac{\\partial C}{\\partial b} = \\frac{\\partial C}{\\partial a} a(1-a) $$\n对比可得：\n$$\\frac{\\partial C}{\\partial a} = \\frac{a-y }{a(1-a)}$$\n对其进行积分：\n$$C = -[y\\ln a+(1-y)\\ln (1-a)]+const$$\n这就是对于一个训练样本$x$对代价函数的贡献，我们很容易推广到所有样本的平均，这就确定了交叉熵的形式。\n实现 实现就比理论简单多了，我们只需要定义这样一个函数：\n1 2 3 4 5 6 7 8 9 10 11 12 13 14  class CrossEntropyCost(object): @staticmethod def fn(a, y): \"\"\"Return the cost associated with an output ``a`` and desired output ``y``. Note that np.nan_to_num is used to ensure numerical stability. In particular, if both ``a`` and ``y`` have a 1.0 in the same slot, then the expression (1-y)*np.log(1-a) returns nan. The np.nan_to_num ensures that that is converted to the correct value (0.0). \"\"\" return np.sum(np.nan_to_num(-y*np.log(a)-(1-y)*np.log(1-a)))   softmax softmax是为神经网络定义了一种新的输出层，回想一下，我们之前的神经网络都是使用sigmoid fuction,而我们将会看见，softmax激活函数会有一些特别的好处。\n首先定义这个函数，第$j$个神经元的激活值为：\n$$a_j^L = \\frac{e^{z_j^L}}{\\sum _k e^{z^L_k}}$$\n由表达式可以看见，以前的激活值只是将输出值直接作用于sigmoid function上，而softmax函数则将激活值与所有神经元的输出值联系在一起。\n性质 概率分布函数  我们不难看出，所有神经元的激活值加起来为1：  $$\\sum\\limits _j a_j^L = \\frac{\\sum_j e^L_j}{\\sum _k e^{Z^L_k}} =1$$\n 方程同样保证了输出激活值都是正数–因为指数函数都是正的。  将这两点结合起来，我们可以将softmax funciton看成是一个概率分布函数。\n这样的理解是很直观的，因为在很多问题中，能够将激活值$a_j^L$理解为正确输出为$j$的概率估计是非常方便的。\n而作为对比，如果输出层是sigmoid function，则没有这样一个关于输出激活值的简单解释。\n单调性 现在我们来考虑softmax的单调性。\n  当$j= k$时：\n$$\\frac{\\partial a_j^L}{\\partial z_k^L} = \\frac{e^{z_j^L}(\\sum e^{z_k^L})- e^{2z_j^L}}{(\\sum e^{z_k^L})^2} = a_j^L(1-a_j^L)0$$\n  当$j \\ne k$时：\n$$\\frac{\\partial a_j^L}{\\partial z_k^L} = -a_j^L a_k^L  因此，增加$z_j^L$的值会提高对应的输出激活值并降低所有其他的输出激活值。\n非局部性 sigmoid function的一个好处是对应的带权输入$a_j^L = \\sigma(z_j^L)$，然而，对应softmax active function，任何特定的输出激活值依赖于所有的带权输入。\n逆转softmax层 如果我们已知有一个使用softmax active function的神经网络，激活值$a_j^L$已知，可以由定义很容易的证明其带权输入为：\n$$z_j^L = \\ln a_j^L + C$$\n其中$C$是独立于$j$的常数。\n学习缓慢问题 我们目前只定义了一个激活函数，而我们关心这个激活函数与学习速率的关系。\n对数似然代价函数 首先定义一个对数似然代价函数(log-likehood):\n$$C = -\\ln a_y^L = - \\sum _ky_k\\log a_k$$\n其中，当$y_k$取目标值时为1，其余为0。\n对于这个函数，我们可以想象：\n 当网络表现得很好地时，估计的对应概率$a_k^L$与1非常接近，那么代价函数会很小； 当网络表现得很糟糕，则对应的概率$a_k^L$与0非常接近，那么代价函数会很大。  所以说对数似然函数也是我们满足期待的代价函数条件。\n推导 那么这个代价函数作用在softmax active function上时，表现如何呢？\n对于$b_j^L$，我们可以求偏导：\n$$\\begin{eqnarray*} \\frac{\\partial C}{\\partial b_j^L} \u0026=\u0026 \\frac{\\partial C}{\\partial z_j^L} \\frac{\\partial z_j^L}{\\partial b_j^L} \\\\ \u0026=\u0026 \\frac{\\partial C}{\\partial z_j^L} \\\\ \u0026=\u0026 -\\sum_k y_k \\frac{1}{a_k} \\frac {\\partial a_k^L}{\\partial z_j^L} \\\\ \u0026=\u0026 -y_j \\frac {1}{a_j^L} \\frac {\\partial a_j^L}{\\partial z_j^L} - \\sum_{k\\ne j} y_k \\frac {1}{a_k^L} \\frac {\\partial a_k^L}{\\partial z_j^L} \\\\ \u0026=\u0026 -y_j \\frac {1}{a_j^L} a_j^L(1-a_j^L) + \\sum_{k\\ne j} y_k \\frac {1}{a_k^L}a_j^La_k^L \\\\ \u0026=\u0026 -y_j (1-a_j^L) + \\sum_{k\\ne j} y_k a_j^L \\\\ \u0026=\u0026 -y_i + a_j^L \\sum y_k \\\\ \u0026=\u0026 a_j^L - y_i \\end{eqnarray*}$$ 同理，我们可以得到$w_j^L$的偏导： $$\\begin{eqnarray*} \\frac{\\partial C}{\\partial w_j^L} \u0026=\u0026 \\frac{\\partial C}{\\partial z_j^L} \\frac{\\partial z_j^L}{\\partial w_j^L} \\\\ \u0026=\u0026 \\frac{\\partial C}{\\partial z_j^L} a_k^{L-1} \\\\ \u0026=\u0026 a_k^{L-1} (a_j^L - y_i)\\end{eqnarray*}$$\n通过推导，我们发现通过这种方法计算反向传播会异常简单。\n我们发现，用softmax active fuction + log-likehood代价函数得到的偏导和之前用corss entropy function+sigmoid function得到的式子几乎一样。我们后面会发现，这种相似性很有用。\n总之，我们验证了使用softmax fuction + log-likehood组合也能避免学习缓慢的问题。\n从一种更为通用的视角来看，虽然这两种组合在实际应用中都不错，但softmax fuction + log-likehood更适用于那些需要将输出激活值解释为概率的场景。\nwhy softmax 另外一个值得思考的问题是，为什么这个函数叫柔性最大值？\n在Quora上有一个很好地解释，简单来说，就是:\n it highlights the largest input and suppresses all the significantly smaller ones.\n 参考资料 neuralnetworksanddeeplearning\n",
   "wordCount" : "539",
   "inLanguage": "en",
   "datePublished": "2018-05-13T22:58:46+08:00",
@@ -362,14 +356,14 @@ why cost function   $C &gt; 0$
 <p>假设我们只使用一个神经元与一个输出神经元，定义代价函数为：</p>
 <p>$$C  = \frac{(y-a)^2}{2}$$</p>
 <p>使用链式法则计算权重和偏置的导数：</p>
-<p>$$\frac{\partial C}{\partial w}= (a-y)\sigma'(z)x$$</p>
-<p>$$\frac{\partial C}{\partial b} = (a-y)\sigma'(z)$$</p>
+<p>$$\frac{\partial C}{\partial w}= (a-y)\sigma&rsquo;(z)x$$</p>
+<p>$$\frac{\partial C}{\partial b} = (a-y)\sigma&rsquo;(z)$$</p>
 <p>假设我们训练输入为$x = 1$，目标输出为$y = 0$，可以看见此时输入输出差距很大，则带入：</p>
-<p>$$\frac{\partial C}{\partial w}= a\sigma'(z)$$</p>
-<p>$$\frac{\partial C}{\partial b} = a\sigma'(z)$$</p>
+<p>$$\frac{\partial C}{\partial w}= a\sigma&rsquo;(z)$$</p>
+<p>$$\frac{\partial C}{\partial b} = a\sigma&rsquo;(z)$$</p>
 <p>回忆一下$\sigma$函数：</p>
 <img src="/images/deeplearning/misc/softmax1.png" style="width:50%;">
-<p>可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\sigma'(z)$就很小了。这就是学习缓慢的原因。</p>
+<p>可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\sigma&rsquo;(z)$就很小了。这就是学习缓慢的原因。</p>
 <h1 id="交叉熵代价函数">交叉熵代价函数<a hidden class="anchor" aria-hidden="true" href="#交叉熵代价函数">#</a></h1>
 <p>因此，我们引入交叉熵代价函数，我们希望这个函数能弥补我们之前遇到的问题（<strong>在差距较大时学习缓慢）</strong>：</p>
 <p>$$C = -\frac{1}{n}\sum\limits _x [y\ln a+(1-y)\ln (1-a)]$$</p>
@@ -393,9 +387,9 @@ why cost function   $C &gt; 0$
 <p>接下来我们就要来搞清楚为什么交叉熵代价函数能比二次代价函数更好地避免学习速率下降的问题：</p>
 <p>我们对其求权重$w$的偏导数：</p>
 <div>$$\begin{eqnarray*}  \frac{\partial C}{\partial w_j} &=& -\frac{1}{n}\sum\limits _x [\frac{y}{\sigma(z)}-\frac{(1-y)}{1-\sigma(z)}]\frac{d \sigma(z)}{dz}\frac{\partial z}{\partial w_j}  \\ &=& -\frac{1}{n}\sum\limits _x [\frac{y}{\sigma(z)}-\frac{(1-y)}{1-\sigma(z)}]\sigma'(z)x_j \\ &=& \frac{1}{n}  \sum\limits _x \frac {\sigma'(z)x_j}{\sigma(z)(1-\sigma(z))}(\sigma(z) - y) \end{eqnarray*}  $$</div>
-<p>由于我们使用<code>sigmoid</code>函数，因此$\sigma(z)= 1/(1+e^{-z})$，很容易得到$\sigma'(z) = \sigma(z)(1-\sigma(z))$。带入可约去：</p>
+<p>由于我们使用<code>sigmoid</code>函数，因此$\sigma(z)= 1/(1+e^{-z})$，很容易得到$\sigma&rsquo;(z) = \sigma(z)(1-\sigma(z))$。带入可约去：</p>
 <p>$$ \frac{\partial C}{\partial w_j} =\frac{1}{n}  \sum\limits _xx_j(\sigma(z) - y) $$</p>
-<p>**这是一个优美的公式，它告诉我们权重学习的速率受到$\sigma(z)- y$的影响，也就是输出中的误差的控制：在误差较大时有更大的学习速度。**因此，这个代价函数还避免了像二次代价函数中类似$\sigma'(z)$导致学习缓慢的问题（因为我们把它约去了）。</p>
+<p>**这是一个优美的公式，它告诉我们权重学习的速率受到$\sigma(z)- y$的影响，也就是输出中的误差的控制：在误差较大时有更大的学习速度。**因此，这个代价函数还避免了像二次代价函数中类似$\sigma&rsquo;(z)$导致学习缓慢的问题（因为我们把它约去了）。</p>
 <p>类似的，我们也可以计算出关于偏置的偏导数，可以验证得到：</p>
 <p>$$ \frac{\partial C}{\partial b} =\frac{1}{n}  \sum\limits _x(\sigma(z) - y) $$</p>
 <p>再一次验证了交叉熵代价函数的优越性。</p>
@@ -407,12 +401,12 @@ why cost function   $C &gt; 0$
 <p>$$C = -\frac{1}{n}\sum\limits _x [y\ln y+(1-y)\ln (1-y)]$$</p>
 <h2 id="one-more-thing">one more thing<a hidden class="anchor" aria-hidden="true" href="#one-more-thing">#</a></h2>
 <p>我们已经推导了一层神经元的公式，现在扩展到多层多元神经网络。借用<a href="http://zealscott.com/posts/28188/">这里的公式</a>，我们知道：</p>
-<p>$$\begin{eqnarray*} \frac {\partial C}{\partial w_{jk}^L} &amp;=&amp; a_k^{L-1}\delta_j^L \\ &amp;=&amp;  a_k^{L-1} \frac {\partial C}{\partial a_j^l} \sigma'(z_j^L) \\ &amp;=&amp;  a_k^{L-1} (a_j^L - y_j)\end{eqnarray*} $$</p>
-<p>这里，$\sigma'(z)$就消失了，因此避免了学习缓慢的问题。</p>
+<p>$$\begin{eqnarray*} \frac {\partial C}{\partial w_{jk}^L} &amp;=&amp; a_k^{L-1}\delta_j^L \\ &amp;=&amp;  a_k^{L-1} \frac {\partial C}{\partial a_j^l} \sigma&rsquo;(z_j^L) \\ &amp;=&amp;  a_k^{L-1} (a_j^L - y_j)\end{eqnarray*} $$</p>
+<p>这里，$\sigma&rsquo;(z)$就消失了，因此避免了学习缓慢的问题。</p>
 <p><strong>可以证明，如果输出层使用线性神经元，这时候使用二次代价函数就会是不错的选择。</strong></p>
 <h2 id="直观理解">直观理解<a hidden class="anchor" aria-hidden="true" href="#直观理解">#</a></h2>
 <p>我们知道，交叉熵是来源于信息论，但我们不去追踪那些琐碎的细节，就算是从直观上，我们也能推导得到这个公式：</p>
-<p>我们的目的就是在进行反向传播时，计算的关于$w$和$b$的偏导能不受$\sigma &lsquo;$的影响，因此我们可以想象这样一个偏导数(不包含$\sigma&rsquo;$)：</p>
+<p>我们的目的就是在进行反向传播时，计算的关于$w$和$b$的偏导能不受$\sigma &lsquo;$的影响，因此我们可以想象这样一个偏导数(不包含$\sigma'$)：</p>
 <p>$$\frac{\partial C}{\partial w_j} = x_j(a-y)$$</p>
 <p>$$\frac{\partial C}{\partial b} = (a-y)$$</p>
 <p>如果我们选择的代价函数满足这些条件，那么他们就能以简单的方式呈现我们想要的特性：<strong>初始误差越大，神经元学习的越快。</strong></p>

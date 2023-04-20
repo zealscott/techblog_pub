@@ -232,13 +232,13 @@ $$b\to b-\frac{\eta}{m}\sum\limits_x\frac{\partial C_x}{\partial b}$$...</p>
 假设我们只使用一个神经元与一个输出神经元，定义代价函数为：
 $$C = \frac{(y-a)^2}{2}$$
 使用链式法则计算权重和偏置的导数：
-$$\frac{\partial C}{\partial w}= (a-y)\sigma&#39;(z)x$$
-$$\frac{\partial C}{\partial b} = (a-y)\sigma&#39;(z)$$
+$$\frac{\partial C}{\partial w}= (a-y)\sigma’(z)x$$
+$$\frac{\partial C}{\partial b} = (a-y)\sigma’(z)$$
 假设我们训练输入为$x = 1$，目标输出为$y = 0$，可以看见此时输入输出差距很大，则带入：
-$$\frac{\partial C}{\partial w}= a\sigma&#39;(z)$$
-$$\frac{\partial C}{\partial b} = a\sigma&#39;(z)$$
+$$\frac{\partial C}{\partial w}= a\sigma’(z)$$
+$$\frac{\partial C}{\partial b} = a\sigma’(z)$$
 回忆一下$\sigma$函数：
-可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\sigma&#39;(z)$就很小了。这就是学习缓慢的原因。
+可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\sigma’(z)$就很小了。这就是学习缓慢的原因。
 交叉熵代价函数 因此，我们引入交叉熵代价函数，我们希望这个函数能弥补我们之前遇到的问题（在差距较大时学习缓慢）：
 $$C = -\frac{1}{n}\sum\limits _x [y\ln a&#43;(1-y)\ln (1-a)]$$
 这个函数的表达式看起来十分晦涩难懂，首先我们来看它为什么能成为一个代价函数。

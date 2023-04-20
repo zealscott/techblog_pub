@@ -146,12 +146,6 @@ if (!doNotTrack) {
   "itemListElement": [, 
     {
       "@type": "ListItem",
-      "position":  2 ,
-      "name": "Misc",
-      "item": "https://tech.zealscott.com/misc/"
-    }, 
-    {
-      "@type": "ListItem",
       "position":  3 ,
       "name": "Laravel Homestead 安装小记",
       "item": "https://tech.zealscott.com/misc/laravel-installation/"
@@ -421,12 +415,12 @@ bash init.sh
 </span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="nt">folders</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">map</span><span class="p">:</span><span class="w"> </span><span class="l">~/Code/OpenCion</span><span class="w">
-</span><span class="w">      </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="l">/home/vagrant/OpenCion</span><span class="w">
-</span><span class="w"></span><span class="nt">sites</span><span class="p">:</span><span class="w">
-</span><span class="w">    </span>- <span class="nt">map</span><span class="p">:</span><span class="w"> </span><span class="l">homestead.test</span><span class="w">
-</span><span class="w">      </span><span class="nt">to</span><span class="p">:</span><span class="w"> </span><span class="l">/home/vagrant/OpenCion/public</span><span class="w">
+<pre class="chroma"><code class="language-yaml" data-lang="yaml"><span class="k">folders</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="k">map</span><span class="p">:</span><span class="w"> </span>~/Code/OpenCion<span class="w">
+</span><span class="w">      </span><span class="k">to</span><span class="p">:</span><span class="w"> </span>/home/vagrant/OpenCion<span class="w">
+</span><span class="w"></span><span class="k">sites</span><span class="p">:</span><span class="w">
+</span><span class="w">    </span>- <span class="k">map</span><span class="p">:</span><span class="w"> </span>homestead.test<span class="w">
+</span><span class="w">      </span><span class="k">to</span><span class="p">:</span><span class="w"> </span>/home/vagrant/OpenCion/public<span class="w">
 </span></code></pre></td></tr></table>
 </div>
 </div><p>然后再将IP加入<code>/ect/host</code>中：</p>

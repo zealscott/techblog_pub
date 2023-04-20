@@ -2,7 +2,7 @@
 <html lang="en" dir="auto">
 
 <head>
-	<meta name="generator" content="Hugo 0.79.0" /><meta charset="utf-8">
+	<meta name="generator" content="Hugo 0.68.3" /><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -254,7 +254,7 @@ Mini Batch 如果值太小，不会用到并行计算的资源，速度也不会
 随机梯度下降的改进 Hessian技术 实际上就是二阶导的矩阵，理论上来说Hessian方法比标准的SGD收敛速度更快。
 Momentum 我们可以认为这种方法引入了类似于摩擦力的量，使得梯度下降变化规则从原始的
 $w→w′=w−η∇C$变为：
-$$v \to v&#39; = \mu v &#43;\eta \triangledown C$$
+$$v \to v’ = \mu v &#43;\eta \triangledown C$$
 $$w′=w&#43;v′$$
 其中，$\eta$是用来控制阻碍或者摩擦力的量的超参数。
 以上的公式可以理解为，力$\triangledown C$改变了速度$v$，速度再控制$w$的变化率。
@@ -318,13 +318,13 @@ $$b\to b-\frac{\eta}{m}\sum\limits_x\frac{\partial C_x}{\partial b}$$...</p>
 假设我们只使用一个神经元与一个输出神经元，定义代价函数为：
 $$C = \frac{(y-a)^2}{2}$$
 使用链式法则计算权重和偏置的导数：
-$$\frac{\partial C}{\partial w}= (a-y)\sigma&#39;(z)x$$
-$$\frac{\partial C}{\partial b} = (a-y)\sigma&#39;(z)$$
+$$\frac{\partial C}{\partial w}= (a-y)\sigma’(z)x$$
+$$\frac{\partial C}{\partial b} = (a-y)\sigma’(z)$$
 假设我们训练输入为$x = 1$，目标输出为$y = 0$，可以看见此时输入输出差距很大，则带入：
-$$\frac{\partial C}{\partial w}= a\sigma&#39;(z)$$
-$$\frac{\partial C}{\partial b} = a\sigma&#39;(z)$$
+$$\frac{\partial C}{\partial w}= a\sigma’(z)$$
+$$\frac{\partial C}{\partial b} = a\sigma’(z)$$
 回忆一下$\sigma$函数：
-可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\sigma&#39;(z)$就很小了。这就是学习缓慢的原因。
+可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\sigma’(z)$就很小了。这就是学习缓慢的原因。
 交叉熵代价函数 因此，我们引入交叉熵代价函数，我们希望这个函数能弥补我们之前遇到的问题（在差距较大时学习缓慢）：
 $$C = -\frac{1}{n}\sum\limits _x [y\ln a&#43;(1-y)\ln (1-a)]$$
 这个函数的表达式看起来十分晦涩难懂，首先我们来看它为什么能成为一个代价函数。
