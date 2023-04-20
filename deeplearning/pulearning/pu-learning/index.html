@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Learning Classiﬁers from Only Positive and Unlabeled Data | Scott&#39;Log</title>
+<meta name="keywords" content="deep learning, paper" />
+<meta name="description" content="本文主要考虑在SCAR假设下，证明了普通的分类器和PU分类器只相差一个常数，因此可以使用普通分类器的方法来估计$p(s|x)$，进而得到$p(y|x)$。同时提供了三种方法来估计这个常数，最后，还对先验$p(y)$的估计提供了思路。
+Learning a traditional classifier   概念定义
+ $x$ 表示一个样本，$y$ 表示其label（0或者1），$s$表示是否被select 那么，在PU问题中，当$s =1 $时，一定有$y = 1$ $P(s = 1| x,y=0) = 0 $ 一定成立    两种采样假设
+ signle-training-set  所有的样本都是从$(x,y,s)$这个三元组的分布中采样的   case-control  两个数据集（正类，未标记）是从三元组中独立的抽样出来的。当采样正类时被称为case，采样未标记数据时称为contaminated controls   这两种假设有很明显的区别。总的来说，第一种假设比第二种假设要严格得多，也就能提供更多的信息：  两种假设都能让我们估计$p(x)$ 但只有在第一种假设下，能够让我们很容易的估计出$p(s = 1)$，因此也更容易估计出$p(y = 1)$，二第二种条件不可以。      基本假设
+ 我们需要训练的传统分类器是：$f(x) = p(y = 1|x)$ 然而，对正类数据没有任何假设的前提下，我们很难得到较好的分类器 因此，论文给出的假设是，正类样本数据是从正类数据中完全随机的抽取出来的。  也就是说，当$y = 1$时，无论$x$取说明值，它们的概率都是相同的：  $p(s = 1| x,y=1) = p(s =1|y=1)$   这个假设被称为selected completedly at random   我们定义一个nontraditional classifier：$g(x) = p(s =1|x)$ 因此，我们需要一些定理来证明如何将非传统的分类器转化为传统的分类器    Lemma：假设SCAR条件成立，那么$p(y = 1|x) = \frac{p(s=1|x)}{c}$，其中$c = p(s=1|y=1)$">
+<meta name="author" content="Scott Du">
+<link rel="canonical" href="https://tech.zealscott.com/deeplearning/pulearning/pu-learning/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fd126033c3455a688b2479431fed44510433c36ce61093336d94a5681fad5866.css" integrity="sha256-/RJgM8NFWmiLJHlDH&#43;1EUQQzw2zmEJMzbZSlaB&#43;tWGY=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.min.27cd435cc9ed6abb4b496581b151804f79f366c412620272bb94e2f5f598ebcc.js" integrity="sha256-J81DXMntartLSWWBsVGAT3nzZsQSYgJyu5Ti9fWY68w="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://tech.zealscott.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tech.zealscott.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tech.zealscott.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://tech.zealscott.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tech.zealscott.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, 
+        {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '\\[', right: '\\]', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false}
+                ]
+            }
+        );"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-116370175-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<meta property="og:title" content="Learning Classiﬁers from Only Positive and Unlabeled Data" />
+<meta property="og:description" content="本文主要考虑在SCAR假设下，证明了普通的分类器和PU分类器只相差一个常数，因此可以使用普通分类器的方法来估计$p(s|x)$，进而得到$p(y|x)$。同时提供了三种方法来估计这个常数，最后，还对先验$p(y)$的估计提供了思路。
+Learning a traditional classifier   概念定义
+ $x$ 表示一个样本，$y$ 表示其label（0或者1），$s$表示是否被select 那么，在PU问题中，当$s =1 $时，一定有$y = 1$ $P(s = 1| x,y=0) = 0 $ 一定成立    两种采样假设
+ signle-training-set  所有的样本都是从$(x,y,s)$这个三元组的分布中采样的   case-control  两个数据集（正类，未标记）是从三元组中独立的抽样出来的。当采样正类时被称为case，采样未标记数据时称为contaminated controls   这两种假设有很明显的区别。总的来说，第一种假设比第二种假设要严格得多，也就能提供更多的信息：  两种假设都能让我们估计$p(x)$ 但只有在第一种假设下，能够让我们很容易的估计出$p(s = 1)$，因此也更容易估计出$p(y = 1)$，二第二种条件不可以。      基本假设
+ 我们需要训练的传统分类器是：$f(x) = p(y = 1|x)$ 然而，对正类数据没有任何假设的前提下，我们很难得到较好的分类器 因此，论文给出的假设是，正类样本数据是从正类数据中完全随机的抽取出来的。  也就是说，当$y = 1$时，无论$x$取说明值，它们的概率都是相同的：  $p(s = 1| x,y=1) = p(s =1|y=1)$   这个假设被称为selected completedly at random   我们定义一个nontraditional classifier：$g(x) = p(s =1|x)$ 因此，我们需要一些定理来证明如何将非传统的分类器转化为传统的分类器    Lemma：假设SCAR条件成立，那么$p(y = 1|x) = \frac{p(s=1|x)}{c}$，其中$c = p(s=1|y=1)$" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://tech.zealscott.com/deeplearning/pulearning/pu-learning/" /><meta property="og:image" content="https://tech.zealscott.com/papermod-cover.png"/><meta property="article:section" content="deeplearning" />
+<meta property="article:published_time" content="2019-07-28T21:00:30&#43;08:00" />
+<meta property="article:modified_time" content="2019-07-28T21:00:30&#43;08:00" />
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tech.zealscott.com/papermod-cover.png"/>
+
+<meta name="twitter:title" content="Learning Classiﬁers from Only Positive and Unlabeled Data"/>
+<meta name="twitter:description" content="本文主要考虑在SCAR假设下，证明了普通的分类器和PU分类器只相差一个常数，因此可以使用普通分类器的方法来估计$p(s|x)$，进而得到$p(y|x)$。同时提供了三种方法来估计这个常数，最后，还对先验$p(y)$的估计提供了思路。
+Learning a traditional classifier   概念定义
+ $x$ 表示一个样本，$y$ 表示其label（0或者1），$s$表示是否被select 那么，在PU问题中，当$s =1 $时，一定有$y = 1$ $P(s = 1| x,y=0) = 0 $ 一定成立    两种采样假设
+ signle-training-set  所有的样本都是从$(x,y,s)$这个三元组的分布中采样的   case-control  两个数据集（正类，未标记）是从三元组中独立的抽样出来的。当采样正类时被称为case，采样未标记数据时称为contaminated controls   这两种假设有很明显的区别。总的来说，第一种假设比第二种假设要严格得多，也就能提供更多的信息：  两种假设都能让我们估计$p(x)$ 但只有在第一种假设下，能够让我们很容易的估计出$p(s = 1)$，因此也更容易估计出$p(y = 1)$，二第二种条件不可以。      基本假设
+ 我们需要训练的传统分类器是：$f(x) = p(y = 1|x)$ 然而，对正类数据没有任何假设的前提下，我们很难得到较好的分类器 因此，论文给出的假设是，正类样本数据是从正类数据中完全随机的抽取出来的。  也就是说，当$y = 1$时，无论$x$取说明值，它们的概率都是相同的：  $p(s = 1| x,y=1) = p(s =1|y=1)$   这个假设被称为selected completedly at random   我们定义一个nontraditional classifier：$g(x) = p(s =1|x)$ 因此，我们需要一些定理来证明如何将非传统的分类器转化为传统的分类器    Lemma：假设SCAR条件成立，那么$p(y = 1|x) = \frac{p(s=1|x)}{c}$，其中$c = p(s=1|y=1)$"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Deep Learning",
+      "item": "https://tech.zealscott.com/deeplearning/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "Learning Classiﬁers from Only Positive and Unlabeled Data",
+      "item": "https://tech.zealscott.com/deeplearning/pulearning/pu-learning/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Learning Classiﬁers from Only Positive and Unlabeled Data",
+  "name": "Learning Classiﬁers from Only Positive and Unlabeled Data",
+  "description": "本文主要考虑在SCAR假设下，证明了普通的分类器和PU分类器只相差一个常数，因此可以使用普通分类器的方法来估计$p(s|x)$，进而得到$p(y|x)$。同时提供了三种方法来估计这个常数，最后，还对先验$p(y)$的估计提供了思路。\nLearning a traditional classifier   概念定义\n $x$ 表示一个样本，$y$ 表示其label（0或者1），$s$表示是否被select 那么，在PU问题中，当$s =1 $时，一定有$y = 1$ $P(s = 1| x,y=0) = 0 $ 一定成立    两种采样假设\n signle-training-set  所有的样本都是从$(x,y,s)$这个三元组的分布中采样的   case-control  两个数据集（正类，未标记）是从三元组中独立的抽样出来的。当采样正类时被称为case，采样未标记数据时称为contaminated controls   这两种假设有很明显的区别。总的来说，第一种假设比第二种假设要严格得多，也就能提供更多的信息：  两种假设都能让我们估计$p(x)$ 但只有在第一种假设下，能够让我们很容易的估计出$p(s = 1)$，因此也更容易估计出$p(y = 1)$，二第二种条件不可以。      基本假设\n 我们需要训练的传统分类器是：$f(x) = p(y = 1|x)$ 然而，对正类数据没有任何假设的前提下，我们很难得到较好的分类器 因此，论文给出的假设是，正类样本数据是从正类数据中完全随机的抽取出来的。  也就是说，当$y = 1$时，无论$x$取说明值，它们的概率都是相同的：  $p(s = 1| x,y=1) = p(s =1|y=1)$   这个假设被称为selected completedly at random   我们定义一个nontraditional classifier：$g(x) = p(s =1|x)$ 因此，我们需要一些定理来证明如何将非传统的分类器转化为传统的分类器    Lemma：假设SCAR条件成立，那么$p(y = 1|x) = \\frac{p(s=1|x)}{c}$，其中$c = p(s=1|y=1)$",
+  "keywords": [
+    "deep learning", "paper"
+  ],
+  "articleBody": "本文主要考虑在SCAR假设下，证明了普通的分类器和PU分类器只相差一个常数，因此可以使用普通分类器的方法来估计$p(s|x)$，进而得到$p(y|x)$。同时提供了三种方法来估计这个常数，最后，还对先验$p(y)$的估计提供了思路。\nLearning a traditional classifier   概念定义\n $x$ 表示一个样本，$y$ 表示其label（0或者1），$s$表示是否被select 那么，在PU问题中，当$s =1 $时，一定有$y = 1$ $P(s = 1| x,y=0) = 0 $ 一定成立    两种采样假设\n signle-training-set  所有的样本都是从$(x,y,s)$这个三元组的分布中采样的   case-control  两个数据集（正类，未标记）是从三元组中独立的抽样出来的。当采样正类时被称为case，采样未标记数据时称为contaminated controls   这两种假设有很明显的区别。总的来说，第一种假设比第二种假设要严格得多，也就能提供更多的信息：  两种假设都能让我们估计$p(x)$ 但只有在第一种假设下，能够让我们很容易的估计出$p(s = 1)$，因此也更容易估计出$p(y = 1)$，二第二种条件不可以。      基本假设\n 我们需要训练的传统分类器是：$f(x) = p(y = 1|x)$ 然而，对正类数据没有任何假设的前提下，我们很难得到较好的分类器 因此，论文给出的假设是，正类样本数据是从正类数据中完全随机的抽取出来的。  也就是说，当$y = 1$时，无论$x$取说明值，它们的概率都是相同的：  $p(s = 1| x,y=1) = p(s =1|y=1)$   这个假设被称为selected completedly at random   我们定义一个nontraditional classifier：$g(x) = p(s =1|x)$ 因此，我们需要一些定理来证明如何将非传统的分类器转化为传统的分类器    Lemma：假设SCAR条件成立，那么$p(y = 1|x) = \\frac{p(s=1|x)}{c}$，其中$c = p(s=1|y=1)$\n  证明：由于我们的假设是：$p(s = 1| x,y=1) = p(s =1|y=1)$，因此：\n  $$\\begin{aligned}p(s=1 | x) \u0026=p(y=1 \\wedge s=1 | x) \\\n\u0026=p(y=1 | x) p(s=1 | y=1, x) \\\n\u0026=p(y=1 | x) p(s=1 | y=1) \\end{aligned}$$\n      将我们的分类器带入为：$f(x) = \\frac{g(x)}{p(s=1|y=1)}$\n  这里可以得到几个结论：\n $f$是$g$的单调递增函数，因此，如果我们只需要对$x$进行rank排序，那么直接可以用$g$代替$f$ $g \\le p(s=1|y=1)$恒成立。这也是很显然的，同时，我们可以定义$c = p(s=1|y=1)$为一个常数。     如何来估计$c$呢？一般采用交叉验证，设交叉验证集合为$P$\n  第一种方式是直接在正类数据集中进行抽样\n 令$P$是未标记数据集$V$的一个子集，且全是正类，因此，我们可以估计$c = p(s=1|y=1)$为$e_1$ $e_1 = \\frac{1}{n}\\sum_{x\\in P} g(x) = \\frac{1}{n}\\sum_{x\\in P} p(s=1|y=1)$ 也就是用均值来估计概率（证明很容易，见论文）    第二种方式是在两个样本集中分别进行抽样\n  $e_2 =\\sum_{x\\in P} g(x) /\\sum_{x\\in V} g(x)$\n  这个估计其实和$e_1$基本相同，这是因为：$E(\\sum_{x\\in V}g(x)) = p(s=1)m = E[n|m]$\n  其中$m$是$V$的数量，$n$是$P$的数量\n    第三种方式是根据$g \\le p(s=1|y=1)$的结论，估计$e_3 = \\max_{x\\in V}g(x)$\n    那么，这三种估计方式哪一个更好呢？\n 显然，如果我们的分类器能做到$g(x) = p(s =1|x)$，那么第一种估计一定是正确的，但现实中分类器是从一个有限的训练集中进行学习的，同时，模型的选择也是近似； 但比较其他两种方式，第一种估计的方式的方差更小    Weighting unlabeled 论文中对于$h(x,y)$函数进行估计，得到结论：对于在正类中每个样本的权重是1，而在未标记中，正类的权重是$w$，负类的权重是$1-w$\n 我们已经可以估计$c$了，那么希望将尽可能多的概率转为我们已知的估计：  $p(y=1|x,s=0) = \\frac{1-c}{c} \\frac{p(s=1|x)}{1-p(s=1|x)}$ 很显然，$p(y=1|x,s=1)=1$恒成立   因此，对于任意函数$E[h]$的估计为：  $\\frac{1}{m} (\\sum\\limits_{x,s=1}h(x,1) + \\sum\\limits_{x,s=0}w(x)h(x,1) + (1-w(x))h(x,0))$ 其中权重$w = p(y=1|x,s=0)$ 观察该式我们可以发现，在$h$的估计中，在正类中的每个样本权重为1，而在未标记中，正类的权重是$w$，负类的权重是$1-w$   因此，我们可以改写$h$使得变为一个learning algorithm，有两种思路，一种是直接对$h$进行估计，然后再用以上的式子取平均；第二种方式是在估计时就根据以上的式子对不同的样本取不同的权重 考虑一种特殊的情况：$h(x,y) = y$，也就是对$p(y)$ 进行估计，那么很显然：  $E[y] = p(y =1) = \\frac{1}{m}(n + \\sum\\limits_{x,s=0} w(x))$   另外一种估计$p(y) =1$的方法是直接用我们之前的公式：  $c = \\frac{p(s=1 \\wedge y=1)}{p(y=1)}, \\hat{c} = \\frac{1}{n}\\sum_{x\\in P} g(x), p(s=1 \\wedge y=1) = \\frac{n}{m}$ 因此可以得到估计值为：$\\frac{n^2}{m \\sum_{x\\in P}g(x)}$    Experiment 作者自己收集了SwissProt数据集，符合case-control的假设\n U：是未标记数据集  Q：未标记数据集中的正类 N：未标记数据集中的负类   P：是正类数据集  论文中做了如下的对比实验：\n 标准的分类问题（P+Q vs N），分类阈值为0.5  使用libSVM进行训练   在PU问题中先学习分类器，然后再重新调整权重（P vs U），分类阈值为0.5c  使用Platt scaling得到概率输出$p(s=1|x)$，根据分类阈值进行分类（需要对c进行估计）   先对未标记数据调整权重，再学习分类器（P vs U），分类阈值为0.5  首先用Platt scaling得到概率估计，并转为权重：  $w = p(y=1|x,s=0) = \\frac{1-c}{c} \\frac{p(s=1|x)}{1-p(s=1|x)}$   再对每个样本赋予不同的权重（需要对c进行估计），重新使用libSVM进行训练   使用biased SVM进行学习，分类阈值为0  对不同的样本设置不同的权重，重复训练多次，每次用70%作为训练，20%作为验证，得到最好的参数后再对90%的所有训练数据进行训练（10%是test data）    Related work 主要有两种方法处理PU问题\n 首先用某些启发式方法看未标记中的数据哪些是负类，然后再用常见的分类方法进行学习 对未标记数据的每个样本设置不同的权重（表示是负类的可能性大小），然后将未标记数据看作是加权的负样本数据，再进行训练 第三种方法与论文中的方法类似  首先将未标记数据看成是正类样本和负类样本的加权 提供一种计算权重的方式，同时，对于不同的样本，权重也不一样    其中第一种方法可以看成是第二种方法的特例，因为权重可以取1或者0\nBiased SVM 优化目标函数：\n$$\\min \\frac{1}{2} ||w||^2 + C_P\\sum_{i\\in P} z_i + C_U\\sum_{i\\in U} z_i$$\n$$s.t. \\quad y_i(wx+b) \\ge 1-z_i$$\n同时，$C_P$一般来说惩罚要比$C_U$大\nSummary 这篇文章最重要的地方是证明了$p(y = 1|x) = \\frac{p(s=1|x)}{c}$。在PU问题中，我们很容易使用常见的分类器得到输出概率$p(s|x)$，这样通过估计常数c（直接取概率的均值），我们就能得到普通的二分类器。\n另外一种方法是，得到输出概率$p(s|x)$后，再根据公式$w = p(y=1|x,s=0) = \\frac{1-c}{c} \\frac{p(s=1|x)}{1-p(s=1|x)}$转换为权重，对每个样本分配不同的权重再进行训练。\nReference  Learning Classiﬁers from Only Positive and Unlabeled Data SwissProt records dataset Platt scaling  ",
+  "wordCount" : "295",
+  "inLanguage": "en",
+  "datePublished": "2019-07-28T21:00:30+08:00",
+  "dateModified": "2019-07-28T21:00:30+08:00",
+  "author":{
+    "@type": "Person",
+    "name": "Scott Du"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://tech.zealscott.com/deeplearning/pulearning/pu-learning/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Scott'Log",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tech.zealscott.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://tech.zealscott.com" accesskey="h" title="Scott&#39;Log (Alt + H)">Scott&#39;Log</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://tech.zealscott.com/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/deeplearning/" title="Deep Learning">
+                    <span>Deep Learning</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/curriculum/" title="Curriculum">
+                    <span>Curriculum</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/misc/" title="Misc">
+                    <span>Misc</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title">
+      Learning Classiﬁers from Only Positive and Unlabeled Data
+    </h1>
+    <div class="post-meta"><span title='2019-07-28 21:00:30 +0800 CST'>July 28, 2019</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Scott Du
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#learning-a-traditional-classifier" aria-label="Learning a traditional classifier">Learning a traditional classifier</a></li>
+                <li>
+                    <a href="#weighting-unlabeled" aria-label="Weighting unlabeled">Weighting unlabeled</a></li>
+                <li>
+                    <a href="#experiment" aria-label="Experiment">Experiment</a></li>
+                <li>
+                    <a href="#related-work" aria-label="Related work">Related work</a><ul>
+                        
+                <li>
+                    <a href="#biased-svm" aria-label="Biased SVM">Biased SVM</a></li></ul>
+                </li>
+                <li>
+                    <a href="#summary" aria-label="Summary">Summary</a></li>
+                <li>
+                    <a href="#reference" aria-label="Reference">Reference</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>本文主要考虑在<code>SCAR</code>假设下，证明了普通的分类器和PU分类器只相差一个常数，因此可以使用普通分类器的方法来估计$p(s|x)$，进而得到$p(y|x)$。同时提供了三种方法来估计这个常数，最后，还对先验$p(y)$的估计提供了思路。</p>
+<h2 id="learning-a-traditional-classifier">Learning a traditional classifier<a hidden class="anchor" aria-hidden="true" href="#learning-a-traditional-classifier">#</a></h2>
+<ol>
+<li>
+<p>概念定义</p>
+<ul>
+<li>$x$ 表示一个样本，$y$ 表示其label（0或者1），$s$表示是否被select</li>
+<li>那么，在PU问题中，当$s =1 $时，一定有$y = 1$</li>
+<li>$P(s = 1| x,y=0) = 0 $ 一定成立</li>
+</ul>
+</li>
+<li>
+<p>两种采样假设</p>
+<ul>
+<li><em>signle-training-set</em>
+<ul>
+<li>所有的样本都是从$(x,y,s)$这个三元组的分布中采样的</li>
+</ul>
+</li>
+<li><em>case-control</em>
+<ul>
+<li>两个数据集（正类，未标记）是从三元组中独立的抽样出来的。当采样正类时被称为<code>case</code>，采样未标记数据时称为<code>contaminated controls</code></li>
+</ul>
+</li>
+<li>这两种假设有很明显的区别。总的来说，第一种假设比第二种假设要严格得多，也就能提供更多的信息：
+<ul>
+<li>两种假设都能让我们估计$p(x)$</li>
+<li>但只有在第一种假设下，能够让我们很容易的估计出$p(s = 1)$，因此也更容易估计出$p(y = 1)$，二第二种条件不可以。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>基本假设</p>
+<ul>
+<li>我们需要训练的传统分类器是：$f(x) = p(y = 1|x)$</li>
+<li>然而，对正类数据没有任何假设的前提下，我们很难得到较好的分类器</li>
+<li>因此，论文给出的假设是，正类样本数据是从正类数据中完全随机的抽取出来的。
+<ul>
+<li>也就是说，当$y = 1$时，无论$x$取说明值，它们的概率都是相同的：
+<ul>
+<li>$p(s = 1| x,y=1) = p(s =1|y=1)$</li>
+</ul>
+</li>
+<li>这个假设被称为<code>selected completedly at random</code></li>
+</ul>
+</li>
+<li>我们定义一个<code>nontraditional classifier</code>：$g(x) = p(s =1|x)$</li>
+<li>因此，我们需要一些定理来证明如何将非传统的分类器转化为传统的分类器</li>
+</ul>
+</li>
+<li>
+<p><strong>Lemma</strong>：假设<code>SCAR</code>条件成立，那么$p(y = 1|x) = \frac{p(s=1|x)}{c}$，其中$c = p(s=1|y=1)$</p>
+<ul>
+<li>
+<p>证明：由于我们的假设是：$p(s = 1| x,y=1) = p(s =1|y=1)$，因此：</p>
+</li>
+<li>
+<p>$$\begin{aligned}p(s=1 | x) &amp;=p(y=1 \wedge s=1 | x) \<br>
+&amp;=p(y=1 | x) p(s=1 | y=1, x) \<br>
+&amp;=p(y=1 | x) p(s=1 | y=1)
+\end{aligned}$$</p>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li>
+<p>将我们的分类器带入为：$f(x) = \frac{g(x)}{p(s=1|y=1)}$</p>
+</li>
+<li>
+<p>这里可以得到几个结论：</p>
+<ol>
+<li>$f$是$g$的单调递增函数，因此，如果我们只需要对$x$进行rank排序，那么直接可以用$g$代替$f$</li>
+<li>$g \le p(s=1|y=1)$恒成立。这也是很显然的，同时，我们可以定义$c = p(s=1|y=1)$为一个常数。</li>
+</ol>
+</li>
+</ul>
+<ol start="5">
+<li>
+<p>如何来估计$c$呢？一般采用交叉验证，设交叉验证集合为$P$</p>
+<ol>
+<li>
+<p>第一种方式是直接在正类数据集中进行抽样</p>
+<ul>
+<li>令$P$是未标记数据集$V$的一个子集，且全是正类，因此，我们可以估计$c = p(s=1|y=1)$为$e_1$</li>
+<li>$e_1 = \frac{1}{n}\sum_{x\in P} g(x)  = \frac{1}{n}\sum_{x\in P} p(s=1|y=1)$</li>
+<li>也就是用均值来估计概率（证明很容易，见论文）</li>
+</ul>
+</li>
+<li>
+<p>第二种方式是在两个样本集中分别进行抽样</p>
+<ul>
+<li>
+<p>$e_2 =\sum_{x\in P} g(x)  /\sum_{x\in V} g(x)$</p>
+</li>
+<li>
+<p>这个估计其实和$e_1$基本相同，这是因为：$E(\sum_{x\in V}g(x)) = p(s=1)m = E[n|m]$</p>
+</li>
+<li>
+<p>其中$m$是$V$的数量，$n$是$P$的数量</p>
+</li>
+</ul>
+</li>
+<li>
+<p>第三种方式是根据$g \le p(s=1|y=1)$的结论，估计$e_3 = \max_{x\in V}g(x)$</p>
+</li>
+</ol>
+</li>
+<li>
+<p>那么，这三种估计方式哪一个更好呢？</p>
+<ul>
+<li>显然，如果我们的分类器能做到$g(x) = p(s =1|x)$，那么第一种估计一定是正确的，但现实中分类器是从一个有限的训练集中进行学习的，同时，模型的选择也是近似；</li>
+<li>但比较其他两种方式，第一种估计的方式的方差更小</li>
+</ul>
+</li>
+</ol>
+<h2 id="weighting-unlabeled">Weighting unlabeled<a hidden class="anchor" aria-hidden="true" href="#weighting-unlabeled">#</a></h2>
+<p>论文中对于$h(x,y)$函数进行估计，得到结论：对于在正类中每个样本的权重是1，而在未标记中，正类的权重是$w$，负类的权重是$1-w$</p>
+<ol>
+<li>我们已经可以估计$c$了，那么希望将尽可能多的概率转为我们已知的估计：
+<ul>
+<li>$p(y=1|x,s=0) = \frac{1-c}{c} \frac{p(s=1|x)}{1-p(s=1|x)}$</li>
+<li>很显然，$p(y=1|x,s=1)=1$恒成立</li>
+</ul>
+</li>
+<li>因此，对于任意函数$E[h]$的估计为：
+<ul>
+<li>$\frac{1}{m} (\sum\limits_{x,s=1}h(x,1) + \sum\limits_{x,s=0}w(x)h(x,1) + (1-w(x))h(x,0))$</li>
+<li>其中权重$w = p(y=1|x,s=0)$</li>
+<li>观察该式我们可以发现，在$h$的估计中，在正类中的每个样本权重为1，而在未标记中，正类的权重是$w$，负类的权重是$1-w$</li>
+</ul>
+</li>
+<li>因此，我们可以改写$h$使得变为一个learning algorithm，有两种思路，一种是直接对$h$进行估计，然后再用以上的式子取平均；第二种方式是在估计时就根据以上的式子对不同的样本取不同的权重</li>
+<li>考虑一种特殊的情况：$h(x,y) = y$，也就是对$p(y)$ 进行估计，那么很显然：
+<ul>
+<li>$E[y] = p(y =1) = \frac{1}{m}(n + \sum\limits_{x,s=0} w(x))$</li>
+</ul>
+</li>
+<li>另外一种估计$p(y) =1$的方法是直接用我们之前的公式：
+<ul>
+<li>$c = \frac{p(s=1 \wedge  y=1)}{p(y=1)}, \hat{c} =  \frac{1}{n}\sum_{x\in P} g(x), p(s=1 \wedge y=1) = \frac{n}{m}$</li>
+<li>因此可以得到估计值为：$\frac{n^2}{m \sum_{x\in P}g(x)}$</li>
+</ul>
+</li>
+</ol>
+<h2 id="experiment">Experiment<a hidden class="anchor" aria-hidden="true" href="#experiment">#</a></h2>
+<p>作者自己收集了<code>SwissProt</code>数据集，符合<code>case-control</code>的假设</p>
+<ul>
+<li><code>U</code>：是未标记数据集
+<ul>
+<li><code>Q</code>：未标记数据集中的正类</li>
+<li><code>N</code>：未标记数据集中的负类</li>
+</ul>
+</li>
+<li><code>P</code>：是正类数据集</li>
+</ul>
+<p>论文中做了如下的对比实验：</p>
+<ol>
+<li>标准的分类问题（P+Q vs N），分类阈值为0.5
+<ul>
+<li>使用libSVM进行训练</li>
+</ul>
+</li>
+<li>在PU问题中先学习分类器，然后再重新调整权重（P vs U），分类阈值为0.5c
+<ul>
+<li>使用<code>Platt scaling</code>得到概率输出$p(s=1|x)$，根据分类阈值进行分类（需要对c进行估计）</li>
+</ul>
+</li>
+<li>先对未标记数据调整权重，再学习分类器（P vs U），分类阈值为0.5
+<ul>
+<li>首先用<code>Platt scaling</code>得到概率估计，并转为权重：
+<ul>
+<li>$w = p(y=1|x,s=0) = \frac{1-c}{c} \frac{p(s=1|x)}{1-p(s=1|x)}$</li>
+</ul>
+</li>
+<li>再对每个样本赋予不同的权重（需要对c进行估计），重新使用libSVM进行训练</li>
+</ul>
+</li>
+<li>使用biased SVM进行学习，分类阈值为0
+<ul>
+<li>对不同的样本设置不同的权重，重复训练多次，每次用70%作为训练，20%作为验证，得到最好的参数后再对90%的所有训练数据进行训练（10%是test data）</li>
+</ul>
+</li>
+</ol>
+<p><img src="/images/deeplearning/pulearning/pu1.png" width=50% ></p>
+<h2 id="related-work">Related work<a hidden class="anchor" aria-hidden="true" href="#related-work">#</a></h2>
+<p>主要有两种方法处理PU问题</p>
+<ol>
+<li>首先用某些启发式方法看未标记中的数据哪些是负类，然后再用常见的分类方法进行学习</li>
+<li>对未标记数据的每个样本设置不同的权重（表示是负类的可能性大小），然后将未标记数据看作是加权的负样本数据，再进行训练</li>
+<li>第三种方法与论文中的方法类似
+<ul>
+<li>首先将未标记数据看成是正类样本和负类样本的加权</li>
+<li>提供一种计算权重的方式，同时，对于不同的样本，权重也不一样</li>
+</ul>
+</li>
+</ol>
+<p>其中第一种方法可以看成是第二种方法的特例，因为权重可以取1或者0</p>
+<h3 id="biased-svm">Biased SVM<a hidden class="anchor" aria-hidden="true" href="#biased-svm">#</a></h3>
+<p>优化目标函数：</p>
+<p>$$\min \frac{1}{2} ||w||^2 + C_P\sum_{i\in P} z_i + C_U\sum_{i\in U} z_i$$</p>
+<p>$$s.t. \quad y_i(wx+b) \ge 1-z_i$$</p>
+<p>同时，$C_P$一般来说惩罚要比$C_U$大</p>
+<h2 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h2>
+<p>这篇文章最重要的地方是证明了$p(y = 1|x) = \frac{p(s=1|x)}{c}$。在PU问题中，我们很容易使用常见的分类器得到输出概率$p(s|x)$，这样通过估计常数c（直接取概率的均值），我们就能得到普通的二分类器。</p>
+<p>另外一种方法是，得到输出概率$p(s|x)$后，再根据公式$w = p(y=1|x,s=0) = \frac{1-c}{c} \frac{p(s=1|x)}{1-p(s=1|x)}$转换为权重，对每个样本分配不同的权重再进行训练。</p>
+<h2 id="reference">Reference<a hidden class="anchor" aria-hidden="true" href="#reference">#</a></h2>
+<ol>
+<li>Learning Classiﬁers from Only Positive and Unlabeled Data</li>
+<li><a href="http://cseweb.ucsd.edu/~elkan/posonly/">SwissProt records dataset</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Platt_scaling">Platt scaling</a></li>
+</ol>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://tech.zealscott.com/tags/deep-learning/">deep learning</a></li>
+      <li><a href="https://tech.zealscott.com/tags/paper/">paper</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://tech.zealscott.com/deeplearning/pulearning/pu-learning-non-convex/">
+    <span class="title">«</span>
+    <br>
+    <span>Analysis of Learning from Positive and Unlabeled Data</span>
+  </a>
+  <a class="next" href="https://tech.zealscott.com/misc/thingworx-installation/">
+    <span class="title">»</span>
+    <br>
+    <span>ThingWorx 安装及部署</span>
+  </a>
+</nav>
+
+
+<div class="share-buttons">
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Learning Classiﬁers from Only Positive and Unlabeled Data on twitter"
+        href="https://twitter.com/intent/tweet/?text=Learning%20Classi%ef%ac%81ers%20from%20Only%20Positive%20and%20Unlabeled%20Data&amp;url=https%3a%2f%2ftech.zealscott.com%2fdeeplearning%2fpulearning%2fpu-learning%2f&amp;hashtags=deeplearning%2cpaper">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-253.927,424.544c135.939,0 210.268,-112.643 210.268,-210.268c0,-3.218 0,-6.437 -0.153,-9.502c14.406,-10.421 26.973,-23.448 36.935,-38.314c-13.18,5.824 -27.433,9.809 -42.452,11.648c15.326,-9.196 26.973,-23.602 32.49,-40.92c-14.252,8.429 -30.038,14.56 -46.896,17.931c-13.487,-14.406 -32.644,-23.295 -53.946,-23.295c-40.767,0 -73.87,33.104 -73.87,73.87c0,5.824 0.613,11.494 1.992,16.858c-61.456,-3.065 -115.862,-32.49 -152.337,-77.241c-6.284,10.881 -9.962,23.601 -9.962,37.088c0,25.594 13.027,48.276 32.95,61.456c-12.107,-0.307 -23.448,-3.678 -33.41,-9.196l0,0.92c0,35.862 25.441,65.594 59.311,72.49c-6.13,1.686 -12.72,2.606 -19.464,2.606c-4.751,0 -9.348,-0.46 -13.946,-1.38c9.349,29.426 36.628,50.728 68.965,51.341c-25.287,19.771 -57.164,31.571 -91.8,31.571c-5.977,0 -11.801,-0.306 -17.625,-1.073c32.337,21.15 71.264,33.41 112.95,33.41Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Learning Classiﬁers from Only Positive and Unlabeled Data on linkedin"
+        href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https%3a%2f%2ftech.zealscott.com%2fdeeplearning%2fpulearning%2fpu-learning%2f&amp;title=Learning%20Classi%ef%ac%81ers%20from%20Only%20Positive%20and%20Unlabeled%20Data&amp;summary=Learning%20Classi%ef%ac%81ers%20from%20Only%20Positive%20and%20Unlabeled%20Data&amp;source=https%3a%2f%2ftech.zealscott.com%2fdeeplearning%2fpulearning%2fpu-learning%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-288.985,423.278l0,-225.717l-75.04,0l0,225.717l75.04,0Zm270.539,0l0,-129.439c0,-69.333 -37.018,-101.586 -86.381,-101.586c-39.804,0 -57.634,21.891 -67.617,37.266l0,-31.958l-75.021,0c0.995,21.181 0,225.717 0,225.717l75.02,0l0,-126.056c0,-6.748 0.486,-13.492 2.474,-18.315c5.414,-13.475 17.767,-27.434 38.494,-27.434c27.135,0 38.007,20.707 38.007,51.037l0,120.768l75.024,0Zm-307.552,-334.556c-25.674,0 -42.448,16.879 -42.448,39.002c0,21.658 16.264,39.002 41.455,39.002l0.484,0c26.165,0 42.452,-17.344 42.452,-39.002c-0.485,-22.092 -16.241,-38.954 -41.943,-39.002Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Learning Classiﬁers from Only Positive and Unlabeled Data on reddit"
+        href="https://reddit.com/submit?url=https%3a%2f%2ftech.zealscott.com%2fdeeplearning%2fpulearning%2fpu-learning%2f&title=Learning%20Classi%ef%ac%81ers%20from%20Only%20Positive%20and%20Unlabeled%20Data">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-3.446,265.638c0,-22.964 -18.616,-41.58 -41.58,-41.58c-11.211,0 -21.361,4.457 -28.841,11.666c-28.424,-20.508 -67.586,-33.757 -111.204,-35.278l18.941,-89.121l61.884,13.157c0.756,15.734 13.642,28.29 29.56,28.29c16.407,0 29.706,-13.299 29.706,-29.701c0,-16.403 -13.299,-29.702 -29.706,-29.702c-11.666,0 -21.657,6.792 -26.515,16.578l-69.105,-14.69c-1.922,-0.418 -3.939,-0.042 -5.585,1.036c-1.658,1.073 -2.811,2.761 -3.224,4.686l-21.152,99.438c-44.258,1.228 -84.046,14.494 -112.837,35.232c-7.468,-7.164 -17.589,-11.591 -28.757,-11.591c-22.965,0 -41.585,18.616 -41.585,41.58c0,16.896 10.095,31.41 24.568,37.918c-0.639,4.135 -0.99,8.328 -0.99,12.576c0,63.977 74.469,115.836 166.33,115.836c91.861,0 166.334,-51.859 166.334,-115.836c0,-4.218 -0.347,-8.387 -0.977,-12.493c14.564,-6.47 24.735,-21.034 24.735,-38.001Zm-119.474,108.193c-20.27,20.241 -59.115,21.816 -70.534,21.816c-11.428,0 -50.277,-1.575 -70.522,-21.82c-3.007,-3.008 -3.007,-7.882 0,-10.889c3.003,-2.999 7.882,-3.003 10.885,0c12.777,12.781 40.11,17.317 59.637,17.317c19.522,0 46.86,-4.536 59.657,-17.321c3.016,-2.999 7.886,-2.995 10.885,0.008c3.008,3.011 3.003,7.882 -0.008,10.889Zm-5.23,-48.781c-16.373,0 -29.701,-13.324 -29.701,-29.698c0,-16.381 13.328,-29.714 29.701,-29.714c16.378,0 29.706,13.333 29.706,29.714c0,16.374 -13.328,29.698 -29.706,29.698Zm-160.386,-29.702c0,-16.381 13.328,-29.71 29.714,-29.71c16.369,0 29.689,13.329 29.689,29.71c0,16.373 -13.32,29.693 -29.689,29.693c-16.386,0 -29.714,-13.32 -29.714,-29.693Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Learning Classiﬁers from Only Positive and Unlabeled Data on facebook"
+        href="https://facebook.com/sharer/sharer.php?u=https%3a%2f%2ftech.zealscott.com%2fdeeplearning%2fpulearning%2fpu-learning%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-106.468,0l0,-192.915l66.6,0l12.672,-82.621l-79.272,0l0,-53.617c0,-22.603 11.073,-44.636 46.58,-44.636l36.042,0l0,-70.34c0,0 -32.71,-5.582 -63.982,-5.582c-65.288,0 -107.96,39.569 -107.96,111.204l0,62.971l-72.573,0l0,82.621l72.573,0l0,192.915l-191.104,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Learning Classiﬁers from Only Positive and Unlabeled Data on whatsapp"
+        href="https://api.whatsapp.com/send?text=Learning%20Classi%ef%ac%81ers%20from%20Only%20Positive%20and%20Unlabeled%20Data%20-%20https%3a%2f%2ftech.zealscott.com%2fdeeplearning%2fpulearning%2fpu-learning%2f">
+        <svg version="1.1" viewBox="0 0 512 512" xml:space="preserve">
+            <path
+                d="M449.446,0c34.525,0 62.554,28.03 62.554,62.554l0,386.892c0,34.524 -28.03,62.554 -62.554,62.554l-386.892,0c-34.524,0 -62.554,-28.03 -62.554,-62.554l0,-386.892c0,-34.524 28.029,-62.554 62.554,-62.554l386.892,0Zm-58.673,127.703c-33.842,-33.881 -78.847,-52.548 -126.798,-52.568c-98.799,0 -179.21,80.405 -179.249,179.234c-0.013,31.593 8.241,62.428 23.927,89.612l-25.429,92.884l95.021,-24.925c26.181,14.28 55.659,21.807 85.658,21.816l0.074,0c98.789,0 179.206,-80.413 179.247,-179.243c0.018,-47.895 -18.61,-92.93 -52.451,-126.81Zm-126.797,275.782l-0.06,0c-26.734,-0.01 -52.954,-7.193 -75.828,-20.767l-5.441,-3.229l-56.386,14.792l15.05,-54.977l-3.542,-5.637c-14.913,-23.72 -22.791,-51.136 -22.779,-79.287c0.033,-82.142 66.867,-148.971 149.046,-148.971c39.793,0.014 77.199,15.531 105.329,43.692c28.128,28.16 43.609,65.592 43.594,105.4c-0.034,82.149 -66.866,148.983 -148.983,148.984Zm81.721,-111.581c-4.479,-2.242 -26.499,-13.075 -30.604,-14.571c-4.105,-1.495 -7.091,-2.241 -10.077,2.241c-2.986,4.483 -11.569,14.572 -14.182,17.562c-2.612,2.988 -5.225,3.364 -9.703,1.12c-4.479,-2.241 -18.91,-6.97 -36.017,-22.23c-13.314,-11.876 -22.304,-26.542 -24.916,-31.026c-2.612,-4.484 -0.279,-6.908 1.963,-9.14c2.016,-2.007 4.48,-5.232 6.719,-7.847c2.24,-2.615 2.986,-4.484 4.479,-7.472c1.493,-2.99 0.747,-5.604 -0.374,-7.846c-1.119,-2.241 -10.077,-24.288 -13.809,-33.256c-3.635,-8.733 -7.327,-7.55 -10.077,-7.688c-2.609,-0.13 -5.598,-0.158 -8.583,-0.158c-2.986,0 -7.839,1.121 -11.944,5.604c-4.105,4.484 -15.675,15.32 -15.675,37.364c0,22.046 16.048,43.342 18.287,46.332c2.24,2.99 31.582,48.227 76.511,67.627c10.685,4.615 19.028,7.371 25.533,9.434c10.728,3.41 20.492,2.929 28.209,1.775c8.605,-1.285 26.499,-10.833 30.231,-21.295c3.732,-10.464 3.732,-19.431 2.612,-21.298c-1.119,-1.869 -4.105,-2.99 -8.583,-5.232Z" />
+        </svg>
+    </a>
+    <a target="_blank" rel="noopener noreferrer" aria-label="share Learning Classiﬁers from Only Positive and Unlabeled Data on telegram"
+        href="https://telegram.me/share/url?text=Learning%20Classi%ef%ac%81ers%20from%20Only%20Positive%20and%20Unlabeled%20Data&amp;url=https%3a%2f%2ftech.zealscott.com%2fdeeplearning%2fpulearning%2fpu-learning%2f">
+        <svg version="1.1" xml:space="preserve" viewBox="2 2 28 28">
+            <path
+                d="M26.49,29.86H5.5a3.37,3.37,0,0,1-2.47-1,3.35,3.35,0,0,1-1-2.47V5.48A3.36,3.36,0,0,1,3,3,3.37,3.37,0,0,1,5.5,2h21A3.38,3.38,0,0,1,29,3a3.36,3.36,0,0,1,1,2.46V26.37a3.35,3.35,0,0,1-1,2.47A3.38,3.38,0,0,1,26.49,29.86Zm-5.38-6.71a.79.79,0,0,0,.85-.66L24.73,9.24a.55.55,0,0,0-.18-.46.62.62,0,0,0-.41-.17q-.08,0-16.53,6.11a.59.59,0,0,0-.41.59.57.57,0,0,0,.43.52l4,1.24,1.61,4.83a.62.62,0,0,0,.63.43.56.56,0,0,0,.4-.17L16.54,20l4.09,3A.9.9,0,0,0,21.11,23.15ZM13.8,20.71l-1.21-4q8.72-5.55,8.78-5.55c.15,0,.23,0,.23.16a.18.18,0,0,1,0,.06s-2.51,2.3-7.52,6.8Z" />
+        </svg>
+    </a>
+</div>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://tech.zealscott.com">Scott&#39;Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerText = 'copy';
+
+        function copyingDone() {
+            copybutton.innerText = 'copied!';
+            setTimeout(() => {
+                copybutton.innerText = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

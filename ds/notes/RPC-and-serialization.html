@@ -1,0 +1,1049 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>RPC And Serialization · Distribution System</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="spark.html" />
+    
+    
+    <link rel="prev" href="mrcoding.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Notes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Distribution-File-System-DFS.html">
+            
+                <a href="Distribution-File-System-DFS.html">
+            
+                    
+                    Distribution File System DFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="mapreduce.html">
+            
+                <a href="mapreduce.html">
+            
+                    
+                    MapReduce处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="mrcoding.html">
+            
+                <a href="mrcoding.html">
+            
+                    
+                    MapReduce编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.4" data-path="RPC-and-serialization.html">
+            
+                <a href="RPC-and-serialization.html">
+            
+                    
+                    RPC And Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="spark.html">
+            
+                <a href="spark.html">
+            
+                    
+                    Spark 处理框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="sparkcoding.html">
+            
+                <a href="sparkcoding.html">
+            
+                    
+                    Spark 编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="yarn.html">
+            
+                <a href="yarn.html">
+            
+                    
+                    Yarn 资源管理框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="zookeeper.html">
+            
+                <a href="zookeeper.html">
+            
+                    
+                    ZooKeeper 元数据管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="pregel.html">
+            
+                <a href="pregel.html">
+            
+                    
+                    分布式图处理系统--Pregel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="flink.html">
+            
+                <a href="flink.html">
+            
+                    
+                    批流融合系统--Flink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="beam.html">
+            
+                <a href="beam.html">
+            
+                    
+                    批流融合系统--展望
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="ps.html">
+            
+                <a href="ps.html">
+            
+                    
+                    机器学习系统--Parameter Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="graphlab.html">
+            
+                <a href="graphlab.html">
+            
+                    
+                    机器学习系统--GraphLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="mahout.html">
+            
+                <a href="mahout.html">
+            
+                    
+                    机器学习系统--mahout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="stream.html">
+            
+                <a href="stream.html">
+            
+                    
+                    流计算系统概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Lab
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../project/rpc.html">
+            
+                <a href="../project/rpc.html">
+            
+                    
+                    RPC model in Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../project/hadoop.html">
+            
+                <a href="../project/hadoop.html">
+            
+                    
+                    hadoop安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../project/hadoop1.html">
+            
+                <a href="../project/hadoop1.html">
+            
+                    
+                    hadoop编程实践（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../project/hadoop2.html">
+            
+                <a href="../project/hadoop2.html">
+            
+                    
+                    hadoop编程实践（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../project/hadoop-coding.html">
+            
+                <a href="../project/hadoop-coding.html">
+            
+                    
+                    hadoop编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../project/hadoop-recap.html">
+            
+                <a href="../project/hadoop-recap.html">
+            
+                    
+                    Hadoop 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../project/spark-installation.html">
+            
+                <a href="../project/spark-installation.html">
+            
+                    
+                    spark安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../project/spark1.html">
+            
+                <a href="../project/spark1.html">
+            
+                    
+                    spark编程实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../project/spark2.html">
+            
+                <a href="../project/spark2.html">
+            
+                    
+                    spark编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../project/spark-recap.html">
+            
+                <a href="../project/spark-recap.html">
+            
+                    
+                    Spark 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../project/docker1.html">
+            
+                <a href="../project/docker1.html">
+            
+                    
+                    使用 Docker 配置 hadoop/spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../project/docker2.html">
+            
+                <a href="../project/docker2.html">
+            
+                    
+                    使用 docker 搭建 spark(2.3.1) 集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../project/zookeeper.html">
+            
+                <a href="../project/zookeeper.html">
+            
+                    
+                    ZooKeeper配置及简单使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../project/yarn.html">
+            
+                <a href="../project/yarn.html">
+            
+                    
+                    Yarn框架下的系统部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../project/storm-installation.html">
+            
+                <a href="../project/storm-installation.html">
+            
+                    
+                    Storm部署与运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../project/storm-coding.html">
+            
+                <a href="../project/storm-coding.html">
+            
+                    
+                    Storm编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="../project/storm-summary.html">
+            
+                <a href="../project/storm-summary.html">
+            
+                    
+                    Storm 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="../project/sparksteaming.html">
+            
+                <a href="../project/sparksteaming.html">
+            
+                    
+                    SparkSteaming使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="../project/flink-installation.html">
+            
+                <a href="../project/flink-installation.html">
+            
+                    
+                    Flink安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="../project/flink1.html">
+            
+                <a href="../project/flink1.html">
+            
+                    
+                    Flink编程练习（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="../project/flink2.html">
+            
+                <a href="../project/flink2.html">
+            
+                    
+                    Flink编程练习（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="../project/graph-in-hadoop.html">
+            
+                <a href="../project/graph-in-hadoop.html">
+            
+                    
+                    常用图算法实现--Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="../project/graph-in-spark.html">
+            
+                <a href="../project/graph-in-spark.html">
+            
+                    
+                    常用图算法实现--Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="../project/graph-in-flink.html">
+            
+                <a href="../project/graph-in-flink.html">
+            
+                    
+                    常用图算法实现--Flink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="../project/giraph.html">
+            
+                <a href="../project/giraph.html">
+            
+                    
+                    Giraph配置及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="../project/flink-iteration.html">
+            
+                <a href="../project/flink-iteration.html">
+            
+                    
+                    Flink迭代小记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Recap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../recap/fundamental-of-distributed-system.html">
+            
+                <a href="../recap/fundamental-of-distributed-system.html">
+            
+                    
+                    分布式系统基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../recap/batch-system.html">
+            
+                <a href="../recap/batch-system.html">
+            
+                    
+                    批处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../recap/management-system.html">
+            
+                <a href="../recap/management-system.html">
+            
+                    
+                    支持数据管理的底层系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../recap/streaming-system.html">
+            
+                <a href="../recap/streaming-system.html">
+            
+                    
+                    流处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../recap/flink.html">
+            
+                <a href="../recap/flink.html">
+            
+                    
+                    批流融合系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../recap/graph.html">
+            
+                <a href="../recap/graph.html">
+            
+                    
+                    图处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../recap/ml.html">
+            
+                <a href="../recap/ml.html">
+            
+                    
+                    机器学习系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../recap/summary.html">
+            
+                <a href="../recap/summary.html">
+            
+                    
+                    总结与对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >RPC And Serialization</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="socket">Socket</h1>
+<h2 id="using-tcp">using TCP</h2>
+<ul>
+<li><strong>TCP</strong> (Transmission Control Protocol) is a standard that defines how to establish and maintain a network conversation via which application programs can exchange data.</li>
+</ul>
+<h3 id="in-java">In Java</h3>
+<ul>
+<li>need <code>java.net.Socket</code>  and <code>java.net.ServerSocket</code> </li>
+<li>create <code>Server</code> and <code>Client</code> Models</li>
+</ul>
+<h2 id="using-udp">Using UDP</h2>
+<ul>
+<li><strong>UDP</strong> (User Datagram Protocol) is an alternative communications protocol to Transmission Control Protocol (TCP) used primarily for <strong>establishing low-latency and loss-tolerating</strong> connections between applications on the internet.</li>
+</ul>
+<h3 id="in-java">In Java</h3>
+<ul>
+<li>need <code>java.net.*</code>  </li>
+<li>using <code>DatagramPacket</code> and <code>DatagramSocket</code></li>
+</ul>
+<h1 id="rpc">RPC</h1>
+<ul>
+<li><code>Remote Procedure Call</code>&#xFF0C;a pro<ul>
+<li>computer program causes a procedure (subroutine) to execute <strong>in a different address space</strong> (commonly on another computer on a shared network), which is coded as <strong>if it were a normal (local) procedure call</strong>, <em>without the programmer explicitly coding the details for the remote interaction.</em> </li>
+<li>Procedure&#xFF1A;<strong>Client</strong></li>
+<li>Callee procedure&#xFF1A;<strong>Server</strong></li>
+<li>Function or Method&#xFF1A;<strong>Service</strong></li>
+</ul>
+</li>
+<li>call remote function (Method) Behavior like local call</li>
+<li><img src="../images/rpc1.png" alt="rpc"></li>
+<li>How to call function using function name?<ul>
+<li><a href="https://blog.csdn.net/sinat_38259539/article/details/71799078" _target="blank">reflect</a></li>
+<li><a href="https://www.cnblogs.com/xdp-gacl/p/3971367.html" _target="blank">Proxy</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="server">Server</h2>
+<ul>
+<li><strong>need a thread of this method</strong> to wait for response from client(service)</li>
+<li>need the class implement</li>
+<li>need a interface to register this service</li>
+</ul>
+<h2 id="client">Client</h2>
+<ul>
+<li>need the interface of class needed</li>
+<li>need a <em>new Proxy Instance</em>  to proxy this method for client</li>
+</ul>
+<h1 id="serialization">Serialization</h1>
+<p><strong>Serialization</strong> is the process of converting an object into a stream of bytes to store the object or transmit it to memory, a database, or a file.</p>
+<h2 id="module">module</h2>
+<ul>
+<li>IDL&#xFF08;Interface description language&#xFF09;&#x6587;&#x4EF6;<ul>
+<li>&#x53C2;&#x4E0E;&#x901A;&#x8BAF;&#x7684;&#x5404;&#x65B9;&#x9700;&#x8981;&#x5BF9;&#x901A;&#x8BAF;&#x7684;&#x5185;&#x5BB9;&#x9700;&#x8981;&#x505A;&#x76F8;&#x5173;&#x7684;&#x7EA6;&#x5B9A;</li>
+</ul>
+</li>
+<li>IDL Compiler<ul>
+<li>&#x5C06;IDL&#x6587;&#x4EF6;&#x8F6C;&#x6362;&#x6210;&#x5404;&#x8BED;&#x8A00;&#x5BF9;&#x5E94;&#x7684;&#x52A8;&#x6001;&#x5E93;</li>
+</ul>
+</li>
+<li>Stub/Skeleton Lib<ul>
+<li>&#x8D1F;&#x8D23;&#x5E8F;&#x5217;&#x5316;&#x548C;&#x53CD;&#x5E8F;&#x5217;&#x5316;&#x7684;&#x5DE5;&#x4F5C;&#x4EE3;&#x7801;</li>
+</ul>
+</li>
+<li>Client/Server<ul>
+<li>&#x6307;&#x7684;&#x662F;&#x5E94;&#x7528;&#x5C42;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;</li>
+</ul>
+</li>
+<li>&#x5E95;&#x5C42;&#x534F;&#x8BAE;&#x6808;&#x548C;&#x4E92;&#x8054;&#x7F51;</li>
+</ul>
+<h2 id="protocol">Protocol</h2>
+<ul>
+<li>XML</li>
+<li>JSON</li>
+<li>Protobuf</li>
+<li>Thrift</li>
+<li>Avro</li>
+</ul>
+<h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://blog.csdn.net/sinat_38259539/article/details/71799078" _target="blank">reflect in Java</a></li>
+<li><a href="https://www.cnblogs.com/nerxious/archive/2013/01/25/2876489.html" _target="blank">anonymous inner class</a></li>
+<li><a href="https://www.cnblogs.com/xdp-gacl/p/3971367.html" _target="blank">Proxy in Java</a></li>
+<li><a href="https://www.cnblogs.com/dolphin0520/p/3811437.html" _target="blank">abstract and interface</a></li>
+<li><a href="https://www.cnblogs.com/echo-cheng/p/6814909.html" _target="blank">thread start() and runnable</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="mrcoding.html" class="navigation navigation-prev " aria-label="Previous page: MapReduce编程">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="spark.html" class="navigation navigation-next " aria-label="Next page: Spark 处理框架">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"RPC And Serialization","level":"1.2.4","depth":2,"next":{"title":"Spark 处理框架","level":"1.2.5","depth":2,"path":"notes/spark.md","ref":"notes/spark.md","articles":[]},"previous":{"title":"MapReduce编程","level":"1.2.3","depth":2,"path":"notes/mrcoding.md","ref":"notes/mrcoding.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":" ","variables":{},"title":"Distribution System","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"notes/RPC-and-serialization.md","mtime":"2021-01-27T05:46:37.967Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T09:58:50.487Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

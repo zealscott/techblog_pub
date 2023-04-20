@@ -1,0 +1,1220 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Flink安装及使用 · Distribution System</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="flink1.html" />
+    
+    
+    <link rel="prev" href="sparksteaming.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Notes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../notes/Distribution-File-System-DFS.html">
+            
+                <a href="../notes/Distribution-File-System-DFS.html">
+            
+                    
+                    Distribution File System DFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../notes/mapreduce.html">
+            
+                <a href="../notes/mapreduce.html">
+            
+                    
+                    MapReduce处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../notes/mrcoding.html">
+            
+                <a href="../notes/mrcoding.html">
+            
+                    
+                    MapReduce编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../notes/RPC-and-serialization.html">
+            
+                <a href="../notes/RPC-and-serialization.html">
+            
+                    
+                    RPC And Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../notes/spark.html">
+            
+                <a href="../notes/spark.html">
+            
+                    
+                    Spark 处理框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../notes/sparkcoding.html">
+            
+                <a href="../notes/sparkcoding.html">
+            
+                    
+                    Spark 编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../notes/yarn.html">
+            
+                <a href="../notes/yarn.html">
+            
+                    
+                    Yarn 资源管理框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../notes/zookeeper.html">
+            
+                <a href="../notes/zookeeper.html">
+            
+                    
+                    ZooKeeper 元数据管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../notes/pregel.html">
+            
+                <a href="../notes/pregel.html">
+            
+                    
+                    分布式图处理系统--Pregel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../notes/flink.html">
+            
+                <a href="../notes/flink.html">
+            
+                    
+                    批流融合系统--Flink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../notes/beam.html">
+            
+                <a href="../notes/beam.html">
+            
+                    
+                    批流融合系统--展望
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../notes/ps.html">
+            
+                <a href="../notes/ps.html">
+            
+                    
+                    机器学习系统--Parameter Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../notes/graphlab.html">
+            
+                <a href="../notes/graphlab.html">
+            
+                    
+                    机器学习系统--GraphLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../notes/mahout.html">
+            
+                <a href="../notes/mahout.html">
+            
+                    
+                    机器学习系统--mahout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../notes/stream.html">
+            
+                <a href="../notes/stream.html">
+            
+                    
+                    流计算系统概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Lab
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="rpc.html">
+            
+                <a href="rpc.html">
+            
+                    
+                    RPC model in Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="hadoop.html">
+            
+                <a href="hadoop.html">
+            
+                    
+                    hadoop安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="hadoop1.html">
+            
+                <a href="hadoop1.html">
+            
+                    
+                    hadoop编程实践（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="hadoop2.html">
+            
+                <a href="hadoop2.html">
+            
+                    
+                    hadoop编程实践（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="hadoop-coding.html">
+            
+                <a href="hadoop-coding.html">
+            
+                    
+                    hadoop编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="hadoop-recap.html">
+            
+                <a href="hadoop-recap.html">
+            
+                    
+                    Hadoop 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="spark-installation.html">
+            
+                <a href="spark-installation.html">
+            
+                    
+                    spark安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="spark1.html">
+            
+                <a href="spark1.html">
+            
+                    
+                    spark编程实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="spark2.html">
+            
+                <a href="spark2.html">
+            
+                    
+                    spark编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="spark-recap.html">
+            
+                <a href="spark-recap.html">
+            
+                    
+                    Spark 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="docker1.html">
+            
+                <a href="docker1.html">
+            
+                    
+                    使用 Docker 配置 hadoop/spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="docker2.html">
+            
+                <a href="docker2.html">
+            
+                    
+                    使用 docker 搭建 spark(2.3.1) 集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="zookeeper.html">
+            
+                <a href="zookeeper.html">
+            
+                    
+                    ZooKeeper配置及简单使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="yarn.html">
+            
+                <a href="yarn.html">
+            
+                    
+                    Yarn框架下的系统部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="storm-installation.html">
+            
+                <a href="storm-installation.html">
+            
+                    
+                    Storm部署与运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="storm-coding.html">
+            
+                <a href="storm-coding.html">
+            
+                    
+                    Storm编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="storm-summary.html">
+            
+                <a href="storm-summary.html">
+            
+                    
+                    Storm 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="sparksteaming.html">
+            
+                <a href="sparksteaming.html">
+            
+                    
+                    SparkSteaming使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.19" data-path="flink-installation.html">
+            
+                <a href="flink-installation.html">
+            
+                    
+                    Flink安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="flink1.html">
+            
+                <a href="flink1.html">
+            
+                    
+                    Flink编程练习（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="flink2.html">
+            
+                <a href="flink2.html">
+            
+                    
+                    Flink编程练习（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="graph-in-hadoop.html">
+            
+                <a href="graph-in-hadoop.html">
+            
+                    
+                    常用图算法实现--Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="graph-in-spark.html">
+            
+                <a href="graph-in-spark.html">
+            
+                    
+                    常用图算法实现--Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="graph-in-flink.html">
+            
+                <a href="graph-in-flink.html">
+            
+                    
+                    常用图算法实现--Flink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="giraph.html">
+            
+                <a href="giraph.html">
+            
+                    
+                    Giraph配置及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="flink-iteration.html">
+            
+                <a href="flink-iteration.html">
+            
+                    
+                    Flink迭代小记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Recap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../recap/fundamental-of-distributed-system.html">
+            
+                <a href="../recap/fundamental-of-distributed-system.html">
+            
+                    
+                    分布式系统基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../recap/batch-system.html">
+            
+                <a href="../recap/batch-system.html">
+            
+                    
+                    批处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../recap/management-system.html">
+            
+                <a href="../recap/management-system.html">
+            
+                    
+                    支持数据管理的底层系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../recap/streaming-system.html">
+            
+                <a href="../recap/streaming-system.html">
+            
+                    
+                    流处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../recap/flink.html">
+            
+                <a href="../recap/flink.html">
+            
+                    
+                    批流融合系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../recap/graph.html">
+            
+                <a href="../recap/graph.html">
+            
+                    
+                    图处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../recap/ml.html">
+            
+                <a href="../recap/ml.html">
+            
+                    
+                    机器学习系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../recap/summary.html">
+            
+                <a href="../recap/summary.html">
+            
+                    
+                    总结与对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Flink安装及使用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x672C;&#x5730;&#x90E8;&#x7F72;">&#x672C;&#x5730;&#x90E8;&#x7F72;</h1>
+<h2 id="&#x5B89;&#x88C5;">&#x5B89;&#x88C5;</h2>
+<ol>
+<li><p>&#x5728;<a href="https://flink.apache.org/downloads.html" _target="blank">&#x5B98;&#x7F51;</a>&#x5B89;&#x88C5;Flink&#xFF0C;&#x5E76;&#x89E3;&#x538B;&#x5230;<code>/usr/local/flink</code></p>
+<ul>
+<li><pre><code class="lang-shell">sudo tar -zxf flink-1.6.2-bin-hadoop27-scala_2.11.tgz -C /usr/local
+cd /usr/local
+</code></pre>
+</li>
+<li><p><img src="../images/flink31.png" alt="flink31"></p>
+</li>
+</ul>
+</li>
+<li><p>&#x4FEE;&#x6539;&#x6587;&#x4EF6;&#x540D;&#x5B57;&#xFF0C;&#x5E76;&#x8BBE;&#x7F6E;&#x6743;&#x9650;</p>
+<ul>
+<li><pre><code class="lang-shell">sudo mv ./flink-*/ ./flink
+sudo chown -R hadoop:hadoop ./flink
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h2>
+<ul>
+<li><code>Flink</code>&#x5BF9;&#x4E8E;&#x672C;&#x5730;&#x6A21;&#x5F0F;&#x662F;&#x5F00;&#x7BB1;&#x5373;&#x7528;&#x7684;&#xFF0C;&#x5982;&#x679C;&#x8981;&#x4FEE;&#x6539;Java&#x8FD0;&#x884C;&#x73AF;&#x5883;&#xFF0C;&#x53EF;&#x4FEE;&#x6539;<code>conf/flink-conf.yaml</code>&#x4E2D;&#x7684;<code>env.java.home</code>&#xFF0C;&#x8BBE;&#x7F6E;&#x4E3A;&#x672C;&#x5730;java&#x7684;&#x7EDD;&#x5BF9;&#x8DEF;&#x5F84;</li>
+</ul>
+<h3 id="&#x6DFB;&#x52A0;&#x73AF;&#x5883;&#x53D8;&#x91CF;">&#x6DFB;&#x52A0;&#x73AF;&#x5883;&#x53D8;&#x91CF;</h3>
+<pre><code class="lang-shell">vim ~/.bashrc
+export FLNK_HOME=/usr/local/flink
+export PATH={% math_inline %}FLINK_HOME/bin:{% endmath_inline %}PATH
+</code></pre>
+<p><img src="../images/flink32.png" alt="flink32"></p>
+<h2 id="&#x542F;&#x52A8;flink">&#x542F;&#x52A8;Flink</h2>
+<pre><code class="lang-shell">start-cluster.sh
+</code></pre>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x89C2;&#x5BDF;logs&#x76EE;&#x5F55;&#x4E0B;&#x7684;&#x65E5;&#x5FD7;&#x6765;&#x68C0;&#x6D4B;&#x7CFB;&#x7EDF;&#x662F;&#x5426;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x4E86;</li>
+</ul>
+<pre><code class="lang-shell">tail log/flink--jobmanager-.log
+</code></pre>
+<p><img src="../images/flink33.png" alt="flink33"></p>
+<ul>
+<li>JobManager&#x540C;&#x65F6;&#x4F1A;&#x5728;8081&#x7AEF;&#x53E3;&#x4E0A;&#x542F;&#x52A8;&#x4E00;&#x4E2A;web&#x524D;&#x7AEF;&#xFF0C;&#x901A;&#x8FC7;<a href="http://localhost:8081" _target="blank">http://localhost:8081</a>&#x6765;&#x8BBF;&#x95EE;</li>
+</ul>
+<p><img src="../images/flink34.png" alt="flink34"></p>
+<p>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;flink&#x5DF2;&#x7ECF;&#x6B63;&#x5E38;&#x542F;&#x52A8;</p>
+<h1 id="&#x8FD0;&#x884C;&#x793A;&#x4F8B;">&#x8FD0;&#x884C;&#x793A;&#x4F8B;</h1>
+<p>&#x4F7F;&#x7528;Maven&#x521B;&#x5EFA;Flink&#x9879;&#x76EE;&#xFF0C;&#x5728;pom.xml&#x4E2D;&#x6DFB;&#x52A0;&#x4EE5;&#x4E0B;&#x4F9D;&#x8D56;&#xFF1A;</p>
+<pre><code class="lang-xml">    <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.flink<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>flink-java<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.6.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.flink<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>flink-streaming-java_2.11<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.6.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.flink<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>flink-clients_2.11<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.6.2<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span>
+</code></pre>
+<h2 id="&#x6279;&#x5904;&#x7406;&#x8FD0;&#x884C;wordcount">&#x6279;&#x5904;&#x7406;&#x8FD0;&#x884C;WordCount</h2>
+<h3 id="&#x5B98;&#x65B9;&#x793A;&#x4F8B;">&#x5B98;&#x65B9;&#x793A;&#x4F8B;</h3>
+<p>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;<code>/usr/local/flink/examples/batch</code>&#x4E2D;&#x8FD0;&#x884C;WordCount&#x7A0B;&#x5E8F;&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x91CC;&#x8FD8;&#x6709;&#x66F4;&#x591A;&#x793A;&#x4F8B;&#xFF1A;</p>
+<p><img src="../images/flink35.png" alt="flink35"></p>
+<p>&#x8FD0;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-shell">flink run WordCount.jar
+</code></pre>
+<p><img src="../images/flink36.png" alt="flink36"></p>
+<h3 id="&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</h3>
+<h4 id="wordcountdata">WordCountData</h4>
+<p>&#x63D0;&#x4F9B;&#x539F;&#x59CB;&#x6570;&#x636E;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.apache.flink.api.java.DataSet;
+<span class="hljs-keyword">import</span> org.apache.flink.api.java.ExecutionEnvironment;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WordCountData</span> </span>{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String[] WORDS=<span class="hljs-keyword">new</span> String[]{<span class="hljs-string">&quot;To be, or not to be,--that is the question:--&quot;</span>, <span class="hljs-string">&quot;Whether \&apos;tis nobler in the mind to suffer&quot;</span>, <span class="hljs-string">&quot;The slings and arrows of outrageous fortune&quot;</span>, <span class="hljs-string">&quot;Or to take arms against a sea of troubles,&quot;</span>, <span class="hljs-string">&quot;And by opposing end them?--To die,--to sleep,--&quot;</span>, <span class="hljs-string">&quot;No more; and by a sleep to say we end&quot;</span>, <span class="hljs-string">&quot;The heartache, and the thousand natural shocks&quot;</span>, <span class="hljs-string">&quot;That flesh is heir to,--\&apos;tis a consummation&quot;</span>, <span class="hljs-string">&quot;Devoutly to be wish\&apos;d. To die,--to sleep;--&quot;</span>, <span class="hljs-string">&quot;To sleep! perchance to dream:--ay, there\&apos;s the rub;&quot;</span>, <span class="hljs-string">&quot;For in that sleep of death what dreams may come,&quot;</span>, <span class="hljs-string">&quot;When we have shuffled off this mortal coil,&quot;</span>, <span class="hljs-string">&quot;Must give us pause: there\&apos;s the respect&quot;</span>, <span class="hljs-string">&quot;That makes calamity of so long life;&quot;</span>, <span class="hljs-string">&quot;For who would bear the whips and scorns of time,&quot;</span>, <span class="hljs-string">&quot;The oppressor\&apos;s wrong, the proud man\&apos;s contumely,&quot;</span>, <span class="hljs-string">&quot;The pangs of despis\&apos;d love, the law\&apos;s delay,&quot;</span>, <span class="hljs-string">&quot;The insolence of office, and the spurns&quot;</span>, <span class="hljs-string">&quot;That patient merit of the unworthy takes,&quot;</span>, <span class="hljs-string">&quot;When he himself might his quietus make&quot;</span>, <span class="hljs-string">&quot;With a bare bodkin? who would these fardels bear,&quot;</span>, <span class="hljs-string">&quot;To grunt and sweat under a weary life,&quot;</span>, <span class="hljs-string">&quot;But that the dread of something after death,--&quot;</span>, <span class="hljs-string">&quot;The undiscover\&apos;d country, from whose bourn&quot;</span>, <span class="hljs-string">&quot;No traveller returns,--puzzles the will,&quot;</span>, <span class="hljs-string">&quot;And makes us rather bear those ills we have&quot;</span>, <span class="hljs-string">&quot;Than fly to others that we know not of?&quot;</span>, <span class="hljs-string">&quot;Thus conscience does make cowards of us all;&quot;</span>, <span class="hljs-string">&quot;And thus the native hue of resolution&quot;</span>, <span class="hljs-string">&quot;Is sicklied o\&apos;er with the pale cast of thought;&quot;</span>, <span class="hljs-string">&quot;And enterprises of great pith and moment,&quot;</span>, <span class="hljs-string">&quot;With this regard, their currents turn awry,&quot;</span>, <span class="hljs-string">&quot;And lose the name of action.--Soft you now!&quot;</span>, <span class="hljs-string">&quot;The fair Ophelia!--Nymph, in thy orisons&quot;</span>, <span class="hljs-string">&quot;Be all my sins remember\&apos;d.&quot;</span>};
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">WordCountData</span><span class="hljs-params">()</span> </span>{
+    }
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> DataSet&lt;String&gt; <span class="hljs-title">getDefaultTextLineDataset</span><span class="hljs-params">(ExecutionEnvironment env)</span></span>{
+        <span class="hljs-keyword">return</span> env.fromElements(WORDS);
+    }
+}
+</code></pre>
+<h4 id="wordcounttokenizer">WordCountTokenizer</h4>
+<p>&#x5207;&#x5206;&#x53E5;&#x5B50;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.apache.flink.api.common.functions.FlatMapFunction;
+<span class="hljs-keyword">import</span> org.apache.flink.api.java.tuple.Tuple2;
+<span class="hljs-keyword">import</span> org.apache.flink.util.Collector;
+
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WordCountTokenizer</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">FlatMapFunction</span>&lt;<span class="hljs-title">String</span>, <span class="hljs-title">Tuple2</span>&lt;<span class="hljs-title">String</span>,<span class="hljs-title">Integer</span>&gt;&gt;</span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">WordCountTokenizer</span><span class="hljs-params">()</span></span>{}
+
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">flatMap</span><span class="hljs-params">(String value, Collector&lt;Tuple2&lt;String, Integer&gt;&gt; out)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        String[] tokens = value.toLowerCase().split(<span class="hljs-string">&quot;\\W+&quot;</span>);
+        <span class="hljs-keyword">int</span> len = tokens.length;
+
+        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i&lt;len;i++){
+            String tmp = tokens[i];
+            <span class="hljs-keyword">if</span>(tmp.length()&gt;<span class="hljs-number">0</span>){
+                out.collect(<span class="hljs-keyword">new</span> Tuple2&lt;String, Integer&gt;(tmp,Integer.valueOf(<span class="hljs-number">1</span>)));
+            }
+        }
+    }
+}
+</code></pre>
+<h4 id="wordcount">WordCount</h4>
+<p>&#x4E3B;&#x51FD;&#x6570;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.apache.flink.api.java.DataSet;
+<span class="hljs-keyword">import</span> org.apache.flink.api.java.ExecutionEnvironment;
+<span class="hljs-keyword">import</span> org.apache.flink.api.java.operators.AggregateOperator;
+<span class="hljs-keyword">import</span> org.apache.flink.api.java.utils.ParameterTool;
+
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WordCount</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">WordCount</span><span class="hljs-params">()</span></span>{}
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        ParameterTool params = ParameterTool.fromArgs(args);
+        ExecutionEnvironment env = ExecutionEnvironment.getExecutionEnvironment();
+        env.getConfig().setGlobalJobParameters(params);
+        Object text;
+        <span class="hljs-comment">//&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x8F93;&#x5165;&#x8DEF;&#x5F84;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x4F7F;&#x7528;WordCountData&#x4E2D;&#x63D0;&#x4F9B;&#x7684;&#x6570;&#x636E;</span>
+        <span class="hljs-keyword">if</span>(params.has(<span class="hljs-string">&quot;input&quot;</span>)){
+            text = env.readTextFile(params.get(<span class="hljs-string">&quot;input&quot;</span>));
+        }<span class="hljs-keyword">else</span>{
+            System.out.println(<span class="hljs-string">&quot;Executing WordCount example with default input data set.&quot;</span>);
+            System.out.println(<span class="hljs-string">&quot;Use -- input to specify file input.&quot;</span>);
+            text = WordCountData.getDefaultTextLineDataset(env);
+        }
+
+        AggregateOperator counts = ((DataSet)text).flatMap(<span class="hljs-keyword">new</span> WordCountTokenizer()).groupBy(<span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]{<span class="hljs-number">0</span>}).sum(<span class="hljs-number">1</span>);
+        <span class="hljs-comment">//&#x5982;&#x679C;&#x6CA1;&#x6709;&#x6307;&#x5B9A;&#x8F93;&#x51FA;&#xFF0C;&#x5219;&#x9ED8;&#x8BA4;&#x6253;&#x5370;&#x5230;&#x63A7;&#x5236;&#x53F0;</span>
+        <span class="hljs-keyword">if</span>(params.has(<span class="hljs-string">&quot;output&quot;</span>)){
+            counts.writeAsCsv(params.get(<span class="hljs-string">&quot;output&quot;</span>),<span class="hljs-string">&quot;\n&quot;</span>, <span class="hljs-string">&quot; &quot;</span>);
+            env.execute();
+        }<span class="hljs-keyword">else</span>{
+            System.out.println(<span class="hljs-string">&quot;Printing result to stdout. Use --output to specify output path.&quot;</span>);
+            counts.print();
+        }
+
+    }
+}
+</code></pre>
+<p>&#x9996;&#x5148;&#x6253;&#x5305;&#x6210;JAR&#x5305;&#xFF0C;&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x4F7F;&#x7528;<code>-c</code>&#x6307;&#x5B9A;main&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-shell">flink run -c WordCount WordCount.jar
+</code></pre>
+<h2 id="&#x6D41;&#x5904;&#x7406;&#x8FD0;&#x884C;wordcount">&#x6D41;&#x5904;&#x7406;&#x8FD0;&#x884C;WordCount</h2>
+<h3 id="&#x5B98;&#x65B9;&#x793A;&#x4F8B;">&#x5B98;&#x65B9;&#x793A;&#x4F8B;</h3>
+<p>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x5728;<code>/usr/local/flink/examples/streaming</code>&#x4E2D;&#x8FD0;&#x884C;WordCount&#x7A0B;&#x5E8F;&#xFF0C;&#x5E76;&#x4E14;&#x8FD9;&#x91CC;&#x8FD8;&#x6709;&#x66F4;&#x591A;&#x793A;&#x4F8B;&#xFF1A;</p>
+<p><img src="../images/flink37.png" alt="flink37"></p>
+<h3 id="&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</h3>
+<h4 id="socketwindowwordcount">SocketWindowWordCount</h4>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.apache.flink.api.common.functions.FlatMapFunction;
+<span class="hljs-keyword">import</span> org.apache.flink.api.java.utils.ParameterTool;
+<span class="hljs-keyword">import</span> org.apache.flink.streaming.api.datastream.DataStream;
+<span class="hljs-keyword">import</span> org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
+
+<span class="hljs-keyword">import</span> java.sql.Time;
+<span class="hljs-keyword">import</span> java.util.stream.Collector;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SocketWindowWordCount</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+
+        <span class="hljs-comment">// the port to connect to</span>
+        <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> port;
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">final</span> ParameterTool params = ParameterTool.fromArgs(args);
+            port = params.getInt(<span class="hljs-string">&quot;port&quot;</span>);
+        } <span class="hljs-keyword">catch</span> (Exception e) {
+            System.err.println(<span class="hljs-string">&quot;No port specified. Please run &apos;SocketWindowWordCount --port &lt;port&gt;&apos;&quot;</span>);
+            <span class="hljs-keyword">return</span>;
+        }
+
+        <span class="hljs-comment">// get the execution environment</span>
+        <span class="hljs-keyword">final</span> StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
+
+        <span class="hljs-comment">// get input data by connecting to the socket</span>
+        DataStream&lt;String&gt; text = env.socketTextStream(<span class="hljs-string">&quot;localhost&quot;</span>, port, <span class="hljs-string">&quot;\n&quot;</span>);
+
+        <span class="hljs-comment">// parse the data, group it, window it, and aggregate the counts</span>
+        DataStream&lt;WordWithCount&gt; windowCounts = text
+                .flatMap(<span class="hljs-keyword">new</span> FlatMapFunction&lt;String, WordWithCount&gt;() {
+                    <span class="hljs-meta">@Override</span>
+                    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">flatMap</span><span class="hljs-params">(String value, Collector&lt;WordWithCount&gt; out)</span> </span>{
+                        <span class="hljs-keyword">for</span> (String word : value.split(<span class="hljs-string">&quot;\\s&quot;</span>)) {
+                            out.collect(<span class="hljs-keyword">new</span> WordWithCount(word, <span class="hljs-number">1L</span>));
+                        }
+                    }
+                })
+                .keyBy(<span class="hljs-string">&quot;word&quot;</span>)
+                .timeWindow(Time.seconds(<span class="hljs-number">5</span>), Time.seconds(<span class="hljs-number">1</span>))
+                .reduce(<span class="hljs-keyword">new</span> ReduceFunction&lt;WordWithCount&gt;() {
+                    <span class="hljs-meta">@Override</span>
+                    <span class="hljs-function"><span class="hljs-keyword">public</span> WordWithCount <span class="hljs-title">reduce</span><span class="hljs-params">(WordWithCount a, WordWithCount b)</span> </span>{
+                        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> WordWithCount(a.word, a.count + b.count);
+                    }
+                });
+
+        <span class="hljs-comment">// print the results with a single thread, rather than in parallel</span>
+        windowCounts.print().setParallelism(<span class="hljs-number">1</span>);
+
+        env.execute(<span class="hljs-string">&quot;Socket Window WordCount&quot;</span>);
+    }
+
+    <span class="hljs-comment">// Data type for words with count</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WordWithCount</span> </span>{
+
+        <span class="hljs-keyword">public</span> String word;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">long</span> count;
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">WordWithCount</span><span class="hljs-params">()</span> </span>{}
+
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">WordWithCount</span><span class="hljs-params">(String word, <span class="hljs-keyword">long</span> count)</span> </span>{
+            <span class="hljs-keyword">this</span>.word = word;
+            <span class="hljs-keyword">this</span>.count = count;
+        }
+
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> </span>{
+            <span class="hljs-keyword">return</span> word + <span class="hljs-string">&quot; : &quot;</span> + count;
+        }
+    }
+}
+</code></pre>
+<p>&#x9996;&#x5148;&#x6253;&#x5305;&#x6210;JAR&#x5305;&#xFF0C;&#x7136;&#x540E;&#x542F;&#x52A8;<code>netcat</code>&#xFF1A;</p>
+<pre><code class="lang-shell">nc -l 9000
+</code></pre>
+<p>&#x5C06;&#x7EC8;&#x7AEF;&#x542F;&#x52A8;netcat&#x4F5C;&#x4E3A;&#x8F93;&#x5165;&#x6D41;&#xFF1A;</p>
+<p>&#x63D0;&#x4EA4;Jar&#x5305;&#xFF1A;</p>
+<pre><code class="lang-shell">flink run -c SocketWindowWordCount WordCountSteaming.jar --port 9000
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x7EC8;&#x7AEF;&#x4F1A;&#x4E00;&#x76F4;&#x7B49;&#x5F85;netcat&#x7684;&#x8F93;&#x5165;&#x6D41;</p>
+<p><img src="../images/flink38.png" alt="flink38"></p>
+<p>&#x5728;netcat&#x4E2D;&#x8F93;&#x5165;&#x5B57;&#x7B26;&#x6D41;&#xFF1A;</p>
+<p><img src="../images/flink39.png" alt="flink39"></p>
+<p>&#x53EF;&#x4EE5;&#x5728;WebUI&#x4E2D;&#x67E5;&#x770B;&#x8FD0;&#x884C;&#x7ED3;&#x679C;&#xFF1A;</p>
+<p><img src="../images/flink310.png" alt="flink310"></p>
+<h1 id="&#x53EF;&#x89C6;&#x5316;">&#x53EF;&#x89C6;&#x5316;</h1>
+<p>Flink&#x7684;Execution Plan&#x53EF;&#x4EE5;&#x53EF;&#x89C6;&#x5316;&#xFF0C;&#x66F4;&#x6E05;&#x695A;&#x7684;&#x67E5;&#x770B;&#x6211;&#x4EEC;&#x7684;&#x4EFB;&#x52A1;&#x903B;&#x8F91;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;JAR&#x5305;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6267;&#x884C;&#xFF1A;</p>
+<pre><code class="lang-shell">flink info -c WordCount WordCount.jar  &gt; ./output
+</code></pre>
+<p>&#x8FD9;&#x6837;&#xFF0C;&#x5C31;&#x5C06;&#x6267;&#x884C;&#x8BA1;&#x5212;&#x7684;json&#x6587;&#x4EF6;&#x5B58;&#x653E;&#x5728;output&#x4E2D;&#x3002;</p>
+<p>&#x5C06;&#x8BE5;&#x6267;&#x884C;&#x4EFB;&#x52A1;&#x590D;&#x5236;&#x5230;&#x8FD9;&#x4E2A;&#x7F51;&#x7AD9;&#xFF1A; <a href="https://flink.apache.org/visualizer/" _target="blank">Flink Plan Visualizer</a>&#xFF0C;&#x5373;&#x53EF;&#x67E5;&#x770B;&#xFF1A;</p>
+<p><img src="../images/flink311.png" alt="flink311"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="sparksteaming.html" class="navigation navigation-prev " aria-label="Previous page: SparkSteaming使用">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="flink1.html" class="navigation navigation-next " aria-label="Next page: Flink编程练习（一）">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Flink安装及使用","level":"1.3.19","depth":2,"next":{"title":"Flink编程练习（一）","level":"1.3.20","depth":2,"path":"project/flink1.md","ref":"project/flink1.md","articles":[]},"previous":{"title":"SparkSteaming使用","level":"1.3.18","depth":2,"path":"project/sparksteaming.md","ref":"project/sparksteaming.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":" ","variables":{},"title":"Distribution System","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"project/flink-installation.md","mtime":"2021-01-27T07:19:19.422Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T09:58:50.487Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

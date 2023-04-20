@@ -1,0 +1,1130 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>批流融合系统--Flink · Distribution System</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="beam.html" />
+    
+    
+    <link rel="prev" href="pregel.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Notes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Distribution-File-System-DFS.html">
+            
+                <a href="Distribution-File-System-DFS.html">
+            
+                    
+                    Distribution File System DFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="mapreduce.html">
+            
+                <a href="mapreduce.html">
+            
+                    
+                    MapReduce处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="mrcoding.html">
+            
+                <a href="mrcoding.html">
+            
+                    
+                    MapReduce编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="RPC-and-serialization.html">
+            
+                <a href="RPC-and-serialization.html">
+            
+                    
+                    RPC And Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="spark.html">
+            
+                <a href="spark.html">
+            
+                    
+                    Spark 处理框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="sparkcoding.html">
+            
+                <a href="sparkcoding.html">
+            
+                    
+                    Spark 编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="yarn.html">
+            
+                <a href="yarn.html">
+            
+                    
+                    Yarn 资源管理框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="zookeeper.html">
+            
+                <a href="zookeeper.html">
+            
+                    
+                    ZooKeeper 元数据管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="pregel.html">
+            
+                <a href="pregel.html">
+            
+                    
+                    分布式图处理系统--Pregel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.10" data-path="flink.html">
+            
+                <a href="flink.html">
+            
+                    
+                    批流融合系统--Flink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="beam.html">
+            
+                <a href="beam.html">
+            
+                    
+                    批流融合系统--展望
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="ps.html">
+            
+                <a href="ps.html">
+            
+                    
+                    机器学习系统--Parameter Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="graphlab.html">
+            
+                <a href="graphlab.html">
+            
+                    
+                    机器学习系统--GraphLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="mahout.html">
+            
+                <a href="mahout.html">
+            
+                    
+                    机器学习系统--mahout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="stream.html">
+            
+                <a href="stream.html">
+            
+                    
+                    流计算系统概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Lab
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../project/rpc.html">
+            
+                <a href="../project/rpc.html">
+            
+                    
+                    RPC model in Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../project/hadoop.html">
+            
+                <a href="../project/hadoop.html">
+            
+                    
+                    hadoop安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../project/hadoop1.html">
+            
+                <a href="../project/hadoop1.html">
+            
+                    
+                    hadoop编程实践（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../project/hadoop2.html">
+            
+                <a href="../project/hadoop2.html">
+            
+                    
+                    hadoop编程实践（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../project/hadoop-coding.html">
+            
+                <a href="../project/hadoop-coding.html">
+            
+                    
+                    hadoop编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../project/hadoop-recap.html">
+            
+                <a href="../project/hadoop-recap.html">
+            
+                    
+                    Hadoop 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../project/spark-installation.html">
+            
+                <a href="../project/spark-installation.html">
+            
+                    
+                    spark安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../project/spark1.html">
+            
+                <a href="../project/spark1.html">
+            
+                    
+                    spark编程实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../project/spark2.html">
+            
+                <a href="../project/spark2.html">
+            
+                    
+                    spark编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../project/spark-recap.html">
+            
+                <a href="../project/spark-recap.html">
+            
+                    
+                    Spark 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../project/docker1.html">
+            
+                <a href="../project/docker1.html">
+            
+                    
+                    使用 Docker 配置 hadoop/spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../project/docker2.html">
+            
+                <a href="../project/docker2.html">
+            
+                    
+                    使用 docker 搭建 spark(2.3.1) 集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../project/zookeeper.html">
+            
+                <a href="../project/zookeeper.html">
+            
+                    
+                    ZooKeeper配置及简单使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../project/yarn.html">
+            
+                <a href="../project/yarn.html">
+            
+                    
+                    Yarn框架下的系统部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../project/storm-installation.html">
+            
+                <a href="../project/storm-installation.html">
+            
+                    
+                    Storm部署与运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../project/storm-coding.html">
+            
+                <a href="../project/storm-coding.html">
+            
+                    
+                    Storm编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="../project/storm-summary.html">
+            
+                <a href="../project/storm-summary.html">
+            
+                    
+                    Storm 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="../project/sparksteaming.html">
+            
+                <a href="../project/sparksteaming.html">
+            
+                    
+                    SparkSteaming使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="../project/flink-installation.html">
+            
+                <a href="../project/flink-installation.html">
+            
+                    
+                    Flink安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="../project/flink1.html">
+            
+                <a href="../project/flink1.html">
+            
+                    
+                    Flink编程练习（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="../project/flink2.html">
+            
+                <a href="../project/flink2.html">
+            
+                    
+                    Flink编程练习（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="../project/graph-in-hadoop.html">
+            
+                <a href="../project/graph-in-hadoop.html">
+            
+                    
+                    常用图算法实现--Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="../project/graph-in-spark.html">
+            
+                <a href="../project/graph-in-spark.html">
+            
+                    
+                    常用图算法实现--Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="../project/graph-in-flink.html">
+            
+                <a href="../project/graph-in-flink.html">
+            
+                    
+                    常用图算法实现--Flink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="../project/giraph.html">
+            
+                <a href="../project/giraph.html">
+            
+                    
+                    Giraph配置及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="../project/flink-iteration.html">
+            
+                <a href="../project/flink-iteration.html">
+            
+                    
+                    Flink迭代小记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Recap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../recap/fundamental-of-distributed-system.html">
+            
+                <a href="../recap/fundamental-of-distributed-system.html">
+            
+                    
+                    分布式系统基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../recap/batch-system.html">
+            
+                <a href="../recap/batch-system.html">
+            
+                    
+                    批处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../recap/management-system.html">
+            
+                <a href="../recap/management-system.html">
+            
+                    
+                    支持数据管理的底层系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../recap/streaming-system.html">
+            
+                <a href="../recap/streaming-system.html">
+            
+                    
+                    流处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../recap/flink.html">
+            
+                <a href="../recap/flink.html">
+            
+                    
+                    批流融合系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../recap/graph.html">
+            
+                <a href="../recap/graph.html">
+            
+                    
+                    图处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../recap/ml.html">
+            
+                <a href="../recap/ml.html">
+            
+                    
+                    机器学习系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../recap/summary.html">
+            
+                <a href="../recap/summary.html">
+            
+                    
+                    总结与对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >批流融合系统--Flink</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5DE5;&#x4F5C;&#x539F;&#x7406;">&#x5DE5;&#x4F5C;&#x539F;&#x7406;</h1>
+<h2 id="&#x7CFB;&#x7EDF;&#x6D41;&#x7A0B;">&#x7CFB;&#x7EDF;&#x6D41;&#x7A0B;</h2>
+<p>&#x5F53; Flink &#x96C6;&#x7FA4;&#x542F;&#x52A8;&#x540E;&#xFF0C;&#x9996;&#x5148;&#x4F1A;&#x542F;&#x52A8;&#x4E00;&#x4E2A; <code>JobManger</code> &#x548C;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x7684; <code>TaskManager</code>&#x3002;&#x7531; <code>Client</code> &#x63D0;&#x4EA4;&#x4EFB;&#x52A1;&#x7ED9; <code>JobManager</code>&#xFF0C;<code>JobManager</code> &#x518D;&#x8C03;&#x5EA6;&#x4EFB;&#x52A1;&#x5230;&#x5404;&#x4E2A; <code>TaskManager</code> &#x53BB;&#x6267;&#x884C;&#xFF0C;&#x7136;&#x540E; <code>TaskManager</code> &#x5C06;&#x5FC3;&#x8DF3;&#x548C;&#x7EDF;&#x8BA1;&#x4FE1;&#x606F;&#x6C47;&#x62A5;&#x7ED9; <code>JobManager</code>&#x3002;<code>TaskManager</code> &#x4E4B;&#x95F4;&#x4EE5;&#x6D41;&#x7684;&#x5F62;&#x5F0F;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x7684;&#x4F20;&#x8F93;&#x3002;&#x4E0A;&#x8FF0;&#x4E09;&#x8005;&#x5747;&#x4E3A;&#x72EC;&#x7ACB;&#x7684; JVM &#x8FDB;&#x7A0B;&#x3002;</p>
+<h3 id="clinent">Clinent</h3>
+<ul>
+<li><strong>Client</strong> &#x4E3A;&#x63D0;&#x4EA4; Job &#x7684;&#x5BA2;&#x6237;&#x7AEF;&#xFF0C;&#x53EF;&#x4EE5;&#x662F;&#x8FD0;&#x884C;&#x5728;&#x4EFB;&#x4F55;&#x673A;&#x5668;&#x4E0A;&#xFF08;&#x4E0E; JobManager &#x73AF;&#x5883;&#x8FDE;&#x901A;&#x5373;&#x53EF;&#xFF09;&#x3002;&#x63D0;&#x4EA4; Job &#x540E;&#xFF0C;Client &#x53EF;&#x4EE5;&#x7ED3;&#x675F;&#x8FDB;&#x7A0B;&#xFF08;Streaming&#x7684;&#x4EFB;&#x52A1;&#xFF09;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x4E0D;&#x7ED3;&#x675F;&#x5E76;&#x7B49;&#x5F85;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x3002;</li>
+</ul>
+<h4 id="&#x4EFB;&#x52A1;">&#x4EFB;&#x52A1;</h4>
+<ul>
+<li>&#x5C06;&#x7528;&#x6237;&#x7A0B;&#x5E8F;&#x7FFB;&#x8BD1;&#x6210;&#x903B;&#x8F91;&#x6267;&#x884C;&#x8BA1;&#x5212;(&#x7C7B;&#x4F3C;sparkDAG) </li>
+<li>&#x903B;&#x8F91;&#x6267;&#x884C;&#x8BA1;&#x5212;&#x7684;&#x4F18;&#x5316; </li>
+</ul>
+<h3 id="jobmanager">JobManager</h3>
+<ul>
+<li><strong>JobManager</strong> &#x4E3B;&#x8981;&#x8D1F;&#x8D23;&#x8C03;&#x5EA6; Job &#x5E76;&#x534F;&#x8C03; Task &#x505A; checkpoint&#xFF0C;&#x804C;&#x8D23;&#x4E0A;&#x5F88;&#x50CF; Storm &#x7684; Nimbus&#x3002;&#x4ECE; Client &#x5904;&#x63A5;&#x6536;&#x5230; Job &#x548C; JAR &#x5305;&#x7B49;&#x8D44;&#x6E90;&#x540E;&#xFF0C;&#x4F1A;&#x751F;&#x6210;&#x4F18;&#x5316;&#x540E;&#x7684;&#x6267;&#x884C;&#x8BA1;&#x5212;&#xFF0C;&#x5E76;&#x4EE5; Task &#x7684;&#x5355;&#x5143;&#x8C03;&#x5EA6;&#x5230;&#x5404;&#x4E2A; TaskManager &#x53BB;&#x6267;&#x884C;&#x3002;</li>
+</ul>
+<h4 id="&#x4EFB;&#x52A1;">&#x4EFB;&#x52A1;</h4>
+<ul>
+<li>&#x7BA1;&#x7406;TaskManager </li>
+<li>&#x8C03;&#x5EA6; </li>
+<li>&#x534F;&#x8C03; </li>
+</ul>
+<h3 id="taskmanager">TaskManager</h3>
+<ul>
+<li><strong>TaskManager</strong> &#x5728;&#x542F;&#x52A8;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x8BBE;&#x7F6E;&#x597D;&#x4E86;&#x69FD;&#x4F4D;&#x6570;&#xFF08;Slot&#xFF09;&#xFF0C;&#x6BCF;&#x4E2A; slot &#x80FD;&#x542F;&#x52A8;&#x4E00;&#x4E2A; Task&#xFF0C;Task &#x4E3A;&#x7EBF;&#x7A0B;&#x3002;&#x4ECE; JobManager &#x5904;&#x63A5;&#x6536;&#x9700;&#x8981;&#x90E8;&#x7F72;&#x7684; Task&#xFF0C;&#x90E8;&#x7F72;&#x542F;&#x52A8;&#x540E;&#xFF0C;&#x4E0E;&#x81EA;&#x5DF1;&#x7684;&#x4E0A;&#x6E38;&#x5EFA;&#x7ACB; Netty &#x8FDE;&#x63A5;&#xFF0C;&#x63A5;&#x6536;&#x6570;&#x636E;&#x5E76;&#x5904;&#x7406;&#x3002;</li>
+</ul>
+<h4 id="&#x4EFB;&#x52A1;">&#x4EFB;&#x52A1;</h4>
+<ul>
+<li>&#x4E0E;JobManager&#x3001;TaskManager&#x4FDD;&#x6301;&#x901A;&#x4FE1; </li>
+<li>&#x542F;&#x52A8;Task&#x7EBF;&#x7A0B;&#xFF0C;&#x5B9E;&#x9645;&#x6267;&#x884C;&#x4EFB;&#x52A1; </li>
+<li>&#x76F8;&#x540C;&#x8282;&#x70B9;&#x6216;&#x4E0D;&#x540C;&#x8282;&#x70B9;&#x4E0A;Task&#x7EBF;&#x7A0B;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x4EA4;&#x6362;</li>
+</ul>
+<h2 id="graph">Graph</h2>
+<p><strong>&#x6279;&#x5904;&#x7406;</strong>:Program &#x2192; BatchGraph &#x2192; Optimized BatchGraph &#x2192; JobGraph </p>
+<p><strong>&#x6D41;&#x8BA1;&#x7B97;</strong>:Program &#x2192; StreamGraph &#x2192; JobGraph </p>
+<ul>
+<li><strong>StreamGraph&#xFF1A;</strong>&#x662F;&#x6839;&#x636E;&#x7528;&#x6237;&#x901A;&#x8FC7; Stream API &#x7F16;&#x5199;&#x7684;&#x4EE3;&#x7801;&#x751F;&#x6210;&#x7684;&#x6700;&#x521D;&#x7684;&#x56FE;&#x3002;&#x7528;&#x6765;&#x8868;&#x793A;&#x7A0B;&#x5E8F;&#x7684;&#x62D3;&#x6251;&#x7ED3;&#x6784;&#x3002;</li>
+<li><strong>JobGraph&#xFF1A;</strong>StreamGraph&#x7ECF;&#x8FC7;&#x4F18;&#x5316;&#x540E;&#x751F;&#x6210;&#x4E86; JobGraph&#xFF0C;&#x63D0;&#x4EA4;&#x7ED9; JobManager &#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;&#x4E3B;&#x8981;&#x7684;&#x4F18;&#x5316;&#x4E3A;&#xFF0C;&#x5C06;&#x591A;&#x4E2A;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x8282;&#x70B9; chain &#x5728;&#x4E00;&#x8D77;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#xFF0C;&#x8FD9;&#x6837;&#x53EF;&#x4EE5;&#x51CF;&#x5C11;&#x6570;&#x636E;&#x5728;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x6D41;&#x52A8;&#x6240;&#x9700;&#x8981;&#x7684;&#x5E8F;&#x5217;&#x5316;/&#x53CD;&#x5E8F;&#x5217;&#x5316;/&#x4F20;&#x8F93;&#x6D88;&#x8017;&#x3002;</li>
+<li><strong>ExecutionGraph&#xFF1A;</strong>JobManager &#x6839;&#x636E; JobGraph &#x751F;&#x6210;ExecutionGraph&#x3002;<strong>ExecutionGraph&#x662F;JobGraph&#x7684;&#x5E76;&#x884C;&#x5316;&#x7248;&#x672C;&#xFF0C;&#x662F;&#x8C03;&#x5EA6;&#x5C42;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;</strong>&#x3002;</li>
+<li><strong>&#x7269;&#x7406;&#x6267;&#x884C;&#x56FE;&#xFF1A;</strong>JobManager &#x6839;&#x636E; ExecutionGraph &#x5BF9; Job &#x8FDB;&#x884C;&#x8C03;&#x5EA6;&#x540E;&#xFF0C;&#x5728;&#x5404;&#x4E2A;TaskManager &#x4E0A;&#x90E8;&#x7F72; Task &#x540E;&#x5F62;&#x6210;&#x7684;&#x201C;&#x56FE;&#x201D;&#xFF0C;&#x5E76;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x3002;</li>
+</ul>
+<p><img src="../images/flink1.png" alt="flink1"></p>
+<table>
+<thead>
+<tr>
+<th>&#x6DB5;&#x4E49;</th>
+<th>&#x6D41;&#x8BA1;&#x7B97;</th>
+<th>&#x6279;&#x5904;&#x7406;</th>
+<th>&#x90E8;&#x4EF6;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&#x7528;&#x6237;&#x7A0B;&#x5E8F;</td>
+<td>Stream API&#x7A0B;&#x5E8F;</td>
+<td>Batch API&#x7A0B;&#x5E8F;</td>
+<td>Client</td>
+</tr>
+<tr>
+<td>&#x7A0B;&#x5E8F;&#x7684;&#x62D3;&#x6251;&#x7ED3;&#x6784;</td>
+<td><strong>StreamGraph</strong></td>
+<td><strong>DAG/Optimizer</strong></td>
+<td>Client</td>
+</tr>
+<tr>
+<td>&#x903B;&#x8F91;&#x6267;&#x884C;&#x8BA1;&#x5212;</td>
+<td>JobGraph</td>
+<td>JobGraph</td>
+<td>Client</td>
+</tr>
+<tr>
+<td>&#x7269;&#x7406;&#x6267;&#x884C;&#x8BA1;&#x5212;</td>
+<td>ExecutionGraph</td>
+<td>ExecutionGraph</td>
+<td>JobManager</td>
+</tr>
+<tr>
+<td>&#x7269;&#x7406;&#x5B9E;&#x73B0;</td>
+<td>&#x5206;&#x5E03;&#x5F0F;&#x6267;&#x884C;</td>
+<td>&#x5206;&#x5E03;&#x5F0F;&#x6267;&#x884C;</td>
+<td>TaskManager</td>
+</tr>
+</tbody>
+</table>
+<h1 id="flink-api">Flink API</h1>
+<p>&#x4E0E;Spark&#x5BF9;&#x6BD4;</p>
+<p><img src="../images/flink2.png" alt="flink2"></p>
+<h2 id="process-function">Process Function</h2>
+<p><img src="../images/flink3.png" alt="flink3"></p>
+<p>&#x7406;&#x8BBA;&#x4E0A;&#x5B9E;&#x73B0;&#x4E86;&#x4EE5;&#x4E0A;&#x4E09;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x5B9A;&#x4E49;&#x4EFB;&#x610F;&#x7B97;&#x5B50;</p>
+<h2 id="datatstreamdataset">DatatStream/DataSet</h2>
+<h3 id="datastream-api">DataStream API</h3>
+<p><img src="../images/flink4.png" alt="flink4"></p>
+<h3 id="datastream-iteration">DataStream Iteration</h3>
+<p><a href="https://ci.apache.org/projects/flink/flink-docs-stable/dev/datastream_api.html#iterations" _target="blank">&#x5B98;&#x65B9;&#x6587;&#x6863;&#x53C2;&#x8003;&#x8FD9;&#x91CC;</a></p>
+<p>&#x5728;Flink&#x4E2D;&#xFF0C;&#x4E0D;&#x663E;&#x5F0F;&#x5B9A;&#x4E49;&#x5FAA;&#x73AF;&#xFF0C;&#x800C;&#x662F;&#x901A;&#x8FC7;<code>iterationBody</code>&#x5B9E;&#x73B0;&#x5FAA;&#x73AF;&#x64CD;&#x4F5C;</p>
+<p><img src="../images/flink5.png" alt="flink5"></p>
+<p><img src="../images/flink6.png" alt="flink6"></p>
+<p>&#x8FD9;&#x91CC;&#x7684;<code>iterationBody</code>&#x63A5;&#x6536;X&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x5E76;&#x6839;&#x636E;&#x6700;&#x540E;&#x7684;<code>closeWith</code>&#x5B8C;&#x6210;&#x4E00;&#x6B21;&#x8FED;&#x4EE3;&#xFF0C;&#x53E6;&#x5916;&#x7684;&#x6570;&#x636E;&#x64CD;&#x4F5C;Z&#x9000;&#x51FA;&#x8FED;&#x4EE3;&#x3002;</p>
+<h3 id="dataset-api">DataSet API</h3>
+<p>&#x5B9A;&#x4E49;&#x7684;&#x7B97;&#x5B50;&#x4E0E;DataStream&#x7C7B;&#x4F3C;&#xFF0C;&#x4E3B;&#x8981;&#x8FD8;&#x662F;&#x8003;&#x8651;&#x8FED;&#x4EE3;&#x8FC7;&#x7A0B;&#x3002;</p>
+<h4 id="dataset-bulk-iteration">DataSet Bulk Iteration</h4>
+<p><img src="../images/flink7.png" alt="flink7"></p>
+<p><img src="../images/flink8.png" alt="flink8"></p>
+<p>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#x4E0E;DataStream&#x7C7B;&#x4F3C;&#xFF0C;&#x4F46;&#x5FC5;&#x987B;&#x8981;&#x8FED;&#x4EE3;&#x7ED3;&#x675F;&#x624D;&#x80FD;&#x6709;&#x8F93;&#x51FA;&#x3002;</p>
+<p>&#x540C;&#x65F6;&#xFF0C;&#x9664;&#x4E86;&#x8BBE;&#x7F6E;&#x6700;&#x5927;&#x8FED;&#x4EE3;&#x6B21;&#x6570;&#xFF0C;&#x5728;<code>closeWith</code>&#x4E2D;&#x8FD8;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x7B2C;&#x4E8C;&#x4E2A;DataSet&#xFF0C;&#x5F53;&#x5176;&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;&#x5219;&#x9000;&#x51FA;&#x5FAA;&#x73AF;&#x3002;</p>
+<p><strong>&#x4E0E;&#x6D41;&#x8BA1;&#x7B97;&#x7684;&#x533A;&#x522B;&#xFF1A;</strong></p>
+<ol>
+<li>Input&#x4F1A;&#x6709;&#x6E90;&#x6E90;&#x4E0D;&#x65AD;&#x7684;&#x6765;&#xFF0C;&#x4E14;&#x8FED;&#x4EE3;&#x8FC7;&#x7A0B;&#x4E2D;&#x4F1A;&#x6709;&#x6570;&#x636E;&#x8FDB;&#x5165;</li>
+<li>Output&#x968F;&#x65F6;&#x90FD;&#x53EF;&#x4EE5;&#x8F93;&#x51FA;</li>
+</ol>
+<h4 id="dataset-delta-iteration">DataSet Delta Iteration</h4>
+<p>&#x7531;&#x4E8E;&#x5728;&#x56FE;&#x8BA1;&#x7B97;&#x4E2D;&#x6709;&#x5F88;&#x591A;&#x7B97;&#x6CD5;&#x5728;&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#x4E2D;&#xFF0C;&#x4E0D;&#x662F;&#x6240;&#x6709;TrainData&#x90FD;&#x53C2;&#x4E0E;&#x8FD0;&#x7B97;&#xFF0C;&#x6240;&#x4EE5;&#x5B9A;&#x4E49;<code>Delta</code>&#x7B97;&#x5B50;&#x3002;</p>
+<p>workset&#x662F;&#x6BCF;&#x6B21;&#x8FED;&#x4EE3;&#x90FD;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x66F4;&#x65B0;&#x7684;&#xFF0C;&#x800C;solution set&#x4E0D;&#x4E00;&#x5B9A;&#x66F4;&#x65B0;&#x3002;</p>
+<p><img src="../images/flink9.png" alt="flink9"></p>
+<p><img src="../images/flink10.png" alt="flink10"></p>
+<p>&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>iteration</code>.getWorkset/getSolutionSet&#x5F97;&#x5230;&#x5BF9;&#x5E94;&#x7684;DataSet&#xFF0C;&#x540C;&#x65F6;&#x5206;&#x522B;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#xFF0C;&#x5F53;nextWorkset&#x4E3A;&#x7A7A;&#x65F6;&#xFF0C;&#x9000;&#x51FA;&#x5FAA;&#x73AF;&#x3002;</p>
+<p>&#x5728;&#x8FED;&#x4EE3;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;nextWorkSet&#x662F;&#x76F4;&#x63A5;&#x66FF;&#x4EE3;&#x5F53;&#x524D;&#x7684;workset&#xFF0C;&#x800C;deltaSet&#x662F;merge&#x5230;solutionSet&#x3002;</p>
+<p><strong>key positions&#x662F;&#x4EC0;&#x4E48;&#xFF1F;</strong></p>
+<p>&#x6307;&#x5B9A;&#x751F;&#x6210;&#x7684;&#x503C;&#x7684;&#x952E;&#x662F;&#x54EA;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x3002;</p>
+<h2 id="tablesql">Table&amp;SQL</h2>
+<p>Table API &#x4E0E;SQL&#x57FA;&#x672C;&#x76F8;&#x540C;&#xFF0C;&#x53EA;&#x662F;&#x5728;SQL&#x4E2D;&#xFF0C;&#x7531;&#x4E8E;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x8BED;&#x53E5;&#xFF0C;&#x5728;&#x7F16;&#x8BD1;&#x65F6;&#x65E0;&#x6CD5;&#x67E5;&#x9519;&#x3002;</p>
+<h2 id="&#x6279;&#x6D41;&#x7B49;&#x4EF7;&#x8F6C;&#x6362;">&#x6279;&#x6D41;&#x7B49;&#x4EF7;&#x8F6C;&#x6362;</h2>
+<p>&#x4E3B;&#x8981;&#x662F;&#x60F3;&#x8981;&#x8BA9;SQL&#x5728;Steam&#x4E0A;&#x8FD0;&#x884C;&#x3002;</p>
+<p><img src="../images/flink11.png" alt="flink11"></p>
+<p>&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x8FD9;&#x79CD;&#x529F;&#x80FD;&#xFF0C;Flink&#x8BBE;&#x8BA1;&#x4E86;<code>Dynamic Table</code>&#x5BF9;Stream&#x8FDB;&#x884C;&#x76F8;&#x4E92;&#x8F6C;&#x6362;&#x3002;</p>
+<h3 id="stream-&#x2192;-dynamic-table">Stream &#x2192; Dynamic Table</h3>
+<ol>
+<li>Append mode<ul>
+<li>&#x5F88;&#x7B80;&#x5355;&#xFF0C;&#x76F4;&#x63A5;&#x6DFB;&#x52A0;&#x4E00;&#x9879;&#x5373;&#x53EF;</li>
+</ul>
+</li>
+<li>Upsert mode<ul>
+<li>&#x9700;&#x8981;&#x5C06;&#x76F8;&#x540C;key&#x7684;&#x503C;&#x66F4;&#x65B0;&#x6216;&#x8005;&#x63D2;&#x5165;</li>
+</ul>
+</li>
+<li>&#x540C;&#x6837;&#x652F;&#x6301;SQL&#x548C;Window&#x64CD;&#x4F5C;</li>
+</ol>
+<h3 id="dynamic-table-&#x2192;-stream">Dynamic Table &#x2192; Stream</h3>
+<p>&#x4E3A;&#x4E86;&#x5BB9;&#x9519;&#xFF0C;&#x4F7F;&#x7528;Undo/Redo&#x65E5;&#x5FD7;</p>
+<h1 id="&#x5BB9;&#x9519;&#x673A;&#x5236;">&#x5BB9;&#x9519;&#x673A;&#x5236;</h1>
+<p>&#x4F7F;&#x7528;checkpoint&#x7684;&#x65B9;&#x5F0F;</p>
+<h2 id="&#x975E;&#x8FED;&#x4EE3;&#x8FC7;&#x7A0B;&#x7684;&#x5BB9;&#x9519;">&#x975E;&#x8FED;&#x4EE3;&#x8FC7;&#x7A0B;&#x7684;&#x5BB9;&#x9519;</h2>
+<p>&#x5BF9;&#x4E8E;&#x6279;&#x5904;&#x7406;&#x548C;&#x6D41;&#x8BA1;&#x7B97;&#x662F;&#x4E00;&#x6837;&#x7684;</p>
+<p>Pipelined Snapshots</p>
+<ul>
+<li><strong>Asynchronous approache</strong></li>
+<li>Light checkpoint</li>
+<li>Distributed snapshots</li>
+<li><strong>Exactly-once guarantee</strong></li>
+</ul>
+<h2 id="&#x8FED;&#x4EE3;&#x8FC7;&#x7A0B;&#x7684;&#x5BB9;&#x9519;">&#x8FED;&#x4EE3;&#x8FC7;&#x7A0B;&#x7684;&#x5BB9;&#x9519;</h2>
+<h3 id="&#x6D41;&#x5F0F;&#x8FED;&#x4EE3;">&#x6D41;&#x5F0F;&#x8FED;&#x4EE3;</h3>
+<p>&#x5C5E;&#x4E8E;&#x6709;&#x73AF;&#x7684;Pipelined Snapshots</p>
+<p>&#x5C06;&#x8FED;&#x4EE3;&#x7684;&#x6570;&#x636E;&#x770B;&#x4F5C;&#x865A;&#x62DF;&#x7684;&#x8F93;&#x5165;</p>
+<h3 id="&#x6279;&#x5F0F;&#x8FED;&#x4EE3;">&#x6279;&#x5F0F;&#x8FED;&#x4EE3;</h3>
+<p>&#x7279;&#x70B9;&#xFF1A;&#x5FAA;&#x73AF;&#x4E0D;&#x7ED3;&#x675F;&#xFF0C;&#x6CA1;&#x6709;&#x8F93;&#x51FA;</p>
+<p>&#x4E24;&#x79CD;CheckPointing&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li>Tail checkpoint</li>
+<li>Head checkpoint</li>
+</ul>
+<h1 id="reference">Reference</h1>
+<ul>
+<li><a href="http://wuchong.me/blog/2016/05/03/flink-internals-overview/" _target="blank">Flink &#x539F;&#x7406;&#x4E0E;&#x5B9E;&#x73B0;&#xFF1A;&#x67B6;&#x6784;&#x548C;&#x62D3;&#x6251;&#x6982;&#x89C8;</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="pregel.html" class="navigation navigation-prev " aria-label="Previous page: 分布式图处理系统--Pregel">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="beam.html" class="navigation navigation-next " aria-label="Next page: 批流融合系统--展望">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"批流融合系统--Flink","level":"1.2.10","depth":2,"next":{"title":"批流融合系统--展望","level":"1.2.11","depth":2,"path":"notes/beam.md","ref":"notes/beam.md","articles":[]},"previous":{"title":"分布式图处理系统--Pregel","level":"1.2.9","depth":2,"path":"notes/pregel.md","ref":"notes/pregel.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":" ","variables":{},"title":"Distribution System","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"notes/flink.md","mtime":"2021-01-27T05:49:18.537Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T09:58:50.487Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,659 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>LevelDB 大作业 · Distribution System</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="positive.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="leveldb1.html">
+            
+                <a href="leveldb1.html">
+            
+                    
+                    LevelDB 安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="leveldb2.html">
+            
+                <a href="leveldb2.html">
+            
+                    
+                    LevelDB 基本接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="skiplist.html">
+            
+                <a href="skiplist.html">
+            
+                    
+                    SkipList 解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="linkedlist.html">
+            
+                <a href="linkedlist.html">
+            
+                    
+                    并发链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="sstable1.html">
+            
+                <a href="sstable1.html">
+            
+                    
+                    SStable 练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="sstable2.html">
+            
+                <a href="sstable2.html">
+            
+                    
+                    SStable 练习二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="postgre.html">
+            
+                <a href="postgre.html">
+            
+                    
+                    PostgreSQL 源码安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="gdb1.html">
+            
+                <a href="gdb1.html">
+            
+                    
+                    GDB 调试 pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="gdb2.html">
+            
+                <a href="gdb2.html">
+            
+                    
+                    GDB 跟踪 pg 源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="hashjoin.html">
+            
+                <a href="hashjoin.html">
+            
+                    
+                    调试 HashJoin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="lock.html">
+            
+                <a href="lock.html">
+            
+                    
+                    基于锁的并发控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="timestamp.html">
+            
+                <a href="timestamp.html">
+            
+                    
+                    基于时间戳的并发控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="positive.html">
+            
+                <a href="positive.html">
+            
+                    
+                    乐观并发控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.15" data-path="project.html">
+            
+                <a href="project.html">
+            
+                    
+                    LevelDB 大作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >LevelDB 大作业</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="project&#x8BF4;&#x660E;">Project&#x8BF4;&#x660E;</h1>
+<h2 id="&#x8981;&#x6C42;">&#x8981;&#x6C42;</h2>
+<ul>
+<li>&#x5BF9;&#x4E8E;&#x7ED9;&#x5B9A;&#x6570;&#x636E;&#x96C6;&#x8BF4;&#x660E;&#x5982;&#x4E0B;<ul>
+<li>&#x53EA;&#x6709; key,value &#x65E0;&#x5176;&#x5B83;&#x5B57;&#x6BB5;</li>
+<li>&#x6570;&#x91CF;&#x7EA7;&#x5728;5&#x4E07;-50&#x4E07;&#x4E4B;&#x95F4;</li>
+<li>&#x5BF9;&#x4E8E;&#x4E3B;&#x952E;&#x548C;&#x975E;&#x4E3B;&#x952E;&#x90FD;&#x5B58;&#x5728;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;</li>
+</ul>
+</li>
+<li>&#x7ED9;&#x5B9A;<code>id</code>&#x67E5;&#x8BE2;&#x7684;&#x8303;&#x56F4;&#xFF0C;&#x540C;&#x65F6;&#x7ED9;&#x51FA;&#x7279;&#x5B9A;&#x7684;<code>Email</code>&#xFF0C;&#x8F93;&#x51FA;&#x8BE5;<code>Email</code>&#x5BF9;&#x5E94;&#x7684;&#x6240;&#x6709;<code>id</code></li>
+<li>&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x91C7;&#x53D6;&#x4F18;&#x5316;&#x65B9;&#x6848;</li>
+</ul>
+<h2 id="&#x6570;&#x636E;&#x96C6;">&#x6570;&#x636E;&#x96C6;</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Id(int, Increment)</strong></th>
+<th><strong>Email(string)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>xiaoming@ecnu.cn</strong></td>
+</tr>
+<tr>
+<td>2</td>
+<td>hong@ecnu.cn</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>xiaoming@ecnu.cn</strong></td>
+</tr>
+<tr>
+<td>4</td>
+<td>wang@ecnu.cn</td>
+</tr>
+<tr>
+<td>&#x2026;</td>
+<td>&#x2026;</td>
+</tr>
+<tr>
+<td>100</td>
+<td>li@sjtu.cn</td>
+</tr>
+<tr>
+<td>101</td>
+<td>wang@sjtu.cn</td>
+</tr>
+<tr>
+<td>&#x2026;</td>
+<td>&#x2026;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><code>id</code>&#x4E3A;&#x4E3B;&#x952E;&#xFF0C;<code>Email</code>&#x4E3A;value&#xFF0C;&#x5176;&#x4E2D;&#xFF0C;<code>id</code>&#x4E0D;&#x91CD;&#x590D;&#xFF0C;<code>Email</code>&#x6709;&#x91CD;&#x590D;</li>
+<li>&#x540C;&#x4E00;&#x4E2A;&#x5B66;&#x6821;&#x540E;&#x7F00;&#x7684;&#x90AE;&#x7BB1;&#x653E;&#x5728;&#x4E00;&#x8D77;</li>
+</ul>
+<h2 id="&#x8BF4;&#x660E;">&#x8BF4;&#x660E;</h2>
+<ul>
+<li>&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;<ul>
+<li>&#x4E3B;&#x952E;&#x548C;&#x975E;&#x4E3B;&#x952E;&#x90FD;&#x5B58;&#x5728;&#x8FC7;&#x6EE4;&#x6761;&#x4EF6;</li>
+<li>&#x7ED9;&#x5B9A;&#x4E00;&#x4E2A;&#x8F83;&#x5927;&#x7684;id&#x8303;&#x56F4;&#x533A;&#x95F4;&#xFF08;&#x6DB5;&#x76D6;&#x591A;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x5B66;&#x6821;&#x90AE;&#x7BB1;&#xFF09;</li>
+<li>&#x67E5;&#x8BE2;Email&#x76F8;&#x540C;&#x5B66;&#x6821;&#x90AE;&#x7BB1;&#x4E0B;&#x7684;&#x540C;&#x4E00;&#x4E2A;&#x4EBA;</li>
+</ul>
+</li>
+<li>&#x8F93;&#x51FA;&#x683C;&#x5F0F;<ul>
+<li>&#x6240;&#x6709;&#x7684;Pair&#xFF0C;&#x4ED6;&#x4EEC;&#x5177;&#x6709;&#x76F8;&#x540C;&#x7684;Email</li>
+<li><code>&lt;id1,id2&gt; + Email</code></li>
+</ul>
+</li>
+<li>&#x6570;&#x636E;&#x91CF;<ul>
+<li>5W-50W&#x4E4B;&#x95F4;</li>
+</ul>
+</li>
+<li>&#x6CE8;&#x610F;<ul>
+<li>&#x5BFC;&#x5165;&#x4E4B;&#x540E;&#x4F1A;&#x81EA;&#x52A8;&#x51FA;&#x53D1;leveldb&#x7684;compaction&#xFF0C;&#x6240;&#x4EE5;&#x5B58;&#x5728;memtable&#x548C;sst&#x90FD;&#x6709;&#x9700;&#x8981;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;&#x7684;&#x60C5;&#x51B5;</li>
+</ul>
+</li>
+</ul>
+<h1 id="&#x5B9E;&#x73B0;">&#x5B9E;&#x73B0;</h1>
+<h2 id="&#x601D;&#x8DEF;">&#x601D;&#x8DEF;</h2>
+<ol>
+<li>&#x9996;&#x5148;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x6700;&#x7B80;&#x5355;&#x7684;<code>scan</code>&#x8FDB;&#x884C;&#x67E5;&#x627E;&#x8F93;&#x51FA;</li>
+<li>&#x4E3A;&#x4E86;&#x7B80;&#x5355;&#x8D77;&#x89C1;&#xFF0C;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x8F7D;&#x5165;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x518D;&#x8DD1;&#x4E00;&#x904D;&#x7A0B;&#x5E8F;&#xFF0C;&#x4F7F;&#x5F97;<code>cmake-build-debug/mydb</code>&#x4E2D;&#x7684;<code>.log</code>&#x6587;&#x4EF6;&#x4E3A;&#x7A7A;&#xFF0C;&#x6B64;&#x65F6;&#x6240;&#x6709;&#x6570;&#x636E;&#x90FD;&#x5728;sst&#x4E2D;</li>
+<li>&#x7136;&#x540E;&#x60F3;&#x5230;&#x5982;&#x4F55;&#x5BF9;&#x4E8E;&#x4E3B;&#x952E;&#x8FDB;&#x884C;&#x8FC7;&#x6EE4;&#xFF1A;&#x5728;sstable&#x4E2D;&#xFF0C;&#x6BCF;&#x4E00;&#x4E2A;table&#x4F1A;&#x7EF4;&#x62A4;&#x5F53;&#x524D;key&#x4E2D;&#x7684;&#x503C;&#x57DF;&#x8303;&#x56F4;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8BE5;<code>metadata</code>&#x5BF9;&#x5176;&#x8FDB;&#x884C;&#x4E3B;&#x952E;&#x8FC7;&#x6EE4;</li>
+<li>&#x5982;&#x4F55;&#x5BF9;&#x975E;&#x4E3B;&#x952E;&#x8FC7;&#x6EE4;&#xFF1F;levelDB&#x63D0;&#x4F9B;&#x4E86;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x4E8E;&#x975E;&#x4E3B;&#x952E;&#x7684;&#x8FC7;&#x6EE4;</li>
+<li>&#x6700;&#x540E;&#xFF0C;&#x5982;&#x4F55;&#x5BF9;&#x5F97;&#x5230;&#x7684;&#x6240;&#x6709;&#x53EF;&#x80FD;kv&#x5BF9;&#x6839;&#x636E;query&#x8FDB;&#x884C;&#x8F93;&#x51FA;&#xFF1F;&#x7531;&#x4E8E;levelDB&#x6CA1;&#x6709;join&#x7B49;&#x590D;&#x6742;&#x7684;&#x7B97;&#x5B50;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>multiMap</code>&#x6570;&#x636E;&#x7ED3;&#x6784;&#x8FDB;&#x884C;&#x5B58;&#x50A8;&#x3002;</li>
+</ol>
+<h2 id="&#x4E3B;&#x952E;&#x8FC7;&#x6EE4;">&#x4E3B;&#x952E;&#x8FC7;&#x6EE4;</h2>
+<p>&#x4E8B;&#x5B9E;&#x4E0A;&#xFF0C;levelDB&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x4E86;&#x5BF9;&#x4E8E;sst&#x7684;key&#x503C;&#x5212;&#x5206;&#xFF0C;&#x4F46;&#x8FD9;&#x662F;&#x6839;&#x636E;&#x5B57;&#x5178;&#x5E8F;&#x8FDB;&#x884C;&#x6392;&#x5E8F;&#x7684;&#x3002;&#x5BF9;&#x4E8E;&#x6211;&#x4EEC;&#x8FD9;&#x4E2A;&#x9898;&#x6765;&#x8BF4;&#xFF0C;<code>key</code>&#x90FD;&#x662F;<code>id</code>&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x6574;&#x6570;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x91CD;&#x5199;<code>comparator</code>&#x51FD;&#x6570;&#x3002;</p>
+<p>&#x5728;<code>util/comparator.cc</code>&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x4E86;&#x9ED8;&#x8BA4;&#x7684;key&#x5B57;&#x5178;&#x5E8F;&#x6BD4;&#x8F83;&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x6B64;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x7EE7;&#x627F;&#x8BE5;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">class</span> MyComparatorImpl : <span class="hljs-keyword">public</span> Comparator {
+        <span class="hljs-keyword">public</span>:
+            MyComparatorImpl() {}
+
+            <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *<span class="hljs-title">Name</span><span class="hljs-params">()</span> <span class="hljs-keyword">const</span> </span>{
+                <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;leveldb.MyComparator&quot;</span>;
+            }
+
+            <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">int</span> <span class="hljs-title">Compare</span><span class="hljs-params">(<span class="hljs-keyword">const</span> Slice &amp;a, <span class="hljs-keyword">const</span> Slice &amp;b)</span> <span class="hljs-keyword">const</span> </span>{
+                <span class="hljs-comment">// &#x7528;stio&#x4F1A;&#x5BFC;&#x81F4;level 1&#x6CA1;&#x6709;table&#xFF0C;level 2&#x4E24;&#x5C42;table&#xFF0C;&#x4E0D;&#x77E5;&#x9053;&#x4E3A;&#x5565;</span>
+                <span class="hljs-keyword">int</span> a_data = <span class="hljs-built_in">std</span>::stoi(a.ToString());
+                <span class="hljs-keyword">int</span> b_data = <span class="hljs-built_in">std</span>::stoi(b.ToString());
+                <span class="hljs-keyword">if</span> (a_data &lt; b_data)
+                    <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;
+                <span class="hljs-keyword">else</span>
+                    <span class="hljs-keyword">return</span> +<span class="hljs-number">1</span>;
+            }
+
+            <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">FindShortestSeparator</span><span class="hljs-params">(
+                    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> *start,
+                    <span class="hljs-keyword">const</span> Slice &amp;limit)</span> <span class="hljs-keyword">const</span> </span>{
+            }
+
+            <span class="hljs-function"><span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">FindShortSuccessor</span><span class="hljs-params">(<span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> *key)</span> <span class="hljs-keyword">const</span> </span>{
+            }
+        };
+</code></pre>
+<p>&#x540C;&#x65F6;&#xFF0C;&#x5728;<code>util/options.cc</code>&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x9700;&#x8981;&#x5C06;&#x9ED8;&#x8BA4;&#x7684;<code>comparator</code>&#x51FD;&#x6570;&#x6362;&#x4E3A;&#x6211;&#x4EEC;&#x81EA;&#x5B9A;&#x4E49;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x6837;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#x91CD;&#x8F7D;&#x3002;</p>
+<p>&#x5BF9;&#x6BCF;&#x4E2A;sst&#xFF0C;&#x901A;&#x8FC7;&#x5BF9;&#x6BD4;&#x4E0E;query range&#x7684;&#x5927;&#x5C0F;&#xFF0C;&#x5373;&#x53EF;&#x5B9E;&#x73B0;&#x5C06;&#x90E8;&#x5206;sst&#x8FDB;&#x884C;&#x8FC7;&#x6EE4;&#x3002;</p>
+<p>&#x6D4B;&#x8BD5;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// find level min-max</span>
+    leveldb::Version *current = db2-&gt;GetCurrentVersion();
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;leveldb::FileMetaData *&gt; files_ = current-&gt;GetFiles(<span class="hljs-number">1</span>);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; files_.size(); i++) {
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;number: &quot;</span> &lt;&lt; files_[i]-&gt;number &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;id_min: &quot;</span> &lt;&lt; files_[i]-&gt;smallest.user_key().ToString() &lt;&lt; <span class="hljs-string">&quot; &quot;</span>;
+        <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;id_max: &quot;</span> &lt;&lt; files_[i]-&gt;largest.user_key().ToString() &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    }
+</code></pre>
+<h2 id="&#x975E;&#x4E3B;&#x952E;&#x8FC7;&#x6EE4;">&#x975E;&#x4E3B;&#x952E;&#x8FC7;&#x6EE4;</h2>
+<p>&#x975E;&#x4E3B;&#x952E;&#x8FC7;&#x6EE4;&#x662F;&#x901A;&#x8FC7;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#x5B9E;&#x73B0;&#x7684;&#x3002;&#x5728;levelDB&#x4E2D;&#xFF0C;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x4E86;&#x4E3B;&#x952E;&#x7684;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#xFF0C;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x66F4;&#x6539;&#x4E3A;&#x975E;&#x4E3B;&#x952E;&#x3002;</p>
+<p>&#x5728;<code>table/table.cc</code>&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x4EFF;&#x7167;<code>InternalGet</code>&#x51FD;&#x6570;&#xFF0C;&#x6784;&#x9020;&#x81EA;&#x5DF1;&#x7684;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#x67E5;&#x8BE2;&#x51FD;&#x6570;&#xFF1A;</p>
+<pre><code class="lang-cpp"><span class="hljs-comment">// new method, to indicate whether the value is in this table</span>
+    <span class="hljs-keyword">bool</span> Table::ValueInTable(<span class="hljs-keyword">const</span> leveldb::Slice &amp;value_) {
+        Iterator *iiter = rep_-&gt;index_block-&gt;NewIterator(rep_-&gt;options.comparator);
+        iiter-&gt;SeekToFirst();
+        <span class="hljs-keyword">bool</span> flag = <span class="hljs-literal">false</span>;
+        <span class="hljs-keyword">while</span> (iiter-&gt;Valid()) {
+            Slice handle_value = iiter-&gt;value();
+            FilterBlockReader *filter = rep_-&gt;filter;
+            BlockHandle handle;
+            <span class="hljs-keyword">if</span> (filter != <span class="hljs-literal">nullptr</span> &amp;&amp;
+                handle.DecodeFrom(&amp;handle_value).ok() &amp;&amp;
+                !filter-&gt;KeyMayMatch(handle.offset(), value_)) {
+<span class="hljs-comment">//                std::cout &lt;&lt; &quot;KeyInTable doesn&apos;t hit the filter!&quot; &lt;&lt; std::endl;</span>
+            } <span class="hljs-keyword">else</span> {
+<span class="hljs-comment">//                std::cout &lt;&lt; &quot;KeyInTable hit the filter!&quot; &lt;&lt; std::endl;</span>
+                flag = <span class="hljs-literal">true</span>;
+                <span class="hljs-keyword">return</span> flag;
+            }
+            iiter-&gt;Next();
+        }
+<span class="hljs-comment">//        std::cout &lt;&lt; &quot;KeyInTable doesn&apos;t hit the filter!&quot; &lt;&lt; std::endl;</span>
+        <span class="hljs-keyword">return</span> flag;
+    }
+</code></pre>
+<p>&#x540C;&#x65F6;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C06;&#x9ED8;&#x8BA4;&#x7684;&#x4E3B;&#x952E;&#x4E0A;&#x7684;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#x6539;&#x4E3A;&#x975E;&#x4E3B;&#x952E;&#x7684;&#xFF0C;&#x5728;<code>table/table_builder.cc</code>&#x6587;&#x4EF6;&#x4E2D;&#x4FEE;&#x6539;124&#x884C;&#xFF0C;&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x9700;&#x8981;&#x5C06;<code>value</code>&#x53D8;&#x4E3A;<code>slice</code>&#x7C7B;&#x578B;&#x624D;&#x80FD;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#x4F20;&#x9012;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x52A0;&#x5165;<code>sequence</code>&#x6EE1;&#x8DB3;<code>slice</code>&#x7EA6;&#x675F;</p>
+<pre><code class="lang-cpp"><span class="hljs-keyword">if</span> (r-&gt;filter_block != <span class="hljs-literal">nullptr</span>) {
+<span class="hljs-comment">//            r-&gt;filter_block-&gt;AddKey(key);   // &#x5411;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#x6DFB;&#x52A0;&#x503C;</span>
+            <span class="hljs-comment">// &#x5411;&#x5E03;&#x9686;&#x8FC7;&#x6EE4;&#x5668;&#x6DFB;&#x52A0;mail&#xFF08;value&#xFF09;&#xFF0C;&#x800C;&#x4E0D;&#x662F;key</span>
+            <span class="hljs-keyword">uint64_t</span> seq = <span class="hljs-number">1</span>;
+            <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> tmp_value = value.ToString();
+            PutFixed64(&amp;tmp_value, seq);
+            r-&gt;filter_block-&gt;AddKey(Slice(tmp_value));
+        }
+</code></pre>
+<p>&#x8FD9;&#x6837;&#x5C31;&#x5B9E;&#x73B0;&#x4E86;&#x7B80;&#x5355;&#x7684;&#x5BF9;&#x4E8E;&#x975E;&#x4E3B;&#x952E;&#x7684;&#x8FC7;&#x6EE4;&#x4F18;&#x5316;&#x3002;</p>
+<h2 id="&#x8BFB;&#x53D6;sst">&#x8BFB;&#x53D6;sst</h2>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x901A;&#x8FC7;metadata&#x9009;&#x62E9;&#x4E86;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x5F53;&#x524D;value&#x7684;sst&#xFF0C;&#x5982;&#x4F55;&#x5BF9;sst&#x8FDB;&#x884C;&#x8BFB;&#x53D6;&#x5462;&#xFF1F;</p>
+<p>&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6D4B;&#x8BD5;&#x51FD;&#x6570;&#x4E3A;&#xFF08;&#x52A9;&#x6559;&#x63D0;&#x4F9B;&#xFF09;</p>
+<pre><code class="lang-cpp"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-comment">// open a db</span>
+  leveldb::DB *db;
+  leveldb::Options options;
+<span class="hljs-comment">//    options.comparator = myCom;</span>
+  options.create_if_missing = <span class="hljs-literal">true</span>;
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> dbname_ = <span class="hljs-string">&quot;../cmake-build-debug/mydb123&quot;</span>;
+  leveldb::Status status2 = leveldb::DB::Open(options, dbname_, &amp;db);
+
+  leveldb::Version *current = db-&gt;GetCurrentVersion();
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">vector</span>&lt;leveldb::FileMetaData *&gt; files_ = current-&gt;GetFiles(<span class="hljs-number">0</span>);
+
+  <span class="hljs-built_in">std</span>::<span class="hljs-built_in">string</span> fname = leveldb::TableFileName(dbname_, files_[<span class="hljs-number">0</span>]-&gt;number);
+
+  leveldb::RandomAccessFile *file = <span class="hljs-literal">nullptr</span>;
+  leveldb::Table *table = <span class="hljs-literal">nullptr</span>;
+  leveldb::Env *env_ = options.env;
+  env_-&gt;NewRandomAccessFile(fname, &amp;file);
+  leveldb::Table::Open(options, file, files_[<span class="hljs-number">0</span>]-&gt;file_size, &amp;table);
+
+  leveldb::Iterator *result = table-&gt;NewIterator(leveldb::ReadOptions());
+
+  result-&gt;SeekToFirst();
+  <span class="hljs-keyword">while</span> (result-&gt;Valid()) {
+    leveldb::ParsedInternalKey ikey;
+    leveldb::ParseInternalKey(result-&gt;key(), &amp;ikey);
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;key:&quot;</span> &lt;&lt; ikey.user_key.ToString();
+    <span class="hljs-built_in">std</span>::<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;   value:&quot;</span> &lt;&lt; result-&gt;value().ToString() &lt;&lt; <span class="hljs-built_in">std</span>::<span class="hljs-built_in">endl</span>;
+    result-&gt;Next();
+  }
+
+  <span class="hljs-keyword">delete</span> db;
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+
+}
+</code></pre>
+<h2 id="&#x8F93;&#x51FA;">&#x8F93;&#x51FA;</h2>
+<p>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>multimap</code>&#x8FDB;&#x884C;&#x8F93;&#x51FA;&#xFF0C;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;</p>
+<h2 id="&#x603B;&#x4EE3;&#x7801;">&#x603B;&#x4EE3;&#x7801;</h2>
+<p>&#x672C;&#x5B9E;&#x9A8C;&#x5B8C;&#x6210;&#x7684;&#x603B;&#x4EE3;&#x7801;&#x53EF;<a href="https://github.com/Scottdyt/ClassProject/tree/master/DBImplementation/PJ13-Final/LeveldbFinal" _target="blank">&#x53C2;&#x8003;&#x8FD9;&#x91CC;</a>&#x3002;&#x5165;&#x53E3;&#x51FD;&#x6570;&#x5728;<code>test/FinalDemo.cc</code>&#x4E2D;&#x3002;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="positive.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 乐观并发控制">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"LevelDB 大作业","level":"1.15","depth":1,"previous":{"title":"乐观并发控制","level":"1.14","depth":1,"path":"positive.md","ref":"positive.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"Distribution System","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"project.md","mtime":"2021-01-28T06:42:55.852Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T04:03:30.264Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

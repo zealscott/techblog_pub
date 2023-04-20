@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>paper on Scott&#39;Log</title>
+    <link>https://tech.zealscott.com/tags/paper/</link>
+    <description>Recent content in paper on Scott&#39;Log</description>
+    <image>
+      <url>https://tech.zealscott.com/papermod-cover.png</url>
+      <link>https://tech.zealscott.com/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 20 Aug 2019 22:07:12 +0800</lastBuildDate><atom:link href="https://tech.zealscott.com/tags/paper/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Learning from positive and unlabeled data with a selection bias</title>
+      <link>https://tech.zealscott.com/deeplearning/pulearning/nnpusb/</link>
+      <pubDate>Tue, 20 Aug 2019 22:07:12 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/pulearning/nnpusb/</guid>
+      <description>本文主要考虑的是PU learning，也就是在只有正类数据和无标记数据的情况下，对数据进行二分类。在case-control情境下（也就是two samples问题），之前大部分研究基于都基于selected completely at random的假设，但本文argue这种假设不符合实际，因此对该假设进行了放松：如果$P(o = +1| x)$越高，则$P(y = +1| x)$也越高，反之亦然，这种性质被称为invariance of order。
+使用Bayes公式推导可以得到，密度比也符合这种偏序关系。因此，论文认为，虽然我们很难得到$P(y=+1|x)$具体的值，但通过估计密度比，能得到样本间是正类的概率偏序关系，这样通过一个合理的阈值作为分类器即可区分正负类。
+作者通过两种方法来估计密度比：一种是根据之前研究定义的classification risk推广到有based的classification risk函数，然后根据公式$\hat{r} = \frac{\hat f}{\pi}$计算得到；另一种方法是直接用uLSIF进行估计。得到密度比$r$之后，根据先验信息$\pi$，对数据进行遍历即可得到$\theta_\pi$阈值，通过该阈值可以实现在未标记数据上将正负样本进行区分。
+最后，作者在几个常见的数据集上进行了改造以符合PU learning的假设，同时使用了一个real-world数据集，使用论文提到的两个方法估计$\hat{r}$，然后可以得到阈值$\theta_\pi$，进而得到二分类器。最后还验证了在未知先验$\pi$的情况下，其算法的robust较好。
+Intuition  cast-control scenario  P 是从正类中采样的，U 是从整个样本空间采样的，这两者相互独立。这个假设符合现实中的认识，因为如果有标记的样本都是正例，那么一定是人为忽略或是丢弃了负类样本。换句话说，unlabel data 中既包含正样本，也包含负样本，称为为 two samples 问题，即有 P 和 U 两个采样集。   selected completely at random (SCAR)  对于cast-control的问题，常见的假设是：正类被标记的采样集和未标记的采样集是独立同分布的。 作者 argue 这种假设在现实问题中很多时候不成立，例如在异常检测中，异常的更容易被选中；在人脸识别中，用户更倾向于提供清晰的照片（labeled），而未标记的数据更可能非常不清晰。   select bias  因此在现实中，作者认为$P(x|y = +1,o = 0) \ne P(x|y = +1,o = +1)$，不能简单的通过Bayes公式推断得到$P(y = +1 | x)$的概率。 虽然不能直接得到$P(y = +1 | x)$的值，但根据之前的假设，如果数据更容易被标记，则它是正样本的概率更大，可以得到这样的偏序关系：  $P(y = +1 | x_i) \le P(y = +1| x_j) \Leftrightarrow P(o = +1 | x_i)\le P(o = +1| x_j)$   如果取等号，那么就满足了SCAR假设，因此，本文定义的invariance of order可以看作是SCAR的推广。    Strategy 作者主要的思路是：</description>
+    </item>
+    
+    <item>
+      <title>PU learning Overview</title>
+      <link>https://tech.zealscott.com/deeplearning/pulearning/pu-learning-overview/</link>
+      <pubDate>Sat, 17 Aug 2019 21:00:30 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/pulearning/pu-learning-overview/</guid>
+      <description>Papers  Learning Classiﬁers from Only Positive and Unlabeled Data KDD 2008 （PUAdapter）  经典论文，在SCAR假设下，证明了$p(y|x)$与$p(s|x)$只相差一个常数c，因此可以使用经典的分类模型，将positive和unlabel数据看成两类，直接得到$p(s|x)$的概率，进而估计$p(y|x)$。同时给出了估计常数$c$和先验$p(y)$的方法。 本文还提出了一个非常重要的思想，就是把Unlabel数据看成是Positive和Negative样本的不同权重组合，引出了后来的unbiased risk estimators。 Code available 论文笔记   Analysis of Learning from Positive and Unlabeled Data NIPS 2014  从基本的分类损失出发，推导了PU的分类问题其实就是Cost-sensitive classiﬁcation的形式。详细推导了risk function：$R(f) = 2\pi R_1(f) + R_X(f) -\pi $，论文以这个risk function出发，对不同的loss function进行了讨论。（部分推导可结合 Semi-Supervised Novelty Detection 再看） 同时证明了如果使用凸函数hinge loss作为loss function，会导致错误的分类边界（多一项惩罚项），因此需要使用非凸ramp loss作为loss function。同时证明了使用PU进行分类的误差小于监督学习误差的$2\sqrt{2}$倍（这里待看）。  即loss需要满足 $l(t,+1) + l(t,-1) = 1$，也就是symmetric condition   论文笔记   Convex formulation for learning from positive and unlabeled data IMCL 2015 （uPU）  这篇文章主要是对之前提出的非凸loss进行改进，主要想法是根据risk function对正类样本和未标记样本使用不同的loss function。 从另一个方面推导了risk function： $R(g) = \pi E_1[ \hat{l}(g(x))] + E_X[l(-g(x))]$，考虑当$\hat{l}$为凸时，证明了其一定为线性函数，将hinge loss修改为double hinge loss，变为凸优化问题。通过实验说明其效果不比non-convex loss function差，同时减少了计算开销。  即loss需要满足$l(t,+1) + l(t,-1) = -t$，也就是linear-odd condition   同时，这篇文章用的分类器为linear-in-parameter model，使用高斯核将样本映射到feature space，具体定义可以参考 Introduction to Statistical Machine Learning By Masashi Sugiyama 2016 一书的Chapter21。 Code available 论文笔记   Positive-Unlabeled Learning with Non-Negative Risk Estimator NIPS 2017 （nnPU）  由于之前的risk estimator $\hat{R}_{pu}(g) = \pi_p\hat{R}_p^+(g) -\pi_p\hat{R}_p^-(g) + \hat{R}_u^-(g)$中，有可能出现$-\pi_p\hat{R}_p^-(g) + \hat{R}_u^-(g) &amp;lt; 0 $的情况，会导致risk不断减小变为负数。因此对risk进行改写，提出nnPU，能有效的防止过拟合，能使用更强大的学习器（神经网络）进行学习。同时，论文对这个risk estimator的bias，consistency和MSE reduction进行了理论分析。 Code available   Learning from positive and unlabeled data with a selection bias ICLR 2019 （nnPUSB）  放松了SCAR的假设，认为如果$P(o = +1| x)$越高，则$P(y = +1| x)$也越高（不一定相同）。使用贝叶斯公式得到密度比和$P(y = +1|x)$满足同样的偏序关系，因此使用两种方法估计密度比（risk function/uLSIF），并设定阈值实现对PU的分类。 Code available / My implementation 论文笔记    Formula Risk 推导  定义在decision function $g$ 下的risk为：  $R(g) = E_{(X,Y)\sim p(x,y)}[l(g(X),Y)] = \pi_pR_p^+(g) + \pi_nR_n^-(g)$ 其中$R_p^+(g) = E_p[l(g(X)),+1]$也就是对正类分类错误的risk，$R_n^-(g) = E_p[l(g(X)),-1]$也就是对负类分类错误的risk   由于我们没有办法直接得到负类样本，因此由公式 $\pi_np_n(x) = p(x) - \pi_pp_p(x)$可得负类样本分类错误的损失：   $\pi R_n^-(g) = R_u^-(g) - \pi_pR_p^-(g)$</description>
+    </item>
+    
+    <item>
+      <title>Convex Formulation for Learning from Positive and Unlabeled Data</title>
+      <link>https://tech.zealscott.com/deeplearning/pulearning/npu/</link>
+      <pubDate>Mon, 05 Aug 2019 09:00:30 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/pulearning/npu/</guid>
+      <description>该论文在之前PU learning中使用非凸函数作为loss的基础上，对正类样本和未标记样本使用不同的凸函数loss，从而将其转为凸优化问题。结果表明，该loss（double hinge loss）与非凸loss（ramp）精度几乎一致，但大大减少了计算量。
+Introdution Background 论文首先强调了PU问题的重要性，举了几个例子：
+ Automatic face tagging  用户对自己的画像标记为正类，其余都是未标记数据，需要正确识别用户的照片   Inlier-based outlier detection  需要在只有inliers和未标记数据中识别outliers，这种方法比完全无监督学习的效果要好   Class is too diverse  如果要识别的数据集中类别太多，也就是one-vs-rest classification   Negative-class dataset shift  由于训练数据和测试数据采集的实践差异导致负类样本的概率分布发生了变化，那么如果使用PU learning，可以减少重新标记的代价    Method 作者简单回顾了之前PU learning的常见做法：
+ 直接在正类样本和未标记样本中训练一个分类器。但很显然这样的效果非常差，因为未标记样本中包含两类数据。 根据先验$\pi$使用一个loss function来权衡每个样本的权重，目标是使得loss function最小化。但这样做的结果是会产生bias。 使用满足$l(z) + l(-z) = 1$条件的loss function可以消除这种bias，但对于ramp loss，是非凸函数，导致在优化过程中可能求导局部解。  因此，本文提出了一种新的凸函数的loss function，也就是double hinge loss，不仅能够消除bias，同时也能保证凸性。关键点在于对未标记数据和正类数据使用不同的loss function。
+Non-convex PU classification 作者回顾了在 Analysis of Learning from Positive and Unlabeled Data 这篇文章中的方法。</description>
+    </item>
+    
+    <item>
+      <title>Analysis of Learning from Positive and Unlabeled Data</title>
+      <link>https://tech.zealscott.com/deeplearning/pulearning/pu-learning-non-convex/</link>
+      <pubDate>Mon, 29 Jul 2019 11:23:30 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/pulearning/pu-learning-non-convex/</guid>
+      <description>本文从基本的分类损失出发，推导了PU的分类问题其实就是Cost-sensitive classiﬁcation的形式，同时，通过实验证明了如果使用凸函数作为loss function，例如hinge loss会导致错误的分类边界（有bias），因此需要使用例如ramp loss之类的凹函数。同时，论文还对先验$\pi$存在偏差的情况进行了讨论，说明了如果样本中大部分都是正样本，那么就算先验差距比较大，但对总体的分类效果没有太大影响。最后对分类边界进行讨论，证明了使用PU进行分类的误差小于监督学习误差的$2\sqrt{2}$倍。
+基本概念和定义  Ordinary classification  Bayes optimal classiﬁer的目标是最小化misclassiﬁcation rate，这在Introduction to Statistical Machine Learning By Masashi Sugiyama 书里有定义，直观理解就是最小化期望错分率： $R(f) = \pi R_1 (f) + (1 - \pi) R_{-1}(f)$ 这里的$R_1$表示false negative rate，也就是分错正类的概率，乘以先验正类的概率$\pi$ $R_{-1}$表示false positive rate，也就是分错负类的概率，乘以先验负类的概率$1-\pi$ 这样，对分错样本的概率分别乘以其先验概率，就是其错分概率的期望。   Cost-sensitive classiﬁcation  如果对于某种错误我们的敏感程度不一样，那么就乘以不同的权重，重新定义为： $R(f) = \pi c_1 R_1(f) + (1-\pi) c_{-1}R_{-1}(f)$ 这里用$c_1$和$c_{-1}$分别表示对两种错分的代价   PU classification   定义在未标记数据集$X$ 中的分布：
+  $P_X = \pi P_1 + (1-\pi) P_{-1}$</description>
+    </item>
+    
+    <item>
+      <title>Learning Classiﬁers from Only Positive and Unlabeled Data</title>
+      <link>https://tech.zealscott.com/deeplearning/pulearning/pu-learning/</link>
+      <pubDate>Sun, 28 Jul 2019 21:00:30 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/pulearning/pu-learning/</guid>
+      <description>本文主要考虑在SCAR假设下，证明了普通的分类器和PU分类器只相差一个常数，因此可以使用普通分类器的方法来估计$p(s|x)$，进而得到$p(y|x)$。同时提供了三种方法来估计这个常数，最后，还对先验$p(y)$的估计提供了思路。
+Learning a traditional classifier   概念定义
+ $x$ 表示一个样本，$y$ 表示其label（0或者1），$s$表示是否被select 那么，在PU问题中，当$s =1 $时，一定有$y = 1$ $P(s = 1| x,y=0) = 0 $ 一定成立    两种采样假设
+ signle-training-set  所有的样本都是从$(x,y,s)$这个三元组的分布中采样的   case-control  两个数据集（正类，未标记）是从三元组中独立的抽样出来的。当采样正类时被称为case，采样未标记数据时称为contaminated controls   这两种假设有很明显的区别。总的来说，第一种假设比第二种假设要严格得多，也就能提供更多的信息：  两种假设都能让我们估计$p(x)$ 但只有在第一种假设下，能够让我们很容易的估计出$p(s = 1)$，因此也更容易估计出$p(y = 1)$，二第二种条件不可以。      基本假设
+ 我们需要训练的传统分类器是：$f(x) = p(y = 1|x)$ 然而，对正类数据没有任何假设的前提下，我们很难得到较好的分类器 因此，论文给出的假设是，正类样本数据是从正类数据中完全随机的抽取出来的。  也就是说，当$y = 1$时，无论$x$取说明值，它们的概率都是相同的：  $p(s = 1| x,y=1) = p(s =1|y=1)$   这个假设被称为selected completedly at random   我们定义一个nontraditional classifier：$g(x) = p(s =1|x)$ 因此，我们需要一些定理来证明如何将非传统的分类器转化为传统的分类器    Lemma：假设SCAR条件成立，那么$p(y = 1|x) = \frac{p(s=1|x)}{c}$，其中$c = p(s=1|y=1)$</description>
+    </item>
+    
+  </channel>
+</rss>

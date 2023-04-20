@@ -1,0 +1,769 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>决策树python实现 · Machine Learning</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="cart.html" />
+    
+    
+    <link rel="prev" href="id3.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="Keynotes.html">
+            
+                <a href="Keynotes.html">
+            
+                    
+                    Keynotes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="id3.html">
+            
+                <a href="id3.html">
+            
+                    
+                    决策树ID3及C4.5算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="id3 python.html">
+            
+                <a href="id3 python.html">
+            
+                    
+                    决策树python实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="cart.html">
+            
+                <a href="cart.html">
+            
+                    
+                    决策树CART算法及剪枝
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="svm.html">
+            
+                <a href="svm.html">
+            
+                    
+                    SVM入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="lr.html">
+            
+                <a href="lr.html">
+            
+                    
+                    线性回归与分类
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="bayes.html">
+            
+                <a href="bayes.html">
+            
+                    
+                    生成模型贝叶斯
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="gbdt.html">
+            
+                <a href="gbdt.html">
+            
+                    
+                    GBDT/XGboost 小记
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="learning theory.html">
+            
+                <a href="learning theory.html">
+            
+                    
+                    Learning Theory
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="regularization.html">
+            
+                <a href="regularization.html">
+            
+                    
+                    Regularization Feature Selection
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="online learning.html">
+            
+                <a href="online learning.html">
+            
+                    
+                    Online Learning
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="advice.html">
+            
+                <a href="advice.html">
+            
+                    
+                    Advice For Applying ML
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="em.html">
+            
+                <a href="em.html">
+            
+                    
+                    EM思想
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="em algorithm.html">
+            
+                <a href="em algorithm.html">
+            
+                    
+                    EM算法推导
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="fa.html">
+            
+                <a href="fa.html">
+            
+                    
+                    因子分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="pca.html">
+            
+                <a href="pca.html">
+            
+                    
+                    PCA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="recap.html">
+            
+                <a href="recap.html">
+            
+                    
+                    期末复习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="cs229 keynotes.html">
+            
+                <a href="cs229 keynotes.html">
+            
+                    
+                    Keynotes For CS 229
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >决策树python实现</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>&#x672C;&#x6587;&#x7684;&#x5927;&#x90E8;&#x5206;&#x4EE3;&#x7801;&#x57FA;&#x4E8E; <a href="https://www.manning.com/books/machine-learning-in-action" _target="blank">Machine Learning in Action</a> &#x4E00;&#x4E66;&#xFF0C;&#x539F;&#x4E66;&#x4EE3;&#x7801;&#x89E3;&#x91CA;&#x8F83;&#x5C11;&#xFF0C;&#x81EA;&#x5DF1;&#x589E;&#x52A0;&#x4E86;&#x5F88;&#x591A;&#x6CE8;&#x91CA;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;<a href="https://github.com/Scottdyt/MachineLearningPractice" _target="blank">&#x8FD9;&#x91CC;&#x4E0B;&#x8F7D;</a>&#x3002;</p>
+<h1 id="id3&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;">ID3&#x7B97;&#x6CD5;&#x5B9E;&#x73B0;</h1>
+<h2 id="&#x6784;&#x9020;&#x6570;&#x636E;">&#x6784;&#x9020;&#x6570;&#x636E;</h2>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">createDataSet</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; the dataset for test &quot;&quot;&quot;</span>
+    dataSet = [[<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&apos;yes&apos;</span>],
+               [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&apos;yes&apos;</span>],
+               [<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-string">&apos;no&apos;</span>],
+               [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&apos;no&apos;</span>],
+               [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&apos;no&apos;</span>]]
+    <span class="hljs-comment"># name of each feature</span>
+    labels = [<span class="hljs-string">&apos;no surfacing&apos;</span>, <span class="hljs-string">&apos;flippers&apos;</span>]
+    <span class="hljs-keyword">return</span> dataSet, labels
+</code></pre>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x53EA;&#x6709;&#x4E24;&#x4E2A;feature&#xFF0C;&#x5BF9;&#x5E94;&#x4E24;&#x79CD;&#x8F93;&#x51FA;&#x3002;</p>
+<h2 id="&#x4FE1;&#x606F;&#x589E;&#x76CA;">&#x4FE1;&#x606F;&#x589E;&#x76CA;</h2>
+<h3 id="&#x8BA1;&#x7B97;&#x6570;&#x636E;&#x96C6;&#x7684;&#x9999;&#x519C;&#x71B5;">&#x8BA1;&#x7B97;&#x6570;&#x636E;&#x96C6;&#x7684;&#x9999;&#x519C;&#x71B5;</h3>
+<p>&#x6211;&#x4EEC;&#x9996;&#x5148;&#x8BA1;&#x7B97;&#x6570;&#x636E;&#x96C6;&#x7684;&#x9999;&#x519C;&#x71B5;&#xFF08;&#x4FE1;&#x606F;&#x71B5;&#xFF09;&#xFF0C;&#x6839;&#x636E;&#x8BA1;&#x7B97;&#x516C;&#x5F0F;&#xFF1A;</p>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>E</mi><mi>n</mi><mi>t</mi><mo>(</mo><mi>D</mi><mo>)</mo><mo>=</mo><mo>&#x2212;</mo><munder><mo>&#x2211;</mo><mi>k</mi></munder><msub><mi>p</mi><mi>k</mi></msub><mi>l</mi><mi>o</mi><mi>g</mi><msub><mi>P</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">Ent(D) =  - \sum_k p_k log P_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.0500050000000005em;"></span><span class="strut bottom" style="height:2.3521180000000004em;vertical-align:-1.3021129999999999em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.05764em;">E</span><span class="mord mathit">n</span><span class="mord mathit">t</span><span class="mopen">(</span><span class="mord mathit" style="margin-right:0.02778em;">D</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord">&#x2212;</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0500050000000005em;"><span style="top:-1.847887em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">&#x2211;</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.3021129999999999em;"></span></span></span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathit">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord mathit" style="margin-right:0.01968em;">l</span><span class="mord mathit">o</span><span class="mord mathit" style="margin-right:0.03588em;">g</span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:-0.13889em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathit mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span></span></span></span></span></p>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x7684;&#x6570;&#x636E;&#x4EE5;<code>list</code>&#x4E3A;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x6700;&#x540E;&#x4E00;&#x5217;&#x4E3A;&#x5206;&#x7C7B;&#x7ED3;&#x679C;&#xFF0C;&#x524D;&#x9762;&#x7684;&#x90FD;&#x4E3A;&#x5C5E;&#x6027;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">calcShannonEnt</span><span class="hljs-params">(dataSet)</span>:</span>
+    <span class="hljs-string">&apos;&apos;&apos; the function is used to calculate Shannon Entropy, 
+    a method to measure the disorder of data .
+    the dataSet is like [[1,1,&apos;yes&apos;],[1,0,&apos;no&apos;],...]
+    the last index of each vector stands for which class it belong.
+    the feature needs to be discrete and numeric.
+        return shannon Entropy
+    &apos;&apos;&apos;</span>
+
+    numEntries = len(dataSet)
+    <span class="hljs-comment"># use lambda to define a function zero when key is not presented</span>
+    labelCounts = defaultdict(<span class="hljs-keyword">lambda</span>: <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">for</span> feaVec <span class="hljs-keyword">in</span> dataSet:
+        currentLabel = feaVec[<span class="hljs-number">-1</span>]
+        labelCounts[currentLabel] += <span class="hljs-number">1</span>
+    shannonEnt = <span class="hljs-number">0.0</span>
+    <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> labelCounts:
+        prob = float(labelCounts[key]) / numEntries
+        shannonEnt -= prob * log(prob, <span class="hljs-number">2</span>)  <span class="hljs-comment"># -\sum [p*log(p)]</span>
+    <span class="hljs-keyword">return</span> shannonEnt
+</code></pre>
+<h3 id="&#x6309;&#x7167;&#x7279;&#x5F81;&#x5212;&#x5206;&#x6570;&#x636E;&#x96C6;">&#x6309;&#x7167;&#x7279;&#x5F81;&#x5212;&#x5206;&#x6570;&#x636E;&#x96C6;</h3>
+<p>&#x6839;&#x636E;&#x7B97;&#x6CD5;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x8BA1;&#x7B97;&#x6BCF;&#x4E2A;&#x7279;&#x5F81;&#x7684;&#x4FE1;&#x606F;&#x589E;&#x76CA;&#xFF0C;&#x56E0;&#x6B64;&#x9996;&#x5148;&#x9700;&#x8981;&#x5BF9;&#x6570;&#x636E;&#x96C6;&#x8FDB;&#x884C;&#x5212;&#x5206;&#xFF1A;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">splitDataSet</span><span class="hljs-params">(dataSet, axis, value)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;split Dataset to get information gain for this axis
+       axis means the fature to calculate using value 
+       return the data splited
+    &quot;&quot;&quot;</span>
+    retDataSet = []
+    <span class="hljs-keyword">for</span> featVec <span class="hljs-keyword">in</span> dataSet:
+        <span class="hljs-keyword">if</span> featVec[axis] == value:
+            reducefeatVec = featVec[:]  <span class="hljs-comment"># copy</span>
+            reducefeatVec.pop(axis)  <span class="hljs-comment"># delete axis feature</span>
+            retDataSet.append(reducefeatVec)
+    <span class="hljs-keyword">return</span> retDataSet
+</code></pre>
+<h3 id="&#x9009;&#x62E9;&#x6700;&#x597D;&#x7684;&#x5212;&#x5206;&#x65B9;&#x5F0F;">&#x9009;&#x62E9;&#x6700;&#x597D;&#x7684;&#x5212;&#x5206;&#x65B9;&#x5F0F;</h3>
+<p>&#x6700;&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x9488;&#x5BF9;&#x4E0D;&#x540C;&#x7684;&#x5212;&#x5206;&#x65B9;&#x5F0F;&#x8BA1;&#x7B97;&#x9999;&#x519C;&#x71B5;&#xFF0C;&#x9009;&#x51FA;&#x6700;&#x597D;&#x7684;&#x5212;&#x5206;&#x65B9;&#x5F0F;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">chooseBestFeatureToSplit</span><span class="hljs-params">(dataSet)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; choose best feature according to information gain
+        the data must have the same dimension
+        return the feature chosen  
+     &quot;&quot;&quot;</span>
+    numFeatures = len(dataSet[<span class="hljs-number">0</span>]) - <span class="hljs-number">1</span>
+    baseEntropy = calcShannonEnt(dataSet)
+    bestInforGain = <span class="hljs-number">0.0</span>
+    bestFeature = <span class="hljs-number">-1</span>
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(numFeatures):
+        featList = [example[i] <span class="hljs-keyword">for</span> example <span class="hljs-keyword">in</span> dataSet]
+        uniqueVals = set(featList)
+        newEntropy = <span class="hljs-number">0.0</span>
+        <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> uniqueVals:
+            subDataSet = splitDataSet(dataSet, i, value)
+            prob = len(subDataSet)/float(len(dataSet))
+            newEntropy += prob*calcShannonEnt(subDataSet)
+        infoGain = baseEntropy - newEntropy
+        <span class="hljs-keyword">if</span> (infoGain &gt; bestInforGain):
+            bestInforGain = infoGain
+            bestFeature = i
+    <span class="hljs-keyword">return</span> bestFeature
+</code></pre>
+<h2 id="&#x9012;&#x5F52;&#x6784;&#x5EFA;&#x51B3;&#x7B56;&#x6811;">&#x9012;&#x5F52;&#x6784;&#x5EFA;&#x51B3;&#x7B56;&#x6811;</h2>
+<h3 id="&#x505C;&#x6B62;&#x9012;&#x5F52;&#x6761;&#x4EF6;">&#x505C;&#x6B62;&#x9012;&#x5F52;&#x6761;&#x4EF6;</h3>
+<ul>
+<li>&#x5F53;&#x6240;&#x6709;&#x7C7B;&#x522B;&#x6807;&#x7B7E;&#x5168;&#x90E8;&#x76F8;&#x540C;&#xFF0C;&#x5219;&#x76F4;&#x63A5;&#x8FD4;&#x56DE;&#x8BE5;&#x6807;&#x7B7E;</li>
+<li>&#x5F53;&#x4F7F;&#x7528;&#x5B8C;&#x4E86;&#x6240;&#x6709;&#x7279;&#x5F81;&#xFF0C;&#x4F9D;&#x7136;&#x4E0D;&#x80FD;&#x5C06;&#x6570;&#x636E;&#x96C6;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#xFF0C;&#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x6295;&#x7968;&#x7684;&#x65B9;&#x6CD5;&#x9009;&#x51FA;&#x6570;&#x91CF;&#x6700;&#x591A;&#x7684;&#x6807;&#x7B7E;&#x4F5C;&#x4E3A;&#x8BE5;&#x7C7B;&#x3002;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> operator
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">majorityCnt</span><span class="hljs-params">(classList)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;  this function is used when the algorithm cannot continue
+    to classfy because all attributes are used
+    majority of class will be chose.
+        return the class chosen
+    &quot;&quot;&quot;</span>
+    classCount = defaultdict(<span class="hljs-keyword">lambda</span>: <span class="hljs-number">0</span>)
+    <span class="hljs-keyword">for</span> vote <span class="hljs-keyword">in</span> classList:
+        classCount[vote] += <span class="hljs-number">1</span>
+    sortedClassCount = sorted(classCount.iteritems(),
+                              key=operator.itemgetter(<span class="hljs-number">1</span>), reverse=<span class="hljs-keyword">True</span>)
+    <span class="hljs-keyword">return</span> sortedClassCount[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]
+</code></pre>
+<h3 id="&#x6784;&#x9020;&#x51B3;&#x7B56;&#x6811;">&#x6784;&#x9020;&#x51B3;&#x7B56;&#x6811;</h3>
+<p>&#x6CE8;&#x610F;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x4E86;&#x4E00;&#x4E2A;&#x7279;&#x5F81;&#x4E4B;&#x540E;&#xFF0C;&#x8BE5;&#x7279;&#x5F81;&#x5C31;&#x4F1A;&#x88AB;&#x5220;&#x9664;&#x4E0D;&#x518D;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">createTree</span><span class="hljs-params">(dataSet, labels)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; recursively calculate the tree 
+        delete the label used
+        return tree dictionary 
+    &quot;&quot;&quot;</span>
+    classList = [example[<span class="hljs-number">-1</span>] <span class="hljs-keyword">for</span> example <span class="hljs-keyword">in</span> dataSet]
+    <span class="hljs-keyword">if</span> classList.count(classList[<span class="hljs-number">0</span>]) == len(classList):
+        <span class="hljs-comment"># if all data is the same class, return</span>
+        <span class="hljs-keyword">return</span> classList[<span class="hljs-number">0</span>]
+    <span class="hljs-keyword">if</span> len(dataSet[<span class="hljs-number">0</span>]) == <span class="hljs-number">1</span>:
+        <span class="hljs-comment"># if cannot continue, return</span>
+        <span class="hljs-keyword">return</span> majorityCnt(classList)
+    bestFeat = chooseBestFeatureToSplit(dataSet)
+    bestFeatLabel = labels[bestFeat]
+    <span class="hljs-comment"># init label</span>
+    myTree = {bestFeatLabel: {}}
+    <span class="hljs-comment"># have used the feature</span>
+    <span class="hljs-keyword">del</span>(labels[bestFeat])
+    <span class="hljs-comment"># split the data according to feature value</span>
+    featValues = [example[bestFeat] <span class="hljs-keyword">for</span> example <span class="hljs-keyword">in</span> dataSet]
+    uniqueVals = set(featValues)
+    <span class="hljs-keyword">for</span> value <span class="hljs-keyword">in</span> uniqueVals:
+        subLabels = labels[:]  <span class="hljs-comment"># copy</span>
+        myTree[bestFeatLabel][value] = createTree(splitDataSet
+                                                  (dataSet, bestFeat, value), subLabels)
+    <span class="hljs-keyword">return</span> myTree
+</code></pre>
+<h2 id="&#x7ED3;&#x679C;">&#x7ED3;&#x679C;</h2>
+<p>&#x5728;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x7684;&#x51B3;&#x7B56;&#x6811;&#x5C31;&#x5DF2;&#x7ECF;&#x6784;&#x9020;&#x5B8C;&#x6BD5;&#xFF0C;&#x6700;&#x540E;&#x7684;&#x8F93;&#x51FA;&#x662F;&#x4E00;&#x4E2A;&#x5D4C;&#x5957;&#x7684;&#x5B57;&#x5178;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x4EE3;&#x7801;&#x8F93;&#x51FA;&#x67E5;&#x770B;&#xFF1A;</p>
+<pre><code class="lang-python">myDat, labels = createDataSet()
+myTree = createTree(myDat,labels)
+print(myTree)
+</code></pre>
+<h2 id="&#x53EF;&#x89C6;&#x5316;">&#x53EF;&#x89C6;&#x5316;</h2>
+<p>&#x51B3;&#x7B56;&#x6811;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x76F4;&#x89C2;&#x7684;&#x7B97;&#x6CD5;&#xFF0C;&#x90A3;&#x4E48;&#x6211;&#x4EEC;&#x5982;&#x4F55;&#x8FDB;&#x884C;&#x53EF;&#x89C6;&#x5316;&#x5462;&#xFF1F;&#x8FD9;&#x91CC;&#x9700;&#x8981;&#x7528;&#x5230;Matplotlib&#x4E2D;&#x7684;&#x5F88;&#x591A;&#x6280;&#x5DE7;&#xFF0C;&#x8BE6;&#x7EC6;&#x7684;&#x89E3;&#x91CA;&#x53EF;&#x4EE5;<a href="https://www.cnblogs.com/fantasy01/p/4595902.html" _target="blank">&#x53C2;&#x8003;&#x8FD9;&#x91CC;</a>&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x7ED8;&#x56FE;&#x6280;&#x5DE7;&#xFF0C;&#x8FD9;&#x91CC;&#x4E5F;&#x4F7F;&#x7528;&#x4E86;Python&#x4E2D;&#x5229;&#x7528;&#x51FD;&#x6570;&#x5B9E;&#x73B0;&#x5168;&#x5C40;&#x53D8;&#x91CF;&#x7684;&#x6280;&#x5DE7;&#x3002;</p>
+<h3 id="&#x7ED8;&#x5236;&#x6811;&#x8282;&#x70B9;">&#x7ED8;&#x5236;&#x6811;&#x8282;&#x70B9;</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># draw myTree</span>
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+
+decisionNode = dict(boxstyle=<span class="hljs-string">&quot;sawtooth&quot;</span>, fc=<span class="hljs-string">&quot;0.8&quot;</span>)
+leafNode = dict(boxstyle=<span class="hljs-string">&quot;round4&quot;</span>, fc=<span class="hljs-string">&quot;0.8&quot;</span>)
+arrow_args = dict(arrowstyle=<span class="hljs-string">&quot;&lt;-&quot;</span>)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plotNode</span><span class="hljs-params">(nodeTxt, centerPt, parentPt, nodeType)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; bbox: the outline of text\n
+        axes fraction: fraction of axes from lower left\n
+        xy: the node of annotate\n
+        xytext: the text xy coordinate\n
+        va: verticalalignment\n
+        ha: horizontalalignment 
+    &quot;&quot;&quot;</span>
+
+    createPlot.ax1.annotate(nodeTxt, xy=parentPt,  xycoords=<span class="hljs-string">&apos;axes fraction&apos;</span>,
+                            xytext=centerPt, textcoords=<span class="hljs-string">&apos;axes fraction&apos;</span>,
+                            va=<span class="hljs-string">&quot;center&quot;</span>, ha=<span class="hljs-string">&quot;center&quot;</span>, bbox=nodeType, arrowprops=arrow_args)
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">createPlotTest</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; facecolor means the arrow color\n
+        subplot(numrows, numcols, fignum)\n
+        createPlot.ax1: the attribute of function\n
+        clf():Clear figure
+    &quot;&quot;&quot;</span>
+    fig = plt.figure(<span class="hljs-number">1</span>, facecolor=<span class="hljs-string">&apos;white&apos;</span>)
+    fig.clf()
+    createPlot.ax1 = plt.subplot(<span class="hljs-number">111</span>, frameon=<span class="hljs-keyword">False</span>)
+    plotNode(<span class="hljs-string">&apos;descion node&apos;</span>, (<span class="hljs-number">0.5</span>, <span class="hljs-number">0.1</span>), (<span class="hljs-number">0.1</span>, <span class="hljs-number">0.5</span>), decisionNode)
+    plotNode(<span class="hljs-string">&apos;leaf node&apos;</span>, (<span class="hljs-number">0.8</span>, <span class="hljs-number">0.1</span>), (<span class="hljs-number">0.3</span>, <span class="hljs-number">0.8</span>), leafNode)
+    plt.show()
+</code></pre>
+<h3 id="&#x9012;&#x5F52;&#x8BA1;&#x7B97;&#x6811;&#x9AD8;&#x548C;&#x8282;&#x70B9;&#x6570;">&#x9012;&#x5F52;&#x8BA1;&#x7B97;&#x6811;&#x9AD8;&#x548C;&#x8282;&#x70B9;&#x6570;</h3>
+<p>&#x7ED8;&#x56FE;&#x4E4B;&#x524D;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x8BA1;&#x7B97;&#x6811;&#x9AD8;&#x548C;&#x8282;&#x70B9;&#xFF0C;&#x8FD9;&#x6837;&#x6709;&#x5229;&#x4E8E;&#x7CBE;&#x786E;&#x7ED8;&#x5236;&#x3002;</p>
+<pre><code class="lang-Python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getNumleafs</span><span class="hljs-params">(myTree)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; get the numbers of leafs recursively  
+    &quot;&quot;&quot;</span>
+    numLeafs = <span class="hljs-number">0</span>
+    firstStr = list(myTree.keys())[<span class="hljs-number">0</span>]
+    secondDict = myTree[firstStr]
+    <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> secondDict.keys():
+        <span class="hljs-keyword">if</span> type(secondDict[key]).__name__ == <span class="hljs-string">&apos;dict&apos;</span>:
+            numLeafs += getNumleafs(secondDict[key])
+        <span class="hljs-keyword">else</span>:
+            numLeafs += <span class="hljs-number">1</span>
+    <span class="hljs-keyword">return</span> numLeafs
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">getTreeDepth</span><span class="hljs-params">(myTree)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; get the depth of tree
+    &quot;&quot;&quot;</span>
+    maxDepth = <span class="hljs-number">0</span>
+    firstStr = list(myTree.keys())[<span class="hljs-number">0</span>]
+    secondDict = myTree[firstStr]
+    <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> secondDict.keys():
+        <span class="hljs-keyword">if</span> type(secondDict[key]).__name__ == <span class="hljs-string">&apos;dict&apos;</span>:
+            thisDepth  = <span class="hljs-number">1</span> + getTreeDepth(secondDict[key])
+        <span class="hljs-keyword">else</span>:
+            thisDepth  = <span class="hljs-number">1</span>
+        <span class="hljs-keyword">if</span> thisDepth &gt; maxDepth: maxDepth = thisDepth
+    <span class="hljs-keyword">return</span> maxDepth
+</code></pre>
+<h3 id="&#x7ED8;&#x5236;&#x51B3;&#x7B56;&#x6811;">&#x7ED8;&#x5236;&#x51B3;&#x7B56;&#x6811;</h3>
+<pre><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">retrieveTree</span><span class="hljs-params">(i)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; simple test of data 
+    &quot;&quot;&quot;</span>
+    listOfTrees = [{<span class="hljs-string">&apos;no surfacing&apos;</span>: {<span class="hljs-number">0</span>: <span class="hljs-string">&apos;no&apos;</span>, <span class="hljs-number">1</span>: {<span class="hljs-string">&apos;flippers&apos;</span>: {<span class="hljs-number">0</span>: <span class="hljs-string">&apos;no&apos;</span>, <span class="hljs-number">1</span>: <span class="hljs-string">&apos;yes&apos;</span>}}, <span class="hljs-number">3</span>: <span class="hljs-string">&apos;maybe&apos;</span>}},
+                   {<span class="hljs-string">&apos;no surfacing&apos;</span>: {<span class="hljs-number">0</span>: <span class="hljs-string">&apos;no&apos;</span>, <span class="hljs-number">1</span>: {<span class="hljs-string">&apos;flippers&apos;</span>: {
+                       <span class="hljs-number">0</span>: {<span class="hljs-string">&apos;head&apos;</span>: {<span class="hljs-number">0</span>: <span class="hljs-string">&apos;no&apos;</span>, <span class="hljs-number">1</span>: <span class="hljs-string">&apos;yes&apos;</span>}}, <span class="hljs-number">1</span>: <span class="hljs-string">&apos;no&apos;</span>}}}},
+                   ]
+    <span class="hljs-keyword">return</span> listOfTrees[i]
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plotMidText</span><span class="hljs-params">(cntrPt, parentPt, txtString)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;plot the text in the middle of two nodes
+    &quot;&quot;&quot;</span>
+    xMid = (parentPt[<span class="hljs-number">0</span>] - cntrPt[<span class="hljs-number">0</span>])/<span class="hljs-number">2.0</span> + cntrPt[<span class="hljs-number">0</span>]
+    yMid = (parentPt[<span class="hljs-number">1</span>] - cntrPt[<span class="hljs-number">1</span>])/<span class="hljs-number">2.0</span> + cntrPt[<span class="hljs-number">1</span>]
+    createPlot.ax1.text(xMid, yMid, txtString, va=<span class="hljs-string">&quot;center&quot;</span>, ha=<span class="hljs-string">&quot;center&quot;</span>, rotation=<span class="hljs-number">30</span>)
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">plotTree</span><span class="hljs-params">(myTree, parentPt, nodeTxt)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; recursively plot the tree 
+    &quot;&quot;&quot;</span>
+    numLeafs = getNumleafs(myTree)
+    depth = getTreeDepth(myTree)
+    firstStr = list(myTree.keys())[<span class="hljs-number">0</span>]
+    cntrPt = (plotTree.xOff + (<span class="hljs-number">1.0</span> + float(numLeafs)) /
+              <span class="hljs-number">2.0</span>/plotTree.totalW, plotTree.yOff)
+    plotMidText(cntrPt, parentPt, nodeTxt)  <span class="hljs-comment"># plot the text</span>
+    plotNode(firstStr, cntrPt, parentPt, decisionNode)
+    secondDict = myTree[firstStr]
+    plotTree.yOff = plotTree.yOff - <span class="hljs-number">1.0</span>/plotTree.totalD  <span class="hljs-comment"># reduce offset of y</span>
+    <span class="hljs-keyword">for</span> key <span class="hljs-keyword">in</span> list(secondDict.keys()):
+        <span class="hljs-comment"># test to see if the nodes are dictonaires, if not they are leaf nodes</span>
+        <span class="hljs-keyword">if</span> type(secondDict[key]).__name__ == <span class="hljs-string">&apos;dict&apos;</span>:
+            plotTree(secondDict[key], cntrPt, str(key))  <span class="hljs-comment"># recursion</span>
+        <span class="hljs-keyword">else</span>:
+            plotTree.xOff = plotTree.xOff + <span class="hljs-number">1.0</span>/plotTree.totalW
+            plotNode(secondDict[key], (plotTree.xOff,
+                                       plotTree.yOff), cntrPt, leafNode)
+            plotMidText((plotTree.xOff, plotTree.yOff), cntrPt, str(key))
+    plotTree.yOff = plotTree.yOff + <span class="hljs-number">1.0</span>/plotTree.totalD
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">createPlot</span><span class="hljs-params">(inTree)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; main entry of plot\n
+        calcalate the size of graph and style 
+    &quot;&quot;&quot;</span>
+    fig = plt.figure(<span class="hljs-number">1</span>, facecolor=<span class="hljs-string">&apos;white&apos;</span>)
+    fig.clf()
+    axprops = dict(xticks=[], yticks=[])
+    createPlot.ax1 = plt.subplot(<span class="hljs-number">111</span>, frameon=<span class="hljs-keyword">False</span>, **axprops)
+    plotTree.totalW = float(getNumleafs(inTree))  <span class="hljs-comment"># store the width of tree</span>
+    plotTree.totalD = float(getTreeDepth(inTree))  <span class="hljs-comment"># store the depth of tree</span>
+    plotTree.xOff = <span class="hljs-number">-0.5</span>/plotTree.totalW
+    plotTree.yOff = <span class="hljs-number">1.0</span>
+    plotTree(inTree, (<span class="hljs-number">0.5</span>, <span class="hljs-number">1.0</span>), <span class="hljs-string">&apos;&apos;</span>)
+    plt.show()
+</code></pre>
+<p>&#x7ED3;&#x679C;&#x5982;&#x56FE;&#x6240;&#x793A;&#xFF1A;</p>
+<p><img src="images/p1.png" alt="p1"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="id3.html" class="navigation navigation-prev " aria-label="Previous page: 决策树ID3及C4.5算法">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="cart.html" class="navigation navigation-next " aria-label="Next page: 决策树CART算法及剪枝">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"决策树python实现","level":"1.4","depth":1,"next":{"title":"决策树CART算法及剪枝","level":"1.5","depth":1,"path":"cart.md","ref":"cart.md","articles":[]},"previous":{"title":"决策树ID3及C4.5算法","level":"1.3","depth":1,"path":"id3.md","ref":"id3.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"Machine Learning","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"id3 python.md","mtime":"2021-01-30T06:37:13.312Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T10:36:12.779Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

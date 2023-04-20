@@ -1,0 +1,624 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>基准评测 · Data Mining</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="mvcc.html" />
+    
+    
+    <link rel="prev" href="column store.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="sql server.html">
+            
+                <a href="sql server.html">
+            
+                    
+                    SQL Server 和 SSBI 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="udw.html">
+            
+                <a href="udw.html">
+            
+                    
+                    UDW云数据仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="history.html">
+            
+                <a href="history.html">
+            
+                    
+                    历史拉链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    日志分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="column store.html">
+            
+                <a href="column store.html">
+            
+                    
+                    OLAP 列存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="tpch.html">
+            
+                <a href="tpch.html">
+            
+                    
+                    基准评测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="mvcc.html">
+            
+                <a href="mvcc.html">
+            
+                    
+                    数据仓库之表膨胀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="json.html">
+            
+                <a href="json.html">
+            
+                    
+                    数据仓库之 Json 格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="hive.html">
+            
+                <a href="hive.html">
+            
+                    
+                    Hive 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="model.html">
+            
+                <a href="model.html">
+            
+                    
+                    建立数据仓库模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="sqoop.html">
+            
+                <a href="sqoop.html">
+            
+                    
+                    Sqoop 抽取数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="data cleaning.html">
+            
+                <a href="data cleaning.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="first load.html">
+            
+                <a href="first load.html">
+            
+                    
+                    初始装载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="time load.html">
+            
+                <a href="time load.html">
+            
+                    
+                    定期装载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="optimization.html">
+            
+                <a href="optimization.html">
+            
+                    
+                    Hive 优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="recap.html">
+            
+                <a href="recap.html">
+            
+                    
+                    OLAP 期末总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >基准评测</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x57FA;&#x51C6;&#x8BC4;&#x6D4B;&#x5DE5;&#x5177;">&#x57FA;&#x51C6;&#x8BC4;&#x6D4B;&#x5DE5;&#x5177;</h2>
+<h3 id="&#x5B89;&#x88C5;&#x6D4B;&#x8BD5;&#x5DE5;&#x5177;">&#x5B89;&#x88C5;&#x6D4B;&#x8BD5;&#x5DE5;&#x5177;</h3>
+<ul>
+<li><p>&#x4E09;&#x4E2A;&#x91CD;&#x8981;&#x8003;&#x8651;&#x65B9;&#x9762;&#xFF1A;&#x6570;&#x636E;&#x5982;&#x4F55;&#x751F;&#x6210;&#xFF0C;&#x6D4B;&#x91CF;&#x6307;&#x6807;&#x662F;&#x4EC0;&#x4E48;&#xFF0C;&#x8D1F;&#x8F7D;&#x600E;&#x4E48;&#x6D4B;</p>
+</li>
+<li><p>&#x9996;&#x5148;&#x4E0B;&#x8F7D;<a href="https://github.com/electrum/tpch-dbgen" _target="blank">TPC-H</a>&#xFF0C;&#x4FEE;&#x6539;<code>makefile</code>&#x6587;&#x4EF6;&#xFF0C;&#x5728;103&#x884C;&#x5DE6;&#x53F3;&#xFF1A;</p>
+<ul>
+<li><pre><code class="lang-shell"># Current values for WORKLOAD are:  TPCH
+DATABASE= TDAT
+MACHINE = LINUX
+WORKLOAD = TPCH
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>&#x4FEE;&#x6539;&#x5B8C;&#x6210;&#x540E;&#x76F4;&#x63A5;&#x8FD0;&#x884C;<code>make clean</code> &#x548C; <code>make</code>&#x8FDB;&#x884C;&#x7F16;&#x8BD1;</p>
+</li>
+<li><p>&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x751F;&#x6210;&#xFF1A;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x81EA;&#x52A8;&#x521B;&#x5EFA;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x3002;&#x7F16;&#x8BD1;&#x4E4B;&#x540E;&#x4F1A;&#x751F;&#x6210;<code>dbgen</code>&#x6267;&#x884C;&#x6587;&#x4EF6;&#xFF0C;&#x7528;<code>TPC-H</code>&#x5373;&#x53EF;&#x65B9;&#x4FBF;&#x5730;&#x751F;&#x6210;&#x81EA;&#x5B9A;&#x4E49;&#x5927;&#x5C0F;&#x7684;&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x3002;&#x5728;&#x8FD9;&#x91CC;&#x4EE5;0.1GB&#x6570;&#x636E;&#x4E3A;&#x4F8B;&#xFF0C;&#x91C7;&#x7528;&#x547D;&#x4EE4;<code>./dbgen &#x2013;s 0.1</code>&#x5373;&#x53EF;&#x3002;</p>
+</li>
+<li><p>&#x67E5;&#x770B;&#x751F;&#x6210;&#x7684;&#x6570;&#x636E;&#x96C6;&#xFF1A;<code>ls -lrth *.tbl</code></p>
+<ul>
+<li><img src="images/tpch1.png" alt="tpch1"></li>
+</ul>
+</li>
+<li><p>&#x6D4B;&#x8BD5;&#x6570;&#x636E;&#x751F;&#x6210;&#xFF1A;&#x6CE8;&#x610F;&#x751F;&#x6210;&#x7684;&#x6570;&#x636E;&#x540E;&#x9762;&#x6BCF;&#x884C;&#x4F1A;&#x591A;&#x51FA;&#x4E00;&#x4E2A;&#x2018;|&#x2019;&#x5206;&#x9694;&#x7B26;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x811A;&#x672C;&#x7B80;&#x5355;&#x5904;&#x7406;&#x4E00;&#x4E0B;&#xFF0C;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x7684;csv&#x6587;&#x4EF6;&#x3002;</p>
+<ul>
+<li><pre><code class="lang-shell">for i in `ls *.tbl`; do sed &apos;s/|//&#x2032;//&apos; //&#x2032;i &gt; i/tbl/csv;echo{i/tbl/csv}; echo i/tbl/csv;echoi; done;
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x6D4B;&#x8BD5;&#x8868;&#x521B;&#x5EFA;">&#x6D4B;&#x8BD5;&#x8868;&#x521B;&#x5EFA;</h3>
+<p>&#x521B;&#x5EFA;<code>PART</code>&#xFF0C;<code>REGION</code>&#xFF0C;<code>NATION</code>&#x8868;&#xFF1A;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> PART(
+    P_PARTKEY    <span class="hljs-built_in">BIGINT</span>,
+    P_NAME        <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">55</span>),
+    P_MFGR        <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">25</span>),
+    P_BRAND        <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">10</span>),
+    P_TYPE        <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">25</span>),
+    P_SIZE        <span class="hljs-built_in">INTEGER</span>,
+    P_CONTAINER    <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">10</span>),
+    P_RETAILPRICE    <span class="hljs-built_in">DECIMAL</span>,
+    P_COMMENT    <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">23</span>)
+) <span class="hljs-keyword">DISTRIBUTED</span> <span class="hljs-keyword">BY</span> (P_PARTKEY);
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> region(
+    R_REGIONKEY        <span class="hljs-built_in">BIGINT</span>,
+    R_NAME        <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">25</span>),
+    R_COMMENT    <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">152</span>)
+) <span class="hljs-keyword">DISTRIBUTED</span> <span class="hljs-keyword">BY</span> (R_REGIONKEY);
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> NATION(
+    N_NATIONKEY        <span class="hljs-built_in">BIGINT</span>,
+    N_NAME        <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">25</span>),
+    N_REGIONKEY        <span class="hljs-built_in">BIGINT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+    N_COMMENT    <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">152</span>)
+) <span class="hljs-keyword">DISTRIBUTED</span> <span class="hljs-keyword">BY</span> (N_NATIONKEY);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> SUPPLIER (
+                S_SUPPKEY               <span class="hljs-built_in">BIGINT</span>,
+                S_NAME                  <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">25</span>),
+                S_ADDRESS               <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">40</span>),
+                S_NATIONKEY             <span class="hljs-built_in">BIGINT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>, <span class="hljs-comment">-- references N_NATIONKEY</span>
+                S_PHONE                 <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">15</span>),
+                S_ACCTBAL               <span class="hljs-built_in">DECIMAL</span>,
+                S_COMMENT               <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">101</span>)
+        ) <span class="hljs-keyword">DISTRIBUTED</span> <span class="hljs-keyword">BY</span> (s_suppkey);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> CUSTOMER (
+                C_CUSTKEY               <span class="hljs-built_in">BIGINT</span>,
+                C_NAME                  <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">25</span>),
+                C_ADDRESS               <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">40</span>),
+                C_NATIONKEY             <span class="hljs-built_in">BIGINT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>, <span class="hljs-comment">-- references N_NATIONKEY</span>
+                C_PHONE                 <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">15</span>),
+                C_ACCTBAL               <span class="hljs-built_in">DECIMAL</span>,
+                C_MKTSEGMENT    <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">10</span>),
+                C_COMMENT               <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">117</span>)
+        ) <span class="hljs-keyword">DISTRIBUTED</span> <span class="hljs-keyword">BY</span> (c_custkey);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> PARTSUPP (
+                PS_PARTKEY              <span class="hljs-built_in">BIGINT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>, <span class="hljs-comment">-- references P_PARTKEY</span>
+                PS_SUPPKEY              <span class="hljs-built_in">BIGINT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>, <span class="hljs-comment">-- references S_SUPPKEY</span>
+                PS_AVAILQTY             <span class="hljs-built_in">INTEGER</span>,
+                PS_SUPPLYCOST   <span class="hljs-built_in">DECIMAL</span>,
+                PS_COMMENT              <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">199</span>)
+        ) <span class="hljs-keyword">DISTRIBUTED</span> <span class="hljs-keyword">BY</span> (ps_partkey);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> ORDERS (
+                O_ORDERKEY              <span class="hljs-built_in">BIGINT</span>,
+                O_CUSTKEY               <span class="hljs-built_in">BIGINT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>, <span class="hljs-comment">-- references C_CUSTKEY</span>
+                O_ORDERSTATUS   <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">1</span>),
+                O_TOTALPRICE    <span class="hljs-built_in">DECIMAL</span>,
+                O_ORDERDATE             <span class="hljs-built_in">DATE</span>,
+                O_ORDERPRIORITY <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">15</span>),
+                O_CLERK                 <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">15</span>),
+                O_SHIPPRIORITY  <span class="hljs-built_in">INTEGER</span>,
+                O_COMMENT               <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">79</span>)
+        ) <span class="hljs-keyword">DISTRIBUTED</span> <span class="hljs-keyword">BY</span> (o_orderkey);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> LINEITEM (
+                L_ORDERKEY              <span class="hljs-built_in">BIGINT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>, 
+                L_PARTKEY               <span class="hljs-built_in">BIGINT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>, 
+      L_SUPPKEY               <span class="hljs-built_in">BIGINT</span> <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>, 
+                L_LINENUMBER    <span class="hljs-built_in">INTEGER</span>,
+                L_QUANTITY              <span class="hljs-built_in">DECIMAL</span>,
+                L_EXTENDEDPRICE <span class="hljs-built_in">DECIMAL</span>,
+                L_DISCOUNT              <span class="hljs-built_in">DECIMAL</span>,
+                L_TAX                   <span class="hljs-built_in">DECIMAL</span>,
+                L_RETURNFLAG    <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">1</span>),
+                L_LINESTATUS    <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">1</span>),
+                L_SHIPDATE              <span class="hljs-built_in">DATE</span>,
+                L_COMMITDATE    <span class="hljs-built_in">DATE</span>,
+                L_RECEIPTDATE   <span class="hljs-built_in">DATE</span>,
+                L_SHIPINSTRUCT  <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">25</span>),
+                L_SHIPMODE              <span class="hljs-built_in">CHAR</span>(<span class="hljs-number">10</span>),
+                L_COMMENT               <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">44</span>)
+        ) <span class="hljs-keyword">DISTRIBUTED</span> <span class="hljs-keyword">BY</span> (l_orderkey);
+</code></pre>
+<h3 id="&#x5BFC;&#x5165;&#x6D4B;&#x8BD5;&#x6570;&#x636E;">&#x5BFC;&#x5165;&#x6D4B;&#x8BD5;&#x6570;&#x636E;</h3>
+<p>&#x76F4;&#x63A5;&#x901A;&#x8FC7;<code>copy</code>&#x547D;&#x4EE4;&#x5C06;<code>csv</code>&#x6570;&#x636E;&#x5BFC;&#x5165;&#x54CD;&#x5E94;&#x8868;&#x4E2D;&#xFF1A;</p>
+<pre><code>\copy customer from &apos;/data/dyt/tpch-dbgen-master/customer.csv&apos; with delimiter &apos;|&apos;
+\copy lineitem from &apos;/data/dyt/tpch-dbgen-master/lineitem.csv&apos; with delimiter &apos;|&apos;
+\copy nation from &apos;/data/dyt/tpch-dbgen-master/nation.csv&apos; with delimiter &apos;|&apos;
+\copy orders from &apos;/data/dyt/tpch-dbgen-master/orders.csv&apos; with delimiter &apos;|&apos;
+\copy part from &apos;/data/dyt/tpch-dbgen-master/part.csv&apos; with delimiter &apos;|&apos;
+\copy partsupp from &apos;/data/dyt/tpch-dbgen-master/partsupp.csv&apos; with delimiter &apos;|&apos;
+\copy region from &apos;/data/dyt/tpch-dbgen-master/region.csv&apos; with delimiter &apos;|&apos;
+\copy supplier from &apos;/data/dyt/tpch-dbgen-master/supplier.csv&apos; with delimiter &apos;|&apos;
+</code></pre><h3 id="&#x6D4B;&#x8BD5;&#x811A;&#x672C;&#x51C6;&#x5907;">&#x6D4B;&#x8BD5;&#x811A;&#x672C;&#x51C6;&#x5907;</h3>
+<p>TPC-H&#x63D0;&#x4F9B;&#x4E86;22&#x4E2A;&#x6D4B;&#x8BD5;SQL&#xFF0C;&#x4F4D;&#x4E8E;<code>/dss/queries</code>&#x76EE;&#x5F55;&#x4E0B;&#x3002;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x811A;&#x672C;&#x751F;&#x6210;22&#x6761;sql&#x8BED;&#x53E5;&#xFF1A;</p>
+<pre><code class="lang-shell">for q in `seq 1 22`
+do
+    DSS_QUERY=dss/templates ./qgen -s {% math_inline %}SF {% endmath_inline %}q &gt; dss/queries/{% math_inline %}q.sql
+    sed &apos;s/^select/explain select/&apos; dss/queries/{% endmath_inline %}q.sql &gt; dss/queries/$q.explain.sql
+done
+</code></pre>
+<p>&#x67E5;&#x770B;&#x751F;&#x6210;&#x7684;SQL&#x8BED;&#x53E5;</p>
+<p><img src="images/tpch2.png" alt="tpch2"></p>
+<h3 id="&#x6D4B;&#x8BD5;&#x6267;&#x884C;">&#x6D4B;&#x8BD5;&#x6267;&#x884C;</h3>
+<p>&#x53EF;&#x4EE5;&#x7B80;&#x5355;&#x6267;&#x884C;&#x82E5;&#x5E72;&#x6761;SQL&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x6765;&#x67E5;&#x770B;&#x5728;SF=0.1&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x6267;&#x884C;&#x65F6;&#x95F4;&#x3002;</p>
+<pre><code class="lang-shell">\timing
+\i /data/dyt/tpch-dbgen-master/dss/queries/1.sql
+</code></pre>
+<p><img src="images/tpch3.png" alt="tpch3"></p>
+<p><img src="images/tpch4.png" alt="tpch4"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="column store.html" class="navigation navigation-prev " aria-label="Previous page: OLAP 列存储">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="mvcc.html" class="navigation navigation-next " aria-label="Next page: 数据仓库之表膨胀">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"基准评测","level":"1.7","depth":1,"next":{"title":"数据仓库之表膨胀","level":"1.8","depth":1,"path":"mvcc.md","ref":"mvcc.md","articles":[]},"previous":{"title":"OLAP 列存储","level":"1.6","depth":1,"path":"column store.md","ref":"column store.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"Data Mining","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"tpch.md","mtime":"2021-01-29T08:10:39.221Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T10:42:48.559Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,719 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>建立数据仓库模型 · Data Mining</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="sqoop.html" />
+    
+    
+    <link rel="prev" href="hive.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="sql server.html">
+            
+                <a href="sql server.html">
+            
+                    
+                    SQL Server 和 SSBI 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="udw.html">
+            
+                <a href="udw.html">
+            
+                    
+                    UDW云数据仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="history.html">
+            
+                <a href="history.html">
+            
+                    
+                    历史拉链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    日志分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="column store.html">
+            
+                <a href="column store.html">
+            
+                    
+                    OLAP 列存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="tpch.html">
+            
+                <a href="tpch.html">
+            
+                    
+                    基准评测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="mvcc.html">
+            
+                <a href="mvcc.html">
+            
+                    
+                    数据仓库之表膨胀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="json.html">
+            
+                <a href="json.html">
+            
+                    
+                    数据仓库之 Json 格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="hive.html">
+            
+                <a href="hive.html">
+            
+                    
+                    Hive 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.11" data-path="model.html">
+            
+                <a href="model.html">
+            
+                    
+                    建立数据仓库模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="sqoop.html">
+            
+                <a href="sqoop.html">
+            
+                    
+                    Sqoop 抽取数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="data cleaning.html">
+            
+                <a href="data cleaning.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="first load.html">
+            
+                <a href="first load.html">
+            
+                    
+                    初始装载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="time load.html">
+            
+                <a href="time load.html">
+            
+                    
+                    定期装载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="optimization.html">
+            
+                <a href="optimization.html">
+            
+                    
+                    Hive 优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="recap.html">
+            
+                <a href="recap.html">
+            
+                    
+                    OLAP 期末总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >建立数据仓库模型</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="hive-&#x88C5;&#x8F7D;&#x6570;&#x636E;">Hive &#x88C5;&#x8F7D;&#x6570;&#x636E;</h2>
+<ul>
+<li>load&#x4E0E;load overwrite&#x7684;&#x533A;&#x522B;&#x662F;&#xFF1A;load&#x6BCF;&#x6B21;&#x6267;&#x884C;&#x751F;&#x6210;&#x65B0;&#x7684;&#x6570;&#x636E;&#x6587;&#x4EF6;&#xFF0C;&#x6587;&#x4EF6;&#x4E2D;&#x662F;&#x672C;&#x6B21;&#x88C5;&#x8F7D;&#x7684;&#x6570;&#x636E;&#x3002;load overwrite&#x5982;&#x8868;&#xFF08;&#x6216;&#x5206;&#x533A;&#xFF09;&#x7684;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x4E0D;&#x5B58;&#x5728;&#x5219;&#x751F;&#x6210;&#xFF0C;&#x5B58;&#x5728;&#x5219;&#x91CD;&#x65B0;&#x751F;&#x6210;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x3002;</li>
+<li>&#x5206;&#x533A;&#x8868;&#x6BD4;&#x975E;&#x5206;&#x533A;&#x8868;&#x591A;&#x4E86;&#x4E00;&#x79CD;alter table ... add partition&#x7684;&#x6570;&#x636E;&#x88C5;&#x8F7D;&#x65B9;&#x5F0F;&#x3002;</li>
+<li>&#x5BF9;&#x4E8E;&#x5206;&#x533A;&#x8868;&#xFF08;&#x65E0;&#x8BBA;&#x5185;&#x90E8;&#x8FD8;&#x662F;&#x5916;&#x90E8;&#xFF09;&#xFF0C;load&#x4E0E;load overwrite&#x4F1A;&#x81EA;&#x52A8;&#x5EFA;&#x7ACB;&#x540D;&#x4E3A;&#x5206;&#x533A;&#x952E;&#x503C;&#x7684;&#x76EE;&#x5F55;&#xFF0C;&#x800C;alter table ... add partition&#xFF0C;&#x53EA;&#x8981;&#x7528;location&#x6307;&#x5B9A;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x6240;&#x5728;&#x7684;&#x76EE;&#x5F55;&#x5373;&#x53EF;&#x3002;</li>
+<li>&#x5BF9;&#x4E8E;&#x5916;&#x90E8;&#x8868;&#xFF0C;&#x9664;&#x4E86;&#x5728;&#x5220;&#x9664;&#x8868;&#x65F6;&#x53EA;&#x5220;&#x9664;&#x5143;&#x6570;&#x636E;&#x800C;&#x4FDD;&#x7559;&#x8868;&#x6570;&#x636E;&#x76EE;&#x5F55;&#x5916;&#xFF0C;&#x5176;&#x6570;&#x636E;&#x88C5;&#x8F7D;&#x884C;&#x4E3A;&#x4E0E;&#x5185;&#x90E8;&#x8868;&#x76F8;&#x540C;&#x3002;</li>
+</ul>
+<h3 id="load&#x8FFD;&#x52A0;&#x6570;&#x636E;">load&#x8FFD;&#x52A0;&#x6570;&#x636E;</h3>
+<p>&#x9996;&#x5148;&#x751F;&#x6210;&#x6570;&#x636E;&#x5E76;&#x67E5;&#x770B;&#x5728;warehouse&#x4E2D;&#x7684;&#x6570;&#x636E;</p>
+<pre><code class="lang-shell">drop table if exists t1;
+create table t1(name string);
+load data local inpath &apos;/home/scott/Documents/a.txt&apos; into table t1;
+select * from t1;
+hdfs dfs -ls /user/hive/warehouse/test.db/t1;
+hdfs dfs -cat /user/hive/warehouse/test.db/t1/a.txt;
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x6587;&#x4EF6;&#x88AB;&#x5199;&#x5165;&#x5230;HDFS&#x4E2D;</p>
+<p><img src="images/model1.png" alt="model1"></p>
+<p>&#x8FFD;&#x52A0;&#x6570;&#x636E;</p>
+<pre><code class="lang-shell">echo &apos;bbbb&apos; &gt;&gt; a.txt;
+load data local inpath &apos;/home/scott/Documents/a.txt&apos; into table t1;
+select * from t1;
+hdfs dfs -ls /user/hive/warehouse/test.db/t1;
+hdfs dfs -cat /user/hive/warehouse/test.db/t1/a.txt;
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x5728;HDFS&#x4E2D;&#x662F;&#x76F4;&#x63A5;&#x8FFD;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x3002;</p>
+<p><img src="images/model2.png" alt="model2"></p>
+<h3 id="load--overwrite">Load  overwrite</h3>
+<p>&#x4F7F;&#x7528;<code>overwrite</code>&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x4F1A;&#x5C06;&#x76F4;&#x63A5;&#x7684;&#x6570;&#x636E;&#x8986;&#x76D6;</p>
+<pre><code class="lang-shell">drop table if exists t2;
+create table t2(name string);
+load data local inpath &apos;/home/scott/Documents/a.txt&apos; into table t2;
+select * from t2;
+hdfs dfs -ls /user/hive/warehouse/test.db/t2;
+hdfs dfs -cat /user/hive/warehouse/test.db/t2/a.txt;
+</code></pre>
+<p>&#x8FFD;&#x52A0;&#x6570;&#x636E;</p>
+<pre><code>echo &apos;cccc&apos; &gt;&gt; a.txt;
+load data local inpath &apos;/home/scott/Documents/a.txt&apos; overwrite into table t2;
+select * from t2;
+hdfs dfs -ls /user/hive/warehouse/test.db/t2;
+hdfs dfs -cat /user/hive/warehouse/test.db/t2/a.txt;
+</code></pre><p>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;<code>overwrite</code>&#x4E4B;&#x540E;&#x4F9D;&#x7136;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#xFF0C;&#x5C31;&#x662F;&#x6700;&#x540E;load &#x7684;&#x6587;&#x4EF6;&#x3002;</p>
+<p><img src="images/model3.png" alt="model3"></p>
+<h3 id="&#x52A8;&#x6001;&#x5206;&#x533A;&#x63D2;&#x5165;">&#x52A8;&#x6001;&#x5206;&#x533A;&#x63D2;&#x5165;</h3>
+<p>&#x52A8;&#x6001;&#x5206;&#x533A;&#x529F;&#x80FD;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#x662F;&#x4E0D;&#x5F00;&#x542F;&#x7684;&#x3002;&#x5206;&#x533A;&#x4EE5;&#x201C;&#x4E25;&#x683C;&#x201D;&#x6A21;&#x5F0F;&#x6267;&#x884C;&#xFF0C;&#x5728;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x4E0B;&#x8981;&#x6C42;&#x81F3;&#x5C11;&#x6709;&#x4E00;&#x4E2A;&#x5206;&#x533A;&#x5217;&#x662F;&#x9759;&#x6001;&#x7684;&#x3002;&#x8FD9;&#x6709;&#x52A9;&#x4E8E;&#x963B;&#x6B62;&#x56E0;&#x8BBE;&#x8BA1;&#x9519;&#x8BEF;&#x5BFC;&#x81F4;&#x67E5;&#x8BE2;&#x4EA7;&#x751F;&#x5927;&#x91CF;&#x7684;&#x5206;&#x533A;&#x3002;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x5C5E;&#x6027;&#x7528;&#x4E8E;&#x9650;&#x5236;&#x8D44;&#x6E90;&#x4F7F;&#x7528;&#x3002;</p>
+<p><img src="images/model4.png" alt="model4"></p>
+<p>&#x5728;&#x672C;&#x5730;&#x6587;&#x4EF6;<code>a.txt</code>&#x4E2D;&#x5199;&#x5165;&#x6570;&#x636E;&#xFF1A;</p>
+<pre><code class="lang-shell">aaa,US,CA
+aaa,US,CB
+bbb,CA,BB
+bbb,CA,BC
+</code></pre>
+<p>&#x5EFA;&#x7ACB;&#x975E;&#x5206;&#x533A;&#x8868;&#x5E76;&#x88C5;&#x8F7D;&#x6570;&#x636E;</p>
+<pre><code class="lang-shell">drop table if exists t1;
+create table t1(name string,city string,st string) row format delimited fields terminated by &apos;,&apos;;
+load data local inpath &apos;/home/scott/Documents/a.txt&apos; overwrite into table t1;
+select * from t1;
+hdfs dfs -ls /user/hive/warehouse/test.db/t1;
+</code></pre>
+<p>&#x6B64;&#x65F6;&#x6570;&#x636E;&#x672A;&#x5206;&#x533A;</p>
+<p><img src="images/model5.png" alt="model5"></p>
+<p>&#x5EFA;&#x7ACB;&#x5916;&#x90E8;&#x5206;&#x533A;&#x8868;&#x5E76;&#x52A8;&#x6001;&#x88C5;&#x8F7D;&#x6570;&#x636E;</p>
+<pre><code class="lang-shell">drop table if exists t2;
+create external table t2 (name string) partitioned by (country string, state string);
+set hive.exec.dynamic.partition=true;
+set hive.exec.dynamic.partition.mode=nonstrict;
+set hive.exec.max.dynamic.partitions.pernode=1000;
+insert into table t2 partition(country,state) select name,city,st from t1;
+insert into table t2 partition(country,state) select name,city,st from t1;
+select * from t2;
+hdfs dfs -ls /user/hive/warehouse/test.db/t2;
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x5B9E;&#x9645;&#x4E0A;&#x63D2;&#x5165;&#x4E86;&#x4E24;&#x6B21;&#x76F8;&#x540C;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5411;&#x5916;&#x90E8;&#x5206;&#x533A;&#x8868;&#x4E2D;&#x88C5;&#x8F7D;&#x4E86;8&#x6761;&#x6570;&#x636E;&#xFF0C;&#x52A8;&#x6001;&#x5EFA;&#x7ACB;&#x4E86;&#x4E24;&#x4E2A;&#x5206;&#x533A;&#x76EE;&#x5F55;&#x3002;</p>
+<p><img src="images/model6.png" alt="model6"></p>
+<p>&#x82E5;&#x5728;Hive&#x4E2D;&#x5220;&#x9664;&#x4E86;&#x5916;&#x90E8;&#x8868;&#x7684;&#x5143;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x5728;HDFS&#x4E2D;&#x6570;&#x636E;&#x8FD8;&#x5728;&#xFF0C;&#x56E0;&#x6B64;&#x9700;&#x8981;&#x6062;&#x590D;&#x6570;&#x636E;&#x53CA;&#x5206;&#x533A;&#x3002;Hive&#x63D0;&#x4F9B;&#x4E86;<code>MSCK REPAIR TABLE</code>&#x7684;&#x65B9;&#x6CD5;&#x76F4;&#x63A5;&#x6839;&#x636E;&#x6587;&#x4EF6;&#x5939;&#x6062;&#x590D;&#x5206;&#x533A;&#x3002;</p>
+<pre><code class="lang-shell">create external table t2 (name string) partitioned by (country string, state string) row format delimited fields terminated by &apos;,&apos; LOCATION &apos;/user/hive/warehouse/test.db/t2&apos; ;
+MSCK REPAIR TABLE t2;
+</code></pre>
+<h2 id="&#x6784;&#x5EFA;&#x6570;&#x636E;&#x4ED3;&#x5E93;&#x6A21;&#x578B;">&#x6784;&#x5EFA;&#x6570;&#x636E;&#x4ED3;&#x5E93;&#x6A21;&#x578B;</h2>
+<p>&#x521B;&#x5EFA;&#x9500;&#x552E;&#x8BA2;&#x5355;&#x6570;&#x636E;&#x4ED3;&#x5E93;&#x4E2D;&#x7684;&#x8868;&#x3002;</p>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x573A;&#x666F;&#x4E2D;&#xFF0C;&#x6E90;&#x6570;&#x636E;&#x5E93;&#x8868;&#x5C31;&#x662F;&#x64CD;&#x4F5C;&#x578B;&#x7CFB;&#x7EDF;&#x7684;&#x6A21;&#x62DF;&#x3002;&#x6211;&#x4EEC;&#x5728;MySQL&#x4E2D;&#x5EFA;&#x7ACB;&#x6E90;&#x6570;&#x636E;&#x5E93;&#x8868;&#x3002;RDS&#x5B58;&#x50A8;&#x539F;&#x59CB;&#x6570;&#x636E;&#xFF0C;&#x4F5C;&#x4E3A;&#x6E90;&#x6570;&#x636E;&#x5230;&#x6570;&#x636E;&#x4ED3;&#x5E93;&#x7684;&#x8FC7;&#x6E21;&#xFF0C;&#x5728;Hive&#x4E2D;&#x5EFA;&#x7ACB;RDS&#x5E93;&#x8868;&#x3002;TDS&#x5373;&#x4E3A;&#x8F6C;&#x5316;&#x540E;&#x7684;&#x591A;&#x7EF4;&#x6570;&#x636E;&#x4ED3;&#x5E93;&#xFF0C;&#x5728;Hive&#x4E2D;&#x5EFA;&#x7ACB;TDS&#x5E93;&#x8868;&#x3002;</p>
+<p>&#x5728;MySQL&#x4E2D;&#x5EFA;&#x7ACB;&#x6E90;&#x6570;&#x636E;&#x5E93;&#x8868;&#xFF1A;<code>mysql -u root -p</code></p>
+<pre><code class="lang-sql">
+<span class="hljs-comment">-- &#x5EFA;&#x7ACB;&#x6E90;&#x6570;&#x636E;&#x5E93;  </span>
+<span class="hljs-keyword">drop</span> <span class="hljs-keyword">database</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span> <span class="hljs-keyword">source</span>;  
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">database</span> <span class="hljs-keyword">source</span>;  
+
+<span class="hljs-keyword">use</span> <span class="hljs-keyword">source</span>;  
+
+<span class="hljs-comment">-- &#x5EFA;&#x7ACB;&#x5BA2;&#x6237;&#x8868;    </span>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> customer (    
+    customer_number <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> auto_increment primary <span class="hljs-keyword">key</span> <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;&#x5BA2;&#x6237;&#x7F16;&#x53F7;&#xFF0C;&#x4E3B;&#x952E;&apos;</span>,    
+    customer_name <span class="hljs-built_in">varchar</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;&#x5BA2;&#x6237;&#x540D;&#x79F0;&apos;</span>,    
+    customer_street_address <span class="hljs-built_in">varchar</span>(<span class="hljs-number">50</span>) <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;&#x5BA2;&#x6237;&#x4F4F;&#x5740;&apos;</span>,    
+    customer_zip_code <span class="hljs-built_in">int</span> <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;&#x90AE;&#x7F16;&apos;</span>,    
+    customer_city <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;&#x6240;&#x5728;&#x57CE;&#x5E02;&apos;</span>,    
+    customer_state <span class="hljs-built_in">varchar</span>(<span class="hljs-number">2</span>) <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;&#x6240;&#x5728;&#x7701;&#x4EFD;&apos;</span>    
+);  
+
+<span class="hljs-comment">-- &#x5EFA;&#x7ACB;&#x4EA7;&#x54C1;&#x8868;    </span>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> product (       
+    product_code <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> auto_increment primary <span class="hljs-keyword">key</span> <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;&#x4EA7;&#x54C1;&#x7F16;&#x7801;&#xFF0C;&#x4E3B;&#x952E;&apos;</span>,    
+    product_name <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;&#x4EA7;&#x54C1;&#x540D;&#x79F0;&apos;</span>,    
+    product_category <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;&#x4EA7;&#x54C1;&#x7C7B;&#x578B;&apos;</span>       
+);  
+
+<span class="hljs-comment">-- &#x5EFA;&#x7ACB;&#x9500;&#x552E;&#x8BA2;&#x5355;&#x8868;    </span>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> sales_order (    
+    order_number <span class="hljs-built_in">int</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span> auto_increment primary <span class="hljs-keyword">key</span> <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;&#x8BA2;&#x5355;&#x53F7;&#xFF0C;&#x4E3B;&#x952E;&apos;</span>,    
+    customer_number <span class="hljs-built_in">int</span> <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;&#x5BA2;&#x6237;&#x7F16;&#x53F7;&apos;</span>,    
+    product_code <span class="hljs-built_in">int</span> <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;&#x4EA7;&#x54C1;&#x7F16;&#x7801;&apos;</span>,    
+    order_date datetime <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;&#x8BA2;&#x5355;&#x65E5;&#x671F;&apos;</span>,    
+    entry_date datetime <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;&#x767B;&#x8BB0;&#x65E5;&#x671F;&apos;</span>,    
+    order_amount <span class="hljs-built_in">decimal</span>(<span class="hljs-number">10</span> , <span class="hljs-number">2</span> ) <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;&#x9500;&#x552E;&#x91D1;&#x989D;&apos;</span>,    
+    foreign <span class="hljs-keyword">key</span> (customer_number)    
+        <span class="hljs-keyword">references</span> customer (customer_number)    
+        <span class="hljs-keyword">on</span> <span class="hljs-keyword">delete</span> <span class="hljs-keyword">cascade</span> <span class="hljs-keyword">on</span> <span class="hljs-keyword">update</span> <span class="hljs-keyword">cascade</span>,    
+    foreign <span class="hljs-keyword">key</span> (product_code)    
+        <span class="hljs-keyword">references</span> product (product_code)    
+        <span class="hljs-keyword">on</span> <span class="hljs-keyword">delete</span> <span class="hljs-keyword">cascade</span> <span class="hljs-keyword">on</span> <span class="hljs-keyword">update</span> <span class="hljs-keyword">cascade</span>    
+)
+</code></pre>
+<p>&#x751F;&#x6210;&#x6D4B;&#x8BD5;&#x6570;&#x636E;</p>
+<pre><code class="lang-sql">use source;
+##&#x751F;&#x6210;&#x5BA2;&#x6237;&#x8868;&#x6D4B;&#x8BD5;&#x6570;&#x636E;
+insert into customer (customer_name,customer_street_address,customer_zip_code,customer_city,customer_state) values (&apos;really large customers&apos;, &apos;7500 louise dr.&apos;,17050, &apos;mechanicsburg&apos;,&apos;pa&apos;),
+(&apos;small stores&apos;, &apos;2500 woodland st.&apos;,17055, &apos;pittsburgh&apos;,&apos;pa&apos;),
+(&apos;medium retailers&apos;,&apos;1111 ritter rd.&apos;,17055,&apos;pittsburgh&apos;,&apos;pa&apos;),
+(&apos;good companies&apos;,&apos;9500 scott st.&apos;,17050,&apos;mechanicsburg&apos;,&apos;pa&apos;),
+(&apos;wonderful shops&apos;,&apos;3333 rossmoyne rd.&apos;,17050,&apos;mechanicsburg&apos;,&apos;pa&apos;),
+(&apos;loyal clients&apos;,&apos;7070 ritter rd.&apos;,17055,&apos;pittsburgh&apos;,&apos;pa&apos;),
+(&apos;distinguished partners&apos;,&apos;9999 scott st.&apos;,17050,&apos;mechanicsburg&apos;,&apos;pa&apos;);
+##&#x751F;&#x6210;&#x4EA7;&#x54C1;&#x8868;&#x6D4B;&#x8BD5;&#x6570;&#x636E;
+insert into product (product_name,product_category)
+values
+(&apos;hard disk drive&apos;, &apos;storage&apos;),
+(&apos;floppy drive&apos;, &apos;storage&apos;),
+(&apos;lcd panel&apos;, &apos;monitor&apos;);
+##&#x751F;&#x6210;100&#x6761;&#x9500;&#x552E;&#x8BA2;&#x5355;&#x8868;&#x6D4B;&#x8BD5;&#x6570;&#x636E;
+drop procedure if exists generate_sales_order_data;
+delimiter //
+create procedure generate_sales_order_data()
+begin
+drop table if exists temp_sales_order_data;
+create table temp_sales_order_data as select * from sales_order where 1=0;
+set @start_date := unix_timestamp(&apos;2016-03-01&apos;);
+set @end_date := unix_timestamp(&apos;2016-07-01&apos;);
+set @i := 1;
+while @i&lt;=100 do
+set @customer_number := floor(1 + rand()* 6);
+set @product_code := floor(1 + rand()* 2);
+set @order_date := from_unixtime(@start_date + rand()* (@end_date - @start_date));
+set @amount := floor(1000 + rand()* 9000);
+insert into temp_sales_order_data values (@i,@customer_number,@product_code,@order_date,@order_date,@amount);
+set @i:=@i+1;
+end while;
+truncate table sales_order;
+insert into sales_order select null,customer_number,product_code,order_date,entry_date,order_amount from temp_sales_order_data order by order_date;
+commit;
+end
+//
+delimiter ;
+call generate_sales_order_data();
+</code></pre>
+<p>&#x5728;Hive&#x4E2D;&#x5EFA;&#x7ACB;RDS&#x5E93;&#x8868;&#xFF1A;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">database</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span> rds <span class="hljs-keyword">cascade</span>;
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">database</span> rds;
+<span class="hljs-keyword">use</span> rds;
+
+<span class="hljs-comment">-- &#x5EFA;&#x7ACB;&#x5BA2;&#x6237;&#x8FC7;&#x6E21;&#x8868; </span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> customer ( customer_number <span class="hljs-built_in">INT</span> <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;number&apos;</span>, customer_name <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;name&apos;</span>, customer_street_address <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;address&apos;</span>, customer_zip_code <span class="hljs-built_in">INT</span> <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;zipcode&apos;</span>, customer_city <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;city&apos;</span>, customer_state <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">2</span>) <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;state&apos;</span>); 
+<span class="hljs-comment">-- &#x5EFA;&#x7ACB;&#x4EA7;&#x54C1;&#x8FC7;&#x6E21;&#x8868; </span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> product ( product_code <span class="hljs-built_in">INT</span> <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;code&apos;</span>, product_name <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;name&apos;</span>, product_category <span class="hljs-built_in">VARCHAR</span>(<span class="hljs-number">30</span>) <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;category&apos;</span> );
+<span class="hljs-comment">-- &#x5EFA;&#x7ACB;&#x9500;&#x552E;&#x8BA2;&#x5355;&#x8FC7;&#x6E21;&#x8868;</span>
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> sales_order ( order_number <span class="hljs-built_in">INT</span> <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;order number&apos;</span>, customer_number <span class="hljs-built_in">INT</span> <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;customer number&apos;</span>, product_code <span class="hljs-built_in">INT</span> <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;product code&apos;</span>, order_date <span class="hljs-keyword">TIMESTAMP</span> <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;order date&apos;</span>, entry_date <span class="hljs-keyword">TIMESTAMP</span> <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;entry date&apos;</span>, order_amount <span class="hljs-built_in">DECIMAL</span>(<span class="hljs-number">10</span> , <span class="hljs-number">2</span> ) <span class="hljs-keyword">comment</span> <span class="hljs-string">&apos;order amount&apos;</span>);
+</code></pre>
+<p>&#x5728;Hive&#x4E2D;&#x5EFA;&#x7ACB;TDS&#x5E93;&#x8868;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">drop</span> <span class="hljs-keyword">database</span> <span class="hljs-keyword">if</span> <span class="hljs-keyword">exists</span> dw <span class="hljs-keyword">cascade</span>;
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">database</span> dw;
+<span class="hljs-keyword">use</span> dw;
+
+<span class="hljs-comment">-- &#x5EFA;&#x7ACB;&#x65F6;&#x95F4;&#x7EF4;&#x5EA6;</span>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> date_dim(
+    date_sk <span class="hljs-built_in">int</span>,
+    <span class="hljs-string">`date`</span> <span class="hljs-built_in">date</span>,
+    <span class="hljs-keyword">month</span> tinyint,
+    month_name <span class="hljs-built_in">varchar</span>(<span class="hljs-number">9</span>),
+    <span class="hljs-keyword">quarter</span> tinyint,
+    <span class="hljs-keyword">year</span> <span class="hljs-built_in">smallint</span>
+)
+<span class="hljs-keyword">row</span> <span class="hljs-keyword">format</span> <span class="hljs-keyword">delimited</span> <span class="hljs-keyword">fields</span> <span class="hljs-keyword">terminated</span> <span class="hljs-keyword">by</span> <span class="hljs-string">&apos;,&apos;</span> <span class="hljs-keyword">stored</span> <span class="hljs-keyword">as</span> textfile;
+
+
+<span class="hljs-comment">-- &#x5EFA;&#x7ACB;&#x5BA2;&#x6237;&#x7EF4;&#x5EA6;&#x8868;    </span>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> customer_dim (    
+    customer_sk <span class="hljs-built_in">int</span>, 
+    customer_number <span class="hljs-built_in">int</span>,    
+    customer_name <span class="hljs-built_in">varchar</span>(<span class="hljs-number">50</span>),    
+    customer_street_address <span class="hljs-built_in">varchar</span>(<span class="hljs-number">50</span>),    
+    customer_zip_code <span class="hljs-built_in">int</span>,    
+    customer_city <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),    
+    customer_state <span class="hljs-built_in">varchar</span>(<span class="hljs-number">2</span>),  
+    <span class="hljs-keyword">version</span> <span class="hljs-built_in">int</span>,
+    effective_date <span class="hljs-built_in">date</span>,
+    expiry_date <span class="hljs-built_in">date</span>
+)clustered <span class="hljs-keyword">by</span>(customer_sk) <span class="hljs-keyword">into</span> <span class="hljs-number">8</span> buckets
+<span class="hljs-keyword">stored</span> <span class="hljs-keyword">as</span> orc tblproperties(<span class="hljs-string">&apos;transactional&apos;</span> = <span class="hljs-string">&apos;true&apos;</span>);
+
+<span class="hljs-comment">-- &#x5EFA;&#x7ACB;&#x4EA7;&#x54C1;&#x7EF4;&#x5EA6;&#x8868;    </span>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> product_dim (    
+    product_sk <span class="hljs-built_in">int</span>, 
+    product_code <span class="hljs-built_in">int</span>,    
+    product_name <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),    
+    product_category <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),
+    <span class="hljs-keyword">version</span> <span class="hljs-built_in">int</span>,  
+    effective_date <span class="hljs-built_in">date</span>,
+    expiry_date <span class="hljs-built_in">date</span>
+)clustered <span class="hljs-keyword">by</span>(product_sk) <span class="hljs-keyword">into</span> <span class="hljs-number">8</span> buckets
+<span class="hljs-keyword">stored</span> <span class="hljs-keyword">as</span> orc tblproperties(<span class="hljs-string">&apos;transactional&apos;</span> = <span class="hljs-string">&apos;true&apos;</span>);
+
+<span class="hljs-comment">-- &#x5EFA;&#x7ACB;&#x8BA2;&#x5355;&#x7EF4;&#x5EA6;&#x8868;    </span>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> order_dim (    
+    order_sk <span class="hljs-built_in">int</span>,    
+    order_number <span class="hljs-built_in">int</span>, 
+    <span class="hljs-keyword">version</span> <span class="hljs-built_in">int</span>,  
+    effective_date <span class="hljs-built_in">date</span>,
+    expiry_date <span class="hljs-built_in">date</span>
+)clustered <span class="hljs-keyword">by</span>(order_sk) <span class="hljs-keyword">into</span> <span class="hljs-number">8</span> buckets
+<span class="hljs-keyword">stored</span> <span class="hljs-keyword">as</span> orc tblproperties(<span class="hljs-string">&apos;transactional&apos;</span> = <span class="hljs-string">&apos;true&apos;</span>);
+
+<span class="hljs-comment">-- &#x5EFA;&#x7ACB;&#x9500;&#x552E;&#x8BA2;&#x5355;&#x4E8B;&#x5B9E;&#x8868;    </span>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> sales_order_fact (    
+    order_sk <span class="hljs-built_in">int</span>,    
+    customer_sk <span class="hljs-built_in">int</span>,    
+    product_sk <span class="hljs-built_in">int</span>,    
+    order_date_sk <span class="hljs-built_in">int</span>, 
+    order_amount <span class="hljs-built_in">decimal</span>(<span class="hljs-number">10</span> , <span class="hljs-number">2</span> )
+)clustered <span class="hljs-keyword">by</span>(order_sk) <span class="hljs-keyword">into</span> <span class="hljs-number">8</span> buckets
+<span class="hljs-keyword">stored</span> <span class="hljs-keyword">as</span> orc tblproperties(<span class="hljs-string">&apos;transactional&apos;</span> = <span class="hljs-string">&apos;true&apos;</span>);
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="hive.html" class="navigation navigation-prev " aria-label="Previous page: Hive 使用">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="sqoop.html" class="navigation navigation-next " aria-label="Next page: Sqoop 抽取数据">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"建立数据仓库模型","level":"1.11","depth":1,"next":{"title":"Sqoop 抽取数据","level":"1.12","depth":1,"path":"sqoop.md","ref":"sqoop.md","articles":[]},"previous":{"title":"Hive 使用","level":"1.10","depth":1,"path":"hive.md","ref":"hive.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"Data Mining","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"model.md","mtime":"2021-01-29T08:10:39.221Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T10:42:48.559Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

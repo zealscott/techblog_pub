@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>misc on Scott&#39;Log</title>
+    <link>https://tech.zealscott.com/tags/misc/</link>
+    <description>Recent content in misc on Scott&#39;Log</description>
+    <image>
+      <url>https://tech.zealscott.com/papermod-cover.png</url>
+      <link>https://tech.zealscott.com/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 21 Sep 2018 21:05:20 +0800</lastBuildDate><atom:link href="https://tech.zealscott.com/tags/misc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Misc</title>
+      <link>https://tech.zealscott.com/misc/</link>
+      <pubDate>Fri, 21 Sep 2018 21:05:20 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/</guid>
+      <description>Tools
+ VIM notes VScode | Latex in sublime 在服务器上部署 Jupyter Notebook  Blog
+ Hugo  Go Hugo! Hugo integration   Hexo  Problem: Latex display problem | Scaffolds Feature: Encrypt | Sync   写在第 100 篇博文之际  Raspberry
+ Start up | Static IP address BT downloader | Python interpreter  Misc
+ Laravel Homestead Thingworx  </description>
+    </item>
+    
+  </channel>
+</rss>

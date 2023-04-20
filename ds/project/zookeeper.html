@@ -1,0 +1,1366 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>ZooKeeper配置及简单使用 · Distribution System</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="yarn.html" />
+    
+    
+    <link rel="prev" href="docker2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Notes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../notes/Distribution-File-System-DFS.html">
+            
+                <a href="../notes/Distribution-File-System-DFS.html">
+            
+                    
+                    Distribution File System DFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../notes/mapreduce.html">
+            
+                <a href="../notes/mapreduce.html">
+            
+                    
+                    MapReduce处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../notes/mrcoding.html">
+            
+                <a href="../notes/mrcoding.html">
+            
+                    
+                    MapReduce编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../notes/RPC-and-serialization.html">
+            
+                <a href="../notes/RPC-and-serialization.html">
+            
+                    
+                    RPC And Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../notes/spark.html">
+            
+                <a href="../notes/spark.html">
+            
+                    
+                    Spark 处理框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../notes/sparkcoding.html">
+            
+                <a href="../notes/sparkcoding.html">
+            
+                    
+                    Spark 编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../notes/yarn.html">
+            
+                <a href="../notes/yarn.html">
+            
+                    
+                    Yarn 资源管理框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../notes/zookeeper.html">
+            
+                <a href="../notes/zookeeper.html">
+            
+                    
+                    ZooKeeper 元数据管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../notes/pregel.html">
+            
+                <a href="../notes/pregel.html">
+            
+                    
+                    分布式图处理系统--Pregel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../notes/flink.html">
+            
+                <a href="../notes/flink.html">
+            
+                    
+                    批流融合系统--Flink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../notes/beam.html">
+            
+                <a href="../notes/beam.html">
+            
+                    
+                    批流融合系统--展望
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../notes/ps.html">
+            
+                <a href="../notes/ps.html">
+            
+                    
+                    机器学习系统--Parameter Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../notes/graphlab.html">
+            
+                <a href="../notes/graphlab.html">
+            
+                    
+                    机器学习系统--GraphLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../notes/mahout.html">
+            
+                <a href="../notes/mahout.html">
+            
+                    
+                    机器学习系统--mahout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../notes/stream.html">
+            
+                <a href="../notes/stream.html">
+            
+                    
+                    流计算系统概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Lab
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="rpc.html">
+            
+                <a href="rpc.html">
+            
+                    
+                    RPC model in Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="hadoop.html">
+            
+                <a href="hadoop.html">
+            
+                    
+                    hadoop安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="hadoop1.html">
+            
+                <a href="hadoop1.html">
+            
+                    
+                    hadoop编程实践（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="hadoop2.html">
+            
+                <a href="hadoop2.html">
+            
+                    
+                    hadoop编程实践（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="hadoop-coding.html">
+            
+                <a href="hadoop-coding.html">
+            
+                    
+                    hadoop编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="hadoop-recap.html">
+            
+                <a href="hadoop-recap.html">
+            
+                    
+                    Hadoop 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="spark-installation.html">
+            
+                <a href="spark-installation.html">
+            
+                    
+                    spark安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="spark1.html">
+            
+                <a href="spark1.html">
+            
+                    
+                    spark编程实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="spark2.html">
+            
+                <a href="spark2.html">
+            
+                    
+                    spark编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="spark-recap.html">
+            
+                <a href="spark-recap.html">
+            
+                    
+                    Spark 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="docker1.html">
+            
+                <a href="docker1.html">
+            
+                    
+                    使用 Docker 配置 hadoop/spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="docker2.html">
+            
+                <a href="docker2.html">
+            
+                    
+                    使用 docker 搭建 spark(2.3.1) 集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.13" data-path="zookeeper.html">
+            
+                <a href="zookeeper.html">
+            
+                    
+                    ZooKeeper配置及简单使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="yarn.html">
+            
+                <a href="yarn.html">
+            
+                    
+                    Yarn框架下的系统部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="storm-installation.html">
+            
+                <a href="storm-installation.html">
+            
+                    
+                    Storm部署与运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="storm-coding.html">
+            
+                <a href="storm-coding.html">
+            
+                    
+                    Storm编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="storm-summary.html">
+            
+                <a href="storm-summary.html">
+            
+                    
+                    Storm 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="sparksteaming.html">
+            
+                <a href="sparksteaming.html">
+            
+                    
+                    SparkSteaming使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="flink-installation.html">
+            
+                <a href="flink-installation.html">
+            
+                    
+                    Flink安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="flink1.html">
+            
+                <a href="flink1.html">
+            
+                    
+                    Flink编程练习（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="flink2.html">
+            
+                <a href="flink2.html">
+            
+                    
+                    Flink编程练习（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="graph-in-hadoop.html">
+            
+                <a href="graph-in-hadoop.html">
+            
+                    
+                    常用图算法实现--Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="graph-in-spark.html">
+            
+                <a href="graph-in-spark.html">
+            
+                    
+                    常用图算法实现--Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="graph-in-flink.html">
+            
+                <a href="graph-in-flink.html">
+            
+                    
+                    常用图算法实现--Flink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="giraph.html">
+            
+                <a href="giraph.html">
+            
+                    
+                    Giraph配置及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="flink-iteration.html">
+            
+                <a href="flink-iteration.html">
+            
+                    
+                    Flink迭代小记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Recap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../recap/fundamental-of-distributed-system.html">
+            
+                <a href="../recap/fundamental-of-distributed-system.html">
+            
+                    
+                    分布式系统基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../recap/batch-system.html">
+            
+                <a href="../recap/batch-system.html">
+            
+                    
+                    批处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../recap/management-system.html">
+            
+                <a href="../recap/management-system.html">
+            
+                    
+                    支持数据管理的底层系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../recap/streaming-system.html">
+            
+                <a href="../recap/streaming-system.html">
+            
+                    
+                    流处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../recap/flink.html">
+            
+                <a href="../recap/flink.html">
+            
+                    
+                    批流融合系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../recap/graph.html">
+            
+                <a href="../recap/graph.html">
+            
+                    
+                    图处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../recap/ml.html">
+            
+                <a href="../recap/ml.html">
+            
+                    
+                    机器学习系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../recap/summary.html">
+            
+                <a href="../recap/summary.html">
+            
+                    
+                    总结与对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >ZooKeeper配置及简单使用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="zookeeper&#x914D;&#x7F6E;">Zookeeper&#x914D;&#x7F6E;</h1>
+<h2 id="&#x4E0B;&#x8F7D;zookeeper">&#x4E0B;&#x8F7D;zookeeper</h2>
+<p>&#x9996;&#x5148;&#x5728;&#x5B98;&#x7F51;&#x4E0B;&#x8F7D;zookeeper&#xFF1A;</p>
+<pre><code class="lang-shell">wget http://mirror.bit.edu.cn/apache/zookeeper/zookeeper-3.4.13/zookeeper-3.4.13.tar.gz
+</code></pre>
+<p>&#x89E3;&#x538B;&#xFF1A;</p>
+<pre><code class="lang-shell">sudo tar xzvf zookeeper-3.4.13.tar.gz -C /usr/local
+</code></pre>
+<p>&#x8BBE;&#x7F6E;&#x6743;&#x9650;&#xFF1A;</p>
+<pre><code class="lang-shell">chown -R hadoop:hadoop zookeeper
+</code></pre>
+<h2 id="&#x914D;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;">&#x914D;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;</h2>
+<p><img src="../images/zookeeper21.png" alt="zookeeper21"></p>
+<pre><code class="lang-shell">export PATH=$PATH:/usr/local/zookeeper/bin
+</code></pre>
+<h2 id="&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x4FEE;&#x6539;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h2>
+<p>&#x91CD;&#x547D;&#x540D;&#xFF1A;</p>
+<pre><code class="lang-shell">sudo mv zookeeper-3.4.13/ zookeeper
+mv zoo_sample.cfg zoo.cfg
+</code></pre>
+<p>&#x4FEE;&#x6539;<code>zoo.cfg</code>&#xFF1A;</p>
+<p><img src="../images/zookeeper22.png" alt="zookeeper22"></p>
+<p>&#x53EF;&#x4EE5;&#x6539;conf&#x6587;&#x4EF6;&#xFF0C;&#x521B;&#x5EFA;&#x591A;&#x4E2A;&#x7AEF;&#x53E3;-&gt; &#x591A;&#x4E2A;server&#xFF1A;</p>
+<p><img src="../images/zookeeper23.png" alt="zookeeper23"></p>
+<h2 id="&#x542F;&#x52A8;zookeeper">&#x542F;&#x52A8;zookeeper</h2>
+<pre><code class="lang-shell">zkServer.sh start
+</code></pre>
+<p><img src="../images/zookeeper24.png" alt="zookeeper24"></p>
+<p>&#x9A8C;&#x8BC1;&#x662F;&#x5426;&#x542F;&#x52A8;</p>
+<pre><code class="lang-shell">telnet localhost 2181
+</code></pre>
+<p>&#x8F93;&#x5165;<code>start</code>&#xFF0C;&#x82E5;&#x770B;&#x5230;Zookeeper version&#x5219;&#x8BF4;&#x660E;&#x542F;&#x52A8;&#x6210;&#x529F;</p>
+<p><img src="../images/zookeeper25.png" alt="zookeeper25"></p>
+<p>&#x8F93;&#x5165;<code>jps</code>&#x770B;&#x662F;&#x5426;&#x542F;&#x52A8;&#xFF1A;</p>
+<p><img src="../images/zookeeper26.png" alt="zookeeper26"></p>
+<h2 id="&#x5173;&#x95ED;zookeeper">&#x5173;&#x95ED;zookeeper</h2>
+<pre><code class="lang-shell">zkServer.sh stop
+</code></pre>
+<h1 id="zookeeper&#x547D;&#x4EE4;&#x884C;">Zookeeper&#x547D;&#x4EE4;&#x884C;</h1>
+<p>&#x53C2;&#x8003;<a href="https://www.jianshu.com/p/430c5140c435" _target="blank">&#x8FD9;&#x91CC;</a>&#x3002;</p>
+<p>&#x8FDB;&#x5165;&#x547D;&#x4EE4;&#x884C;&#x5DE5;&#x5177;&#xFF1A;</p>
+<pre><code class="lang-shell">zkCli.sh -server
+</code></pre>
+<p>&#x4F7F;&#x7528; ls &#x547D;&#x4EE4;&#x6765;&#x67E5;&#x770B;&#x5F53;&#x524D; ZooKeeper &#x4E2D;&#x6240;&#x5305;&#x542B;&#x7684;&#x5185;&#x5BB9;&#xFF1A;</p>
+<p><img src="../images/zookeeper27.png" alt="zookeeper27"></p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x901A;&#x8FC7; set &#x547D;&#x4EE4;&#x6765;&#x5BF9; zk &#x6240;&#x5173;&#x8054;&#x7684;&#x5B57;&#x7B26;&#x4E32;&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#xFF1A;</p>
+<p><img src="../images/zookeeper28.png" alt="zookeeper28"></p>
+<p>&#x4E0B;&#x9762;&#x6211;&#x4EEC;&#x5C06;&#x521A;&#x624D;&#x521B;&#x5EFA;&#x7684; znode &#x5220;&#x9664;&#xFF1A;</p>
+<ul>
+<li><code>delete /zk</code></li>
+</ul>
+<p>&#x5220;&#x9664;&#x8282;&#x70B9;&#xFF1A;</p>
+<ul>
+<li><code>rmr /zk</code></li>
+</ul>
+<h1 id="&#x7F16;&#x5199;client&#x7A0B;&#x5E8F;">&#x7F16;&#x5199;Client&#x7A0B;&#x5E8F;</h1>
+<h2 id="&#x521B;&#x5EFA;maven&#x9879;&#x76EE;">&#x521B;&#x5EFA;maven&#x9879;&#x76EE;</h2>
+<p>&#x4FEE;&#x6539;pox.xml&#x6587;&#x4EF6;&#xFF1A;</p>
+<ul>
+<li>&#x53C2;&#x8003;&#x5B98;&#x65B9;<a href="https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper" _target="blank">&#x914D;&#x7F6E;</a></li>
+</ul>
+<p>&#x4FEE;&#x6539;&#x4E3A;&#xFF1A;</p>
+<pre><code class="lang-xml"><span class="php"><span class="hljs-meta">&lt;?</span>xml version=<span class="hljs-string">&quot;1.0&quot;</span> encoding=<span class="hljs-string">&quot;UTF-8&quot;</span><span class="hljs-meta">?&gt;</span></span>
+<span class="hljs-tag">&lt;<span class="hljs-name">project</span> <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0&quot;</span>
+         <span class="hljs-attr">xmlns:xsi</span>=<span class="hljs-string">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+         <span class="hljs-attr">xsi:schemaLocation</span>=<span class="hljs-string">&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">modelVersion</span>&gt;</span>4.0.0<span class="hljs-tag">&lt;/<span class="hljs-name">modelVersion</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>Dase<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>1.0-SNAPSHOT<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+
+    <span class="hljs-tag">&lt;<span class="hljs-name">dependencies</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>org.apache.zookeeper<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>zookeeper<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>3.4.13<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">dependency</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">groupId</span>&gt;</span>junit<span class="hljs-tag">&lt;/<span class="hljs-name">groupId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">artifactId</span>&gt;</span>junit<span class="hljs-tag">&lt;/<span class="hljs-name">artifactId</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">version</span>&gt;</span>4.12<span class="hljs-tag">&lt;/<span class="hljs-name">version</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">scope</span>&gt;</span>test<span class="hljs-tag">&lt;/<span class="hljs-name">scope</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">dependency</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">dependencies</span>&gt;</span>
+
+<span class="hljs-tag">&lt;/<span class="hljs-name">project</span>&gt;</span>
+</code></pre>
+<h2 id="&#x4E0B;&#x8F7D;junitgenerator-v20">&#x4E0B;&#x8F7D;JUnitGenerator V2.0</h2>
+<p>&#x5728;<code>IDEA</code>&#x4E2D;&#xFF0C;JUnit&#x5DF2;&#x7ECF;&#x9ED8;&#x8BA4;&#x4E0B;&#x8F7D;&#x597D;&#xFF0C;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x6DFB;&#x52A0;JUnitGenerator V2.0&#x63D2;&#x4EF6;&#xFF1A;</p>
+<p><img src="../images/zookeeper29.png" alt="zookeeper29"></p>
+<h2 id="&#x7F16;&#x5199;&#x7A0B;&#x5E8F;">&#x7F16;&#x5199;&#x7A0B;&#x5E8F;</h2>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-keyword">import</span> org.apache.zookeeper.*;
+<span class="hljs-keyword">import</span> org.apache.zookeeper.ZooDefs.Ids;
+<span class="hljs-keyword">import</span> org.apache.zookeeper.data.Stat;
+
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Simple</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String connectString = <span class="hljs-string">&quot;localhost:2181&quot;</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> sessionTimeout = <span class="hljs-number">2000</span>;
+
+    <span class="hljs-keyword">private</span> ZooKeeper zkClient = <span class="hljs-keyword">null</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">init</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        zkClient = <span class="hljs-keyword">new</span> ZooKeeper(connectString, sessionTimeout, <span class="hljs-keyword">new</span> Watcher() {
+            <span class="hljs-meta">@Override</span>
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span><span class="hljs-params">(WatchedEvent event)</span> </span>{
+                <span class="hljs-comment">// &#x6536;&#x5230;&#x4E8B;&#x4EF6;&#x901A;&#x77E5;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF08;&#x5E94;&#x8BE5;&#x662F;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x903B;&#x8F91;&#xFF09;</span>
+                System.out.println(event.getType() + <span class="hljs-string">&quot;---&quot;</span> + event.getPath());
+                <span class="hljs-keyword">try</span> {
+                    zkClient.getChildren(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-keyword">true</span>);
+                } <span class="hljs-keyword">catch</span> (Exception e) {
+                }
+            }
+        });
+
+    }
+
+    <span class="hljs-comment">/**
+     * &#x6570;&#x636E;&#x7684;&#x589E;&#x5220;&#x6539;&#x67E5;
+     *
+     * <span class="hljs-doctag">@throws</span> InterruptedException
+     * <span class="hljs-doctag">@throws</span> KeeperException
+     */</span>
+
+    <span class="hljs-comment">// &#x521B;&#x5EFA;&#x6570;&#x636E;&#x8282;&#x70B9;&#x5230;zk&#x4E2D;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Create</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> KeeperException, InterruptedException </span>{
+        <span class="hljs-comment">// &#x53C2;&#x6570;1&#xFF1A;&#x8981;&#x521B;&#x5EFA;&#x7684;&#x8282;&#x70B9;&#x7684;&#x8DEF;&#x5F84; &#x53C2;&#x6570;2&#xFF1A;&#x8282;&#x70B9;&#x5927;&#x6570;&#x636E; &#x53C2;&#x6570;3&#xFF1A;&#x8282;&#x70B9;&#x7684;&#x6743;&#x9650; &#x53C2;&#x6570;4&#xFF1A;&#x8282;&#x70B9;&#x7684;&#x7C7B;&#x578B;</span>
+        String nodeCreated = zkClient.create(<span class="hljs-string">&quot;/scott&quot;</span>, <span class="hljs-string">&quot;hellozk&quot;</span>.getBytes(), Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+        <span class="hljs-comment">//&#x4E0A;&#x4F20;&#x7684;&#x6570;&#x636E;&#x53EF;&#x4EE5;&#x662F;&#x4EFB;&#x4F55;&#x7C7B;&#x578B;&#xFF0C;&#x4F46;&#x90FD;&#x8981;&#x8F6C;&#x6210;byte[]</span>
+    }
+
+    <span class="hljs-comment">//&#x5224;&#x65AD;znode&#x662F;&#x5426;&#x5B58;&#x5728;</span>
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Exist</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception</span>{
+        Stat stat = zkClient.exists(<span class="hljs-string">&quot;/scott&quot;</span>, <span class="hljs-keyword">false</span>);
+        System.out.println(stat==<span class="hljs-keyword">null</span>?<span class="hljs-string">&quot;not exist&quot;</span>:<span class="hljs-string">&quot;exist&quot;</span>);
+
+
+    }
+
+    <span class="hljs-comment">// &#x83B7;&#x53D6;&#x5B50;&#x8282;&#x70B9;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">getChildren</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        List&lt;String&gt; children = zkClient.getChildren(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-keyword">true</span>);
+        <span class="hljs-keyword">for</span> (String child : children) {
+            System.out.println(child);
+        }
+        Thread.sleep(Long.MAX_VALUE);
+    }
+
+    <span class="hljs-comment">//&#x83B7;&#x53D6;znode&#x7684;&#x6570;&#x636E;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">getData</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+
+        <span class="hljs-keyword">byte</span>[] data = zkClient.getData(<span class="hljs-string">&quot;/scott&quot;</span>, <span class="hljs-keyword">false</span>, <span class="hljs-keyword">null</span>);
+        System.out.println(<span class="hljs-keyword">new</span> String(data));
+
+    }
+
+    <span class="hljs-comment">//&#x5220;&#x9664;znode</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">deleteZnode</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+
+        <span class="hljs-comment">//&#x53C2;&#x6570;2&#xFF1A;&#x6307;&#x5B9A;&#x8981;&#x5220;&#x9664;&#x7684;&#x7248;&#x672C;&#xFF0C;-1&#x8868;&#x793A;&#x5220;&#x9664;&#x6240;&#x6709;&#x7248;&#x672C;</span>
+        zkClient.delete(<span class="hljs-string">&quot;/eclipse&quot;</span>, -<span class="hljs-number">1</span>);
+
+
+    }
+    <span class="hljs-comment">//&#x5220;&#x9664;znode</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setData</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+
+        zkClient.setData(<span class="hljs-string">&quot;/scott&quot;</span>, <span class="hljs-string">&quot;imissyou angelababy&quot;</span>.getBytes(), -<span class="hljs-number">1</span>);
+        <span class="hljs-keyword">byte</span>[] data = zkClient.getData(<span class="hljs-string">&quot;/scott&quot;</span>, <span class="hljs-keyword">false</span>, <span class="hljs-keyword">null</span>);
+        System.out.println(<span class="hljs-keyword">new</span> String(data));
+
+    }
+}
+</code></pre>
+<h2 id="junit">Junit</h2>
+<p>&#x4F7F;&#x7528;Junit&#x8FDB;&#x884C;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF0C;&#x8FD9;&#x91CC;&#x9996;&#x5148;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x6D4B;&#x8BD5;&#x7C7B;&#xFF1A;</p>
+<p>&#x4F7F;&#x7528;&#x5FEB;&#x6377;&#x952E;<code>alt+insert</code>&#xFF1A;</p>
+<p><img src="http://wx4.sinaimg.cn/mw690/0060lm7Tly1fx3xmxe5rmj308h08ydgb.jpg" alt="54189850912"></p>
+<p>&#x4F1A;&#x81EA;&#x52A8;&#x5728;<code>test</code>&#x4E2D;&#x521B;&#x5EFA;&#x540C;&#x540D;&#x6587;&#x4EF6;&#xFF1A;</p>
+<p><img src="http://wx3.sinaimg.cn/mw690/0060lm7Tly1fx3xn2k2egj305q03a3yd.jpg" alt="54190266430"></p>
+<p>&#x4FEE;&#x6539;&#x8BE5;&#x6587;&#x4EF6;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> test;
+
+<span class="hljs-keyword">import</span> org.apache.zookeeper.*;
+<span class="hljs-keyword">import</span> org.apache.zookeeper.data.Stat;
+<span class="hljs-keyword">import</span> org.junit.Test;
+<span class="hljs-keyword">import</span> org.junit.Before; 
+<span class="hljs-keyword">import</span> org.junit.After;
+
+<span class="hljs-keyword">import</span> java.util.List;
+
+<span class="hljs-comment">/** 
+* Simple Tester. 
+* 
+* <span class="hljs-doctag">@author</span> &lt;Authors name&gt; 
+* <span class="hljs-doctag">@since</span> &lt;pre&gt;Nov 11, 2018&lt;/pre&gt; 
+* <span class="hljs-doctag">@version</span> 1.0 
+*/</span> 
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SimpleTest</span> </span>{
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String connectString = <span class="hljs-string">&quot;localhost:2181&quot;</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> sessionTimeout = <span class="hljs-number">2000</span>;
+
+    <span class="hljs-keyword">private</span> ZooKeeper zkClient = <span class="hljs-keyword">null</span>;
+<span class="hljs-meta">@Before</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testInit</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+    zkClient = <span class="hljs-keyword">new</span> ZooKeeper(connectString, sessionTimeout, <span class="hljs-keyword">new</span> Watcher() {
+        <span class="hljs-meta">@Override</span>
+        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span><span class="hljs-params">(WatchedEvent event)</span> </span>{
+            <span class="hljs-comment">// &#x6536;&#x5230;&#x4E8B;&#x4EF6;&#x901A;&#x77E5;&#x540E;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF08;&#x5E94;&#x8BE5;&#x662F;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x7684;&#x4E8B;&#x4EF6;&#x5904;&#x7406;&#x903B;&#x8F91;&#xFF09;</span>
+            System.out.println(event.getType() + <span class="hljs-string">&quot;---&quot;</span> + event.getPath());
+            <span class="hljs-keyword">try</span> {
+                zkClient.getChildren(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-keyword">true</span>);
+            } <span class="hljs-keyword">catch</span> (Exception e) {
+            }
+        }
+    });
+    String nodeCreated = zkClient.create(<span class="hljs-string">&quot;/scott&quot;</span>, <span class="hljs-string">&quot;hellozk&quot;</span>.getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.PERSISTENT);
+}
+
+
+<span class="hljs-comment">/** 
+* 
+* Method: Exist() 
+* 
+*/</span> 
+<span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testExist</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+    Stat stat = zkClient.exists(<span class="hljs-string">&quot;/scott&quot;</span>, <span class="hljs-keyword">false</span>);
+    System.out.println(stat==<span class="hljs-keyword">null</span>?<span class="hljs-string">&quot;not exist&quot;</span>:<span class="hljs-string">&quot;exist&quot;</span>);
+} 
+
+<span class="hljs-comment">/** 
+* 
+* Method: getChildren() 
+* 
+*/</span> 
+<span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testGetChildren</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+    List&lt;String&gt; children = zkClient.getChildren(<span class="hljs-string">&quot;/&quot;</span>, <span class="hljs-keyword">true</span>);
+    <span class="hljs-keyword">for</span> (String child : children) {
+        System.out.println(child);
+    }
+<span class="hljs-comment">//    Thread.sleep(Long.MAX_VALUE);</span>
+} 
+
+<span class="hljs-comment">/** 
+* 
+* Method: getData() 
+* 
+*/</span> 
+<span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testGetData</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+    <span class="hljs-keyword">byte</span>[] data = zkClient.getData(<span class="hljs-string">&quot;/scott&quot;</span>, <span class="hljs-keyword">false</span>, <span class="hljs-keyword">null</span>);
+    System.out.println(<span class="hljs-keyword">new</span> String(data));
+} 
+
+<span class="hljs-comment">/** 
+* 
+* Method: deleteZnode() 
+* 
+*/</span> 
+<span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testDeleteZnode</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+    zkClient.delete(<span class="hljs-string">&quot;/scott&quot;</span>, -<span class="hljs-number">1</span>);
+} 
+
+<span class="hljs-comment">/** 
+* 
+* Method: setData() 
+* 
+*/</span> 
+<span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testSetData</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+    zkClient.setData(<span class="hljs-string">&quot;/scott&quot;</span>, <span class="hljs-string">&quot;imissyou angelababy&quot;</span>.getBytes(), -<span class="hljs-number">1</span>);
+
+    <span class="hljs-keyword">byte</span>[] data = zkClient.getData(<span class="hljs-string">&quot;/scott&quot;</span>, <span class="hljs-keyword">false</span>, <span class="hljs-keyword">null</span>);
+    System.out.println(<span class="hljs-keyword">new</span> String(data));
+} 
+}
+</code></pre>
+<p>&#x5176;&#x4E2D;&#xFF0C;<code>@Before</code>&#x8868;&#x793A;&#x5728;&#x6D4B;&#x8BD5;&#x524D;&#x8FD0;&#x884C;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;JUnit&#x4E0D;&#x80FD;&#x6307;&#x5B9A;<code>@test</code>&#x8FD0;&#x884C;&#x987A;&#x5E8F;&#xFF0C;&#x5982;&#x679C;&#x975E;&#x8981;&#x6307;&#x5B9A;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x51FD;&#x6570;&#x540D;&#x8FDB;&#x884C;&#x91CD;&#x65B0;&#x547D;&#x540D;&#xFF0C;&#x5177;&#x4F53;<a href="https://blog.csdn.net/ShiXueTanLang/article/details/79774148" _target="blank">&#x53C2;&#x8003;&#x8FD9;&#x91CC;</a></p>
+<h2 id="&#x6D4B;&#x8BD5;">&#x6D4B;&#x8BD5;</h2>
+<p>&#x5BF9;&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF1A;</p>
+<p>&#x5982;&#xFF1A;&#x5BF9;<code>Exist</code>&#x51FD;&#x6570;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF1A;</p>
+<p><img src="http://wx4.sinaimg.cn/mw690/0060lm7Tly1fx3xn98fswj30pg06qdgu.jpg" alt="54190292035"></p>
+<p>&#x76F4;&#x5230;&#x6BCF;&#x4E2A;&#x51FD;&#x6570;&#x901A;&#x8FC7;&#x4E3A;&#x6B62;</p>
+<h1 id="&#x4F53;&#x4F1A;&#x5206;&#x5E03;&#x5F0F;&#x5171;&#x4EAB;&#x9501;&#x7684;&#x5B9E;&#x73B0;">&#x4F53;&#x4F1A;&#x5206;&#x5E03;&#x5F0F;&#x5171;&#x4EAB;&#x9501;&#x7684;&#x5B9E;&#x73B0;</h1>
+<h2 id="&#x7F16;&#x5199;&#x7A0B;&#x5E8F;">&#x7F16;&#x5199;&#x7A0B;&#x5E8F;</h2>
+<p>&#x5728;<code>src/main/java</code>&#x4E0B;&#x521B;&#x5EFA;<code>DistributedClientLock</code>&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.util.Collections;
+<span class="hljs-keyword">import</span> java.util.List;
+<span class="hljs-keyword">import</span> java.util.Random;
+
+<span class="hljs-keyword">import</span> org.apache.zookeeper.CreateMode;
+<span class="hljs-keyword">import</span> org.apache.zookeeper.WatchedEvent;
+<span class="hljs-keyword">import</span> org.apache.zookeeper.Watcher;
+<span class="hljs-keyword">import</span> org.apache.zookeeper.Watcher.Event.EventType;
+<span class="hljs-keyword">import</span> org.apache.zookeeper.ZooDefs.Ids;
+<span class="hljs-keyword">import</span> org.apache.zookeeper.ZooKeeper;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DistributedClientLock</span> </span>{
+
+    <span class="hljs-comment">// &#x4F1A;&#x8BDD;&#x8D85;&#x65F6;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> SESSION_TIMEOUT = <span class="hljs-number">2000</span>;
+    <span class="hljs-comment">// zookeeper&#x96C6;&#x7FA4;&#x5730;&#x5740;</span>
+    <span class="hljs-keyword">private</span> String hosts = <span class="hljs-string">&quot;localhost:2181&quot;</span>;
+    <span class="hljs-keyword">private</span> String groupNode = <span class="hljs-string">&quot;locks&quot;</span>;
+    <span class="hljs-keyword">private</span> String subNode = <span class="hljs-string">&quot;sub&quot;</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> haveLock = <span class="hljs-keyword">false</span>;
+
+    <span class="hljs-keyword">private</span> ZooKeeper zk;
+    <span class="hljs-comment">// &#x8BB0;&#x5F55;&#x81EA;&#x5DF1;&#x521B;&#x5EFA;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x8DEF;&#x5F84;</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">volatile</span> String thisPath;
+
+    <span class="hljs-comment">/**
+     * &#x8FDE;&#x63A5;zookeeper
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">connectZookeeper</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        zk = <span class="hljs-keyword">new</span> ZooKeeper(hosts, SESSION_TIMEOUT, <span class="hljs-keyword">new</span> Watcher() {
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">process</span><span class="hljs-params">(WatchedEvent event)</span> </span>{
+                <span class="hljs-keyword">try</span> {
+
+                    <span class="hljs-comment">// &#x5224;&#x65AD;&#x4E8B;&#x4EF6;&#x7C7B;&#x578B;&#xFF0C;&#x6B64;&#x5904;&#x53EA;&#x5904;&#x7406;&#x5B50;&#x8282;&#x70B9;&#x53D8;&#x5316;&#x4E8B;&#x4EF6;</span>
+                    <span class="hljs-keyword">if</span> (event.getType() == EventType.NodeChildrenChanged &amp;&amp; event.getPath().equals(<span class="hljs-string">&quot;/&quot;</span> + groupNode)) {
+                        <span class="hljs-comment">//&#x83B7;&#x53D6;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x5E76;&#x5BF9;&#x7236;&#x8282;&#x70B9;&#x8FDB;&#x884C;&#x76D1;&#x542C;</span>
+                        List&lt;String&gt; childrenNodes = zk.getChildren(<span class="hljs-string">&quot;/&quot;</span> + groupNode, <span class="hljs-keyword">true</span>);
+                        String thisNode = thisPath.substring((<span class="hljs-string">&quot;/&quot;</span> + groupNode + <span class="hljs-string">&quot;/&quot;</span>).length());
+                        <span class="hljs-comment">// &#x53BB;&#x6BD4;&#x8F83;&#x662F;&#x5426;&#x81EA;&#x5DF1;&#x662F;&#x6700;&#x5C0F;id</span>
+                        Collections.sort(childrenNodes);
+                        <span class="hljs-keyword">if</span> (childrenNodes.indexOf(thisNode) == <span class="hljs-number">0</span>) {
+                            <span class="hljs-comment">//&#x8BBF;&#x95EE;&#x5171;&#x4EAB;&#x8D44;&#x6E90;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x5904;&#x7406;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x5220;&#x9664;&#x9501;</span>
+                            doSomething();
+
+                            <span class="hljs-comment">//&#x91CD;&#x65B0;&#x6CE8;&#x518C;&#x4E00;&#x628A;&#x65B0;&#x7684;&#x9501;</span>
+                            thisPath = zk.create(<span class="hljs-string">&quot;/&quot;</span> + groupNode + <span class="hljs-string">&quot;/&quot;</span> + subNode, <span class="hljs-keyword">null</span>, Ids.OPEN_ACL_UNSAFE,
+                                    CreateMode.EPHEMERAL_SEQUENTIAL);
+                        }
+                    }
+                } <span class="hljs-keyword">catch</span> (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+
+        <span class="hljs-comment">// 1&#x3001;&#x7A0B;&#x5E8F;&#x4E00;&#x8FDB;&#x6765;&#x5C31;&#x5148;&#x6CE8;&#x518C;&#x4E00;&#x628A;&#x9501;&#x5230;zk&#x4E0A;</span>
+        thisPath = zk.create(<span class="hljs-string">&quot;/&quot;</span> + groupNode + <span class="hljs-string">&quot;/&quot;</span> + subNode, <span class="hljs-keyword">null</span>, Ids.OPEN_ACL_UNSAFE,
+                CreateMode.EPHEMERAL_SEQUENTIAL);
+
+        <span class="hljs-comment">// wait&#x4E00;&#x5C0F;&#x4F1A;&#xFF0C;&#x4FBF;&#x4E8E;&#x89C2;&#x5BDF;</span>
+        Thread.sleep(<span class="hljs-keyword">new</span> Random().nextInt(<span class="hljs-number">1000</span>));
+
+        <span class="hljs-comment">// &#x4ECE;zk&#x7684;&#x9501;&#x7236;&#x76EE;&#x5F55;&#x4E0B;&#xFF0C;&#x83B7;&#x53D6;&#x6240;&#x6709;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x5E76;&#x4E14;&#x6CE8;&#x518C;&#x5BF9;&#x7236;&#x8282;&#x70B9;&#x7684;&#x76D1;&#x542C;</span>
+        List&lt;String&gt; childrenNodes = zk.getChildren(<span class="hljs-string">&quot;/&quot;</span> + groupNode, <span class="hljs-keyword">true</span>);
+
+        <span class="hljs-comment">//&#x5982;&#x679C;&#x4E89;&#x62A2;&#x8D44;&#x6E90;&#x7684;&#x7A0B;&#x5E8F;&#x5C31;&#x53EA;&#x6709;&#x81EA;&#x5DF1;&#xFF0C;&#x5219;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x53BB;&#x8BBF;&#x95EE;&#x5171;&#x4EAB;&#x8D44;&#x6E90; </span>
+        <span class="hljs-keyword">if</span> (childrenNodes.size() == <span class="hljs-number">1</span>) {
+            doSomething();
+            thisPath = zk.create(<span class="hljs-string">&quot;/&quot;</span> + groupNode + <span class="hljs-string">&quot;/&quot;</span> + subNode, <span class="hljs-keyword">null</span>, Ids.OPEN_ACL_UNSAFE,
+                    CreateMode.EPHEMERAL_SEQUENTIAL);
+        }
+    }
+
+    <span class="hljs-comment">/**
+     * &#x5904;&#x7406;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#xFF0C;&#x5E76;&#x4E14;&#x5728;&#x6700;&#x540E;&#x91CA;&#x653E;&#x9501;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">doSomething</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        <span class="hljs-keyword">try</span> {
+            System.out.println(<span class="hljs-string">&quot;gain lock: &quot;</span> + thisPath);
+            Thread.sleep(<span class="hljs-number">2000</span>);
+            <span class="hljs-comment">// do something</span>
+        } <span class="hljs-keyword">finally</span> {
+            System.out.println(<span class="hljs-string">&quot;finished: &quot;</span> + thisPath);
+            <span class="hljs-comment">//&#x91CA;&#x653E;&#x9501;</span>
+            zk.delete(<span class="hljs-keyword">this</span>.thisPath, -<span class="hljs-number">1</span>);
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        DistributedClientLock dl = <span class="hljs-keyword">new</span> DistributedClientLock();
+        dl.connectZookeeper();
+        Thread.sleep(Long.MAX_VALUE);
+    }
+}
+</code></pre>
+<h2 id="&#x8FD0;&#x884C;">&#x8FD0;&#x884C;</h2>
+<p>&#x9996;&#x5148;&#x9700;&#x8981;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x4E2D;&#x521B;&#x5EFA;Znode&#xFF1A;</p>
+<pre><code class="lang-shell">create /locks locks
+</code></pre>
+<p><img src="../images/zookeeper30.png" alt="zookeeper30"></p>
+<p>&#x7136;&#x540E;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#xFF0C;&#x7A0B;&#x5E8F;&#x4F1A;&#x62FF;&#x5230;&#x9501;&#x3001;&#x91CA;&#x653E;&#x9501;&#x4E0D;&#x505C;&#x4EA4;&#x66FF;&#x8FD0;&#x884C;&#xFF1A;</p>
+<p><img src="../images/zookeeper31.png" alt="zookeeper31"></p>
+<h1 id="&#x53C2;&#x8003;">&#x53C2;&#x8003;</h1>
+<ul>
+<li><a href="https://blog.csdn.net/ShiXueTanLang/article/details/79774148" _target="blank">JUnit &#x6D4B;&#x8BD5;&#x987A;&#x5E8F;</a></li>
+<li><a href="https://www.jianshu.com/p/430c5140c435" _target="blank">Zookeeper&#x7B80;&#x5355;&#x4F7F;&#x7528;</a></li>
+<li><a href="https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper/3.4.13" _target="blank">maven&#x8BBE;&#x7F6E;</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="docker2.html" class="navigation navigation-prev " aria-label="Previous page: 使用 docker 搭建 spark(2.3.1) 集群">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="yarn.html" class="navigation navigation-next " aria-label="Next page: Yarn框架下的系统部署">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"ZooKeeper配置及简单使用","level":"1.3.13","depth":2,"next":{"title":"Yarn框架下的系统部署","level":"1.3.14","depth":2,"path":"project/yarn.md","ref":"project/yarn.md","articles":[]},"previous":{"title":"使用 docker 搭建 spark(2.3.1) 集群","level":"1.3.12","depth":2,"path":"project/docker2.md","ref":"project/docker2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":" ","variables":{},"title":"Distribution System","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"project/zookeeper.md","mtime":"2021-01-27T07:18:37.503Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T09:58:50.487Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

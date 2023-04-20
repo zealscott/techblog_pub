@@ -1,0 +1,771 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>PostgreSQL配置与单表查询 · Data Management Systems</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="postgre2.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Notes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../notes/data model.html">
+            
+                <a href="../notes/data model.html">
+            
+                    
+                    Data Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../notes/document.html">
+            
+                <a href="../notes/document.html">
+            
+                    
+                    Document-oriented DB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../notes/SQL 1.html">
+            
+                <a href="../notes/SQL 1.html">
+            
+                    
+                    SQL(1) 单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../notes/SQL 2.html">
+            
+                <a href="../notes/SQL 2.html">
+            
+                    
+                    SQL(2)--复杂查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../notes/SQL-3.html">
+            
+                <a href="../notes/SQL-3.html">
+            
+                    
+                    SQL(3)--视图与索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../notes/design.html">
+            
+                <a href="../notes/design.html">
+            
+                    
+                    关系数据库的逻辑设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../notes/normalization.html">
+            
+                <a href="../notes/normalization.html">
+            
+                    
+                    关系数据库规范化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../notes/storage.html">
+            
+                <a href="../notes/storage.html">
+            
+                    
+                    存储的正确性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../notes/availability.html">
+            
+                <a href="../notes/availability.html">
+            
+                    
+                    数据库的Availability
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Project
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.3.1" data-path="postgre1.html">
+            
+                <a href="postgre1.html">
+            
+                    
+                    PostgreSQL配置与单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="postgre2.html">
+            
+                <a href="postgre2.html">
+            
+                    
+                    使用PostgreSQL进行复杂查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="jbdc.html">
+            
+                <a href="jbdc.html">
+            
+                    
+                    JBDC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="hibernate.html">
+            
+                <a href="hibernate.html">
+            
+                    
+                    Hibernate使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="many to many.html">
+            
+                <a href="many to many.html">
+            
+                    
+                    Hibernate多对多关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="superset.html">
+            
+                <a href="superset.html">
+            
+                    
+                    Superset使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="oltp.html">
+            
+                <a href="oltp.html">
+            
+                    
+                    OLTPBenchmark配置及OLTP性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="sql.html">
+            
+                <a href="sql.html">
+            
+                    
+                    SQL练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="backup.html">
+            
+                <a href="backup.html">
+            
+                    
+                    数据库备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Recap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../recap/Distributed DB.html">
+            
+                <a href="../recap/Distributed DB.html">
+            
+                    
+                    Recap: Distributed DB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../recap/RDBSM.html">
+            
+                <a href="../recap/RDBSM.html">
+            
+                    
+                    Recap: RDBSM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../recap/SQL.html">
+            
+                <a href="../recap/SQL.html">
+            
+                    
+                    Recap: SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../recap/NoSQL.html">
+            
+                <a href="../recap/NoSQL.html">
+            
+                    
+                    Recap: NoSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../recap/Extra.html">
+            
+                <a href="../recap/Extra.html">
+            
+                    
+                    Recap: Extra
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >PostgreSQL配置与单表查询</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="postgresql-&#x5B89;&#x88C5;">PostgreSQL &#x5B89;&#x88C5;</h2>
+<ul>
+<li><a href="https://www.yiibai.com/postgresql/install-postgresql.html" _target="blank">Windows</a></li>
+<li><a href="https://www.cnblogs.com/freeweb/p/8006639.html" _target="blank">Linux</a></li>
+</ul>
+<h2 id="&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x548C;&#x8868;">&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#x548C;&#x8868;</h2>
+<p>&#x4F7F;&#x7528;SQL&#x8BED;&#x53E5;&#xFF0C;&#x5B8C;&#x6210;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x521B;&#x5EFA;&#x5173;&#x7CFB;&#x3002;</p>
+<ol>
+<li><p>&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;scDB&#xFF1B;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">database</span> scDB;
+</code></pre>
+</li>
+<li><p>&#x6309;&#x8981;&#x6C42;&#x521B;&#x5EFA;&#x56DB;&#x4E2A;&#x8868;&#xFF1A;  </p>
+<ul>
+<li><p>Student(Sno,Sname,Ssex,Sage,Sdept)  </p>
+<ul>
+<li><pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> Student  //&#x5B66;&#x751F;&#x8868;
+(
+    Sno <span class="hljs-built_in">char</span>(<span class="hljs-number">9</span>) <span class="hljs-keyword">unique</span>,
+    Sname <span class="hljs-built_in">char</span>(<span class="hljs-number">5</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    Ssex <span class="hljs-built_in">char</span>(<span class="hljs-number">2</span>),
+    Sage <span class="hljs-built_in">smallint</span>,
+    Sdept <span class="hljs-built_in">char</span>(<span class="hljs-number">20</span>),
+    primary <span class="hljs-keyword">key</span>(Sno)  // &#x8BBE;&#x7F6E;&#x4E3B;&#x7801;&#x4E3A;&#x5B66;&#x53F7;
+);
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>Course(Cno,Cname,Cpno,Ccredits)  </p>
+<ul>
+<li><pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> Course  //&#x8BFE;&#x7A0B;&#x8868;
+(
+    Cno <span class="hljs-built_in">char</span>(<span class="hljs-number">4</span>),
+    Cname <span class="hljs-built_in">char</span>(<span class="hljs-number">20</span>) <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    Cpno <span class="hljs-built_in">char</span>(<span class="hljs-number">4</span>),   // &#x5148;&#x4FEE;&#x8BFE;&#x7A0B;
+    Ccredits <span class="hljs-built_in">smallint</span>,
+    primary <span class="hljs-keyword">key</span>(Cno),  // &#x8BBE;&#x7F6E;&#x4E3B;&#x7801;&#x4E3A;&#x8BFE;&#x7A0B;&#x7F16;&#x53F7;
+    foreign <span class="hljs-keyword">key</span>(Cpno) <span class="hljs-keyword">references</span> Courese(Cno) // &#x7EA6;&#x675F;&#x6761;&#x4EF6;&#xFF0C;Cpno&#x4E3A;&#x5916;&#x7801;&#xFF0C;&#x88AB;&#x53C2;&#x7167;&#x8868;Course&#xFF0C;&#x88AB;&#x53C2;&#x7167;&#x5217;&#x4E3A;Cno
+);
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>SC(Sno,Cno,Grade)</p>
+<ul>
+<li><pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> SC   //&#x5B66;&#x751F;&#x9009;&#x8BFE;&#x8868;
+(
+    Sno <span class="hljs-built_in">char</span>(<span class="hljs-number">9</span>),
+    Cno <span class="hljs-built_in">char</span>(<span class="hljs-number">4</span>),
+    Grade <span class="hljs-built_in">smallint</span>,
+    foreign <span class="hljs-keyword">key</span>(Sno) <span class="hljs-keyword">references</span> Student(Sno), // &#x7EA6;&#x675F;&#x6761;&#x4EF6;&#xFF0C;Cpno&#x4E3A;&#x5916;&#x7801;&#xFF0C;&#x88AB;&#x53C2;&#x7167;&#x8868;Course&#xFF0C;&#x88AB;&#x53C2;&#x7167;&#x5217;&#x4E3A;Cno
+    foreign <span class="hljs-keyword">key</span>(Cno) <span class="hljs-keyword">references</span> Course(Cno)
+);
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x6CE8;&#x610F;&#xFF0C;&#x6267;&#x884C;SQL&#x811A;&#x672C;&#x65F6;&#xFF0C;Postgre&#x4E0D;&#x80FD;&#x8BC6;&#x522B;&#x5927;&#x5C0F;&#x5199;&#xFF0C;&#x5FC5;&#x987B;&#x6DFB;&#x52A0;&#x53CC;&#x5F15;&#x53F7;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x4E2D;&#x6587;&#xFF0C;&#x5219;&#x4F7F;&#x7528;<code>GB 2312</code>&#x683C;&#x5F0F;&#x4FDD;&#x5B58;&#xFF1A;</p>
+<p><img src="../images/postgre1.png" alt="postgre1"></p>
+</li>
+<li><p>&#x6267;&#x884C;&#x811A;&#x672C;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;&#x5728;Windows&#x4E0B;&#xFF0C;<strong>&#x8DEF;&#x5F84;&#x8981;&#x4F7F;&#x7528;&#x6B63;&#x659C;&#x6760;</strong></p>
+<p><img src="../images/postgre2.png" alt="postgre2"></p>
+</li>
+<li><p>&#x67E5;&#x770B;&#x8868;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;&#x82E5;&#x6709;&#x5927;&#x5C0F;&#x5199;&#xFF0C;<strong>&#x4E5F;&#x8981;&#x52A0;&#x5F15;&#x53F7;</strong>&#xFF1A;</p>
+<p><img src="../images/postgre3.png" alt="53930717428"></p>
+</li>
+</ol>
+<h2 id="&#x7B80;&#x5355;&#x5355;&#x8868;&#x67E5;&#x8BE2;">&#x7B80;&#x5355;&#x5355;&#x8868;&#x67E5;&#x8BE2;</h2>
+<ul>
+<li>&#x8FD0;&#x884C;&#x811A;&#x672C;<ul>
+<li><img src="../images/postgre4.png" alt="postgre4"></li>
+</ul>
+</li>
+<li>&#x67E5;&#x770B;&#x8868;&#xFF0C;&#x5176;&#x4E2D;<code>S</code>&#x662F;&#x4F9B;&#x5E94;&#x5546;&#x8868;&#xFF0C;<code>P</code>&#x4E3A;&#x96F6;&#x4EF6;&#x8868;&#xFF0C;<code>J</code>&#x4E3A;&#x5DE5;&#x7A0B;&#x9879;&#x76EE;&#x8868;&#xFF0C;<code>SPJ</code>&#x662F;&#x4F9B;&#x5E94;&#x60C5;&#x51B5;&#x8868;<ul>
+<li><img src="../images/postgre5.png" alt="postgre5"></li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x8BFE;&#x4E0A;&#x4E60;&#x9898;">&#x8BFE;&#x4E0A;&#x4E60;&#x9898;</h3>
+<ol>
+<li><p>&#x627E;&#x51FA;&#x6240;&#x6709;&#x4F9B;&#x5E94;&#x5546;&#x7684;&#x59D3;&#x540D;&#x548C;&#x6240;&#x5728;&#x57CE;&#x5E02;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> sno,sname <span class="hljs-keyword">from</span> s;
+</code></pre>
+</li>
+<li><p>&#x627E;&#x51FA;&#x6240;&#x6709;&#x96F6;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#xFF0C;&#x989C;&#x8272;&#xFF0C;&#x91CD;&#x91CF;</p>
+<pre><code class="lang-sql"> <span class="hljs-keyword">select</span> pname,color,weight <span class="hljs-keyword">from</span> p;
+</code></pre>
+</li>
+<li><p>&#x627E;&#x51FA;&#x5DE5;&#x7A0B;&#x9879;&#x76EE;<code>J2</code>&#x4F7F;&#x7528;&#x7684;&#x5404;&#x79CD;&#x96F6;&#x4EF6;&#x7684;&#x540D;&#x79F0;&#x53CA;&#x6570;&#x91CF;</p>
+<pre><code class="lang-sql"> <span class="hljs-keyword">SELECT</span> spj.qty,p.pname
+ <span class="hljs-keyword">FROM</span> spj, p
+ <span class="hljs-keyword">WHERE</span> spj.pno = p.pno <span class="hljs-keyword">and</span> spj.jno=<span class="hljs-string">&apos;J2&apos;</span>;
+</code></pre>
+</li>
+<li><p>&#x627E;&#x51FA;&#x4E0A;&#x6D77;&#x5382;&#x5546;&#x4F9B;&#x5E94;&#x7684;&#x6240;&#x6709;&#x96F6;&#x4EF6;&#x53F7;&#x7801;</p>
+<pre><code class="lang-sql">    <span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">distinct</span> spj.pno 
+    <span class="hljs-keyword">FROM</span> spj, s
+    <span class="hljs-keyword">WHERE</span> s.sno = spj.sno <span class="hljs-keyword">and</span> s.city=<span class="hljs-string">&apos;&#x4E0A;&#x6D77;&apos;</span>;
+</code></pre>
+</li>
+<li><p>&#x627E;&#x51FA;&#x4F7F;&#x7528;&#x4E0A;&#x6D77;&#x4EA7;&#x7684;&#x96F6;&#x4EF6;&#x7684;&#x5DE5;&#x7A0B;&#x53F7;&#x7801;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">distinct</span> spj.jno 
+<span class="hljs-keyword">FROM</span> spj, s
+<span class="hljs-keyword">WHERE</span> s.sno = spj.sno <span class="hljs-keyword">and</span> s.city=<span class="hljs-string">&apos;&#x4E0A;&#x6D77;&apos;</span>;
+</code></pre>
+</li>
+<li><p>&#x627E;&#x51FA;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x5929;&#x6D25;&#x4EA7;&#x7684;&#x96F6;&#x4EF6;&#x7684;&#x5DE5;&#x7A0B;&#x53F7;&#x7801;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">SELECT</span> <span class="hljs-keyword">distinct</span> spj.jno 
+<span class="hljs-keyword">FROM</span> spj, s
+<span class="hljs-keyword">WHERE</span> s.sno = spj.sno <span class="hljs-keyword">and</span> s.city&lt;&gt;<span class="hljs-string">&apos;&#x5929;&#x6D25;&apos;</span>;
+</code></pre>
+</li>
+<li><p>&#x628A;&#x6240;&#x6709;&#x7EA2;&#x8272;&#x96F6;&#x4EF6;&#x7684;&#x989C;&#x8272;&#x6539;&#x6210;&#x84DD;&#x8272;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">UPDATE</span> p <span class="hljs-keyword">SET</span> color = <span class="hljs-string">&apos;&#x84DD;&apos;</span> <span class="hljs-keyword">WHERE</span> color = <span class="hljs-string">&apos;&#x7EA2;&apos;</span> ;
+</code></pre>
+</li>
+<li><p>&#x7531;<code>S5</code>&#x4F9B;&#x7ED9;<code>J4</code>&#x7684;&#x96F6;&#x4EF6;<code>P6</code>&#x6539;&#x4E3A;&#x7531;<code>S3</code>&#x4F9B;&#x5E94;&#xFF0C;&#x8BF7;&#x505A;&#x51FA;&#x5FC5;&#x8981;&#x7684;&#x4FEE;&#x6539;&#xFF1A;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">UPDATE</span> spj <span class="hljs-keyword">SET</span> sno = <span class="hljs-string">&apos;S3&apos;</span> <span class="hljs-keyword">WHERE</span> sno = <span class="hljs-string">&apos;S5&apos;</span> <span class="hljs-keyword">and</span> jno = <span class="hljs-string">&apos;J4&apos;</span> <span class="hljs-keyword">and</span> pno =<span class="hljs-string">&apos;P6&apos;</span> ;
+</code></pre>
+</li>
+<li><p>&#x4ECE;&#x4F9B;&#x5E94;&#x5546;&#x5173;&#x7CFB;&#x4E2D;&#x5220;&#x9664;<code>S2</code>&#x7684;&#x8BB0;&#x5F55;&#xFF0C;&#x5E76;&#x4ECE;&#x4F9B;&#x5E94;&#x60C5;&#x51B5;&#x5173;&#x7CFB;&#x4E2D;&#x5220;&#x9664;&#x76F8;&#x5E94;&#x7684;&#x8BB0;&#x5F55;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> spj <span class="hljs-keyword">WHERE</span> sno = <span class="hljs-string">&apos;S2&apos;</span>; 
+<span class="hljs-keyword">DELETE</span> <span class="hljs-keyword">FROM</span> s <span class="hljs-keyword">WHERE</span> sno = <span class="hljs-string">&apos;S2&apos;</span>;
+</code></pre>
+</li>
+<li><p>&#x8BF7;&#x5C06;&#xFF08;S2&#xFF0C;J6&#xFF0C;P4,200&#xFF09;&#x63D2;&#x5165;&#x4F9B;&#x5E94;&#x60C5;&#x51B5;&#x5173;&#x7CFB;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> s <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;S2&apos;</span>, <span class="hljs-string">&apos;&#x76DB;&#x9521;&apos;</span>, <span class="hljs-number">10</span> ,<span class="hljs-string">&apos;&#x5317;&#x4EAC;&apos;</span>);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> spj <span class="hljs-keyword">VALUES</span> (<span class="hljs-string">&apos;S2&apos;</span>, <span class="hljs-string">&apos;P4&apos;</span>, <span class="hljs-string">&apos;J6&apos;</span> ,<span class="hljs-number">200</span>);
+</code></pre>
+</li>
+</ol>
+<h2 id="&#x64CD;&#x4F5C;">&#x64CD;&#x4F5C;</h2>
+<p>&#x6570;&#x636E;&#x5E93;&#x547D;&#x4EE4;</p>
+<pre><code>\password           &#x8BBE;&#x7F6E;&#x5BC6;&#x7801;
+\q                  &#x9000;&#x51FA;
+\h                  &#x67E5;&#x770B;SQL&#x547D;&#x4EE4;&#x7684;&#x89E3;&#x91CA;&#xFF0C;&#x6BD4;&#x5982;\h select 
+\e                  &#x6253;&#x5F00;&#x6587;&#x672C;&#x7F16;&#x8F91;&#x5668;&#x3002;
+\conninfo           &#x5217;&#x51FA;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x548C;&#x8FDE;&#x63A5;&#x7684;&#x4FE1;&#x606F;&#x3002;
+\\?                  &#x67E5;&#x770B;psql&#x547D;&#x4EE4;&#x5217;&#x8868;
+\du                 &#x5217;&#x51FA;&#x6240;&#x6709;&#x7528;&#x6237;&#x3002; 
+\i yourPath     &#x8FD0;&#x884C;sql&#x811A;&#x672C;
+</code></pre><p><strong>&#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#x65F6;&#x4F7F;&#x7528;&#x5355;&#x5F15;&#x53F7;</strong></p>
+<pre><code>\l                  &#x5217;&#x51FA;&#x6240;&#x6709;&#x6570;&#x636E;&#x5E93;
+\c [database_name]  &#x8FDE;&#x63A5;&#x5176;&#x4ED6;&#x6570;&#x636E;&#x5E93;
+\d                  &#x5217;&#x51FA;&#x5F53;&#x524D;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6240;&#x6709;&#x8868;&#x683C;
+\d [table_name]     &#x5217;&#x51FA;&#x67D0;&#x4E00;&#x5F20;&#x8868;&#x683C;&#x7684;&#x7ED3;&#x6784;
+drop database db;     &#x5220;&#x9664;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5E93;
+drop table table_name;    &#x5220;&#x9664;&#x4E00;&#x4E2A;&#x8868;
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="postgre2.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 使用PostgreSQL进行复杂查询">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"PostgreSQL配置与单表查询","level":"1.3.1","depth":2,"next":{"title":"使用PostgreSQL进行复杂查询","level":"1.3.2","depth":2,"path":"project/postgre2.md","ref":"project/postgre2.md","articles":[]},"previous":{"title":"Project","level":"1.3","depth":1,"ref":"","articles":[{"title":"PostgreSQL配置与单表查询","level":"1.3.1","depth":2,"path":"project/postgre1.md","ref":"project/postgre1.md","articles":[]},{"title":"使用PostgreSQL进行复杂查询","level":"1.3.2","depth":2,"path":"project/postgre2.md","ref":"project/postgre2.md","articles":[]},{"title":"JBDC","level":"1.3.3","depth":2,"path":"project/jbdc.md","ref":"project/jbdc.md","articles":[]},{"title":"Hibernate使用","level":"1.3.4","depth":2,"path":"project/hibernate.md","ref":"project/hibernate.md","articles":[]},{"title":"Hibernate多对多关系","level":"1.3.5","depth":2,"path":"project/many to many.md","ref":"project/many to many.md","articles":[]},{"title":"Superset使用","level":"1.3.6","depth":2,"path":"project/superset.md","ref":"project/superset.md","articles":[]},{"title":"OLTPBenchmark配置及OLTP性能调优","level":"1.3.7","depth":2,"path":"project/oltp.md","ref":"project/oltp.md","articles":[]},{"title":"SQL练习","level":"1.3.8","depth":2,"path":"project/sql.md","ref":"project/sql.md","articles":[]},{"title":"数据库备份","level":"1.3.9","depth":2,"path":"project/backup.md","ref":"project/backup.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"Data Management Systems","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"project/postgre1.md","mtime":"2021-01-28T09:39:55.895Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T09:55:28.694Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

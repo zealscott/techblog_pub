@@ -1,0 +1,380 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Introduction · Convex Optimization</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="matrix.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="matrix.html">
+            
+                <a href="matrix.html">
+            
+                    
+                    矩阵求导法则与性质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="convex optimization.html">
+            
+                <a href="convex optimization.html">
+            
+                    
+                    凸优化基本概念总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="problem statement.html">
+            
+                <a href="problem statement.html">
+            
+                    
+                    问题的基本描述及转化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="duality.html">
+            
+                <a href="duality.html">
+            
+                    
+                    对偶
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="fitting.html">
+            
+                <a href="fitting.html">
+            
+                    
+                    逼近与拟合
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="unconstrain.html">
+            
+                <a href="unconstrain.html">
+            
+                    
+                    无约束优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="equality.html">
+            
+                <a href="equality.html">
+            
+                    
+                    等式约束优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="Interior Point.html">
+            
+                <a href="Interior Point.html">
+            
+                    
+                    内点法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Introduction</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 style="text-align:center" id="convex-optimization">Convex Optimization</h1>
+
+<p>&#x4F20;&#x7EDF;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x4E2D;&#x6700;&#x96BE;&#x7406;&#x89E3;&#x7684;&#x5C31;&#x662F;SVM&#x4E86;&#xFF0C;&#x53EA;&#x5B66;&#x8FC7;&#x9AD8;&#x6570;&#x548C;&#x7EBF;&#x4EE3;&#x7684;&#x666E;&#x901A;&#x672C;&#x79D1;&#x751F;&#x7684;&#x786E;&#x5F88;&#x96BE;&#x7406;&#x89E3;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x60F3;&#x8981;&#x5165;&#x95E8;&#x673A;&#x5668;&#x5B66;&#x4E60;&#xFF0C;&#x7B2C;&#x4E00;&#x4EF6;&#x4E8B;&#x5C31;&#x662F;&#x589E;&#x5F3A;&#x6570;&#x5B66;&#x57FA;&#x7840;&#x3002;&#x800C;&#x51F8;&#x4F18;&#x5316;&#x662F;&#x5176;&#x4E2D;&#x65E0;&#x6CD5;&#x8D8A;&#x8FC7;&#x7684;&#x4E00;&#x9053;&#x574E;&#x3002;</p>
+<p>&#x672C;&#x4EBA;&#x4EE5;&#x5907;&#x53D7;&#x63A8;&#x5D07;&#x7684;<code>Stephen Boyd</code>&#x7684;Convex Optimization&#x4E3A;&#x4F8B;&#xFF0C;&#x5206;&#x4EAB;&#x672C;&#x4EBA;&#x5B66;&#x4E60;&#x671F;&#x95F4;&#x7684;&#x7B14;&#x8BB0;&#x548C;&#x8D44;&#x6599;&#xFF0C;&#x65B9;&#x4FBF;&#x5927;&#x5BB6;&#x53C2;&#x8003;&#x3002;</p>
+<ul>
+<li>&#x5B98;&#x65B9;&#x7F51;&#x7AD9;&#xFF1A;<ul>
+<li><a href="https://web.stanford.edu/~boyd/cvxbook/" _target="blank">Convex Optimization - Boyd and Vandenberghe</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>&#x914D;&#x5957;matlab&#x4EE3;&#x7801;&#xFF1A;<ul>
+<li><a href="https://web.stanford.edu/~boyd/cvxbook/cvxbook_additional_exercises/" _target="blank">additional_exercises</a></li>
+</ul>
+</li>
+<li>&#x672C;&#x4E66;&#x4E5F;&#x6709;&#x914D;&#x5957;&#x7684;video&#xFF0C;&#x4F46;&#x662F;&#x5E76;&#x4E0D;&#x592A;&#x5EFA;&#x8BAE;&#xFF0C;&#x4E00;&#x662F;&#x53EA;&#x6709;&#x82F1;&#x6587;&#x7248;&#xFF0C;&#x8BED;&#x901F;&#x8F83;&#x5FEB;&#xFF0C;&#x4E8C;&#x662F;&#x4E66;&#x4E0A;&#x5DF2;&#x7ECF;&#x591F;&#x8BE6;&#x7EC6;&#x7684;&#x4E86;&#x3002;</li>
+</ul>
+<p>This GitBook notes are maintained by <a href="zealscott.com">zealscott</a>.</p>
+<footer align="right">
+  @Last updated at 1/25/2021
+</footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="matrix.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 矩阵求导法则与性质">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"矩阵求导法则与性质","level":"1.2","depth":1,"path":"matrix.md","ref":"matrix.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":"","variables":{},"title":"Convex Optimization","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"README.md","mtime":"2021-01-25T06:50:01.028Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T04:07:56.815Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

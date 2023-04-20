@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.79.0" /><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Scott&#39;Log</title>
+
+<meta name="description" content="The tech document of zealscott">
+<meta name="author" content="Scott Du">
+<link rel="canonical" href="https://tech.zealscott.com/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fd126033c3455a688b2479431fed44510433c36ce61093336d94a5681fad5866.css" integrity="sha256-/RJgM8NFWmiLJHlDH&#43;1EUQQzw2zmEJMzbZSlaB&#43;tWGY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://tech.zealscott.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tech.zealscott.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tech.zealscott.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://tech.zealscott.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tech.zealscott.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://tech.zealscott.com/index.xml">
+<link rel="alternate" type="application/json" href="https://tech.zealscott.com/index.json">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, 
+        {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '\\[', right: '\\]', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false}
+                ]
+            }
+        );"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-116370175-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<meta property="og:title" content="Scott&#39;Log" />
+<meta property="og:description" content="The tech document of zealscott" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tech.zealscott.com/" /><meta property="og:image" content="https://tech.zealscott.com/papermod-cover.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tech.zealscott.com/papermod-cover.png"/>
+
+<meta name="twitter:title" content="Scott&#39;Log"/>
+<meta name="twitter:description" content="The tech document of zealscott"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Scott'Log",
+  "url": "https://tech.zealscott.com",
+  "description": "The tech document of zealscott",
+  "thumbnailUrl": "https://tech.zealscott.com/favicon.ico",
+  "sameAs": [
+      "index.xml", "https://github.com/zealscott", "https://www.zhihu.com/people/tao-scott/", "https://scholar.google.com/citations?hl=en\u0026user=BbvY_QsAAAAJ", "https://zealscott.com/files/Yuntao_Du_CV.pdf", "mailto: ytdu@zealscott.com"
+  ]
+}
+</script>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://tech.zealscott.com" accesskey="h" title="Scott&#39;Log (Alt + H)">Scott&#39;Log</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://tech.zealscott.com/" title="Posts">
+                    <span class="active">Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/deeplearning/" title="Deep Learning">
+                    <span>Deep Learning</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/curriculum/" title="Curriculum">
+                    <span>Curriculum</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/misc/" title="Misc">
+                    <span>Misc</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>写在第 100 篇博文之际
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>想写博客的念头已经很久了，在年初的春节终于有时间折腾出了自己的博客。一开始，仅仅是想用博客来记录自己学习中遇到的问题，作为备忘；后来上课了发现，与其将自己课上做的笔记写在 OneNote 上，还不如直接写在博客上，也许能帮助到一些同学呢；再到后来上数学课，就索性将数学公式、笔记也写在博客上（写 LaTeX 还是件很蛋疼的事）；到现在，我将自己做的一些小项目也记录下来，也许未来也会写点琐碎的感悟，也不一定呢。
+写博客是件很美妙的事情，一方面，每次的记录其实并没有那么愉快，虽然 Markdown 已经足够简单不用担心排版的问题，但每天总得多花一两个小时总结也有点繁琐（不过慢慢就习惯了这种记录方式），另一方面，当我第一次收到陌生朋友评论的感谢时，我才发现原来我的博客也有人看呀，成就感满满。于是我开始在网站中加入百度统计和 Google Analysis，时不时看看今天有没有人看我的博客，也算是激励我不断更新的动力吧。
+很惭愧的是，自己能力有限，多数博文也仅仅是上课的笔记和总结，并没有太多“干货”。好在自己还算勤快，半年就达到了自己定的一年目标（完成 100 篇博文）。这半年来其实自己的收获是巨大的，虽然每天都学的很累，但是总算是有种 feeling –终于在 cs 上入门了。转专业这一年来，拒绝了所有的活动与比赛，静下心来搞学习，总算是有所收获。一年的时间说长也长，说短也短，原专业的朋友保研的保研，考研的考研，出国的出国。总有人半开玩笑的问我，“现在你看见他们都保研清北啦，你后不后悔”。我只是笑笑，当然不后悔了。但羡慕是有点羡慕的，毕竟是更好的平台，而自己选择了竞争压力太很多的行业，很难再像以前那样“游刃有余”。好在自己是个喜欢折腾且异常固执的人，倒也不觉得有什么。
+最近博客更新得不勤，主要是因为放假了，以及自己在做两个小项目、学英语，没太多东西可以记录。经过一年的“闭关”，自己也觉得是时候参加一些比赛来实践实践（没点奖状怎么丰富自己简历啊哭），找了两三个自己认为还挺有挑战的比赛，从 9 月份开始玩玩。
+当然，目前最重要的事情还是考好雅思……</p>
+  </section>
+  <footer class="entry-footer"><span title='2018-08-08 11:47:00 +0800 CST'>August 8, 2018</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to 写在第 100 篇博文之际" href="https://tech.zealscott.com/misc/100-blogs-goal/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Hexo 博文加密
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>很多时候当我们写了一篇博客，但并不想所有人能够访问它。对于WordPress这很容易做到，但是对于hexo，由于是静态网页，并不能做到完全的加密。
+在GitHub上发现了有个人做了一个加密的插件，还挺好用，推荐给大家。
+安装 在你的hexo根目录的package.json文件夹中添加：
+ “hexo-blog-encrypt”: “2.0.*”
+ 然后在命令行中输入：
+ npm install
+ 这样这个插件就安装好了。
+找到根目录下的_config.yml文件，添加如下：
+1 2 3 4  # Security ## encrypt: enable: true   这样就可以使用插件了。
+使用 在你要加密的文章头部写入password，例如：
+1 2 3 4 5 6 7  --- title: Hello World date: 2016-03-30 21:18:02 password: abc123 abstract: Welcome to my blog, enter password to read. message: Welcome to my blog, enter password to read. ---   这样就可以需要输入密码访问了。...</p>
+  </section>
+  <footer class="entry-footer"><span title='2018-07-11 10:15:55 +0800 CST'>July 11, 2018</span>&nbsp;·&nbsp;5 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to Hexo 博文加密" href="https://tech.zealscott.com/misc/hexo-encrypt/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>如何选择神经网络中的超参数
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>启发式策略 对于新拿到的一个训练集，我们首先的目的是：训练出来的结果至少要比随机要好。
+初看这个目的很简单，但实际上很困难，尤其是遇到一种新类型的问题时。
+简化数据集 例如，如果我们处理MNIST分类集，我们可以只处理0，1两个数字的集合，这样，不仅简化了分类目的，也能让神经网络的训练速度得到5倍的提升。
+当使用更简单的分类集时，我们能更好的洞察神经网络的结构调整。
+简化网络 我们应该从简单的网络开始进行训练，例如，只含一层的隐藏层，这样的训练速率更快，而且，若简单的网络都不能得到较好的结果，那么训练复杂的网络将会更加困难。
+提高监控频率 我们可以在神经网络框架中每隔几百次epoch就打印当前的准确率，这样会让我们更好的洞察网络的拟合情况，提早发现过拟合或学习速率过慢等问题。
+在每一步，我们使用验证集来衡量网络的性能，这些度量将会帮助我们找到更好的超参数。一旦准确率上升或者loss开始下降，就可以通过微调超参数获得快速的性能提升。
+基本超参数 学习速率（learning rate） 对于学习速率，我们可以使用不同量级的参数（0.1，1，10等）先初步进行训练，根据loss的大小确定参数量级。
+一般来说，我们使用验证集准确率来调整超参数，但在learning rate中倾向于使用loss，这是因为学习速率的主要目的是控制梯度下降的步长，监控训练loss是最好的检验步长过大的方法。
+学习速率调整 一直以来，我们都将学习速率设置成常数。但通常来讲，可变的学习速率更加有效。
+ 在学习的前期，学习速率比较大，可以让训练变快 在准确率开始变差或者不变时，按照某个量依次减少学习速率（除以10）。  规范化参数 在开始时不包含规范化参数，直到确定了学习速率后，在根据验证数据来选择好的 规范化参数。一般规范化参数从1开始调整。
+迭代期（epoch） Early stopping表示在每个回合的最后，我们都要计算验证集上的分类准确率。当准确率不再提升，就终止训练。
+但一般来说，在训练过程中总会存在波动，每次准确率下降一点点就直接终止不是一个好的策略。一般来说，当分类准确率在一段时间内不再提升的时候终止比较好。
+这样，使用Early stopping就可以简单的选择迭代期。
+Mini Batch 如果值太小，不会用到并行计算的资源，速度也不会有所提升，倒会使得学习缓慢；
+如果值太大，则不能够频繁的更新权重。
+经验表明，Mini Batch其实时一个相对独立的参数，可以将其他参数选取合适的值之后，再来根据训练集准确率调整。
+随机梯度下降的改进 Hessian技术 实际上就是二阶导的矩阵，理论上来说Hessian方法比标准的SGD收敛速度更快。
+Momentum 我们可以认为这种方法引入了类似于摩擦力的量，使得梯度下降变化规则从原始的
+$w→w′=w−η∇C$变为：
+$$v \to v&#39; = \mu v &#43;\eta \triangledown C$$
+$$w′=w&#43;v′$$
+其中，$\eta$是用来控制阻碍或者摩擦力的量的超参数。
+以上的公式可以理解为，力$\triangledown C$改变了速度$v$，速度再控制$w$的变化率。
+$\eta$被称为moment coefficient，在物理中为动量。</p>
+  </section>
+  <footer class="entry-footer"><span title='2018-06-04 21:19:37 +0800 CST'>June 4, 2018</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to 如何选择神经网络中的超参数" href="https://tech.zealscott.com/deeplearning/misc/parameters/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>防止神经网络过拟合的基本方法
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>发现过拟合问题 在训练神经网络时，我们常常有训练集、测试集和验证集三种数据集。
+有时候我们会发现，训练出来的神经网络在训练集上表现很好（准确率很高），但在测试集上的准确率比较差。这种现象一般被认为是过拟合，也就是过度学习了训练集上的特征，导致泛化能力较差。
+hold out 方法 那么如何发现是否存在过拟合方法呢？一种简单的思路就是把训练集分为训练集和验证集，其中训练集用来训练数据，验证集用来检测准确率。
+Early stop 我们在每个迭代期的最后都计算在验证集上的分类准确率，一旦分类准确率已经饱和，就停止训练。这个策略被称为提前停止。
+示例 以MNIST数据集为例，这里使用1000个样本作为训练集，迭代周期为400，使用交叉熵代价函数，随机梯度下降，我们可以画出其损失值与准确率。
+训练集上的损失值和准确率：
+验证集上的损失值和准确率：
+对比测试集与验证集的准确率：
+可以发现：训练集上的损失值越来越小，正确率已经达到了100%，而验证集上的损失会突然增大，正确率没有提升。这就产生了过拟合问题。
+增大训练量 一个最直观，也是最有效的方式就是增大训练量。有了足够的训练数据，就算是一个规模很大的网络也不太容易过拟合。
+例如，如果我们将MNIST的训练数据增大到50000（扩大了50倍），则可以发现训练集和测试集的正确率差距不大，且一直在增加（这里只迭代了30次）：
+但很不幸，一般来说，训练数据时有限的，这种方法不太实际。
+人为扩展训练数据 当我们缺乏训练数据时，可以使用一种巧妙的方式人为构造数据。
+例如，对于MNIST手写数字数据集，我们可以将每幅图像左右旋转15°。这应该还是被识别成同样的数字，但对于我们的神经网络来说（像素级），这就是完全不同的输入。
+因此，将这些样本加入到训练数据中很可能帮助我们的网络学习更多如何分类数字。
+这个想法很强大并且已经被广泛应用了，更多讨论可以查看这篇论文。
+再举个例子，当我们训练神经网络进行语音识别时，我们可以对这些语音随机加上一些噪音–加速或减速。
+规范化（regularization） 除了增大训练样本，另一种能减轻过拟合的方法是**降低网络的规模。**但往往大规模的神经网络有更强的潜力，因此我们想使用另外的技术。
+规范化是神经网络中常用的方法，虽然没有足够的理论，但规范化的神经网络往往能够比非规范化的泛化能力更强。
+一般来说，我们只需要对$w$进行规范化，而几乎不对$b$进行规范化。
+L2规范化 学习规则 最常用的规范化手段，也称为权重衰减（weight decay）。
+L2规范化的想法是增加一个额外的项到代价函数上，这个项被称为**规范化项。**例如，对于规范化的交叉熵：
+$$C= -\frac{1}{n}\sum\limits_{x}[y_j\ln a_j^L&#43; (1-y_j)\ln (1-a_j^L)]&#43; \frac{\lambda}{2n}\sum\limits_ww^2$$
+对于其他形式的代价函数，都可以写成：
+$$C =C_0&#43;\frac{\lambda}{2n}\sum\limits_ww^2$$
+由于我们的目的是使得代价函数越小越好，因此直觉的看，规范化的效果是让网络倾向于学习小一点的权重。
+换言之，规范化可以当做一种寻找小的权重和最小化原始代价函数之间的折中。
+现在，我们再对$w$和$b$求偏导：
+$$\frac{\partial C}{\partial w} =\frac{\partial C_0}{\partial w}&#43;\frac{\lambda}{n}w $$
+$$\frac{\partial C}{\partial w} =\frac{\partial C_0}{\partial b} $$
+因此，我们计算规范化的代价函数的梯度是很简单的：仅仅需要反向传播，然后加上$\frac{\lambda}{n}w$得到所有权重的偏导数。而偏置的偏导数不需要变化。所以权重的学习规则为：
+$$w\to (1-\frac{\lambda\eta}{n})w-\frac{\eta}{m}\sum\limits_x\frac{\partial C_x}{\partial w}$$
+$$b\to b-\frac{\eta}{m}\sum\limits_x\frac{\partial C_x}{\partial b}$$...</p>
+  </section>
+  <footer class="entry-footer"><span title='2018-05-15 19:58:58 +0800 CST'>May 15, 2018</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to 防止神经网络过拟合的基本方法" href="https://tech.zealscott.com/deeplearning/misc/overfit/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>交叉熵与 softmax 
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>二次代价函数 之前我们一直使用二次代价函数，貌似在一定程度上也挺work。但其实，当输入值与目标值差距很大时，二次代价函数就不是很恰当了；**这是因为当差距很大时，此函数的学习速率会很慢。**我们可以通过一个简单的例子观察这种变化：
+假设我们只使用一个神经元与一个输出神经元，定义代价函数为：
+$$C = \frac{(y-a)^2}{2}$$
+使用链式法则计算权重和偏置的导数：
+$$\frac{\partial C}{\partial w}= (a-y)\sigma&#39;(z)x$$
+$$\frac{\partial C}{\partial b} = (a-y)\sigma&#39;(z)$$
+假设我们训练输入为$x = 1$，目标输出为$y = 0$，可以看见此时输入输出差距很大，则带入：
+$$\frac{\partial C}{\partial w}= a\sigma&#39;(z)$$
+$$\frac{\partial C}{\partial b} = a\sigma&#39;(z)$$
+回忆一下$\sigma$函数：
+可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\sigma&#39;(z)$就很小了。这就是学习缓慢的原因。
+交叉熵代价函数 因此，我们引入交叉熵代价函数，我们希望这个函数能弥补我们之前遇到的问题（在差距较大时学习缓慢）：
+$$C = -\frac{1}{n}\sum\limits _x [y\ln a&#43;(1-y)\ln (1-a)]$$
+这个函数的表达式看起来十分晦涩难懂，首先我们来看它为什么能成为一个代价函数。
+why cost function   $C &gt; 0$
+代价函数需要满足非负性。
+在求和中，由于$y、a\in [0,1]$，因此都是负数，在前面加上一个负号就变为正数。
+  在神经元输出接近目标值时，代价函数接近于0
+我们假设$y = 0 , a \approx 0 $，则带入可发现$C\approx 0$
+同样，在$y = 1,a \approx 1$，也发现$C \approx 0$...</p>
+  </section>
+  <footer class="entry-footer"><span title='2018-05-13 22:58:46 +0800 CST'>May 13, 2018</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to 交叉熵与 softmax " href="https://tech.zealscott.com/deeplearning/misc/softmax/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://tech.zealscott.com/page/3/">«</a>
+    <a class="next" href="https://tech.zealscott.com/page/5/">»</a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://tech.zealscott.com">Scott&#39;Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

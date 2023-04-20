@@ -1,0 +1,595 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>数据仓库之表膨胀 · Data Mining</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="json.html" />
+    
+    
+    <link rel="prev" href="tpch.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="sql server.html">
+            
+                <a href="sql server.html">
+            
+                    
+                    SQL Server 和 SSBI 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="udw.html">
+            
+                <a href="udw.html">
+            
+                    
+                    UDW云数据仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="history.html">
+            
+                <a href="history.html">
+            
+                    
+                    历史拉链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    日志分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="column store.html">
+            
+                <a href="column store.html">
+            
+                    
+                    OLAP 列存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="tpch.html">
+            
+                <a href="tpch.html">
+            
+                    
+                    基准评测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8" data-path="mvcc.html">
+            
+                <a href="mvcc.html">
+            
+                    
+                    数据仓库之表膨胀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="json.html">
+            
+                <a href="json.html">
+            
+                    
+                    数据仓库之 Json 格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="hive.html">
+            
+                <a href="hive.html">
+            
+                    
+                    Hive 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="model.html">
+            
+                <a href="model.html">
+            
+                    
+                    建立数据仓库模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="sqoop.html">
+            
+                <a href="sqoop.html">
+            
+                    
+                    Sqoop 抽取数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="data cleaning.html">
+            
+                <a href="data cleaning.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="first load.html">
+            
+                <a href="first load.html">
+            
+                    
+                    初始装载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="time load.html">
+            
+                <a href="time load.html">
+            
+                    
+                    定期装载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="optimization.html">
+            
+                <a href="optimization.html">
+            
+                    
+                    Hive 优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="recap.html">
+            
+                <a href="recap.html">
+            
+                    
+                    OLAP 期末总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >数据仓库之表膨胀</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x6982;&#x5FF5;">&#x6982;&#x5FF5;</h1>
+<h2 id="&#x591A;&#x7248;&#x672C;&#x5E76;&#x53D1;&#x63A7;&#x5236;&#xFF08;mvcc&#xFF09;">&#x591A;&#x7248;&#x672C;&#x5E76;&#x53D1;&#x63A7;&#x5236;&#xFF08;MVCC&#xFF09;</h2>
+<ul>
+<li>MVCC&#x5C31;&#x662F;&#x5BF9;&#x540C;&#x4E00;&#x4EFD;&#x6570;&#x636E;&#x4E34;&#x65F6;&#x4FDD;&#x7559;&#x591A;&#x7248;&#x672C;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x5B9E;&#x73B0;&#x5E76;&#x53D1;&#x63A7;&#x5236;&#x3002;&#x5B83;<strong>&#x53EF;&#x4EE5;&#x907F;&#x514D;&#x8BFB;&#x5199;&#x4E8B;&#x52A1;&#x4E4B;&#x95F4;&#x7684;&#x4E92;&#x76F8;&#x963B;&#x585E;&#xFF0C;&#x76F8;&#x6BD4;&#x901A;&#x5E38;&#x7684;&#x5C01;&#x9501;&#x6280;&#x672F;&#x53EF;&#x6781;&#x5927;&#x7684;&#x63D0;&#x9AD8;&#x4E1A;&#x52A1;&#x7684;&#x5E76;&#x53D1;&#x6027;&#x80FD;&#x3002;</strong></li>
+<li>&#x5F53;&#x4E00;&#x4E2A;MVCC &#x6570;&#x636E;&#x5E93;&#x9700;&#x8981;&#x66F4;&#x4E00;&#x4E2A;&#x4E00;&#x6761;&#x6570;&#x636E;&#x8BB0;&#x5F55;&#x7684;&#x65F6;&#x5019;&#xFF0C;<strong>&#x5B83;&#x4E0D;&#x4F1A;&#x76F4;&#x63A5;&#x7528;&#x65B0;&#x6570;&#x636E;&#x8986;&#x76D6;&#x65E7;&#x6570;&#x636E;&#xFF0C;&#x800C;&#x662F;&#x5C06;&#x65E7;&#x6570;&#x636E;&#x6807;&#x8BB0;&#x4E3A;&#x8FC7;&#x65F6;&#xFF08;obsolete&#xFF09;&#x5E76;&#x5728;&#x522B;&#x5904;&#x589E;&#x52A0;&#x65B0;&#x7248;&#x672C;&#x7684;&#x6570;&#x636E;&#x3002;</strong>&#x8FD9;&#x6837;&#x5C31;&#x4F1A;&#x6709;&#x5B58;&#x50A8;&#x591A;&#x4E2A;&#x7248;&#x672C;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x4F46;&#x662F;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#x662F;&#x6700;&#x65B0;&#x7684;&#x3002;</li>
+<li>&#x8FD9;&#x79CD;&#x65B9;&#x5F0F;&#x5141;&#x8BB8;&#x8BFB;&#x8005;&#x8BFB;&#x53D6;&#x5728;&#x4ED6;&#x8BFB;&#x4E4B;&#x524D;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x6570;&#x636E;&#xFF0C;&#x5373;&#x4F7F;&#x8FD9;&#x4E9B;&#x5728;&#x8BFB;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#x534A;&#x8DEF;&#x88AB;&#x522B;&#x4EBA;&#x4FEE;&#x6539;&#x3001;&#x5220;&#x9664;&#x4E86;&#xFF0C;&#x4E5F;&#x5BF9;&#x5148;&#x524D;&#x6B63;&#x5728;&#x8BFB;&#x7684;&#x7528;&#x6237;&#x6CA1;&#x6709;&#x5F71;&#x54CD;&#x3002;<strong>&#x8FD9;&#x79CD;&#x591A;&#x7248;&#x672C;&#x7684;&#x65B9;&#x5F0F;&#x907F;&#x514D;&#x4E86;&#x586B;&#x5145;&#x5220;&#x9664;&#x64CD;&#x4F5C;&#x5728;&#x5185;&#x5B58;&#x548C;&#x78C1;&#x76D8;&#x5B58;&#x50A8;&#x7ED3;&#x6784;&#x9020;&#x6210;&#x7684;&#x7A7A;&#x6D1E;&#x7684;&#x5F00;&#x9500;&#xFF0C;&#x4F46;&#x662F;&#x9700;&#x8981;&#x7CFB;&#x7EDF;&#x5468;&#x671F;&#x6027;&#x6574;&#x7406;&#xFF08;sweepthrough&#xFF09;&#x4EE5;&#x771F;&#x5B9E;&#x5220;&#x9664;&#x8001;&#x7684;&#x3001;&#x8FC7;&#x65F6;&#x7684;&#x6570;&#x636E;&#x3002;</strong></li>
+</ul>
+<h2 id="&#x8868;&#x81A8;&#x80C0;">&#x8868;&#x81A8;&#x80C0;</h2>
+<ul>
+<li>&#x6839;&#x636E;MVCC&#x7684;&#x539F;&#x7406;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x76F4;&#x63A5;&#x66F4;&#x65B0;&#x6570;&#x636E;(&#x66F4;&#x65B0;&#x64CD;&#x4F5C;(update)&#x662F;&#x901A;&#x8FC7;&#x5148;&#x5220;&#x9664;(delete)&#x518D;&#x63D2;&#x5165;(insert)&#x5B9E;&#x73B0;&#x7684;)&#xFF0C;&#x88AB;&#x66F4;&#x65B0;&#x4E4B;&#x524D;&#x7684;&#x884C;&#x6570;&#x636E;&#x4ECD;&#x7136;&#x5728;&#x6570;&#x636E;&#x6587;&#x4EF6;&#x4E2D;&#x3002;&#x8FD9;&#x79CD;&#x73B0;&#x8C61;&#x53EB;&#x505A;&#x8868;&#x81A8;&#x80C0;&#x3002;</li>
+<li>PG&#x4E2D;&#x7684;MVCC<ul>
+<li>&#x6570;&#x636E;&#x6587;&#x4EF6;&#x4E2D;&#x5B58;&#x653E;&#x540C;&#x4E00;&#x903B;&#x8F91;&#x884C;&#x7684;&#x591A;&#x4E2A;&#x884C;&#x7248;&#x672C;&#xFF08;&#x79F0;&#x4E3A;Tuple&#xFF09;&#xFF1B;</li>
+<li>&#x6BCF;&#x4E2A;&#x884C;&#x7248;&#x672C;&#x7684;&#x5934;&#x90E8;&#x8BB0;&#x5F55;&#x521B;&#x5EFA;&#x8BE5;&#x7248;&#x672C;&#x7684;&#x4E8B;&#x52A1;ID&#x4EE5;&#x53CA;&#x5220;&#x9664;&#x8BE5;&#x884C;&#x7248;&#x672C;&#x7684;&#x4E8B;&#x52A1;&#x7684;ID&#xFF08;&#x5206;&#x522B;&#x79F0;&#x4E3A;xmin&#x548C;xmax&#xFF09;&#xFF1B;</li>
+<li>&#x6BCF;&#x4E2A;&#x4E8B;&#x52A1;&#x7684;&#x72B6;&#x6001;&#xFF08;&#x8FD0;&#x884C;&#x4E2D;&#xFF0C;&#x4E2D;&#x6B62;&#x6216;&#x63D0;&#x4EA4;&#xFF09;&#x8BB0;&#x5F55;&#x5728;<code>pg_clog</code>&#x6587;&#x4EF6;&#x4E2D;&#xFF1B;</li>
+<li>&#x6839;&#x636E;&#x4E0A;&#x9762;&#x7684;&#x6570;&#x636E;&#x5E76;&#x8FD0;&#x7528;&#x4E00;&#x5B9A;&#x7684;&#x89C4;&#x5219;&#x6BCF;&#x4E2A;&#x4E8B;&#x52A1;&#x53EA;&#x4F1A;&#x770B;&#x5230;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x884C;&#x7248;&#x672C;&#x3002; </li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x5B9E;&#x9A8C;">&#x5B9E;&#x9A8C;</h2>
+<p>&#x67E5;&#x770B;&#x5F53;&#x524D;&#x9694;&#x79BB;&#x7EA7;&#x522B;&#xFF1A;</p>
+<p><img src="images/mvcc1.png" alt="mvcc1"></p>
+<p>&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x8868;&#xFF1A;</p>
+<pre><code>create table test(id int primary key, value char(10) );
+insert into test values(1,&apos;cc&apos;);
+insert into test values(2,&apos;dd&apos;);
+insert into test values(3,&apos;ee&apos;);
+-- &#x5F00;&#x59CB;&#x4E00;&#x4E2A;&#x4E8B;&#x52A1;&#xFF0C;&#x4F46;&#x4E0D;&#x63D0;&#x4EA4;
+begin;update test set value = &apos;ccc&apos; where id = 1;
+-- &#x518D;&#x5F00;&#x4E00;&#x4E2A;&#x4E8B;&#x7269;&#xFF0C;&#x67E5;&#x770B;
+begin;select *, xmin,xmax,cmin,cmax from test;
+-- &#x6700;&#x540E;&#x518D;&#x63D0;&#x4EA4;
+commit;
+</code></pre><p>&#x5728;&#x4E8B;&#x52A1;A&#x4E2D;&#xFF1A;</p>
+<p><img src="images/mvcc2.png" alt="mvcc2"></p>
+<p>&#x4E8B;&#x52A1;B&#x4E2D;&#xFF1A;</p>
+<p><img src="images/mvcc3.png" alt="mvcc3"></p>
+<p>&#x7531;&#x4E8E;&#x662F;&#x5206;&#x5E03;&#x5F0F;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5E76;&#x4E0D;&#x80FD;&#x6839;&#x636E;&#x4E8B;&#x52A1;&#x7684;id&#x6765;&#x5224;&#x65AD;&#x5148;&#x540E;&#xFF0C;&#x53EF;&#x53C2;&#x8003;<a href="https://cloud.tencent.com/developer/news/155745" _target="blank">&#x8FD9;&#x91CC;</a>&#x3002;</p>
+<h1 id="&#x89E3;&#x51B3;&#x65B9;&#x6CD5;">&#x89E3;&#x51B3;&#x65B9;&#x6CD5;</h1>
+<h2 id="vacuum-full-table">vacuum full table</h2>
+<p>&#x5F53;&#x4E00;&#x4E2A;&#x8FC7;&#x671F;&#x7684;&#x884C;&#x4E0D;&#x5728;&#x88AB;&#x4EFB;&#x4F55;&#x6D3B;&#x8DC3;&#x4E8B;&#x52A1;&#x5F15;&#x7528;&#x65F6;&#xFF0C;&#x5B83;&#x53EF;&#x4EE5;&#x88AB;&#x79FB;&#x9664;&#x4ECE;&#x800C;&#x817E;&#x51FA;&#x5176;&#x6240;&#x5360;&#x7528;&#x7684;&#x7A7A;&#x95F4;&#x8FDB;&#x884C;&#x91CD;&#x7528;&#x3002;VACUUM&#x547D;&#x4EE4;&#x4F1A;&#x6807;&#x8BB0;&#x8FC7;&#x671F;&#x884C;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x7A7A;&#x95F4;&#x53EF;&#x4EE5;&#x88AB;&#x91CD;&#x7528;&#x3002;</p>
+<p>VACUUM&#x547D;&#x4EE4;&#xFF08;&#x4E0D;&#x5E26;FULL&#xFF09;&#x53EF;&#x4EE5;&#x4E0E;&#x5176;&#x4ED6;&#x67E5;&#x8BE2;&#x5E76;&#x884C;&#x8FD0;&#x884C;&#x3002;&#x5B83;&#x4F1A;&#x6807;&#x8BB0;&#x4E4B;&#x524D;&#x88AB;&#x8FC7;&#x671F;&#x884C;&#x6240;&#x5360;&#x7528;&#x7684;&#x7A7A;&#x95F4;&#x4E3A;&#x7A7A;&#x95F2;&#x53EF;&#x7528;&#x3002;<strong>&#x5982;&#x679C;&#x5269;&#x4F59;&#x7684;&#x7A7A;&#x95F2;&#x7A7A;&#x95F4;&#x6570;&#x91CF;&#x53EF;&#x89C2;&#xFF0C;&#x5B83;&#x4F1A;&#x628A;&#x8BE5;&#x9875;&#x9762;&#x52A0;&#x5230;&#x8BE5;&#x8868;&#x7684;&#x7A7A;&#x95F2;&#x7A7A;&#x95F4;&#x6620;&#x5C04;&#x4E2D;&#x3002;</strong>&#x5F53;Greenplum&#x6570;&#x636E;&#x5E93;&#x4E4B;&#x540E;&#x9700;&#x8981;&#x7A7A;&#x95F4;&#x5206;&#x914D;&#x7ED9;&#x65B0;&#x884C;&#x65F6;&#xFF0C;&#x5B83;&#x9996;&#x5148;&#x4F1A;&#x53C2;&#x8003;&#x8BE5;&#x8868;&#x7684;&#x7A7A;&#x95F2;&#x7A7A;&#x95F4;&#x6620;&#x5C04;&#x4EE5;&#x5BFB;&#x627E;&#x6709;&#x53EF;&#x7528;&#x7A7A;&#x95F4;&#x7684;&#x9875;&#x9762;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x627E;&#x5230;&#x8FD9;&#x6837;&#x7684;&#x9875;&#x9762;&#xFF0C;&#x5B83;&#x4F1A;&#x4E3A;&#x8BE5;&#x6587;&#x4EF6;&#x8FFD;&#x52A0;&#x65B0;&#x7684;&#x9875;&#x9762;&#x3002;</p>
+<p>VACUUM&#xFF08;&#x4E0D;&#x5E26;FULL&#xFF09;&#x4E0D;&#x4F1A;&#x5408;&#x5E76;&#x9875;&#x9762;&#x6216;&#x8005;&#x51CF;&#x5C0F;&#x8868;&#x5728;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x5C3A;&#x5BF8;&#x3002;&#x5B83;&#x56DE;&#x6536;&#x7684;&#x7A7A;&#x95F4;&#x53EA;&#x662F;&#x653E;&#x5728;&#x7A7A;&#x95F2;&#x7A7A;&#x95F4;&#x6620;&#x5C04;&#x4E2D;&#x8868;&#x793A;&#x53EF;&#x7528;&#x3002;&#x4E3A;&#x4E86;&#x963B;&#x6B62;&#x78C1;&#x76D8;&#x6587;&#x4EF6;&#x5927;&#x5C0F;&#x589E;&#x957F;&#xFF0C;&#x91CD;&#x8981;&#x7684;&#x662F;&#x8DB3;&#x591F;&#x9891;&#x7E41;&#x5730;&#x8FD0;&#x884C;VACUUM&#x3002;&#x8FD0;&#x884C;VACUUM&#x7684;&#x9891;&#x7387;&#x53D6;&#x51B3;&#x4E8E;&#x8868;&#x4E2D;&#x66F4;&#x65B0;&#x548C;&#x5220;&#x9664;&#xFF08;&#x63D2;&#x5165;&#x53EA;&#x4F1A;&#x589E;&#x52A0;&#x65B0;&#x884C;&#xFF09;&#x7684;&#x9891;&#x7387;&#x3002;&#x91CD;&#x5EA6;&#x66F4;&#x65B0;&#x7684;&#x8868;&#x53EF;&#x80FD;&#x6BCF;&#x5929;&#x9700;&#x8981;&#x8FD0;&#x884C;&#x51E0;&#x6B21;VACUUM&#x6765;&#x786E;&#x4FDD;&#x901A;&#x8FC7;&#x7A7A;&#x95F2;&#x7A7A;&#x95F4;&#x6620;&#x5C04;&#x80FD;&#x627E;&#x5230;&#x53EF;&#x7528;&#x7684;&#x7A7A;&#x95F2;&#x7A7A;&#x95F4;&#x3002;&#x5728;&#x8FD0;&#x884C;&#x4E86;&#x4E00;&#x4E2A;&#x66F4;&#x65B0;&#x6216;&#x8005;&#x5220;&#x9664;&#x5927;&#x91CF;&#x884C;&#x7684;&#x4E8B;&#x52A1;&#x4E4B;&#x540E;&#x8FD0;&#x884C;VACUUM&#x4E5F;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x3002;</p>
+<p><strong>VACUUM FULL&#x547D;&#x4EE4;&#x4F1A;&#x628A;&#x8868;&#x91CD;&#x5199;&#x4E3A;&#x6CA1;&#x6709;&#x8FC7;&#x671F;&#x884C;&#xFF0C;&#x5E76;&#x4E14;&#x5C06;&#x8868;&#x51CF;&#x5C0F;&#x5230;&#x5176;&#x6700;&#x5C0F;&#x5C3A;&#x5BF8;&#x3002;</strong>&#x8868;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x9875;&#x90FD;&#x4F1A;&#x88AB;&#x68C0;&#x67E5;&#xFF0C;&#x5176;&#x4E2D;&#x7684;&#x53EF;&#x89C1;&#x884C;&#x88AB;&#x79FB;&#x52A8;&#x5230;&#x524D;&#x9762;&#x8FD8;&#x6CA1;&#x6709;&#x5B8C;&#x5168;&#x586B;&#x6EE1;&#x7684;&#x9875;&#x9762;&#x4E2D;&#x3002;&#x7A7A;&#x9875;&#x9762;&#x4F1A;&#x88AB;&#x4E22;&#x5F03;&#x3002;<strong>&#x8BE5;&#x8868;&#x4F1A;&#x88AB;&#x4E00;&#x76F4;&#x9501;&#x4F4F;&#x76F4;&#x5230;VACUUM FULL&#x5B8C;&#x6210;&#x3002;</strong>&#x76F8;&#x5BF9;&#x4E8E;&#x5E38;&#x89C4;&#x7684;VACUUM&#x547D;&#x4EE4;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x662F;&#x4E00;&#x79CD;&#x975E;&#x5E38;&#x6602;&#x8D35;&#x7684;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x5B9A;&#x671F;&#x7684;&#x6E05;&#x7406;&#x6765;&#x907F;&#x514D;&#x6216;&#x8005;&#x63A8;&#x8FDF;&#x8FD9;&#x79CD;&#x64CD;&#x4F5C;&#x3002;&#x6700;&#x597D;&#x662F;&#x5728;&#x4E00;&#x4E2A;&#x7EF4;&#x62A4;&#x671F;&#x6765;&#x8FD0;&#x884C;VACUUM FULL&#x3002;VACUUM FULL&#x7684;&#x4E00;&#x79CD;&#x66FF;&#x4EE3;&#x65B9;&#x6848;&#x662F;&#x7528;&#x4E00;&#x4E2A;CREATE TABLE AS&#x8BED;&#x53E5;&#x91CD;&#x65B0;&#x521B;&#x5EFA;&#x8BE5;&#x8868;&#x5E76;&#x4E14;&#x5220;&#x9664;&#x6389;&#x65E7;&#x8868;&#x3002;</p>
+<p>&#x4F46;&#x662F;&#x5728;&#x7D22;&#x5F15;&#x5B58;&#x5728;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>vacuum full table</code> &#x53EA;&#x80FD;&#x5220;&#x9664;&#x4E4B;&#x524D;&#x884C;&#xFF0C;&#x4E0D;&#x80FD;&#x56DE;&#x6536;&#x7D22;&#x5F15;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#x4F7F;&#x7528;<code>vacuum full</code>&#x56DE;&#x6536;&#x5783;&#x573E;&#x7684;&#x5EFA;&#x8BAE;&#x64CD;&#x4F5C;&#x6D41;&#x7A0B;&#xFF1A;</p>
+<ol>
+<li>&#x8BB0;&#x5F55;&#x4E0B;&#x8868;&#x7684;&#x7D22;&#x5F15;</li>
+<li>&#x5220;&#x9664;&#x7D22;&#x5F15;</li>
+<li>vacuum full &#x8868;</li>
+<li>&#x91CD;&#x5EFA;&#x7D22;&#x5F15;</li>
+</ol>
+<pre><code class="lang-sql"><span class="hljs-comment">-- &#x521B;&#x5EFA;&#x8868;</span>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> stu(<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span>, <span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),gender <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>));
+<span class="hljs-comment">-- &#x751F;&#x6210;&#x6570;&#x636E;</span>
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> stu <span class="hljs-keyword">select</span> generate_series(<span class="hljs-number">1</span>,<span class="hljs-number">100000</span>),<span class="hljs-string">&apos;Bob&apos;</span>,<span class="hljs-string">&apos;man&apos;</span>;
+<span class="hljs-comment">-- &#x67E5;&#x770B;&#x8868;&#x5927;&#x5C0F;</span>
+<span class="hljs-keyword">select</span> pg_size_pretty(pg_relation_size(<span class="hljs-string">&apos;stu&apos;</span>));
+<span class="hljs-comment">-- &#x4FEE;&#x6539;&#x6570;&#x636E;</span>
+<span class="hljs-keyword">update</span> stu <span class="hljs-keyword">set</span> <span class="hljs-keyword">name</span>=<span class="hljs-string">&apos;Alice&apos;</span>;
+<span class="hljs-comment">-- &#x518D;&#x6B21;&#x67E5;&#x770B;&#x8868;&#x5927;&#x5C0F;</span>
+<span class="hljs-keyword">select</span> pg_size_pretty(pg_relation_size(<span class="hljs-string">&apos;stu&apos;</span>));
+</code></pre>
+<p><img src="images/mvcc4.png" alt="mvcc4"></p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- &#x4F7F;&#x7528;vacuum full stu&#x56DE;&#x6536;&#x7A7A;&#x95F4;&#xFF0C;&#x5E76;&#x67E5;&#x770B;&#x7A7A;&#x95F4;&#x5927;&#x5C0F;&#x3002;&#x6B64;&#x65F6;&#x8868;&#x7A7A;&#x95F4;&#x5E94;&#x7F29;&#x5C0F;&#x4E00;&#x534A;&#x3002;</span>
+vacuum full stu;
+<span class="hljs-comment">-- &#x67E5;&#x770B;&#x8868;&#x5927;&#x5C0F;</span>
+<span class="hljs-keyword">select</span> pg_size_pretty(pg_relation_size(<span class="hljs-string">&apos;stu&apos;</span>));
+<span class="hljs-comment">-- &#x5728;id&#x5B57;&#x6BB5;&#x4E0A;&#x521B;&#x5EFA;&#x7D22;&#x5F15;&#xFF0C;&#x5E76;&#x67E5;&#x770B;&#x7D22;&#x5F15;&#x5927;&#x5C0F;</span>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">index</span> idx_stu <span class="hljs-keyword">on</span> stu(<span class="hljs-keyword">id</span>);
+<span class="hljs-comment">-- &#x67E5;&#x770B;&#x8868;&#x5927;&#x5C0F;</span>
+<span class="hljs-keyword">select</span> pg_size_pretty(pg_relation_size(<span class="hljs-string">&apos;stu&apos;</span>));
+<span class="hljs-comment">-- &#x66F4;&#x65B0;&#x8868;&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x67E5;&#x770B;&#x8868;&#x7A7A;&#x95F4;&#x548C;&#x7D22;&#x5F15;&#x7A7A;&#x95F4;&#x5927;&#x5C0F;</span>
+<span class="hljs-keyword">update</span> stu <span class="hljs-keyword">set</span> <span class="hljs-keyword">name</span> = <span class="hljs-string">&apos;Jack&apos;</span>;
+<span class="hljs-keyword">select</span> pg_size_pretty(pg_relation_size(<span class="hljs-string">&apos;idx_stu&apos;</span>));
+<span class="hljs-keyword">select</span> pg_size_pretty(pg_relation_size(<span class="hljs-string">&apos;stu&apos;</span>));
+
+<span class="hljs-comment">-- &#x5220;&#x9664;&#x7D22;&#x5F15;&#xFF0C;&#x56DE;&#x6536;&#x8868;&#x7A7A;&#x95F4;&#x3002;</span>
+<span class="hljs-keyword">drop</span> <span class="hljs-keyword">index</span> idx_stu;
+vacuum full stu;
+<span class="hljs-comment">-- &#x91CD;&#x5EFA;&#x7D22;&#x5F15;&#xFF0C;&#x67E5;&#x770B;&#x8868;&#x7A7A;&#x95F4;&#x548C;&#x7D22;&#x5F15;&#x5927;&#x5C0F;</span>
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">index</span> idx_stu <span class="hljs-keyword">on</span> stu(<span class="hljs-keyword">id</span>);
+<span class="hljs-keyword">select</span> pg_size_pretty(pg_relation_size(<span class="hljs-string">&apos;stu&apos;</span>));
+<span class="hljs-keyword">select</span> pg_size_pretty(pg_relation_size(<span class="hljs-string">&apos;idx_stu&apos;</span>));
+</code></pre>
+<p><img src="images/mvcc5.png" alt="mvcc5"></p>
+<h2 id="&#x4FEE;&#x6539;&#x5206;&#x5E03;&#x952E;&#x91CA;&#x653E;&#x7A7A;&#x95F4;">&#x4FEE;&#x6539;&#x5206;&#x5E03;&#x952E;&#x91CA;&#x653E;&#x7A7A;&#x95F4;</h2>
+<p>&#x4FEE;&#x6539;&#x5206;&#x5E03;&#x952E;&#x53EF;&#x4EE5;&#x56DE;&#x6536;&#x7D22;&#x5F15;&#x7684;&#x81A8;&#x80C0;&#x7A7A;&#x95F4;&#x3002;&#x4FEE;&#x6539;&#x5206;&#x5E03;&#x952E;&#x52A0;&#x8F7D;&#x7684;&#x9501;&#x662F;&#x6392;&#x5B83;&#x9501;&#x3002;&#x5EFA;&#x8BAE;&#x5728;&#x6CA1;&#x6709;&#x4E1A;&#x52A1;&#x7684;&#x65F6;&#x5019;&#x6267;&#x884C;&#xFF0C;&#x4E0D;&#x8981;&#x5F71;&#x54CD;&#x4E1A;&#x52A1;&#x3002;</p>
+<p>&#x7F3A;&#x70B9;&#xFF1A;&#x7531;&#x4E8E;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x4FEE;&#x6539;&#x5206;&#x5E03;&#x952E;&#xFF0C;&#x8BA1;&#x7B97;&#x5F00;&#x9500;&#x6BD4;&#x8F83;&#x5927;&#xFF0C;&#x5728;&#x8868;&#x5206;&#x5E03;&#x5DF2;&#x7ECF;&#x6BD4;&#x8F83;&#x5747;&#x5300;&#x65F6;&#x4F1A;&#x5F71;&#x54CD;&#x6027;&#x80FD;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- &#x66F4;&#x65B0;&#x8868;stu&#x7684;name&#x5B57;&#x6BB5;&#xFF0C;&#x5E76;&#x67E5;&#x770B;&#x8868;&#x7A7A;&#x95F4;&#x548C;&#x7D22;&#x5F15;&#x5927;&#x5C0F;</span>
+<span class="hljs-keyword">update</span> stu <span class="hljs-keyword">set</span> <span class="hljs-keyword">name</span> = <span class="hljs-string">&apos;Jay&apos;</span>;
+<span class="hljs-keyword">select</span> pg_size_pretty(pg_relation_size(<span class="hljs-string">&apos;idx_stu&apos;</span>));
+<span class="hljs-keyword">select</span> pg_size_pretty(pg_relation_size(<span class="hljs-string">&apos;stu&apos;</span>));
+<span class="hljs-comment">-- &#x67E5;&#x770B;&#x8868;&#x683C;&#x5206;&#x5E03;</span>
+\d stu;
+<span class="hljs-comment">-- &#x6309;&#x7167;&#x539F;&#x6709;&#x7684;&#x5206;&#x5E03;&#x952E;&#x91CD;&#x65B0;&#x5206;&#x5E03;&#x3002;&#x67E5;&#x770B;&#x8868;&#x7A7A;&#x95F4;&#x548C;&#x7D22;&#x5F15;&#x7A7A;&#x95F4;</span>
+<span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> stu <span class="hljs-keyword">set</span> <span class="hljs-keyword">with</span> (reorganize=<span class="hljs-literal">true</span>) <span class="hljs-keyword">distributed</span> <span class="hljs-keyword">by</span>(<span class="hljs-keyword">id</span>);
+<span class="hljs-keyword">select</span> pg_size_pretty(pg_relation_size(<span class="hljs-string">&apos;stu&apos;</span>));
+<span class="hljs-keyword">select</span> pg_size_pretty(pg_relation_size(<span class="hljs-string">&apos;idx_stu&apos;</span>));
+</code></pre>
+<p><img src="images/mvcc6.png" alt="mvcc6"></p>
+<h2 id="&#x590D;&#x5236;&#x8868;">&#x590D;&#x5236;&#x8868;</h2>
+<p>&#x521B;&#x5EFA;&#x65B0;&#x8868;&#xFF0C;&#x5BFC;&#x5165;&#x6570;&#x636E; <code>CREATE TABLE&#x2026;AS SELECT</code> &#x547D;&#x4EE4;&#x628A;&#x8BE5;&#x8868;&#x62F7;&#x8D1D;&#x4E3A;&#x4E00;&#x4E2A;&#x65B0;&#x8868;&#xFF0C;&#x65B0;&#x5EFA;&#x7684;&#x8868;&#x5C06;&#x4E0D;&#x4F1A;&#x51FA;&#x73B0;&#x81A8;&#x80C0;&#x73B0;&#x8C61;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-comment">-- &#x66F4;&#x65B0;&#x8868;&#xFF0C;&#x5E76;&#x521B;&#x5EFA;&#x590D;&#x5236;&#x8868;&#x3002;</span>
+<span class="hljs-keyword">update</span> stu <span class="hljs-keyword">set</span> <span class="hljs-keyword">name</span> = <span class="hljs-string">&apos;Bob&apos;</span>;
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> copy_stu <span class="hljs-keyword">as</span> 
+<span class="hljs-keyword">select</span> * <span class="hljs-keyword">from</span> stu;
+<span class="hljs-comment">-- &#x5220;&#x9664;&#x539F;&#x8868;&#xFF0C;&#x5E76;&#x5C06;&#x590D;&#x5236;&#x8868;&#x540D;&#x66F4;&#x6539;&#x4E3A;stu&#x3002;</span>
+<span class="hljs-keyword">drop</span> <span class="hljs-keyword">table</span> stu;
+<span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> copy_stu <span class="hljs-keyword">rename</span> <span class="hljs-keyword">to</span> stu;
+</code></pre>
+<p><img src="images/mvcc7.png" alt="mvcc7"></p>
+<h2 id="reference">Reference</h2>
+<ol>
+<li><a href="https://cloud.tencent.com/developer/news/155745" _target="blank">Greenplum&#x6570;&#x636E;&#x5E93;&#x6982;&#x5FF5;</a></li>
+<li><a href="https://blog.csdn.net/hmxz2nn/article/details/82811404" _target="blank">https://</a><a href="https://blog.csdn.net/hmxz2nn/article/details/82811404" _target="blank">blog.csdn.net/hmxz2nn/article/details/82811404</a></li>
+<li>CMU&#x9AD8;&#x7EA7;&#x6570;&#x636E;&#x5E93;&#x8BFE;&#x7A0B;&#xFF1A;<a href="https://15721.courses.cs.cmu.edu/spring2019/schedule.html" _target="blank">https</a><a href="https://15721.courses.cs.cmu.edu/spring2019/schedule.html" _target="blank">://15721.courses.cs.cmu.edu/spring2019/schedule.html</a></li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="tpch.html" class="navigation navigation-prev " aria-label="Previous page: 基准评测">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="json.html" class="navigation navigation-next " aria-label="Next page: 数据仓库之 Json 格式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"数据仓库之表膨胀","level":"1.8","depth":1,"next":{"title":"数据仓库之 Json 格式","level":"1.9","depth":1,"path":"json.md","ref":"json.md","articles":[]},"previous":{"title":"基准评测","level":"1.7","depth":1,"path":"tpch.md","ref":"tpch.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"Data Mining","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"mvcc.md","mtime":"2021-01-29T08:10:39.221Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T10:42:48.559Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

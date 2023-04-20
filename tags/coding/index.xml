@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>coding on Scott&#39;Log</title>
+    <link>https://tech.zealscott.com/tags/coding/</link>
+    <description>Recent content in coding on Scott&#39;Log</description>
+    <image>
+      <url>https://tech.zealscott.com/papermod-cover.png</url>
+      <link>https://tech.zealscott.com/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 22 Apr 2020 22:31:03 +0800</lastBuildDate><atom:link href="https://tech.zealscott.com/tags/coding/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>在服务器上部署 Jupyter Notebook</title>
+      <link>https://tech.zealscott.com/misc/jupyter-notebook/</link>
+      <pubDate>Wed, 22 Apr 2020 22:31:03 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/jupyter-notebook/</guid>
+      <description>安装 Ananconda  使用命令行安装  1  wget wget https://repo.continuum.io/archive/Anaconda3-5.2.0-Linux-x86_64.sh    注意，选择安装路径时，如果想要所有用户都能使用，则安装在usr/local/ananconda3目录下 注意修改/etc/profile.d下的conda.sh，指定环境变量（在登入另外的用户时会提醒） 更改源。创建~/.condarc文件，输入  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  channels: - defaults show_channel_urls: true channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud    至此，已经完成 python、conda 及 jupyter-notebook 的安装。  部署远程云服务  生成Jupyter Notebook配置文件  1  jupyter notebook --generate-config     生成的配置文件，后来用来设置服务器的配置</description>
+    </item>
+    
+    <item>
+      <title>Laravel Homestead 安装小记</title>
+      <link>https://tech.zealscott.com/misc/laravel-installation/</link>
+      <pubDate>Fri, 11 Oct 2019 20:15:55 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/laravel-installation/</guid>
+      <description>环境配置 在Laravel官网上，推荐使用Laravel Homestead虚拟机部署安装环境。Homestead是Laravel官方提供的基于Vargrant的Box，也就是虚拟机原型系统，预装了一切 Laravel 需要的东西。
+这里使用VirtualBox虚拟机，而Vagrant是一个虚拟机管理工具。
+配置Laravel环境的主要步骤有：
+ 安装VirtualBox和Vagrant 安装Homestead Vagrant Box 安装Homestead（Clone 项目） 修改配置文件（Homestead.yaml和/etc/hosts） 启动虚拟机，SSH登陆虚拟机 下载Laravel  安装VirtualBox和Vagrant 直接官网安装dmg即可：
+  VirtualBox 下载地址
+  Vagrant下载地址
+  验证是否安装成功在终端使用以下命令行，显示版本信息就 OK 了。
+1  vagrant -v   安装 Homestead Vagrant Box 在线安装 直接输入以下命令行：
+1  vagrant box add laravel/homestead   这个步骤相当于下载虚拟机的预装系统，下载文件超过1个G，实测非常慢，及时是挂VPN，也太慢。
+离线导入 下载Box 最后我选择了首先下载.box文件，然后导入的方式。
+在Vagrant官网进入Homestead box，选择最新的版本，例如8.2.1，然后进入该版本页面，如https://app.vagrantup.com/laravel/boxes/homestead/versions/8.2.1，直接在后面添加/providers/virtualbox.box组成完整的URL，即可使用迅雷等下载工具进行下载，完整的URL为：
+ https://app.vagrantup.com/laravel/boxes/homestead/versions/8.2.1/providers/virtualbox.box
+ 下载完成后得到virtualbox.box的文件，在命令行中进入该文件的目录，然后输入以下命令即可成功导入。
+ vagrant box add laravel/homestead ./virtualbox.box
+ 导入 注意，这里导入时vagrant并不知道版本信息。因此，我们需要进入box的文件夹，手动增加版本信息。</description>
+    </item>
+    
+    <item>
+      <title>ThingWorx 安装及部署</title>
+      <link>https://tech.zealscott.com/misc/thingworx-installation/</link>
+      <pubDate>Thu, 11 Jul 2019 17:46:57 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/thingworx-installation/</guid>
+      <description>本文以Windows系统为例，介绍ThingWorx的安装步骤。
+H2版 安装  从PTC官网下载合适版本的Thingworx（h2版） 访问Tomcat 网站下载32-bit/64-bit Windows 服务安装程序。 下载JDK8以上的版本。  注意，H2为内嵌数据库，并不需要安装。
+部署 Tomcat   在“HTTP/1.1 连接器端口” 字段，键入“80” (或其他可用端口)，其余默认设置安装
+  启动Tomcat，在“Java 选项”字段中，将以下内容添加至选项字段的末尾：
+  1 2 3 4  -Dserver -Dd64 -XX:+UseG1GC -Dfile.encoding=UTF-8 -Djava.library.path=&amp;lt;path to Tomcat&amp;gt;\webapps\Thingworx\WEB-INF\extensions       清除Initial memory pool 和 Maximum memory pool字段中的任意值。
+  在Tomcat 的安装位置，打开CATALINA_HOME/conf/web.xml。通过将以下内容添加至web.xml 文件来替换默认错误页面。将以下内容置于web-app 标记内(在welcome-list 标记后)
+  1 2 3 4  &amp;lt;error-page&amp;gt; &amp;lt;exception-type&amp;gt;java.lang.Throwable&amp;lt;/exception-type&amp;gt; &amp;lt;location&amp;gt;/error.jsp&amp;lt;/location&amp;gt; &amp;lt;/error-page&amp;gt;       要增加影响静态文件缓存的默认缓存设置，请在$CATALINA_HOME/conf/context.</description>
+    </item>
+    
+    <item>
+      <title>VIM 使用简介</title>
+      <link>https://tech.zealscott.com/misc/vim/</link>
+      <pubDate>Thu, 20 Sep 2018 10:52:29 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/vim/</guid>
+      <description>VIM的启动  启动命令：vi my.txt 如果文件存在，则vi显示文件内容并等待用户的命令。 如果指定的文件不存在，则vi将告知用户这是未命名的文件，并进入一个空白的界面。 启动vi时都是默认处于命令模式。用户必须使用命令切换到文本输入模式才能进行输入编辑，或者可执行删除、复制等编辑命令。  VIM的退出  冒号进命令行模式下：  :q! 不存档强制退出。 :w 保存但不退出，w(rite)后可加所要存档的文档名。 :wq 存档后退出。 :x 与:wq相同   命令模式  ZZ、ZQ  保存/不保存退出    编辑 插入模式   输入:set nu 可设置vi显示行号
+  新增 (append)
+ a ：从光标所在位置后面开始新增资料 A： 从光标所在行最后面的地方开始新增资料。    插入 (insert)
+ i： 从光标所在位置前面开始插入资料 I ：从光标所在行的第一个非空白字元前面开始插入资料。    开始 (open)
+ o ：在光标所在行下新增一列并进入输入模式。 O: 在光标所在行上方新增一列并进入输入模式。    命令模式 删除 #表示数字</description>
+    </item>
+    
+    <item>
+      <title>VScode 使用技巧</title>
+      <link>https://tech.zealscott.com/misc/vscode/</link>
+      <pubDate>Mon, 23 Apr 2018 15:39:35 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/vscode/</guid>
+      <description>编辑技巧  跳出括号  直接再输入一次右括号   快速换行  默认快捷键Ctrl + Enter，可以使用键盘映射将Shift + Enter转换为快速换行   选中一行  默认ctrl +i   切换显示侧边栏  默认ctrl+B   搜索  ctrl+d匹配当前词 alt+w搜索时以当前完整词 alt+c搜索时区分大小写    插件及设置  使用C/C++，将自带的代码补全关闭，下载clang以及对应的插件，设置：  &amp;quot;C_Cpp.autocomplete&amp;quot;: &amp;quot;Disabled&amp;quot;， &amp;quot;clang.executable&amp;quot;: &amp;quot;C:\\Program Files\\LLVM\\bin\\clang.exe&amp;quot;,   使用sync插件自动同步  shift + alt + U自动上传配置 shift + alt + D 自动下载配置 牢记自己的token    </description>
+    </item>
+    
+    <item>
+      <title>在 Sublime Text3 中配置并使用 LaTex </title>
+      <link>https://tech.zealscott.com/misc/sublime/</link>
+      <pubDate>Wed, 28 Feb 2018 14:55:39 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/sublime/</guid>
+      <description>准备工作  Sublime Text3 安装并配置好Package Control，若没有安装也没关系，我已经把常用的插件都放到了我的GitHub，可以按照说明复制到指定路径即可。 MiKTeX,下载并安装。 LaTeXTools(后面会有安装介绍) Sumatra PDF，下载并安装。  LaTeXTools 安装 最简单的方法是直接fork我的GitHub，按照ReadMe文件中的指示复制到指定路径。 或者使用Package Control，按组合键Ctrl+Shift+P，然后再输入install，选择 Package Control: install package。进入库后，搜索LaTeXTools，直接回车即可安装。
+配置 重启sublime text3，按组合键Ctrl+Shift+P，然后再输入LaTeXTools：Reset user settings to default，回车。再在 Sublime Text3 的安装路径中找LaTeXTools.sublime-settings文件，例如，我的默认的文件路径为C:\Users\scott\AppData\Roaming\Sublime Text 3\Packages\User。打开文件，搜索关键词texpath，再输入
+ &amp;ldquo;texpath&amp;rdquo; : &amp;ldquo;C:\Program Files\MiKTeX 2.9\miktex\bin\x64;$PATH&amp;rdquo;,
+ 如图所示： 配置SumatraPDF 添加环境变量 打开环境变量设置，在user的环境变量中添加SumatraPDF 的主程序目录，如图所示： 配置反向搜索 打开命令提示符（win+R），执行以下命令：（将其中的安装路径替换成你实际的安装路径）
+ sumatrapdf.exe -inverse-search &amp;ldquo;&amp;quot;C:\Program Files\Sublime Text 3\sublime_text.exe&amp;quot; &amp;quot;%f:%l&amp;quot;&amp;rdquo;
+ 使用 自动补全 现在环境已经基本配置好了。但我们习惯了自动补全，没有自动补全哪行。因此在 Sublime Text3 中，Preference-settings-user，添加
+ &amp;ldquo;auto_complete_selector&amp;rdquo;: &amp;ldquo;source, text&amp;rdquo;,
+ 即可实现自动补全。
+中文支持 在.tex文件的开头，加上\documentclass[UTF8]{ctexart}，即可实现中文支持。第一次编译可能需要下载安装支持包，一直continue即可。
+使用和编译 每次在 Sublime Text3 中新建文件，保存为.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.79.0" /><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Scott&#39;Log</title>
+
+<meta name="description" content="The tech document of zealscott">
+<meta name="author" content="Scott Du">
+<link rel="canonical" href="https://tech.zealscott.com/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fd126033c3455a688b2479431fed44510433c36ce61093336d94a5681fad5866.css" integrity="sha256-/RJgM8NFWmiLJHlDH&#43;1EUQQzw2zmEJMzbZSlaB&#43;tWGY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://tech.zealscott.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tech.zealscott.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tech.zealscott.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://tech.zealscott.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tech.zealscott.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://tech.zealscott.com/index.xml">
+<link rel="alternate" type="application/json" href="https://tech.zealscott.com/index.json">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, 
+        {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '\\[', right: '\\]', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false}
+                ]
+            }
+        );"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-116370175-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<meta property="og:title" content="Scott&#39;Log" />
+<meta property="og:description" content="The tech document of zealscott" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tech.zealscott.com/" /><meta property="og:image" content="https://tech.zealscott.com/papermod-cover.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tech.zealscott.com/papermod-cover.png"/>
+
+<meta name="twitter:title" content="Scott&#39;Log"/>
+<meta name="twitter:description" content="The tech document of zealscott"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Scott'Log",
+  "url": "https://tech.zealscott.com",
+  "description": "The tech document of zealscott",
+  "thumbnailUrl": "https://tech.zealscott.com/favicon.ico",
+  "sameAs": [
+      "index.xml", "https://github.com/zealscott", "https://www.zhihu.com/people/tao-scott/", "https://scholar.google.com/citations?hl=en\u0026user=BbvY_QsAAAAJ", "https://zealscott.com/files/Yuntao_Du_CV.pdf", "mailto: ytdu@zealscott.com"
+  ]
+}
+</script>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://tech.zealscott.com" accesskey="h" title="Scott&#39;Log (Alt + H)">Scott&#39;Log</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://tech.zealscott.com/" title="Posts">
+                    <span class="active">Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/deeplearning/" title="Deep Learning">
+                    <span>Deep Learning</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/curriculum/" title="Curriculum">
+                    <span>Curriculum</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/misc/" title="Misc">
+                    <span>Misc</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>梯度下降原理及理解
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>代价函数 为了量化我们神经网络的拟合效果，我们定义一个代价函数：
+$$C(w,b) = \frac {1}{2n}\sum\limits_{x}||y(x)-a||^2$$
+我们训练算法的目的，就是最小化权值和偏置的代价函数$C(w,b) $。
+针对代价函数，我们试着回答以下两个问题：
+  为什么不直接采用分类（识别）正确的数量作为评价指标呢？
+ 这是因为在神经网络中，被正确分类的图像数量所关于权值和偏置的函数并不是一个平滑的函数。
+大多数情况下，对权值和偏置的微小变动完全不会影响被正确分类的图像数量，这让我们很难去解决如何改变权重和偏置来取得进改进的性能。
+   为什么要用二次函数呢？
+ 代价函数并不是唯一的，不同的代价函数的评价指标也是不同的。但二次函数是使用得最广泛的，并且具有特殊的语义–均方误差（MSE）。我们接下来还会看到更多的代价函数，在计算时就会知道二次函数的优越性了。
+   为什么要梯度下降？ 我们现在的目标是想要找到$C$的全局最小值。当然，对于简单的二次型函数，我们很快就能找到最小值。但回想一下我们是怎么做的呢？
+一种方法就是直接用偏导去找极值点。但如果变量很多，比如神经网络至少有上千个变量和偏置，计算非常复杂。
+另外一种方法是使用梯度下降。考虑我们目前有两个变量$v_1，v_2$，当我们在$v_1和v_2$方向分别移动一个很小的量（沿着梯度方向），这时候会发生如下变化：
+$$\Delta C\approx \frac{\partial C}{\partial v_1}\Delta v_1 &#43;\frac{\partial C}{\partial v_2}\Delta v_2 $$
+我们需要使用一种方法选择$\Delta v_1和\Delta v_2$使得$\Delta C$为负，这样我们就可以使得$C$不断减小，逼近最小值。我们用$\nabla C$来表示梯度向量，即：
+$$\nabla C \equiv (\frac{\partial C}{\partial v_1},\frac{\partial C}{\partial v_2})^T$$
+因此$\Delta C$可以被重写为：
+$$\Delta C\approx \nabla C \cdot \Delta v$$
+这个式子有着很重要的意义：我们发现$\nabla C$将$v$的变化关联为$C$的变化，正如我们期望的用梯度表示。并且，我们知道了如何选取$\Delta v$才能让$\Delta C$为负数。假设我们选取：
+$$\Delta v = -\eta \nabla C$$...</p>
+  </section>
+  <footer class="entry-footer"><span title='2019-09-01 20:57:00 +0800 CST'>September 1, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to 梯度下降原理及理解" href="https://tech.zealscott.com/deeplearning/misc/gradientdescent/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Learning from positive and unlabeled data with a selection bias
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>本文主要考虑的是PU learning，也就是在只有正类数据和无标记数据的情况下，对数据进行二分类。在case-control情境下（也就是two samples问题），之前大部分研究基于都基于selected completely at random的假设，但本文argue这种假设不符合实际，因此对该假设进行了放松：如果$P(o = &#43;1| x)$越高，则$P(y = &#43;1| x)$也越高，反之亦然，这种性质被称为invariance of order。
+使用Bayes公式推导可以得到，密度比也符合这种偏序关系。因此，论文认为，虽然我们很难得到$P(y=&#43;1|x)$具体的值，但通过估计密度比，能得到样本间是正类的概率偏序关系，这样通过一个合理的阈值作为分类器即可区分正负类。
+作者通过两种方法来估计密度比：一种是根据之前研究定义的classification risk推广到有based的classification risk函数，然后根据公式$\hat{r} = \frac{\hat f}{\pi}$计算得到；另一种方法是直接用uLSIF进行估计。得到密度比$r$之后，根据先验信息$\pi$，对数据进行遍历即可得到$\theta_\pi$阈值，通过该阈值可以实现在未标记数据上将正负样本进行区分。
+最后，作者在几个常见的数据集上进行了改造以符合PU learning的假设，同时使用了一个real-world数据集，使用论文提到的两个方法估计$\hat{r}$，然后可以得到阈值$\theta_\pi$，进而得到二分类器。最后还验证了在未知先验$\pi$的情况下，其算法的robust较好。
+Intuition  cast-control scenario  P 是从正类中采样的，U 是从整个样本空间采样的，这两者相互独立。这个假设符合现实中的认识，因为如果有标记的样本都是正例，那么一定是人为忽略或是丢弃了负类样本。换句话说，unlabel data 中既包含正样本，也包含负样本，称为为 two samples 问题，即有 P 和 U 两个采样集。   selected completely at random (SCAR)  对于cast-control的问题，常见的假设是：正类被标记的采样集和未标记的采样集是独立同分布的。 作者 argue 这种假设在现实问题中很多时候不成立，例如在异常检测中，异常的更容易被选中；在人脸识别中，用户更倾向于提供清晰的照片（labeled），而未标记的数据更可能非常不清晰。   select bias  因此在现实中，作者认为$P(x|y = &#43;1,o = 0) \ne P(x|y = &#43;1,o = &#43;1)$，不能简单的通过Bayes公式推断得到$P(y = &#43;1 | x)$的概率。 虽然不能直接得到$P(y = &#43;1 | x)$的值，但根据之前的假设，如果数据更容易被标记，则它是正样本的概率更大，可以得到这样的偏序关系：  $P(y = &#43;1 | x_i) \le P(y = &#43;1| x_j) \Leftrightarrow P(o = &#43;1 | x_i)\le P(o = &#43;1| x_j)$   如果取等号，那么就满足了SCAR假设，因此，本文定义的invariance of order可以看作是SCAR的推广。    Strategy 作者主要的思路是：...</p>
+  </section>
+  <footer class="entry-footer"><span title='2019-08-20 22:07:12 +0800 CST'>August 20, 2019</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to Learning from positive and unlabeled data with a selection bias" href="https://tech.zealscott.com/deeplearning/pulearning/nnpusb/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>PU learning Overview
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Papers  Learning Classiﬁers from Only Positive and Unlabeled Data KDD 2008 （PUAdapter）  经典论文，在SCAR假设下，证明了$p(y|x)$与$p(s|x)$只相差一个常数c，因此可以使用经典的分类模型，将positive和unlabel数据看成两类，直接得到$p(s|x)$的概率，进而估计$p(y|x)$。同时给出了估计常数$c$和先验$p(y)$的方法。 本文还提出了一个非常重要的思想，就是把Unlabel数据看成是Positive和Negative样本的不同权重组合，引出了后来的unbiased risk estimators。 Code available 论文笔记   Analysis of Learning from Positive and Unlabeled Data NIPS 2014  从基本的分类损失出发，推导了PU的分类问题其实就是Cost-sensitive classiﬁcation的形式。详细推导了risk function：$R(f) = 2\pi R_1(f) &#43; R_X(f) -\pi $，论文以这个risk function出发，对不同的loss function进行了讨论。（部分推导可结合 Semi-Supervised Novelty Detection 再看） 同时证明了如果使用凸函数hinge loss作为loss function，会导致错误的分类边界（多一项惩罚项），因此需要使用非凸ramp loss作为loss function。同时证明了使用PU进行分类的误差小于监督学习误差的$2\sqrt{2}$倍（这里待看）。  即loss需要满足 $l(t,&#43;1) &#43; l(t,-1) = 1$，也就是symmetric condition   论文笔记   Convex formulation for learning from positive and unlabeled data IMCL 2015 （uPU）  这篇文章主要是对之前提出的非凸loss进行改进，主要想法是根据risk function对正类样本和未标记样本使用不同的loss function。 从另一个方面推导了risk function： $R(g) = \pi E_1[ \hat{l}(g(x))] &#43; E_X[l(-g(x))]$，考虑当$\hat{l}$为凸时，证明了其一定为线性函数，将hinge loss修改为double hinge loss，变为凸优化问题。通过实验说明其效果不比non-convex loss function差，同时减少了计算开销。  即loss需要满足$l(t,&#43;1) &#43; l(t,-1) = -t$，也就是linear-odd condition   同时，这篇文章用的分类器为linear-in-parameter model，使用高斯核将样本映射到feature space，具体定义可以参考 Introduction to Statistical Machine Learning By Masashi Sugiyama 2016 一书的Chapter21。 Code available 论文笔记   Positive-Unlabeled Learning with Non-Negative Risk Estimator NIPS 2017 （nnPU）  由于之前的risk estimator $\hat{R}_{pu}(g) = \pi_p\hat{R}_p^&#43;(g) -\pi_p\hat{R}_p^-(g) &#43; \hat{R}_u^-(g)$中，有可能出现$-\pi_p\hat{R}_p^-(g) &#43; \hat{R}_u^-(g) &lt; 0 $的情况，会导致risk不断减小变为负数。因此对risk进行改写，提出nnPU，能有效的防止过拟合，能使用更强大的学习器（神经网络）进行学习。同时，论文对这个risk estimator的bias，consistency和MSE reduction进行了理论分析。 Code available   Learning from positive and unlabeled data with a selection bias ICLR 2019 （nnPUSB）  放松了SCAR的假设，认为如果$P(o = &#43;1| x)$越高，则$P(y = &#43;1| x)$也越高（不一定相同）。使用贝叶斯公式得到密度比和$P(y = &#43;1|x)$满足同样的偏序关系，因此使用两种方法估计密度比（risk function/uLSIF），并设定阈值实现对PU的分类。 Code available / My implementation 论文笔记    Formula Risk 推导  定义在decision function $g$ 下的risk为：  $R(g) = E_{(X,Y)\sim p(x,y)}[l(g(X),Y)] = \pi_pR_p^&#43;(g) &#43; \pi_nR_n^-(g)$ 其中$R_p^&#43;(g) = E_p[l(g(X)),&#43;1]$也就是对正类分类错误的risk，$R_n^-(g) = E_p[l(g(X)),-1]$也就是对负类分类错误的risk   由于我们没有办法直接得到负类样本，因此由公式 $\pi_np_n(x) = p(x) - \pi_pp_p(x)$可得负类样本分类错误的损失：   $\pi R_n^-(g) = R_u^-(g) - \pi_pR_p^-(g)$...</p>
+  </section>
+  <footer class="entry-footer"><span title='2019-08-17 21:00:30 +0800 CST'>August 17, 2019</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to PU learning Overview" href="https://tech.zealscott.com/deeplearning/pulearning/pu-learning-overview/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Convex Formulation for Learning from Positive and Unlabeled Data
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>该论文在之前PU learning中使用非凸函数作为loss的基础上，对正类样本和未标记样本使用不同的凸函数loss，从而将其转为凸优化问题。结果表明，该loss（double hinge loss）与非凸loss（ramp）精度几乎一致，但大大减少了计算量。
+Introdution Background 论文首先强调了PU问题的重要性，举了几个例子：
+ Automatic face tagging  用户对自己的画像标记为正类，其余都是未标记数据，需要正确识别用户的照片   Inlier-based outlier detection  需要在只有inliers和未标记数据中识别outliers，这种方法比完全无监督学习的效果要好   Class is too diverse  如果要识别的数据集中类别太多，也就是one-vs-rest classification   Negative-class dataset shift  由于训练数据和测试数据采集的实践差异导致负类样本的概率分布发生了变化，那么如果使用PU learning，可以减少重新标记的代价    Method 作者简单回顾了之前PU learning的常见做法：
+ 直接在正类样本和未标记样本中训练一个分类器。但很显然这样的效果非常差，因为未标记样本中包含两类数据。 根据先验$\pi$使用一个loss function来权衡每个样本的权重，目标是使得loss function最小化。但这样做的结果是会产生bias。 使用满足$l(z) &#43; l(-z) = 1$条件的loss function可以消除这种bias，但对于ramp loss，是非凸函数，导致在优化过程中可能求导局部解。  因此，本文提出了一种新的凸函数的loss function，也就是double hinge loss，不仅能够消除bias，同时也能保证凸性。关键点在于对未标记数据和正类数据使用不同的loss function。
+Non-convex PU classification 作者回顾了在 Analysis of Learning from Positive and Unlabeled Data 这篇文章中的方法。...</p>
+  </section>
+  <footer class="entry-footer"><span title='2019-08-05 09:00:30 +0800 CST'>August 5, 2019</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to Convex Formulation for Learning from Positive and Unlabeled Data" href="https://tech.zealscott.com/deeplearning/pulearning/npu/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Analysis of Learning from Positive and Unlabeled Data
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>本文从基本的分类损失出发，推导了PU的分类问题其实就是Cost-sensitive classiﬁcation的形式，同时，通过实验证明了如果使用凸函数作为loss function，例如hinge loss会导致错误的分类边界（有bias），因此需要使用例如ramp loss之类的凹函数。同时，论文还对先验$\pi$存在偏差的情况进行了讨论，说明了如果样本中大部分都是正样本，那么就算先验差距比较大，但对总体的分类效果没有太大影响。最后对分类边界进行讨论，证明了使用PU进行分类的误差小于监督学习误差的$2\sqrt{2}$倍。
+基本概念和定义  Ordinary classification  Bayes optimal classiﬁer的目标是最小化misclassiﬁcation rate，这在Introduction to Statistical Machine Learning By Masashi Sugiyama 书里有定义，直观理解就是最小化期望错分率： $R(f) = \pi R_1 (f) &#43; (1 - \pi) R_{-1}(f)$ 这里的$R_1$表示false negative rate，也就是分错正类的概率，乘以先验正类的概率$\pi$ $R_{-1}$表示false positive rate，也就是分错负类的概率，乘以先验负类的概率$1-\pi$ 这样，对分错样本的概率分别乘以其先验概率，就是其错分概率的期望。   Cost-sensitive classiﬁcation  如果对于某种错误我们的敏感程度不一样，那么就乘以不同的权重，重新定义为： $R(f) = \pi c_1 R_1(f) &#43; (1-\pi) c_{-1}R_{-1}(f)$ 这里用$c_1$和$c_{-1}$分别表示对两种错分的代价   PU classification   定义在未标记数据集$X$ 中的分布：
+  $P_X = \pi P_1 &#43; (1-\pi) P_{-1}$...</p>
+  </section>
+  <footer class="entry-footer"><span title='2019-07-29 11:23:30 +0800 CST'>July 29, 2019</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to Analysis of Learning from Positive and Unlabeled Data" href="https://tech.zealscott.com/deeplearning/pulearning/pu-learning-non-convex/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://tech.zealscott.com/">«</a>
+    <a class="next" href="https://tech.zealscott.com/page/3/">»</a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://tech.zealscott.com">Scott&#39;Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

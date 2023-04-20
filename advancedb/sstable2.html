@@ -1,0 +1,642 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>SStable 练习二 · Distribution System</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="postgre.html" />
+    
+    
+    <link rel="prev" href="sstable1.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="leveldb1.html">
+            
+                <a href="leveldb1.html">
+            
+                    
+                    LevelDB 安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="leveldb2.html">
+            
+                <a href="leveldb2.html">
+            
+                    
+                    LevelDB 基本接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="skiplist.html">
+            
+                <a href="skiplist.html">
+            
+                    
+                    SkipList 解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="linkedlist.html">
+            
+                <a href="linkedlist.html">
+            
+                    
+                    并发链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="sstable1.html">
+            
+                <a href="sstable1.html">
+            
+                    
+                    SStable 练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7" data-path="sstable2.html">
+            
+                <a href="sstable2.html">
+            
+                    
+                    SStable 练习二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="postgre.html">
+            
+                <a href="postgre.html">
+            
+                    
+                    PostgreSQL 源码安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="gdb1.html">
+            
+                <a href="gdb1.html">
+            
+                    
+                    GDB 调试 pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="gdb2.html">
+            
+                <a href="gdb2.html">
+            
+                    
+                    GDB 跟踪 pg 源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="hashjoin.html">
+            
+                <a href="hashjoin.html">
+            
+                    
+                    调试 HashJoin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="lock.html">
+            
+                <a href="lock.html">
+            
+                    
+                    基于锁的并发控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="timestamp.html">
+            
+                <a href="timestamp.html">
+            
+                    
+                    基于时间戳的并发控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="positive.html">
+            
+                <a href="positive.html">
+            
+                    
+                    乐观并发控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="project.html">
+            
+                <a href="project.html">
+            
+                    
+                    LevelDB 大作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >SStable 练习二</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>+++
+title = &quot;SStable &#x7EC3;&#x4E60;&#x4E8C;&quot;
+slug = &quot;sstable2&quot;
+tags = [&quot;database&quot;]
+date = &quot;2019-04-15T20:36:03+08:00&quot;
+description = &quot;&#x8BFB;&#x51FA;SStable&#x4E2D;&#x7684;key,value&quot;
++++</p>
+<p>&#x5B89;&#x88C5;snappy&#x5E93;: <a href="https://www.cnblogs.com/yankang/p/10636562.html" _target="blank">https://www.cnblogs.com/yankang/p/10636562.html</a></p>
+<p>&#x6587;&#x4EF6;&#x9884;&#x89C8;&#xFF1A;</p>
+<p><img src="images/sstable7.png" alt="sstable7"></p>
+<p>table&#x5B58;&#x50A8;&#x683C;&#x5F0F;&#x91CC;&#x9762;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#x51E0;&#x4E2A;&#x90E8;&#x5206;&#xFF1A;</p>
+<ul>
+<li>datablock</li>
+<li>metablock</li>
+<li>metaindex block</li>
+<li>dataindex block</li>
+<li>footer</li>
+</ul>
+<p>footer&#x90E8;&#x5206;&#x662F;&#x653E;&#x5728;&#x6700;&#x672B;&#x5C3E;&#x7684;&#xFF0C;&#x91CC;&#x9762;&#x5305;&#x542B;&#x4E86;dataindex block&#x4EE5;&#x53CA;metaindex block&#x7684;&#x504F;&#x79FB;&#x4FE1;&#x606F;&#xFF0C;&#x8BFB;&#x53D6;table&#x65F6;&#x5019;&#x4ECE;&#x672B;&#x5C3E;&#x8BFB;&#x53D6;</p>
+<h3 id="data-block&#x7EC4;&#x7EC7;&#x5F62;&#x5F0F;">Data block&#x7EC4;&#x7EC7;&#x5F62;&#x5F0F;</h3>
+<p>&#x5BF9;&#x4E8E;DiskTable(TableBuilder)&#x5C31;&#x662F;&#x4E0D;&#x65AD;&#x5730;Add(Key,Value).&#x5F53;&#x7F13;&#x5B58;&#x7684;&#x6570;&#x636E;&#x8FBE;&#x5230;&#x4E00;&#x5B9A;&#x5927;&#x5C0F;&#x4E4B;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x8C03;&#x7528;Flush&#x8FD9;&#x6837;&#x5C31;&#x5F62;&#x6210;&#x4E86;&#x4E00;&#x4E2A;Block.</p>
+<p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;Block&#x5185;&#x90E8;&#x800C;&#x8A00;&#x7684;&#x8BDD;&#xFF0C;restart point.&#x6240;&#x8C13;restart point&#x5C31;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3; &#x524D;&#x7F00;&#x538B;&#x7F29;&#x7684;&#x95EE;&#x9898;&#x7684;&#xFF0C;&#x6240;&#x8C13;&#x7684;restart point&#x5C31;&#x662F;&#x57FA;&#x51C6;key&#x3002;</p>
+<p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x987A;&#x5E8F;&#x52A0;&#x5165;abcd,abce,abcf.&#x6211;&#x4EEC;&#x4EE5;abcd&#x4E3A;restart point&#x7684;&#x8BDD;&#xFF0C;&#x90A3;&#x4E48;abce&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x4E3A; (3,e),abcf&#x5B58;&#x50A8;&#x4E3A;(3,f).</p>
+<p>&#x5BF9;&#x4E8E;restart point&#x91C7;&#x7528;&#x5168;&#x91CF;&#x5B58;&#x50A8;&#xFF0C;&#x800C;&#x5BF9;&#x4E8E;&#x4E4B;&#x540E;&#x7684;&#x90E8;&#x5206;&#x91C7;&#x7528;&#x589E;&#x91CF;&#x5B58;&#x50A8;&#x3002;&#x4E00;&#x4E2A;restart block&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x591A;&#x4E2A;restart point, &#x5C06;&#x8FD9;&#x4E9B;restart point&#x5728;&#x6574;&#x4E2A;table offset&#x8BB0;&#x5F55;&#x4E0B;&#x6765;&#xFF0C;&#x7136;&#x540E;&#x653E;&#x5728;data block&#x6700;&#x540E;&#x9762;&#x3002;&#x6BCF;&#x4E2A;data block&#x5C3E;&#x90E8;&#x8FD8;&#x6709;&#x4E00;&#x4E2A;type&#x548C;CRC32.&#x5176;&#x4E2D;type&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x662F;&#x5426; &#x9700;&#x8981;&#x9488;&#x5BF9;&#x8FD9;&#x4E2A;data block&#x8FDB;&#x884C;snappy&#x538B;&#x7F29;&#xFF0C;&#x800C;CRC32&#x662F;&#x9488;&#x5BF9;&#x8FD9;&#x4E2A;data block&#x7684;&#x6821;&#x9A8C;&#x3002;</p>
+<h3 id="data-index-block&#x7EC4;&#x7EC7;&#x5F62;&#x5F0F;">data index block&#x7EC4;&#x7EC7;&#x5F62;&#x5F0F;</h3>
+<ol>
+<li>data index block&#x4ECE;&#x4E0D;&#x5237;&#x65B0;&#x76F4;&#x5230;Table&#x6784;&#x9020;&#x5B8C;&#x6210;&#x4E4B;&#x540E;&#x624D;&#x4F1A;&#x5237;&#x65B0;&#xFF0C;&#x6240;&#x4EE5;&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;table&#x800C;&#x8A00;&#x7684;&#x8BDD;&#x53EA;&#x6709;&#x4E00;&#x4E2A;data index block.</li>
+<li>data index block&#x6DFB;&#x52A0;&#x7684;key/value&#x662F;&#x5728;data block&#x5F62;&#x6210;&#x7684;&#x65F6;&#x5019;&#x6DFB;&#x52A0;&#x7684;</li>
+</ol>
+<h3 id="block">block</h3>
+<p><img src="images/sstable8.png" alt="sstable8"></p>
+<p>trailer&#xFF1A;&#x6BCF;&#x4E2A;block&#x540E;&#x9762;&#x90FD;&#x4F1A;&#x6709;5&#x4E2A;&#x5B57;&#x8282;&#x7684; trailer&#x3002;1&#x4E2A;&#x5B57;&#x8282;&#x7684; type &#x8868;&#x793A; block &#x5185;&#x7684;&#x6570;&#x636E;&#x662F; &#x5426;&#x8FDB;&#x884C;&#x4E86;&#x538B;&#x7F29;&#xFF08;&#x6BD4;&#x5982;&#x4F7F;&#x7528;&#x4E86; snappy &#x538B;&#x7F29;&#xFF09;&#xFF0C;4 &#x4E2A;&#x5B57;&#x8282;&#x7684; crc &#x8BB0;&#x5F55; block &#x6570;&#x636E;&#x7684;&#x6821;&#x9A8C;&#x7801;&#x3002; </p>
+<p>block &#x5728; sstable &#x4E2D;&#x7D22;&#x5F15;&#x4FE1;&#x606F; offset/size,&#x5C01;&#x88C5;&#x6210; BlockHandle&#xFF08;table/format.h&#xFF09;&#x4F7F;&#x7528;,size &#x4E0D;&#x5305;&#x542B; trailer&#x3002;&#x6301;&#x4E45;&#x5316;&#x65F6;&#xFF0C;offset/size &#x5747;&#x91C7;&#x7528; varint64 encode&#x3002;</p>
+<h3 id="block&#x8BFB;&#x53D6;">Block&#x8BFB;&#x53D6;</h3>
+<p>block&#x8BFB;&#x53D6;&#x64CD;&#x4F5C;&#xFF08;ReadBlock() <code>table/format.cc</code>)&#xFF1A;</p>
+<p>&#x6709;&#x4E86;&#x4E00;&#x4E2A; block &#x7684; BlockHandle&#xFF0C;&#x5373;&#x53EF;&#x5B9A;&#x4F4D;&#x5230;&#x8BE5; block &#x5728; sstable &#x4E2D;&#x7684; offset &#x53CA; size,&#x4ECE;&#x800C;&#x8BFB;&#x53D6;&#x51FA;&#x5177;&#x4F53;&#x7684; block&#xFF08;<code>ReadBlock()</code>&#xFF09;</p>
+<ul>
+<li>&#x6839;&#x636E; BlockHandle&#xFF0C;&#x5C06; block &#x4ECE; sstable &#x4E2D;&#x8BFB;&#x53D6;&#x51FA;&#x6765;&#xFF08;&#x5305;&#x542B; trailer&#xFF09;&#x3002; </li>
+<li>&#x53EF;&#x9009;&#x6821;&#x9A8C; trailer &#x4E2D;&#x7684; crc(get &#x65F6;&#x7531; ReadOption:: verify_checksums &#x63A7;&#x5236;&#xFF0C;compact &#x65F6;&#x7531; Option:: paranoid_checks &#x63A7;&#x5236;)&#x3002; </li>
+<li>&#x6839;&#x636E; trailer &#x4E2D;&#x7684; type&#xFF0C;&#x51B3;&#x5B9A;&#x662F;&#x5426;&#x8981;&#x89E3;&#x538B;&#x6570;&#x636E;&#x3002; </li>
+<li>&#x5C06;&#x6570;&#x636E;&#x5C01;&#x88C5;&#x6210; Block&#xFF08;block.cc&#xFF09;&#xFF0C;&#x89E3;&#x6790;&#x51FA; restarts &#x96C6;&#x5408;&#x4EE5;&#x53CA;&#x6570;&#x91CF;&#x3002; </li>
+</ul>
+<h3 id="&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</h3>
+<pre><code class="lang-c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> HAVE_SNAPPY</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;snappy.h&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span>  <span class="hljs-comment">// HAVE_SNAPPY</span></span>
+
+<span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">Snappy_GetUncompressedLength</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* input, size_t length,
+                                         size_t* result)</span> </span>{
+<span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> HAVE_SNAPPY</span>
+  <span class="hljs-keyword">return</span> snappy::GetUncompressedLength(input, length, result);
+<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span>  <span class="hljs-comment">// HAVE_SNAPPY</span></span>
+}
+
+<span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">bool</span> <span class="hljs-title">Snappy_Uncompress</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* input, size_t length, <span class="hljs-keyword">char</span>* output)</span> </span>{
+<span class="hljs-meta">#<span class="hljs-meta-keyword">if</span> HAVE_SNAPPY</span>
+  <span class="hljs-keyword">return</span> snappy::RawUncompress(input, length, output);
+<span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span>
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+<span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span>  <span class="hljs-comment">// HAVE_SNAPPY</span></span>
+}
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getFileSize</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span> &amp;filename)</span> </span>{
+  <span class="hljs-keyword">int</span> size = <span class="hljs-number">0</span>;
+  FILE *fp = <span class="hljs-literal">nullptr</span>;
+
+  fp = fopen(filename.c_str(), <span class="hljs-string">&quot;r&quot;</span>);
+  <span class="hljs-keyword">if</span> (<span class="hljs-literal">nullptr</span> == fp) {
+    <span class="hljs-keyword">return</span> size;
+  }
+  fseek(fp, <span class="hljs-number">0L</span>, SEEK_END);
+  size = ftell(fp);
+  fclose(fp);
+
+  <span class="hljs-keyword">return</span> size;
+
+}
+
+<span class="hljs-function"><span class="hljs-keyword">char</span> *<span class="hljs-title">GetVarint64Ptr</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *p, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> *limit, uint64_t *value)</span> </span>{
+  <span class="hljs-keyword">uint64_t</span> result = <span class="hljs-number">0</span>;
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint32_t</span> shift = <span class="hljs-number">0</span>; shift &lt;= <span class="hljs-number">63</span> &amp;&amp; p &lt; limit; shift += <span class="hljs-number">7</span>) {
+    <span class="hljs-keyword">uint64_t</span> byte = *(<span class="hljs-keyword">reinterpret_cast</span>&lt;<span class="hljs-keyword">const</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span> *&gt;(p));
+    p++;
+    <span class="hljs-keyword">if</span> (byte &amp; <span class="hljs-number">128</span>) {
+      <span class="hljs-comment">// More bytes are present,| or</span>
+      result |= ((byte &amp; <span class="hljs-number">127</span>) &lt;&lt; shift);
+    } <span class="hljs-keyword">else</span> {
+      result |= (byte &lt;&lt; shift);
+      *value = result;
+      <span class="hljs-keyword">return</span> p;
+    }
+  }
+  <span class="hljs-keyword">return</span> <span class="hljs-literal">nullptr</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">char</span> *<span class="hljs-title">GetVarint64</span><span class="hljs-params">(<span class="hljs-keyword">char</span> *input, <span class="hljs-keyword">int</span> size, uint64_t *value)</span> </span>{
+  <span class="hljs-keyword">char</span> *limit = input + size;
+  <span class="hljs-keyword">char</span> *q = GetVarint64Ptr(input, limit, value);
+  <span class="hljs-keyword">return</span> q;
+}
+
+<span class="hljs-keyword">struct</span> BlockContents {
+  <span class="hljs-built_in">string</span> data;           <span class="hljs-comment">// Actual contents of data</span>
+  <span class="hljs-keyword">bool</span> cachable;        <span class="hljs-comment">// True iff data can be cached</span>
+  <span class="hljs-keyword">bool</span> heap_allocated;  <span class="hljs-comment">// True iff caller should delete[] data.data()</span>
+};
+
+<span class="hljs-keyword">enum</span> CompressionType {
+  <span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> do not change the values of existing entries, as these are</span>
+  <span class="hljs-comment">// part of the persistent format on disk.</span>
+  kNoCompression     = <span class="hljs-number">0x0</span>,
+  kSnappyCompression = <span class="hljs-number">0x1</span>
+};
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+  <span class="hljs-built_in">string</span> fileName = <span class="hljs-string">&quot;testdb.ldb&quot;</span>;
+  getFileSize(fileName);
+  <span class="hljs-comment">//&#x6587;&#x4EF6;&#x603B;&#x5927;&#x5C0F;</span>
+  <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;File Size:&quot;</span> &lt;&lt; getFileSize(fileName) &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+  FILE *fp = fopen(fileName.c_str(), <span class="hljs-string">&quot;r&quot;</span>);
+<span class="hljs-comment">//  find last 48 bits for footer</span>
+  fseek(fp, <span class="hljs-number">-48</span>L, SEEK_END);
+  <span class="hljs-keyword">char</span> *footer = (<span class="hljs-keyword">char</span> *) <span class="hljs-built_in">malloc</span>(<span class="hljs-number">48</span> * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">char</span>));
+  fgets(footer, <span class="hljs-number">48</span>, fp);
+  <span class="hljs-keyword">uint64_t</span> metaOffset, metaSize, indexOffset, indexSize;
+  footer = GetVarint64(footer, <span class="hljs-number">48</span>, &amp;metaOffset);
+  footer = GetVarint64(footer, <span class="hljs-number">38</span>, &amp;metaSize);
+  footer = GetVarint64(footer, <span class="hljs-number">28</span>, &amp;indexOffset);
+  footer = GetVarint64(footer, <span class="hljs-number">18</span>, &amp;indexSize);
+  <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Meta offset:&quot;</span> &lt;&lt; metaOffset &lt;&lt; <span class="hljs-built_in">endl</span>
+       &lt;&lt; <span class="hljs-string">&quot;Meta size:&quot;</span> &lt;&lt; metaSize &lt;&lt; <span class="hljs-built_in">endl</span>
+       &lt;&lt; <span class="hljs-string">&quot;Index offset:&quot;</span> &lt;&lt; indexOffset &lt;&lt; <span class="hljs-built_in">endl</span>
+       &lt;&lt; <span class="hljs-string">&quot;Index size:&quot;</span> &lt;&lt; indexSize &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+  <span class="hljs-keyword">char</span> *index = (<span class="hljs-keyword">char</span> *) <span class="hljs-built_in">malloc</span>((indexSize + <span class="hljs-number">1</span>) * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">char</span>));
+<span class="hljs-comment">//  find index position</span>
+  fseek(fp, <span class="hljs-number">0L</span>, <span class="hljs-keyword">static_cast</span>&lt;<span class="hljs-keyword">int</span>&gt;(indexOffset));
+  fgets(index, <span class="hljs-keyword">static_cast</span>&lt;<span class="hljs-keyword">int</span>&gt;(indexSize + <span class="hljs-number">1</span>), fp);
+  <span class="hljs-comment">//cout &lt;&lt; index[indexSize] &lt;&lt; endl;</span>
+
+  <span class="hljs-comment">//read the block</span>
+  BlockContents* result = <span class="hljs-keyword">new</span> BlockContents();
+  result-&gt;data = <span class="hljs-built_in">string</span>();
+  result-&gt;cachable = <span class="hljs-literal">false</span>;
+  result-&gt;heap_allocated = <span class="hljs-literal">false</span>;
+  <span class="hljs-comment">//char * handle;</span>
+  <span class="hljs-comment">// Read the block contents as well as the type/crc footer.</span>
+  <span class="hljs-comment">// See table_builder.cc for the code that built this structure.</span>
+  <span class="hljs-keyword">size_t</span> n = indexSize;
+  <span class="hljs-keyword">switch</span> (index[n]) {
+    <span class="hljs-keyword">case</span> kNoCompression:
+        <span class="hljs-comment">// File implementation gave us pointer to some other data.</span>
+        <span class="hljs-comment">// Use it directly under the assumption that it will be live</span>
+        <span class="hljs-comment">// while the file is open.</span>
+        result-&gt;data = <span class="hljs-built_in">string</span>(index, n);
+        result-&gt;heap_allocated = <span class="hljs-literal">false</span>;
+        result-&gt;cachable = <span class="hljs-literal">false</span>;  <span class="hljs-comment">// Do not double-cache</span>
+        <span class="hljs-built_in">cout</span> &lt;&lt; result-&gt;data &lt;&lt; <span class="hljs-built_in">endl</span>;
+      <span class="hljs-comment">// Ok</span>
+      <span class="hljs-keyword">break</span>;
+    <span class="hljs-keyword">case</span> kSnappyCompression: {
+      <span class="hljs-keyword">size_t</span> ulength = <span class="hljs-number">0</span>;
+      <span class="hljs-keyword">if</span> (!Snappy_GetUncompressedLength(index, n, &amp;ulength)) {
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;corrupted compressed block contents&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+      }
+      <span class="hljs-keyword">char</span>* ubuf = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[ulength];
+      <span class="hljs-keyword">if</span> (!Snappy_Uncompress(index, n, ubuf)) {
+        <span class="hljs-keyword">delete</span>[] ubuf;
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;corrupted compressed block contents&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+      }
+      result-&gt;data = <span class="hljs-built_in">string</span>(ubuf, ulength);
+      result-&gt;heap_allocated = <span class="hljs-literal">true</span>;
+      result-&gt;cachable = <span class="hljs-literal">true</span>;
+      <span class="hljs-built_in">cout</span> &lt;&lt; result-&gt;data &lt;&lt; <span class="hljs-built_in">endl</span>;
+      <span class="hljs-keyword">break</span>;
+    }
+    <span class="hljs-keyword">default</span>:
+      <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;bad block type&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+  }
+
+  <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="sstable1.html" class="navigation navigation-prev " aria-label="Previous page: SStable 练习">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="postgre.html" class="navigation navigation-next " aria-label="Next page: PostgreSQL 源码安装">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"SStable 练习二","level":"1.7","depth":1,"next":{"title":"PostgreSQL 源码安装","level":"1.8","depth":1,"path":"postgre.md","ref":"postgre.md","articles":[]},"previous":{"title":"SStable 练习","level":"1.6","depth":1,"path":"sstable1.md","ref":"sstable1.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"Distribution System","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"sstable2.md","mtime":"2021-01-28T06:49:55.491Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T04:03:30.264Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

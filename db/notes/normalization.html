@@ -1,0 +1,687 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>关系数据库规范化 · Data Management Systems</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="storage.html" />
+    
+    
+    <link rel="prev" href="design.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Notes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="data model.html">
+            
+                <a href="data model.html">
+            
+                    
+                    Data Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="document.html">
+            
+                <a href="document.html">
+            
+                    
+                    Document-oriented DB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="SQL 1.html">
+            
+                <a href="SQL 1.html">
+            
+                    
+                    SQL(1) 单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="SQL 2.html">
+            
+                <a href="SQL 2.html">
+            
+                    
+                    SQL(2)--复杂查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="SQL-3.html">
+            
+                <a href="SQL-3.html">
+            
+                    
+                    SQL(3)--视图与索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="design.html">
+            
+                <a href="design.html">
+            
+                    
+                    关系数据库的逻辑设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.7" data-path="normalization.html">
+            
+                <a href="normalization.html">
+            
+                    
+                    关系数据库规范化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="storage.html">
+            
+                <a href="storage.html">
+            
+                    
+                    存储的正确性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="availability.html">
+            
+                <a href="availability.html">
+            
+                    
+                    数据库的Availability
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Project
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../project/postgre1.html">
+            
+                <a href="../project/postgre1.html">
+            
+                    
+                    PostgreSQL配置与单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../project/postgre2.html">
+            
+                <a href="../project/postgre2.html">
+            
+                    
+                    使用PostgreSQL进行复杂查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../project/jbdc.html">
+            
+                <a href="../project/jbdc.html">
+            
+                    
+                    JBDC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../project/hibernate.html">
+            
+                <a href="../project/hibernate.html">
+            
+                    
+                    Hibernate使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../project/many to many.html">
+            
+                <a href="../project/many to many.html">
+            
+                    
+                    Hibernate多对多关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../project/superset.html">
+            
+                <a href="../project/superset.html">
+            
+                    
+                    Superset使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../project/oltp.html">
+            
+                <a href="../project/oltp.html">
+            
+                    
+                    OLTPBenchmark配置及OLTP性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../project/sql.html">
+            
+                <a href="../project/sql.html">
+            
+                    
+                    SQL练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../project/backup.html">
+            
+                <a href="../project/backup.html">
+            
+                    
+                    数据库备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Recap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../recap/Distributed DB.html">
+            
+                <a href="../recap/Distributed DB.html">
+            
+                    
+                    Recap: Distributed DB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../recap/RDBSM.html">
+            
+                <a href="../recap/RDBSM.html">
+            
+                    
+                    Recap: RDBSM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../recap/SQL.html">
+            
+                <a href="../recap/SQL.html">
+            
+                    
+                    Recap: SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../recap/NoSQL.html">
+            
+                <a href="../recap/NoSQL.html">
+            
+                    
+                    Recap: NoSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../recap/Extra.html">
+            
+                <a href="../recap/Extra.html">
+            
+                    
+                    Recap: Extra
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >关系数据库规范化</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p align="center">
+  <b>&#x5982;&#x4F55;&#x8BBE;&#x8BA1;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5404;&#x4E2A;&#x8868;&#xFF0C;&#x51CF;&#x5C11;&#x6570;&#x636E;&#x5197;&#x4F59;&#xFF1F;</b>
+</p>
+
+<h1 id="&#x6570;&#x636E;&#x5E93;&#x8303;&#x5F0F;&#x5316;">&#x6570;&#x636E;&#x5E93;&#x8303;&#x5F0F;&#x5316;</h1>
+<ul>
+<li><strong>&#x76EE;&#x7684;</strong><ul>
+<li>&#x51CF;&#x5C11;&#x6570;&#x636E;&#x4E2D;&#x91CD;&#x590D;&#x548C;&#x5197;&#x4F59; </li>
+</ul>
+</li>
+<li><strong>&#x5197;&#x4F59;&#x5E26;&#x6765;&#x7684;&#x95EE;&#x9898;</strong><ul>
+<li>&#x989D;&#x5916;&#x7684;&#x5B58;&#x50A8;&#x5F00;&#x9500;</li>
+<li>&#x8BED;&#x4E49;&#x4E0D;&#x6E05;&#x6670;</li>
+<li>&#x6570;&#x636E;&#x589E;&#x5220;&#x6539;&#x7684;&#x9EBB;&#x70E6;<ul>
+<li>&#x7A0B;&#x5E8F;&#x5458;&#x5FC5;&#x987B;&#x77E5;&#x9053;&#x5BB9;&#x6613;&#x7684;&#x5B58;&#x5728;</li>
+<li>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4E0E;&#x6570;&#x636E;&#x5E93;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#x590D;&#x6742;&#x5316;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>&#x5728;&#x5173;&#x7CFB;&#x6570;&#x636E;&#x5E93;&#x7684;&#x7406;&#x5FF5;&#x4E2D;&#xFF0C;&#x597D;&#x7684;&#x6A21;&#x5F0F;&#x8BBE;&#x8BA1;&#x5E94;&#x8BE5;&#x907F;&#x514D;&#x5197;&#x4F59;</strong><ul>
+<li>&#x6027;&#x80FD;&#x95EE;&#x9898;&#x5E94;&#x8BE5;&#x4EA4;&#x7ED9;&#x7269;&#x7406;&#x5C42;&#x6765;&#x89E3;&#x51B3;</li>
+<li>&#x4F46;&#x5BF9;&#x4E8E;&#x5B9E;&#x9645;&#x95EE;&#x9898;&#x4E2D;&#xFF0C;&#x5F88;&#x96BE;&#x505A;&#x5230;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x7B2C;&#x4E00;&#x8303;&#x5F0F;">&#x7B2C;&#x4E00;&#x8303;&#x5F0F;</h2>
+<ul>
+<li>&#x53EA;&#x8981;&#x6EE1;&#x8DB3;&#x5173;&#x7CFB;&#x7684;&#x5B9A;&#x4E49;&#xFF08;&#x7B1B;&#x5361;&#x5C14;&#x79EF;&#x7684;&#x5B50;&#x96C6;&#xFF09;&#xFF0C;&#x5219;&#x6EE1;&#x8DB3;&#x7B2C;&#x4E00;&#x8303;&#x5F0F;</li>
+</ul>
+<h3 id="&#x51FD;&#x6570;&#x4F9D;&#x8D56;">&#x51FD;&#x6570;&#x4F9D;&#x8D56;</h3>
+<p>&#x8BBE;R(U) &#x4E3A;&#x5C5E;&#x6027;&#x96C6; U&#x4E0A;&#x7684;&#x5173;&#x7CFB;&#x6A21;&#x5F0F;&#x3002; X&#xFF0C;Y&#x662F;U&#x7684;&#x5B50;&#x96C6;&#x3002;&#x82E5;&#x5BF9;&#x4E8E; R(U) &#x7684; &#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x5728;&#x73B0;&#x5B9E;&#x4E16;&#x754C;&#x4E2D;&#x53EF;&#x80FD;&#x7684;&#x5173;&#x7CFB; r&#xFF0C;r&#x4E2D;&#x4E0D;&#x53EF;&#x80FD;&#x5B58;&#x5728; &#x4E24;&#x4E2A;&#x5143;&#x7EC4;&#x4E2D;X&#x4E0A;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x76F8;&#x4E0A;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x76F8; &#x7B49;&#xFF0C;&#x800C;&#x5728;Y&#x4E0A;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x4E0D;&#x7B49;&#xFF0C;&#x5219;&#x79F0; Y&#x51FD;&#x6570;&#x4F9D;&#x8D56;&#x4E8E; X&#xFF0C; &#x8BB0;&#x4F5C; X-&gt;Y&#x3002;</p>
+<h3 id="&#x5B8C;&#x5168;&#x51FD;&#x6570;&#x4F9D;&#x8D56;">&#x5B8C;&#x5168;&#x51FD;&#x6570;&#x4F9D;&#x8D56;</h3>
+<p>&#x5BF9;&#x4E8E;X&#xFF0C;&#x5FC5;&#x987B;&#x7531;&#x5176;&#x5168;&#x90E8;&#x5C5E;&#x6027;&#x624D;&#x80FD;&#x786E;&#x5B9A;Y&#xFF0C;&#x5219;&#x79F0;&#x4E3A;Y&#x5B8C;&#x5168;&#x4F9D;&#x8D56;&#x4E8E;X&#x3002;</p>
+<h3 id="&#x952E;">&#x952E;</h3>
+<ul>
+<li>&#x8BBE;R(U) &#x4E3A;&#x5C5E;&#x6027;&#x96C6; U&#x4E0A;&#x7684;&#x5173;&#x7CFB;&#x6A21;&#x5F0F;&#x3002; X&#x662F;U&#x7684;&#x5B50;&#x96C6;&#x3002;  &#x5982;&#x679C; X-&gt;U&#xFF0C;&#x5E76;&#x4E14;&#x4E0D;&#x5B58;&#x5728;  X&#x7684;&#x5B50;&#x96C6; X&#x2019; &#x4F7F;&#x5F97; X&#x2019; -&gt;U&#xFF0C; &#x90A3;&#x4E48; X&#x4E3A;R(U) &#x7684;&#x952E;/&#x7801;&#xFF08;key&#xFF09;&#x3002;</li>
+<li>&#x5728;R(U)&#x4E2D;&#x53EF;&#x80FD;&#x5B58;&#x5728;&#x591A;&#x4E2A;&#x952E;&#xFF0C;&#x6211;&#x4EEC;&#x4EBA;&#x4E3A;&#x6307;&#x5B9A;&#x5176;&#x4E2D;&#x7684;&#x4E00;&#x4E2A;&#x952E;&#x4E3A;&#x4E3B;&#x952E;&#xFF08;primary key&#xFF09;</li>
+<li>&#x5305;&#x542B;&#x5728;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x952E;&#x4E2D;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x79F0;&#x4E3A;&#x4E3B;&#x5C5E;&#x6027;&#xFF08;primary attribute&#xFF09;&#x3002;</li>
+</ul>
+<h2 id="&#x7B2C;&#x4E8C;&#x8303;&#x5F0F;">&#x7B2C;&#x4E8C;&#x8303;&#x5F0F;</h2>
+<ul>
+<li>&#x5173;&#x7CFB;&#x6A21;&#x5F0F;R&#x6EE1;&#x8DB3;&#x7B2C;&#x4E8C;&#x8303;&#x5F0F;&#xFF0C;&#x5F53;&#x4E14;&#x4EC5;&#x5F53;&#xFF0C;R&#x6EE1;&#x8DB3;&#x7B2C;&#x4E00;&#x8303;&#x5F0F;&#xFF0C;&#x5E76;&#x4E14;&#xFF0C;R&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x975E;&#x4E3B;&#x5C5E;&#x6027;&#x90FD;&#x5B8C;&#x5168;&#x4F9D;&#x8D56;&#x4E8E;R&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x952E;&#x3002;</li>
+<li>&#x82E5;&#x4E0D;&#x662F;&#x952E;&#xFF0C;&#x5219;&#x4E0D;&#x80FD;&#x51B3;&#x5B9A;&#x5176;&#x4ED6;&#x5C5E;&#x6027;&#x3002;</li>
+</ul>
+<h2 id="&#x7B2C;&#x4E09;&#x8303;&#x5F0F;">&#x7B2C;&#x4E09;&#x8303;&#x5F0F;</h2>
+<ul>
+<li>&#x5173;&#x7CFB;&#x6A21;&#x5F0F;R&#x6EE1;&#x8DB3;&#x7B2C;&#x4E09;&#x8303;&#x5F0F;&#xFF0C;&#x5F53;&#x4E14;&#x4EC5;&#x5F53;&#xFF0C;R&#x4E2D;&#x4E0D;&#x5B58;&#x5728;&#x8FD9;&#x6837;&#x7684;&#x952E;X&#xFF0C;&#x5C5E;&#x6027;&#x7EC4;Y&#x548C;&#x975E;&#x4E3B;&#x5C5E;&#x6027;Z&#xFF0C;&#x4F7F;&#x5F97;X-&gt;Y&#xFF0C;Y-&gt;Z&#x6210;&#x7ACB;&#xFF0C;&#x4E14;Y-&gt;X&#x4E0D;&#x6210;&#x7ACB;&#x3002;</li>
+<li>&#x5373;&#xFF1A;&#x82E5;X&#x662F;&#x952E;&#xFF0C;Y&#x4E0D;&#x662F;&#x952E;&#xFF0C;&#x4F46;Y&#x80FD;&#x51B3;&#x5B9A;Z&#xFF0C;&#x5219;&#x4E0D;&#x6EE1;&#x8DB3;&#x7B2C;&#x4E09;&#x8303;&#x5F0F;&#x3002;</li>
+<li>&#x6EE1;&#x8DB3;&#x7B2C;&#x4E09;&#x8303;&#x5F0F;&#x7684;&#x6A21;&#x5F0F;&#x5FC5;&#x6EE1;&#x8DB3;&#x7B2C;&#x4E8C;&#x8303;&#x5F0F;&#x3002;</li>
+</ul>
+<h2 id="bc&#x8303;&#x5F0F;">BC&#x8303;&#x5F0F;</h2>
+<ul>
+<li>&#x5173;&#x7CFB;&#x6A21;&#x5F0F; R&#x6EE1;&#x8DB3; BC &#x8303;&#x5F0F;&#xFF0C;&#x5F53;&#x4E14;&#x4EC5;&#x5BF9;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x96C6; A&#xFF0C;&#x5982;&#x679C;&#x5B58;&#x5728;&#x4E0D;&#x5C5E;&#x4E8E;A&#x4E00;&#x4E2A;&#x5C5E;&#x6027; X&#xFF0C; &#x4F7F;&#x5F97; X&#x51FD;&#x6570;&#x4F9D;&#x8D56;&#x4E8E;A&#xFF0C;&#x90A3;&#x4E48;&#x6240;&#x6709;R&#x7684;&#x5C5E;&#x6027;&#x90FD;&#x51FD;&#x6570;&#x4F9D;&#x8D56;&#x4E8E;A&#x3002;</li>
+<li>&#x4EFB;&#x4F55;&#x6EE1;&#x8DB3;BC&#x8303;&#x5F0F;&#x7684;&#x5173;&#x7CFB;&#x6A21;&#x5F0F;&#x90FD;&#x6EE1;&#x8DB3;&#x7B2C;&#x4E09;&#x8303;&#x5F0F;&#x3002;</li>
+<li>BCNF&#x4E0E;<a href="https://zh.wikipedia.org/wiki/%E7%AC%AC%E4%B8%89%E8%8C%83%E5%BC%8F" _target="blank">&#x7B2C;&#x4E09;&#x8303;&#x5F0F;</a>&#x7684;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#xFF1A;<ul>
+<li>&#x7B2C;&#x4E09;&#x8303;&#x5F0F;&#x4E2D;&#x4E0D;&#x5141;&#x8BB8;<a href="https://zh.wikipedia.org/w/index.php?title=%E9%9D%9E%E4%B8%BB%E5%B1%9E%E6%80%A7&amp;action=edit&amp;redlink=1" _target="blank">&#x975E;&#x4E3B;&#x5C5E;&#x6027;</a>&#x88AB;&#x53E6;&#x4E00;&#x4E2A;&#x975E;&#x4E3B;&#x5C5E;&#x6027;&#x51B3;&#x5B9A;&#xFF0C;&#x4F46;&#x7B2C;&#x4E09;&#x8303;&#x5F0F;&#x5141;&#x8BB8;&#x4E3B;&#x5C5E;&#x6027;&#x88AB;&#x975E;&#x4E3B;&#x5C5E;&#x6027;&#x51B3;&#x5B9A;&#xFF1B;</li>
+<li>&#x800C;&#x5728;BCNF&#x4E2D;&#xFF0C;&#x4EFB;&#x4F55;&#x5C5E;&#x6027;&#xFF08;&#x5305;&#x62EC;&#x975E;&#x4E3B;&#x5C5E;&#x6027;&#x548C;&#x4E3B;&#x5C5E;&#x6027;&#xFF09;&#x90FD;&#x4E0D;&#x80FD;&#x88AB;&#x975E;&#x4E3B;&#x5C5E;&#x6027;&#x6240;&#x51B3;&#x5B9A;&#x3002;</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="design.html" class="navigation navigation-prev " aria-label="Previous page: 关系数据库的逻辑设计">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="storage.html" class="navigation navigation-next " aria-label="Next page: 存储的正确性">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"关系数据库规范化","level":"1.2.7","depth":2,"next":{"title":"存储的正确性","level":"1.2.8","depth":2,"path":"notes/storage.md","ref":"notes/storage.md","articles":[]},"previous":{"title":"关系数据库的逻辑设计","level":"1.2.6","depth":2,"path":"notes/design.md","ref":"notes/design.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"Data Management Systems","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"notes/normalization.md","mtime":"2021-01-28T09:31:57.727Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T09:55:28.694Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

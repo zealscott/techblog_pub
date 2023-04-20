@@ -1,0 +1,709 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>21 EM Algorithm · CMU Deep Learning</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="L23 Variational Autoencoders.html" />
+    
+    
+    <link rel="prev" href="L21 Boltzmann machines 2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="L02 Network represent.html">
+            
+                <a href="L02 Network represent.html">
+            
+                    
+                    1 Network Represent
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="L03 A brief note on derivatives.html">
+            
+                <a href="L03 A brief note on derivatives.html">
+            
+                    
+                    2 A Brief Note On Derivatives
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="L03 Learning the network.html">
+            
+                <a href="L03 Learning the network.html">
+            
+                    
+                    3 Learning The Network
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="L04 Backpropagation.html">
+            
+                <a href="L04 Backpropagation.html">
+            
+                    
+                    4 Backpropagation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="L05 Convergence.html">
+            
+                <a href="L05 Convergence.html">
+            
+                    
+                    5 Convergence
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="L06 Optimization.html">
+            
+                <a href="L06 Optimization.html">
+            
+                    
+                    6 Optimization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="L07 Optimizater.html">
+            
+                <a href="L07 Optimizater.html">
+            
+                    
+                    7 Optimizater
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="L08 Motivation of CNN.html">
+            
+                <a href="L08 Motivation of CNN.html">
+            
+                    
+                    8 Motivation Of CNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="L09 Cascade Correlation.html">
+            
+                <a href="L09 Cascade Correlation.html">
+            
+                    
+                    9 Cascade Correlation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="L10 CNN architecture.html">
+            
+                <a href="L10 CNN architecture.html">
+            
+                    
+                    10 CNN Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="L12 Prop of CNN.html">
+            
+                <a href="L12 Prop of CNN.html">
+            
+                    
+                    11 Prop Of CNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="L13 RNN.html">
+            
+                <a href="L13 RNN.html">
+            
+                    
+                    12 RNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="L14 Stability analysis and LSTMs.html">
+            
+                <a href="L14 Stability analysis and LSTMs.html">
+            
+                    
+                    13 Stability Analysis And LST Ms
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="L15 Divergence of RNN.html">
+            
+                <a href="L15 Divergence of RNN.html">
+            
+                    
+                    14 Divergence Of RNN
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="L16 Connectionist Temporal Classification.html">
+            
+                <a href="L16 Connectionist Temporal Classification.html">
+            
+                    
+                    15 Connectionist Temporal Classification
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="L17 Seq2seq and attention model.html">
+            
+                <a href="L17 Seq2seq and attention model.html">
+            
+                    
+                    16 Seq 2 Seq And Attention Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="L18 Representation.html">
+            
+                <a href="L18 Representation.html">
+            
+                    
+                    17 Representation
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="L19 Hopfield network.html">
+            
+                <a href="L19 Hopfield network.html">
+            
+                    
+                    18 Hopfield Network
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="L20 Boltzmann machines 1.html">
+            
+                <a href="L20 Boltzmann machines 1.html">
+            
+                    
+                    19 Boltzmann Machines 1
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.21" data-path="L21 Boltzmann machines 2.html">
+            
+                <a href="L21 Boltzmann machines 2.html">
+            
+                    
+                    20 Boltzmann Machines 2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.22" data-path="L22 EM algorithm.html">
+            
+                <a href="L22 EM algorithm.html">
+            
+                    
+                    21 EM Algorithm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.23" data-path="L23 Variational Autoencoders.html">
+            
+                <a href="L23 Variational Autoencoders.html">
+            
+                    
+                    22 Variational Autoencoders
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >21 EM Algorithm</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p align="center">
+  <b>This lecture introduced EM algorithm: an iterative technique to estimate probaility models for missing data. Meanwhile, mixture Gaussian, PCA and factor analysis are actually *generative* models in a way of EM.</b>
+</p>
+
+<h2 id="key-points">Key points</h2>
+<ul>
+<li>EM: An <em>iterative</em> technique to estimate probability models for data with <em>missing</em> components or information<ul>
+<li>By iteratively &#x201C;<strong>completing</strong>&#x201D; the data and reestimating parameters</li>
+</ul>
+</li>
+<li>PCA: Is actually a <em>generative</em> model for <strong>Gaussian</strong> data<ul>
+<li>Data lie close to a linear manifold, with <strong>orthogonal</strong> noise</li>
+<li>A lienar autoencoder!</li>
+</ul>
+</li>
+<li>Factor Analysis: Also a <em>generative</em> model for <strong>Gaussian</strong> data<ul>
+<li>Data lie close to a linear manifold</li>
+<li>Like PCA, but without directional constraints on the <strong>noise</strong> (not necessarily orthogonal)</li>
+</ul>
+</li>
+</ul>
+<h2 id="generative-models">Generative models</h2>
+<h3 id="learning-a-generative-model">Learning a generative model</h3>
+<ul>
+<li>You are given some set of observed data <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>=</mo><mo>{</mo><mi>x</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">X=\{x\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.07847em;">X</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">{</span><span class="mord mathit">x</span><span class="mclose">}</span></span></span></span></li>
+<li>You choose a model <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo separator="true">;</mo><mi>&#x3B8;</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(x ; \theta)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">;</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="mclose">)</span></span></span></span> for the distribution of <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">x</span></span></span></span> <ul>
+<li><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>&#x3B8;</mi></mrow><annotation encoding="application/x-tex">\theta</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.69444em;"></span><span class="strut bottom" style="height:0.69444em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span></span></span></span> are the parameters of the model</li>
+</ul>
+</li>
+<li>Estimate the theta such that <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>x</mi><mo separator="true">;</mo><mi>&#x3B8;</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(x ; \theta)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathit">x</span><span class="mpunct">;</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="mclose">)</span></span></span></span> best &#x201C;fits&#x201D; the observations <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi><mo>=</mo><mo>{</mo><mi>x</mi><mo>}</mo></mrow><annotation encoding="application/x-tex">X=\{x\}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.07847em;">X</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mopen">{</span><span class="mord mathit">x</span><span class="mclose">}</span></span></span></span></li>
+<li>How to define &quot;best fits&quot;?<ul>
+<li><strong>Maximum likelihood!</strong></li>
+<li>Assumption: The data you have observed are very typical of the process</li>
+</ul>
+</li>
+</ul>
+<h2 id="em-algorithm">EM algorithm</h2>
+<ul>
+<li>Tackle missing data and information problem in model estimation</li>
+<li>Let <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>o</mi></mrow><annotation encoding="application/x-tex">o</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit">o</span></span></span></span> are observed data</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>log</mi><mo>&#x2061;</mo><mi>P</mi><mo>(</mo><mi>o</mi><mo>)</mo><mo>=</mo><mi>log</mi><mo>&#x2061;</mo><munder><mo>&#x2211;</mo><mi>h</mi></munder><mi>P</mi><mo>(</mo><mi>h</mi><mo separator="true">,</mo><mi>o</mi><mo>)</mo><mo>=</mo><mi>log</mi><mo>&#x2061;</mo><munder><mo>&#x2211;</mo><mi>h</mi></munder><mi>Q</mi><mo>(</mo><mi>h</mi><mo>)</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>h</mi><mo separator="true">,</mo><mi>o</mi><mo>)</mo></mrow><mrow><mi>Q</mi><mo>(</mo><mi>h</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">
+\log P(o)=\log \sum_{h} P(h, o)=\log \sum_{h} Q(h) \frac{P(h, o)}{Q(h)}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.427em;"></span><span class="strut bottom" style="height:2.729113em;vertical-align:-1.3021129999999999em;"></span><span class="base"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathit">o</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0500050000000005em;"><span style="top:-1.847887em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">h</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">&#x2211;</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.3021129999999999em;"></span></span></span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathit">h</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">o</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0500050000000005em;"><span style="top:-1.847887em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">h</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">&#x2211;</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.3021129999999999em;"></span></span></span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">Q</span><span class="mopen">(</span><span class="mord mathit">h</span><span class="mclose">)</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathit">Q</span><span class="mopen">(</span><span class="mord mathit">h</span><span class="mclose">)</span></span></span><span style="top:-3.15em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy" style="height:0.2em;"><svg width="400em" height="0.2em" viewbox="0 0 400000 200" preserveaspectratio="xMinYMin slice"><path d="M0 80H400000 v40H0z M0 80H400000 v40H0z"/></svg></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathit">h</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">o</span><span class="mclose">)</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<ul>
+<li>The logarithm is a concave function, therefore</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>log</mi><mo>&#x2061;</mo><munder><mo>&#x2211;</mo><mi>h</mi></munder><mi>Q</mi><mo>(</mo><mi>h</mi><mo>)</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>h</mi><mo separator="true">,</mo><mi>o</mi><mo>)</mo></mrow><mrow><mi>Q</mi><mo>(</mo><mi>h</mi><mo>)</mo></mrow></mfrac><mo>&#x2265;</mo><munder><mo>&#x2211;</mo><mi>h</mi></munder><mi>Q</mi><mo>(</mo><mi>h</mi><mo>)</mo><mi>log</mi><mo>&#x2061;</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>h</mi><mo separator="true">,</mo><mi>o</mi><mo>)</mo></mrow><mrow><mi>Q</mi><mo>(</mo><mi>h</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">
+\log \sum_{h} Q(h) \frac{P(h, o)}{Q(h)} \geq \sum_{h} Q(h) \log \frac{P(h, o)}{Q(h)}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.427em;"></span><span class="strut bottom" style="height:2.729113em;vertical-align:-1.3021129999999999em;"></span><span class="base"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0500050000000005em;"><span style="top:-1.847887em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">h</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">&#x2211;</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.3021129999999999em;"></span></span></span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">Q</span><span class="mopen">(</span><span class="mord mathit">h</span><span class="mclose">)</span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathit">Q</span><span class="mopen">(</span><span class="mord mathit">h</span><span class="mclose">)</span></span></span><span style="top:-3.15em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy" style="height:0.2em;"><svg width="400em" height="0.2em" viewbox="0 0 400000 200" preserveaspectratio="xMinYMin slice"><path d="M0 80H400000 v40H0z M0 80H400000 v40H0z"/></svg></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathit">h</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">o</span><span class="mclose">)</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2265;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0500050000000005em;"><span style="top:-1.847887em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">h</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">&#x2211;</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.3021129999999999em;"></span></span></span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">Q</span><span class="mopen">(</span><span class="mord mathit">h</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathit">Q</span><span class="mopen">(</span><span class="mord mathit">h</span><span class="mclose">)</span></span></span><span style="top:-3.15em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy" style="height:0.2em;"><svg width="400em" height="0.2em" viewbox="0 0 400000 200" preserveaspectratio="xMinYMin slice"><path d="M0 80H400000 v40H0z M0 80H400000 v40H0z"/></svg></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathit">h</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">o</span><span class="mclose">)</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<ul>
+<li>Choose a tight lower bound</li>
+</ul>
+<p><img src="images/em 1.png" width="60%" title="Tight lower bound"></p>
+<ul>
+<li>Let <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Q</mi><mo>(</mo><mi>h</mi><mo>)</mo><mo>=</mo><mi>P</mi><mo>(</mo><mi>h</mi><mo>&#x2223;</mo><mi>o</mi><mo separator="true">;</mo><msup><mi>&#x3B8;</mi><mo mathvariant="normal">&#x2032;</mo></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">Q(h)=P(h \mid o ; \theta^{\prime})</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.751892em;"></span><span class="strut bottom" style="height:1.001892em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit">Q</span><span class="mopen">(</span><span class="mord mathit">h</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathit">h</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2223;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">o</span><span class="mpunct">;</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2032;</span></span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span></li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="true"><mrow><mi>log</mi><mo>&#x2061;</mo><mi>P</mi><mo>(</mo><mi>o</mi><mo separator="true">;</mo><mi>&#x3B8;</mi><mo>)</mo><mo>&#x2265;</mo><munder><mo>&#x2211;</mo><mi>h</mi></munder><mi>P</mi><mrow><mo fence="true">(</mo><mi>h</mi><mo>&#x2223;</mo><mi>o</mi><mo separator="true">;</mo><msup><mi>&#x3B8;</mi><mo mathvariant="normal">&#x2032;</mo></msup><mo fence="true">)</mo></mrow><mi>log</mi><mo>&#x2061;</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>h</mi><mo separator="true">,</mo><mi>o</mi><mo separator="true">;</mo><mi>&#x3B8;</mi><mo>)</mo></mrow><mrow><mi>P</mi><mrow><mo fence="true">(</mo><mi>h</mi><mo>&#x2223;</mo><mi>o</mi><mo separator="true">;</mo><msup><mi>&#x3B8;</mi><mo mathvariant="normal">&#x2032;</mo></msup><mo fence="true">)</mo></mrow></mrow></mfrac></mrow></mstyle></mtd></mtr></mtable></mrow><annotation encoding="application/x-tex">
+\begin{aligned}
+\log P(o ; \theta) \geq \sum_{h} P\left(h \mid o ; \theta^{\prime}\right) \log \frac{P(h, o ; \theta)}{P\left(h \mid o ; \theta^{\prime}\right)}
+\end{aligned}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.7645564999999996em;"></span><span class="strut bottom" style="height:3.0291129999999997em;vertical-align:-1.2645565em;"></span><span class="base"><span class="mord"><span class="mtable"><span class="col-align-r"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.7645564999999996em;"><span style="top:-3.7645565000000003em;"><span class="pstrut" style="height:3.427em;"></span><span class="mord"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathit">o</span><span class="mpunct">;</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2265;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.0500050000000005em;"><span style="top:-1.847887em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">h</span></span></span></span><span style="top:-3.050005em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">&#x2211;</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.3021129999999999em;"></span></span></span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathit">h</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2223;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">o</span><span class="mpunct">;</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.801892em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2032;</span></span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathit">h</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2223;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">o</span><span class="mpunct">;</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6778919999999999em;"><span style="top:-2.9890000000000003em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2032;</span></span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span><span style="top:-3.15em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy" style="height:0.2em;"><svg width="400em" height="0.2em" viewbox="0 0 400000 200" preserveaspectratio="xMinYMin slice"><path d="M0 80H400000 v40H0z M0 80H400000 v40H0z"/></svg></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathit">h</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit">o</span><span class="mpunct">;</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="mclose">)</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.2645565em;"></span></span></span></span></span></span></span></span></span></span></p>
+<ul>
+<li>Let <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>J</mi><mrow><mo fence="true">(</mo><mi>&#x3B8;</mi><mo separator="true">,</mo><msup><mi>&#x3B8;</mi><mo mathvariant="normal">&#x2032;</mo></msup><mo fence="true">)</mo></mrow><mo>=</mo><msub><mo>&#x2211;</mo><mi>h</mi></msub><mi>P</mi><mrow><mo fence="true">(</mo><mi>h</mi><mo>&#x2223;</mo><mi>o</mi><mo separator="true">;</mo><msup><mi>&#x3B8;</mi><mo mathvariant="normal">&#x2032;</mo></msup><mo fence="true">)</mo></mrow><mi>log</mi><mo>&#x2061;</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>h</mi><mo separator="true">,</mo><mi>o</mi><mo separator="true">;</mo><mi>&#x3B8;</mi><mo>)</mo></mrow><mrow><mi>P</mi><mrow><mo fence="true">(</mo><mi>h</mi><mo>&#x2223;</mo><mi>o</mi><mo separator="true">;</mo><msup><mi>&#x3B8;</mi><mo mathvariant="normal">&#x2032;</mo></msup><mo fence="true">)</mo></mrow></mrow></mfrac></mrow><annotation encoding="application/x-tex">J\left(\theta, \theta^{\prime}\right)=\sum_{h} P\left(h \mid o ; \theta^{\prime}\right) \log \frac{P(h, o ; \theta)}{P\left(h \mid o ; \theta^{\prime}\right)}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.01em;"></span><span class="strut bottom" style="height:1.53em;vertical-align:-0.52em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.09618em;">J</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2032;</span></span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">&#x2211;</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.1863979999999999em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">h</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathit">h</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2223;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">o</span><span class="mpunct">;</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2032;</span></span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.01em;"><span style="top:-2.655em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.13889em;">P</span><span class="minner mtight"><span class="mopen mtight delimcenter" style="top:0em;"><span class="mtight">(</span></span><span class="mord mathit mtight">h</span><span class="mrel mtight">&#x2223;</span><span class="mord mathit mtight">o</span><span class="mpunct mtight">;</span><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.02778em;">&#x3B8;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.6828285714285715em;"><span style="top:-2.786em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mtight">&#x2032;</span></span></span></span></span></span></span></span></span><span class="mclose mtight delimcenter" style="top:0em;"><span class="mtight">)</span></span></span></span></span></span><span style="top:-3.15em;"><span class="pstrut" style="height:3em;"></span><span class="stretchy" style="height:0.2em;"><svg width="400em" height="0.2em" viewbox="0 0 400000 200" preserveaspectratio="xMinYMin slice"><path d="M0 80H400000 v40H0z M0 80H400000 v40H0z"/></svg></span></span><span style="top:-3.485em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.13889em;">P</span><span class="mopen mtight">(</span><span class="mord mathit mtight">h</span><span class="mpunct mtight">,</span><span class="mord mathit mtight">o</span><span class="mpunct mtight">;</span><span class="mord mathit mtight" style="margin-right:0.02778em;">&#x3B8;</span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.52em;"></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mtable><mtr><mtd><mstyle scriptlevel="0" displaystyle="false"><mrow><mi>log</mi><mo>&#x2061;</mo><mi>P</mi><mo>(</mo><mi>o</mi><mo separator="true">;</mo><mi>&#x3B8;</mi><mo>)</mo><mo>&#x2265;</mo><mi>J</mi><mrow><mo fence="true">(</mo><mi>&#x3B8;</mi><mo separator="true">,</mo><msup><mi>&#x3B8;</mi><mo mathvariant="normal">&#x2032;</mo></msup><mo fence="true">)</mo></mrow></mrow></mstyle></mtd></mtr></mtable></mrow><annotation encoding="application/x-tex">
+\begin{array}{l}
+\log P(o ; \theta) \geq J\left(\theta, \theta^{\prime}\right)
+\end{array}
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.8500000000000001em;"></span><span class="strut bottom" style="height:1.2000000000000002em;vertical-align:-0.35000000000000003em;"></span><span class="base"><span class="mord"><span class="mtable"><span class="arraycolsep" style="width:0.5em;"></span><span class="col-align-l"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.8500000000000001em;"><span style="top:-3.01em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathit">o</span><span class="mpunct">;</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="mclose">)</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2265;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit" style="margin-right:0.09618em;">J</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.02778em;">&#x3B8;</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.751892em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">&#x2032;</span></span></span></span></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.35000000000000003em;"></span></span></span></span><span class="arraycolsep" style="width:0.5em;"></span></span></span></span></span></span></span></p>
+<p><img src="images/em 2.png" width="60%" title="Iteration of EM"></p>
+<ul>
+<li>The algorithm process</li>
+</ul>
+<p><img src="images/em 3.png" width="60%"></p>
+<h3 id="em-for-missing-data">EM for missing data</h3>
+<ul>
+<li>&#x201C;Expand&#x201D; every incomplete vector out into all possibilities<ul>
+<li>With proportion <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>m</mi><mi mathvariant="normal">&#x2223;</mi><mi>o</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">P(m|o)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathit">m</span><span class="mord">&#x2223;</span><span class="mord mathit">o</span><span class="mclose">)</span></span></span></span> (from previous estimate of the model)</li>
+</ul>
+</li>
+<li>Estimate the statistics from the expanded data</li>
+</ul>
+<p><img src="images/em 4.png" width="60%" title="Complete data"></p>
+<h3 id="em-for-missing-information">EM for missing information</h3>
+<ul>
+<li>Problem : We are not given the actual <em>Gaussian</em> for each observation<ul>
+<li>What we want: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">(</mo><msub><mi>o</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>k</mi><mn>1</mn></msub><mo fence="true">)</mo></mrow><mo separator="true">,</mo><mrow><mo fence="true">(</mo><msub><mi>o</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>k</mi><mn>2</mn></msub><mo fence="true">)</mo></mrow><mo separator="true">,</mo><mrow><mo fence="true">(</mo><msub><mi>o</mi><mn>3</mn></msub><mo separator="true">,</mo><msub><mi>k</mi><mn>3</mn></msub><mo fence="true">)</mo></mrow><mo>&#x2026;</mo></mrow><annotation encoding="application/x-tex">\left(o_{1}, k_{1}\right),\left(o_{2}, k_{2}\right),\left(o_{3}, k_{3}\right) \ldots</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.75em;"></span><span class="strut bottom" style="height:1em;vertical-align:-0.25em;"></span><span class="base"><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord mathit">o</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord mathit">o</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord"><span class="mord mathit">o</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.03148em;">k</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.03148em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="minner">&#x2026;</span></span></span></span></li>
+<li>What we have: <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>o</mi><mn>1</mn></msub><mo separator="true">,</mo><msub><mi>o</mi><mn>2</mn></msub><mo separator="true">,</mo><msub><mi>o</mi><mn>3</mn></msub><mo>&#x2026;</mo></mrow><annotation encoding="application/x-tex">o_{1}, o_{2}, o_{3} \ldots</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="base"><span class="mord"><span class="mord mathit">o</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">1</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathit">o</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">2</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mpunct">,</span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathit">o</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mtight">3</span></span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"></span></span></span></span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="minner">&#x2026;</span></span></span></span></li>
+</ul>
+</li>
+</ul>
+<p><img src="images/em 5.png" width="60%" title="In proportion to weight average"></p>
+<ul>
+<li>The algorithm process</li>
+</ul>
+<p><img src="images/em 6.png" width="60%" title="Iteration of EM"></p>
+<h3 id="general-em-principle">General EM principle</h3>
+<ul>
+<li>&#x201C;<strong>Complete</strong>&#x201D; the data by considering every possible value for missing data/variables</li>
+<li>Reestimate parameters from the &#x201C;completed&#x201D; data</li>
+</ul>
+<p><img src="images/em 7.png" width="60%" title="Main idea"></p>
+<h2 id="principal-component-analysis">Principal Component Analysis</h2>
+<p><img src="images/em 8.png" width="60%" title="PCA"></p>
+<ul>
+<li>Find the principal subspace such that when all vectors are approximated as lying on that subspace, <strong><em>the approximation error is minimal</em></strong></li>
+</ul>
+<h3 id="closed-form">Closed form</h3>
+<ul>
+<li>Total projection error for all data</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>L</mi><mo>=</mo><munder><mo>&#x2211;</mo><mi>x</mi></munder><msup><mi>x</mi><mi>T</mi></msup><mi>x</mi><mo>&#x2212;</mo><msup><mi>w</mi><mi>T</mi></msup><mi>x</mi><msup><mi>x</mi><mi>T</mi></msup><mi>w</mi></mrow><annotation encoding="application/x-tex">
+L=\sum_{x} x^{T} x-w^{T} x x^{T} w
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.050005em;"></span><span class="strut bottom" style="height:2.3000100000000003em;vertical-align:-1.250005em;"></span><span class="base"><span class="mord mathit">L</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8999949999999999em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">x</span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">&#x2211;</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.250005em;"></span></span></span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathit">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913309999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span></span><span class="mord mathit">x</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mbin">&#x2212;</span><span class="mord rule" style="margin-right:0.2222222222222222em;"></span><span class="mord"><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913309999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span></span><span class="mord mathit">x</span><span class="mord"><span class="mord mathit">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913309999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span></span><span class="mord mathit" style="margin-right:0.02691em;">w</span></span></span></span></span></p>
+<ul>
+<li>Minimizing this w.r.t &#x1D464; (subject to &#x1D464; = unit vector) gives you the Eigenvalue equation</li>
+</ul>
+<p><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mrow><mo fence="true">(</mo><munder><mo>&#x2211;</mo><mi>x</mi></munder><msup><mi>x</mi><mi>T</mi></msup><mi>x</mi><mo fence="true">)</mo></mrow><mi>w</mi><mo>=</mo><mi>&#x3BB;</mi><mi>w</mi></mrow><annotation encoding="application/x-tex">
+\left(\sum_{x} x^{T} x\right) w=\lambda w
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:1.75em;"></span><span class="strut bottom" style="height:3.0000299999999998em;vertical-align:-1.25003em;"></span><span class="base"><span class="minner"><span class="mopen delimcenter" style="top:0em;"><span class="delimsizing size4">(</span></span><span class="mop op-limits"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.050005em;"><span style="top:-1.8999949999999999em;margin-left:0em;"><span class="pstrut" style="height:3.05em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight">x</span></span></span></span><span style="top:-3.0500049999999996em;"><span class="pstrut" style="height:3.05em;"></span><span><span class="mop op-symbol large-op">&#x2211;</span></span></span></span><span class="vlist-s">&#x200B;</span></span><span class="vlist-r"><span class="vlist" style="height:1.250005em;"></span></span></span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathit">x</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8913309999999999em;"><span style="top:-3.113em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathit mtight" style="margin-right:0.13889em;">T</span></span></span></span></span></span></span></span></span><span class="mord mathit">x</span><span class="mclose delimcenter" style="top:0em;"><span class="delimsizing size4">)</span></span></span><span class="mord rule" style="margin-right:0.16666666666666666em;"></span><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">&#x3BB;</span><span class="mord mathit" style="margin-right:0.02691em;">w</span></span></span></span></span></p>
+<ul>
+<li>This can be solved to find the principal subspace<ul>
+<li>However, it is not feasible for large matrix (need to find eigenvalue)</li>
+</ul>
+</li>
+</ul>
+<h3 id="iterative-solution">Iterative solution</h3>
+<ul>
+<li><strong>Objective</strong>: Find a vector (subspace) <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02691em;">w</span></span></span></span> and a position <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi></mrow><annotation encoding="application/x-tex">z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.04398em;">z</span></span></span></span> on <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>w</mi></mrow><annotation encoding="application/x-tex">w</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.43056em;"></span><span class="strut bottom" style="height:0.43056em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.02691em;">w</span></span></span></span> such that <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>z</mi><mi>w</mi><mo>&#x2248;</mo><mi>x</mi></mrow><annotation encoding="application/x-tex">zw\approx x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.48312em;"></span><span class="strut bottom" style="height:0.48312em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.04398em;">z</span><span class="mord mathit" style="margin-right:0.02691em;">w</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mrel">&#x2248;</span><span class="mord rule" style="margin-right:0.2777777777777778em;"></span><span class="mord mathit">x</span></span></span></span> most closely (in an L2 sense) for the entire (training) data</li>
+</ul>
+<p><img src="images/em 9.png" width="60%"></p>
+<ul>
+<li>The algorithm process</li>
+</ul>
+<p><img src="images/em 10.png" width="60%"></p>
+<h3 id="pca--linear-autoencoder">PCA &amp; linear autoencoder</h3>
+<p><img src="images/em 11.png" width="60%"></p>
+<ul>
+<li>We put data <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>X</mi></mrow><annotation encoding="application/x-tex">X</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.07847em;">X</span></span></span></span> into the inital subpace, got <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.07153em;">Z</span></span></span></span></li>
+<li>The fix <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>Z</mi></mrow><annotation encoding="application/x-tex">Z</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.07153em;">Z</span></span></span></span> to get a better subpace <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>W</mi></mrow><annotation encoding="application/x-tex">W</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="strut" style="height:0.68333em;"></span><span class="strut bottom" style="height:0.68333em;vertical-align:0em;"></span><span class="base"><span class="mord mathit" style="margin-right:0.13889em;">W</span></span></span></span>, etc...</li>
+<li><strong>This is an autoencoder with linear activations !</strong><ul>
+<li>Backprop actually works by simultaneously updating (implicitly) and in tiny increments</li>
+</ul>
+</li>
+<li>PCA is actually a <em>generative</em> model<ul>
+<li>The observed data are Gaussian</li>
+<li>Gaussian data lying very close to a principal subspace</li>
+<li>Comprising &#x201C;clean&#x201D; Gaussian data on the subspace plus <strong>orthogonal</strong> noise</li>
+</ul>
+</li>
+</ul>
+<p><img src="images/em 12.png" width="60%"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="L21 Boltzmann machines 2.html" class="navigation navigation-prev " aria-label="Previous page: 20 Boltzmann Machines 2">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="L23 Variational Autoencoders.html" class="navigation navigation-next " aria-label="Next page: 22 Variational Autoencoders">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"21 EM Algorithm","level":"1.22","depth":1,"next":{"title":"22 Variational Autoencoders","level":"1.23","depth":1,"path":"L23 Variational Autoencoders.md","ref":"L23 Variational Autoencoders.md","articles":[]},"previous":{"title":"20 Boltzmann Machines 2","level":"1.21","depth":1,"path":"L21 Boltzmann machines 2.md","ref":"L21 Boltzmann machines 2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"CMU Deep Learning","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"L22 EM algorithm.md","mtime":"2021-05-11T11:08:34.931Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-05-11T11:14:37.767Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

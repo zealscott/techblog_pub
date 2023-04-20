@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Deep Learning on Scott&#39;Log</title>
+    <link>https://tech.zealscott.com/deeplearning/</link>
+    <description>Recent content in Deep Learning on Scott&#39;Log</description>
+    <image>
+      <url>https://tech.zealscott.com/papermod-cover.png</url>
+      <link>https://tech.zealscott.com/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 21 Sep 2018 21:05:20 +0800</lastBuildDate><atom:link href="https://tech.zealscott.com/deeplearning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Loss functioin in neural network</title>
+      <link>https://tech.zealscott.com/deeplearning/misc/loss/</link>
+      <pubDate>Tue, 13 Oct 2020 20:44:01 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/misc/loss/</guid>
+      <description>Kullback-Leibler divergence Information theory  Quantify information of intuition1  Likely events should have low information content Less likely events should have higher information content Independent events should have additive information. For example, finding out that a tossed coin has come up as heads twice should convey twice as much information as finding out that a tossed coin has come up as heads once.   Self-information  $I(x)=-\log P(x)$ Deals only with a single outcome   Shannon entropy  $H(\mathrm{x})=\mathbb{E}_{\mathrm{x} \sim P}[I(x)]=-\mathbb{E}_{\mathrm{x} \sim P}[\log P(x)]$ Quantify the amount of uncertainty in an entire probability distribution    KL divergence and cross-entropy  Measure how different two distributions over the same random variable $x$  $D_{\mathrm{KL}}(P | Q)=\mathbb{E}_{\mathrm{x} \sim P}\left[\log \frac{P(x)}{Q(x)}\right]=\mathbb{E}_{\mathrm{x} \sim P}[\log P(x)-\log Q(x)]$   Properities  Non-negative.</description>
+    </item>
+    
+    <item>
+      <title>梯度下降原理及理解</title>
+      <link>https://tech.zealscott.com/deeplearning/misc/gradientdescent/</link>
+      <pubDate>Sun, 01 Sep 2019 20:57:00 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/misc/gradientdescent/</guid>
+      <description>梯度下降是神经网络中最常用的求极值点（鞍点）的方法，本文以BP神经网络为例，介绍梯度下降的数学原理及推广</description>
+    </item>
+    
+    <item>
+      <title>Learning from positive and unlabeled data with a selection bias</title>
+      <link>https://tech.zealscott.com/deeplearning/pulearning/nnpusb/</link>
+      <pubDate>Tue, 20 Aug 2019 22:07:12 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/pulearning/nnpusb/</guid>
+      <description>本文主要考虑的是PU learning，也就是在只有正类数据和无标记数据的情况下，对数据进行二分类。在case-control情境下（也就是two samples问题），之前大部分研究基于都基于selected completely at random的假设，但本文argue这种假设不符合实际，因此对该假设进行了放松：如果$P(o = +1| x)$越高，则$P(y = +1| x)$也越高，反之亦然，这种性质被称为invariance of order。
+使用Bayes公式推导可以得到，密度比也符合这种偏序关系。因此，论文认为，虽然我们很难得到$P(y=+1|x)$具体的值，但通过估计密度比，能得到样本间是正类的概率偏序关系，这样通过一个合理的阈值作为分类器即可区分正负类。
+作者通过两种方法来估计密度比：一种是根据之前研究定义的classification risk推广到有based的classification risk函数，然后根据公式$\hat{r} = \frac{\hat f}{\pi}$计算得到；另一种方法是直接用uLSIF进行估计。得到密度比$r$之后，根据先验信息$\pi$，对数据进行遍历即可得到$\theta_\pi$阈值，通过该阈值可以实现在未标记数据上将正负样本进行区分。
+最后，作者在几个常见的数据集上进行了改造以符合PU learning的假设，同时使用了一个real-world数据集，使用论文提到的两个方法估计$\hat{r}$，然后可以得到阈值$\theta_\pi$，进而得到二分类器。最后还验证了在未知先验$\pi$的情况下，其算法的robust较好。
+Intuition  cast-control scenario  P 是从正类中采样的，U 是从整个样本空间采样的，这两者相互独立。这个假设符合现实中的认识，因为如果有标记的样本都是正例，那么一定是人为忽略或是丢弃了负类样本。换句话说，unlabel data 中既包含正样本，也包含负样本，称为为 two samples 问题，即有 P 和 U 两个采样集。   selected completely at random (SCAR)  对于cast-control的问题，常见的假设是：正类被标记的采样集和未标记的采样集是独立同分布的。 作者 argue 这种假设在现实问题中很多时候不成立，例如在异常检测中，异常的更容易被选中；在人脸识别中，用户更倾向于提供清晰的照片（labeled），而未标记的数据更可能非常不清晰。   select bias  因此在现实中，作者认为$P(x|y = +1,o = 0) \ne P(x|y = +1,o = +1)$，不能简单的通过Bayes公式推断得到$P(y = +1 | x)$的概率。 虽然不能直接得到$P(y = +1 | x)$的值，但根据之前的假设，如果数据更容易被标记，则它是正样本的概率更大，可以得到这样的偏序关系：  $P(y = +1 | x_i) \le P(y = +1| x_j) \Leftrightarrow P(o = +1 | x_i)\le P(o = +1| x_j)$   如果取等号，那么就满足了SCAR假设，因此，本文定义的invariance of order可以看作是SCAR的推广。    Strategy 作者主要的思路是：</description>
+    </item>
+    
+    <item>
+      <title>PU learning Overview</title>
+      <link>https://tech.zealscott.com/deeplearning/pulearning/pu-learning-overview/</link>
+      <pubDate>Sat, 17 Aug 2019 21:00:30 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/pulearning/pu-learning-overview/</guid>
+      <description>Papers  Learning Classiﬁers from Only Positive and Unlabeled Data KDD 2008 （PUAdapter）  经典论文，在SCAR假设下，证明了$p(y|x)$与$p(s|x)$只相差一个常数c，因此可以使用经典的分类模型，将positive和unlabel数据看成两类，直接得到$p(s|x)$的概率，进而估计$p(y|x)$。同时给出了估计常数$c$和先验$p(y)$的方法。 本文还提出了一个非常重要的思想，就是把Unlabel数据看成是Positive和Negative样本的不同权重组合，引出了后来的unbiased risk estimators。 Code available 论文笔记   Analysis of Learning from Positive and Unlabeled Data NIPS 2014  从基本的分类损失出发，推导了PU的分类问题其实就是Cost-sensitive classiﬁcation的形式。详细推导了risk function：$R(f) = 2\pi R_1(f) + R_X(f) -\pi $，论文以这个risk function出发，对不同的loss function进行了讨论。（部分推导可结合 Semi-Supervised Novelty Detection 再看） 同时证明了如果使用凸函数hinge loss作为loss function，会导致错误的分类边界（多一项惩罚项），因此需要使用非凸ramp loss作为loss function。同时证明了使用PU进行分类的误差小于监督学习误差的$2\sqrt{2}$倍（这里待看）。  即loss需要满足 $l(t,+1) + l(t,-1) = 1$，也就是symmetric condition   论文笔记   Convex formulation for learning from positive and unlabeled data IMCL 2015 （uPU）  这篇文章主要是对之前提出的非凸loss进行改进，主要想法是根据risk function对正类样本和未标记样本使用不同的loss function。 从另一个方面推导了risk function： $R(g) = \pi E_1[ \hat{l}(g(x))] + E_X[l(-g(x))]$，考虑当$\hat{l}$为凸时，证明了其一定为线性函数，将hinge loss修改为double hinge loss，变为凸优化问题。通过实验说明其效果不比non-convex loss function差，同时减少了计算开销。  即loss需要满足$l(t,+1) + l(t,-1) = -t$，也就是linear-odd condition   同时，这篇文章用的分类器为linear-in-parameter model，使用高斯核将样本映射到feature space，具体定义可以参考 Introduction to Statistical Machine Learning By Masashi Sugiyama 2016 一书的Chapter21。 Code available 论文笔记   Positive-Unlabeled Learning with Non-Negative Risk Estimator NIPS 2017 （nnPU）  由于之前的risk estimator $\hat{R}_{pu}(g) = \pi_p\hat{R}_p^+(g) -\pi_p\hat{R}_p^-(g) + \hat{R}_u^-(g)$中，有可能出现$-\pi_p\hat{R}_p^-(g) + \hat{R}_u^-(g) &amp;lt; 0 $的情况，会导致risk不断减小变为负数。因此对risk进行改写，提出nnPU，能有效的防止过拟合，能使用更强大的学习器（神经网络）进行学习。同时，论文对这个risk estimator的bias，consistency和MSE reduction进行了理论分析。 Code available   Learning from positive and unlabeled data with a selection bias ICLR 2019 （nnPUSB）  放松了SCAR的假设，认为如果$P(o = +1| x)$越高，则$P(y = +1| x)$也越高（不一定相同）。使用贝叶斯公式得到密度比和$P(y = +1|x)$满足同样的偏序关系，因此使用两种方法估计密度比（risk function/uLSIF），并设定阈值实现对PU的分类。 Code available / My implementation 论文笔记    Formula Risk 推导  定义在decision function $g$ 下的risk为：  $R(g) = E_{(X,Y)\sim p(x,y)}[l(g(X),Y)] = \pi_pR_p^+(g) + \pi_nR_n^-(g)$ 其中$R_p^+(g) = E_p[l(g(X)),+1]$也就是对正类分类错误的risk，$R_n^-(g) = E_p[l(g(X)),-1]$也就是对负类分类错误的risk   由于我们没有办法直接得到负类样本，因此由公式 $\pi_np_n(x) = p(x) - \pi_pp_p(x)$可得负类样本分类错误的损失：   $\pi R_n^-(g) = R_u^-(g) - \pi_pR_p^-(g)$</description>
+    </item>
+    
+    <item>
+      <title>Convex Formulation for Learning from Positive and Unlabeled Data</title>
+      <link>https://tech.zealscott.com/deeplearning/pulearning/npu/</link>
+      <pubDate>Mon, 05 Aug 2019 09:00:30 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/pulearning/npu/</guid>
+      <description>该论文在之前PU learning中使用非凸函数作为loss的基础上，对正类样本和未标记样本使用不同的凸函数loss，从而将其转为凸优化问题。结果表明，该loss（double hinge loss）与非凸loss（ramp）精度几乎一致，但大大减少了计算量。
+Introdution Background 论文首先强调了PU问题的重要性，举了几个例子：
+ Automatic face tagging  用户对自己的画像标记为正类，其余都是未标记数据，需要正确识别用户的照片   Inlier-based outlier detection  需要在只有inliers和未标记数据中识别outliers，这种方法比完全无监督学习的效果要好   Class is too diverse  如果要识别的数据集中类别太多，也就是one-vs-rest classification   Negative-class dataset shift  由于训练数据和测试数据采集的实践差异导致负类样本的概率分布发生了变化，那么如果使用PU learning，可以减少重新标记的代价    Method 作者简单回顾了之前PU learning的常见做法：
+ 直接在正类样本和未标记样本中训练一个分类器。但很显然这样的效果非常差，因为未标记样本中包含两类数据。 根据先验$\pi$使用一个loss function来权衡每个样本的权重，目标是使得loss function最小化。但这样做的结果是会产生bias。 使用满足$l(z) + l(-z) = 1$条件的loss function可以消除这种bias，但对于ramp loss，是非凸函数，导致在优化过程中可能求导局部解。  因此，本文提出了一种新的凸函数的loss function，也就是double hinge loss，不仅能够消除bias，同时也能保证凸性。关键点在于对未标记数据和正类数据使用不同的loss function。
+Non-convex PU classification 作者回顾了在 Analysis of Learning from Positive and Unlabeled Data 这篇文章中的方法。</description>
+    </item>
+    
+    <item>
+      <title>Analysis of Learning from Positive and Unlabeled Data</title>
+      <link>https://tech.zealscott.com/deeplearning/pulearning/pu-learning-non-convex/</link>
+      <pubDate>Mon, 29 Jul 2019 11:23:30 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/pulearning/pu-learning-non-convex/</guid>
+      <description>本文从基本的分类损失出发，推导了PU的分类问题其实就是Cost-sensitive classiﬁcation的形式，同时，通过实验证明了如果使用凸函数作为loss function，例如hinge loss会导致错误的分类边界（有bias），因此需要使用例如ramp loss之类的凹函数。同时，论文还对先验$\pi$存在偏差的情况进行了讨论，说明了如果样本中大部分都是正样本，那么就算先验差距比较大，但对总体的分类效果没有太大影响。最后对分类边界进行讨论，证明了使用PU进行分类的误差小于监督学习误差的$2\sqrt{2}$倍。
+基本概念和定义  Ordinary classification  Bayes optimal classiﬁer的目标是最小化misclassiﬁcation rate，这在Introduction to Statistical Machine Learning By Masashi Sugiyama 书里有定义，直观理解就是最小化期望错分率： $R(f) = \pi R_1 (f) + (1 - \pi) R_{-1}(f)$ 这里的$R_1$表示false negative rate，也就是分错正类的概率，乘以先验正类的概率$\pi$ $R_{-1}$表示false positive rate，也就是分错负类的概率，乘以先验负类的概率$1-\pi$ 这样，对分错样本的概率分别乘以其先验概率，就是其错分概率的期望。   Cost-sensitive classiﬁcation  如果对于某种错误我们的敏感程度不一样，那么就乘以不同的权重，重新定义为： $R(f) = \pi c_1 R_1(f) + (1-\pi) c_{-1}R_{-1}(f)$ 这里用$c_1$和$c_{-1}$分别表示对两种错分的代价   PU classification   定义在未标记数据集$X$ 中的分布：
+  $P_X = \pi P_1 + (1-\pi) P_{-1}$</description>
+    </item>
+    
+    <item>
+      <title>Learning Classiﬁers from Only Positive and Unlabeled Data</title>
+      <link>https://tech.zealscott.com/deeplearning/pulearning/pu-learning/</link>
+      <pubDate>Sun, 28 Jul 2019 21:00:30 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/pulearning/pu-learning/</guid>
+      <description>本文主要考虑在SCAR假设下，证明了普通的分类器和PU分类器只相差一个常数，因此可以使用普通分类器的方法来估计$p(s|x)$，进而得到$p(y|x)$。同时提供了三种方法来估计这个常数，最后，还对先验$p(y)$的估计提供了思路。
+Learning a traditional classifier   概念定义
+ $x$ 表示一个样本，$y$ 表示其label（0或者1），$s$表示是否被select 那么，在PU问题中，当$s =1 $时，一定有$y = 1$ $P(s = 1| x,y=0) = 0 $ 一定成立    两种采样假设
+ signle-training-set  所有的样本都是从$(x,y,s)$这个三元组的分布中采样的   case-control  两个数据集（正类，未标记）是从三元组中独立的抽样出来的。当采样正类时被称为case，采样未标记数据时称为contaminated controls   这两种假设有很明显的区别。总的来说，第一种假设比第二种假设要严格得多，也就能提供更多的信息：  两种假设都能让我们估计$p(x)$ 但只有在第一种假设下，能够让我们很容易的估计出$p(s = 1)$，因此也更容易估计出$p(y = 1)$，二第二种条件不可以。      基本假设
+ 我们需要训练的传统分类器是：$f(x) = p(y = 1|x)$ 然而，对正类数据没有任何假设的前提下，我们很难得到较好的分类器 因此，论文给出的假设是，正类样本数据是从正类数据中完全随机的抽取出来的。  也就是说，当$y = 1$时，无论$x$取说明值，它们的概率都是相同的：  $p(s = 1| x,y=1) = p(s =1|y=1)$   这个假设被称为selected completedly at random   我们定义一个nontraditional classifier：$g(x) = p(s =1|x)$ 因此，我们需要一些定理来证明如何将非传统的分类器转化为传统的分类器    Lemma：假设SCAR条件成立，那么$p(y = 1|x) = \frac{p(s=1|x)}{c}$，其中$c = p(s=1|y=1)$</description>
+    </item>
+    
+    <item>
+      <title>Seq2Seq 理解</title>
+      <link>https://tech.zealscott.com/deeplearning/models/seq2seq/</link>
+      <pubDate>Wed, 13 Mar 2019 20:44:01 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/models/seq2seq/</guid>
+      <description>基本思想 NLP中有很多sequence to sequence的问题，例如机器翻译，人机对话等等。对于句子而言，我们已经有RNN能够很好的处理序列之间的关系，但同时，RNN只能被用于输入和输出的维度都固定且已知的情况。但很多情况下，我们没办法确定输出序列的长度和维度。因此，为了处理这种general的序列问题，Seq2Seq框架被提出来了。
+流程 最基本的Seq2Seq框架主要的流程是：
+ 用一个LSTM来处理input的sequence，得到一个特定维度的向量表示，我们可以认为这个向量能很好的捕捉input中的相互关系。  每一个timestep，cell将当前词的embedding向量和上一个hidden state进行concat作为输入，输出当前timestep的hidden state作为下一个cell的输入，依次进行，直到sentence的EOS标志符，得到最终的vector representation作为decoder的最初hidden state输入。   用另一个LSTM，将这个vector representation映射成target sequence。每个timestep输出一个目标单词，直到输出EOS为止。  接受来自上一个timestep的hidden state输入（最开始为vector representation），与上一个timestep的output进行concat作为当前timestep的输入，依次进行，直到最终生成的单词为EOS。    缺点  Encoder将输入编码为固定大小状态向量的过程实际上是一个信息有损压缩的过程，如果信息量越大，那么这个转化向量的过程对信息的损失就越大。 随着sequence length的增加，意味着时间维度上的序列很长，RNN模型也会出现梯度弥散，无法让Decoder关注时间间隔非常长的关联，精度下降。  Attention  在普通的seq2seq模型中，我们输出的条件概率可以表示为：  $p(y_t| {y_1,..,y_{t-1}},c)=g(y_{t-1},s_t,c) $ 其中$s_t$表示$t$时刻的hidden state，$c$表示我们从Encoder学到的context vector，$g$表示非线性映射   而在attention based seq2seq中，条件概率可以表示为：  $p(y_i|y_1,&amp;hellip;,y_{i-1},x) = g(y_{i-1},s_i,c_i)$ hidden state表示为：$s_i = f(s_{i-1},y_{i-1},c_i)$ 也就是说，这里的每个单词$y_i$的条件概率都由不同的$c_i$决定，而不仅仅依赖于同一个$c$   在Decoder中，对每个timestep，Input是上一个timestep的输出与特定的 $c_i$ (context vector)进行Attention后的结果，而hidden state和普通的seq2seq一样，为上一个timestep输出的hidden state  实现Attention的方式有很多，例如直接点积，先concat后再进行线性变换等等。   那么，现在关键的问题是，每一个$c_i$到底是如何计算的？  论文中将Encoder的BiRNN产生的同一个timestep中两个hidden state进行concat组成一个annotations：$(h_1,&amp;hellip;,h_{T_x})$，可以认为，每一个$h_i$都包含了在一个sequence中主要focus于第$i$个单词周围的相互关系 因此，我们使用这种学习到的关系在不同的位置赋予不同的权重，来组成我们的context vector $c_i$：  $c_i = \sum\limits_{j=1}^{T_x} \alpha_{ij}h_j$   每一个$\alpha_{ij}$是通过annotations $h_i$ 与上一个hidden state 计算出来，然后进入softmax函数得到当前位置的权重：  $\alpha_{ij} = \frac{\exp(e_{ij})}{\sum_{k=1}^{T_x} \exp(e_{ik})}$   这里的每一个$e_{ij}$衡量了在input的$j$位置和output的$i$位置的匹配程度，也就是论文中提到的alignment model，是由RNN前一个timestep的hidden state $s_{i-1}$和input的$h_j$计算出来的：  $e_{ij} = a(s_{i-1},h_j)$ 这里的$a$是一个简单的前向网络      流程 Encoder：</description>
+    </item>
+    
+    <item>
+      <title>图卷积神经网络入门基础</title>
+      <link>https://tech.zealscott.com/deeplearning/models/gnn/</link>
+      <pubDate>Tue, 19 Feb 2019 15:34:10 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/models/gnn/</guid>
+      <description>卷积 定义 卷积是一种数学运算，称$(f*g)(n)$为$f,g$的卷积，
+其连续的定义为：
+$$(f*g)(n) = \int_{-\infty}^{+\infty} f(\tau)g(n-\tau)d\tau$$
+离散的定义为：
+$$(f*g)(n) = \sum\limits_{\tau = -\infty}^\infty f(\tau)g(n-\tau)$$
+若令$x = \tau,y = n-\tau$，则$x+y = n$表示的是平行的直线。
+对于图像来说，图像上的滑动窗口很好的解释了卷积的定义：
+可以发现，我们对$f,g$进行卷积操作，保证$x,y$坐标的和都为1：
+写成卷积公式为：
+$$(f*g)(1,1) = \sum\limits_{k=0}^{2}\sum\limits_{h=0}^{2}f(h,k)g(1-h,1-k)$$
+这样就实现了使用$g$这个算子在图像上的滑动。但注意，在数学中的卷积运算中，卷积核与原始的矩阵乘积，是围绕着中心元素进行180度旋转后，才是对应的元素。
+而在实际的图像空间滤波中，我们是将设计的特定卷积核，然后将其与像素矩阵的对应元素（不进行上述的旋转）相乘得到。例如，在CV中常见的平滑滤波，高斯滤波。这些滤波被设计出来，以提取不同的特征。
+..对于神经网络来讲，最大的不同是，这些滤波不需要我们自己去定义（也就是提取特征的过程），而是通过网络自身训练每一个卷积层的滤波器..。让这些滤波器组对特定的模式有高的激活，以达到CNN网络的分类/检测等目的。因此，在CNN中，由于这些卷积核都是未知参数，需要根据数据训练学习，那么翻不翻转已经没有关系了。
+理解 对于离散卷积来说，本质上就是一种加权求和。CNN中的卷积本质上就是利用一个共享参数的过滤器（kernel），通过计算中心像素点以及相邻像素点的加权和来构成feature map实现空间特征的提取，当然加权系数就是卷积核的权重系数。
+那么卷积核的系数如何确定的呢？是随机化初值，然后根据误差函数通过反向传播梯度下降进行迭代优化。这是一个关键点，卷积核的参数通过优化求出才能实现特征提取的作用，GCN的理论很大一部分工作就是为了引入可以优化的卷积参数。
+Laplacian matrix 我们上离散数学都学过，图拉普拉斯矩阵的定义为：
+$$L = D -W$$
+其中，$D$ 是顶点的度矩阵（对角矩阵），$W$是图的邻接矩阵（带边权重）。其normalized形式为：
+$$L^{nor} = D^{-\frac{1}{2}}LD^{-\frac{1}{2}}$$
+但为什么是这样定义呢？我们先从拉普拉斯算子说起。
+Laplacian 其数学定义为：
+$$\Delta = \sum\limits_i \frac{\delta^2}{\delta x_i^2}$$
+即为非混合二阶偏导数的和。
+图像中的拉普拉斯算子 图像是一种离散数据，那么其拉普拉斯算子必然要进行离散化。
+从导数定义：
+$$f&#39;(x) = \frac{\delta f(x)}{\delta x} \approx f(x+1) - f(x)$$
+因此可以得到二阶导为：
+$$f&#39;&#39;(x) = \frac{\delta^2 f(x)}{\delta x^2} \approx f&#39;(x) - f&#39;(x-1) \approx f(x+1) + f(x-1) - 2f(x)$$</description>
+    </item>
+    
+    <item>
+      <title>如何选择神经网络中的超参数</title>
+      <link>https://tech.zealscott.com/deeplearning/misc/parameters/</link>
+      <pubDate>Mon, 04 Jun 2018 21:19:37 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/misc/parameters/</guid>
+      <description>启发式策略 对于新拿到的一个训练集，我们首先的目的是：训练出来的结果至少要比随机要好。
+初看这个目的很简单，但实际上很困难，尤其是遇到一种新类型的问题时。
+简化数据集 例如，如果我们处理MNIST分类集，我们可以只处理0，1两个数字的集合，这样，不仅简化了分类目的，也能让神经网络的训练速度得到5倍的提升。
+当使用更简单的分类集时，我们能更好的洞察神经网络的结构调整。
+简化网络 我们应该从简单的网络开始进行训练，例如，只含一层的隐藏层，这样的训练速率更快，而且，若简单的网络都不能得到较好的结果，那么训练复杂的网络将会更加困难。
+提高监控频率 我们可以在神经网络框架中每隔几百次epoch就打印当前的准确率，这样会让我们更好的洞察网络的拟合情况，提早发现过拟合或学习速率过慢等问题。
+在每一步，我们使用验证集来衡量网络的性能，这些度量将会帮助我们找到更好的超参数。一旦准确率上升或者loss开始下降，就可以通过微调超参数获得快速的性能提升。
+基本超参数 学习速率（learning rate） 对于学习速率，我们可以使用不同量级的参数（0.1，1，10等）先初步进行训练，根据loss的大小确定参数量级。
+一般来说，我们使用验证集准确率来调整超参数，但在learning rate中倾向于使用loss，这是因为学习速率的主要目的是控制梯度下降的步长，监控训练loss是最好的检验步长过大的方法。
+学习速率调整 一直以来，我们都将学习速率设置成常数。但通常来讲，可变的学习速率更加有效。
+ 在学习的前期，学习速率比较大，可以让训练变快 在准确率开始变差或者不变时，按照某个量依次减少学习速率（除以10）。  规范化参数 在开始时不包含规范化参数，直到确定了学习速率后，在根据验证数据来选择好的 规范化参数。一般规范化参数从1开始调整。
+迭代期（epoch） Early stopping表示在每个回合的最后，我们都要计算验证集上的分类准确率。当准确率不再提升，就终止训练。
+但一般来说，在训练过程中总会存在波动，每次准确率下降一点点就直接终止不是一个好的策略。一般来说，当分类准确率在一段时间内不再提升的时候终止比较好。
+这样，使用Early stopping就可以简单的选择迭代期。
+Mini Batch 如果值太小，不会用到并行计算的资源，速度也不会有所提升，倒会使得学习缓慢；
+如果值太大，则不能够频繁的更新权重。
+经验表明，Mini Batch其实时一个相对独立的参数，可以将其他参数选取合适的值之后，再来根据训练集准确率调整。
+随机梯度下降的改进 Hessian技术 实际上就是二阶导的矩阵，理论上来说Hessian方法比标准的SGD收敛速度更快。
+Momentum 我们可以认为这种方法引入了类似于摩擦力的量，使得梯度下降变化规则从原始的
+$w→w′=w−η∇C$变为：
+$$v \to v&#39; = \mu v +\eta \triangledown C$$
+$$w′=w+v′$$
+其中，$\eta$是用来控制阻碍或者摩擦力的量的超参数。
+以上的公式可以理解为，力$\triangledown C$改变了速度$v$，速度再控制$w$的变化率。
+$\eta$被称为moment coefficient，在物理中为动量。</description>
+    </item>
+    
+    <item>
+      <title>防止神经网络过拟合的基本方法</title>
+      <link>https://tech.zealscott.com/deeplearning/misc/overfit/</link>
+      <pubDate>Tue, 15 May 2018 19:58:58 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/misc/overfit/</guid>
+      <description>过拟合是训练神经网络中常见的问题，本文讨论了产生过拟合的原因，如何发现过拟合，以及简单的解决方法</description>
+    </item>
+    
+    <item>
+      <title>交叉熵与 softmax </title>
+      <link>https://tech.zealscott.com/deeplearning/misc/softmax/</link>
+      <pubDate>Sun, 13 May 2018 22:58:46 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/misc/softmax/</guid>
+      <description>二次代价函数 之前我们一直使用二次代价函数，貌似在一定程度上也挺work。但其实，当输入值与目标值差距很大时，二次代价函数就不是很恰当了；**这是因为当差距很大时，此函数的学习速率会很慢。**我们可以通过一个简单的例子观察这种变化：
+假设我们只使用一个神经元与一个输出神经元，定义代价函数为：
+$$C = \frac{(y-a)^2}{2}$$
+使用链式法则计算权重和偏置的导数：
+$$\frac{\partial C}{\partial w}= (a-y)\sigma&#39;(z)x$$
+$$\frac{\partial C}{\partial b} = (a-y)\sigma&#39;(z)$$
+假设我们训练输入为$x = 1$，目标输出为$y = 0$，可以看见此时输入输出差距很大，则带入：
+$$\frac{\partial C}{\partial w}= a\sigma&#39;(z)$$
+$$\frac{\partial C}{\partial b} = a\sigma&#39;(z)$$
+回忆一下$\sigma$函数：
+可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\sigma&#39;(z)$就很小了。这就是学习缓慢的原因。
+交叉熵代价函数 因此，我们引入交叉熵代价函数，我们希望这个函数能弥补我们之前遇到的问题（在差距较大时学习缓慢）：
+$$C = -\frac{1}{n}\sum\limits _x [y\ln a+(1-y)\ln (1-a)]$$
+这个函数的表达式看起来十分晦涩难懂，首先我们来看它为什么能成为一个代价函数。
+why cost function   $C &amp;gt; 0$
+代价函数需要满足非负性。
+在求和中，由于$y、a\in [0,1]$，因此都是负数，在前面加上一个负号就变为正数。
+  在神经元输出接近目标值时，代价函数接近于0
+我们假设$y = 0 , a \approx 0 $，则带入可发现$C\approx 0$
+同样，在$y = 1,a \approx 1$，也发现$C \approx 0$</description>
+    </item>
+    
+    <item>
+      <title>前馈神经网络原理与实现</title>
+      <link>https://tech.zealscott.com/deeplearning/misc/fnn/</link>
+      <pubDate>Sun, 01 Apr 2018 19:29:00 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/deeplearning/misc/fnn/</guid>
+      <description>本文适用于已经对感知机、神经网络有初步了解，但上手比较困难，愿意推导公式，更深入了解神经网络的朋友</description>
+    </item>
+    
+  </channel>
+</rss>

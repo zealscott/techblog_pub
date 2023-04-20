@@ -1,0 +1,1755 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>常用图算法实现--Hadoop · Distribution System</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="graph-in-spark.html" />
+    
+    
+    <link rel="prev" href="flink2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Notes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../notes/Distribution-File-System-DFS.html">
+            
+                <a href="../notes/Distribution-File-System-DFS.html">
+            
+                    
+                    Distribution File System DFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../notes/mapreduce.html">
+            
+                <a href="../notes/mapreduce.html">
+            
+                    
+                    MapReduce处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../notes/mrcoding.html">
+            
+                <a href="../notes/mrcoding.html">
+            
+                    
+                    MapReduce编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../notes/RPC-and-serialization.html">
+            
+                <a href="../notes/RPC-and-serialization.html">
+            
+                    
+                    RPC And Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../notes/spark.html">
+            
+                <a href="../notes/spark.html">
+            
+                    
+                    Spark 处理框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../notes/sparkcoding.html">
+            
+                <a href="../notes/sparkcoding.html">
+            
+                    
+                    Spark 编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../notes/yarn.html">
+            
+                <a href="../notes/yarn.html">
+            
+                    
+                    Yarn 资源管理框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../notes/zookeeper.html">
+            
+                <a href="../notes/zookeeper.html">
+            
+                    
+                    ZooKeeper 元数据管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../notes/pregel.html">
+            
+                <a href="../notes/pregel.html">
+            
+                    
+                    分布式图处理系统--Pregel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../notes/flink.html">
+            
+                <a href="../notes/flink.html">
+            
+                    
+                    批流融合系统--Flink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../notes/beam.html">
+            
+                <a href="../notes/beam.html">
+            
+                    
+                    批流融合系统--展望
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../notes/ps.html">
+            
+                <a href="../notes/ps.html">
+            
+                    
+                    机器学习系统--Parameter Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../notes/graphlab.html">
+            
+                <a href="../notes/graphlab.html">
+            
+                    
+                    机器学习系统--GraphLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../notes/mahout.html">
+            
+                <a href="../notes/mahout.html">
+            
+                    
+                    机器学习系统--mahout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../notes/stream.html">
+            
+                <a href="../notes/stream.html">
+            
+                    
+                    流计算系统概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Lab
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="rpc.html">
+            
+                <a href="rpc.html">
+            
+                    
+                    RPC model in Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="hadoop.html">
+            
+                <a href="hadoop.html">
+            
+                    
+                    hadoop安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="hadoop1.html">
+            
+                <a href="hadoop1.html">
+            
+                    
+                    hadoop编程实践（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="hadoop2.html">
+            
+                <a href="hadoop2.html">
+            
+                    
+                    hadoop编程实践（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="hadoop-coding.html">
+            
+                <a href="hadoop-coding.html">
+            
+                    
+                    hadoop编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="hadoop-recap.html">
+            
+                <a href="hadoop-recap.html">
+            
+                    
+                    Hadoop 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="spark-installation.html">
+            
+                <a href="spark-installation.html">
+            
+                    
+                    spark安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="spark1.html">
+            
+                <a href="spark1.html">
+            
+                    
+                    spark编程实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="spark2.html">
+            
+                <a href="spark2.html">
+            
+                    
+                    spark编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="spark-recap.html">
+            
+                <a href="spark-recap.html">
+            
+                    
+                    Spark 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="docker1.html">
+            
+                <a href="docker1.html">
+            
+                    
+                    使用 Docker 配置 hadoop/spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="docker2.html">
+            
+                <a href="docker2.html">
+            
+                    
+                    使用 docker 搭建 spark(2.3.1) 集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="zookeeper.html">
+            
+                <a href="zookeeper.html">
+            
+                    
+                    ZooKeeper配置及简单使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="yarn.html">
+            
+                <a href="yarn.html">
+            
+                    
+                    Yarn框架下的系统部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="storm-installation.html">
+            
+                <a href="storm-installation.html">
+            
+                    
+                    Storm部署与运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="storm-coding.html">
+            
+                <a href="storm-coding.html">
+            
+                    
+                    Storm编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="storm-summary.html">
+            
+                <a href="storm-summary.html">
+            
+                    
+                    Storm 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="sparksteaming.html">
+            
+                <a href="sparksteaming.html">
+            
+                    
+                    SparkSteaming使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="flink-installation.html">
+            
+                <a href="flink-installation.html">
+            
+                    
+                    Flink安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="flink1.html">
+            
+                <a href="flink1.html">
+            
+                    
+                    Flink编程练习（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="flink2.html">
+            
+                <a href="flink2.html">
+            
+                    
+                    Flink编程练习（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.22" data-path="graph-in-hadoop.html">
+            
+                <a href="graph-in-hadoop.html">
+            
+                    
+                    常用图算法实现--Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="graph-in-spark.html">
+            
+                <a href="graph-in-spark.html">
+            
+                    
+                    常用图算法实现--Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="graph-in-flink.html">
+            
+                <a href="graph-in-flink.html">
+            
+                    
+                    常用图算法实现--Flink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="giraph.html">
+            
+                <a href="giraph.html">
+            
+                    
+                    Giraph配置及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="flink-iteration.html">
+            
+                <a href="flink-iteration.html">
+            
+                    
+                    Flink迭代小记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Recap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../recap/fundamental-of-distributed-system.html">
+            
+                <a href="../recap/fundamental-of-distributed-system.html">
+            
+                    
+                    分布式系统基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../recap/batch-system.html">
+            
+                <a href="../recap/batch-system.html">
+            
+                    
+                    批处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../recap/management-system.html">
+            
+                <a href="../recap/management-system.html">
+            
+                    
+                    支持数据管理的底层系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../recap/streaming-system.html">
+            
+                <a href="../recap/streaming-system.html">
+            
+                    
+                    流处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../recap/flink.html">
+            
+                <a href="../recap/flink.html">
+            
+                    
+                    批流融合系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../recap/graph.html">
+            
+                <a href="../recap/graph.html">
+            
+                    
+                    图处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../recap/ml.html">
+            
+                <a href="../recap/ml.html">
+            
+                    
+                    机器学习系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../recap/summary.html">
+            
+                <a href="../recap/summary.html">
+            
+                    
+                    总结与对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >常用图算法实现--Hadoop</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="pagerank">PageRank</h1>
+<h2 id="&#x6570;&#x636E;&#x51C6;&#x5907;">&#x6570;&#x636E;&#x51C6;&#x5907;</h2>
+<p>&#x8FB9;&#xFF1A;</p>
+<pre><code>1 2
+1 15
+2 3
+2 4
+2 5
+2 6
+2 7
+3 13
+4 2
+5 11
+5 12
+6 1
+6 7
+6 8
+7 1
+7 8
+8 1
+8 9
+8 10
+9 14
+9 1
+10 1
+10 13
+11 12
+11 1
+12 1
+13 14
+14 12
+15 1
+</code></pre><p>&#x7F51;&#x9875;&#xFF1A;</p>
+<pre><code>1 2
+2 5
+3 1 
+4 1
+5 2
+6 3
+7 2
+8 3
+9 2
+10 2
+11 2
+12 1
+13 1
+14 1
+15 1
+</code></pre><p>&#x5C06;&#x8FD9;&#x4E24;&#x4E2A;&#x6587;&#x4EF6;&#x653E;&#x5165;HDFS&#xFF1A;</p>
+<pre><code class="lang-shell">hdfs dfs -mkdir input/PageRank
+hdfs dfs -put links.txt input/PageRank
+hdfs dfs -put pagesHadoop.txt input/PageRank
+</code></pre>
+<h2 id="&#x7F16;&#x5199;&#x7A0B;&#x5E8F;">&#x7F16;&#x5199;&#x7A0B;&#x5E8F;</h2>
+<h3 id="pagerank">PageRank</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.apache.hadoop.conf.Configuration;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.FSDataOutputStream;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.FileSystem;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.Path;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.DoubleWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.IntWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.lib.input.KeyValueTextInputFormat;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.Job;
+<span class="hljs-keyword">import</span> org.apache.hadoop.util.GenericOptionsParser;
+
+<span class="hljs-keyword">import</span> java.io.BufferedReader;
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.io.InputStreamReader;
+<span class="hljs-keyword">import</span> java.net.URISyntaxException;
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> java.lang.StrictMath.abs;
+
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PageRank</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String CACHED_PATH = <span class="hljs-string">&quot;output/cache&quot;</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String ACTUAL_PATH = <span class="hljs-string">&quot;output/Graph/HadoopPageRank&quot;</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> maxIterations = <span class="hljs-number">500</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">double</span> threshold = <span class="hljs-number">0.0001</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">double</span> dumping = <span class="hljs-number">0.85</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> pageNum = <span class="hljs-number">0</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException,
+            InterruptedException, ClassNotFoundException, URISyntaxException </span>{
+
+        Configuration conf = <span class="hljs-keyword">new</span> Configuration();
+        String[] otherArgs = (<span class="hljs-keyword">new</span> GenericOptionsParser(conf, args)).getRemainingArgs();
+        <span class="hljs-keyword">if</span> (otherArgs.length != <span class="hljs-number">3</span>) {
+            System.err.println(<span class="hljs-string">&quot;Usage: PageRank &lt;PagePath&gt; &lt;LinksPath&gt; &lt;PageNum&gt;&quot;</span>);
+            System.exit(<span class="hljs-number">2</span>);
+        }
+
+        <span class="hljs-keyword">int</span> code = <span class="hljs-number">0</span>;
+
+        Path PagePath = <span class="hljs-keyword">new</span> Path(otherArgs[<span class="hljs-number">0</span>]);
+        Path LinksPath = <span class="hljs-keyword">new</span> Path(otherArgs[<span class="hljs-number">1</span>]);
+        pageNum = Integer.parseInt(otherArgs[<span class="hljs-number">2</span>]);
+
+        conf.set(<span class="hljs-string">&quot;pageNum&quot;</span>, pageNum + <span class="hljs-string">&quot;&quot;</span>);
+        conf.set(<span class="hljs-string">&quot;dumping&quot;</span>, dumping + <span class="hljs-string">&quot;&quot;</span>);
+
+
+        Path cachePath = <span class="hljs-keyword">new</span> Path(CACHED_PATH);
+        Path actualPath = <span class="hljs-keyword">new</span> Path(ACTUAL_PATH);
+
+        <span class="hljs-comment">// Delete output if exists</span>
+        FileSystem hdfs = FileSystem.get(conf);
+        <span class="hljs-keyword">if</span> (hdfs.exists(actualPath))
+            hdfs.delete(actualPath, <span class="hljs-keyword">true</span>); <span class="hljs-comment">// recursive delete</span>
+
+        <span class="hljs-comment">// prepare original rank</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= pageNum; i++)
+            writeFileByline(ACTUAL_PATH + <span class="hljs-string">&quot;/part-r-00000&quot;</span>, i + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-number">1.0</span> / pageNum);
+
+
+        <span class="hljs-keyword">int</span> counter = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">boolean</span> changed = <span class="hljs-keyword">true</span>;
+
+        <span class="hljs-keyword">while</span> (counter &lt; maxIterations &amp;&amp; changed) {
+
+            <span class="hljs-comment">// Delete output if exists</span>
+            <span class="hljs-keyword">if</span> (hdfs.exists(cachePath))
+                hdfs.delete(cachePath, <span class="hljs-keyword">true</span>);
+            <span class="hljs-comment">//moving the previous iteration file to the cache directory</span>
+            hdfs.rename(actualPath, cachePath);
+
+            conf.set(<span class="hljs-string">&quot;mapreduce.output.textoutputformat.separator&quot;</span>, <span class="hljs-string">&quot; &quot;</span>);
+            conf.set(<span class="hljs-string">&quot;mapreduce.input.keyvaluelinerecordreader.key.value.separator&quot;</span>, <span class="hljs-string">&quot; &quot;</span>);
+
+
+            Job PageRank = Job.getInstance(conf, <span class="hljs-string">&quot;PageRank &quot;</span> + (counter + <span class="hljs-string">&quot;&quot;</span>));
+
+            <span class="hljs-comment">// add cache</span>
+            PageRank.addCacheFile(PagePath.toUri());
+
+            PageRank.setJarByClass(PageRankMapper.class);
+            FileInputFormat.addInputPath(PageRank, LinksPath);
+            <span class="hljs-comment">// set out put path : output/means</span>
+            FileOutputFormat.setOutputPath(PageRank, actualPath);
+
+            PageRank.setMapperClass(PageRankMapper.class);
+            PageRank.setInputFormatClass(KeyValueTextInputFormat.class);
+            PageRank.setMapOutputKeyClass(IntWritable.class);
+            PageRank.setMapOutputValueClass(DoubleWritable.class);
+
+            PageRank.setReducerClass(PageRankReducer.class);
+            PageRank.setOutputKeyClass(IntWritable.class);
+            PageRank.setOutputValueClass(DoubleWritable.class);
+
+            <span class="hljs-comment">// Execute job</span>
+            code = PageRank.waitForCompletion(<span class="hljs-keyword">true</span>) ? <span class="hljs-number">0</span> : <span class="hljs-number">1</span>;
+
+            <span class="hljs-comment">//checking if the mean is stable</span>
+            BufferedReader file1Reader = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(hdfs.open(<span class="hljs-keyword">new</span> Path(CACHED_PATH + <span class="hljs-string">&quot;/part-r-00000&quot;</span>))));
+            BufferedReader file2Reader = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(hdfs.open(<span class="hljs-keyword">new</span> Path(ACTUAL_PATH + <span class="hljs-string">&quot;/part-r-00000&quot;</span>))));
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; pageNum; i++) {
+                <span class="hljs-keyword">double</span> rank1 = Double.parseDouble(file1Reader.readLine().split(<span class="hljs-string">&quot; &quot;</span>)[<span class="hljs-number">1</span>]);
+                <span class="hljs-keyword">double</span> rank2 = Double.parseDouble(file2Reader.readLine().split(<span class="hljs-string">&quot; &quot;</span>)[<span class="hljs-number">1</span>]);
+
+                <span class="hljs-keyword">if</span> (abs(rank1 - rank2) &lt;= threshold) {
+                    changed = <span class="hljs-keyword">false</span>;
+                } <span class="hljs-keyword">else</span> {
+                    changed = <span class="hljs-keyword">true</span>;
+                    <span class="hljs-keyword">break</span>;
+                }
+            }
+            file1Reader.close();
+            file2Reader.close();
+            counter++;
+            System.out.println(<span class="hljs-string">&quot;PageRank finished iteration:&gt;&gt; &quot;</span> + counter + <span class="hljs-string">&quot; || rank change: &quot;</span> + changed);
+
+        }
+
+        System.exit(code);
+
+    }
+
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">writeFileByline</span><span class="hljs-params">(String dst, String contents)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        Configuration conf = <span class="hljs-keyword">new</span> Configuration();
+        Path dstPath = <span class="hljs-keyword">new</span> Path(dst);
+        FileSystem fs = dstPath.getFileSystem(conf);
+        FSDataOutputStream outputStream = <span class="hljs-keyword">null</span>;
+
+        <span class="hljs-keyword">if</span> (!fs.exists(dstPath)) {
+            outputStream = fs.create(dstPath);
+        } <span class="hljs-keyword">else</span> {
+            outputStream = fs.append(dstPath);
+        }
+        contents = contents + <span class="hljs-string">&quot;\n&quot;</span>;
+        outputStream.write(contents.getBytes(<span class="hljs-string">&quot;utf-8&quot;</span>));
+        outputStream.close();
+    }
+
+}
+</code></pre>
+<h3 id="pagerankmapper">PageRankMapper</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.apache.commons.lang.StringUtils;
+<span class="hljs-keyword">import</span> org.apache.hadoop.conf.Configuration;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.FSDataInputStream;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.FileSystem;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.Path;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.DoubleWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.IntWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.Text;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.Mapper;
+
+<span class="hljs-keyword">import</span> java.io.BufferedReader;
+<span class="hljs-keyword">import</span> java.io.FileReader;
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.io.InputStreamReader;
+<span class="hljs-keyword">import</span> java.util.*;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PageRankMapper</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Mapper</span>&lt;<span class="hljs-title">Text</span>, <span class="hljs-title">Text</span>, <span class="hljs-title">IntWritable</span>, <span class="hljs-title">DoubleWritable</span>&gt; </span>{
+
+    Map&lt;Integer, Double&gt; rank = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+    Map&lt;Integer, Integer&gt; pages = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+
+    <span class="hljs-comment">/**
+     * reading the rank from the distributed cache
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">(Context context)</span> <span class="hljs-keyword">throws</span> IOException, InterruptedException </span>{
+        String lineString = <span class="hljs-keyword">null</span>;
+        <span class="hljs-comment">// read rank file</span>
+        Configuration conf = <span class="hljs-keyword">new</span> Configuration();
+        FileSystem fs = FileSystem.get(conf);
+        FSDataInputStream hdfsInStream = fs.open(<span class="hljs-keyword">new</span> Path(<span class="hljs-string">&quot;output/cache/part-r-00000&quot;</span>));
+        InputStreamReader isr = <span class="hljs-keyword">new</span> InputStreamReader(hdfsInStream, <span class="hljs-string">&quot;utf-8&quot;</span>);
+        BufferedReader br = <span class="hljs-keyword">new</span> BufferedReader(isr);
+
+        <span class="hljs-keyword">while</span> ((lineString = br.readLine()) != <span class="hljs-keyword">null</span>) {
+            String[] keyValue = StringUtils.split(lineString, <span class="hljs-string">&quot; &quot;</span>);
+            rank.put(Integer.parseInt(keyValue[<span class="hljs-number">0</span>]), Double.parseDouble(keyValue[<span class="hljs-number">1</span>]));
+
+        }
+        br.close();
+
+        <span class="hljs-comment">// read pages file</span>
+        String PagesFiles = context.getLocalCacheFiles()[<span class="hljs-number">0</span>].getName();
+        br = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> FileReader(PagesFiles));
+        <span class="hljs-keyword">while</span> ((lineString = br.readLine()) != <span class="hljs-keyword">null</span>) {
+            String[] keyValue = StringUtils.split(lineString, <span class="hljs-string">&quot; &quot;</span>);
+            pages.put(Integer.parseInt(keyValue[<span class="hljs-number">0</span>]), Integer.parseInt(keyValue[<span class="hljs-number">1</span>]));
+        }
+        br.close();
+
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">map</span><span class="hljs-params">(Text from, Text to, Context context)</span> <span class="hljs-keyword">throws</span> IOException, InterruptedException </span>{
+        <span class="hljs-keyword">int</span> fromPoint = Integer.parseInt(from.toString());
+        <span class="hljs-keyword">int</span> toPoint = Integer.parseInt(to.toString());
+        <span class="hljs-keyword">double</span> newRank = rank.get(fromPoint) * (<span class="hljs-number">1.0</span> / pages.get(fromPoint));
+
+        context.write(<span class="hljs-keyword">new</span> IntWritable(toPoint), <span class="hljs-keyword">new</span> DoubleWritable(newRank));
+    }
+
+}
+</code></pre>
+<h3 id="pagerankreducer">PageRankReducer</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.apache.hadoop.conf.Configuration;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.DoubleWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.IntWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.Reducer;
+
+<span class="hljs-keyword">import</span> java.io.IOException;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">PageRankReducer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Reducer</span>&lt;<span class="hljs-title">IntWritable</span>, <span class="hljs-title">DoubleWritable</span>, <span class="hljs-title">IntWritable</span>, <span class="hljs-title">DoubleWritable</span>&gt; </span>{
+
+
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reduce</span><span class="hljs-params">(IntWritable key, Iterable&lt;DoubleWritable&gt; values, Context context)</span> <span class="hljs-keyword">throws</span> IOException,
+            InterruptedException </span>{
+
+        Configuration conf = context.getConfiguration();
+        <span class="hljs-keyword">int</span> pageNum = Integer.parseInt(conf.get(<span class="hljs-string">&quot;pageNum&quot;</span>));
+        <span class="hljs-keyword">double</span> dumping = Double.parseDouble(conf.get(<span class="hljs-string">&quot;dumping&quot;</span>));
+
+        <span class="hljs-keyword">double</span> rank = <span class="hljs-number">0.0</span>;
+        <span class="hljs-keyword">for</span> (DoubleWritable value : values)
+            rank += value.get();
+
+        rank = (<span class="hljs-number">1</span> - dumping) * (<span class="hljs-number">1.0</span>/pageNum) + dumping * rank;
+
+        context.write(key, <span class="hljs-keyword">new</span> DoubleWritable(rank));
+
+    }
+}
+</code></pre>
+<p>&#x601D;&#x8DEF;&#xFF1A;</p>
+<ol>
+<li>&#x9996;&#x5148;&#x6307;&#x5B9A;<code>KeyValueTextInputFormat</code>&#xFF0C;&#x5E76;&#x6307;&#x5B9A;page&#x4E2A;&#x6570;&#xFF08;&#x5728;Hadoop&#x4E2D;&#x4E0D;&#x592A;&#x597D;&#x76F4;&#x63A5;&#x6C42;&#xFF09;</li>
+<li>&#x5C06;&#x6BCF;&#x4E2A;&#x9876;&#x70B9;&#x7684;&#x51FA;&#x5EA6;&#x6587;&#x4EF6;<code>pagesHadoop</code>&#x4F5C;&#x4E3A;distributionCache&#xFF0C;&#x5E76;&#x9996;&#x5148;&#x5C06;&#x521D;&#x59CB;rank&#x503C;&#x5199;&#x5165;cache&#x6587;&#x4EF6;&#x4E2D;</li>
+<li>&#x6BCF;&#x6B21;&#x8BFB;cache&#x6587;&#x4EF6;&#x4E2D;&#x7684;rank&#x503C;&#xFF0C;&#x518D;&#x8FDB;&#x884C;&#x8BA1;&#x7B97;&#xFF0C;&#x5199;&#x5165;&#x76EE;&#x6807;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x524D;&#x540E;&#x7684;rank&#x503C;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x82E5;&#x4E0D;&#x6EE1;&#x8DB3;&#x9608;&#x503C;&#xFF0C;&#x5C06;&#x66F4;&#x65B0;&#x540E;&#x7684;rank&#x503C;&#x5199;&#x5165;cache&#x4E2D;&#x7EE7;&#x7EED;&#x8FDB;&#x884C;&#x8FED;&#x4EE3;</li>
+</ol>
+<h2 id="&#x8FD0;&#x884C;">&#x8FD0;&#x884C;</h2>
+<pre><code>hadoop jar PageRank.jar input/PageRank/pagesHadoop.txt input/PageRank/links.txt 15
+</code></pre><p>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;Hadoop&#x6267;&#x884C;&#x5FAA;&#x73AF;&#x64CD;&#x4F5C;&#xFF0C;&#x6BD4;spark&#x3001;flink&#x6162;&#x5F88;&#x591A;</p>
+<p>&#x67E5;&#x770B;&#x7ED3;&#x679C;&#xFF1A;</p>
+<p><img src="../images/graph1.png" alt="graph1"></p>
+<pre><code>hdfs dfs -cat output/Graph/HadoopPageRank/*
+</code></pre><p><img src="../images/graph2.png" alt="graph2"></p>
+<h1 id="connectedcomponents">ConnectedComponents</h1>
+<h2 id="&#x6570;&#x636E;&#x51C6;&#x5907;">&#x6570;&#x636E;&#x51C6;&#x5907;</h2>
+<p>&#x63D0;&#x4F9B;&#x57FA;&#x672C;&#x6570;&#x636E;&#x96C6;&#xFF0C;&#x4E0E;PageRank&#x4E00;&#x6837;&#xFF0C;&#x6307;&#x5B9A;&#x9876;&#x70B9;&#x548C;&#x8FB9;</p>
+<h3 id="verticestxt">vertices.txt</h3>
+<p>&#x51C6;&#x5907;&#x4E00;&#x4E9B;&#x9876;&#x70B9;&#xFF0C;&#x4F8B;&#x5982;1-16</p>
+<h3 id="edgestxt">edges.txt</h3>
+<p>&#x51C6;&#x5907;&#x4E00;&#x4E9B;&#x8FDE;&#x63A5;&#x8FB9;&#xFF1A;</p>
+<pre><code>1 2
+2 3
+2 4
+3 5
+6 7
+8 9
+8 10
+5 11
+11 12
+10 13
+9 14
+13 14
+1 15
+16 1
+</code></pre><p>&#x653E;&#x5165;HDFS&#xFF1A;</p>
+<pre><code>hdfs dfs -mkdir input/ConnectedComponents
+hdfs dfs -put edges.txt input/ConnectedComponents
+</code></pre><h2 id="&#x7F16;&#x5199;&#x7A0B;&#x5E8F;">&#x7F16;&#x5199;&#x7A0B;&#x5E8F;</h2>
+<h3 id="connectedcomponents">ConnectedComponents</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.apache.hadoop.conf.Configuration;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.FSDataOutputStream;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.FileSystem;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.Path;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.IntWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.lib.input.KeyValueTextInputFormat;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.Job;
+<span class="hljs-keyword">import</span> org.apache.hadoop.util.GenericOptionsParser;
+
+<span class="hljs-keyword">import</span> java.io.BufferedReader;
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.io.InputStreamReader;
+<span class="hljs-keyword">import</span> java.net.URISyntaxException;
+
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConnectedComponents</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String CACHED_PATH = <span class="hljs-string">&quot;output/cache&quot;</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String ACTUAL_PATH = <span class="hljs-string">&quot;output/Graph/HadoopConnectedComponents&quot;</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> maxIterations = <span class="hljs-number">100</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> verticesNum = <span class="hljs-number">0</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException,
+            InterruptedException, ClassNotFoundException, URISyntaxException </span>{
+
+        Configuration conf = <span class="hljs-keyword">new</span> Configuration();
+        String[] otherArgs = (<span class="hljs-keyword">new</span> GenericOptionsParser(conf, args)).getRemainingArgs();
+        <span class="hljs-keyword">if</span> (otherArgs.length != <span class="hljs-number">2</span>) {
+            System.err.println(<span class="hljs-string">&quot;Usage: PageRank &lt;EdgesPath&gt; &lt;verticesNum&gt;&quot;</span>);
+            System.exit(<span class="hljs-number">2</span>);
+        }
+
+        <span class="hljs-keyword">int</span> code = <span class="hljs-number">0</span>;
+
+        Path EdgesPath = <span class="hljs-keyword">new</span> Path(otherArgs[<span class="hljs-number">0</span>]);
+        verticesNum = Integer.parseInt(otherArgs[<span class="hljs-number">1</span>]);
+
+        conf.set(<span class="hljs-string">&quot;verticesNum&quot;</span>, verticesNum + <span class="hljs-string">&quot;&quot;</span>);
+
+        Path cachePath = <span class="hljs-keyword">new</span> Path(CACHED_PATH);
+        Path actualPath = <span class="hljs-keyword">new</span> Path(ACTUAL_PATH);
+
+        <span class="hljs-comment">// Delete output if exists</span>
+        FileSystem hdfs = FileSystem.get(conf);
+        <span class="hljs-keyword">if</span> (hdfs.exists(actualPath))
+            hdfs.delete(actualPath, <span class="hljs-keyword">true</span>); <span class="hljs-comment">// recursive delete</span>
+
+        <span class="hljs-comment">// prepare original ConnectedComponents</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= verticesNum; i++)
+            writeFileByline(ACTUAL_PATH + <span class="hljs-string">&quot;/part-r-00000&quot;</span>, i + <span class="hljs-string">&quot; &quot;</span> + i);
+
+
+        <span class="hljs-keyword">int</span> counter = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">boolean</span> changed = <span class="hljs-keyword">true</span>;
+
+        <span class="hljs-keyword">while</span> (counter &lt; maxIterations &amp;&amp; changed) {
+
+            <span class="hljs-comment">// Delete output if exists</span>
+            <span class="hljs-keyword">if</span> (hdfs.exists(cachePath))
+                hdfs.delete(cachePath, <span class="hljs-keyword">true</span>);
+            <span class="hljs-comment">//moving the previous iteration file to the cache directory</span>
+            hdfs.rename(actualPath, cachePath);
+
+            conf.set(<span class="hljs-string">&quot;mapreduce.output.textoutputformat.separator&quot;</span>, <span class="hljs-string">&quot; &quot;</span>);
+            conf.set(<span class="hljs-string">&quot;mapreduce.input.keyvaluelinerecordreader.key.value.separator&quot;</span>, <span class="hljs-string">&quot; &quot;</span>);
+
+
+            Job PageRank = Job.getInstance(conf, <span class="hljs-string">&quot;ConnectedComponents &quot;</span> + (counter + <span class="hljs-string">&quot;&quot;</span>));
+
+
+            PageRank.setJarByClass(ConnectedComponents.class);
+            FileInputFormat.addInputPath(PageRank, EdgesPath);
+            FileOutputFormat.setOutputPath(PageRank, actualPath);
+
+            PageRank.setMapperClass(ConnectedComponentsMapper.class);
+            PageRank.setInputFormatClass(KeyValueTextInputFormat.class);
+            PageRank.setMapOutputKeyClass(IntWritable.class);
+            PageRank.setMapOutputValueClass(IntWritable.class);
+
+            PageRank.setReducerClass(ConnectedComponentsReduer.class);
+            PageRank.setOutputKeyClass(IntWritable.class);
+            PageRank.setOutputValueClass(IntWritable.class);
+
+            <span class="hljs-comment">// Execute job</span>
+            code = PageRank.waitForCompletion(<span class="hljs-keyword">true</span>) ? <span class="hljs-number">0</span> : <span class="hljs-number">1</span>;
+
+            <span class="hljs-comment">//checking if the mean is stable</span>
+            BufferedReader file1Reader = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(hdfs.open(<span class="hljs-keyword">new</span> Path(CACHED_PATH + <span class="hljs-string">&quot;/part-r-00000&quot;</span>))));
+            BufferedReader file2Reader = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(hdfs.open(<span class="hljs-keyword">new</span> Path(ACTUAL_PATH + <span class="hljs-string">&quot;/part-r-00000&quot;</span>))));
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; verticesNum; i++) {
+                <span class="hljs-keyword">double</span> component1 = Double.parseDouble(file1Reader.readLine().split(<span class="hljs-string">&quot; &quot;</span>)[<span class="hljs-number">1</span>]);
+                <span class="hljs-keyword">double</span> component2 = Double.parseDouble(file2Reader.readLine().split(<span class="hljs-string">&quot; &quot;</span>)[<span class="hljs-number">1</span>]);
+
+                <span class="hljs-keyword">if</span> (component1 == component2) {
+                    changed = <span class="hljs-keyword">false</span>;
+                } <span class="hljs-keyword">else</span> {
+                    changed = <span class="hljs-keyword">true</span>;
+                    <span class="hljs-keyword">break</span>;
+                }
+            }
+            file1Reader.close();
+            file2Reader.close();
+            counter++;
+            System.out.println(<span class="hljs-string">&quot;ConnectedComponents finished iteration:&gt;&gt; &quot;</span> + counter + <span class="hljs-string">&quot; || component change: &quot;</span> + changed);
+
+        }
+
+        System.exit(code);
+
+    }
+
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">writeFileByline</span><span class="hljs-params">(String dst, String contents)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        Configuration conf = <span class="hljs-keyword">new</span> Configuration();
+        Path dstPath = <span class="hljs-keyword">new</span> Path(dst);
+        FileSystem fs = dstPath.getFileSystem(conf);
+        FSDataOutputStream outputStream = <span class="hljs-keyword">null</span>;
+
+        <span class="hljs-keyword">if</span> (!fs.exists(dstPath)) {
+            outputStream = fs.create(dstPath);
+        } <span class="hljs-keyword">else</span> {
+            outputStream = fs.append(dstPath);
+        }
+        contents = contents + <span class="hljs-string">&quot;\n&quot;</span>;
+        outputStream.write(contents.getBytes(<span class="hljs-string">&quot;utf-8&quot;</span>));
+        outputStream.close();
+    }
+
+}
+</code></pre>
+<h3 id="connectedcomponentsmapper">ConnectedComponentsMapper</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.apache.commons.lang.StringUtils;
+<span class="hljs-keyword">import</span> org.apache.hadoop.conf.Configuration;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.FSDataInputStream;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.FileSystem;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.Path;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.IntWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.Text;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.Mapper;
+
+<span class="hljs-keyword">import</span> java.io.BufferedReader;
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.io.InputStreamReader;
+<span class="hljs-keyword">import</span> java.util.*;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConnectedComponentsMapper</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Mapper</span>&lt;<span class="hljs-title">Text</span>, <span class="hljs-title">Text</span>, <span class="hljs-title">IntWritable</span>, <span class="hljs-title">IntWritable</span>&gt; </span>{
+
+    Map&lt;Integer, Integer&gt; components = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+
+    <span class="hljs-comment">/**
+     * reading the rank from the distributed cache
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">(Context context)</span> <span class="hljs-keyword">throws</span> IOException, InterruptedException </span>{
+        String lineString = <span class="hljs-keyword">null</span>;
+        <span class="hljs-comment">// read rank file</span>
+        Configuration conf = <span class="hljs-keyword">new</span> Configuration();
+        FileSystem fs = FileSystem.get(conf);
+        FSDataInputStream hdfsInStream = fs.open(<span class="hljs-keyword">new</span> Path(<span class="hljs-string">&quot;output/cache/part-r-00000&quot;</span>));
+        InputStreamReader isr = <span class="hljs-keyword">new</span> InputStreamReader(hdfsInStream, <span class="hljs-string">&quot;utf-8&quot;</span>);
+        BufferedReader br = <span class="hljs-keyword">new</span> BufferedReader(isr);
+
+        <span class="hljs-keyword">while</span> ((lineString = br.readLine()) != <span class="hljs-keyword">null</span>) {
+            String[] keyValue = StringUtils.split(lineString, <span class="hljs-string">&quot; &quot;</span>);
+            components.put(Integer.parseInt(keyValue[<span class="hljs-number">0</span>]), Integer.parseInt(keyValue[<span class="hljs-number">1</span>]));
+
+        }
+        br.close();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">map</span><span class="hljs-params">(Text from, Text to, Context context)</span> <span class="hljs-keyword">throws</span> IOException, InterruptedException </span>{
+        <span class="hljs-keyword">int</span> fromPoint = Integer.parseInt(from.toString());
+        <span class="hljs-keyword">int</span> toPoint = Integer.parseInt(to.toString());
+
+        context.write(<span class="hljs-keyword">new</span> IntWritable(toPoint), <span class="hljs-keyword">new</span> IntWritable(components.get(fromPoint)));
+        context.write(<span class="hljs-keyword">new</span> IntWritable(fromPoint), <span class="hljs-keyword">new</span> IntWritable(components.get(fromPoint)));
+    }
+
+}
+</code></pre>
+<h3 id="connectedcomponentsreduer">ConnectedComponentsReduer</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.apache.hadoop.conf.Configuration;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.IntWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.Reducer;
+
+<span class="hljs-keyword">import</span> java.io.IOException;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">ConnectedComponentsReduer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Reducer</span>&lt;<span class="hljs-title">IntWritable</span>, <span class="hljs-title">IntWritable</span>, <span class="hljs-title">IntWritable</span>, <span class="hljs-title">IntWritable</span>&gt; </span>{
+
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reduce</span><span class="hljs-params">(IntWritable key, Iterable&lt;IntWritable&gt; values, Context context)</span> <span class="hljs-keyword">throws</span> IOException,
+            InterruptedException </span>{
+
+        Configuration conf = context.getConfiguration();
+        <span class="hljs-keyword">int</span> component = Integer.parseInt(conf.get(<span class="hljs-string">&quot;verticesNum&quot;</span>));
+
+        <span class="hljs-keyword">for</span> (IntWritable value : values) {
+            <span class="hljs-keyword">if</span> (value.get() &lt; component)
+                component = value.get();
+        }
+
+        context.write(key, <span class="hljs-keyword">new</span> IntWritable(component));
+    }
+}
+</code></pre>
+<p>&#x601D;&#x8DEF;&#xFF1A;</p>
+<ol>
+<li>&#x4E0E;PageRank&#x4E00;&#x6837;&#xFF0C;&#x9700;&#x8981;&#x51C6;&#x5907;cache&#x6587;&#x4EF6;&#x4F5C;&#x4E3A;&#x521D;&#x59CB;&#x5316;&#x8FDE;&#x901A;&#x5206;&#x91CF;&#xFF0C;&#x6BCF;&#x6B21;&#x5F97;&#x5230;&#x65B0;&#x7684;&#x7ED3;&#x679C;&#x4E0E;cache&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x5982;&#x679C;&#x6709;&#x66F4;&#x65B0;&#x5219;&#x7EE7;&#x7EED;&#x8FED;&#x4EE3;</li>
+<li>&#x5728;map&#x4E2D;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x6BCF;&#x4E2A;&#x70B9;&#x90FD;&#x4F1A;&#x51FA;&#x73B0;&#x5728;reduce&#x4E2D;&#xFF0C;&#x5C06;<code>from</code>&#x70B9;&#x548C;<code>to</code>&#x70B9;&#x90FD;&#x8F93;&#x5165;&#x5230;reduce&#x4E2D;</li>
+</ol>
+<h2 id="&#x8FD0;&#x884C;">&#x8FD0;&#x884C;</h2>
+<pre><code>hadoop jar ConnectedComponents.jar input/ConnectedComponents/edges.txt 16
+</code></pre><p>&#x8FED;&#x4EE3;&#x4E86;6&#x6B21;&#xFF1A;</p>
+<p><img src="../images/graph3.png" alt="graph3"></p>
+<pre><code>hdfs dfs -cat output/Graph/HadoopConnectedComponents/*
+</code></pre><p>&#x6700;&#x540E;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;</p>
+<p><img src="../images/graph4.png" alt="graph4"></p>
+<h1 id="singlesourceshortestpaths">SingleSourceShortestPaths</h1>
+<h2 id="&#x6570;&#x636E;&#x51C6;&#x5907;">&#x6570;&#x636E;&#x51C6;&#x5907;</h2>
+<p>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x51C6;&#x5907;&#x8FB9;&#x548C;&#x70B9;</p>
+<p>&#x8FB9;&#xFF1A;</p>
+<pre><code>1 2 12.0
+1 3 13.0
+2 3 23.0
+3 4 34.0
+3 5 35.0
+4 5 45.0
+5 1 51.0
+</code></pre><p>&#x653E;&#x5165;HDFS&#xFF1A;</p>
+<pre><code>hdfs dfs -mkdir input/SingleSourceShortestPaths
+hdfs dfs -put edges.txt input/SingleSourceShortestPaths
+</code></pre><h2 id="&#x7F16;&#x5199;&#x7A0B;&#x5E8F;">&#x7F16;&#x5199;&#x7A0B;&#x5E8F;</h2>
+<h3 id="singlesourceshortestpaths">SingleSourceShortestPaths</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.apache.hadoop.conf.Configuration;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.FSDataOutputStream;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.FileSystem;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.Path;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.DoubleWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.IntWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.Job;
+<span class="hljs-keyword">import</span> org.apache.hadoop.util.GenericOptionsParser;
+
+<span class="hljs-keyword">import</span> java.io.BufferedReader;
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.io.InputStreamReader;
+<span class="hljs-keyword">import</span> java.net.URISyntaxException;
+
+<span class="hljs-keyword">import</span> <span class="hljs-keyword">static</span> java.lang.StrictMath.abs;
+
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingleSourceShortestPaths</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String CACHED_PATH = <span class="hljs-string">&quot;output/cache&quot;</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> String ACTUAL_PATH = <span class="hljs-string">&quot;output/Graph/HadoopSingleSourceShortestPaths&quot;</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> maxIterations = <span class="hljs-number">100</span>;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">double</span> EPSILON = <span class="hljs-number">0.0001</span>;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> sourcePoint = <span class="hljs-number">1</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException,
+            InterruptedException, ClassNotFoundException, URISyntaxException </span>{
+
+        Configuration conf = <span class="hljs-keyword">new</span> Configuration();
+        String[] otherArgs = (<span class="hljs-keyword">new</span> GenericOptionsParser(conf, args)).getRemainingArgs();
+        <span class="hljs-keyword">if</span> (otherArgs.length != <span class="hljs-number">2</span>) {
+            System.err.println(<span class="hljs-string">&quot;Usage: PageRank &lt;EdgesPath&gt; &lt;verticesNum&gt;&quot;</span>);
+            System.exit(<span class="hljs-number">2</span>);
+        }
+
+        <span class="hljs-keyword">int</span> code = <span class="hljs-number">0</span>;
+
+        Path EdgesPath = <span class="hljs-keyword">new</span> Path(otherArgs[<span class="hljs-number">0</span>]);
+        <span class="hljs-keyword">int</span> verticesNum = Integer.parseInt(otherArgs[<span class="hljs-number">1</span>]);
+
+        conf.set(<span class="hljs-string">&quot;verticesNum&quot;</span>, verticesNum + <span class="hljs-string">&quot;&quot;</span>);
+
+        Path cachePath = <span class="hljs-keyword">new</span> Path(CACHED_PATH);
+        Path actualPath = <span class="hljs-keyword">new</span> Path(ACTUAL_PATH);
+
+        <span class="hljs-comment">// Delete output if exists</span>
+        FileSystem hdfs = FileSystem.get(conf);
+        <span class="hljs-keyword">if</span> (hdfs.exists(actualPath))
+            hdfs.delete(actualPath, <span class="hljs-keyword">true</span>); <span class="hljs-comment">// recursive delete</span>
+
+        <span class="hljs-comment">// prepare original distance</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= verticesNum; i++) {
+            <span class="hljs-keyword">if</span> (i == sourcePoint)
+                writeFileByline(ACTUAL_PATH + <span class="hljs-string">&quot;/part-r-00000&quot;</span>, i + <span class="hljs-string">&quot; &quot;</span> + <span class="hljs-number">0.0</span>);
+            <span class="hljs-keyword">else</span>
+                writeFileByline(ACTUAL_PATH + <span class="hljs-string">&quot;/part-r-00000&quot;</span>, i + <span class="hljs-string">&quot; &quot;</span> + Double.POSITIVE_INFINITY);
+        }
+
+
+        <span class="hljs-keyword">int</span> counter = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">boolean</span> changed = <span class="hljs-keyword">true</span>;
+
+        <span class="hljs-keyword">while</span> (counter &lt; maxIterations &amp;&amp; changed) {
+
+            <span class="hljs-comment">// Delete output if exists</span>
+            <span class="hljs-keyword">if</span> (hdfs.exists(cachePath))
+                hdfs.delete(cachePath, <span class="hljs-keyword">true</span>);
+            <span class="hljs-comment">//moving the previous iteration file to the cache directory</span>
+            hdfs.rename(actualPath, cachePath);
+
+            conf.set(<span class="hljs-string">&quot;mapreduce.output.textoutputformat.separator&quot;</span>, <span class="hljs-string">&quot; &quot;</span>);
+
+            Job PageRank = Job.getInstance(conf, <span class="hljs-string">&quot;SingleSourceShortestPaths &quot;</span> + (counter + <span class="hljs-string">&quot;&quot;</span>));
+
+
+            PageRank.setJarByClass(SingleSourceShortestPaths.class);
+            FileInputFormat.addInputPath(PageRank, EdgesPath);
+            FileOutputFormat.setOutputPath(PageRank, actualPath);
+
+            PageRank.setMapperClass(SingleSourceShortestPathsMapper.class);
+            PageRank.setMapOutputKeyClass(IntWritable.class);
+            PageRank.setMapOutputValueClass(DoubleWritable.class);
+
+            PageRank.setReducerClass(SingleSourceShortestPathsReducer.class);
+            PageRank.setOutputKeyClass(IntWritable.class);
+            PageRank.setOutputValueClass(DoubleWritable.class);
+
+            <span class="hljs-comment">// Execute job</span>
+            code = PageRank.waitForCompletion(<span class="hljs-keyword">true</span>) ? <span class="hljs-number">0</span> : <span class="hljs-number">1</span>;
+
+            <span class="hljs-comment">//checking if the mean is stable</span>
+            BufferedReader file1Reader = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(hdfs.open(<span class="hljs-keyword">new</span> Path(CACHED_PATH + <span class="hljs-string">&quot;/part-r-00000&quot;</span>))));
+            BufferedReader file2Reader = <span class="hljs-keyword">new</span> BufferedReader(<span class="hljs-keyword">new</span> InputStreamReader(hdfs.open(<span class="hljs-keyword">new</span> Path(ACTUAL_PATH + <span class="hljs-string">&quot;/part-r-00000&quot;</span>))));
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; verticesNum; i++) {
+                <span class="hljs-keyword">double</span> distance1 = Double.parseDouble(file1Reader.readLine().split(<span class="hljs-string">&quot; &quot;</span>)[<span class="hljs-number">1</span>]);
+                <span class="hljs-keyword">double</span> distance2 = Double.parseDouble(file2Reader.readLine().split(<span class="hljs-string">&quot; &quot;</span>)[<span class="hljs-number">1</span>]);
+
+                <span class="hljs-keyword">if</span> (abs(distance1 - distance2) &lt; EPSILON) {
+                    changed = <span class="hljs-keyword">false</span>;
+                } <span class="hljs-keyword">else</span> {
+                    changed = <span class="hljs-keyword">true</span>;
+                    <span class="hljs-keyword">break</span>;
+                }
+            }
+            file1Reader.close();
+            file2Reader.close();
+            counter++;
+            System.out.println(<span class="hljs-string">&quot;SingleSourceShortestPaths finished iteration:&gt;&gt; &quot;</span> + counter + <span class="hljs-string">&quot; || distance change: &quot;</span> + changed);
+
+        }
+
+        System.exit(code);
+
+    }
+
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">writeFileByline</span><span class="hljs-params">(String dst, String contents)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        Configuration conf = <span class="hljs-keyword">new</span> Configuration();
+        Path dstPath = <span class="hljs-keyword">new</span> Path(dst);
+        FileSystem fs = dstPath.getFileSystem(conf);
+        FSDataOutputStream outputStream = <span class="hljs-keyword">null</span>;
+
+        <span class="hljs-keyword">if</span> (!fs.exists(dstPath)) {
+            outputStream = fs.create(dstPath);
+        } <span class="hljs-keyword">else</span> {
+            outputStream = fs.append(dstPath);
+        }
+        contents = contents + <span class="hljs-string">&quot;\n&quot;</span>;
+        outputStream.write(contents.getBytes(<span class="hljs-string">&quot;utf-8&quot;</span>));
+        outputStream.close();
+    }
+
+}
+</code></pre>
+<h3 id="singlesourceshortestpathsmapper">SingleSourceShortestPathsMapper</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.apache.commons.lang.StringUtils;
+<span class="hljs-keyword">import</span> org.apache.hadoop.conf.Configuration;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.FSDataInputStream;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.FileSystem;
+<span class="hljs-keyword">import</span> org.apache.hadoop.fs.Path;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.DoubleWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.IntWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.Text;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.Mapper;
+
+<span class="hljs-keyword">import</span> java.io.BufferedReader;
+<span class="hljs-keyword">import</span> java.io.IOException;
+<span class="hljs-keyword">import</span> java.io.InputStreamReader;
+<span class="hljs-keyword">import</span> java.util.*;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingleSourceShortestPathsMapper</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Mapper</span>&lt;<span class="hljs-title">Object</span>, <span class="hljs-title">Text</span>, <span class="hljs-title">IntWritable</span>, <span class="hljs-title">DoubleWritable</span>&gt; </span>{
+
+    Map&lt;Integer, Double&gt; PointDistance = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();
+
+    <span class="hljs-comment">/**
+     * reading the rank from the distributed cache
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">(Context context)</span> <span class="hljs-keyword">throws</span> IOException, InterruptedException </span>{
+        String lineString = <span class="hljs-keyword">null</span>;
+        <span class="hljs-comment">// read rank file</span>
+        Configuration conf = <span class="hljs-keyword">new</span> Configuration();
+        FileSystem fs = FileSystem.get(conf);
+        FSDataInputStream hdfsInStream = fs.open(<span class="hljs-keyword">new</span> Path(<span class="hljs-string">&quot;output/cache/part-r-00000&quot;</span>));
+        InputStreamReader isr = <span class="hljs-keyword">new</span> InputStreamReader(hdfsInStream, <span class="hljs-string">&quot;utf-8&quot;</span>);
+        BufferedReader br = <span class="hljs-keyword">new</span> BufferedReader(isr);
+
+        <span class="hljs-keyword">while</span> ((lineString = br.readLine()) != <span class="hljs-keyword">null</span>) {
+            String[] keyValue = StringUtils.split(lineString, <span class="hljs-string">&quot; &quot;</span>);
+            PointDistance.put(Integer.parseInt(keyValue[<span class="hljs-number">0</span>]), Double.parseDouble(keyValue[<span class="hljs-number">1</span>]));
+
+        }
+        br.close();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">map</span><span class="hljs-params">(Object object, Text line, Context context)</span> <span class="hljs-keyword">throws</span> IOException, InterruptedException </span>{
+
+        String[] lineData = line.toString().split(<span class="hljs-string">&quot; &quot;</span>);
+
+        <span class="hljs-keyword">int</span> fromPoint = Integer.parseInt(lineData[<span class="hljs-number">0</span>]);
+        <span class="hljs-keyword">int</span> toPoint = Integer.parseInt(lineData[<span class="hljs-number">1</span>]);
+        <span class="hljs-keyword">double</span> distance = Double.parseDouble(lineData[<span class="hljs-number">2</span>]);
+
+        <span class="hljs-keyword">if</span> (distance &lt; Double.POSITIVE_INFINITY) {
+            context.write(<span class="hljs-keyword">new</span> IntWritable(toPoint), <span class="hljs-keyword">new</span> DoubleWritable(PointDistance.get(fromPoint) + distance));
+            context.write(<span class="hljs-keyword">new</span> IntWritable(fromPoint), <span class="hljs-keyword">new</span> DoubleWritable(PointDistance.get(fromPoint)));
+        } <span class="hljs-keyword">else</span>
+            context.write(<span class="hljs-keyword">new</span> IntWritable(toPoint), <span class="hljs-keyword">new</span> DoubleWritable(Double.POSITIVE_INFINITY));
+    }
+}
+</code></pre>
+<h3 id="singlesourceshortestpathsreducer">SingleSourceShortestPathsReducer</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> org.apache.hadoop.io.DoubleWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.IntWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.mapreduce.Reducer;
+
+<span class="hljs-keyword">import</span> java.io.IOException;
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SingleSourceShortestPathsReducer</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Reducer</span>&lt;<span class="hljs-title">IntWritable</span>, <span class="hljs-title">DoubleWritable</span>, <span class="hljs-title">IntWritable</span>, <span class="hljs-title">DoubleWritable</span>&gt; </span>{
+
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">reduce</span><span class="hljs-params">(IntWritable key, Iterable&lt;DoubleWritable&gt; values, Context context)</span> <span class="hljs-keyword">throws</span> IOException,
+            InterruptedException </span>{
+
+        <span class="hljs-keyword">double</span> dis = Double.POSITIVE_INFINITY;
+
+        <span class="hljs-keyword">for</span> (DoubleWritable value : values) {
+            <span class="hljs-keyword">if</span> (value.get() &lt; dis)
+                dis = value.get();
+        }
+
+        context.write(key, <span class="hljs-keyword">new</span> DoubleWritable(dis));
+    }
+}
+</code></pre>
+<p>&#x601D;&#x60F3;&#xFF1A;</p>
+<ol>
+<li>&#x4E3B;&#x8981;&#x60F3;&#x6CD5;&#x548C;&#x4E4B;&#x524D;&#x4E00;&#x6837;&#xFF0C;&#x4E0D;&#x518D;&#x8D58;&#x8FF0;</li>
+<li>&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x6BCF;&#x6B21;map&#x9700;&#x8981;&#x628A;&#x524D;&#x4E00;&#x6B21;&#x7684;&#x7ED3;&#x679C;&#x4E5F;&#x53D1;&#x7ED9;reduce&#x8FDB;&#x884C;&#x6BD4;&#x8F83;&#xFF0C;&#x4E0D;&#x7136;reduce&#x51FA;&#x6765;&#x7684;&#x70B9;&#x4E2A;&#x6570;&#x4F1A;&#x53D8;&#x5C11;&#xFF08;&#x4F8B;&#x5982;&#x539F;&#x70B9;&#x5C31;&#x4E0D;&#x4F1A;&#x6709;&#xFF09;</li>
+</ol>
+<h2 id="&#x8FD0;&#x884C;">&#x8FD0;&#x884C;</h2>
+<pre><code>hadoop jar SingleSourceShortestPaths.jar input/SingleSourceShortestPaths/edges.txt 5
+</code></pre><p>&#x4E00;&#x5171;&#x8FED;&#x4EE3;&#x4E86;4&#x6B21;&#xFF1A;</p>
+<p><img src="../images/graph5.png" alt="graph5"></p>
+<p>&#x67E5;&#x770B;&#x7ED3;&#x679C;</p>
+<pre><code>hdfs dfs -cat output/Graph/HadoopSingleSourceShortestPaths/*
+</code></pre><p><img src="../images/graph6.png" alt="graph6"></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="flink2.html" class="navigation navigation-prev " aria-label="Previous page: Flink编程练习（二）">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="graph-in-spark.html" class="navigation navigation-next " aria-label="Next page: 常用图算法实现--Spark">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"常用图算法实现--Hadoop","level":"1.3.22","depth":2,"next":{"title":"常用图算法实现--Spark","level":"1.3.23","depth":2,"path":"project/graph-in-spark.md","ref":"project/graph-in-spark.md","articles":[]},"previous":{"title":"Flink编程练习（二）","level":"1.3.21","depth":2,"path":"project/flink2.md","ref":"project/flink2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":" ","variables":{},"title":"Distribution System","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"project/graph-in-hadoop.md","mtime":"2021-01-27T07:19:46.160Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T09:58:50.487Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

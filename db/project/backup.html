@@ -1,0 +1,667 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>数据库备份 · Data Management Systems</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="sql.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Notes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../notes/data model.html">
+            
+                <a href="../notes/data model.html">
+            
+                    
+                    Data Model
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../notes/document.html">
+            
+                <a href="../notes/document.html">
+            
+                    
+                    Document-oriented DB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../notes/SQL 1.html">
+            
+                <a href="../notes/SQL 1.html">
+            
+                    
+                    SQL(1) 单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../notes/SQL 2.html">
+            
+                <a href="../notes/SQL 2.html">
+            
+                    
+                    SQL(2)--复杂查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../notes/SQL-3.html">
+            
+                <a href="../notes/SQL-3.html">
+            
+                    
+                    SQL(3)--视图与索引
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../notes/design.html">
+            
+                <a href="../notes/design.html">
+            
+                    
+                    关系数据库的逻辑设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../notes/normalization.html">
+            
+                <a href="../notes/normalization.html">
+            
+                    
+                    关系数据库规范化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../notes/storage.html">
+            
+                <a href="../notes/storage.html">
+            
+                    
+                    存储的正确性
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../notes/availability.html">
+            
+                <a href="../notes/availability.html">
+            
+                    
+                    数据库的Availability
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Project
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="postgre1.html">
+            
+                <a href="postgre1.html">
+            
+                    
+                    PostgreSQL配置与单表查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="postgre2.html">
+            
+                <a href="postgre2.html">
+            
+                    
+                    使用PostgreSQL进行复杂查询
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="jbdc.html">
+            
+                <a href="jbdc.html">
+            
+                    
+                    JBDC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="hibernate.html">
+            
+                <a href="hibernate.html">
+            
+                    
+                    Hibernate使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="many to many.html">
+            
+                <a href="many to many.html">
+            
+                    
+                    Hibernate多对多关系
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="superset.html">
+            
+                <a href="superset.html">
+            
+                    
+                    Superset使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="oltp.html">
+            
+                <a href="oltp.html">
+            
+                    
+                    OLTPBenchmark配置及OLTP性能调优
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="sql.html">
+            
+                <a href="sql.html">
+            
+                    
+                    SQL练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.9" data-path="backup.html">
+            
+                <a href="backup.html">
+            
+                    
+                    数据库备份
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Recap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../recap/Distributed DB.html">
+            
+                <a href="../recap/Distributed DB.html">
+            
+                    
+                    Recap: Distributed DB
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../recap/RDBSM.html">
+            
+                <a href="../recap/RDBSM.html">
+            
+                    
+                    Recap: RDBSM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../recap/SQL.html">
+            
+                <a href="../recap/SQL.html">
+            
+                    
+                    Recap: SQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../recap/NoSQL.html">
+            
+                <a href="../recap/NoSQL.html">
+            
+                    
+                    Recap: NoSQL
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../recap/Extra.html">
+            
+                <a href="../recap/Extra.html">
+            
+                    
+                    Recap: Extra
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >数据库备份</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="sql-dump">SQL dump</h1>
+<h2 id="backup-sql-dump">Backup-SQL Dump</h2>
+<p>Dump&#x65B9;&#x6CD5;&#x662F;&#x751F;&#x6210;&#x542B;&#x6709;SQL&#x547D;&#x4EE4;&#x7684;&#x6587;&#x672C;&#x6587;&#x4EF6;&#x3002;&#x901A;&#x8FC7;&#x7CFB;&#x7EDF;&#x4E2D;&#x81EA;&#x5E26;&#x7684;pg_dump&#x6307;&#x4EE4;&#x53EF;&#x4EE5;&#x5C06;&#x6307;&#x5B9A;&#x5E93;&#x4E2D;&#x7684;&#x8868;&#x53CA;&#x5176;&#x8868;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x4EE5;SQL&#x6307;&#x4EE4;&#x7684;&#x5F62;&#x5F0F;dump&#x5230;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x4E2D;</p>
+<pre><code> pg_dump -hlocalhost -U postgres -p 5432 -d spj -f &quot;D:/test.dmp&quot;
+</code></pre><blockquote>
+<p>&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x53EF;&#x4EE5;&#x5728;&#x4EFB;&#x610F;&#x53EF;&#x4EE5;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x8FDC;&#x7A0B;&#x673A;&#x5668;&#x4E0A;&#x8FD0;&#x884C;&#xFF0C;&#x4F46;&#x4ED6;&#x9700;&#x8981;&#x8BFB;&#x8868;&#x7684;&#x6743;&#x9650;&#xFF0C;&#x6240;&#x4EE5;&#x5927;&#x591A;&#x6570;&#x662F;&#x7528;superuser&#x7528;&#x6237;&#x8FD0;&#x884C;&#x8FD9;&#x4E2A;&#x547D;&#x4EE4;&#x3002;&#x8FDE;&#x63A5;&#x6307;&#x5B9A;&#x7684;&#x6570;&#x636E;&#x5E93;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;-h host&#x548C;-p port&#x547D;&#x4EE4;&#x9009;&#x9879;&#x3002;&#x9ED8;&#x8BA4;&#x7684;host&#x662F;localhost&#x6216;&#x7531;PGHOST&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x6307;&#x5B9A;&#x3002;&#x4F7F;&#x7528;-U&#x9009;&#x9879;&#x8BBE;&#x7F6E;&#x8FDE;&#x63A5;&#x6570;&#x636E;&#x5E93;&#x7684;&#x7528;&#x6237;&#x3002;</p>
+</blockquote>
+<p><img src="../images/backup1.png" alt="backup1"></p>
+<p>&#x67E5;&#x770B;&#x751F;&#x6210;&#x7684;<code>dmp</code>&#x6587;&#x4EF6;&#xFF1A;</p>
+<p><img src="../images/backup2.png" alt="backup2"></p>
+<h2 id="restore">Restore</h2>
+<pre><code>create database newspj
+psql -h localhost -U postgres -d newspj -f &quot;D:/test.dmp&quot;
+</code></pre><p><img src="../images/backup3.png" alt="backup3"></p>
+<h1 id="&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7EA7;&#x5907;&#x4EFD;">&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7EA7;&#x5907;&#x4EFD;</h1>
+<p>&#x4E00;&#x4E2A;&#x5907;&#x4EFD;&#x7684;&#x7B56;&#x7565;&#x662F;&#x76F4;&#x63A5;&#x62F7;&#x8D1D;PostgreSQL&#x7684;&#x5B58;&#x50A8;&#x6587;&#x4EF6;</p>
+<pre><code>tar -cf backup.tar /usr/local/pgsql/data
+</code></pre><p>&#x6CE8;&#x610F;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x6570;&#x636E;&#x5E93;&#x670D;&#x52A1;&#x5FC5;&#x987B;&#x5173;&#x95ED;&#xFF0C;&#x624D;&#x80FD;&#x5F97;&#x5230;&#x6709;&#x7528;&#x7684;&#x5907;&#x4EFD;&#x3002;&#x4E00;&#x4E2A;&#x6298;&#x4E2D;&#x7684;&#x529E;&#x6CD5;&#x662F;&#x963B;&#x6B62;&#x6240;&#x6709;&#x8FDE;&#x63A5;&#x3002;&#x5728;&#x6062;&#x590D;&#x6570;&#x636E;&#x524D;&#x4E5F;&#x8981;&#x5173;&#x95ED;&#x670D;&#x52A1;&#x3002;</li>
+<li>&#x5982;&#x679C;&#x4F60;&#x5DF2;&#x7ECF;&#x67E5;&#x770B;&#x4E86;&#x6570;&#x636E;&#x5E93;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7684;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x60F3;&#x5C1D;&#x8BD5;&#x5907;&#x4EFD;&#x548C;&#x6062;&#x590D;&#x67D0;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x8868;&#x6216;&#x5E93;&#x3002;&#x8FD9;&#x662F;&#x4E0D;&#x884C;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x6CA1;&#x6709;&#x63D0;&#x4EA4;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#xFF0C;&#x8FD9;&#x4E9B;&#x76EE;&#x5F55;&#x4E2D;&#x7684;&#x4FE1;&#x606F;&#x662F;&#x4E0D;&#x80FD;&#x7528;&#x7684;&#xFF0C;<code>pg_clog/*</code>&#x5305;&#x542B;&#x6240;&#x6709;&#x4E8B;&#x52A1;&#x7684;&#x63D0;&#x4EA4;&#x72B6;&#x6001;&#x3002;&#x4E00;&#x4E2A;&#x8868;&#x6587;&#x4EF6;&#x53EA;&#x6709;&#x548C;&#x8FD9;&#x4E9B;&#x63D0;&#x4EA4;&#x72B6;&#x6001;&#x4FE1;&#x606F;&#x4E00;&#x8D77;&#x624D;&#x80FD;&#x4F7F;&#x7528;&#x3002;&#x5F53;&#x7136;&#x53EA;&#x6062;&#x590D;&#x4E00;&#x4E2A;&#x8868;&#x6587;&#x4EF6;&#x548C;&#x5173;&#x8054;&#x7684;<code>pg_clog</code>&#x6570;&#x636E;&#x4E5F;&#x662F;&#x4E0D;&#x884C;&#x7684;&#xFF0C;&#x56E0;&#x4E3A;&#x6570;&#x636E;&#x5E93;&#x7684;&#x5176;&#x4ED6;&#x8868;&#x90FD;&#x4E0D;&#x53EF;&#x7528;&#x4E86;&#x3002;&#x6240;&#x4EE5;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5907;&#x4EFD;&#x5FC5;&#x987B;&#x6574;&#x4F53;&#x5907;&#x4EFD;&#x6570;&#x636E;&#x5E93;&#x3002;</li>
+</ul>
+<h1 id="&#x8FDE;&#x7EED;&#x5F52;&#x6863;">&#x8FDE;&#x7EED;&#x5F52;&#x6863;</h1>
+<h2 id="&#x601D;&#x60F3;">&#x601D;&#x60F3;</h2>
+<ul>
+<li>&#x5728;&#x4EFB;&#x4F55;&#x65F6;&#x5019;&#xFF0C;PostgreSql&#x5728;pg_xlog/&#x76EE;&#x5F55;&#x4E2D;&#x7EF4;&#x62A4;&#x4E00;&#x4E2A;&#x5199;&#x65E5;&#x5FD7;(WAL)&#x3002;&#x65E5;&#x5FD7;&#x6587;&#x4EF6;&#x8BB0;&#x5F55;&#x4E86;&#x6570;&#x636E;&#x5E93;&#x7684;&#x6BCF;&#x6B21;&#x4FEE;&#x6539;&#x3002;&#x8FD9;&#x4E2A;&#x65E5;&#x5FD7;&#x7684;&#x4E3B;&#x8981;&#x76EE;&#x7684;&#x662F;&#x5D29;&#x6E83;&#x5B89;&#x5168;&#xFF1A;<strong>&#x5982;&#x679C;&#x7CFB;&#x7EDF;&#x5D29;&#x6E83;&#x4E86;&#xFF0C;&#x6570;&#x636E;&#x5E93;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x4ECE;&#x4E0A;&#x6B21;&#x7684;&#x68C0;&#x67E5;&#x70B9;&#x201C;&#x56DE;&#x653E;&#x201D;&#x65E5;&#x5FD7;&#x6765;&#x6062;&#x590D;&#x6570;&#x636E;&#x5E93;</strong>&#x3002;&#x7136;&#x800C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x7528;&#x65E5;&#x5FD7;&#x505A;&#x5907;&#x4EFD;&#x7684;&#x7B2C;&#x4E09;&#x79CD;&#x7B56;&#x7565;&#x3002;&#x4F60;&#x53EF;&#x4EE5;&#x6DF7;&#x5408;&#x4E00;&#x4E2A;<strong>&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x7EA7;&#x522B;&#x7684;&#x5907;&#x4EFD;&#x548C;WAL&#x6587;&#x4EF6;&#x5907;&#x4EFD;</strong>&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x6062;&#x590D;&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x6062;&#x590D;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x5907;&#x4EFD;&#xFF0C;&#x518D;&#x56DE;&#x653E;WAL&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x4F7F;&#x6570;&#x636E;&#x5E93;&#x6062;&#x590D;&#x5230;&#x5F53;&#x524D;&#x72B6;&#x6001;&#x3002;</li>
+<li>&#x589E;&#x91CF;&#x5907;&#x4EFD;&#x7684;&#x601D;&#x60F3;&#xFF0C;&#x6BCF;&#x6B21;&#x5148;&#x5907;&#x4EFD;&#x5F52;&#x6863;&#x6587;&#x4EF6;&#xFF08;&#x57FA;&#x7840;&#x5907;&#x4EFD;&#xFF09;&#xFF0C;&#x518D;&#x5907;&#x4EFD;WAL&#x6587;&#x4EF6;&#xFF08;&#x8FD9;&#x65F6;&#x5019;&#x53EA;&#x9700;&#x8981;&#x5907;&#x4EFD;&#x5728;&#x5907;&#x4EFD;&#x65F6;&#x4EA7;&#x751F;&#x7684;WAL&#x6587;&#x4EF6;&#x548C;&#x4E4B;&#x540E;&#x7684;WAL&#xFF0C;&#x4E4B;&#x524D;&#x7684;WAL&#x6570;&#x636E;&#x4F1A;&#x88AB;&#x5220;&#x6389;&#xFF09;</li>
+</ul>
+<h2 id="&#x64CD;&#x4F5C;">&#x64CD;&#x4F5C;</h2>
+<h3 id="&#x8BBE;&#x7F6E;wal&#x5F52;&#x6863;">&#x8BBE;&#x7F6E;WAL&#x5F52;&#x6863;</h3>
+<p>&#x5728;<code>postgresql.conf</code>&#x6587;&#x4EF6;&#x4E2D;&#x4FEE;&#x6539;&#xFF1A;</p>
+<blockquote>
+<p>wal_level = archive </p>
+<p>archive_mode = on               # allows archiving to be done</p>
+<p>archive_command = &apos;copy &quot;%p&quot; &quot;D:\%f&quot;&apos;</p>
+</blockquote>
+<p>&#x9700;&#x8981;&#x91CD;&#x65B0;&#x542F;&#x52A8;PostgreSQL</p>
+<h3 id="&#x521B;&#x5EFA;&#x57FA;&#x7840;&#x5907;&#x4EFD;">&#x521B;&#x5EFA;&#x57FA;&#x7840;&#x5907;&#x4EFD;</h3>
+<p>&#x6700;&#x7B80;&#x5355;&#x7684;&#x57FA;&#x7840;&#x5907;&#x4EFD;&#x65B9;&#x6CD5;&#x662F;&#x4F7F;&#x7528;<code>pg_basebackup</code>&#x5DE5;&#x5177;&#x3002;&#x751F;&#x6210;&#x57FA;&#x7840;&#x5907;&#x4EFD;&#x9700;&#x8981;&#x5927;&#x91CF;&#x7684;&#x65F6;&#x95F4;&#xFF0C;&#x4E14;&#x5728;&#x5907;&#x4EFD;&#x8FC7;&#x7A0B;&#x4F1A;&#x5F71;&#x54CD;&#x7CFB;&#x7EDF;&#x6027;&#x80FD;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x8FD0;&#x884C;&#x670D;&#x52A1;&#x65F6;&#x7981;&#x6B62;&#x4E86;<code>full_page_writes</code>&#xFF0C;&#x4F60;&#x53EF;&#x80FD;&#x6CE8;&#x610F;&#x5230;&#x5728;&#x8FD0;&#x884C;&#x5907;&#x4EFD;&#x65F6;&#x6027;&#x80FD;&#x4E0B;&#x964D;&#x4E86;&#x3002;&#x6BCF;&#x6B21;&#x521B;&#x5EFA;&#x5907;&#x4EFD;&#x540E;&#x90FD;&#x4F1A;&#x5220;&#x9664;&#x4E4B;&#x524D;&#x7684;WAL&#x65E5;&#x5FD7;&#xFF0C;&#x5F00;&#x59CB;&#x5F52;&#x6863;&#x5907;&#x4EFD;&#x671F;&#x95F4;&#x53CA;&#x540E;&#x7EED;&#x7684;WAL&#x65E5;&#x5FD7;&#x4FE1;&#x606F;&#x3002;</p>
+<pre><code>pg_basebackup -D backup -h localhost -U postgres -Ft -z -P
+</code></pre><h3 id="&#x5229;&#x7528;&#x5907;&#x4EFD;&#x6062;&#x590D;">&#x5229;&#x7528;&#x5907;&#x4EFD;&#x6062;&#x590D;</h3>
+<p>&#x53C2;&#x8003;<a href="http://blog.chinaunix.net/uid-7270462-id-3531612.html" _target="blank">&#x8FD9;&#x91CC;</a></p>
+<h1 id="reference">Reference</h1>
+<ul>
+<li><a href="https://www.postgresql.org/docs/current/backup.html" _target="blank">Backup and Restore</a></li>
+<li><a href="http://blog.chinaunix.net/uid-7270462-id-3531612.html" _target="blank">&#x5229;&#x7528;pg_basebackup &#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x70ED;&#x5907;&#x4EFD;&#x548C;&#x6062;&#x590D;</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="sql.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: SQL练习">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"数据库备份","level":"1.3.9","depth":2,"next":{"title":"Recap","level":"1.4","depth":1,"ref":"","articles":[{"title":"Recap: Distributed DB","level":"1.4.1","depth":2,"path":"recap/Distributed DB.md","ref":"recap/Distributed DB.md","articles":[]},{"title":"Recap: RDBSM","level":"1.4.2","depth":2,"path":"recap/RDBSM.md","ref":"recap/RDBSM.md","articles":[]},{"title":"Recap: SQL","level":"1.4.3","depth":2,"path":"recap/SQL.md","ref":"recap/SQL.md","articles":[]},{"title":"Recap: NoSQL","level":"1.4.4","depth":2,"path":"recap/NoSQL.md","ref":"recap/NoSQL.md","articles":[]},{"title":"Recap: Extra","level":"1.4.5","depth":2,"path":"recap/Extra.md","ref":"recap/Extra.md","articles":[]}]},"previous":{"title":"SQL练习","level":"1.3.8","depth":2,"path":"project/sql.md","ref":"project/sql.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"Data Management Systems","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"project/backup.md","mtime":"2021-01-28T09:39:55.898Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T09:55:28.694Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

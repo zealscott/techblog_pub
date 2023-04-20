@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>deep learning | Scott&#39;Log</title>
+<meta name="keywords" content="" />
+<meta name="description" content="The tech document of zealscott">
+<meta name="author" content="Scott Du">
+<link rel="canonical" href="https://tech.zealscott.com/tags/deep-learning/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fd126033c3455a688b2479431fed44510433c36ce61093336d94a5681fad5866.css" integrity="sha256-/RJgM8NFWmiLJHlDH&#43;1EUQQzw2zmEJMzbZSlaB&#43;tWGY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://tech.zealscott.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tech.zealscott.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tech.zealscott.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://tech.zealscott.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tech.zealscott.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://tech.zealscott.com/tags/deep-learning/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, 
+        {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '\\[', right: '\\]', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false}
+                ]
+            }
+        );"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-116370175-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<meta property="og:title" content="deep learning" />
+<meta property="og:description" content="The tech document of zealscott" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tech.zealscott.com/tags/deep-learning/" /><meta property="og:image" content="https://tech.zealscott.com/papermod-cover.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tech.zealscott.com/papermod-cover.png"/>
+
+<meta name="twitter:title" content="deep learning"/>
+<meta name="twitter:description" content="The tech document of zealscott"/>
+
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://tech.zealscott.com" accesskey="h" title="Scott&#39;Log (Alt + H)">Scott&#39;Log</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://tech.zealscott.com/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/deeplearning/" title="Deep Learning">
+                    <span>Deep Learning</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/curriculum/" title="Curriculum">
+                    <span>Curriculum</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/misc/" title="Misc">
+                    <span>Misc</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>deep learning</h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>防止神经网络过拟合的基本方法
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>发现过拟合问题 在训练神经网络时，我们常常有训练集、测试集和验证集三种数据集。
+有时候我们会发现，训练出来的神经网络在训练集上表现很好（准确率很高），但在测试集上的准确率比较差。这种现象一般被认为是过拟合，也就是过度学习了训练集上的特征，导致泛化能力较差。
+hold out 方法 那么如何发现是否存在过拟合方法呢？一种简单的思路就是把训练集分为训练集和验证集，其中训练集用来训练数据，验证集用来检测准确率。
+Early stop 我们在每个迭代期的最后都计算在验证集上的分类准确率，一旦分类准确率已经饱和，就停止训练。这个策略被称为提前停止。
+示例 以MNIST数据集为例，这里使用1000个样本作为训练集，迭代周期为400，使用交叉熵代价函数，随机梯度下降，我们可以画出其损失值与准确率。
+训练集上的损失值和准确率：
+验证集上的损失值和准确率：
+对比测试集与验证集的准确率：
+可以发现：训练集上的损失值越来越小，正确率已经达到了100%，而验证集上的损失会突然增大，正确率没有提升。这就产生了过拟合问题。
+增大训练量 一个最直观，也是最有效的方式就是增大训练量。有了足够的训练数据，就算是一个规模很大的网络也不太容易过拟合。
+例如，如果我们将MNIST的训练数据增大到50000（扩大了50倍），则可以发现训练集和测试集的正确率差距不大，且一直在增加（这里只迭代了30次）：
+但很不幸，一般来说，训练数据时有限的，这种方法不太实际。
+人为扩展训练数据 当我们缺乏训练数据时，可以使用一种巧妙的方式人为构造数据。
+例如，对于MNIST手写数字数据集，我们可以将每幅图像左右旋转15°。这应该还是被识别成同样的数字，但对于我们的神经网络来说（像素级），这就是完全不同的输入。
+因此，将这些样本加入到训练数据中很可能帮助我们的网络学习更多如何分类数字。
+这个想法很强大并且已经被广泛应用了，更多讨论可以查看这篇论文。
+再举个例子，当我们训练神经网络进行语音识别时，我们可以对这些语音随机加上一些噪音–加速或减速。
+规范化（regularization） 除了增大训练样本，另一种能减轻过拟合的方法是**降低网络的规模。**但往往大规模的神经网络有更强的潜力，因此我们想使用另外的技术。
+规范化是神经网络中常用的方法，虽然没有足够的理论，但规范化的神经网络往往能够比非规范化的泛化能力更强。
+一般来说，我们只需要对$w$进行规范化，而几乎不对$b$进行规范化。
+L2规范化 学习规则 最常用的规范化手段，也称为权重衰减（weight decay）。
+L2规范化的想法是增加一个额外的项到代价函数上，这个项被称为**规范化项。**例如，对于规范化的交叉熵：
+$$C= -\frac{1}{n}\sum\limits_{x}[y_j\ln a_j^L&#43; (1-y_j)\ln (1-a_j^L)]&#43; \frac{\lambda}{2n}\sum\limits_ww^2$$
+对于其他形式的代价函数，都可以写成：
+$$C =C_0&#43;\frac{\lambda}{2n}\sum\limits_ww^2$$
+由于我们的目的是使得代价函数越小越好，因此直觉的看，规范化的效果是让网络倾向于学习小一点的权重。
+换言之，规范化可以当做一种寻找小的权重和最小化原始代价函数之间的折中。
+现在，我们再对$w$和$b$求偏导：
+$$\frac{\partial C}{\partial w} =\frac{\partial C_0}{\partial w}&#43;\frac{\lambda}{n}w $$
+$$\frac{\partial C}{\partial w} =\frac{\partial C_0}{\partial b} $$
+因此，我们计算规范化的代价函数的梯度是很简单的：仅仅需要反向传播，然后加上$\frac{\lambda}{n}w$得到所有权重的偏导数。而偏置的偏导数不需要变化。所以权重的学习规则为：
+$$w\to (1-\frac{\lambda\eta}{n})w-\frac{\eta}{m}\sum\limits_x\frac{\partial C_x}{\partial w}$$
+$$b\to b-\frac{\eta}{m}\sum\limits_x\frac{\partial C_x}{\partial b}$$...</p>
+  </section>
+  <footer class="entry-footer"><span title='2018-05-15 19:58:58 +0800 CST'>May 15, 2018</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to 防止神经网络过拟合的基本方法" href="https://tech.zealscott.com/deeplearning/misc/overfit/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>交叉熵与 softmax 
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>二次代价函数 之前我们一直使用二次代价函数，貌似在一定程度上也挺work。但其实，当输入值与目标值差距很大时，二次代价函数就不是很恰当了；**这是因为当差距很大时，此函数的学习速率会很慢。**我们可以通过一个简单的例子观察这种变化：
+假设我们只使用一个神经元与一个输出神经元，定义代价函数为：
+$$C = \frac{(y-a)^2}{2}$$
+使用链式法则计算权重和偏置的导数：
+$$\frac{\partial C}{\partial w}= (a-y)\sigma&#39;(z)x$$
+$$\frac{\partial C}{\partial b} = (a-y)\sigma&#39;(z)$$
+假设我们训练输入为$x = 1$，目标输出为$y = 0$，可以看见此时输入输出差距很大，则带入：
+$$\frac{\partial C}{\partial w}= a\sigma&#39;(z)$$
+$$\frac{\partial C}{\partial b} = a\sigma&#39;(z)$$
+回忆一下$\sigma$函数：
+可以看出，当神经元的输出接近于1时，曲线变得相当平缓，因此$\sigma&#39;(z)$就很小了。这就是学习缓慢的原因。
+交叉熵代价函数 因此，我们引入交叉熵代价函数，我们希望这个函数能弥补我们之前遇到的问题（在差距较大时学习缓慢）：
+$$C = -\frac{1}{n}\sum\limits _x [y\ln a&#43;(1-y)\ln (1-a)]$$
+这个函数的表达式看起来十分晦涩难懂，首先我们来看它为什么能成为一个代价函数。
+why cost function   $C &gt; 0$
+代价函数需要满足非负性。
+在求和中，由于$y、a\in [0,1]$，因此都是负数，在前面加上一个负号就变为正数。
+  在神经元输出接近目标值时，代价函数接近于0
+我们假设$y = 0 , a \approx 0 $，则带入可发现$C\approx 0$
+同样，在$y = 1,a \approx 1$，也发现$C \approx 0$...</p>
+  </section>
+  <footer class="entry-footer"><span title='2018-05-13 22:58:46 +0800 CST'>May 13, 2018</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to 交叉熵与 softmax " href="https://tech.zealscott.com/deeplearning/misc/softmax/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>前馈神经网络原理与实现
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>引言 前馈神经网络是所有神经网络中最简单，也是最有效的一种。从单个神经元的角度看，不过就是设计权值与偏置的简单感知机运算。但到底网络是如何实现的？特别是back propagation的原理？我相信刚刚入门的很多朋友与我一样有很多疑惑，但又不想总是调包，那么我们就慢慢推导公式吧。
+需要准备  良好的线性代数知识，特别是矩阵的运算。 微积分知识，特别是偏导和链式公式的应用。 基本的python技巧。  符号说明 $w_{jk}^{l}$:表示从$（l-1）$层的第$k$个神经元到第$l$层的第$j$个神经元的连接上的权重。虽然从直观上不太好理解为什么要这样表示（通常应该表示为$w_{kj}^{l}$），但请先接受这种写法。可以对相邻两层的所有权重用矩阵的形式表示为$w^l$。
+$\sigma $：表示激活函数，本文都使用Sigmoid function。
+$b_{j}^{l}$：表示第$l$层$j$神经元的偏置，可以对同一层的神经元表示为$b^l$，记为偏置向量。
+$a_{j}^l$：表示第$l$层$j$神经元的激活值，可以对同一层的神经元表示为$a^l$，记为激活向量。 由BP神经网络的定义可得：$a^l = \sigma (w^la^{l-1}&#43;b^l)$。
+$z^l$：表示带权输入，$z^l = w^la^{l-1}&#43;b^l\quad a^l = \sigma(z^l)$。
+$C$ ：表示代价函数，定义为$C = \frac {1}{2n} \sum ||y(x) - a^L(x)||^2$，其中$y(x)$表示每个样本的真实输出，$L$表示神经网络的总层数。
+代价函数 BP神经网络的向前传播很简单，就使用之前提到的矩阵形式就可以计算，当我们初始化所有权重和偏置时，得到的结果输出与目标输出肯定有较大差距，我们使用代价函数来度量这种差距。定义如下：
+$$C = \frac {1}{2n} \sum ||y(x) - a^L(x)||^2$$
+那么，当输入和输出固定时，$C$就是关于$w和b$的函数，我们需要对其进行求偏导，以此来更新代价函数。
+我们需要对代价函数进行如下定义（假设）：
+ 代价函数可以写成一个在每个训练样本$x$上的代价函数$C_x$的均值$C = \frac{1}{n}\sum _xC_x$。 将$C$仅看成输出激活值$a^L$的函数。  以下公式，不加说明，$C$都指特定的$C_x$。
+反向传播的四个方程 反向传播其实就是对权重和偏置变化影响函数过程的理解。最终就是需要计算$\frac{\partial C}{\partial w_{jk}^{l}}和 \frac{\partial C}{\partial b_{j}^{l}}$。
+我们首先定义一个中间量$\delta_j^l = \frac{\partial C}{\partial z_{j}^{l}} $，表示为第$l层第j$个神经元的误差，然后将$\delta_j^l $关联到$\frac{\partial C}{\partial w_{jk}^{l}}和 \frac{\partial C}{\partial b_{j}^{l}}$。...</p>
+  </section>
+  <footer class="entry-footer"><span title='2018-04-01 19:29:00 +0800 CST'>April 1, 2018</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to 前馈神经网络原理与实现" href="https://tech.zealscott.com/deeplearning/misc/fnn/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://tech.zealscott.com/tags/deep-learning/page/2/">«</a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://tech.zealscott.com">Scott&#39;Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

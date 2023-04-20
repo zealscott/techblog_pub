@@ -1,0 +1,1085 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Giraph配置及使用 · Distribution System</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="flink-iteration.html" />
+    
+    
+    <link rel="prev" href="graph-in-flink.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Notes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../notes/Distribution-File-System-DFS.html">
+            
+                <a href="../notes/Distribution-File-System-DFS.html">
+            
+                    
+                    Distribution File System DFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../notes/mapreduce.html">
+            
+                <a href="../notes/mapreduce.html">
+            
+                    
+                    MapReduce处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../notes/mrcoding.html">
+            
+                <a href="../notes/mrcoding.html">
+            
+                    
+                    MapReduce编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../notes/RPC-and-serialization.html">
+            
+                <a href="../notes/RPC-and-serialization.html">
+            
+                    
+                    RPC And Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../notes/spark.html">
+            
+                <a href="../notes/spark.html">
+            
+                    
+                    Spark 处理框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../notes/sparkcoding.html">
+            
+                <a href="../notes/sparkcoding.html">
+            
+                    
+                    Spark 编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../notes/yarn.html">
+            
+                <a href="../notes/yarn.html">
+            
+                    
+                    Yarn 资源管理框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../notes/zookeeper.html">
+            
+                <a href="../notes/zookeeper.html">
+            
+                    
+                    ZooKeeper 元数据管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../notes/pregel.html">
+            
+                <a href="../notes/pregel.html">
+            
+                    
+                    分布式图处理系统--Pregel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../notes/flink.html">
+            
+                <a href="../notes/flink.html">
+            
+                    
+                    批流融合系统--Flink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../notes/beam.html">
+            
+                <a href="../notes/beam.html">
+            
+                    
+                    批流融合系统--展望
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../notes/ps.html">
+            
+                <a href="../notes/ps.html">
+            
+                    
+                    机器学习系统--Parameter Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../notes/graphlab.html">
+            
+                <a href="../notes/graphlab.html">
+            
+                    
+                    机器学习系统--GraphLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="../notes/mahout.html">
+            
+                <a href="../notes/mahout.html">
+            
+                    
+                    机器学习系统--mahout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="../notes/stream.html">
+            
+                <a href="../notes/stream.html">
+            
+                    
+                    流计算系统概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Lab
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="rpc.html">
+            
+                <a href="rpc.html">
+            
+                    
+                    RPC model in Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="hadoop.html">
+            
+                <a href="hadoop.html">
+            
+                    
+                    hadoop安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="hadoop1.html">
+            
+                <a href="hadoop1.html">
+            
+                    
+                    hadoop编程实践（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="hadoop2.html">
+            
+                <a href="hadoop2.html">
+            
+                    
+                    hadoop编程实践（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="hadoop-coding.html">
+            
+                <a href="hadoop-coding.html">
+            
+                    
+                    hadoop编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="hadoop-recap.html">
+            
+                <a href="hadoop-recap.html">
+            
+                    
+                    Hadoop 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="spark-installation.html">
+            
+                <a href="spark-installation.html">
+            
+                    
+                    spark安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="spark1.html">
+            
+                <a href="spark1.html">
+            
+                    
+                    spark编程实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="spark2.html">
+            
+                <a href="spark2.html">
+            
+                    
+                    spark编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="spark-recap.html">
+            
+                <a href="spark-recap.html">
+            
+                    
+                    Spark 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="docker1.html">
+            
+                <a href="docker1.html">
+            
+                    
+                    使用 Docker 配置 hadoop/spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="docker2.html">
+            
+                <a href="docker2.html">
+            
+                    
+                    使用 docker 搭建 spark(2.3.1) 集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="zookeeper.html">
+            
+                <a href="zookeeper.html">
+            
+                    
+                    ZooKeeper配置及简单使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="yarn.html">
+            
+                <a href="yarn.html">
+            
+                    
+                    Yarn框架下的系统部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="storm-installation.html">
+            
+                <a href="storm-installation.html">
+            
+                    
+                    Storm部署与运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="storm-coding.html">
+            
+                <a href="storm-coding.html">
+            
+                    
+                    Storm编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="storm-summary.html">
+            
+                <a href="storm-summary.html">
+            
+                    
+                    Storm 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="sparksteaming.html">
+            
+                <a href="sparksteaming.html">
+            
+                    
+                    SparkSteaming使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="flink-installation.html">
+            
+                <a href="flink-installation.html">
+            
+                    
+                    Flink安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="flink1.html">
+            
+                <a href="flink1.html">
+            
+                    
+                    Flink编程练习（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="flink2.html">
+            
+                <a href="flink2.html">
+            
+                    
+                    Flink编程练习（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="graph-in-hadoop.html">
+            
+                <a href="graph-in-hadoop.html">
+            
+                    
+                    常用图算法实现--Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="graph-in-spark.html">
+            
+                <a href="graph-in-spark.html">
+            
+                    
+                    常用图算法实现--Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="graph-in-flink.html">
+            
+                <a href="graph-in-flink.html">
+            
+                    
+                    常用图算法实现--Flink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.25" data-path="giraph.html">
+            
+                <a href="giraph.html">
+            
+                    
+                    Giraph配置及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="flink-iteration.html">
+            
+                <a href="flink-iteration.html">
+            
+                    
+                    Flink迭代小记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Recap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../recap/fundamental-of-distributed-system.html">
+            
+                <a href="../recap/fundamental-of-distributed-system.html">
+            
+                    
+                    分布式系统基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../recap/batch-system.html">
+            
+                <a href="../recap/batch-system.html">
+            
+                    
+                    批处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../recap/management-system.html">
+            
+                <a href="../recap/management-system.html">
+            
+                    
+                    支持数据管理的底层系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../recap/streaming-system.html">
+            
+                <a href="../recap/streaming-system.html">
+            
+                    
+                    流处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../recap/flink.html">
+            
+                <a href="../recap/flink.html">
+            
+                    
+                    批流融合系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../recap/graph.html">
+            
+                <a href="../recap/graph.html">
+            
+                    
+                    图处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../recap/ml.html">
+            
+                <a href="../recap/ml.html">
+            
+                    
+                    机器学习系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../recap/summary.html">
+            
+                <a href="../recap/summary.html">
+            
+                    
+                    总结与对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Giraph配置及使用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x73AF;&#x5883;&#x914D;&#x7F6E;">&#x73AF;&#x5883;&#x914D;&#x7F6E;</h1>
+<h2 id="hadoop&#x914D;&#x7F6E;">Hadoop&#x914D;&#x7F6E;</h2>
+<p>&#x8FD9;&#x91CC;&#x4F7F;&#x7528;Hadoop2.5.1&#x8FDB;&#x884C;&#x914D;&#x7F6E;&#xFF0C;&#x53EF;&#x4EE5;<a href="http://zealscott.com/posts/21264/" _target="blank">&#x53C2;&#x8003;&#x8FD9;&#x91CC;</a>&#x3002;</p>
+<p>&#x67E5;&#x770B;&#x7248;&#x672C;&#x53F7;</p>
+<p><img src="../images/giraph1.png" alt="giraph1"></p>
+<h3 id="&#x8FD0;&#x884C;hadoop">&#x8FD0;&#x884C;Hadoop</h3>
+<pre><code>./hadoop-2.5.1/sbin/start-dfs.sh
+</code></pre><p>&#x67E5;&#x770B;&#x662F;&#x5426;&#x6210;&#x529F;</p>
+<p><img src="../images/giraph2.png" alt="giraph2"></p>
+<h2 id="giraph&#x914D;&#x7F6E;">Giraph&#x914D;&#x7F6E;</h2>
+<h3 id="&#x4E0B;&#x8F7D;giraph">&#x4E0B;&#x8F7D;Giraph</h3>
+<pre><code>cd /usr/local
+sudo git clone https://github.com/apache/giraph.git
+sudo chown -R hadoop:hadoop giraph
+</code></pre><h3 id="&#x7F16;&#x8BD1;">&#x7F16;&#x8BD1;</h3>
+<pre><code>cd giraph
+mvn -Phadoop_2 -Dhadoop.version=2.5.1 -DskipTests clean package
+</code></pre><p>&#x7F16;&#x8BD1;&#x6210;&#x529F;&#xFF1A;</p>
+<p><img src="../images/giraph3.png" alt="giraph3"></p>
+<h1 id="&#x8FD0;&#x884C;">&#x8FD0;&#x884C;</h1>
+<h2 id="&#x6267;&#x884C;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#x7A0B;&#x5E8F;">&#x6267;&#x884C;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#x7A0B;&#x5E8F;</h2>
+<h3 id="&#x8F93;&#x5165;">&#x8F93;&#x5165;</h3>
+<p>&#x521B;&#x5EFA;<code>/tmp/tiny_graph.txt</code>&#xFF0C;&#x8F93;&#x5165;:</p>
+<pre><code>[0,0,[[1,1],[3,3]]]
+[1,0,[[0,1],[2,2],[3,1]]]
+[2,0,[[1,2],[4,4]]]
+[3,0,[[0,3],[1,1],[4,4]]]
+[4,0,[[3,4],[2,4]]]
+</code></pre><p>&#x6BCF;&#x4E00;&#x6761;&#x7EBF;&#x7531;<code>[source_id,source_value,[[dest_id, edge_value],...]]</code>&#x6784;&#x6210;&#x3002;</p>
+<p>&#x5E76;&#x62F7;&#x8D1D;&#x5230;HDFS&#x4E2D;&#xFF1A;</p>
+<pre><code>cd /usr/local
+hadoop-2.5.1/bin/hadoop dfs -copyFromLocal /tmp/tiny_graph.txt /tiny_graph.txt
+</code></pre><p><img src="../images/giraph4.png" alt="giraph4"></p>
+<h3 id="&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;">&#x63D0;&#x4EA4;&#x4EFB;&#x52A1;</h3>
+<pre><code>/usr/local/hadoop-2.5.1/bin/hadoop jar /usr/local/giraph/giraph-examples/target/giraph-examples-1.3.0-SNAPSHOT-for-hadoop-2.5.1-jar-with-dependencies.jar org.apache.giraph.GiraphRunner org.apache.giraph.examples.SimpleShortestPathsComputation -vif org.apache.giraph.io.formats.JsonLongDoubleFloatDoubleVertexInputFormat -vip /tiny_graph.txt -vof org.apache.giraph.io.formats.IdWithValueTextOutputFormat -op /shortestpaths -w 1 -ca giraph.SplitMasterWorker=false
+</code></pre><h3 id="&#x67E5;&#x770B;&#x7ED3;&#x679C;">&#x67E5;&#x770B;&#x7ED3;&#x679C;</h3>
+<p><img src="../images/giraph5.png" alt="giraph5"></p>
+<p>&#x6BCF;&#x4E2A;&#x70B9;&#x79BB;&#x70B9;1&#x7684;&#x6700;&#x77ED;&#x8DEF;&#x5F84;&#xFF1A;</p>
+<p><img src="../images/giraph6.png" alt="giraph6"></p>
+<h3 id="&#x67E5;&#x770B;&#x4EE3;&#x7801;&#x4F8B;&#x5B50;">&#x67E5;&#x770B;&#x4EE3;&#x7801;&#x4F8B;&#x5B50;</h3>
+<pre><code class="lang-java"><span class="hljs-keyword">package</span> org.apache.giraph.examples;
+
+<span class="hljs-keyword">import</span> org.apache.giraph.graph.BasicComputation;
+<span class="hljs-keyword">import</span> org.apache.giraph.conf.LongConfOption;
+<span class="hljs-keyword">import</span> org.apache.giraph.edge.Edge;
+<span class="hljs-keyword">import</span> org.apache.giraph.graph.Vertex;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.DoubleWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.FloatWritable;
+<span class="hljs-keyword">import</span> org.apache.hadoop.io.LongWritable;
+<span class="hljs-keyword">import</span> org.apache.log4j.Logger;
+
+<span class="hljs-keyword">import</span> java.io.IOException;
+
+<span class="hljs-comment">/**
+ * Demonstrates the basic Pregel shortest paths implementation.
+ */</span>
+<span class="hljs-meta">@Algorithm</span>(
+    name = <span class="hljs-string">&quot;Shortest paths&quot;</span>,
+    description = <span class="hljs-string">&quot;Finds all shortest paths from a selected vertex&quot;</span>
+)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SimpleShortestPathsComputation</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">BasicComputation</span>&lt;
+    <span class="hljs-title">LongWritable</span>, <span class="hljs-title">DoubleWritable</span>, <span class="hljs-title">FloatWritable</span>, <span class="hljs-title">DoubleWritable</span>&gt; </span>{
+  <span class="hljs-comment">/** The shortest paths id */</span>
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> LongConfOption SOURCE_ID =
+      <span class="hljs-keyword">new</span> LongConfOption(<span class="hljs-string">&quot;SimpleShortestPathsVertex.sourceId&quot;</span>, <span class="hljs-number">1</span>,
+          <span class="hljs-string">&quot;The shortest paths id&quot;</span>);
+  <span class="hljs-comment">/** Class logger */</span>
+  <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> Logger LOG =
+      Logger.getLogger(SimpleShortestPathsComputation.class);
+
+  <span class="hljs-comment">/**
+   * Is this vertex the source id?
+   *
+   * <span class="hljs-doctag">@param</span> vertex Vertex
+   * <span class="hljs-doctag">@return</span> True if the source id
+   */</span>
+  <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">isSource</span><span class="hljs-params">(Vertex&lt;LongWritable, ?, ?&gt; vertex)</span> </span>{
+    <span class="hljs-keyword">return</span> vertex.getId().get() == SOURCE_ID.get(getConf());
+  }
+
+  <span class="hljs-meta">@Override</span>
+  <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">compute</span><span class="hljs-params">(
+      Vertex&lt;LongWritable, DoubleWritable, FloatWritable&gt; vertex,
+      Iterable&lt;DoubleWritable&gt; messages)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+    <span class="hljs-keyword">if</span> (getSuperstep() == <span class="hljs-number">0</span>) {
+      vertex.setValue(<span class="hljs-keyword">new</span> DoubleWritable(Double.MAX_VALUE));
+    }
+    <span class="hljs-keyword">double</span> minDist = isSource(vertex) ? <span class="hljs-number">0</span>d : Double.MAX_VALUE;
+    <span class="hljs-keyword">for</span> (DoubleWritable message : messages) {
+      minDist = Math.min(minDist, message.get());
+    }
+    <span class="hljs-keyword">if</span> (LOG.isDebugEnabled()) {
+      LOG.debug(<span class="hljs-string">&quot;Vertex &quot;</span> + vertex.getId() + <span class="hljs-string">&quot; got minDist = &quot;</span> + minDist +
+          <span class="hljs-string">&quot; vertex value = &quot;</span> + vertex.getValue());
+    }
+    <span class="hljs-keyword">if</span> (minDist &lt; vertex.getValue().get()) {
+      vertex.setValue(<span class="hljs-keyword">new</span> DoubleWritable(minDist));
+      <span class="hljs-keyword">for</span> (Edge&lt;LongWritable, FloatWritable&gt; edge : vertex.getEdges()) {
+        <span class="hljs-keyword">double</span> distance = minDist + edge.getValue().get();
+        <span class="hljs-keyword">if</span> (LOG.isDebugEnabled()) {
+          LOG.debug(<span class="hljs-string">&quot;Vertex &quot;</span> + vertex.getId() + <span class="hljs-string">&quot; sent to &quot;</span> +
+              edge.getTargetVertexId() + <span class="hljs-string">&quot; = &quot;</span> + distance);
+        }
+        sendMessage(edge.getTargetVertexId(), <span class="hljs-keyword">new</span> DoubleWritable(distance));
+      }
+    }
+    vertex.voteToHalt();
+  }
+}
+</code></pre>
+<p>&#x4E3B;&#x8981;&#x5C31;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#xFF1A;</p>
+<ol>
+<li>compute<ul>
+<li>&#x6267;&#x884C;&#x5B9E;&#x9645;&#x7684;&#x8BA1;&#x7B97;</li>
+</ul>
+</li>
+<li>sendMessage<ul>
+<li>&#x53D1;&#x9001;&#x6D88;&#x606F;</li>
+</ul>
+</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="graph-in-flink.html" class="navigation navigation-prev " aria-label="Previous page: 常用图算法实现--Flink">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="flink-iteration.html" class="navigation navigation-next " aria-label="Next page: Flink迭代小记">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Giraph配置及使用","level":"1.3.25","depth":2,"next":{"title":"Flink迭代小记","level":"1.3.26","depth":2,"path":"project/flink-iteration.md","ref":"project/flink-iteration.md","articles":[]},"previous":{"title":"常用图算法实现--Flink","level":"1.3.24","depth":2,"path":"project/graph-in-flink.md","ref":"project/graph-in-flink.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":" ","variables":{},"title":"Distribution System","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"project/giraph.md","mtime":"2021-01-27T07:20:11.265Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T09:58:50.487Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

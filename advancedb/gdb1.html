@@ -1,0 +1,685 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>GDB 调试 pg · Distribution System</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="gdb2.html" />
+    
+    
+    <link rel="prev" href="postgre.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="leveldb1.html">
+            
+                <a href="leveldb1.html">
+            
+                    
+                    LevelDB 安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="leveldb2.html">
+            
+                <a href="leveldb2.html">
+            
+                    
+                    LevelDB 基本接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="skiplist.html">
+            
+                <a href="skiplist.html">
+            
+                    
+                    SkipList 解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="linkedlist.html">
+            
+                <a href="linkedlist.html">
+            
+                    
+                    并发链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="sstable1.html">
+            
+                <a href="sstable1.html">
+            
+                    
+                    SStable 练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="sstable2.html">
+            
+                <a href="sstable2.html">
+            
+                    
+                    SStable 练习二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="postgre.html">
+            
+                <a href="postgre.html">
+            
+                    
+                    PostgreSQL 源码安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9" data-path="gdb1.html">
+            
+                <a href="gdb1.html">
+            
+                    
+                    GDB 调试 pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="gdb2.html">
+            
+                <a href="gdb2.html">
+            
+                    
+                    GDB 跟踪 pg 源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="hashjoin.html">
+            
+                <a href="hashjoin.html">
+            
+                    
+                    调试 HashJoin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="lock.html">
+            
+                <a href="lock.html">
+            
+                    
+                    基于锁的并发控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="timestamp.html">
+            
+                <a href="timestamp.html">
+            
+                    
+                    基于时间戳的并发控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="positive.html">
+            
+                <a href="positive.html">
+            
+                    
+                    乐观并发控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="project.html">
+            
+                <a href="project.html">
+            
+                    
+                    LevelDB 大作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >GDB 调试 pg</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p>postgresql&#x4ECE;&#x6700;&#x65E9;20&#x4E07;&#x884C;&#x5DE6;&#x53F3;&#x7684;&#x4EE3;&#x7801;&#x91CF;&#x4E0A;&#x5347;&#x5230;&#x8FD1;200&#x4E07;&#x884C;&#xFF0C;&#x6240;&#x4EE5;&#x4E3A;&#x4E86;&#x4FBF;&#x4E8E;&#x8C03;&#x8BD5;&#x5DE5;&#x4F5C;&#xFF0C;&#x9700;&#x8981;&#x5927;&#x5BB6;&#x5728;&#x7406;&#x89E3;&#x76EE;&#x5F55;&#x7ED3;&#x6784;&#x7684;&#x57FA;&#x7840;&#x4E0A;&#xFF0C;&#x6309;&#x7167;&#x6D41;&#x7A0B;&#x8DDF;&#x8E2A;&#x8C03;&#x8BD5;&#x4EE3;&#x7801;</p>
+<h2 id="&#x76EE;&#x5F55;&#x7ED3;&#x6784;">&#x76EE;&#x5F55;&#x7ED3;&#x6784;</h2>
+<p>&#x9996;&#x5148;&#x8FDB;&#x5165;postgresql&#x7684;&#x7B2C;&#x4E00;&#x7EA7;&#x76EE;&#x5F55;</p>
+<p><img src="images/gdb1.png" alt="gdb1"></p>
+<p>config&#x6587;&#x4EF6;&#x5939;&#x4E3B;&#x8981;&#x653E;&#x7684;&#x662F;&#x4E00;&#x4E9B;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF1B;</p>
+<p>contrib&#x6587;&#x4EF6;&#x5939;&#x91CC;&#x653E;&#x7684;&#x662F;&#x4E00;&#x4E9B;&#x7B2C;&#x4E09;&#x65B9;&#x7684;&#x63D2;&#x4EF6;&#x3001;&#x6269;&#x5C55;&#x7A0B;&#x5E8F;&#x7B49;&#xFF0C;&#x5E38;&#x7528;&#x7684;&#x6709;pg_standby&#x3001;postgres_fdw&#x8FD9;&#x4E9B;&#xFF1B;</p>
+<p>doc&#x6587;&#x4EF6;&#x5939;&#x4E0D;&#x7528;&#x8BF4;&#x653E;&#x7684;&#x662F;&#x4E00;&#x4E9B;&#x5E2E;&#x52A9;&#x6587;&#x6863;&#x548C;manuals&#xFF1B;</p>
+<p>&#x6700;&#x4E3B;&#x8981;&#x7684;&#x662F;src&#x76EE;&#x5F55;&#xFF0C;&#x8FD9;&#x91CC;&#x653E;&#x7F6E;&#x7684;&#x662F;postgresql&#x7684;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x4E5F;&#x662F;&#x6211;&#x4EEC;&#x8C03;&#x8BD5;&#x548C;&#x8DDF;&#x8E2A;&#x7684;&#x4E3B;&#x8981;&#x6587;&#x4EF6;&#x76EE;&#x5F55;&#xFF1B;configure&#x548C;Makefile&#x8FD9;&#x4E9B;&#x662F;&#x7A0B;&#x5E8F;&#x7F16;&#x8BD1;&#x65F6;&#x8981;&#x7528;&#x7684;&#x6587;&#x4EF6;</p>
+<p>&#x8FDB;&#x53BB;src&#x76EE;&#x5F55;&#xFF0C;</p>
+<p><img src="images/gdb2.png" alt="gdb2"></p>
+<p>&#x9996;&#x5148;&#x90A3;&#x51E0;&#x4E2A;Makefile&#x6587;&#x4EF6;&#x4EC0;&#x4E48;&#x7684;&#x5C31;&#x4E0D;&#x7528;&#x591A;&#x4ECB;&#x7ECD;&#x4E86;&#xFF0C;&#x4E3B;&#x8981;&#x770B;&#x770B;&#x8FD9;&#x51E0;&#x4E2A;&#x6587;&#x4EF6;&#x5939;&#x3002;</p>
+<ul>
+<li>bin/                  <ul>
+<li>&#x653E;&#x7F6E;&#x4E86;postgresql&#x7684;unix&#x547D;&#x4EE4;&#xFF0C;&#x6BD4;&#x5982;psql&#x3001;initdb&#x8FD9;&#x4E9B;&#x7684;&#x6E90;&#x4EE3;&#x7801;;
+backend/         </li>
+<li>postgresql&#x540E;&#x7AEF;&#x7A0B;&#x5E8F;&#x7684;&#x6E90;&#x4EE3;&#x7801;;
+include/         </li>
+<li>&#x5934;&#x6587;&#x4EF6;;</li>
+</ul>
+</li>
+<li>interfaces/      <ul>
+<li>&#x524D;&#x7AEF;&#x76F8;&#x5173;&#x7684;&#x5E93;&#x7684;&#x4EE3;&#x7801;&#xFF08;&#x5305;&#x62EC;pgsql&#x7684;C&#x8BED;&#x8A00;&#x5E93;libpq&#xFF09;;</li>
+</ul>
+</li>
+<li>makefiles/       <ul>
+<li>&#x5E73;&#x53F0;&#x76F8;&#x5173;&#x7684;make&#x7684;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;;
+pl/                 </li>
+<li>&#x5B58;&#x50A8;&#x8FC7;&#x7A0B;&#x8BED;&#x8A00;&#x7684;&#x4EE3;&#x7801;;
+port/                 </li>
+<li>&#x5E73;&#x53F0;&#x79FB;&#x690D;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;;
+template/        </li>
+<li>&#x5E73;&#x53F0;&#x76F8;&#x5173;&#x7684;&#x8BBE;&#x7F6E;&#x6587;&#x4EF6;;
+test/                 </li>
+<li>postgresql&#x81EA;&#x5E26;&#x7684;&#x5404;&#x79CD;&#x6D4B;&#x8BD5;&#x811A;&#x672C;;
+timezone/       </li>
+<li>&#x65F6;&#x533A;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;&#x6587;&#x4EF6;;
+tools/               </li>
+<li>&#x5404;&#x79CD;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x548C;&#x6587;&#x6863;;
+tutorial/            </li>
+<li>&#x5404;&#x79CD;&#x76F8;&#x5173;&#x6559;&#x7A0B;&#x3002;</li>
+</ul>
+</li>
+</ul>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x6BD4;&#x8F83;&#x6838;&#x5FC3;&#x7684;&#x662F;backend&#x3001;bin&#x3001;interfaces&#x8FD9;&#x4E09;&#x4E2A;&#x76EE;&#x5F55;&#xFF0C;&#x5176;&#x4E2D;backend&#x5BF9;&#x5E94;&#x540E;&#x7AEF;&#xFF08;&#x670D;&#x52A1;&#x5668;&#x7AEF;&#xFF09;&#xFF0C;&#x5269;&#x4E0B;&#x4E24;&#x4E2A;&#x5BF9;&#x5E94;&#x524D;&#x7AEF;&#xFF08;&#x5BA2;&#x6237;&#x7AEF;&#xFF09;&#x3002;</p>
+<h3 id="backend">Backend</h3>
+<p>&#x5BF9;&#x4E8E;&#x6211;&#x4EEC;&#x7684;&#x8C03;&#x8BD5;&#x5DE5;&#x4F5C;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x5173;&#x6CE8;&#x70B9;&#x96C6;&#x4E2D;&#x5728;&#x540E;&#x7AEF;&#xFF0C;&#x5373;backend&#x76EE;&#x5F55;&#xFF0C;&#x5728;&#x8BE5;&#x76EE;&#x5F55;&#x4E0B;&#x7EC6;&#x5206;&#x4E86;&#x597D;&#x591A;&#x76EE;&#x5F55;&#xFF1A;</p>
+<p><img src="images/gdb3.png" alt="gdb3"></p>
+<ul>
+<li>access/            <ul>
+<li>&#x5404;&#x79CD;&#x5B58;&#x50A8;&#x8BBF;&#x95EE;&#x65B9;&#x6CD5;(&#x5728;&#x5404;&#x4E2A;&#x5B50;&#x76EE;&#x5F55;&#x4E0B;) common(&#x5171;&#x540C;&#x51FD;&#x6570;)&#x3001;gin (Generalized Inverted Index&#x901A;&#x7528;&#x9006;&#x5411;&#x7D22;&#x5F15;) &#x3001;gist (Generalized Search Tree&#x901A;&#x7528;&#x7D22;&#x5F15;)&#x3001;hash (&#x54C8;&#x5E0C;&#x7D22;&#x5F15;)&#x3001;heap (heap&#x7684;&#x8BBF;&#x95EE;&#x65B9;&#x6CD5;)&#x3001;index (&#x901A;&#x7528;&#x7D22;&#x5F15;&#x51FD;&#x6570;)&#x3001; nbtree (Btree&#x51FD;&#x6570;)&#x3001;transam (&#x4E8B;&#x52A1;&#x5904;&#x7406;)&#x3001; bootstrap/ &#x6570;&#x636E;&#x5E93;&#x7684;&#x521D;&#x59CB;&#x5316;&#x5904;&#x7406;(initdb&#x7684;&#x65F6;&#x5019;)</li>
+</ul>
+</li>
+<li>catalog/           <ul>
+<li>&#x7CFB;&#x7EDF;&#x76EE;&#x5F55;
+commands/      </li>
+<li>SELECT/INSERT/UPDATE/DELETE&#x4EE5;&#x4E3A;&#x7684;SQL&#x6587;&#x7684;&#x5904;&#x7406;
+executor/          </li>
+<li>&#x6267;&#x884C;&#x5668;(&#x8BBF;&#x95EE;&#x7684;&#x6267;&#x884C;)
+foreign/          </li>
+<li>FDW(Foreign Data Wrapper)&#x5904;&#x7406;
+lib/                   </li>
+<li>&#x5171;&#x540C;&#x51FD;&#x6570;
+libpq/                 </li>
+<li>&#x524D;&#x7AEF;/&#x540E;&#x7AEF;&#x901A;&#x4FE1;&#x5904;&#x7406;
+main/                  </li>
+<li>postgres&#x7684;&#x4E3B;&#x51FD;&#x6570;</li>
+</ul>
+</li>
+<li>nodes/             <ul>
+<li>&#x6784;&#x6587;&#x6811;&#x8282;&#x70B9;&#x76F8;&#x5173;&#x7684;&#x5904;&#x7406;&#x51FD;&#x6570;</li>
+</ul>
+</li>
+<li>optimizer/        <ul>
+<li>&#x4F18;&#x5316;&#x5668;
+parser/           </li>
+<li>SQL&#x6784;&#x6587;&#x89E3;&#x6790;&#x5668;
+port/                 </li>
+<li>&#x5E73;&#x53F0;&#x76F8;&#x5173;&#x7684;&#x4EE3;&#x7801;
+postmaster/    </li>
+<li>postmaster&#x7684;&#x4E3B;&#x51FD;&#x6570; (&#x5E38;&#x9A7B;postgres)</li>
+</ul>
+</li>
+<li>replication/     <ul>
+<li>streaming replication
+regex/                </li>
+<li>&#x6B63;&#x5219;&#x5904;&#x7406;
+rewrite/              </li>
+<li>&#x89C4;&#x5219;&#x53CA;&#x89C6;&#x56FE;&#x76F8;&#x5173;&#x7684;&#x91CD;&#x5199;&#x5904;&#x7406;
+snowball/     </li>
+<li>&#x5168;&#x6587;&#x68C0;&#x7D22;&#x76F8;&#x5173;&#xFF08;&#x8BED;&#x5E72;&#x5904;&#x7406;&#xFF09;</li>
+</ul>
+</li>
+<li>storage/          <ul>
+<li>&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x3001;&#x78C1;&#x76D8;&#x4E0A;&#x7684;&#x5B58;&#x50A8;&#x3001;&#x7F13;&#x5B58;&#x7B49;&#x5168;&#x90E8;&#x4E00;&#x6B21;/&#x4E8C;&#x6B21;&#x8BB0;&#x5F55;&#x7BA1;&#x7406;(&#x4EE5;&#x4E0B;&#x7684;&#x76EE;&#x5F55;)buffer/(&#x7F13;&#x5B58;&#x7BA1;&#x7406;)&#x3001; file/(&#x6587;&#x4EF6;)&#x3001;freespace/(Fee Space Map&#x7BA1;&#x7406;) ipc/(&#x8FDB;&#x7A0B;&#x95F4;&#x901A;&#x4FE1;)&#x3001;large_object /(&#x5927;&#x5BF9;&#x8C61;&#x7684;&#x8BBF;&#x95EE;&#x51FD;&#x6570;)&#x3001; lmgr/(&#x9501;&#x7BA1;&#x7406;)&#x3001;page/(&#x9875;&#x9762;&#x8BBF;&#x95EE;&#x76F8;&#x5173;&#x51FD;&#x6570;)&#x3001; smgr/(&#x5B58;&#x50A8;&#x7BA1;&#x7406;&#x5668;)
+tcop/                 </li>
+<li>postgres (&#x6570;&#x636E;&#x5E93;&#x5F15;&#x64CE;&#x7684;&#x8FDB;&#x7A0B;)&#x7684;&#x4E3B;&#x8981;&#x90E8;&#x5206;</li>
+</ul>
+</li>
+<li>tsearch/           <ul>
+<li>&#x5168;&#x6587;&#x68C0;&#x7D22;
+utils/                </li>
+<li>&#x5404;&#x79CD;&#x6A21;&#x5757;(&#x4EE5;&#x4E0B;&#x76EE;&#x5F55;) adt/(&#x5D4C;&#x5165;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;)&#x3001;cache/(&#x7F13;&#x5B58;&#x7BA1;&#x7406;)&#x3001; error/(&#x9519;&#x8BEF;&#x5904;&#x7406;)&#x3001;fmgr/(&#x51FD;&#x6570;&#x7BA1;&#x7406;)&#x3001;hash/(hash&#x51FD;&#x6570;)&#x3001; init/(&#x6570;&#x636E;&#x5E93;&#x521D;&#x59CB;&#x5316;&#x3001;postgres&#x7684;&#x521D;&#x671F;&#x5904;&#x7406;)&#x3001;mb/(&#x591A;&#x5B57;&#x8282;&#x6587;&#x5B57;&#x5904;&#x7406;)&#x3001;misc/(&#x5176;&#x4ED6;)&#x3001;mmgr/(&#x5185;&#x5B58;&#x7684;&#x7BA1;&#x7406;&#x51FD;&#x6570;)&#x3001; resowner/(&#x67E5;&#x8BE2;&#x5904;&#x7406;&#x4E2D;&#x7684;&#x6570;&#x636E;(buffer pin&#x53CA;&#x8868;&#x9501;)&#x7684;&#x7BA1;&#x7406;)&#x3001;sort/(&#x6392;&#x5E8F;&#x5904;&#x7406;)&#x3001;time/(&#x4E8B;&#x52A1;&#x7684; MVCC &#x7BA1;&#x7406;)</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x5229;&#x7528;gdb&#x8C03;&#x8BD5;">&#x5229;&#x7528;gdb&#x8C03;&#x8BD5;</h2>
+<p>&#x65E2;&#x7136;&#x8981;&#x7528;gdb&#x8DDF;&#x8E2A;&#x8C03;&#x8BD5;&#x7A0B;&#x5E8F;&#xFF0C;&#x6211;&#x4EEC;&#x9996;&#x5148;&#x8981;&#x77E5;&#x9053;postgresql&#x540E;&#x7AEF;&#x8FDB;&#x7A0B;&#x7684;pid&#xFF0C;&#x7136;&#x540E;&#x624D;&#x80FD;attach&#x4E0A;&#x8FDB;&#x884C;&#x8C03;&#x8BD5;&#xFF08;&#x5BF9;gdb&#x547D;&#x4EE4;&#x4E0D;&#x719F;&#x6089;&#x7684;&#x53EF;&#x4EE5;&#x5148;&#x81EA;&#x884C;&#x767E;&#x5EA6;&#x4E0B;&#xFF1A;&#x53C2;&#x8003;URL&#xFF1A;<a href="https://www.cnblogs.com/xsln/p/gdb_instructions1.html" _target="blank">https://www.cnblogs.com/xsln/p/gdb_instructions1.html</a>&#xFF09;&#x3002;</p>
+<p>&#x8981;&#x83B7;&#x53D6;postgresql&#x7684;pid&#xFF0C;&#x6211;&#x4EEC;&#x6709;&#x4E24;&#x4E2A;&#x529E;&#x6CD5;&#x3002;</p>
+<p>&#x65B9;&#x6CD5;&#x4E00;&#x3001;&#x4F7F;&#x7528;ps&#x547D;&#x4EE4;&#x67E5;&#x770B;</p>
+<ol>
+<li>&#x9996;&#x5148;&#x8FDB;&#x5165;psql&#xFF1A;psql -d postgres</li>
+<li>&#x7136;&#x540E;&#x67E5;&#x770B;&#xFF1A;ps -ef | grep postgres</li>
+<li>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;</li>
+</ol>
+<p><img src="images/gdb4.png" alt="gdb4"></p>
+<p>&#x90A3;&#x4E2A;[local] idle &#x63D0;&#x793A;&#x7684;&#x90A3;&#x4E2A;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x8981;&#x7684;&#xFF0C;&#x53EF;&#x77E5;&#x8FDB;&#x7A0B;pid&#x4E3A;3098&#xFF1B;</p>
+<p>&#x65B9;&#x6CD5;&#x4E8C;&#x3001;&#x76F4;&#x63A5;&#x5728;&#x8FDB;&#x5165;postgresql&#x540E;&#x8FD0;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#xFF1A;select pg_backend_pid();</p>
+<p><img src="images/gdb5.png" alt="gdb5"></p>
+<p>&#x4E5F;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x8FDB;&#x7A0B;&#x7684;pid&#xFF0C;&#x65B9;&#x4FBF;&#x5FEB;&#x6377;&#x3002;</p>
+<p>&#x5F97;&#x5230;&#x8FDB;&#x7A0B;&#x7684;pid&#x540E;&#xFF0C;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x8FDB;&#x5165;gdb&#x8C03;&#x8BD5;&#x4E86;&#x3002;</p>
+<p>&#x53E6;&#x5F00;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;&#xFF0C;&#x6211;&#x4EEC;&#x8F93;&#x5165;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;sudo db postgres 3098</p>
+<h3 id="select&#x547D;&#x4EE4;">select&#x547D;&#x4EE4;</h3>
+<p>&#x8C03;&#x8BD5;postgresql&#xFF0C;&#x6211;&#x4EEC;&#x5148;&#x4EE5;&#x6700;&#x7B80;&#x5355;&#x7684;SQL&#x6587;&#x4F5C;&#x4E3A;&#x4F8B;&#x5B50;&#x6F14;&#x793A;&#x5982;&#x4F55;&#x8C03;&#x8BD5;&#x8DDF;&#x8E2A;&#x4EE3;&#x7801;&#x3002;&#x4F8B;&#x5982;&#xFF1A;select 1;</p>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x72B6;&#x6001;&#x4E0B;&#xFF0C;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;gdb&#x547D;&#x4EE4;&#xFF0C;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x4F7F;&#x7528;b&#x547D;&#x4EE4;&#x5728;ExecResult&#x5904;&#x6253;&#x4E0A;&#x65AD;&#x70B9;&#xFF0C;&#x518D;&#x56DE;&#x5230;postgresql&#x7684;&#x7A97;&#x53E3;&#xFF0C;&#x6267;&#x884C;SQL&#xFF1A;</p>
+<p><img src="images/gdb6.png" alt="gdb6"></p>
+<p>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x56E0;&#x4E3A;postgres&#x8FDB;&#x7A0B;&#x5DF2;&#x7ECF;&#x6682;&#x505C;&#xFF0C;SQL&#x4F1A;&#x5361;&#x5728;&#x90A3;&#x91CC;&#x52A8;&#x4E0D;&#x4E86;&#xFF0C;&#x8FD9;&#x4E5F;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x76EE;&#x7684;&#xFF0C;&#x4E0D;&#x7136;&#x600E;&#x4E48;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x7684;&#x8C03;&#x8BD5;&#x5462;&#xFF1F;</p>
+<p>&#x6211;&#x4EEC;&#x518D;&#x56DE;&#x5230;gdb&#x8FD9;&#x8FB9;&#xFF0C;&#x8FD0;&#x884C;c&#x547D;&#x4EE4;&#xFF0C;&#x7A0B;&#x5E8F;&#x5C31;&#x4F1A;&#x7EE7;&#x7EED;&#x6267;&#x884C;&#x4E0B;&#x53BB;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x65AD;&#x70B9;&#x5904;&#xFF08;ExecResult&#xFF09;&#x505C;&#x6B62;&#x3002;</p>
+<p>&#xFF08;&#x6CE8;&#x91CA;&#xFF1A;c &#x662F;gdb&#x4E2D;&#x7684;&#x65AD;&#x70B9;&#xFF08;continue&#xFF09;&#xFF0C;&#x5177;&#x4F53;&#x89E3;&#x91CA;&#x89C1;&#x7ED9;&#x7684;GDB URL&#x4E2D; &#x4E09;.11&#xFF09;</p>
+<p><img src="images/gdb7.png" alt="gdb7"></p>
+<p>&#x6211;&#x4EEC;&#x5F53;&#x7136;&#x4F1A;&#x5F88;&#x597D;&#x5947;&#x6267;&#x884C;&#x8DEF;&#x5F84;&#x4E0A;&#x8D70;&#x8FC7;&#x4E86;&#x54EA;&#x4E9B;&#x6587;&#x4EF6;&#x8C03;&#x7528;&#x4E86;&#x54EA;&#x4E9B;&#x51FD;&#x6570;&#xFF1F;</p>
+<p>&#x597D;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x6267;&#x884C;gdb&#x7684;bt&#x547D;&#x4EE4;&#xFF1A;</p>
+<p>&#xFF08;&#x6CE8;&#x91CA;&#xFF1A;bt &#x662F;gdb&#x4E2D;&#x7684;&#x6808;&#x4FE1;&#x606F;&#xFF08;backtrace&#xFF09;&#xFF0C;&#x5177;&#x4F53;&#x89E3;&#x91CA;&#x89C1;&#x7ED9;&#x7684;GDB URL&#x4E2D; &#x4E09;.1&#xFF09;</p>
+<p><img src="images/gdb8.png" alt="gdb8"></p>
+<p>&#x8FD9;&#x4E00;&#x5927;&#x4E32;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x68A6;&#x5BD0;&#x4EE5;&#x6C42;&#x7684;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684;&#x5806;&#x6808;&#x4E86;&#x3002;&#x8FD9;&#x6837;&#x4ECE;&#x7A0B;&#x5E8F;&#x5F00;&#x59CB;&#x5230;ExecResult&#x4E3A;&#x6B62;&#x7684;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x90FD;&#x6709;&#x4E86;&#x3002;&#x65E2;&#x7136;&#x8BF4;&#x662F;&#x201C;&#x5806;&#x6808;&#x201D;&#xFF0C;&#x6211;&#x4EEC;&#x81EA;&#x7136;&#x662F;&#x8981;&#x53CD;&#x7740;&#x770B;&#x7684;&#xFF0C;&#x6BD4;&#x5982;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6700;&#x65E9;&#x8C03;&#x7528;&#x7684;&#x662F;main&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x5728;&#xFF08;at&#xFF09;main.c&#x6587;&#x4EF6;&#x91CC;&#xFF0C;&#x5728;main&#x51FD;&#x6570;&#x7684;&#x7B2C;228&#x884C;&#xFF0C;&#x8C03;&#x7528;&#x4E86;PostmasterMain&#x51FD;&#x6570;&#xFF0C;&#x4F9D;&#x6B21;&#x7C7B;&#x63A8;&#x5373;&#x53EF;&#x77E5;&#x9053;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x8DEF;&#x5F84;&#x3002;</p>
+<p>&#x77E5;&#x9053;&#x4E86;&#x51FD;&#x6570;&#x7684;&#x8C03;&#x7528;&#x8DEF;&#x5F84;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x4E00;&#x6B65;&#x4E00;&#x6B65;&#x5730;&#x770B;&#x770B;&#x8FD9;&#x6761;&#x8BED;&#x53E5;&#x662F;&#x600E;&#x4E48;&#x8D70;&#x7684;&#x4E86;&#x3002;</p>
+<p>&#x4EE5;postgresql9.6.12&#x4E3A;&#x4F8B;&#xFF1A;</p>
+<p><img src="images/gdb9.png" alt="gdb9"></p>
+<h4 id="13-mainc-&#x5185;&#xFF1A;">#13 main.c &#x5185;&#xFF1A;</h4>
+<p>line99&#xFF1A; &#x51FD;&#x6570;MemoryContextInit()&#x542F;&#x52A8;&#x5FC5;&#x987B;&#x7684;&#x5B50;&#x7CFB;&#x7EDF;error&#x548C;memory&#x7BA1;&#x7406;&#x7CFB;&#x7EDF;;</p>
+<p>line110&#xFF1A;&#x51FD;&#x6570;set_pglocale_pgservice()&#x83B7;&#x53D6;&#x5E76;&#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;;</p>
+<p>line146~148: &#x51FD;&#x6570;init_locale&#x521D;&#x59CB;&#x5316;&#x73AF;&#x5883;&#x53D8;&#x91CF;;</p>
+<p>line219~228&#xFF1A;&#x6839;&#x636E;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x786E;&#x5B9A;&#x7A0B;&#x5E8F;&#x8D70;&#x5411;&#xFF0C;&#x8FD9;&#x91CC;&#x8FDB;&#x5165;&#x4E86;PostmasterMain(),&#x8DF3;&#x8F6C;&#x81F3;postmaster.c&#x6587;&#x4EF6;&#x3002;</p>
+<h4 id="1211109-postmasterc-&#x5185;&#xFF1A;">#12#11#10#9 postmaster.c &#x5185;&#xFF1A;</h4>
+<p>&#x8BE5;&#x6587;&#x4EF6;&#x4E2D;&#x5B9A;&#x4E49;&#x4E86;&#x540E;&#x7AEF;&#x7684;&#x5E38;&#x9A7B;&#x8FDB;&#x7A0B;&quot;postmaster&quot;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x4E3B;&#x8981;&#x51FD;&#x6570;&#x63A5;&#x53E3;&#x548C;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x5B9A;&#x4E49;&#x3002;postmaster&#x63A5;&#x53D7;&#x524D;&#x7AEF;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x5EFA;&#x7ACB;&#x65B0;&#x7684;backend&#x8FDB;&#x7A0B;&#x3002;</p>
+<p>line561~623&#xFF1A;&#x8BFB;&#x53D6;&#x4E0A;&#x4E0B;&#x6587;&#x4FE1;&#x606F;&#x548C;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x5B8C;&#x6210;&#x521D;&#x59CB;&#x5316;;</p>
+<p>line630~812&#xFF1A;&#x8BFB;&#x53D6;postmaster&#x7684;&#x53C2;&#x6570;;</p>
+<p>line930~1000&#xFF1A;&#x5EFA;&#x7ACB;socket&#x901A;&#x4FE1;;</p>
+<p>line1100~1159&#xFF1A;&#x5EFA;&#x7ACB;shared memory&#x548C;semaphores&#x4EE5;&#x53CA;&#x5806;&#x6808;&#x548C;pipe&#xFF0C;&#x521D;&#x59CB;&#x5316;&#x5B50;&#x7CFB;&#x7EDF;(stats collection&#x3001;autovacuum);</p>
+<p>line1296&#xFF1A;&#x8FDB;&#x5165;ServerLoop()&#x51FD;&#x6570;,&#x8DF3;&#x8F6C;&#x81F3;line1604;</p>
+<p>line1604:ServerLoop()&#x51FD;&#x6570;&#x5165;&#x53E3;&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x5FAA;&#x73AF;&#x76D1;&#x542C;&#x7AEF;&#x53E3;&#x4E0A;&#x7684;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;;</p>
+<p>line1673~1699&#xFF1A;&#x5224;&#x65AD;&#x662F;&#x5426;&#x6709;&quot;&#x5408;&#x6CD5;&quot;&#x7684;&#x8FDE;&#x63A5;&#x8BF7;&#x6C42;&#xFF0C;fork&#x4E00;&#x4E2A;&#x5B50;&#x8FDB;&#x7A0B;&#x53BB;&#x5904;&#x7406;&#x5B83;&#xFF0C;&#x8FDB;&#x5165;BackendStartup()&#x51FD;&#x6570;&#xFF0C;&#x8DF3;&#x8F6C;&#x81F3;line3857;</p>
+<p>line3857&#xFF1A;BackendStartup()&#x51FD;&#x6570;&#x5165;&#x53E3;&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x8D1F;&#x8D23;&#x5F00;&#x542F;&#x4E00;&#x4E2A;&#x65B0;&#x7684;backend&#x8FDB;&#x7A0B;;</p>
+<p>line3858~3914&#xFF1A;&#x505A;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x5316;&#x51C6;&#x5907;(&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x5F00;&#x542F;&#x548C;&#x5173;&#x95ED;&#x4E00;&#x4E9B;&#x5FC5;&#x8981;&#x7684;&#x8FDB;&#x7A0B;&#x7B49;&#x7B49;);</p>
+<p>line3917&#xFF1A;&#x8FDB;&#x5165;BackendRun()&#x51FD;&#x6570;&#xFF0C;&#x8DF3;&#x8F6C;&#x81F3;line4179;</p>
+<p>line4179&#xFF1A;BackendRun()&#x51FD;&#x6570;&#x5165;&#x53E3;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x8FD0;&#x884C;backend&#x8FDB;&#x7A0B;&#xFF0C;&#x4E3B;&#x8981;&#x5E72;&#x4E24;&#x4EF6;&#x4E8B;&#xFF1A;1.&#x5EFA;&#x7ACB;&#x53C2;&#x6570;&#x5217;&#x8868;&#x5E76;&#x521D;&#x59CB;&#x5316;2.&#x8C03;&#x7528;PostgresMain()&#x51FD;&#x6570;;</p>
+<p>line4243&#xFF1A;&#x8C03;&#x7528;PostgresMain()&#x51FD;&#x6570;&#xFF0C;&#x8FDB;&#x5165;postgres.c&#x6587;&#x4EF6;.</p>
+<h4 id="87-postgresc-&#x6587;&#x4EF6;&#x5185;&#xFF1A;">#8#7 postgres.c &#x6587;&#x4EF6;&#x5185;&#xFF1A;</h4>
+<p> &#x8BE5;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x4E86;postgres&#x540E;&#x7AEF;&#x7684;&#x4E3B;&#x8981;&#x6A21;&#x5757;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E;&#x540E;&#x7AEF;&#x7684;main&#xFF0C;&#x5E76;&#x4E14;&#x8D1F;&#x8D23;&#x540E;&#x7AEF;&#x8FDB;&#x7A0B;&#x7684;&#x8C03;&#x5EA6;&#x3002;</p>
+<p>line3572&#xFF1A;PostgresMain()&#x51FD;&#x6570;&#x5165;&#x53E3;&#x3002;&#x6839;&#x636E;&#x8F93;&#x5165;&#x7684;dbname&#xFF0C;username&#x548C;&#x8F93;&#x5165;&#x53C2;&#x6570;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;&#x4F1A;&#x8BDD;;</p>
+<p>line3573~3801&#xFF1A;&#x521D;&#x59CB;&#x5316;&#x5DE5;&#x4F5C;&#x3002;&#x5F00;&#x8BBE;&#x521D;&#x59CB;&#x5316;&#x73AF;&#x5883;&#x548C;&#x9ED8;&#x8BA4;&#x53C2;&#x6570;&#xFF0C;&#x8BBE;&#x7F6E;&#x4FE1;&#x53F7;&#x5904;&#x7406;&#x51FD;&#x6570;&#x548C;&#x5176;&#x4ED6;&#x53C2;&#x6570;&#xFF0C;&#x5EFA;&#x7ACB;&#x5185;&#x5B58;&#x4E0A;&#x4E0B;&#x6587;&#xFF0C;&#x8BBE;&#x7F6E;share buffer&#x7B49;&#x7B49;&#x7B49;&#x7B49;;</p>
+<p>line3825&#xFF1A;&#x8FDB;&#x5165;POSTGRES&#x7684;&#x4E3B;&#x5904;&#x7406;&#x5FAA;&#x73AF;,&#x8FD9;&#x4E2A;if&#x8BED;&#x53E5;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x5224;&#x65AD;&#x8F93;&#x5165;&#x5904;&#x7406;&#x662F;&#x5426;&#x6709;&#x5F02;&#x5E38;&#x7B49;;</p>
+<p>line3933&#xFF1A;&#x8FDB;&#x5165;&#x5904;&#x7406;&#x5FAA;&#x73AF;&#x4E2D;&#x3002;&#x8BE5;&#x5FAA;&#x73AF;&#x76D1;&#x542C;&#x65B0;&#x7684;&#x67E5;&#x8BE2;&#x8BF7;&#x6C42;&#x5E76;&#x5224;&#x65AD;&#x8BF7;&#x6C42;&#x7684;&#x7C7B;&#x522B;;</p>
+<p>line4045&#xFF1A;&#x5224;&#x65AD;&#x67E5;&#x8BE2;&#x8BF7;&#x6C42;&#x4E3A;simple query&#xFF0C;&#x8C03;&#x7528;exec_simple_query()&#x51FD;&#x6570;,&#x8DF3;&#x8F6C;&#x81F3;line884;</p>
+<p>line884&#xFF1A;exec_simple_query()&#x51FD;&#x6570;&#x5165;&#x53E3;&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x505A;&#x4E00;&#x4E9B;&#x521D;&#x59CB;&#x5316;&#x5DE5;&#x4F5C;&#xFF0C;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;transaction command&#xFF0C;&#x505A;&#x7B80;&#x5355;&#x7684;&#x8BED;&#x6CD5;&#x89C4;&#x5219;&#x5224;&#x65AD;&#xFF0C;&#x5206;&#x6790;&#x91CD;&#x5199;&#xFF0C;&#x5E76;&#x4E3A;&#x8BE5;&#x67E5;&#x8BE2;&#x5EFA;&#x7ACB;&#x67E5;&#x8BE2;&#x8BA1;&#x5212;&#xFF0C;&#x5E76;&#x8FD4;&#x56DE;&#x67E5;&#x8BE2;&#x7ED3;&#x679C;;</p>
+<p>line1104&#xFF1A;&#x8FDB;&#x5165;&#x51FD;&#x6570;PortalRun()&#xFF0C;&#x8FDB;&#x5165;pquery.c&#x6587;&#x4EF6;.</p>
+<h4 id="65-pqueryc-&#x6587;&#x4EF6;&#x5185;&#xFF1A;">#6#5 pquery.c &#x6587;&#x4EF6;&#x5185;&#xFF1A;</h4>
+<p>&#x8BE5;&#x6587;&#x4EF6;&#x5B9A;&#x4E49;&#x4E86;postgres&#x540E;&#x7AEF;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;&#x7684;&#x4EE3;&#x7801;&#x3002;</p>
+<p>line706&#xFF1A;PortalRun()&#x51FD;&#x6570;&#x5165;&#x53E3;&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x8D1F;&#x8D23;&#x8FD0;&#x884C;&#x4E00;&#x4E2A;&#x6216;&#x4E00;&#x7EC4;&#x67E5;&#x8BE2;;</p>
+<p>line786&#xFF1A;&#x8FDB;&#x5165;PortalRunSelect()&#x51FD;&#x6570;&#xFF0C;&#x8DF3;&#x8F6C;&#x81F3;line888;</p>
+<p>line888&#xFF1A;PortalRunSelect()&#x51FD;&#x6570;&#x5165;&#x53E3;&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x53EA;&#x80FD;&#x6267;&#x884C;&#x7B80;&#x5355;&#x7684;SELECT&#x67E5;&#x8BE2;&#x64CD;&#x4F5C;;</p>
+<p>line942&#xFF1A;&#x8FDB;&#x5165;ExecutorRun()&#x51FD;&#x6570;&#xFF0C;&#x8FDB;&#x5165;execMain.c&#x6587;&#x4EF6;.</p>
+<h4 id="432-execmainc-&#x6587;&#x4EF6;&#x5185;&#xFF1A;">#4#3#2 execMain.c &#x6587;&#x4EF6;&#x5185;&#xFF1A;</h4>
+<p>&#x8BE5;&#x6587;&#x4EF6;&#x7ED9;&#x51FA;&#x4E86;&#x6267;&#x884C;&#x7684;&#x56DB;&#x4E2A;&#x63A5;&#x53E3;&#x51FD;&#x6570;&#xFF0C;&#x5206;&#x522B;&#x662F;ExecutorStart() ExecutorRun() ExecutorFinish() ExecutorEnd()&#x3002;</p>
+<p>line279&#xFF1A;ExecutorRun()&#x51FD;&#x6570;&#x5165;&#x53E3;&#x3002;&#x8BE5;&#x51FD;&#x6570;&#x65F6;&#x6267;&#x884C;&#x6A21;&#x5757;&#x7684;&#x4E3B;&#x8981;&#x90E8;&#x5206;&#xFF0C;&#x5B83;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x63CF;&#x8FF0;&#x7B26;&#x5E76;&#x771F;&#x6B63;&#x7684;&#x6267;&#x884C;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x8BED;&#x53E5;;</p>
+<p>line285&#xFF1A;&#x8FDB;&#x5165;standard_ExecutorRun()&#x51FD;&#x6570;&#x3002;&#x8DF3;&#x8F6C;&#x81F3;line289;</p>
+<p>line289&#xFF1A;standard_ExecutorRun()&#x51FD;&#x6570;&#x5165;&#x53E3;&#x3002;&#x5B83;&#x6267;&#x884C;&quot;&#x6807;&#x51C6;&quot;&#x7684;&#x67E5;&#x8BE2;;</p>
+<p>line337&#xFF1A;&#x8FDB;&#x5165;ExecutePlan()&#x51FD;&#x6570;&#xFF0C;&#x8DF3;&#x8F6C;&#x81F3;line1517;</p>
+<p>line1517&#xFF1A;ExecutePlan()&#x51FD;&#x6570;&#x5165;&#x53E3;&#x3002;&#x8FD8;&#x8BB0;&#x5F97;&#x524D;&#x9762;exec_simple_query()&#x8BF4;&#x7684;&#x67E5;&#x8BE2;&#x8BA1;&#x5212;&#x4E48;&#xFF1F;&#x8FD9;&#x91CC;&#x7528;&#x4E0A;&#x4E86;&#xFF0C;&#x6267;&#x884C;&#x8BE5;&#x67E5;&#x8BE2;&#x8BA1;&#x5212;&#x3002;</p>
+<p>line1541&#xFF1A;&#x8FDB;&#x5165;&#x67E5;&#x8BE2;&#x8BA1;&#x5212;&#x6267;&#x884C;&#x7684;&#x4E3B;&#x5FAA;&#x73AF;;</p>
+<p>line1549&#xFF1A;&#x8FDB;&#x5165;ExecProcNode()&#x51FD;&#x6570;,&#x8FDB;&#x5165;execProcnode.c&#x6587;&#x4EF6;.</p>
+<h4 id="1-execprocnodec-&#x6587;&#x4EF6;&#x5185;&#xFF1A;">#1 execProcnode.c &#x6587;&#x4EF6;&#x5185;&#xFF1A;</h4>
+<p>&#x8BE5;&#x6587;&#x4EF6;&#x5185;&#x63D0;&#x4F9B;&#x4E86;&#x6267;&#x884C;&#x67E5;&#x8BE2;&#x8BA1;&#x5212;&#x7684;&#x8C03;&#x5EA6;&#x51FD;&#x6570;&#xFF0C;&#x529F;&#x80FD;&#x5206;&#x522B;&#x662F;&#xFF1A;</p>
+<p>ExecInitNode()&#xFF1A;&#x521D;&#x59CB;&#x5316;&#x67E5;&#x8BE2;&#x8BA1;&#x5212;&#x7684;&#x8282;&#x70B9;&#x4EE5;&#x53CA;&#x5176;&#x5B50;&#x67E5;&#x8BE2;&#x8BA1;&#x5212;;</p>
+<p>ExecProcNode()&#xFF1A;&#x901A;&#x8FC7;&#x6267;&#x884C;&#x67E5;&#x8BE2;&#x8BA1;&#x5212;&#x83B7;&#x5F97;&#x5143;&#x7EC4;;</p>
+<p>ExecEndNode()&#xFF1A;&#x5173;&#x95ED;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x8282;&#x70B9;&#x548C;&#x5B83;&#x7684;&#x5B50;&#x67E5;&#x8BE2;&#x8BA1;&#x5212;&#x3002;</p>
+<p>line367&#xFF1A;ExecProcNode()&#x51FD;&#x6570;&#x5165;&#x53E3;;</p>
+<p>line385&#xFF1A;&#x8FDB;&#x5165;ExecResult()&#x51FD;&#x6570;&#xFF0C;&#x8DF3;&#x8F6C;&#x81F3;&#x6587;&#x4EF6;nodeResult.c.</p>
+<h4 id="0-noderesultc-&#x6587;&#x4EF6;&#x5185;&#xFF1A;">#0 nodeResult.c &#x6587;&#x4EF6;&#x5185;&#xFF1A;</h4>
+<p>&#x8BE5;&#x6587;&#x4EF6;&#x4E3B;&#x8981;&#x4E3A;&#x6BCF;&#x4E2A;&#x67E5;&#x8BE2;&#x8BA1;&#x5212;&#x7684;&#x8282;&#x70B9;&#x63D0;&#x4F9B;&#x652F;&#x6301;&#x3002;</p>
+<p>line67&#xFF1A;ExecResult()&#x51FD;&#x6570;&#x5165;&#x53E3;&#xFF0C;&#x8BE5;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x67E5;&#x8BE2;&#x8BA1;&#x5212;&#x83B7;&#x5F97;&#x7684;&#x5143;&#x7EC4;&#x3002;</p>
+<p>&#x8FD9;&#x4E00;&#x6BB5;&#x4ECE;#13&#x5230;#0&#x7684;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7B80;&#x5355;&#x5206;&#x6790;</p>
+<h3 id="join&#x547D;&#x4EE4;">Join&#x547D;&#x4EE4;</h3>
+<pre><code class="lang-sql"><span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> t1(
+    <span class="hljs-keyword">key</span> <span class="hljs-built_in">integer</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    v1 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>) 
+);
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> t2(
+    <span class="hljs-keyword">key</span> <span class="hljs-built_in">integer</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">null</span>,
+    v2 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>) 
+);
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> t1 <span class="hljs-keyword">VALUES</span>
+(<span class="hljs-number">1</span>, <span class="hljs-string">&apos;a&apos;</span>), (<span class="hljs-number">2</span>, <span class="hljs-string">&apos;b&apos;</span>), (<span class="hljs-number">3</span>, <span class="hljs-string">&apos;c&apos;</span>), (<span class="hljs-number">4</span>, <span class="hljs-string">&apos;d&apos;</span>), (<span class="hljs-number">5</span>, <span class="hljs-string">&apos;e&apos;</span>), (<span class="hljs-number">6</span>, <span class="hljs-string">&apos;f&apos;</span>);
+
+<span class="hljs-keyword">INSERT</span> <span class="hljs-keyword">INTO</span> t2 <span class="hljs-keyword">VALUES</span>
+(<span class="hljs-number">1</span>, <span class="hljs-string">&apos;A&apos;</span>), (<span class="hljs-number">2</span>, <span class="hljs-string">&apos;B&apos;</span>), (<span class="hljs-number">3</span>, <span class="hljs-string">&apos;C&apos;</span>), (<span class="hljs-number">4</span>, <span class="hljs-string">&apos;D&apos;</span>), (<span class="hljs-number">5</span>, <span class="hljs-string">&apos;E&apos;</span>), (<span class="hljs-number">6</span>, <span class="hljs-string">&apos;F&apos;</span>);
+</code></pre>
+<p>&#x6267;&#x884C;join&#x547D;&#x4EE4;&#xFF1A;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">select</span> *
+<span class="hljs-keyword">from</span> t1
+<span class="hljs-keyword">left</span> <span class="hljs-keyword">join</span> t2 <span class="hljs-keyword">on</span> t1.<span class="hljs-keyword">key</span> = t2.<span class="hljs-keyword">key</span>
+</code></pre>
+<h2 id="gdb-&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;">gdb &#x8BBE;&#x7F6E;&#x65AD;&#x70B9;&#x7684;&#x51E0;&#x79CD;&#x65B9;&#x5F0F;</h2>
+<p><strong>&#x65B9;&#x5F0F;1&#x3001;&#x6839;&#x636E;&#x51FD;&#x6570;&#x540D;&#xFF0C;&#x67E5;&#x627E;&#x7B26;&#x53F7;&#xFF08;symbol&#xFF09;&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;</strong></p>
+<p>&#x6B64;&#x79CD;&#x65B9;&#x5F0F;&#x6700;&#x4E3A;&#x7B80;&#x5355;&#xFF0C;&#x9605;&#x8BFB;&#x6E90;&#x4EE3;&#x7801;&#xFF0C;&#x4E86;&#x89E3;&#x51FD;&#x6570;&#x5982;&#x4F55;&#x8C03;&#x7528;&#xFF0C;&#x5728;&#x9700;&#x8981;&#x6682;&#x505C;&#x8FD0;&#x884C;&#x7684;&#x51FD;&#x6570;&#x5165;&#x53E3;&#x8FDB;&#x884C;&#x65AD;&#x70B9;&#x8BBE;&#x7F6E;&#x3002;&#x4F46;&#x5E76;&#x4E0D;&#x662F;&#x6240;&#x6709;&#x51FD;&#x6570;&#xFF0C;&#x4EFB;&#x4F55;&#x65F6;&#x5019;&#x90FD;&#x80FD;&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;&#x7684;&#x3002;&#x6BD4;&#x5982;&#x4F18;&#x5316;&#x540E;&#x7684;&#x9759;&#x6001;&#x51FD;&#x6570;&#xFF0C;inline&#x51FD;&#x6570;&#x3002;&#x5728;&#x7279;&#x5B9A;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x540D;&#x8FDB;&#x884C;&#x65AD;&#x70B9;&#x8BBE;&#x7F6E;&#x4FBF;&#x4E0D;&#x53EF;&#x4E3A;&#xFF0C;&#x800C;&#x53C8;&#x9700;&#x8981;&#x67E5;&#x770B;&#x8FD0;&#x884C;&#x65F6;&#x8BE5;&#x51FD;&#x6570;&#x7684;&#x8FD0;&#x884C;&#x60C5;&#x51B5;&#xFF0C;&#x8FD9;&#x65F6;&#x5C31;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7B2C;&#x4E8C;&#x79CD;&#x65B9;&#x5F0F;&#x3002;</p>
+<p>&#x4F8B;&#x5B50;&#xFF1A;<code>b func_name</code></p>
+<p><strong>&#x65B9;&#x5F0F;2&#x3001;&#x6839;&#x636E;&#x4EE3;&#x7801;&#x884C;&#x4F4D;&#x7F6E;&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;</strong></p>
+<p>&#x5F53;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x65B9;&#x5F0F;1&#x8FDB;&#x884C;&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;&#xFF0C;&#x800C;&#x53C8;&#x660E;&#x786E;&#x77E5;&#x9053;&#xFF0C;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x5230;&#x6E90;&#x4EE3;&#x7801;&#x6587;&#x4EF6;&#x4E2D;&#x67D0;&#x4E2A;&#x4F4D;&#x7F6E;&#x9700;&#x8981;&#x4E2D;&#x65AD;&#xFF0C;&#x5219;&#x53EF;&#x901A;&#x8FC7;&#x5728;gdb&#x4E2D;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x53CA;&#x4EE3;&#x7801;&#x4F4D;&#x7F6E;&#x8FDB;&#x884C;&#x65AD;&#x70B9;&#x8BBE;&#x7F6E;&#x3002;&#x901A;&#x8FC7;&#x65B9;&#x5F0F;1&#x548C;2&#xFF0C;&#x80FD;&#x89E3;&#x51B3;&#x7EDD;&#x5927;&#x90E8;&#x5206;&#x7684;&#x8DDF;&#x8E2A;&#x95EE;&#x9898;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;&#x5728;&#x8FD0;&#x884C;&#x8FD0;&#x884C;&#x4E2D;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x4F1A;&#x78B0;&#x5230;&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x6307;&#x9488;&#x8FDB;&#x884C;&#x51FD;&#x6570;&#x8C03;&#x7528;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x6B64;&#x65F6;&#x53EA;&#x77E5;&#x9053;&#x51FD;&#x6570;&#x6307;&#x9488;&#x7684;&#x5730;&#x5740;&#xFF0C;&#x5C31;&#x65E0;&#x6CD5;&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x540D;&#x6216;&#x8005;&#x4EE3;&#x7801;&#x884C;&#x6570;&#x8FDB;&#x884C;</p>
+<p>&#x4F8B;&#x5B50;&#xFF1A;<code>b /src/codefile.cc:81</code>&#x3002;gdb&#x5C06;&#x5728;&#x8FD0;&#x884C;&#x5230;&#x6E90;&#x7801;&#x6587;&#x4EF6;/src/codefile.cc&#x7684;&#x7B2C;81&#x884C;&#x4E2D;&#x65AD;</p>
+<p><strong>&#x65B9;&#x5F0F;3&#x3001;&#x6839;&#x636E;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x5730;&#x5740;&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;</strong></p>
+<p>&#x6B64;&#x65F6;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF0C;&#x4E00;&#x662F;&#x901A;&#x8FC7;&#x76F4;&#x63A5;&#x6307;&#x5B9A;&#x5730;&#x5740;&#x8FDB;&#x884C;&#xFF0C;&#x8FDB;&#x884C;&#x65AD;&#x70B9;&#x8BBE;&#x7F6E;&#x3002;&#x4E8C;&#x662F;&#x901A;&#x8FC7;print&#x547D;&#x4EE4;&#x83B7;&#x5F97;&#x76F8;&#x5173;&#x4FE1;&#x606F;</p>
+<p>&#x4F8B;&#x5B50;1&#xFF1A;<code>b *0x5859c0</code>&#x3002;<code>&quot;*&quot;</code>&#x53F7;&#x662F;&#x5FC5;&#x987B;&#x52A0;&#x5728;&#x5730;&#x5740;&#x524D;&#x7684;&#xFF0C;0x5859c0&#x4E3A;&#x51FD;&#x6570;&#x6307;&#x9488;&#x7684;&#x5730;&#x5740;</p>
+<p>&#x4F8B;&#x5B50;2&#xFF1A;&#x5C55;&#x793A;&#x53D8;&#x91CF;&#x5185;&#x5BB9;</p>
+<p><code>(gdb) p *thread_scheduler</code></p>
+<p>&#x5728;&#x6253;&#x5370;thread_scheduler&#x53D8;&#x91CF;&#x7684;&#x5185;&#x5BB9;&#x65F6;&#xFF0C;&#x4FDD;&#x5B58;&#x51FD;&#x6570;&#x6307;&#x9488;&#x7684;&#x53D8;&#x91CF;add_connection&#x7684;&#x5185;&#x5BB9;&#x88AB;&#x6253;&#x5370;&#x51FA;&#x6765;&#xFF0C;&#x4FDD;&#x6D3B;&#x51FD;&#x6570;&#x7684;&#x6307;&#x9488;&#x548C;&#x51FD;&#x6570;&#x7684;&#x540D;&#x5B57;&#xFF0C;&#x901A;&#x8FC7;&#x6307;&#x9488;&#x53EF;&#x4F7F;&#x7528;b *0x5859c0&#x8FDB;&#x884C;&#x65AD;&#x70B9;&#x8BBE;&#x7F6E;&#xFF1B;&#x901A;&#x8FC7;&#x51FD;&#x6570;&#x540D;&#x53EF;&#x4F7F;&#x7528;&#x65B9;&#x5F0F;1&#x8FDB;&#x884C;&#x65AD;&#x70B9;&#x8BBE;&#x7F6E;</p>
+<h2 id="reference">Reference</h2>
+<p>1.<a href="http://www.postgres.cn/docs/9.6/" _target="blank">http://www.postgres.cn/docs/9.6/</a></p>
+<p>2.<a href="https://www.cnblogs.com/flying-tiger/p/5859393.html" _target="blank">https://www.cnblogs.com/flying-tiger/p/5859393.html</a></p>
+<p>3.<a href="https://www.cnblogs.com/xsln/p/gdb_instructions1.html" _target="blank">https://www.cnblogs.com/xsln/p/gdb_instructions1.html</a></p>
+<p>4.&#x300A;PostgreSQL&#x67E5;&#x8BE2;&#x5904;&#x7406;&#x90E8;&#x5206;&#x6E90;&#x7801;&#x5206;&#x6790;&#x300B;</p>
+<p>5.<a href="http://www.postgres.cn/docs/10/" _target="blank">http://www.postgres.cn/docs/10/</a></p>
+<p>6.<a href="http://www.cnblogs.com/northhurricane/p/3860393.html" _target="blank">http://www.cnblogs.com/northhurricane/p/3860393.html</a></p>
+<p>7.<a href="https://zhuanlan.zhihu.com/p/59452004" _target="blank">https://zhuanlan.zhihu.com/p/59452004</a></p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="postgre.html" class="navigation navigation-prev " aria-label="Previous page: PostgreSQL 源码安装">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="gdb2.html" class="navigation navigation-next " aria-label="Next page: GDB 跟踪 pg 源码">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"GDB 调试 pg","level":"1.9","depth":1,"next":{"title":"GDB 跟踪 pg 源码","level":"1.10","depth":1,"path":"gdb2.md","ref":"gdb2.md","articles":[]},"previous":{"title":"PostgreSQL 源码安装","level":"1.8","depth":1,"path":"postgre.md","ref":"postgre.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"Distribution System","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"gdb1.md","mtime":"2021-01-28T06:49:56.421Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T04:03:30.264Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,724 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>UNIX 管道及 Shell 实现（三）多管道实现 · 操作系统笔记</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="fs.html" />
+    
+    
+    <link rel="prev" href="pipeline2.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../notes/">
+            
+                <a href="../notes/">
+            
+                    
+                    Notes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../notes/io hardware.html">
+            
+                <a href="../notes/io hardware.html">
+            
+                    
+                    I/O 硬件原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../notes/io software.html">
+            
+                <a href="../notes/io software.html">
+            
+                    
+                    I/O 软件原理
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../notes/pcb.html">
+            
+                <a href="../notes/pcb.html">
+            
+                    
+                    进程模型与实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="../notes/schedule.html">
+            
+                <a href="../notes/schedule.html">
+            
+                    
+                    进程调度介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" data-path="../notes/ipc.html">
+            
+                <a href="../notes/ipc.html">
+            
+                    
+                    经典 IPC 问题实现与思考
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="../notes/deadlock.html">
+            
+                <a href="../notes/deadlock.html">
+            
+                    
+                    死锁
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="../notes/minix processes.html">
+            
+                <a href="../notes/minix processes.html">
+            
+                    
+                    Minix3 进程概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="../notes/memory.html">
+            
+                <a href="../notes/memory.html">
+            
+                    
+                    内存管理的基本思想与算法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="../notes/minix memory.html">
+            
+                <a href="../notes/minix memory.html">
+            
+                    
+                    Minix3 进程管理器概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="../notes/minix file system.html">
+            
+                <a href="../notes/minix file system.html">
+            
+                    
+                    Minix3 文件系统概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="../notes/race condition.html">
+            
+                <a href="../notes/race condition.html">
+            
+                    
+                    竞争条件与互斥
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="../notes/storage.html">
+            
+                <a href="../notes/storage.html">
+            
+                    
+                    存储管理中的设计问题
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="../notes/file system.html">
+            
+                <a href="../notes/file system.html">
+            
+                    
+                    文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Projects
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="minix.html">
+            
+                <a href="minix.html">
+            
+                    
+                    Minix 安装及配置指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="pipeline.html">
+            
+                <a href="pipeline.html">
+            
+                    
+                    Pipeline
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="pipeline1.html">
+            
+                <a href="pipeline1.html">
+            
+                    
+                    UNIX 管道及 Shell 实现（一）主体框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="pipeline2.html">
+            
+                <a href="pipeline2.html">
+            
+                    
+                    UNIX 管道及 Shell 实现（二）命令解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.5" data-path="pipeline3.html">
+            
+                <a href="pipeline3.html">
+            
+                    
+                    UNIX 管道及 Shell 实现（三）多管道实现
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="fs.html">
+            
+                <a href="fs.html">
+            
+                    
+                    文件系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >UNIX 管道及 Shell 实现（三）多管道实现</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p align="center">
+  <b>&#x672C;&#x7BC7;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x591A;&#x7BA1;&#x9053;&#x5B9E;&#x73B0;&#xFF0C;&#x81EA;&#x5DF1;&#x4E5F;&#x5199;&#x5F97;&#x4E0D;&#x597D;&#xFF0C;&#x5E0C;&#x671B;&#x5927;&#x5BB6;&#x591A;&#x591A;&#x6307;&#x70B9;&#x3002;</b>
+</p>
+
+
+
+<h1 id="&#x601D;&#x8DEF;">&#x601D;&#x8DEF;</h1>
+<p>&#x6211;&#x5728;<a href="../pipeline1">&#x8FD9;&#x7BC7;&#x6587;&#x7AE0;</a>&#x4E2D;&#x8F83;&#x8BE6;&#x7EC6;&#x7684;&#x8BB2;&#x89E3;&#x4E86;&#x7BA1;&#x9053;&#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x4F46;&#x5F53;&#x65F6;&#x53EA;&#x6D89;&#x53CA;&#x5230;&#x4E00;&#x4E2A;&#x7BA1;&#x9053;&#xFF0C;&#x56E0;&#x6B64;&#x53EA;&#x9700;&#x8981;&#x5173;&#x5FC3;&#x5BF9;&#x7BA1;&#x9053;&#x7684;read&#x548C;write&#xFF0C;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x5FC3;read&#x5230;&#x4EC0;&#x4E48;&#x5730;&#x65B9;&#x53BB;&#x3002;</p>
+<p>&#x9996;&#x5148;&#xFF0C;&#x6211;&#x4EEC;&#x5728;&#x4F7F;&#x7528;<strong>pipe</strong>&#x521B;&#x5EFA;&#x7BA1;&#x9053;&#x540E;&#xFF0C;&#x9700;&#x8981;<strong>fork</strong>&#x4E00;&#x4E2A;&#x8FDB;&#x7A0B;&#xFF0C;&#x5B50;&#x8FDB;&#x7A0B;&#x7528;&#x4E8E;&#x5411;&#x7BA1;&#x9053;&#x5199;&#xFF0C;&#x7236;&#x8FDB;&#x7A0B;&#x7528;&#x4E8E;&#x5411;&#x7BA1;&#x9053;&#x8BFB;&#xFF08;<strong>&#x6CE8;&#x610F;&#xFF0C;&#x987A;&#x5E8F;&#x4E0D;&#x80FD;&#x98A0;&#x5012;</strong>&#xFF09;&#x3002;&#x5F88;&#x6709;&#x8DA3;&#x7684;&#x4E00;&#x4E2A;&#x95EE;&#x9898;&#x662F;&#xFF0C;&#x5F53;&#x6211;&#x4EEC;&#x4F7F;&#x7528;<strong>fork</strong>&#x547D;&#x4EE4;&#x65F6;&#xFF0C;&#x5B50;&#x7236;&#x8FDB;&#x7A0B;&#x7684;&#x6267;&#x884C;&#x987A;&#x5E8F;&#x662F;&#x4E0D;&#x80FD;&#x786E;&#x5B9A;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x662F;&#x8BA9;&#x7236;&#x8FDB;&#x7A0B;&#x5411;&#x7BA1;&#x9053;&#x8BFB;&#x8FD8;&#x662F;&#x5B50;&#x8FDB;&#x7A0B;&#x5411;&#x7BA1;&#x9053;&#x8BFB;&#x5462;&#xFF1F;</p>
+<p>&#x6211;&#x7684;&#x7406;&#x89E3;&#x662F;&#xFF0C;&#x7531;&#x4E8E;&#x7236;&#x8FDB;&#x7A0B;&#x4E0D;&#x80FD;&#x5148;&#x4E8E;&#x5B50;&#x8FDB;&#x7A0B;&#x7ED3;&#x675F;&#xFF0C;&#x800C;&#x5982;&#x679C;&#x7BA1;&#x9053;&#x4E2D;&#x6CA1;&#x6709;&#x4E1C;&#x897F;&#xFF0C;&#x4ECE;&#x7BA1;&#x9053;&#x8BFB;&#x7684;&#x64CD;&#x4F5C;&#x4F1A;&#x88AB;&#x5835;&#x585E;&#xFF0C;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x8FD9;&#x4E2A;&#x6027;&#x8D28;&#x8BA9;&#x5B50;&#x8FDB;&#x7A0B;&#x5148;&#x4E8E;&#x7236;&#x8FDB;&#x7A0B;&#x7ED3;&#x675F;&#x3002;&#x5177;&#x4F53;&#x505A;&#x6CD5;&#x5C31;&#x662F;&#xFF1A;&#x8BA9;&#x7236;&#x8FDB;&#x7A0B;&#x5411;&#x7BA1;&#x9053;&#x8BFB;&#xFF0C;&#x5B50;&#x8FDB;&#x7A0B;&#x5411;&#x7BA1;&#x9053;&#x5199;&#x3002;&#x7531;&#x4E8E;&#x201C;&#x5411;&#x7BA1;&#x9053;&#x5199;&#x201D;&#x64CD;&#x4F5C;&#x603B;&#x662F;&#x5148;&#x4E8E;&#x201C;&#x5411;&#x7BA1;&#x9053;&#x8BFB;&#x201D;&#x64CD;&#x4F5C;&#xFF0C;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x505A;&#x5230;&#x7236;&#x8FDB;&#x7A0B;&#x7ED3;&#x675F;&#x524D;&#x56DE;&#x6536;&#x5B50;&#x8FDB;&#x7A0B;&#x7684;&#x5DE5;&#x4F5C;&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#xFF0C;&#x6211;&#x4EEC;&#x600E;&#x4E48;&#x505A;&#x5230;&#x591A;&#x7BA1;&#x9053;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x5462;&#xFF1F;&#x5176;&#x5B9E;&#x4E5F;&#x4E0D;&#x96BE;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x5148;&#x628A;&#x6240;&#x9700;&#x8981;&#x7684;&#x6240;&#x6709;&#x7BA1;&#x9053;&#x5EFA;&#x7ACB;&#x597D;&#xFF0C;&#x7136;&#x540E;&#x5F53;&#x5B50;&#x8FDB;&#x7A0B;&#x8981;&#x8FDB;&#x884C;<strong>execv&#x64CD;&#x4F5C;</strong>&#x4E4B;&#x524D;&#xFF0C;&#x628A;&#x5B83;&#x7684;&#x8F93;&#x51FA;fd&#x6307;&#x5411;&#x4E0B;&#x4E00;&#x4E2A;&#x7BA1;&#x9053;&#x7684;&#x8F93;&#x5165;&#xFF0C;&#x8FD9;&#x6837;&#x91CD;&#x590D;&#x8FDB;&#x884C;&#x5C31;&#x80FD;&#x5B9E;&#x73B0;&#x591A;&#x4E2A;&#x7BA1;&#x9053;&#x8FDB;&#x884C;&#x901A;&#x8BAF;&#x4E86;&#x3002;</p>
+<p>&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5F53;&#x8FDB;&#x884C;&#x5230;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#xFF0C;&#x8FD9;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5224;&#x65AD;&#xFF1A;&#x82E5;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x5C31;&#x662F;&#x201C;|&#x201D;&#xFF0C;&#x5219;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x5C06;&#x7BA1;&#x9053;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8F93;&#x51FA;&#x5230;&#x5C4F;&#x5E55;&#x5373;&#x53EF;&#xFF1B;&#x82E5;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x65F6;&quot;&gt;&quot;,&#x5219;&#x9700;&#x8981;&#x5C06;&#x7BA1;&#x9053;&#x4E2D;&#x7684;&#x547D;&#x4EE4;&#x5199;&#x5165;&#x5BF9;&#x5E94;&#x7684;&#x6587;&#x4EF6;&#x4E2D;&#x3002;</p>
+<h1 id="&#x5B9E;&#x73B0;">&#x5B9E;&#x73B0;</h1>
+<p>&#x603B;&#x4F53;&#x6765;&#x8BF4;&#x5BF9;&#x4E8E;&#x7BA1;&#x9053;&#x7684;&#x64CD;&#x4F5C;&#x6709;&#x4E09;&#x79CD;&#x60C5;&#x51B5;&#xFF1A;</p>
+<ol>
+<li>&#x6700;&#x5F00;&#x59CB;&#x6709;&#x201C;&lt;&#x201D;&#x91CD;&#x5B9A;&#x5411;&#x7B26;&#x53F7;&#xFF0C;&#x63A5;&#x7740;&#x6709;&#x591A;&#x4E2A;&#x7BA1;&#x9053;&#x3002;</li>
+<li>&#x4E00;&#x5F00;&#x59CB;&#x5C31;&#x662F;&#x591A;&#x4E2A;&#x7BA1;&#x9053;&#x8FDB;&#x884C;&#x4F20;&#x8F93;&#xFF0C;&#x6700;&#x540E;&#x8F93;&#x51FA;&#x5230;&#x5C4F;&#x5E55;&#x3002;</li>
+<li>&#x901A;&#x8FC7;&#x591A;&#x4E2A;&#x7BA1;&#x9053;&#x4F20;&#x8F93;&#x540E;&#xFF0C;&#x6700;&#x540E;&#x91CD;&#x5B9A;&#x5411;&#x5230;&#x6307;&#x5B9A;&#x6587;&#x4EF6;&#x3002;</li>
+</ol>
+<p>&#x5176;&#x5B9E;&#x8FD9;&#x4E09;&#x79CD;&#x60C5;&#x51B5;&#x90FD;&#x53EF;&#x4EE5;&#x5199;&#x6210;&#x4E00;&#x4E2A;&#x51FD;&#x6570;&#xFF0C;&#x56E0;&#x4E3A;&#x53EA;&#x9700;&#x8981;&#x5BF9;&#x7B2C;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x548C;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x8FDB;&#x884C;&#x7279;&#x6B8A;&#x5904;&#x7406;&#x5373;&#x53EF;&#x3002;&#x7531;&#x4E8E;&#x7B14;&#x8005;&#x5F88;&#x8822;&#xFF0C;&#x6700;&#x5F00;&#x59CB;&#x6CA1;&#x60F3;&#x5230;&#x7B2C;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#xFF0C;&#x56E0;&#x6B64;&#x540E;&#x9762;&#x53EA;&#x80FD;&#x7528;&#x4FEE;&#x6539;&#x5B57;&#x7B26;&#x4E32;&#x7684;&#x65B9;&#x6CD5;&#x66F2;&#x7EBF;&#x6551;&#x56FD;&#x4E86;&#xFF0C;&#x4EE3;&#x7801;&#x5F88;&#x4E11;&#xFF0C;&#x5C06;&#x5C31;&#x770B;&#x5427;&#x3002;
+pipe_command&#xFF1A;</p>
+<pre><code class="lang-C"><span class="hljs-comment">/*take care of pipe*/</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">pipe_command</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-comment">/*pointerindex is the index of each Command*/</span>
+    <span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>, j = <span class="hljs-number">0</span>, pointerindex[<span class="hljs-number">20</span>], commandnumber = CommandInfo.index;
+    <span class="hljs-keyword">int</span> pipenumber = <span class="hljs-number">0</span>, pid, pipefd[<span class="hljs-number">20</span>][<span class="hljs-number">2</span>];
+    <span class="hljs-keyword">char</span>** P_temp;
+    pointerindex[<span class="hljs-number">0</span>] = <span class="hljs-number">0</span>; <span class="hljs-comment">/*the first command location*/</span>
+
+    <span class="hljs-comment">/*get all command&apos;s index*/</span>
+    <span class="hljs-keyword">while</span> (i &lt;= commandnumber) {
+        <span class="hljs-keyword">if</span> (CommandInfo.argv[j] == <span class="hljs-literal">NULL</span>) {
+            pointerindex[i] = j + <span class="hljs-number">1</span>;
+            i++;
+        }
+        j++;
+    }
+
+    <span class="hljs-comment">/*if the last command is &gt; or &gt;&gt;*/</span>
+
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt;= CommandInfo.index; i++) {
+        <span class="hljs-keyword">if</span> (CommandInfo.type[i] == PIPE)
+            pipenumber++;
+    }
+
+    <span class="hljs-comment">/*init the pipe*/</span>
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">20</span>; i++)
+        pipe(pipefd[i]);
+
+    i = <span class="hljs-number">1</span>;
+
+    <span class="hljs-keyword">if</span> (fork() != <span class="hljs-number">0</span>) {
+        <span class="hljs-comment">/*this is the father, need to read*/</span>
+        dup2(pipefd[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>], <span class="hljs-number">0</span>);
+        close(pipefd[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]);
+
+        P_temp = CommandInfo.argv + pointerindex[<span class="hljs-number">1</span>];
+        <span class="hljs-comment">/*fork a process*/</span>
+        pid = fork();
+
+        <span class="hljs-keyword">if</span> (pid != <span class="hljs-number">0</span>) {
+            <span class="hljs-comment">/*this is the father,wait child return*/</span>
+            waitpid(pid, <span class="hljs-literal">NULL</span>, <span class="hljs-number">0</span>);
+            close(pipefd[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>]); <span class="hljs-comment">/*no need to write*/</span>
+            next_pipe(pipefd, pipenumber - <span class="hljs-number">1</span>, pointerindex);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">/*read the result from pipe and write to the next pipe*/</span>
+            dup2(pipefd[<span class="hljs-number">1</span>][<span class="hljs-number">1</span>], <span class="hljs-number">1</span>);
+            close(pipefd[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>]); <span class="hljs-comment">/*no need to read*/</span>
+            Execvp(P_temp[<span class="hljs-number">0</span>], P_temp);
+        }
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">/*this is the child, need to write*/</span>
+        dup2(pipefd[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>], <span class="hljs-number">1</span>);
+        close(pipefd[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]);
+        Execvp(CommandInfo.argv[<span class="hljs-number">0</span>], CommandInfo.argv);
+    }
+}
+</code></pre>
+<p>&#x5BF9;&#x4E8E;&#x591A;&#x7BA1;&#x9053;&#x8FDB;&#x884C;&#x5FAA;&#x73AF;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<pre><code class="lang-C"><span class="hljs-comment">/*special run for mult-pipes*/</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">next_pipe</span><span class="hljs-params">(<span class="hljs-keyword">int</span> pipefd[<span class="hljs-number">20</span>][<span class="hljs-number">2</span>], <span class="hljs-keyword">int</span> pipenumber, <span class="hljs-keyword">int</span> pointerindex[])</span> </span>{
+    <span class="hljs-keyword">char</span>** P_temp;
+    <span class="hljs-keyword">char</span> buffer[MAXLINE];
+    <span class="hljs-keyword">int</span> commandnumber = CommandInfo.index; <span class="hljs-comment">/*get the all command number*/</span>
+    <span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>, pid, fd, run_index = <span class="hljs-number">2</span>; <span class="hljs-comment">/*refer to the index of command to run*/</span>
+    <span class="hljs-keyword">int</span> flag = !(pipenumber + <span class="hljs-number">1</span> == commandnumber);
+    <span class="hljs-keyword">int</span> lastCommand = <span class="hljs-number">0</span>;
+
+    <span class="hljs-comment">/*if only one pipe and no other command, print it*/</span>
+    <span class="hljs-keyword">if</span> (commandnumber == <span class="hljs-number">1</span>) {
+        read(pipefd[<span class="hljs-number">1</span>][<span class="hljs-number">0</span>], buffer, MAXLINE);
+        <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s&quot;</span>, buffer);
+        <span class="hljs-keyword">return</span>;
+    }
+
+    <span class="hljs-comment">/*loop to connect the pipe*/</span>
+
+    <span class="hljs-keyword">while</span> (pipenumber--) {
+        pid = fork();
+        <span class="hljs-keyword">if</span> (pid == <span class="hljs-number">0</span>) {
+            <span class="hljs-comment">/*this is the child, to run the command*/</span>
+            dup2(pipefd[i][<span class="hljs-number">0</span>], <span class="hljs-number">0</span>);     <span class="hljs-comment">/*read data*/</span>
+            close(pipefd[i][<span class="hljs-number">1</span>]);       <span class="hljs-comment">/*no need to write*/</span>
+            dup2(pipefd[i + <span class="hljs-number">1</span>][<span class="hljs-number">1</span>], <span class="hljs-number">1</span>); <span class="hljs-comment">/*write to the next pipe*/</span>
+            <span class="hljs-comment">/*get the command*/</span>
+
+            P_temp = CommandInfo.argv + pointerindex[run_index];
+            Execvp(P_temp[<span class="hljs-number">0</span>], P_temp);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">/*wait child completes the command*/</span>
+            waitpid(pid, <span class="hljs-literal">NULL</span>, <span class="hljs-number">0</span>);
+            i++;         <span class="hljs-comment">/*next pipe*/</span>
+            run_index++; <span class="hljs-comment">/*next command*/</span>
+        }
+    }
+
+    <span class="hljs-comment">/*if the last command is &gt; or &gt;&gt;*/</span>
+    <span class="hljs-keyword">if</span> (flag) {
+        <span class="hljs-keyword">if</span> (CommandInfo.override)
+            lastCommand = CommandInfo.type[commandnumber];
+        <span class="hljs-keyword">else</span>
+            lastCommand = CommandInfo.type[commandnumber - <span class="hljs-number">1</span>];
+        <span class="hljs-comment">/*if the command is &gt;*/</span>
+        <span class="hljs-keyword">if</span> (lastCommand == OUT_REDIRECT) {
+            fd = open(CommandInfo.argv[pointerindex[commandnumber]],
+                      O_WRONLY | O_CREAT | O_TRUNC, <span class="hljs-number">0666</span>);
+        } <span class="hljs-keyword">else</span> { <span class="hljs-comment">/*the command is &gt;&gt;*/</span>
+            fd = open(CommandInfo.argv[pointerindex[commandnumber]],
+                      O_RDWR | O_APPEND, <span class="hljs-number">0666</span>);
+        }
+        read(pipefd[i][<span class="hljs-number">0</span>], buffer, MAXLINE); <span class="hljs-comment">/*read from pipe*/</span>
+        write(fd, buffer, <span class="hljs-built_in">strlen</span>(buffer));   <span class="hljs-comment">/*write into file*/</span>
+    } <span class="hljs-keyword">else</span> {
+        read(pipefd[i][<span class="hljs-number">0</span>], buffer, MAXLINE); <span class="hljs-comment">/*read from pipe*/</span>
+        <span class="hljs-built_in">fprintf</span>(<span class="hljs-built_in">stdout</span>,<span class="hljs-string">&quot;%s&quot;</span>, buffer);                <span class="hljs-comment">/*print into screen*/</span>
+    }
+    <span class="hljs-keyword">return</span>;
+}
+</code></pre>
+<p>&#x5BF9;&#x7B2C;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x8FDB;&#x884C;&#x66F2;&#x7EBF;&#x6551;&#x56FD;&#xFF1A;</p>
+<pre><code class="lang-C"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">EditInfo</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-keyword">int</span> i, location;
+    CommandInfo.index--;
+    <span class="hljs-comment">/* find the first command -- NULL */</span>
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">1</span>; i &lt; CommandInfo.argc; i++) {
+        <span class="hljs-keyword">if</span> (CommandInfo.argv[i] == <span class="hljs-literal">NULL</span>) {
+            location = i;
+            <span class="hljs-keyword">break</span>;
+        }
+    }
+    <span class="hljs-comment">/* override the used command*/</span>
+    <span class="hljs-keyword">for</span> (i = location; i &lt; CommandInfo.argc; i++) {
+        CommandInfo.argv[i] = CommandInfo.argv[i + <span class="hljs-number">2</span>];
+    }
+    CommandInfo.override = <span class="hljs-number">1</span>;
+}
+</code></pre>
+<h1 id="&#x7ED3;&#x679C;&#x5C55;&#x793A;">&#x7ED3;&#x679C;&#x5C55;&#x793A;</h1>
+<p><img src="../images/pipeline2.png" alt="pipeline2"></p>
+<h1 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h1>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x7EC8;&#x4E8E;&#x5B8C;&#x6210;&#x4E86;&#x4E00;&#x4E2A;&#x7B80;&#x5355;Shell&#x7684;&#x5B9E;&#x73B0;&#x3002;&#x867D;&#x7136;&#x5B9E;&#x73B0;&#x4E2D;&#x78B0;&#x5230;&#x4E86;&#x4E0D;&#x5C11;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x6700;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x4E5F;&#x4E0D;&#x591F;&#x4F18;&#x7F8E;&#xFF0C;&#x4F46;&#x8FD9;&#x6B21;&#x5B9E;&#x9A8C;&#x8BA9;&#x81EA;&#x5DF1;&#x8BA4;&#x8BC6;&#x5230;&#x4E86;&#x4E0D;&#x5C11;&#x7684;&#x95EE;&#x9898;&#x3002;</p>
+<ol>
+<li>C&#x8BED;&#x8A00;&#x4F7F;&#x7528;&#x8FD8;&#x4E0D;&#x591F;&#x719F;&#x7EC3;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x5BF9;&#x4E8E;UNIX&#x7684;&#x5404;&#x79CD;&#x7CFB;&#x7EDF;&#x8C03;&#x7528;&#x3002;</li>
+<li>&#x6CA1;&#x6709;&#x60F3;&#x6E05;&#x695A;&#x4E86;&#x518D;&#x52A8;&#x7B14;&#xFF0C;&#x4EE3;&#x7801;&#x7EC4;&#x7EC7;&#x7ED3;&#x6784;&#x6709;&#x95EE;&#x9898;&#xFF0C;&#x6A21;&#x5757;&#x5316;&#x4E0D;&#x591F;&#x3002;</li>
+<li>&#x591A;&#x6587;&#x4EF6;&#x7684;&#x534F;&#x8C03;&#x548C;&#x7F16;&#x8BD1;&#x8FD8;&#x4E0D;&#x591F;&#x719F;&#x7EC3;&#xFF0C;&#x7F16;&#x8BD1;&#x987A;&#x5E8F;&#xFF1F;makefile&#x6587;&#x4EF6;&#xFF1F;&#x8FD8;&#x4E0D;&#x592A;&#x4F1A;&#x7528;&#x3002;</li>
+<li>&#x5F88;&#x591A;&#x5C0F;bug&#x6CA1;&#x6709;&#x610F;&#x8BC6;&#x5230;&#xFF0C;&#x6BD4;&#x5982;&#x8BF4;&#x76F4;&#x63A5;&#x8F93;&#x5165;&#x56DE;&#x8F66;&#xFF0C;&#x5B50;&#x7236;&#x8FDB;&#x7A0B;&#x7684;&#x7BA1;&#x7406;&#x548C;&#x56DE;&#x6536;&#x7B49;&#x7B49;&#x3002;</li>
+<li>&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x8FD8;&#x4E0D;&#x592A;&#x4F1A;&#x3002;</li>
+</ol>
+<h1 id="todo">ToDo</h1>
+<p>&#x867D;&#x7136;&#x628A;project&#x8981;&#x6C42;&#x5B8C;&#x6210;&#x4E86;&#xFF0C;&#x4F46;&#x524D;&#x524D;&#x540E;&#x540E;&#x6539;&#x5F97;&#x9762;&#x76EE;&#x5168;&#x975E;&#xFF0C;&#x5BFC;&#x81F4;&#x81EA;&#x5DF1;&#x90FD;&#x4E0D;&#x613F;&#x610F;&#x518D;&#x770B;&#x4EE3;&#x7801;&#x4E86;&#x3002;&#x5148;&#x6316;&#x4E2A;&#x5751;&#xFF0C;&#x7B49;&#x6709;&#x65F6;&#x95F4;&#x4E86;&#x518D;&#x91CD;&#x65B0;&#x7406;&#x7406;&#x601D;&#x8DEF;&#xFF0C;&#x5B9A;&#x4E2A;&#x5C0F;&#x76EE;&#x6807;&#xFF0C;&#x7528;&#x4E24;&#x767E;&#x884C;&#x5DE6;&#x53F3;&#x4EE3;&#x7801;&#x5199;&#x597D;&#x3002;</p>
+<h1 id="&#x53C2;&#x8003;&#x8D44;&#x6599;">&#x53C2;&#x8003;&#x8D44;&#x6599;</h1>
+<ol>
+<li>[Linux shell&#x7684;&#x5B9E;&#x73B0;][1]</li>
+<li>Operating System:Design and Implementation,Third Edition </li>
+<li>Computer Systems: A Programmer&apos;s Perspective, 3/E</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="pipeline2.html" class="navigation navigation-prev " aria-label="Previous page: UNIX 管道及 Shell 实现（二）命令解析">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="fs.html" class="navigation navigation-next " aria-label="Next page: 文件系统">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"UNIX 管道及 Shell 实现（三）多管道实现","level":"1.3.5","depth":2,"next":{"title":"文件系统","level":"1.3.6","depth":2,"path":"projects/fs.md","ref":"projects/fs.md","articles":[]},"previous":{"title":"UNIX 管道及 Shell 实现（二）命令解析","level":"1.3.4","depth":2,"path":"projects/pipeline2.md","ref":"projects/pipeline2.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":"-","variables":{},"title":"操作系统笔记","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"projects/pipeline3.md","mtime":"2021-01-22T09:02:02.812Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T10:44:05.424Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

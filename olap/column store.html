@@ -1,0 +1,606 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>OLAP 列存储 · Data Mining</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="tpch.html" />
+    
+    
+    <link rel="prev" href="log.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="sql server.html">
+            
+                <a href="sql server.html">
+            
+                    
+                    SQL Server 和 SSBI 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="udw.html">
+            
+                <a href="udw.html">
+            
+                    
+                    UDW云数据仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="history.html">
+            
+                <a href="history.html">
+            
+                    
+                    历史拉链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    日志分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="column store.html">
+            
+                <a href="column store.html">
+            
+                    
+                    OLAP 列存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="tpch.html">
+            
+                <a href="tpch.html">
+            
+                    
+                    基准评测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="mvcc.html">
+            
+                <a href="mvcc.html">
+            
+                    
+                    数据仓库之表膨胀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="json.html">
+            
+                <a href="json.html">
+            
+                    
+                    数据仓库之 Json 格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="hive.html">
+            
+                <a href="hive.html">
+            
+                    
+                    Hive 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="model.html">
+            
+                <a href="model.html">
+            
+                    
+                    建立数据仓库模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="sqoop.html">
+            
+                <a href="sqoop.html">
+            
+                    
+                    Sqoop 抽取数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="data cleaning.html">
+            
+                <a href="data cleaning.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="first load.html">
+            
+                <a href="first load.html">
+            
+                    
+                    初始装载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="time load.html">
+            
+                <a href="time load.html">
+            
+                    
+                    定期装载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="optimization.html">
+            
+                <a href="optimization.html">
+            
+                    
+                    Hive 优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="recap.html">
+            
+                <a href="recap.html">
+            
+                    
+                    OLAP 期末总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >OLAP 列存储</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="&#x5217;&#x5B58;&#x50A8;">&#x5217;&#x5B58;&#x50A8;</h2>
+<p>&#x5728;&#x5E38;&#x89C1;&#x7684;OLTP&#x4E2D;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x90FD;&#x662F;&#x6309;&#x884C;&#x5B58;&#x50A8;&#x7684;&#xFF0C;&#x5728;OLAP&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x6570;&#x636E;&#x884C;&#x7279;&#x522B;&#x591A;&#xFF0C;&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x5217;&#x5B58;&#x50A8;&#x3002;</p>
+<p><img src="images/column1.png" alt="column1"></p>
+<h3 id="&#x5E94;&#x7528;&#x573A;&#x666F;">&#x5E94;&#x7528;&#x573A;&#x666F;</h3>
+<p>&#x4E00;&#x4E2A;OLAP&#x7C7B;&#x578B;&#x7684;&#x67E5;&#x8BE2;&#x53EF;&#x80FD;&#x9700;&#x8981;&#x8BBF;&#x95EE;&#x51E0;&#x767E;&#x4E07;&#x751A;&#x81F3;&#x51E0;&#x5341;&#x4EBF;&#x4E2A;&#x6570;&#x636E;&#x884C;&#xFF0C;&#x4E14;&#x8BE5;&#x67E5;&#x8BE2;&#x5F80;&#x5F80;&#x53EA;&#x5173;&#x5FC3;&#x5C11;&#x6570;&#x51E0;&#x4E2A;&#x6570;&#x636E;&#x5217;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x67E5;&#x8BE2;&#x4ECA;&#x5E74;&#x9500;&#x91CF;&#x6700;&#x9AD8;&#x7684;&#x524D;20&#x4E2A;&#x5546;&#x54C1;&#xFF0C;&#x8FD9;&#x4E2A;&#x67E5;&#x8BE2;&#x53EA;&#x5173;&#x5FC3;&#x4E09;&#x4E2A;&#x6570;&#x636E;&#x5217;&#xFF1A;&#x65F6;&#x95F4;&#xFF08;date&#xFF09;&#x3001;&#x5546;&#x54C1;&#xFF08;item&#xFF09;&#x4EE5;&#x53CA;&#x9500;&#x552E;&#x91CF;&#xFF08;sales amount&#xFF09;&#x3002; &#x5217;&#x5F0F;&#x6570;&#x636E;&#x5E93;&#x53EA;&#x9700;&#x8981;&#x8BFB;&#x53D6;&#x5B58;&#x50A8;&#x7740;&#x201C;&#x65F6;&#x95F4;&#x3001;&#x5546;&#x54C1;&#x3001;&#x9500;&#x91CF;&#x201D;&#x7684;&#x6570;&#x636E;&#x5217;&#xFF0C;&#x800C;&#x884C;&#x5F0F;&#x6570;&#x636E;&#x5E93;&#x9700;&#x8981;&#x8BFB;&#x53D6;&#x6240;&#x6709;&#x7684;&#x6570;&#x636E;&#x5217;&#x3002;</p>
+<h3 id="&#x4F18;&#x70B9;">&#x4F18;&#x70B9;</h3>
+<ul>
+<li>&#x540C;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x5217;&#x7684;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x76F8;&#x540C;&#xFF0C;&#x6570;&#x636E;&#x76F8;&#x4F3C;&#x6027;&#x9AD8;&#xFF0C;&#x5217;&#x5F0F;&#x6570;&#x636E;&#x5E93;&#x538B;&#x7F29;&#x6027;&#x6BD4;&#x884C;&#x5B58;&#x50A8;&#x597D;&#x3002;<ul>
+<li>&#x4F7F;&#x7528;&#x4EC0;&#x4E48;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#xFF1F;</li>
+<li>&#x82E5;&#x5B57;&#x6BB5;&#x5C5E;&#x6027;&#x5E76;&#x4E0D;&#x591A;&#xFF0C;&#x53EF;&#x4EE5;&#x66FF;&#x6362;&#xFF1B;&#x4F4D;&#x56FE;&#x7684;&#x538B;&#x7F29;&#x65B9;&#x6CD5;&#xFF1B;&#x5177;&#x4F53;&#x53C2;&#x8003;<a href="https://en.wikipedia.org/wiki/Column-oriented_DBMS#Compression" _target="blank">&#x8FD9;&#x91CC;</a></li>
+</ul>
+</li>
+<li>&#x67E5;&#x8BE2;&#x5355;&#x5217;&#x53EA;&#x9700;&#x626B;&#x63CF;&#x5355;&#x5217;&#xFF0C;&#x4E0D;&#x5FC5;&#x52A0;&#x8F7D;&#x6574;&#x884C;&#x6570;&#x636E;</li>
+<li>&#x7F13;&#x5B58;&#x547D;&#x4E2D;&#x7387;&#x63D0;&#x9AD8;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x540C;&#x4E00;&#x5217;&#x7684;&#x6570;&#x636E;&#x88AB;&#x9AD8;&#x5EA6;&#x538B;&#x7F29;&#xFF0C;&#x5E38;&#x7528;&#x7684;Page&#x88AB;&#x9891;&#x7E41;&#x8BBF;&#x95EE;&#x800C;&#x53D8;&#x5F97;&#x5F02;&#x5E38;&#x6D3B;&#x8DC3;&#xFF0C;Buffer Manager&#x628A;&#x6D3B;&#x8DC3;&#x7684;&#x6570;&#x636E;&#x9875;&#x7F13;&#x5B58;&#x5230;&#x5185;&#x5B58;&#x4E2D;&#xFF0C;&#x4E0D;&#x5E38;&#x7528;&#x7684;Page&#x88AB;&#x6362;&#x51FA;&#xFF08;Page Out&#xFF09;</li>
+</ul>
+<h2 id="&#x5728;udw&#x4E2D;&#x4F7F;&#x7528;&#x5217;&#x5B58;&#x50A8;">&#x5728;UDW&#x4E2D;&#x4F7F;&#x7528;&#x5217;&#x5B58;&#x50A8;</h2>
+<p>&#x9996;&#x5148;&#x8FDB;&#x5165;UDW&#xFF1A;</p>
+<pre><code>psql -U dyt -h udw.lurymd.m0.service.ucloud.cn -p 5432 -d db_dyt -W
+</code></pre><p>&#x521B;&#x5EFA;&#x5217;&#x5B58;&#x50A8;&#x8868;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> test_column_ao(
+    <span class="hljs-keyword">id</span> <span class="hljs-built_in">bigint</span>,
+    <span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">128</span>),
+    <span class="hljs-keyword">value</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">128</span>)
+)<span class="hljs-keyword">with</span>(appendonly=<span class="hljs-literal">true</span>,ORIENTATION=<span class="hljs-keyword">column</span>,compresslevel=<span class="hljs-number">5</span>)
+<span class="hljs-keyword">distributed</span> <span class="hljs-keyword">by</span> (<span class="hljs-keyword">id</span>);
+</code></pre>
+<p>&#x67E5;&#x770B;&#x8868;&#x7ED3;&#x6784;&#xFF1A;</p>
+<p><img src="images/column2.png" alt="column2"></p>
+<h3 id="&#x5BFC;&#x5165;&#x6570;&#x636E;">&#x5BFC;&#x5165;&#x6570;&#x636E;</h3>
+<p>&#x4F7F;&#x7528;&#x540C;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x6E90;&#xFF0C;&#x5206;&#x522B;&#x8FDB;&#x884C;&#x884C;&#x5B58;&#x50A8;&#x548C;&#x5217;&#x5B58;&#x50A8;&#xFF1A;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> r_table (
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span>,
+col1 <span class="hljs-built_in">int</span>,col2 <span class="hljs-built_in">int</span>,col3 <span class="hljs-built_in">int</span>,col4 <span class="hljs-built_in">int</span>,col5 <span class="hljs-built_in">int</span>,col6 <span class="hljs-built_in">int</span>,col7 <span class="hljs-built_in">int</span>,col8 <span class="hljs-built_in">int</span>,col9 <span class="hljs-built_in">int</span>,col10 <span class="hljs-built_in">int</span>,
+col11 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col12 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col13 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col14 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col15 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),
+col16 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col17 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col18 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col19 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col20 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),
+col21 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col22 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col23 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col24 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col25 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),
+col26 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col27 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col28 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col29 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col30 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),
+col31 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col32 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col33 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col34 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col35 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),
+col36 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col37 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col38 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col39 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col40 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),
+col41 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col42 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col43 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col44 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col45 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),
+col46 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col47 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col48 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col49 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col50 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),
+col51 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">50</span>),col52 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">55</span>),col53 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">60</span>),col54 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">65</span>),col55 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">128</span>),
+col56 <span class="hljs-built_in">date</span>,col57 <span class="hljs-built_in">text</span>,col58 <span class="hljs-keyword">timestamp</span>,col59 <span class="hljs-built_in">varchar</span> (<span class="hljs-number">125</span>),col60 <span class="hljs-built_in">bigint</span>)
+<span class="hljs-keyword">with</span> (appendonly=<span class="hljs-literal">true</span>,compresslevel =<span class="hljs-number">5</span>)
+<span class="hljs-keyword">distributed</span> <span class="hljs-keyword">by</span> (col11);
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> c_table (
+<span class="hljs-keyword">id</span> <span class="hljs-built_in">int</span>,
+col1 <span class="hljs-built_in">int</span>,col2 <span class="hljs-built_in">int</span>,col3 <span class="hljs-built_in">int</span>,col4 <span class="hljs-built_in">int</span>,col5 <span class="hljs-built_in">int</span>,col6 <span class="hljs-built_in">int</span>,col7 <span class="hljs-built_in">int</span>,col8 <span class="hljs-built_in">int</span>,col9 <span class="hljs-built_in">int</span>,col10 <span class="hljs-built_in">int</span>,
+col11 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col12 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col13 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col14 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col15 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),
+col16 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col17 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col18 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col19 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),col20 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">10</span>),
+col21 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col22 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col23 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col24 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col25 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),
+col26 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col27 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col28 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col29 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),col30 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">20</span>),
+col31 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col32 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col33 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col34 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col35 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),
+col36 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col37 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col38 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col39 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),col40 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">30</span>),
+col41 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col42 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col43 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col44 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col45 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),
+col46 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col47 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col48 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col49 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),col50 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">40</span>),
+col51 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">50</span>),col52 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">55</span>),col53 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">60</span>),col54 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">65</span>),col55 <span class="hljs-built_in">varchar</span>(<span class="hljs-number">128</span>),
+col56 <span class="hljs-built_in">date</span>,col57 <span class="hljs-built_in">text</span>,col58 <span class="hljs-keyword">timestamp</span>,col59 <span class="hljs-built_in">varchar</span> (<span class="hljs-number">125</span>),col60 <span class="hljs-built_in">bigint</span>)
+<span class="hljs-keyword">with</span> (appendonly=<span class="hljs-literal">true</span>,ORIENTATION=<span class="hljs-keyword">column</span>,compresslevel =<span class="hljs-number">5</span>)
+<span class="hljs-keyword">distributed</span> <span class="hljs-keyword">by</span> (col11);
+</code></pre>
+<p>&#x5BFC;&#x5165;&#x6570;&#x636E;</p>
+<pre><code class="lang-sql">\copy r_table from &apos;/home/cl/columnstore/data.dat&apos; with delimiter &apos;,&apos;;
+\copy c_table from &apos;/home/cl/columnstore/data.dat&apos; with delimiter &apos;,&apos;;
+</code></pre>
+<h3 id="&#x67E5;&#x8BE2;&#x6BD4;&#x8F83;">&#x67E5;&#x8BE2;&#x6BD4;&#x8F83;</h3>
+<ol>
+<li><p>&#x6BD4;&#x8F83;&#x5B58;&#x50A8;&#x5927;&#x5C0F;</p>
+<ul>
+<li><code>select pg_relation_size(&apos;c_table&apos;)</code></li>
+<li><img src="images/column3.png" alt="column3"></li>
+</ul>
+</li>
+<li><p>&#x9996;&#x5148;&#x7528;<code>\timing on</code>&#x5F00;&#x59CB;&#x8BA1;&#x65F6;</p>
+</li>
+<li><p>&#x67E5;&#x8BE2;10&#x4E2A;&#x5B57;&#x6BB5;&#x6D88;&#x8017;&#x7684;&#x65F6;&#x95F4;</p>
+<ul>
+<li><pre><code class="lang-sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(col1),<span class="hljs-keyword">count</span>(col5),<span class="hljs-keyword">count</span>(col10),<span class="hljs-keyword">count</span>(col20),<span class="hljs-keyword">count</span>(col25),<span class="hljs-keyword">count</span>(col32),<span class="hljs-keyword">count</span>(col42),<span class="hljs-keyword">count</span>(col45),<span class="hljs-keyword">count</span>(col56),<span class="hljs-keyword">count</span>(col53) <span class="hljs-keyword">from</span> r_table;
+</code></pre>
+</li>
+<li><p>r_table &#x6D88;&#x8017;&#x65F6;&#x95F4;&#xFF1A;55.743ms</p>
+</li>
+<li><p>c_table &#x6D88;&#x8017;&#x65F6;&#x95F4;&#xFF1A;34.023ms</p>
+</li>
+</ul>
+</li>
+<li><p>&#x67E5;&#x8BE2;20&#x4E2A;&#x5B57;&#x6BB5;&#x6D88;&#x8017;&#x65F6;&#x95F4;</p>
+<ul>
+<li><pre><code class="lang-sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(col1),<span class="hljs-keyword">count</span>(col2),<span class="hljs-keyword">count</span>(col4), <span class="hljs-keyword">count</span>(col5),<span class="hljs-keyword">count</span>(col7),<span class="hljs-keyword">count</span>(col8),<span class="hljs-keyword">count</span>(col9),<span class="hljs-keyword">count</span>(col10),<span class="hljs-keyword">count</span>(col11),<span class="hljs-keyword">count</span>(col14),<span class="hljs-keyword">count</span>(col18),<span class="hljs-keyword">count</span>(col19),<span class="hljs-keyword">count</span>(col20),<span class="hljs-keyword">count</span>(col23),<span class="hljs-keyword">count</span>(col24),<span class="hljs-keyword">count</span>(col25),<span class="hljs-keyword">count</span>(col30),<span class="hljs-keyword">count</span>(col31),<span class="hljs-keyword">count</span>(col32),<span class="hljs-keyword">count</span>(col39) <span class="hljs-keyword">from</span> r_table
+</code></pre>
+</li>
+<li><p>r_table &#x6D88;&#x8017;&#x65F6;&#x95F4;&#xFF1A;62.746ms</p>
+</li>
+<li><p>c_table &#x6D88;&#x8017;&#x65F6;&#x95F4;&#xFF1A;34.048ms</p>
+</li>
+</ul>
+</li>
+<li><p>&#x67E5;&#x8BE2;50&#x4E2A;&#x5B57;&#x6BB5;&#x6D88;&#x8017;&#x65F6;&#x95F4;</p>
+<ul>
+<li><pre><code class="lang-sql"><span class="hljs-keyword">select</span> <span class="hljs-keyword">count</span>(col1),<span class="hljs-keyword">count</span>(col2),<span class="hljs-keyword">count</span>(col4), <span class="hljs-keyword">count</span>(col5),<span class="hljs-keyword">count</span>(col7),<span class="hljs-keyword">count</span>(col8),<span class="hljs-keyword">count</span>(col9),<span class="hljs-keyword">count</span>(col10),<span class="hljs-keyword">count</span>(col11),<span class="hljs-keyword">count</span>(col13),<span class="hljs-keyword">count</span>(col14),<span class="hljs-keyword">count</span>(col18),<span class="hljs-keyword">count</span>(col19),<span class="hljs-keyword">count</span>(col20),<span class="hljs-keyword">count</span>(col23),<span class="hljs-keyword">count</span>(col24),<span class="hljs-keyword">count</span>(col25),<span class="hljs-keyword">count</span>(col28),<span class="hljs-keyword">count</span>(col29),<span class="hljs-keyword">count</span>(col30),<span class="hljs-keyword">count</span>(col31),<span class="hljs-keyword">count</span>(col32),<span class="hljs-keyword">count</span>(col35),<span class="hljs-keyword">count</span>(col36),<span class="hljs-keyword">count</span>(col38),<span class="hljs-keyword">count</span>(col39),<span class="hljs-keyword">count</span>(col40),<span class="hljs-keyword">count</span>(col41),<span class="hljs-keyword">count</span>(col42),<span class="hljs-keyword">count</span>(col45),<span class="hljs-keyword">count</span>(col46),<span class="hljs-keyword">count</span>(col48),<span class="hljs-keyword">count</span>(col49),<span class="hljs-keyword">count</span>(col50),<span class="hljs-keyword">count</span>(col52),<span class="hljs-keyword">count</span>(col53),<span class="hljs-keyword">count</span>(col55),<span class="hljs-keyword">count</span>(col56),<span class="hljs-keyword">count</span>(col58),<span class="hljs-keyword">count</span>(col60) <span class="hljs-keyword">from</span> r_table;
+</code></pre>
+</li>
+<li><p>r_table &#x6D88;&#x8017;&#x65F6;&#x95F4;&#xFF1A;119.231ms</p>
+</li>
+<li><p>c_table &#x6D88;&#x8017;&#x65F6;&#x95F4;&#xFF1A;25.986ms</p>
+</li>
+</ul>
+</li>
+<li><p>&#x67E5;&#x8BE2;&#x5168;&#x90E8;&#x5B57;&#x6BB5;&#x6D88;&#x8017;&#x65F6;&#x95F4;</p>
+<ul>
+<li><code>select * from r_table</code></li>
+<li>r_table &#x6D88;&#x8017;&#x65F6;&#x95F4;&#xFF1A;175.872ms</li>
+<li>c_table &#x6D88;&#x8017;&#x65F6;&#x95F4;&#xFF1A;187.226ms</li>
+<li>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x5982;&#x679C;&#x67E5;&#x8BE2;&#x5168;&#x90E8;&#x5B57;&#x6BB5;&#xFF0C;&#x5219;&#x57FA;&#x672C;&#x4E0A;&#x6CA1;&#x6709;&#x4F18;&#x52BF;</li>
+</ul>
+</li>
+<li><p>&#x53EF;&#x89C6;&#x5316;&#x4E3A;&#x6298;&#x7EBF;&#x56FE;&#x4E3A;&#xFF1A;</p>
+<ul>
+<li><img src="images/column4.png" alt="column4"></li>
+</ul>
+</li>
+<li><p>&#x6269;&#x5927;&#x6570;&#x636E;&#x96C6;&#x4E3A;50w&#xFF0C;&#x91CD;&#x65B0;&#x8FDB;&#x884C;&#x6D4B;&#x8BD5;&#xFF0C;&#x5F97;&#x5230;&#x7ED3;&#x679C;&#x4E3A;&#xFF1A;</p>
+<ul>
+<li><img src="images/column5.png" alt="column5"></li>
+</ul>
+</li>
+</ol>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="log.html" class="navigation navigation-prev " aria-label="Previous page: 日志分析">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="tpch.html" class="navigation navigation-next " aria-label="Next page: 基准评测">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"OLAP 列存储","level":"1.6","depth":1,"next":{"title":"基准评测","level":"1.7","depth":1,"path":"tpch.md","ref":"tpch.md","articles":[]},"previous":{"title":"日志分析","level":"1.5","depth":1,"path":"log.md","ref":"log.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"Data Mining","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"column store.md","mtime":"2021-01-29T08:10:40.166Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T10:42:48.559Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

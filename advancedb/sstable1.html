@@ -1,0 +1,560 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>SStable 练习 · Distribution System</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="sstable2.html" />
+    
+    
+    <link rel="prev" href="linkedlist.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="leveldb1.html">
+            
+                <a href="leveldb1.html">
+            
+                    
+                    LevelDB 安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="leveldb2.html">
+            
+                <a href="leveldb2.html">
+            
+                    
+                    LevelDB 基本接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="skiplist.html">
+            
+                <a href="skiplist.html">
+            
+                    
+                    SkipList 解析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="linkedlist.html">
+            
+                <a href="linkedlist.html">
+            
+                    
+                    并发链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.6" data-path="sstable1.html">
+            
+                <a href="sstable1.html">
+            
+                    
+                    SStable 练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="sstable2.html">
+            
+                <a href="sstable2.html">
+            
+                    
+                    SStable 练习二
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="postgre.html">
+            
+                <a href="postgre.html">
+            
+                    
+                    PostgreSQL 源码安装
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="gdb1.html">
+            
+                <a href="gdb1.html">
+            
+                    
+                    GDB 调试 pg
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="gdb2.html">
+            
+                <a href="gdb2.html">
+            
+                    
+                    GDB 跟踪 pg 源码
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="hashjoin.html">
+            
+                <a href="hashjoin.html">
+            
+                    
+                    调试 HashJoin
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="lock.html">
+            
+                <a href="lock.html">
+            
+                    
+                    基于锁的并发控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="timestamp.html">
+            
+                <a href="timestamp.html">
+            
+                    
+                    基于时间戳的并发控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="positive.html">
+            
+                <a href="positive.html">
+            
+                    
+                    乐观并发控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="project.html">
+            
+                <a href="project.html">
+            
+                    
+                    LevelDB 大作业
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >SStable 练习</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p align="center">
+  <b>&#x4E86;&#x89E3;LevelDB block&#x5B9E;&#x73B0;&#x6E90;&#x7801;&#xFF0C;&#x5E76;&#x8BFB;&#x53D6;footer</b>
+</p>
+
+<h1 id="leveldb">LevelDB</h1>
+<h2 id="block&#x7C7B;">Block&#x7C7B;</h2>
+<h3 id="&#x6784;&#x9020;&#x51FD;&#x6570;">&#x6784;&#x9020;&#x51FD;&#x6570;</h3>
+<p>&#x5176;&#x4E2D;&#xFF0C;&#x5BF9;&#x4E8E;<code>block</code>&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;<code>explicit</code>&#x5173;&#x952E;&#x5B57;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x907F;&#x514D;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#xFF0C;<a href="https://www.cnblogs.com/rednodel/p/9299251.html" _target="blank">&#x53C2;&#x8003;&#x8FD9;&#x91CC;</a>&#x3002;</p>
+<p>&#x6784;&#x9020;&#x51FD;&#x6570;&#x7528;&#x4E8E;&#x63D2;&#x5165;&#x6570;&#x636E;&#x5E76;&#x5224;&#x65AD;&#x5927;&#x5C0F;&#xFF1A;</p>
+<p><img src="images/sstable1.png" alt="sstable1"></p>
+<h3 id="iterator">Iterator</h3>
+<p>&#x5728;<code>block</code>&#x7C7B;&#x4E2D;&#xFF0C;&#x8FD8;&#x5B58;&#x5728;&#x4E00;&#x4E2A;<code>iter</code>&#x7C7B;&#xFF0C;&#x662F;nested classes&#xFF0C;<a href="https://en.cppreference.com/w/cpp/language/nested_types" _target="blank">&#x53C2;&#x8003;&#x5B98;&#x7F51;</a>&#x3002;</p>
+<p>&#x4E3B;&#x8981;&#x770B;<code>ParseNextKey</code>&#x51FD;&#x6570;&#xFF0C;&#x8FED;&#x4EE3;&#x5668;&#x91CD;&#x8981;&#x4EFB;&#x52A1;&#x5C31;&#x662F;&#x89E3;&#x6790;&#x51FA;&#x8BB0;&#x5F55;&#xFF1A;</p>
+<ol>
+<li>&#x5F53;&#x4E3A;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x65F6;&#xFF0C;&#x5171;&#x4EAB;&#x90E8;&#x5206;&#x4E3A;0&#xFF0C; <code>key_.append(p, non_shared)</code>;&#x8FD9;&#x884C;&#x4EE3;&#x7801;&#x5C31;&#x662F;&#x5C06;&#x7B2C;&#x4E00;&#x6761;&#x5B8C;&#x6574;&#x8BB0;&#x5F55;&#x52A0;&#x5728;<code>key_</code>&#x540E;&#x9762;&#x3002;</li>
+<li>&#x5F53;&#x4E0D;&#x662F;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x65F6;&#xFF0C;&#x6B64;&#x65F6;<code>key_.resize(shared)</code>&#xFF1B;&#x8FD9;&#x884C;&#x4EE3;&#x7801;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x8BB0;&#x5F55;&#x548C;&#x4E0A;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x5171;&#x4EAB;&#x90E8;&#x5206;&#xFF0C; <code>key_.append(p, non_shared)</code>&#xFF1B;&#x8FD9;&#x884C;&#x4EE3;&#x7801;&#x5C31;&#x83B7;&#x5F97;&#x975E;&#x5171;&#x4EAB;&#x90E8;&#x5206;&#xFF0C;&#x51D1;&#x6210;&#x5B8C;&#x6574;&#x7684;&#x8BB0;&#x5F55;&#x3002;</li>
+<li>&#x6700;&#x540E;&#xFF0C;&#x5982;&#x679C;&#x4E0B;&#x4E00;&#x4E2A;<code>key</code>&#x662F;&#x5728;&#x53E6;&#x4E00;&#x4E2A;group&#x4E2D;&#xFF0C;&#x5C31;&#x5C06;<code>restart_index</code>&#x5F80;&#x4E0B;&#x6307;&#x3002;</li>
+</ol>
+<p>&#x6B64;&#x65F6;&#x8FD9;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x7684;<code>key_</code>&#x6307;&#x5411;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x7684;key&#xFF0C;<code>value_</code>&#x6307;&#x5411;&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#x7684;value&#x3002;</p>
+<p><img src="images/sstable2.png" alt="sstable2"></p>
+<h2 id="two-level-iterator&#x7C7B;">Two Level Iterator&#x7C7B;</h2>
+<p>&#x5982;&#x679C;&#x8981;&#x8BFB;&#x53D6;&#x4E00;&#x4E2A;<code>SStable</code>&#x6587;&#x4EF6;&#x7684;&#x67D0;&#x4E2A;&#x952E;&#x503C;&#x5BF9;&#xFF0C;&#x9996;&#x5148;&#x8981;&#x8BFB;&#x53D6;<code>data block</code>&#xFF0C;&#x7136;&#x540E;&#x624D;&#x662F;&#x4ECE;&#x8FD9;&#x4E2A;<code>data block</code>&#x4E2D;&#x8BFB;&#x53D6;&#x952E;&#x503C;&#x5BF9;&#x3002;&#x6240;&#x4EE5;&#x6709;&#x4E24;&#x6B21;&#x8FED;&#x4EE3;&#xFF0C;&#x5373;&#x4E24;&#x4E2A;&#x8FED;&#x4EE3;&#x5668;&#x3002;</p>
+<h3 id="&#x6784;&#x9020;&#x51FD;&#x6570;">&#x6784;&#x9020;&#x51FD;&#x6570;</h3>
+<p><img src="images/sstable3.png" alt="sstable3"></p>
+<h3 id="&#x8BFB;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x6837;&#x672C;">&#x8BFB;&#x53D6;&#x7B2C;&#x4E00;&#x4E2A;&#x6837;&#x672C;</h3>
+<p>&#x7ECF;&#x8FC7;<code>SeekToFirst</code> &#x3001;<code>InitDataBlock</code> &#x8FD9;&#x4E24;&#x4E2A;&#x51FD;&#x6570;&#x4E4B;&#x540E;&#xFF0C;<code>index_iter_</code>&#x6307;&#x5411;<code>index_block</code>&#x7B2C;&#x4E00;&#x6761;&#x8BB0;&#x5F55;&#xFF0C;<code>data_iter_</code>&#x6307;&#x5411;&#x7B2C;&#x4E00;&#x4E2A;&#x5757;&#x7684;&#x9996;&#x4F4D;&#x7F6E;</p>
+<p><img src="images/sstable4.png" alt="sstable4"></p>
+<h3 id="&#x83B7;&#x53D6;&#x6570;&#x636E;">&#x83B7;&#x53D6;&#x6570;&#x636E;</h3>
+<p>&#x5148;&#x6784;&#x9020;&#x4E00;&#x4E2A;sst&#x6587;&#x4EF6;&#x7684;Table&#x7C7B;&#xFF0C;&#x7136;&#x540E;&#x6784;&#x9020;&#x51FA;Table&#x7684;&#x8FED;&#x4EE3;&#x5668;&#xFF0C;&#x4ECE;&#x8FED;&#x4EE3;&#x5668;&#x5C31;&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x8FD9;&#x4E2A;&#x6587;&#x4EF6;&#x7684;&#x4EFB;&#x4F55;&#x952E;&#x503C;&#xFF08;<code>seek</code>&#x51FD;&#x6570;&#xFF09;</p>
+<p><img src="images/sstable5.png" alt="sstable5"></p>
+<h1 id="&#x8BFB;&#x53D6;footer">&#x8BFB;&#x53D6;footer</h1>
+<h2 id="&#x7ED3;&#x6784;">&#x7ED3;&#x6784;</h2>
+<p><img src="images/sstable6.png" alt="sstable6"></p>
+<p>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;footer&#x4E00;&#x5171;&#x6709;4&#x4E2A;&#x7ED3;&#x6784;+magic number&#xFF0C;&#x6BCF;&#x4E2A;&#x7ED3;&#x6784;&#x6700;&#x591A;10&#x4E2A;&#x5B57;&#x8282;&#xFF0C;&#x9700;&#x8981;&#x4F7F;&#x7528;<code>GetVarint64</code>&#x5F97;&#x5230;&#x3002;</p>
+<h2 id="&#x4EE3;&#x7801;">&#x4EE3;&#x7801;</h2>
+<p>&#x9996;&#x5148;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;SStable&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x6307;&#x9488;&#x6307;&#x5230;footer&#xFF0C;&#x518D;&#x4F9D;&#x6B21;&#x8BFB;&#x51FA;&#x91CC;&#x9762;&#x7684;&#x7ED3;&#x6784;&#x3002;</p>
+<pre><code class="lang-c++">
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">getFileSize</span><span class="hljs-params">(<span class="hljs-keyword">const</span> <span class="hljs-built_in">string</span> &amp;filename)</span> </span>{
+    <span class="hljs-keyword">int</span> size = <span class="hljs-number">0</span>;
+    FILE* fp = <span class="hljs-literal">nullptr</span>;
+
+    fp = fopen(filename.c_str(), <span class="hljs-string">&quot;r&quot;</span>);
+    <span class="hljs-keyword">if</span> (<span class="hljs-literal">nullptr</span> == fp) {
+        <span class="hljs-keyword">return</span> size;
+    }
+    fseek(fp, <span class="hljs-number">0L</span>, SEEK_END);
+    size = ftell(fp);
+    fclose(fp);
+
+    <span class="hljs-keyword">return</span> size;
+
+}
+
+<span class="hljs-function"><span class="hljs-keyword">char</span>* <span class="hljs-title">GetVarint64Ptr</span><span class="hljs-params">(<span class="hljs-keyword">char</span>* p, <span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span>* limit, uint64_t* value)</span> </span>{
+    <span class="hljs-keyword">uint64_t</span> result = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">uint32_t</span> shift = <span class="hljs-number">0</span>; shift &lt;= <span class="hljs-number">63</span> &amp;&amp; p &lt; limit; shift += <span class="hljs-number">7</span>) {
+        <span class="hljs-keyword">uint64_t</span> byte = *(<span class="hljs-keyword">reinterpret_cast</span>&lt;<span class="hljs-keyword">const</span> <span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">char</span>*&gt;(p));
+        p++;
+        <span class="hljs-keyword">if</span> (byte &amp; <span class="hljs-number">128</span>) {
+            <span class="hljs-comment">// More bytes are present</span>
+            result |= ((byte &amp; <span class="hljs-number">127</span>) &lt;&lt; shift);
+        } <span class="hljs-keyword">else</span> {
+            result |= (byte &lt;&lt; shift);
+            *value = result;
+            <span class="hljs-keyword">return</span> p;
+        }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">nullptr</span>;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">char</span>* <span class="hljs-title">GetVarint64</span><span class="hljs-params">(<span class="hljs-keyword">char</span>* input, <span class="hljs-keyword">int</span> size, uint64_t* value)</span> </span>{
+    <span class="hljs-keyword">char</span>* limit = input + size;
+    <span class="hljs-keyword">char</span>* q = GetVarint64Ptr(input, limit, value);
+    <span class="hljs-keyword">return</span> q;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>{
+    <span class="hljs-built_in">string</span> fileName = <span class="hljs-string">&quot;testdb.ldb&quot;</span>;
+    <span class="hljs-keyword">int</span> fileSize = getFileSize(fileName);
+    <span class="hljs-comment">//&#x6587;&#x4EF6;&#x603B;&#x5927;&#x5C0F;</span>
+    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">&quot;File Size:&quot;</span>&lt;&lt;getFileSize(fileName)&lt;&lt;<span class="hljs-built_in">endl</span>;
+
+    FILE* fp = fopen(fileName.c_str(), <span class="hljs-string">&quot;r&quot;</span>);
+    fseek(fp, <span class="hljs-number">-48</span>L, SEEK_END);
+    <span class="hljs-keyword">char</span>* footer = (<span class="hljs-keyword">char</span> *)<span class="hljs-built_in">malloc</span>(<span class="hljs-number">48</span> * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">char</span>));
+    fgets(footer, <span class="hljs-number">48</span>, fp);
+    <span class="hljs-keyword">uint64_t</span> metaOffset, metaSize, indexOffset, indexSize;
+    footer = GetVarint64(footer, <span class="hljs-number">10</span>, &amp;metaOffset);
+    footer = GetVarint64(footer, <span class="hljs-number">10</span>, &amp;metaSize);
+    footer = GetVarint64(footer, <span class="hljs-number">10</span>, &amp;indexOffset);
+    footer = GetVarint64(footer, <span class="hljs-number">10</span>, &amp;indexSize);
+    <span class="hljs-built_in">cout</span>&lt;&lt;<span class="hljs-string">&quot;Meta offset:&quot;</span>&lt;&lt;metaOffset&lt;&lt;<span class="hljs-built_in">endl</span>
+        &lt;&lt;<span class="hljs-string">&quot;Meta size:&quot;</span>&lt;&lt;metaSize&lt;&lt;<span class="hljs-built_in">endl</span>
+        &lt;&lt;<span class="hljs-string">&quot;Index offset:&quot;</span>&lt;&lt;indexOffset&lt;&lt;<span class="hljs-built_in">endl</span>
+        &lt;&lt;<span class="hljs-string">&quot;Index size:&quot;</span>&lt;&lt;indexSize&lt;&lt;<span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-keyword">char</span>* index = (<span class="hljs-keyword">char</span> *) <span class="hljs-built_in">malloc</span>((indexSize + <span class="hljs-number">1</span>) * <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">char</span>));
+    fseek(fp, <span class="hljs-number">0L</span>, <span class="hljs-keyword">static_cast</span>&lt;<span class="hljs-keyword">int</span>&gt;(indexOffset));
+    fgets(index, <span class="hljs-keyword">static_cast</span>&lt;<span class="hljs-keyword">int</span>&gt;(indexSize + <span class="hljs-number">1</span>), fp);
+<span class="hljs-comment">//    cout&lt;&lt;index[indexSize]&lt;&lt;endl;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="linkedlist.html" class="navigation navigation-prev " aria-label="Previous page: 并发链表">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="sstable2.html" class="navigation navigation-next " aria-label="Next page: SStable 练习二">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"SStable 练习","level":"1.6","depth":1,"next":{"title":"SStable 练习二","level":"1.7","depth":1,"path":"sstable2.md","ref":"sstable2.md","articles":[]},"previous":{"title":"并发链表","level":"1.5","depth":1,"path":"linkedlist.md","ref":"linkedlist.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"Distribution System","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"sstable1.md","mtime":"2021-01-28T06:49:55.491Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T04:03:30.264Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.79.0" /><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Scott&#39;Log</title>
+
+<meta name="description" content="The tech document of zealscott">
+<meta name="author" content="Scott Du">
+<link rel="canonical" href="https://tech.zealscott.com/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fd126033c3455a688b2479431fed44510433c36ce61093336d94a5681fad5866.css" integrity="sha256-/RJgM8NFWmiLJHlDH&#43;1EUQQzw2zmEJMzbZSlaB&#43;tWGY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://tech.zealscott.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tech.zealscott.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tech.zealscott.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://tech.zealscott.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tech.zealscott.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://tech.zealscott.com/index.xml">
+<link rel="alternate" type="application/json" href="https://tech.zealscott.com/index.json">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, 
+        {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '\\[', right: '\\]', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false}
+                ]
+            }
+        );"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-116370175-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<meta property="og:title" content="Scott&#39;Log" />
+<meta property="og:description" content="The tech document of zealscott" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tech.zealscott.com/" /><meta property="og:image" content="https://tech.zealscott.com/papermod-cover.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tech.zealscott.com/papermod-cover.png"/>
+
+<meta name="twitter:title" content="Scott&#39;Log"/>
+<meta name="twitter:description" content="The tech document of zealscott"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Scott'Log",
+  "url": "https://tech.zealscott.com",
+  "description": "The tech document of zealscott",
+  "thumbnailUrl": "https://tech.zealscott.com/favicon.ico",
+  "sameAs": [
+      "index.xml", "https://github.com/zealscott", "https://www.zhihu.com/people/tao-scott/", "https://scholar.google.com/citations?hl=en\u0026user=BbvY_QsAAAAJ", "https://zealscott.com/files/Yuntao_Du_CV.pdf", "mailto: ytdu@zealscott.com"
+  ]
+}
+</script>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://tech.zealscott.com" accesskey="h" title="Scott&#39;Log (Alt + H)">Scott&#39;Log</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://tech.zealscott.com/" title="Posts">
+                    <span class="active">Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/deeplearning/" title="Deep Learning">
+                    <span>Deep Learning</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/curriculum/" title="Curriculum">
+                    <span>Curriculum</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/misc/" title="Misc">
+                    <span>Misc</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Learning Classiﬁers from Only Positive and Unlabeled Data
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>本文主要考虑在SCAR假设下，证明了普通的分类器和PU分类器只相差一个常数，因此可以使用普通分类器的方法来估计$p(s|x)$，进而得到$p(y|x)$。同时提供了三种方法来估计这个常数，最后，还对先验$p(y)$的估计提供了思路。
+Learning a traditional classifier   概念定义
+ $x$ 表示一个样本，$y$ 表示其label（0或者1），$s$表示是否被select 那么，在PU问题中，当$s =1 $时，一定有$y = 1$ $P(s = 1| x,y=0) = 0 $ 一定成立    两种采样假设
+ signle-training-set  所有的样本都是从$(x,y,s)$这个三元组的分布中采样的   case-control  两个数据集（正类，未标记）是从三元组中独立的抽样出来的。当采样正类时被称为case，采样未标记数据时称为contaminated controls   这两种假设有很明显的区别。总的来说，第一种假设比第二种假设要严格得多，也就能提供更多的信息：  两种假设都能让我们估计$p(x)$ 但只有在第一种假设下，能够让我们很容易的估计出$p(s = 1)$，因此也更容易估计出$p(y = 1)$，二第二种条件不可以。      基本假设
+ 我们需要训练的传统分类器是：$f(x) = p(y = 1|x)$ 然而，对正类数据没有任何假设的前提下，我们很难得到较好的分类器 因此，论文给出的假设是，正类样本数据是从正类数据中完全随机的抽取出来的。  也就是说，当$y = 1$时，无论$x$取说明值，它们的概率都是相同的：  $p(s = 1| x,y=1) = p(s =1|y=1)$   这个假设被称为selected completedly at random   我们定义一个nontraditional classifier：$g(x) = p(s =1|x)$ 因此，我们需要一些定理来证明如何将非传统的分类器转化为传统的分类器    Lemma：假设SCAR条件成立，那么$p(y = 1|x) = \frac{p(s=1|x)}{c}$，其中$c = p(s=1|y=1)$...</p>
+  </section>
+  <footer class="entry-footer"><span title='2019-07-28 21:00:30 +0800 CST'>July 28, 2019</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to Learning Classiﬁers from Only Positive and Unlabeled Data" href="https://tech.zealscott.com/deeplearning/pulearning/pu-learning/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>ThingWorx 安装及部署
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>本文以Windows系统为例，介绍ThingWorx的安装步骤。
+H2版 安装  从PTC官网下载合适版本的Thingworx（h2版） 访问Tomcat 网站下载32-bit/64-bit Windows 服务安装程序。 下载JDK8以上的版本。  注意，H2为内嵌数据库，并不需要安装。
+部署 Tomcat   在“HTTP/1.1 连接器端口” 字段，键入“80” (或其他可用端口)，其余默认设置安装
+  启动Tomcat，在“Java 选项”字段中，将以下内容添加至选项字段的末尾：
+  1 2 3 4  -Dserver -Dd64 -XX:&#43;UseG1GC -Dfile.encoding=UTF-8 -Djava.library.path=&lt;path to Tomcat&gt;\webapps\Thingworx\WEB-INF\extensions       清除Initial memory pool 和 Maximum memory pool字段中的任意值。
+  在Tomcat 的安装位置，打开CATALINA_HOME/conf/web.xml。通过将以下内容添加至web.xml 文件来替换默认错误页面。将以下内容置于web-app 标记内(在welcome-list 标记后)
+  1 2 3 4  &lt;error-page&gt; &lt;exception-type&gt;java.lang.Throwable&lt;/exception-type&gt; &lt;location&gt;/error.jsp&lt;/location&gt; &lt;/error-page&gt;       要增加影响静态文件缓存的默认缓存设置，请在$CATALINA_HOME/conf/context....</p>
+  </section>
+  <footer class="entry-footer"><span title='2019-07-11 17:46:57 +0800 CST'>July 11, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to ThingWorx 安装及部署" href="https://tech.zealscott.com/misc/thingworx-installation/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Seq2Seq 理解
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>基本思想 NLP中有很多sequence to sequence的问题，例如机器翻译，人机对话等等。对于句子而言，我们已经有RNN能够很好的处理序列之间的关系，但同时，RNN只能被用于输入和输出的维度都固定且已知的情况。但很多情况下，我们没办法确定输出序列的长度和维度。因此，为了处理这种general的序列问题，Seq2Seq框架被提出来了。
+流程 最基本的Seq2Seq框架主要的流程是：
+ 用一个LSTM来处理input的sequence，得到一个特定维度的向量表示，我们可以认为这个向量能很好的捕捉input中的相互关系。  每一个timestep，cell将当前词的embedding向量和上一个hidden state进行concat作为输入，输出当前timestep的hidden state作为下一个cell的输入，依次进行，直到sentence的EOS标志符，得到最终的vector representation作为decoder的最初hidden state输入。   用另一个LSTM，将这个vector representation映射成target sequence。每个timestep输出一个目标单词，直到输出EOS为止。  接受来自上一个timestep的hidden state输入（最开始为vector representation），与上一个timestep的output进行concat作为当前timestep的输入，依次进行，直到最终生成的单词为EOS。    缺点  Encoder将输入编码为固定大小状态向量的过程实际上是一个信息有损压缩的过程，如果信息量越大，那么这个转化向量的过程对信息的损失就越大。 随着sequence length的增加，意味着时间维度上的序列很长，RNN模型也会出现梯度弥散，无法让Decoder关注时间间隔非常长的关联，精度下降。  Attention  在普通的seq2seq模型中，我们输出的条件概率可以表示为：  $p(y_t| {y_1,..,y_{t-1}},c)=g(y_{t-1},s_t,c) $ 其中$s_t$表示$t$时刻的hidden state，$c$表示我们从Encoder学到的context vector，$g$表示非线性映射   而在attention based seq2seq中，条件概率可以表示为：  $p(y_i|y_1,…,y_{i-1},x) = g(y_{i-1},s_i,c_i)$ hidden state表示为：$s_i = f(s_{i-1},y_{i-1},c_i)$ 也就是说，这里的每个单词$y_i$的条件概率都由不同的$c_i$决定，而不仅仅依赖于同一个$c$   在Decoder中，对每个timestep，Input是上一个timestep的输出与特定的 $c_i$ (context vector)进行Attention后的结果，而hidden state和普通的seq2seq一样，为上一个timestep输出的hidden state  实现Attention的方式有很多，例如直接点积，先concat后再进行线性变换等等。   那么，现在关键的问题是，每一个$c_i$到底是如何计算的？  论文中将Encoder的BiRNN产生的同一个timestep中两个hidden state进行concat组成一个annotations：$(h_1,…,h_{T_x})$，可以认为，每一个$h_i$都包含了在一个sequence中主要focus于第$i$个单词周围的相互关系 因此，我们使用这种学习到的关系在不同的位置赋予不同的权重，来组成我们的context vector $c_i$：  $c_i = \sum\limits_{j=1}^{T_x} \alpha_{ij}h_j$   每一个$\alpha_{ij}$是通过annotations $h_i$ 与上一个hidden state 计算出来，然后进入softmax函数得到当前位置的权重：  $\alpha_{ij} = \frac{\exp(e_{ij})}{\sum_{k=1}^{T_x} \exp(e_{ik})}$   这里的每一个$e_{ij}$衡量了在input的$j$位置和output的$i$位置的匹配程度，也就是论文中提到的alignment model，是由RNN前一个timestep的hidden state $s_{i-1}$和input的$h_j$计算出来的：  $e_{ij} = a(s_{i-1},h_j)$ 这里的$a$是一个简单的前向网络      流程 Encoder：...</p>
+  </section>
+  <footer class="entry-footer"><span title='2019-03-13 20:44:01 +0800 CST'>March 13, 2019</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to Seq2Seq 理解" href="https://tech.zealscott.com/deeplearning/models/seq2seq/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>图卷积神经网络入门基础
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>卷积 定义 卷积是一种数学运算，称$(f*g)(n)$为$f,g$的卷积，
+其连续的定义为：
+$$(f*g)(n) = \int_{-\infty}^{&#43;\infty} f(\tau)g(n-\tau)d\tau$$
+离散的定义为：
+$$(f*g)(n) = \sum\limits_{\tau = -\infty}^\infty f(\tau)g(n-\tau)$$
+若令$x = \tau,y = n-\tau$，则$x&#43;y = n$表示的是平行的直线。
+对于图像来说，图像上的滑动窗口很好的解释了卷积的定义：
+可以发现，我们对$f,g$进行卷积操作，保证$x,y$坐标的和都为1：
+写成卷积公式为：
+$$(f*g)(1,1) = \sum\limits_{k=0}^{2}\sum\limits_{h=0}^{2}f(h,k)g(1-h,1-k)$$
+这样就实现了使用$g$这个算子在图像上的滑动。但注意，在数学中的卷积运算中，卷积核与原始的矩阵乘积，是围绕着中心元素进行180度旋转后，才是对应的元素。
+而在实际的图像空间滤波中，我们是将设计的特定卷积核，然后将其与像素矩阵的对应元素（不进行上述的旋转）相乘得到。例如，在CV中常见的平滑滤波，高斯滤波。这些滤波被设计出来，以提取不同的特征。
+..对于神经网络来讲，最大的不同是，这些滤波不需要我们自己去定义（也就是提取特征的过程），而是通过网络自身训练每一个卷积层的滤波器..。让这些滤波器组对特定的模式有高的激活，以达到CNN网络的分类/检测等目的。因此，在CNN中，由于这些卷积核都是未知参数，需要根据数据训练学习，那么翻不翻转已经没有关系了。
+理解 对于离散卷积来说，本质上就是一种加权求和。CNN中的卷积本质上就是利用一个共享参数的过滤器（kernel），通过计算中心像素点以及相邻像素点的加权和来构成feature map实现空间特征的提取，当然加权系数就是卷积核的权重系数。
+那么卷积核的系数如何确定的呢？是随机化初值，然后根据误差函数通过反向传播梯度下降进行迭代优化。这是一个关键点，卷积核的参数通过优化求出才能实现特征提取的作用，GCN的理论很大一部分工作就是为了引入可以优化的卷积参数。
+Laplacian matrix 我们上离散数学都学过，图拉普拉斯矩阵的定义为：
+$$L = D -W$$
+其中，$D$ 是顶点的度矩阵（对角矩阵），$W$是图的邻接矩阵（带边权重）。其normalized形式为：
+$$L^{nor} = D^{-\frac{1}{2}}LD^{-\frac{1}{2}}$$
+但为什么是这样定义呢？我们先从拉普拉斯算子说起。
+Laplacian 其数学定义为：
+$$\Delta = \sum\limits_i \frac{\delta^2}{\delta x_i^2}$$
+即为非混合二阶偏导数的和。
+图像中的拉普拉斯算子 图像是一种离散数据，那么其拉普拉斯算子必然要进行离散化。
+从导数定义：
+$$f&#39;(x) = \frac{\delta f(x)}{\delta x} \approx f(x&#43;1) - f(x)$$
+因此可以得到二阶导为：
+$$f&#39;&#39;(x) = \frac{\delta^2 f(x)}{\delta x^2} \approx f&#39;(x) - f&#39;(x-1) \approx f(x&#43;1) &#43; f(x-1) - 2f(x)$$...</p>
+  </section>
+  <footer class="entry-footer"><span title='2019-02-19 15:34:10 +0800 CST'>February 19, 2019</span>&nbsp;·&nbsp;3 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to 图卷积神经网络入门基础" href="https://tech.zealscott.com/deeplearning/models/gnn/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>VIM 使用简介
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>VIM的启动  启动命令：vi my.txt 如果文件存在，则vi显示文件内容并等待用户的命令。 如果指定的文件不存在，则vi将告知用户这是未命名的文件，并进入一个空白的界面。 启动vi时都是默认处于命令模式。用户必须使用命令切换到文本输入模式才能进行输入编辑，或者可执行删除、复制等编辑命令。  VIM的退出  冒号进命令行模式下：  :q! 不存档强制退出。 :w 保存但不退出，w(rite)后可加所要存档的文档名。 :wq 存档后退出。 :x 与:wq相同   命令模式  ZZ、ZQ  保存/不保存退出    编辑 插入模式   输入:set nu 可设置vi显示行号
+  新增 (append)
+ a ：从光标所在位置后面开始新增资料 A： 从光标所在行最后面的地方开始新增资料。    插入 (insert)
+ i： 从光标所在位置前面开始插入资料 I ：从光标所在行的第一个非空白字元前面开始插入资料。    开始 (open)
+ o ：在光标所在行下新增一列并进入输入模式。 O: 在光标所在行上方新增一列并进入输入模式。    命令模式 删除 #表示数字...</p>
+  </section>
+  <footer class="entry-footer"><span title='2018-09-20 10:52:29 +0800 CST'>September 20, 2018</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to VIM 使用简介" href="https://tech.zealscott.com/misc/vim/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://tech.zealscott.com/page/2/">«</a>
+    <a class="next" href="https://tech.zealscott.com/page/4/">»</a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://tech.zealscott.com">Scott&#39;Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,668 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>SQL Server 和 SSBI 使用 · Data Mining</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="udw.html" />
+    
+    
+    <link rel="prev" href="./" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="sql server.html">
+            
+                <a href="sql server.html">
+            
+                    
+                    SQL Server 和 SSBI 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="udw.html">
+            
+                <a href="udw.html">
+            
+                    
+                    UDW云数据仓库
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="history.html">
+            
+                <a href="history.html">
+            
+                    
+                    历史拉链表
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="log.html">
+            
+                <a href="log.html">
+            
+                    
+                    日志分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="column store.html">
+            
+                <a href="column store.html">
+            
+                    
+                    OLAP 列存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="tpch.html">
+            
+                <a href="tpch.html">
+            
+                    
+                    基准评测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="mvcc.html">
+            
+                <a href="mvcc.html">
+            
+                    
+                    数据仓库之表膨胀
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="json.html">
+            
+                <a href="json.html">
+            
+                    
+                    数据仓库之 Json 格式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="hive.html">
+            
+                <a href="hive.html">
+            
+                    
+                    Hive 使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="model.html">
+            
+                <a href="model.html">
+            
+                    
+                    建立数据仓库模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="sqoop.html">
+            
+                <a href="sqoop.html">
+            
+                    
+                    Sqoop 抽取数据
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="data cleaning.html">
+            
+                <a href="data cleaning.html">
+            
+                    
+                    数据清洗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="first load.html">
+            
+                <a href="first load.html">
+            
+                    
+                    初始装载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="time load.html">
+            
+                <a href="time load.html">
+            
+                    
+                    定期装载
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="optimization.html">
+            
+                <a href="optimization.html">
+            
+                    
+                    Hive 优化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="recap.html">
+            
+                <a href="recap.html">
+            
+                    
+                    OLAP 期末总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >SQL Server 和 SSBI 使用</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p align="center">
+  <b>&#x719F;&#x6089;SQL server&#x4F7F;&#x7528;&#xFF0C;&#x719F;&#x6089;Analysis services&#x73AF;&#x5883;&#xFF0C;&#x5B66;&#x4F1A;&#x591A;&#x7EF4;&#x5EFA;&#x6A21;</b>
+</p>
+
+
+<h1 id="sql-server&#x4F7F;&#x7528;">SQL server&#x4F7F;&#x7528;</h1>
+<p>&#x5229;&#x7528;sql server 2008&#x7684;&#x7528;&#x6237;&#x754C;&#x9762;&#x521B;&#x5EFA;&#x6570;&#x636E;&#x5E93;&#xFF08;Pm_dw&#xFF09;&#x548C;&#x4E94;&#x5F20;&#x8868;&#xFF0C;&#x5373;</p>
+<ul>
+<li>&#x65E5;&#x671F;&#x8868;&#xFF08;Date_Key&#xFF0C;Detail_Date, Year, Quarterly, Month&#xFF09;&#xFF0C;</li>
+<li>&#x5BA2;&#x6237;&#x8868;(Customer_Key, Customer_Name, Sex, Age, P_Ientity(&#x662F;&#x5426;&#x4E3A;&#x5B66;&#x751F;), Income)&#xFF0C;</li>
+<li>&#x5730;&#x533A;&#x8868;(Locate_Key, Detail_Address, Province, City, Area)&#xFF0C;</li>
+<li>&#x5546;&#x54C1;&#x8868;(Product_Key, Product_Name, Product_Unit_Price, Product_Class),</li>
+<li>&#x9500;&#x552E;&#x8868;(Date_Key, Customer_Key, Locate_Key, Product_Key, amount, total_fee)&#xFF0C;&#x5E76;&#x4E14;&#x80FD;&#x591F;&#x5408;&#x7406;&#x6807;&#x8BC6;&#x4E3B;&#x7801;&#x548C;&#x5916;&#x7801;&#x3002;</li>
+</ul>
+<h2 id="gui">GUI</h2>
+<p>&#x521B;&#x5EFA;&#x65B0;&#x7684;&#x6570;&#x636E;&#x5E93;</p>
+<p><img src="images/sqlserver1.png" alt="sqlserver1"></p>
+<p>&#x521B;&#x5EFA;table</p>
+<p><img src="images/sqlserver2.png" alt="sqlserver2"></p>
+<p>&#x521B;&#x5EFA;&#x4E3B;&#x952E;&#x7EA6;&#x675F;&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;&#x82E5;&#x8FD9;&#x91CC;&#x51FA;&#x73B0;&#x65E0;&#x6CD5;&#x4FDD;&#x5B58;&#x4FEE;&#x6539;&#xFF0C;&#x5219;&#x9700;&#x8981;&#x66F4;&#x6539;SQL server<a href="https://blog.csdn.net/ycwol/article/details/40424337" _target="blank">&#x8BBE;&#x7F6E;</a>&#x3002;</p>
+<p><img src="images/sqlserver3.png" alt="sqlserver3"></p>
+<h2 id="sql">SQL</h2>
+<p>&#x9996;&#x5148;&#x4F7F;&#x7528;SQL&#x8BED;&#x53E5;&#x521B;&#x5EFA;Table&#xFF0C;&#x6CE8;&#x610F;&#xFF0C;&#x5728;SQL server&#x4E2D;&#xFF0C;&#x5FC5;&#x987B;&#x6307;&#x5B9A;constraint&#x7684;&#x5173;&#x7CFB;&#x540D;&#x79F0;&#x3002;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">use</span> <span class="hljs-keyword">master</span>
+<span class="hljs-keyword">go</span>
+<span class="hljs-keyword">drop</span> <span class="hljs-keyword">database</span> pm_dw;
+
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">database</span> pm_dw;
+<span class="hljs-keyword">use</span> pm_dw;
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> <span class="hljs-built_in">date</span>
+(
+    date_key <span class="hljs-built_in">int</span>  primary <span class="hljs-keyword">key</span>,
+    detail_date <span class="hljs-built_in">char</span>(<span class="hljs-number">10</span>),
+    <span class="hljs-keyword">year</span> <span class="hljs-built_in">char</span>(<span class="hljs-number">10</span>),
+    quarterly <span class="hljs-built_in">char</span>(<span class="hljs-number">10</span>),
+    <span class="hljs-keyword">month</span> <span class="hljs-built_in">char</span>(<span class="hljs-number">10</span>)
+)
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> customer
+(
+    customer_key <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span>,
+    customer_name <span class="hljs-built_in">char</span>(<span class="hljs-number">10</span>),
+    sex <span class="hljs-built_in">char</span>(<span class="hljs-number">10</span>),
+    age <span class="hljs-built_in">char</span>(<span class="hljs-number">10</span>),
+    p_ientity <span class="hljs-built_in">bit</span>,
+    income <span class="hljs-built_in">int</span>
+)
+<span class="hljs-comment">-- modify table</span>
+<span class="hljs-keyword">alter</span> <span class="hljs-keyword">table</span> customer 
+<span class="hljs-keyword">add</span> mobile <span class="hljs-built_in">int</span>;
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> location
+(
+    locate_key <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span>,
+    detail_address <span class="hljs-built_in">char</span>(<span class="hljs-number">10</span>),
+    province <span class="hljs-built_in">char</span>(<span class="hljs-number">10</span>),
+    city <span class="hljs-built_in">char</span>(<span class="hljs-number">10</span>),
+    area <span class="hljs-built_in">char</span>(<span class="hljs-number">10</span>)
+)
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> product
+(
+    product_key <span class="hljs-built_in">int</span> primary <span class="hljs-keyword">key</span>,
+    product_name <span class="hljs-built_in">char</span>(<span class="hljs-number">10</span>),
+    product_unit_price <span class="hljs-built_in">int</span>,
+    product_class <span class="hljs-built_in">char</span>(<span class="hljs-number">10</span>)
+)
+
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> sell
+(
+    date_key <span class="hljs-built_in">int</span>,
+    product_key <span class="hljs-built_in">int</span>,
+    customer_key <span class="hljs-built_in">int</span>,
+    locate_key <span class="hljs-built_in">int</span>,
+    amount <span class="hljs-built_in">int</span>,
+    total_fee <span class="hljs-built_in">int</span>,
+
+    <span class="hljs-keyword">CONSTRAINT</span> FK_date foreign <span class="hljs-keyword">key</span>(date_key) <span class="hljs-keyword">references</span> <span class="hljs-built_in">date</span>(date_key),
+    <span class="hljs-keyword">CONSTRAINT</span> FK_product foreign <span class="hljs-keyword">key</span>(product_key) <span class="hljs-keyword">references</span> product(product_key),
+    <span class="hljs-keyword">CONSTRAINT</span> FK_customer foreign <span class="hljs-keyword">key</span>(customer_key) <span class="hljs-keyword">references</span> customer(customer_key),
+    <span class="hljs-keyword">CONSTRAINT</span> FK_location foreign <span class="hljs-keyword">key</span>(locate_key) <span class="hljs-keyword">references</span> location(locate_key),
+    <span class="hljs-keyword">CONSTRAINT</span> PK_sell PRIMARY <span class="hljs-keyword">KEY</span> (date_key,product_key,customer_key,locate_key)
+)
+</code></pre>
+<p>&#x5C1D;&#x8BD5;&#x63D2;&#x5165;&#x548C;&#x4FEE;&#x6539;&#x6570;&#x636E;&#xFF1A;</p>
+<pre><code class="lang-sql"><span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> customer <span class="hljs-keyword">values</span>(<span class="hljs-number">1</span>,<span class="hljs-string">&apos;xiaowang&apos;</span>,<span class="hljs-string">&apos;male&apos;</span>,<span class="hljs-number">50</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5000</span>,<span class="hljs-number">17717</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> customer <span class="hljs-keyword">values</span>(<span class="hljs-number">2</span>,<span class="hljs-string">&apos;dage&apos;</span>,<span class="hljs-string">&apos;male&apos;</span>,<span class="hljs-number">25</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5000</span>,<span class="hljs-number">11742</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> customer <span class="hljs-keyword">values</span>(<span class="hljs-number">3</span>,<span class="hljs-string">&apos;xiaoxin&apos;</span>,<span class="hljs-string">&apos;female&apos;</span>,<span class="hljs-number">50</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5000</span>,<span class="hljs-number">11202</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> customer <span class="hljs-keyword">values</span>(<span class="hljs-number">4</span>,<span class="hljs-string">&apos;xiaoming&apos;</span>,<span class="hljs-string">&apos;female&apos;</span>,<span class="hljs-number">25</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5000</span>,<span class="hljs-number">71255</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> customer <span class="hljs-keyword">values</span>(<span class="hljs-number">5</span>,<span class="hljs-string">&apos;duyuntao&apos;</span>,<span class="hljs-string">&apos;male&apos;</span>,<span class="hljs-number">50</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5000</span>,<span class="hljs-number">1421</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> customer <span class="hljs-keyword">values</span>(<span class="hljs-number">6</span>,<span class="hljs-string">&apos;qwning&apos;</span>,<span class="hljs-string">&apos;female&apos;</span>,<span class="hljs-number">25</span>,<span class="hljs-number">0</span>,<span class="hljs-number">5000</span>,<span class="hljs-number">13454</span>);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> location <span class="hljs-keyword">values</span>(<span class="hljs-number">1</span>,<span class="hljs-string">&apos;minhang&apos;</span>,<span class="hljs-string">&apos;shanghai&apos;</span>,<span class="hljs-string">&apos;shanghai&apos;</span>,<span class="hljs-string">&apos;ecnu&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> location <span class="hljs-keyword">values</span>(<span class="hljs-number">2</span>,<span class="hljs-string">&apos;minhang&apos;</span>,<span class="hljs-string">&apos;hangzhou&apos;</span>,<span class="hljs-string">&apos;zhejiang&apos;</span>,<span class="hljs-string">&apos;zheda&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> location <span class="hljs-keyword">values</span>(<span class="hljs-number">3</span>,<span class="hljs-string">&apos;minhang&apos;</span>,<span class="hljs-string">&apos;nanjing&apos;</span>,<span class="hljs-string">&apos;jiangsu&apos;</span>,<span class="hljs-string">&apos;nanda&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> location <span class="hljs-keyword">values</span>(<span class="hljs-number">4</span>,<span class="hljs-string">&apos;minhang&apos;</span>,<span class="hljs-string">&apos;beijing&apos;</span>,<span class="hljs-string">&apos;beijing&apos;</span>,<span class="hljs-string">&apos;qinghau&apos;</span>);
+
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-built_in">date</span> <span class="hljs-keyword">values</span>(<span class="hljs-number">1</span>,<span class="hljs-string">&apos;5:28&apos;</span>,<span class="hljs-string">&apos;2018&apos;</span>,<span class="hljs-string">&apos;4&apos;</span>,<span class="hljs-string">&apos;12&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-built_in">date</span> <span class="hljs-keyword">values</span>(<span class="hljs-number">2</span>,<span class="hljs-string">&apos;12:28&apos;</span>,<span class="hljs-string">&apos;2019&apos;</span>,<span class="hljs-string">&apos;4&apos;</span>,<span class="hljs-string">&apos;12&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-built_in">date</span> <span class="hljs-keyword">values</span>(<span class="hljs-number">3</span>,<span class="hljs-string">&apos;9:15&apos;</span>,<span class="hljs-string">&apos;2019&apos;</span>,<span class="hljs-string">&apos;3&apos;</span>,<span class="hljs-string">&apos;9&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-built_in">date</span> <span class="hljs-keyword">values</span>(<span class="hljs-number">4</span>,<span class="hljs-string">&apos;1:15&apos;</span>,<span class="hljs-string">&apos;2019&apos;</span>,<span class="hljs-string">&apos;1&apos;</span>,<span class="hljs-string">&apos;1&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-built_in">date</span> <span class="hljs-keyword">values</span>(<span class="hljs-number">5</span>,<span class="hljs-string">&apos;1:5&apos;</span>,<span class="hljs-string">&apos;2018&apos;</span>,<span class="hljs-string">&apos;1&apos;</span>,<span class="hljs-string">&apos;1&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-built_in">date</span> <span class="hljs-keyword">values</span>(<span class="hljs-number">6</span>,<span class="hljs-string">&apos;8:5&apos;</span>,<span class="hljs-string">&apos;2019&apos;</span>,<span class="hljs-string">&apos;2&apos;</span>,<span class="hljs-string">&apos;8&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-built_in">date</span> <span class="hljs-keyword">values</span>(<span class="hljs-number">7</span>,<span class="hljs-string">&apos;5:5&apos;</span>,<span class="hljs-string">&apos;2018&apos;</span>,<span class="hljs-string">&apos;2&apos;</span>,<span class="hljs-string">&apos;5&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-built_in">date</span> <span class="hljs-keyword">values</span>(<span class="hljs-number">8</span>,<span class="hljs-string">&apos;3:2&apos;</span>,<span class="hljs-string">&apos;2018&apos;</span>,<span class="hljs-string">&apos;1&apos;</span>,<span class="hljs-string">&apos;3&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-built_in">date</span> <span class="hljs-keyword">values</span>(<span class="hljs-number">9</span>,<span class="hljs-string">&apos;2:23&apos;</span>,<span class="hljs-string">&apos;2019&apos;</span>,<span class="hljs-string">&apos;1&apos;</span>,<span class="hljs-string">&apos;2&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-built_in">date</span> <span class="hljs-keyword">values</span>(<span class="hljs-number">10</span>,<span class="hljs-string">&apos;5:10&apos;</span>,<span class="hljs-string">&apos;2019&apos;</span>,<span class="hljs-string">&apos;3&apos;</span>,<span class="hljs-string">&apos;9&apos;</span>);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> product <span class="hljs-keyword">values</span>(<span class="hljs-number">1</span>,<span class="hljs-string">&apos;food1&apos;</span>,<span class="hljs-number">20</span>,<span class="hljs-string">&apos;food&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> product <span class="hljs-keyword">values</span>(<span class="hljs-number">2</span>,<span class="hljs-string">&apos;food2&apos;</span>,<span class="hljs-number">10</span>,<span class="hljs-string">&apos;food&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> product <span class="hljs-keyword">values</span>(<span class="hljs-number">3</span>,<span class="hljs-string">&apos;food3&apos;</span>,<span class="hljs-number">60</span>,<span class="hljs-string">&apos;food&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> product <span class="hljs-keyword">values</span>(<span class="hljs-number">4</span>,<span class="hljs-string">&apos;food4&apos;</span>,<span class="hljs-number">23</span>,<span class="hljs-string">&apos;food&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> product <span class="hljs-keyword">values</span>(<span class="hljs-number">5</span>,<span class="hljs-string">&apos;food5&apos;</span>,<span class="hljs-number">52</span>,<span class="hljs-string">&apos;food&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> product <span class="hljs-keyword">values</span>(<span class="hljs-number">6</span>,<span class="hljs-string">&apos;food6&apos;</span>,<span class="hljs-number">12</span>,<span class="hljs-string">&apos;food&apos;</span>);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> product <span class="hljs-keyword">values</span>(<span class="hljs-number">7</span>,<span class="hljs-string">&apos;water1&apos;</span>,<span class="hljs-number">2</span>,<span class="hljs-string">&apos;water&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> product <span class="hljs-keyword">values</span>(<span class="hljs-number">8</span>,<span class="hljs-string">&apos;water2&apos;</span>,<span class="hljs-number">7</span>,<span class="hljs-string">&apos;water&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> product <span class="hljs-keyword">values</span>(<span class="hljs-number">9</span>,<span class="hljs-string">&apos;water3&apos;</span>,<span class="hljs-number">8</span>,<span class="hljs-string">&apos;water&apos;</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> product <span class="hljs-keyword">values</span>(<span class="hljs-number">10</span>,<span class="hljs-string">&apos;water4&apos;</span>,<span class="hljs-number">12</span>,<span class="hljs-string">&apos;water&apos;</span>);
+
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> sell <span class="hljs-keyword">values</span>(<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">30</span>,<span class="hljs-number">5000</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> sell <span class="hljs-keyword">values</span>(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">60</span>,<span class="hljs-number">6763</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> sell <span class="hljs-keyword">values</span>(<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>,<span class="hljs-number">15</span>,<span class="hljs-number">5346</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> sell <span class="hljs-keyword">values</span>(<span class="hljs-number">5</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">45</span>,<span class="hljs-number">3453</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> sell <span class="hljs-keyword">values</span>(<span class="hljs-number">6</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">35</span>,<span class="hljs-number">4362</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> sell <span class="hljs-keyword">values</span>(<span class="hljs-number">8</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">25</span>,<span class="hljs-number">3456</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> sell <span class="hljs-keyword">values</span>(<span class="hljs-number">9</span>,<span class="hljs-number">4</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">20</span>,<span class="hljs-number">2354</span>);
+
+<span class="hljs-comment">-- update</span>
+<span class="hljs-keyword">update</span> customer <span class="hljs-keyword">set</span> customer_name=<span class="hljs-string">&apos;xiaohua&apos;</span> <span class="hljs-keyword">where</span> customer_key=<span class="hljs-number">1</span>;
+<span class="hljs-keyword">update</span> product <span class="hljs-keyword">set</span> product_name=<span class="hljs-string">&apos;water&apos;</span> <span class="hljs-keyword">where</span> product_class=<span class="hljs-string">&apos;food&apos;</span>;
+
+<span class="hljs-comment">-- select</span>
+<span class="hljs-keyword">select</span> customer_name,sex,age
+<span class="hljs-keyword">from</span> customer
+<span class="hljs-keyword">where</span> customer_key=<span class="hljs-number">1</span>;
+</code></pre>
+<h1 id="analysis-services&#x73AF;&#x5883;">Analysis services&#x73AF;&#x5883;</h1>
+<h2 id="&#x521B;&#x5EFA;&#x9879;&#x76EE;">&#x521B;&#x5EFA;&#x9879;&#x76EE;</h2>
+<ol>
+<li>&#x6253;&#x5F00;SQL Server Business Intelligence&#xFF08;SSBI&#xFF09;&#xFF0C;&#x521B;&#x5EFA;analysis services&#x9879;&#x76EE;&#x3002;</li>
+</ol>
+<p><img src="images/sqlserver4.png" alt="sqlserver4"></p>
+<ol>
+<li><p>&#x5B9A;&#x4E49;&#x6570;&#x636E;&#x6E90;&#xFF08;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x4E0A;&#x8282;&#x8BFE;&#x521B;&#x5EFA;&#x7684;&#x6570;&#x636E;&#x5E93;Pm_dw&#xFF09;</p>
+<p><img src="images/sqlserver5.png" alt="sqlserver5"></p>
+</li>
+<li><p>&#x521B;&#x5EFA;&#x6570;&#x636E;&#x6E90;&#x89C6;&#x56FE;</p>
+<p><img src="images/sqlserver6.png" alt="sqlserver6"></p>
+</li>
+<li><p>&#x521B;&#x5EFA;&#x65E5;&#x671F;&#x7EF4;&#x5EA6;&#x3001;&#x5BA2;&#x6237;&#x7EF4;&#x5EA6;&#x3001;&#x5730;&#x533A;&#x7EAC;&#x5EA6;&#x3001;&#x5546;&#x54C1;&#x7EF4;&#x5EA6;&#x3002;</p>
+<ul>
+<li><p>&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5BF9;&#x5E94;&#x6570;&#x636E;&#x9009;&#x62E9;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027;</p>
+<p><img src="images/sqlserver7.png" alt="sqlserver7"></p>
+</li>
+<li><p>&#x5BF9;&#x56DB;&#x4E2A;&#x7EF4;&#x5EA6;&#x8868;&#x540C;&#x6837;&#x64CD;&#x4F5C;</p>
+</li>
+</ul>
+<p><img src="images/sqlserver8.png" alt="sqlserver8"></p>
+</li>
+<li><p>&#x521B;&#x5EFA;&#x591A;&#x7EF4;&#x6570;&#x636E;&#x96C6;</p>
+<ul>
+<li>&#x5728;&#x8FD9;&#x91CC;&#x9009;&#x62E9;fact table</li>
+</ul>
+<p><img src="images/sqlserver9.png" alt="sqlserver9"></p>
+</li>
+<li><p>&#x90E8;&#x7F72;&#x9879;&#x76EE;(&#x82E5;&#x6570;&#x636E;&#x5E93;&#x6539;&#x53D8;&#xFF0C;<strong>&#x9700;&#x8981;&#x5148;&#x70B9;&#x51FB;&#x7EAC;&#x5EA6;&#x6570;&#x636E;&#x7684;refresh&#xFF0C;&#x518D;&#x5728;cube&#x4E2D;refresh</strong>)</p>
+<p><img src="images/sqlserver10.png" alt="sqlserver10"></p>
+</li>
+</ol>
+<h2 id="&#x5206;&#x6790;&#x591A;&#x7EF4;&#x6570;&#x636E;&#x96C6;">&#x5206;&#x6790;&#x591A;&#x7EF4;&#x6570;&#x636E;&#x96C6;</h2>
+<p>&#x5C06;&#x521B;&#x5EFA;&#x7684;&#x9879;&#x76EE;&#x90E8;&#x7F72;&#x5230;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x5728;&#x591A;&#x7EF4;&#x6570;&#x636E;&#x96C6;&#x4E2D;&#x6253;&#x5F00;&#x6D4F;&#x89C8;&#x5668;&#x9875;&#x9762;&#xFF0C;&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x9009;&#x62E9;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x67E5;&#x8BE2;&#x7684;&#x5C5E;&#x6027;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF1A;</p>
+<p><img src="images/sqlserver11.png" alt="sqlserver11"></p>
+<ul>
+<li><p>&#x5206;&#x6790;&#x6BCF;&#x4E2A;&#x7701;&#x4EFD;&#x6BCF;&#x4E2A;&#x5B63;&#x5EA6;&#x7684;&#x9500;&#x552E;&#x603B;&#x91D1;&#x989D;</p>
+<p><img src="images/sqlserver12.png" alt="sqlserver12"></p>
+</li>
+<li><p>&#x5206;&#x6790;&#x6BCF;&#x4E2A;&#x4EA7;&#x54C1;&#x6BCF;&#x5E74;&#x7684;&#x603B;&#x9500;&#x552E;&#x91CF;</p>
+<p><img src="images/sqlserver13.png" alt="sqlserver13"></p>
+</li>
+<li><p>&#x5206;&#x6790;&#x5BA2;&#x6237;&#x6BCF;&#x4E2A;&#x5E74;&#x9F84;&#x6BB5;&#x7684;&#x8D2D;&#x4E70;&#x60C5;&#x51B5;</p>
+<p><img src="images/sqlserver14.png" alt="sqlserver14"></p>
+</li>
+<li><p>&#x5206;&#x6790;&#x5386;&#x5E74;&#x6BCF;&#x7C7B;&#x5546;&#x54C1;&#x7684;&#x9500;&#x552E;&#x60C5;&#x51B5;</p>
+<p><img src="images/sqlserver15.png" alt="sqlserver15"></p>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="./" class="navigation navigation-prev " aria-label="Previous page: Introduction">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="udw.html" class="navigation navigation-next " aria-label="Next page: UDW云数据仓库">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"SQL Server 和 SSBI 使用","level":"1.2","depth":1,"next":{"title":"UDW云数据仓库","level":"1.3","depth":1,"path":"udw.md","ref":"udw.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":".","variables":{},"title":"Data Mining","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"sql server.md","mtime":"2021-01-29T08:10:39.221Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T10:42:48.559Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

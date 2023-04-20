@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>blog on Scott&#39;Log</title>
+    <link>https://tech.zealscott.com/tags/blog/</link>
+    <description>Recent content in blog on Scott&#39;Log</description>
+    <image>
+      <url>https://tech.zealscott.com/papermod-cover.png</url>
+      <link>https://tech.zealscott.com/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 08 Aug 2018 11:47:00 +0800</lastBuildDate><atom:link href="https://tech.zealscott.com/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>写在第 100 篇博文之际</title>
+      <link>https://tech.zealscott.com/misc/100-blogs-goal/</link>
+      <pubDate>Wed, 08 Aug 2018 11:47:00 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/100-blogs-goal/</guid>
+      <description>想写博客的念头已经很久了，在年初的春节终于有时间折腾出了自己的博客。一开始，仅仅是想用博客来记录自己学习中遇到的问题，作为备忘；后来上课了发现，与其将自己课上做的笔记写在 OneNote 上，还不如直接写在博客上，也许能帮助到一些同学呢；再到后来上数学课，就索性将数学公式、笔记也写在博客上（写 LaTeX 还是件很蛋疼的事）；到现在，我将自己做的一些小项目也记录下来，也许未来也会写点琐碎的感悟，也不一定呢。
+写博客是件很美妙的事情，一方面，每次的记录其实并没有那么愉快，虽然 Markdown 已经足够简单不用担心排版的问题，但每天总得多花一两个小时总结也有点繁琐（不过慢慢就习惯了这种记录方式），另一方面，当我第一次收到陌生朋友评论的感谢时，我才发现原来我的博客也有人看呀，成就感满满。于是我开始在网站中加入百度统计和 Google Analysis，时不时看看今天有没有人看我的博客，也算是激励我不断更新的动力吧。
+很惭愧的是，自己能力有限，多数博文也仅仅是上课的笔记和总结，并没有太多“干货”。好在自己还算勤快，半年就达到了自己定的一年目标（完成 100 篇博文）。这半年来其实自己的收获是巨大的，虽然每天都学的很累，但是总算是有种 feeling &amp;ndash;终于在 cs 上入门了。转专业这一年来，拒绝了所有的活动与比赛，静下心来搞学习，总算是有所收获。一年的时间说长也长，说短也短，原专业的朋友保研的保研，考研的考研，出国的出国。总有人半开玩笑的问我，“现在你看见他们都保研清北啦，你后不后悔”。我只是笑笑，当然不后悔了。但羡慕是有点羡慕的，毕竟是更好的平台，而自己选择了竞争压力太很多的行业，很难再像以前那样“游刃有余”。好在自己是个喜欢折腾且异常固执的人，倒也不觉得有什么。
+最近博客更新得不勤，主要是因为放假了，以及自己在做两个小项目、学英语，没太多东西可以记录。经过一年的“闭关”，自己也觉得是时候参加一些比赛来实践实践（没点奖状怎么丰富自己简历啊哭），找了两三个自己认为还挺有挑战的比赛，从 9 月份开始玩玩。
+当然，目前最重要的事情还是考好雅思&amp;hellip;&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>Hexo 博文加密</title>
+      <link>https://tech.zealscott.com/misc/hexo-encrypt/</link>
+      <pubDate>Wed, 11 Jul 2018 10:15:55 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/hexo-encrypt/</guid>
+      <description>很多时候当我们写了一篇博客，但并不想所有人能够访问它。对于WordPress这很容易做到，但是对于hexo，由于是静态网页，并不能做到完全的加密。
+在GitHub上发现了有个人做了一个加密的插件，还挺好用，推荐给大家。
+安装 在你的hexo根目录的package.json文件夹中添加：
+ &amp;ldquo;hexo-blog-encrypt&amp;rdquo;: &amp;ldquo;2.0.*&amp;rdquo;
+ 然后在命令行中输入：
+ npm install
+ 这样这个插件就安装好了。
+找到根目录下的_config.yml文件，添加如下：
+1 2 3 4  # Security ## encrypt: enable: true   这样就可以使用插件了。
+使用 在你要加密的文章头部写入password，例如：
+1 2 3 4 5 6 7  --- title: Hello World date: 2016-03-30 21:18:02 password: abc123 abstract: Welcome to my blog, enter password to read. message: Welcome to my blog, enter password to read. ---   这样就可以需要输入密码访问了。</description>
+    </item>
+    
+    <item>
+      <title>Hexo 多设备同步与版本控制实现</title>
+      <link>https://tech.zealscott.com/misc/hexo-sync/</link>
+      <pubDate>Wed, 21 Feb 2018 10:37:07 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/hexo-sync/</guid>
+      <description>我们知道，hexo是一个静态网页个人博客，所有的资源和文件都是储存在本地的，但这样不利于实现网页的版本控制和随时随地发表博客，因此Google了一下hexo多设备同步的问题</description>
+    </item>
+    
+    <item>
+      <title>Hexo 下 LaTeX 无法显示的解决方案</title>
+      <link>https://tech.zealscott.com/misc/hexo-latex/</link>
+      <pubDate>Thu, 08 Feb 2018 20:31:03 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/hexo-latex/</guid>
+      <description>今天写博客时需要用到LaTeX，但使用了晚上说的各种方法依然无法成功，折腾了一晚上终于可以了，给同样困惑的小伙伴一些参考</description>
+    </item>
+    
+    <item>
+      <title>Hexo 中 scaffolds 创建模板问题</title>
+      <link>https://tech.zealscott.com/misc/hexo-scaffolds/</link>
+      <pubDate>Thu, 08 Feb 2018 11:47:00 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/hexo-scaffolds/</guid>
+      <description>由于经常要写同一类型的文章，懒得每篇文章都添加同样的tags和categories，因此可使用scaffolds创建模板，每次只需要hexo new layout &amp;quot;标题&amp;quot;即可生成相同样式的文章。
+但近期使用时发现一些问题，如下图所示，我创建了一个名为Hexo的模板，并正确放到scaffolds中： 然后再git中输入： 到这一步都没有任何问题，但当我们查看文章时，发现并没有生成我们想要的tags和categories，而是多了一个layout，这不是我们想要的。 后来发现，在scaffolds中创建模板时，模板标题不能为大写，中文也可以，但就是不能大写，不知道为什么，先占个坑，望有同样问题的同学能看见这篇文章。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,541 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Introduction · 线性代数笔记</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="subspace.html" />
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter active" data-level="1.1" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="subspace.html">
+            
+                <a href="subspace.html">
+            
+                    
+                    矩阵的四个基本子空间
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="subspace property.html">
+            
+                <a href="subspace property.html">
+            
+                    
+                    基本子空间的正交性及性质
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="project.html">
+            
+                <a href="project.html">
+            
+                    
+                    向量投影
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="Least squares.html">
+            
+                <a href="Least squares.html">
+            
+                    
+                    最小二乘法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="gram-schmidit.html">
+            
+                <a href="gram-schmidit.html">
+            
+                    
+                    Gram-Schmidit正交化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="determinant.html">
+            
+                <a href="determinant.html">
+            
+                    
+                    行列式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="eigenvector.html">
+            
+                <a href="eigenvector.html">
+            
+                    
+                    特征向量
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="diagonalize.html">
+            
+                <a href="diagonalize.html">
+            
+                    
+                    矩阵的对角化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="application.html">
+            
+                <a href="application.html">
+            
+                    
+                    对角矩阵在微分方程中的应用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="symmetric matrices.html">
+            
+                <a href="symmetric matrices.html">
+            
+                    
+                    实对称矩阵
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="positive definite matrix.html">
+            
+                <a href="positive definite matrix.html">
+            
+                    
+                    正定矩阵理解及推导
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.13" data-path="quadratic form.html">
+            
+                <a href="quadratic form.html">
+            
+                    
+                    二次型与函数极值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.14" data-path="pagerank.html">
+            
+                <a href="pagerank.html">
+            
+                    
+                    PageRank问题建模
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.15" data-path="norm.html">
+            
+                <a href="norm.html">
+            
+                    
+                    范数与矩阵条件数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.16" data-path="svd.html">
+            
+                <a href="svd.html">
+            
+                    
+                    SVD分解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.17" data-path="pca.html">
+            
+                <a href="pca.html">
+            
+                    
+                    理解PCA
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.18" data-path="svd understanding.html">
+            
+                <a href="svd understanding.html">
+            
+                    
+                    SVD通俗理解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.19" data-path="transform.html">
+            
+                <a href="transform.html">
+            
+                    
+                    线性变换与基变换
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.20" data-path="ssf.md">
+            
+                <a href="ssf.md">
+            
+                    
+                    线性变换与基变换2
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="." >Introduction</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 style="text-align:center" id="&#x5982;&#x4F55;&#x7406;&#x89E3;&#x7EBF;&#x6027;&#x4EE3;&#x6570;-">&#x5982;&#x4F55;&#x7406;&#x89E3;&#x7EBF;&#x6027;&#x4EE3;&#x6570; </h1>
+
+<p>&#x4E0D;&#x5F97;&#x4E0D;&#x8BF4;&#xFF0C;&#x5BF9;&#x4E8E;&#x6211;&#x6765;&#x8BF4;&#xFF0C;&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x4E00;&#x76F4;&#x662F;&#x5F88;&#x5934;&#x75BC;&#x7684;&#x3002;&#x8FD9;&#x79CD;&#x5934;&#x75BC;&#x4E0D;&#x5728;&#x4E8E;&#x8BF4;&#x8BA1;&#x7B97;&#x7279;&#x5F81;&#x503C;&#x3001;&#x6C42;PCA&#x6709;&#x591A;&#x4E48;&#x591A;&#x4E48;&#x590D;&#x6742;&#xFF1B;&#x800C;&#x662F;&#x81EA;&#x5DF1;&#x4E00;&#x76F4;&#x6CA1;&#x6709;&#x529E;&#x6CD5;&#x76F4;&#x89C2;&#x7406;&#x89E3;&#x77E9;&#x9635;&#x662F;&#x4EC0;&#x4E48;&#x3001;&#x5411;&#x91CF;&#x53C8;&#x662F;&#x4EC0;&#x4E48;&#x3001;&#x77E9;&#x9635;&#x4E58;&#x6CD5;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x4E48;&#x5B9A;&#x4E49;&#x3001;&#x7279;&#x5F81;&#x503C;&#x4EE3;&#x8868;&#x4EC0;&#x4E48;&#x3002;&#x6211;&#x60F3;&#x8FD9;&#x4E9B;&#x95EE;&#x9898;&#x4E5F;&#x540C;&#x6837;&#x56F0;&#x6270;&#x7740;&#x5B66;&#x4E60;&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x7684;&#x5F88;&#x591A;&#x540C;&#x5B66;&#x3002;</p>
+<p>&#x56E0;&#x6B64;&#x6211;&#x6574;&#x7406;&#x4E86;&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x4E2D;&#x5E38;&#x7528;&#x7684;&#x77E5;&#x8BC6;&#x7B14;&#x8BB0;&#xFF0C;&#x4EE5;&#x53CA;&#x4E00;&#x4E9B;&#x5B66;&#x4E60;&#x4E2D;&#x5BF9;&#x6211;&#x6709;&#x6536;&#x83B7;&#x7684;&#x8D44;&#x6599;&#xFF0C;&#x4E5F;&#x4FBF;&#x4E8E;&#x81EA;&#x5DF1;&#x590D;&#x4E60;&#xFF1A;</p>
+<ul>
+<li>&#x77E5;&#x4E4E;&#x4E0A;&#x7684;&#x8BA8;&#x8BBA;&#xFF1A;<a href="https://www.zhihu.com/question/20534668" _target="blank">&#x5982;&#x4F55;&#x7406;&#x89E3;&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#xFF1F;</a></li>
+<li>&#x79D1;&#x666E;&#x7C7B;&#x89C6;&#x9891;&#xFF1A;<a href="https://www.bilibili.com/video/av6731067/?redirectFrom=h5" _target="blank">&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x7684;&#x672C;&#x8D28;</a></li>
+<li>&#x636E;&#x8BF4;&#x5F88;&#x597D;&#x7684;&#x6559;&#x6750;&#xFF0C;&#x81EA;&#x5DF1;&#x4E5F;&#x8FD8;&#x6CA1;&#x770B;&#xFF1A;<a href="http://linear.axler.net/" _target="blank">Linear Algebra Done Right</a></li>
+<li>CSDN&#x4E0A;&#x5173;&#x4E8E;&#x77E9;&#x9635;&#x7684;&#x7406;&#x89E3;&#xFF0C;&#x9002;&#x5408;Review&#xFF1A;<a href="https://blog.csdn.net/myan/article/details/647511" _target="blank">&#x7406;&#x89E3;&#x77E9;&#x9635; </a></li>
+<li>Jon Shlens&#x5927;&#x795E;&#x5199;&#x7684;PCA tutorial&#xFF1A;<a href="http://arxiv.org/abs/1404.1100" _target="blank">Tutorial on Principal Component Analysis </a></li>
+</ul>
+<p>This GitBook notes are maintained by <a href="zealscott.com">zealscott</a>.</p>
+<h2 id="&#x8D44;&#x6E90;">&#x8D44;&#x6E90;</h2>
+<ol>
+<li><p><a href="http://math.mit.edu/~gs/linearalgebra/" _target="blank">Introduction to Linear Algebra, Fifth Edition </a></p>
+<ul>
+<li>&#x5B66;&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x4E3B;&#x8981;&#x7684;&#x53C2;&#x8003;&#x4E66;&#xFF0C;Strang &#x6559;&#x6388;&#x4E5F;&#x7B97;&#x662F;&#x7F51;&#x7EA2;&#x4E86;&#xFF0C;&#x8BB2;&#x8BFE;&#x8BB2;&#x5F97;&#x5341;&#x5206;&#x6D45;&#x663E;&#x6613;&#x61C2;&#xFF0C;&#x7F51;&#x4E0A;&#x6709;&#x914D;&#x5957;&#x7684;video&#xFF0C;&#x5F3A;&#x70C8;&#x63A8;&#x8350;&#x3002;</li>
+</ul>
+</li>
+<li><p><a href="http://www.xuetangx.com/courses/course-v1:TsinghuaX+10421102x_2015_T2+sp/about" _target="blank">&#x7EBF;&#x6027;&#x4EE3;&#x6570;2</a></p>
+<ul>
+<li><p>&#x6E05;&#x534E;&#x9A6C;&#x8F89;&#x8001;&#x5E08;&#x7684;&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x6155;&#x8BFE;&#xFF0C;&#x8BB2;&#x6CD5;&#x6BD4;&#x8F83;&#x4F20;&#x7EDF;&#xFF0C;&#x4F46;&#x8BFE;&#x4EF6;&#x5F88;&#x6E05;&#x6670;&#xFF0C;&#x4E0D;&#x592A;&#x9700;&#x8981;&#x770B;video&#x4E5F;&#x80FD;&#x770B;&#x61C2;&#x3002;</p>
+<ul>
+<li>&#x8FD9;&#x4E3B;&#x8981;&#x662F;&#x9488;&#x5BF9;&#x76F8;&#x4F3C;&#x77E9;&#x9635;&#x3001;SVD&#x3001;PCA&#x3001;&#x4F2A;&#x9006;&#x7B49;&#x77E9;&#x9635;&#x8BBA;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x662F;&#x4F20;&#x7EDF;&#x7EBF;&#x6027;&#x4EE3;&#x6570;&#x7684;&#x5F88;&#x597D;&#x8865;&#x5145;&#x3002;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><a href="https://book.douban.com/subject/4716014/" _target="blank">&#x6570;&#x503C;&#x7EBF;&#x6027;&#x4EE3;&#x6570;</a></p>
+<ul>
+<li>&#x8FD9;&#x672C;&#x4E66;&#x4E3B;&#x8981;&#x4ECB;&#x7ECD;&#x89E3;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x73B0;&#x5B9E;&#x4E2D;&#x5982;&#x4F55;&#x6C42;&#x89E3;&#x5927;&#x578B;&#x7CFB;&#x6570;&#x77E9;&#x9635;&#x7684;&#x9006;&#x3001;&#x7279;&#x5F81;&#x503C;&#x4EE5;&#x53CA;&#x4E00;&#x4E9B;&#x8FED;&#x4EE3;&#x7684;&#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+</li>
+</ol>
+<footer align="right">
+  @Last updated at 1/22/2021
+</footer>
+
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="subspace.html" class="navigation navigation-next navigation-unique" aria-label="Next page: 矩阵的四个基本子空间">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"next":{"title":"矩阵的四个基本子空间","level":"1.2","depth":1,"path":"subspace.md","ref":"subspace.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":" ","variables":{},"title":"线性代数笔记","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"README.md","mtime":"2021-01-23T08:53:00.603Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T04:00:19.819Z"},"basePath":".","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="gitbook/gitbook.js"></script>
+    <script src="gitbook/theme.js"></script>
+    
+        
+        <script src="gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

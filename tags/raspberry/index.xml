@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>raspberry on Scott&#39;Log</title>
+    <link>https://tech.zealscott.com/tags/raspberry/</link>
+    <description>Recent content in raspberry on Scott&#39;Log</description>
+    <image>
+      <url>https://tech.zealscott.com/papermod-cover.png</url>
+      <link>https://tech.zealscott.com/papermod-cover.png</link>
+    </image>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 02 Feb 2018 22:06:22 +0800</lastBuildDate><atom:link href="https://tech.zealscott.com/tags/raspberry/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>树莓派之BT下载器</title>
+      <link>https://tech.zealscott.com/misc/bt-downloader/</link>
+      <pubDate>Fri, 02 Feb 2018 22:06:22 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/bt-downloader/</guid>
+      <description>配置环境 首先安装transmission：
+ sudo apt-get install transmission-daemon
+ 然后创建下载目录，一个是下载完成的目录（complete），一个是未完成的目录（incomplete），不建议将移动硬盘长时间挂载在树莓派上运行
+1 2  mkdir -p /home/pi/incomplete # for incomplete downloads mkdir /home/pi/complete # finished downloads   设置权限
+1 2 3 4 5  sudo usermod -a -G debian-transmission pi sudo chgrp debian-transmission /home/pi/incomplete sudo chgrp debian-transmission /home/pi/complete chmod 770 /home/pi/incomplete chmod 770 /home/pi/complete   修改配置文件,配置文件目录为
+ vim /etc/transmission-daemon/settings.json
+ 打开文件如图所示 修改其中的三项即可，分别为：
+1 2 3  &amp;#34;download-dir&amp;#34;: &amp;#34;/home/pi/complete&amp;#34;, &amp;#34;incomplete-dir&amp;#34;: &amp;#34;/home/pi/incomplete&amp;#34;, &amp;#34;rpc-whitelist&amp;#34;: &amp;#34;192.</description>
+    </item>
+    
+    <item>
+      <title>树莓派设置静态IP地址</title>
+      <link>https://tech.zealscott.com/misc/static-ip/</link>
+      <pubDate>Thu, 01 Feb 2018 22:08:03 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/static-ip/</guid>
+      <description>首先打开树莓派的命令行，输入：
+ sudo vi /etc/dhcpcd.conf
+ 即可用vi编辑配置文件。
+在文件末尾输入：
+1 2 3 4 5 6 7 8 9 10 11  interface eth0 static ip_address=192.168.0.10/24 static routers=192.168.0.1 static domain_name_servers=192.168.0.1 interface wlan0 static ip_address=192.168.0.200/24 static routers=192.168.0.1 static domain_name_servers=192.168.0.1   其中，eth0是有线的配置，wlan0是无线配置
+ip_address就是静态IP，后面要接/24
+routers是网关
+static domain_name_servers是DNS
+然后再在命令行执行
+ sudo reboot
+ 重启树莓派，即可根据树莓派的联网方式用静态IP连接。</description>
+    </item>
+    
+    <item>
+      <title>远程调试树莓派（PyCharm实现）</title>
+      <link>https://tech.zealscott.com/misc/raspberry-python/</link>
+      <pubDate>Thu, 01 Feb 2018 21:18:40 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/raspberry-python/</guid>
+      <description>对于Linux和文本编辑器不那么熟悉的小伙伴来说，直接在树莓派中写程序可谓是痛苦万分。本文将介绍如何使用PyCharm远程调试树莓派，并同步当前python文件到树莓派中</description>
+    </item>
+    
+    <item>
+      <title>树莓派首次上手</title>
+      <link>https://tech.zealscott.com/misc/setup/</link>
+      <pubDate>Wed, 31 Jan 2018 17:51:57 +0800</pubDate>
+      
+      <guid>https://tech.zealscott.com/misc/setup/</guid>
+      <description>寒假突发奇想买了一个树莓派，参考了网上很多教程，终于安装成功，下面分享下折腾经验</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1364 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <title>Spark 处理框架 · Distribution System</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.0.0">
+        <meta name="author" content="zealscott">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-disqus/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-katex-plus/katex.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-back-to-top-button/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="sparkcoding.html" />
+    
+    
+    <link rel="prev" href="RPC-and-serialization.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+    
+        
+        <li>
+            <a href="https://tech.zealscott.com" target="_blank" class="custom-link">Homepage</a>
+        </li>
+    
+    
+
+    
+    <li class="divider"></li>
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    Notes
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="Distribution-File-System-DFS.html">
+            
+                <a href="Distribution-File-System-DFS.html">
+            
+                    
+                    Distribution File System DFS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="mapreduce.html">
+            
+                <a href="mapreduce.html">
+            
+                    
+                    MapReduce处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="mrcoding.html">
+            
+                <a href="mrcoding.html">
+            
+                    
+                    MapReduce编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" data-path="RPC-and-serialization.html">
+            
+                <a href="RPC-and-serialization.html">
+            
+                    
+                    RPC And Serialization
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5" data-path="spark.html">
+            
+                <a href="spark.html">
+            
+                    
+                    Spark 处理框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" data-path="sparkcoding.html">
+            
+                <a href="sparkcoding.html">
+            
+                    
+                    Spark 编程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.7" data-path="yarn.html">
+            
+                <a href="yarn.html">
+            
+                    
+                    Yarn 资源管理框架
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.8" data-path="zookeeper.html">
+            
+                <a href="zookeeper.html">
+            
+                    
+                    ZooKeeper 元数据管理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.9" data-path="pregel.html">
+            
+                <a href="pregel.html">
+            
+                    
+                    分布式图处理系统--Pregel
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.10" data-path="flink.html">
+            
+                <a href="flink.html">
+            
+                    
+                    批流融合系统--Flink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.11" data-path="beam.html">
+            
+                <a href="beam.html">
+            
+                    
+                    批流融合系统--展望
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.12" data-path="ps.html">
+            
+                <a href="ps.html">
+            
+                    
+                    机器学习系统--Parameter Server
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.13" data-path="graphlab.html">
+            
+                <a href="graphlab.html">
+            
+                    
+                    机器学习系统--GraphLab
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.14" data-path="mahout.html">
+            
+                <a href="mahout.html">
+            
+                    
+                    机器学习系统--mahout
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.15" data-path="stream.html">
+            
+                <a href="stream.html">
+            
+                    
+                    流计算系统概述
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" >
+            
+                <span>
+            
+                    
+                    Lab
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../project/rpc.html">
+            
+                <a href="../project/rpc.html">
+            
+                    
+                    RPC model in Java
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../project/hadoop.html">
+            
+                <a href="../project/hadoop.html">
+            
+                    
+                    hadoop安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../project/hadoop1.html">
+            
+                <a href="../project/hadoop1.html">
+            
+                    
+                    hadoop编程实践（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../project/hadoop2.html">
+            
+                <a href="../project/hadoop2.html">
+            
+                    
+                    hadoop编程实践（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../project/hadoop-coding.html">
+            
+                <a href="../project/hadoop-coding.html">
+            
+                    
+                    hadoop编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../project/hadoop-recap.html">
+            
+                <a href="../project/hadoop-recap.html">
+            
+                    
+                    Hadoop 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.7" data-path="../project/spark-installation.html">
+            
+                <a href="../project/spark-installation.html">
+            
+                    
+                    spark安装与配置
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.8" data-path="../project/spark1.html">
+            
+                <a href="../project/spark1.html">
+            
+                    
+                    spark编程实践
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.9" data-path="../project/spark2.html">
+            
+                <a href="../project/spark2.html">
+            
+                    
+                    spark编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.10" data-path="../project/spark-recap.html">
+            
+                <a href="../project/spark-recap.html">
+            
+                    
+                    Spark 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.11" data-path="../project/docker1.html">
+            
+                <a href="../project/docker1.html">
+            
+                    
+                    使用 Docker 配置 hadoop/spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.12" data-path="../project/docker2.html">
+            
+                <a href="../project/docker2.html">
+            
+                    
+                    使用 docker 搭建 spark(2.3.1) 集群
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.13" data-path="../project/zookeeper.html">
+            
+                <a href="../project/zookeeper.html">
+            
+                    
+                    ZooKeeper配置及简单使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.14" data-path="../project/yarn.html">
+            
+                <a href="../project/yarn.html">
+            
+                    
+                    Yarn框架下的系统部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.15" data-path="../project/storm-installation.html">
+            
+                <a href="../project/storm-installation.html">
+            
+                    
+                    Storm部署与运行
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.16" data-path="../project/storm-coding.html">
+            
+                <a href="../project/storm-coding.html">
+            
+                    
+                    Storm编程练习
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.17" data-path="../project/storm-summary.html">
+            
+                <a href="../project/storm-summary.html">
+            
+                    
+                    Storm 编程总结
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.18" data-path="../project/sparksteaming.html">
+            
+                <a href="../project/sparksteaming.html">
+            
+                    
+                    SparkSteaming使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.19" data-path="../project/flink-installation.html">
+            
+                <a href="../project/flink-installation.html">
+            
+                    
+                    Flink安装及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.20" data-path="../project/flink1.html">
+            
+                <a href="../project/flink1.html">
+            
+                    
+                    Flink编程练习（一）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.21" data-path="../project/flink2.html">
+            
+                <a href="../project/flink2.html">
+            
+                    
+                    Flink编程练习（二）
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.22" data-path="../project/graph-in-hadoop.html">
+            
+                <a href="../project/graph-in-hadoop.html">
+            
+                    
+                    常用图算法实现--Hadoop
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.23" data-path="../project/graph-in-spark.html">
+            
+                <a href="../project/graph-in-spark.html">
+            
+                    
+                    常用图算法实现--Spark
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.24" data-path="../project/graph-in-flink.html">
+            
+                <a href="../project/graph-in-flink.html">
+            
+                    
+                    常用图算法实现--Flink
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.25" data-path="../project/giraph.html">
+            
+                <a href="../project/giraph.html">
+            
+                    
+                    Giraph配置及使用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.26" data-path="../project/flink-iteration.html">
+            
+                <a href="../project/flink-iteration.html">
+            
+                    
+                    Flink迭代小记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" >
+            
+                <span>
+            
+                    
+                    Recap
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../recap/fundamental-of-distributed-system.html">
+            
+                <a href="../recap/fundamental-of-distributed-system.html">
+            
+                    
+                    分布式系统基础
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../recap/batch-system.html">
+            
+                <a href="../recap/batch-system.html">
+            
+                    
+                    批处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../recap/management-system.html">
+            
+                <a href="../recap/management-system.html">
+            
+                    
+                    支持数据管理的底层系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../recap/streaming-system.html">
+            
+                <a href="../recap/streaming-system.html">
+            
+                    
+                    流处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.5" data-path="../recap/flink.html">
+            
+                <a href="../recap/flink.html">
+            
+                    
+                    批流融合系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.6" data-path="../recap/graph.html">
+            
+                <a href="../recap/graph.html">
+            
+                    
+                    图处理系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.7" data-path="../recap/ml.html">
+            
+                <a href="../recap/ml.html">
+            
+                    
+                    机器学习系统
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.8" data-path="../recap/summary.html">
+            
+                <a href="../recap/summary.html">
+            
+                    
+                    总结与对比
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Spark 处理框架</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <p align="center">
+  <b>Spark: an unified analytics engine for large-scale data processing</b>
+</p>
+
+
+<h1 id="spark-vs-mapreduce">Spark VS MapReduce</h1>
+<ul>
+<li>MapReduce implementation principles<ul>
+<li><img src="../images/spark1.png" alt="spark1"></li>
+</ul>
+</li>
+<li>&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;MapReduce&#x4F5C;&#x4E1A;&#x6765;&#x8BF4;&#xFF0C;&#x5927;&#x81F4;&#x64CD;&#x4F5C;&#x4E3A;&#xFF1A;<ul>
+<li><img src="../images/spark2.png" alt="spark2"></li>
+<li>&#x53EF;&#x4EE5;&#x53D1;&#x73B0;&#xFF0C;&#x5176;&#x4E3B;&#x8981;&#x7684;&#x6539;&#x53D8;&#x5C31;&#x662F;&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x7684;&#x53D8;&#x5316;</li>
+<li>&#x4E2D;&#x95F4;&#x7ED3;&#x679C;&#x9700;&#x8981;&#x5199;&#x78C1;&#x76D8;&#xFF0C;&#x5F00;&#x9500;&#x975E;&#x5E38;&#x5927;</li>
+</ul>
+</li>
+</ul>
+<h2 id="hadoop-mapreduce&#x5C40;&#x9650;&#x6027;">Hadoop MapReduce&#x5C40;&#x9650;&#x6027;</h2>
+<ul>
+<li>&#x8868;&#x8FBE;&#x80FD;&#x529B;&#x6709;&#x9650;<ul>
+<li>&#x4EC5;map&#x548C;reduce&#x51FD;&#x6570;&#xFF0C;&#x65E0;&#x6CD5;&#x76F4;&#x63A5;&#x7528;join&#x7B49;&#x64CD;&#x4F5C;</li>
+</ul>
+</li>
+<li>&#x78C1;&#x76D8;IO&#x5F00;&#x9500;&#x5927;&#xFF08;&#x5355;&#x4E2A;job&#xFF09;<ul>
+<li>&#x8F93;&#x5165;&#x3001;&#x8F93;&#x51FA;&#x53CA;<strong>shuffle&#x4E2D;&#x95F4;&#x7ED3;&#x679C;&#xFF08;&#x53EF;&#x4EE5;&#x4F18;&#x5316;&#xFF09;</strong>&#x90FD;&#x9700;&#x8981;&#x8BFB;&#x5199;&#x78C1;&#x76D8;</li>
+</ul>
+</li>
+<li>&#x5EF6;&#x8FDF;&#x9AD8;&#xFF08;&#x591A;&#x4E2A;job&#xFF09;<ul>
+<li>&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF1A;job&#x4E4B;&#x95F4;&#x7684;&#x8854;&#x63A5;&#x6D89;&#x53CA;IO&#x5F00;&#x9500;&#xFF0C;&#x6BCF;&#x6B21;&#x7ED3;&#x679C;&#x9700;&#x8981;&#x5199;&#x5165;HDFS&#xFF0C;&#x5728;&#x5C06;&#x5176;&#x4ECE;HDFS&#x4E2D;&#x8BFB;&#x51FA;<ul>
+<li><img src="../images/spark3.png" alt="spark3"></li>
+</ul>
+</li>
+<li>&#x65E0;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF1A;<strong>&#x5728;&#x524D;&#x4E00;&#x4E2A;job&#x6267;&#x884C;&#x5B8C;&#x6210;&#x4E4B;&#x524D;&#xFF0C;&#x5176;&#x4ED6;job&#x4F9D;&#x7136;&#x65E0;&#x6CD5;&#x5F00;&#x59CB;&#xFF08;&#x4E0D;&#x5229;&#x4E8E;&#x5E76;&#x884C;&#xFF09;</strong><ul>
+<li><img src="../images/spark4.png" alt="spark4"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="spark&#x6539;&#x8FDB;">Spark&#x6539;&#x8FDB;</h2>
+<ul>
+<li>&#x8868;&#x8FBE;&#x80FD;&#x529B;&#x6709;&#x9650;<ul>
+<li>&#x589E;&#x52A0;join&#x7B49;&#x66F4;&#x591A;&#x590D;&#x6742;&#x7684;&#x51FD;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x4E32;&#x8054;&#x4E3A;<strong>DAG&#xFF08;&#x6709;&#x5411;&#x65E0;&#x73AF;&#x56FE;&#xFF09;</strong></li>
+</ul>
+</li>
+<li>&#x78C1;&#x76D8;IO&#x5F00;&#x9500;&#x5927;&#xFF08;&#x5355;&#x4E2A;job&#xFF09;<ul>
+<li><strong>&#x975E;shuffle&#x9636;&#x6BB5;</strong>&#x907F;&#x514D;&#x4E2D;&#x95F4;&#x7ED3;&#x679C;&#x5199;&#x78C1;&#x76D8;</li>
+</ul>
+</li>
+<li>&#x4E2D;&#x95F4;&#x7ED3;&#x679C;&#x5199;&#x78C1;&#x76D8;<ul>
+<li>MapReduce&#x5C06;Map&#x7684;&#x5199;&#x5165;&#x78C1;&#x76D8;</li>
+<li>Spark&#x4F18;&#x5148;&#x4F7F;&#x7528;&#x5185;&#x5B58;&#xFF08;&#x4F46;&#x4E5F;&#x4E0D;&#x80FD;&#x4FDD;&#x8BC1;&#x4E0D;&#x7528;&#x78C1;&#x76D8;&#xFF09;</li>
+</ul>
+</li>
+<li>&#x5EF6;&#x8FDF;&#x9AD8;&#xFF08;&#x591A;&#x4E2A;job&#x4F5C;&#x4E3A;&#x4E00;&#x6574;&#x4E2A;job&#xFF09;<ul>
+<li><strong>&#x5C06;&#x539F;&#x6765;&#x7684;&#x591A;&#x4E2A;job&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;job&#x7684;&#x591A;&#x4E2A;&#x9636;&#x6BB5;</strong></li>
+<li>&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF1A;&#x5404;&#x4E2A;&#x9636;&#x6BB5;&#x4E4B;&#x95F4;&#x7684;&#x8854;&#x63A5;&#x5C3D;&#x91CF;&#x5199;&#x5185;&#x5B58;</li>
+<li>&#x65E0;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF1A;<strong>&#x591A;&#x4E2A;&#x9636;&#x6BB5;&#x53EF;&#x4EE5;&#x540C;&#x65F6;&#x6267;&#x884C;</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x7279;&#x70B9;">&#x7279;&#x70B9;</h3>
+<ul>
+<li>&#x8FD0;&#x884C;&#x901F;&#x5EA6;&#x5FEB;<ul>
+<li>&#x4F7F;&#x7528;DAG&#x6267;&#x884C;&#x5F15;&#x64CE;&#x4EE5;&#x652F;&#x6301;&#x5FAA;&#x73AF;&#x6570;&#x636E;&#x6D41;&#x4E0E;&#x5185;&#x5B58;&#x8BA1;&#x7B97;</li>
+</ul>
+</li>
+<li>&#x5BB9;&#x6613;&#x4F7F;&#x7528;<ul>
+<li>&#x652F;&#x6301;&#x4F7F;&#x7528;Scala&#x3001;Java&#x3001;Python&#x548C;R&#x8BED;&#x8A00;&#x8FDB;&#x884C;&#x7F16;&#x7A0B;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;Spark Shell&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x5F0F;&#x7F16;&#x7A0B;</li>
+<li>Spark Shell&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x547D;&#x4EE4;&#x884C;&#x5C31;&#x53EF;&#x4EE5;&#x8FD0;&#x884C;</li>
+</ul>
+</li>
+<li>&#x901A;&#x7528;&#x6027;<ul>
+<li>Spark&#x63D0;&#x4F9B;&#x4E86;&#x5B8C;&#x6574;&#x800C;&#x5F3A;&#x5927;&#x7684;&#x6280;&#x672F;&#x6808;&#xFF0C;&#x5305;&#x62EC;SQL&#x67E5;&#x8BE2;&#x3001;&#x6D41;&#x5F0F;&#x8BA1;&#x7B97;&#x3001;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x548C;&#x56FE;&#x7B97;&#x6CD5;&#x7EC4;&#x4EF6;</li>
+</ul>
+</li>
+<li>&#x8FD0;&#x884C;&#x6A21;&#x5F0F;&#x591A;&#x6837;<ul>
+<li>&#x53EF;&#x8FD0;&#x884C;&#x4E8E;&#x72EC;&#x7ACB;&#x7684;&#x96C6;&#x7FA4;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x53EF;&#x8FD0;&#x884C;&#x4E8E;Hadoop&#x4E2D;&#xFF0C;&#x4E5F;&#x53EF;&#x8FD0;&#x884C;&#x4E8E;Amazon EC2&#x7B49;&#x4E91;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x5E76;&#x4E14;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;HDFS&#x3001;Cassandra&#x3001;HBase&#x3001;Hive&#x7B49;&#x591A;&#x79CD;&#x6570;&#x636E;&#x6E90;</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>&#x5982;&#x4F55;&#x505A;&#x5230;&#x67E5;&#x8BE2;&#x4E4B;&#x524D;&#x5C06;&#x6570;&#x636E;&#x62FF;&#x5230;&#x5185;&#x5B58;&#xFF1A;<ul>
+<li>&#x5BF9;&#x4E8E;MapReduce&#xFF0C;&#x8F93;&#x5165;&#x548C;&#x8F93;&#x51FA;&#x90FD;&#x662F;&#x6587;&#x4EF6;</li>
+<li>&#x5BF9;&#x4E8E;Spark&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x6587;&#x4EF6;&#x518D;&#x5305;&#x88C5;<ul>
+<li>&#x544A;&#x8BC9;&#x7CFB;&#x7EDF;&#x6587;&#x4EF6;&#x5DF2;&#x7ECF;&#x5728;&#x5185;&#x5B58;&#x4E2D;</li>
+<li>cache&#x4E86;&#x591A;&#x5C11;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="rdd&#x62BD;&#x8C61;">RDD&#x62BD;&#x8C61;</h1>
+<h2 id="&#x6982;&#x5FF5;">&#x6982;&#x5FF5;</h2>
+<h3 id="rdd">RDD</h3>
+<ul>
+<li>Resilient Distributed Dataset&#xFF08;&#x5F39;&#x6027;&#x5206;&#x5E03;&#x5F0F;&#x6570;&#x636E;&#x96C6;&#xFF09;<ul>
+<li>&#x8FD9;&#x91CC;&#x7684;&#x5F39;&#x6027;&#x4E3B;&#x8981;&#x662F;&#x6307;<code>&#x5BB9;&#x9519;</code></li>
+<li>Resilient&#xFF1A;&#x5177;&#x6709;&#x53EF;&#x6062;&#x590D;&#x7684;&#x5BB9;&#x9519;&#x7279;&#x6027;</li>
+<li>Distributed&#xFF1A;&#x6BCF;&#x4E2A;RDD&#x53EF;&#x5206;&#x6210;&#x591A;&#x4E2A;&#x5206;&#x533A;&#xFF0C;&#x4E00;&#x4E2A;RDD&#x7684;&#x4E0D;&#x540C;&#x5206;&#x533A;&#x53EF;&#x4EE5;&#x5B58;&#x5230;&#x96C6;&#x7FA4;&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x8282;&#x70B9;&#x4E0A;</li>
+<li>Dataset&#xFF1A;&#x6BCF;&#x4E2A;&#x5206;&#x533A;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x636E;&#x96C6;&#x7247;&#x6BB5;</li>
+</ul>
+</li>
+<li>&#x5206;&#x5E03;&#x5F0F;&#x5185;&#x5B58;&#x7684;&#x4E00;&#x4E2A;&#x62BD;&#x8C61;&#x6982;&#x5FF5;&#xFF0C;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x79CD;&#x9AD8;&#x5EA6;&#x53D7;&#x9650;&#x7684;&#x5171;&#x4EAB;&#x5185;&#x5B58;&#x6A21;&#x578B;</li>
+<li>&#x533A;&#x522B;&#x4E8E;hadoop&#x6838;&#x5FC3;&#x7684;&#x4E1C;&#x897F;</li>
+<li>&#x4F5C;&#x4E3A;&#x5206;&#x5E03;&#x5F0F;&#x7CFB;&#x7EDF;&#xFF0C;RDD&#x5FC5;&#x987B;&#x8981;&#x5206;&#x5E03;</li>
+<li><strong>&#x521B;&#x5EFA;RDD&#x7684;&#x8FC7;&#x7A0B;&#x5C31;&#x662F;&#x5C06;&#x666E;&#x901A;&#x6587;&#x4EF6;&#x589E;&#x52A0;&#x5143;&#x4FE1;&#x606F;</strong></li>
+</ul>
+<h3 id="rdd&#x7279;&#x6027;">RDD&#x7279;&#x6027;</h3>
+<ul>
+<li>RDD&#x53EA;&#x8BFB;(Immutable)&#xFF08;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x662F;Readonly?&#xFF09;<ul>
+<li>&#x672C;&#x8D28;&#x4E0A;&#x4E00;&#x4E2A;&#x53EA;&#x8BFB;&#x7684;&#x5BF9;&#x8C61;&#x96C6;&#x5408;</li>
+<li>&#x5F88;&#x91CD;&#x8981;&#xFF0C;&#x4E0D;&#x80FD;&#x4FEE;&#x6539;</li>
+<li>&#x6587;&#x4EF6;R1-&gt;R2&#xFF0C;&#x662F;&#x65B0;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;R2</li>
+<li>&#x53EA;&#x80FD;&#x57FA;&#x4E8E;&#x7A33;&#x5B9A;&#x7684;&#x7269;&#x7406;&#x5B58;&#x50A8;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x96C6;&#x521B;&#x5EFA;RDD</li>
+<li>&#x901A;&#x8FC7;&#x5728;&#x5176;&#x4ED6;RDD&#x4E0A;&#x6267;&#x884C;&#x786E;&#x5B9A;&#x7684;&#x8F6C;&#x6362;&#x64CD;&#x4F5C;&#xFF08;&#x5982;map&#x3001;join group by&#xFF09;&#x800C;&#x5F97;&#x5230;&#x65B0;&#x7684;RDD</li>
+</ul>
+</li>
+<li>RDD&#x652F;&#x6301;&#x8FD0;&#x7B97;&#x64CD;&#x4F5C;</li>
+</ul>
+<h3 id="rdd&#x8FD0;&#x7B97;&#x64CD;&#x4F5C;">RDD&#x8FD0;&#x7B97;&#x64CD;&#x4F5C;</h3>
+<ul>
+<li>&#x8F6C;&#x6362;Transformation&#xFF1A;&#x63CF;&#x8FF0;RDD&#x7684;&#x8F6C;&#x6362;&#x903B;&#x8F91;<ul>
+<li>group by</li>
+</ul>
+</li>
+<li>&#x52A8;&#x4F5C;Action&#xFF1A;<strong>&#x6807;&#x5FD7;&#x8F6C;&#x6362;&#x7ED3;&#x675F;</strong>&#xFF0C;&#x89E6;&#x53D1;DAG&#x751F;&#x6210;<ul>
+<li>&#x60F0;&#x6027;&#x6C42;&#x503C;&#xFF1A;&#x53EA;&#x6709;&#x9047;&#x5230;action&#x64CD;&#x4F5C;&#x65F6;&#xFF0C;&#x624D;&#x4F1A;&#x771F;&#x6B63;&#x8BA1;&#x7B97;&#x3002;</li>
+</ul>
+</li>
+<li><img src="../images/spark5.png" alt="spark5"></li>
+</ul>
+<h3 id="dag">DAG</h3>
+<ul>
+<li>DAG&#xFF1A;&#x662F;Directed Acyclic Graph&#xFF08;&#x6709;&#x5411;&#x65E0;&#x73AF;&#x56FE;&#xFF09;&#x7684;&#x7B80;&#x79F0;</li>
+<li><strong>&#x53CD;&#x6620;RDD&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;</strong></li>
+</ul>
+<h2 id="rdd-lineage">RDD Lineage</h2>
+<ul>
+<li>RDD Lineage&#xFF0C;&#x5373;DAG&#x62D3;&#x6251;&#x7ED3;&#x6784;<ul>
+<li>RDD&#x8BFB;&#x5165;&#x5916;&#x90E8;&#x6570;&#x636E;&#x6E90;&#x8FDB;&#x884C;&#x521B;&#x5EFA;</li>
+<li>RDD&#x7ECF;&#x8FC7;&#x4E00;&#x7CFB;&#x5217;&#x7684;<code>&#x8F6C;&#x6362;&#xFF08;Transformation&#xFF09;</code>&#x64CD;&#x4F5C;&#xFF0C;&#x6BCF;&#x4E00;&#x6B21;&#x90FD;&#x4F1A;&#x4EA7;&#x751F;&#x4E0D;&#x540C;&#x7684;RDD&#xFF0C;&#x4F9B;&#x7ED9;&#x4E0B;&#x4E00;&#x4E2A;&#x8F6C;&#x6362;&#x64CD;&#x4F5C;&#x4F7F;&#x7528;</li>
+<li>&#x6700;&#x540E;&#x4E00;&#x4E2A;RDD&#x7ECF;&#x8FC7;<code>action</code>&#x64CD;&#x4F5C;&#x8FDB;&#x884C;&#x8F6C;&#x6362;&#xFF0C;&#x5E76;&#x8F93;&#x51FA;&#x5230;&#x5916;&#x90E8;&#x6570;&#x636E;&#x6E90;</li>
+</ul>
+</li>
+<li>Spark&#x7CFB;&#x7EDF;&#x4FDD;&#x7559;RDD Lineage&#x7684;&#x4FE1;&#x606F;<ul>
+<li>&#x7528;&#x4E8E;&#x5BB9;&#x9519;&#x548C;&#x6062;&#x590D;</li>
+</ul>
+</li>
+</ul>
+<h2 id="rdd&#x4F9D;&#x8D56;&#x5173;&#x7CFB;">RDD&#x4F9D;&#x8D56;&#x5173;&#x7CFB;</h2>
+<ul>
+<li>`RDD&#x5206;&#x533A;<ul>
+<li>&#x4E00;&#x4E2A;RDD&#x53EF;&#x4EE5;&#x5728;&#x4E0D;&#x540C;&#x8282;&#x70B9;</li>
+</ul>
+</li>
+<li>&#x82E5;&#x5DF2;&#x7ECF;&#x5BF9;key&#x503C;&#x8FDB;&#x884C;&#x4E86;<code>hash partition</code><ul>
+<li><code>join</code>&#x64CD;&#x4F5C;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;</li>
+</ul>
+</li>
+</ul>
+<h3 id="&#x7A84;&#x4F9D;&#x8D56;">&#x7A84;&#x4F9D;&#x8D56;</h3>
+<ul>
+<li>&#x8868;&#x73B0;&#x4E3A;&#x4E00;&#x4E2A;&#x7236;<code>RDD</code>&#x7684;&#x5206;&#x533A;&#x5BF9;&#x5E94;&#x4E8E;&#x4E00;&#x4E2A;&#x5B50;<code>RDD</code>&#x7684;&#x5206;&#x533A;</li>
+<li>&#x6216;&#x591A;&#x4E2A;&#x7236;<code>RDD</code>&#x7684;&#x5206;&#x533A;&#x5BF9;&#x5E94;&#x4E8E;&#x4E00;&#x4E2A;&#x5B50;<code>RDD</code>&#x7684;&#x5206;&#x533A;</li>
+<li><img src="../images/spark6.png" alt="spark6"></li>
+</ul>
+<h3 id="&#x5BBD;&#x4F9D;&#x8D56;">&#x5BBD;&#x4F9D;&#x8D56;</h3>
+<ul>
+<li>&#x8868;&#x73B0;&#x4E3A;&#x5B58;&#x5728;&#x4E00;&#x4E2A;&#x7236;<code>RDD</code>&#x7684;&#x4E00;&#x4E2A;&#x5206;&#x533A;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x5B50;<code>RDD</code>&#x7684;<strong>&#x591A;&#x4E2A;&#x5206;&#x533A;</strong></li>
+<li><img src="../images/spark7.png" alt="spark7"></li>
+</ul>
+<h3 id="&#x533A;&#x522B;">&#x533A;&#x522B;</h3>
+<ul>
+<li>&#x7A84;&#x4F9D;&#x8D56;&#x53EA;&#x9700;&#x8981;&#x6062;&#x590D;&#x67D0;&#x4E00;&#x4E2A;&#x5206;&#x533A;</li>
+<li>&#x5BBD;&#x4F9D;&#x8D56;&#x9700;&#x8981;&#x6240;&#x6709;&#x5206;&#x533A;</li>
+</ul>
+<h3 id="&#x4E3A;&#x4EC0;&#x4E48;&#x5173;&#x7CFB;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;">&#x4E3A;&#x4EC0;&#x4E48;&#x5173;&#x7CFB;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;</h3>
+<ul>
+<li>&#x5206;&#x6790;&#x5404;&#x4E2A;<code>RDD</code>&#x7684;&#x504F;&#x5E8F;&#x5173;&#x7CFB;&#x751F;&#x6210;<code>DAG</code>&#xFF0C;&#x518D;&#x901A;&#x8FC7;&#x5206;&#x6790;&#x5404;&#x4E2A;<code>RDD</code>&#x4E2D;&#x7684;&#x5206;&#x533A;&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x6765;&#x51B3;&#x5B9A;&#x5982;&#x4F55;&#x5212;&#x5206;<code>Stage</code></li>
+<li>&#x5177;&#x4F53;&#x5212;&#x5206;&#x65B9;&#x6CD5;<ul>
+<li>&#x5728;DAG&#x4E2D;&#x8FDB;&#x884C;<strong>&#x53CD;&#x5411;&#x89E3;&#x6790;</strong>&#xFF0C;&#x9047;&#x5230;&#x5BBD;&#x4F9D;&#x8D56;&#x5C31;&#x65AD;&#x5F00;<ul>
+<li>&#x4E3A;&#x4EC0;&#x4E48;&#x53CD;&#x5411;&#x89E3;&#x6790;<ul>
+<li>&#x56E0;&#x4E3A;action&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#xFF0C;&#x66F4;&#x52A0;&#x65B9;&#x4FBF;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x9047;&#x5230;&#x7A84;&#x4F9D;&#x8D56;&#x5C31;&#x628A;&#x5F53;&#x524D;&#x7684;RDD&#x52A0;&#x5165;&#x5230;Stage&#x4E2D;</li>
+<li>&#x5C06;&#x7A84;&#x4F9D;&#x8D56;&#x5C3D;&#x91CF;&#x5212;&#x5206;&#x5728;&#x540C;&#x4E00;&#x4E2A;Stage&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x5B9E;&#x73B0;<strong>&#x6D41;&#x6C34;&#x7EBF;&#x8BA1;&#x7B97;pipeline</strong><ul>
+<li>&#x7A84;&#x4F9D;&#x8D56;&#x4E4B;&#x95F4;&#x53EF;&#x4EE5;&#x5E76;&#x884C;&#x6267;&#x884C;</li>
+<li>&#x7A84;&#x4F9D;&#x8D56;&#x7684;&#x4E0D;&#x540C;&#x5206;&#x533A;&#x53EF;&#x4EE5;&#x7528;pipeline&#xFF0C;&#x4E0D;&#x7528;&#x7B49;&#x5F85;&#xFF0C;&#x76F4;&#x63A5;&#x6267;&#x884C;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x4F8B;&#x5B50;<ul>
+<li><img src="../images/spark8.png" alt="spark8"></li>
+<li>&#x5982;&#x56FE;&#x88AB;&#x5206;&#x6210;&#x4E09;&#x4E2A;Stage&#xFF0C;&#x5728;Stage2&#x4E2D;&#xFF0C;&#x4ECE;map&#x5230;union&#x90FD;&#x662F;&#x7A84;&#x4F9D;&#x8D56;&#xFF0C;&#x8FD9;&#x4E24;&#x6B65;&#x64CD;&#x4F5C;&#x53EF;&#x4EE5;&#x5F62;&#x6210;&#x4E00;&#x4E2A;<strong>&#x6D41;&#x6C34;&#x7EBF;&#x64CD;&#x4F5C;</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="stage&#x7C7B;&#x578B;">stage&#x7C7B;&#x578B;</h2>
+<h3 id="shufflemapstage">ShuffleMapStage</h3>
+<ul>
+<li>&#x8F93;&#x5165;/&#x8F93;&#x51FA;<ul>
+<li>&#x8F93;&#x5165;&#x8FB9;&#x754C;&#x53EF;&#x4EE5;&#x662F;&#x4ECE;&#x5916;&#x90E8;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x53E6;&#x4E00;&#x4E2A;<code>ShuffleMapStage</code>&#x7684;&#x8F93;&#x51FA;</li>
+</ul>
+</li>
+<li>&#x4EE5;Shuffle&#x4E3A;&#x8F93;&#x51FA;&#x8FB9;&#x754C;&#xFF0C;&#x4F5C;&#x4E3A;&#x53E6;&#x4E00;&#x4E2A;Stage&#x5F00;&#x59CB;</li>
+<li>&#x7279;&#x70B9;<ul>
+<li><strong>&#x4E0D;&#x662F;&#x6700;&#x7EC8;&#x7684;Stage</strong>&#xFF0C;&#x5728;&#x5B83;&#x4E4B;&#x540E;&#x8FD8;&#x6709;&#x5176;&#x4ED6;Stage</li>
+<li>&#x5B83;&#x7684;&#x8F93;&#x51FA;&#x4E00;&#x5B9A;&#x9700;&#x8981;&#x7ECF;&#x8FC7;Shuffle&#x8FC7;&#x7A0B;&#xFF0C;&#x5E76;&#x4F5C;&#x4E3A;&#x540E;&#x7EED;Stage&#x7684;&#x8F93;&#x5165;</li>
+<li>&#x5728;&#x4E00;&#x4E2A;Job&#x91CC;&#x53EF;&#x80FD;&#x6709;&#x8BE5;&#x7C7B;&#x578B;&#x7684;Stage&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x8BE5;&#x7C7B;&#x578B;Stage<ul>
+<li>&#x5982;&#x679C;&#x6CA1;&#x6709;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x6CA1;&#x592A;&#x5927;&#x610F;&#x4E49;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="resultstage">ResultStage</h3>
+<ul>
+<li>&#x8F93;&#x5165;/&#x8F93;&#x51FA;<ul>
+<li>&#x5176;&#x8F93;&#x5165;&#x8FB9;&#x754C;&#x53EF;&#x4EE5;&#x662F;&#x4ECE;&#x5916;&#x90E8;&#x83B7;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x662F;&#x53E6;&#x4E00;&#x4E2A;<code>ShuffleMapStage</code>&#x7684;&#x8F93;&#x51FA;</li>
+</ul>
+</li>
+<li><strong>&#x8F93;&#x51FA;&#x76F4;&#x63A5;&#x4EA7;&#x751F;&#x7ED3;&#x679C;&#x6216;&#x5B58;&#x50A8;</strong></li>
+<li>&#x7279;&#x70B9;<ul>
+<li>&#x5728;&#x4E00;&#x4E2A;Job&#x91CC;&#x5FC5;&#x5B9A;&#x6709;&#x8BE5;&#x7C7B;&#x578B;Stage</li>
+<li>&#x6700;&#x7EC8;&#x7684;Stage</li>
+</ul>
+</li>
+<li><strong>&#x4E00;&#x4E2A;DAG&#x542B;&#x6709;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;Stage&#xFF0C;&#x5176;&#x4E2D;&#x81F3;&#x5C11;&#x542B;&#x6709;&#x4E00;&#x4E2A;ResultStage</strong></li>
+</ul>
+<h1 id="&#x4F53;&#x7CFB;&#x7ED3;&#x6784;">&#x4F53;&#x7CFB;&#x7ED3;&#x6784;</h1>
+<p><img src="../images/spark9.png" alt="spark9"></p>
+<h2 id="spark&#x67B6;&#x6784;&#x8BBE;&#x8BA1;">Spark&#x67B6;&#x6784;&#x8BBE;&#x8BA1;</h2>
+<ul>
+<li><strong>Master</strong>&#xFF1A;&#x7BA1;&#x7406;&#x6574;&#x4E2A;&#x7CFB;&#x7EDF;<ul>
+<li>&#x96C6;&#x7FA4;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;&#xFF08;Cluster Manager&#xFF09;</li>
+<li>&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;&#x53EF;&#x4EE5;&#x81EA;&#x5E26;&#x6216;Mesos&#x6216;YARN&#xFF08;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x5176;&#x4ED6;&#x7684;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;&#xFF0C;&#x4E0E;&#x8BA1;&#x7B97;&#x6846;&#x67B6;&#x5206;&#x79BB;&#xFF09;</li>
+</ul>
+</li>
+<li><strong>Worker</strong>&#xFF1A;&#x8FD0;&#x884C;&#x4F5C;&#x4E1A;&#x7684;&#x5DE5;&#x4F5C;&#x8282;&#x70B9;<ul>
+<li>&#x8D1F;&#x8D23;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;<strong>&#x8FDB;&#x7A0B;</strong>(Executor&#xFF09;</li>
+<li>&#x8D1F;&#x8D23;&#x4EFB;&#x52A1;&#x6267;&#x884C;&#x7684;<strong>&#x7EBF;&#x7A0B;</strong>(Task)</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x5C42;&#x6B21;&#x7ED3;&#x6784;">&#x5C42;&#x6B21;&#x7ED3;&#x6784;</h2>
+<ul>
+<li>Application<ul>
+<li>&#x7528;&#x6237;&#x7F16;&#x5199;&#x7684;Spark&#x5E94;&#x7528;&#x7A0B;&#x5E8F;</li>
+</ul>
+</li>
+<li>Job<ul>
+<li>&#x4E00;&#x4E2A;Job&#x5305;&#x542B;&#x591A;&#x4E2A;RDD&#x53CA;&#x4F5C;&#x7528;&#x4E8E;&#x76F8;&#x5E94;RDD&#x4E0A;&#x7684;&#x5404;&#x79CD;&#x64CD;&#x4F5C;</li>
+</ul>
+</li>
+<li>Stage<ul>
+<li>&#x4E00;&#x4E2A;Job&#x4F1A;&#x5206;&#x4E3A;&#x591A;&#x7EC4;Task&#xFF0C;&#x6BCF;&#x7EC4;Task&#x88AB;&#x79F0;&#x4E3A;Stage&#xFF0C;&#x6216;&#x8005;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;TaskSet</li>
+</ul>
+</li>
+<li>Job&#x7684;&#x57FA;&#x672C;&#x8C03;&#x5EA6;&#x5355;&#x4F4D;<ul>
+<li>&#x4EE3;&#x8868;&#x4E86;&#x4E00;&#x7EC4;&#x5173;&#x8054;&#x7684;&#x3001;&#x76F8;&#x4E92;&#x4E4B;&#x95F4;&#x6CA1;&#x6709;Shuffle&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x7684;&#x4EFB;&#x52A1;&#x7EC4;&#x6210;&#x7684;&#x4EFB;&#x52A1;&#x96C6;</li>
+</ul>
+</li>
+<li>Task<ul>
+<li>&#x8FD0;&#x884C;&#x5728;Executor&#x4E0A;&#x7684;&#x5DE5;&#x4F5C;&#x5355;&#x5143;</li>
+</ul>
+</li>
+</ul>
+<h2 id="&#x6982;&#x5FF5;">&#x6982;&#x5FF5;</h2>
+<p><strong><em>&#x903B;&#x8F91;&#x6267;&#x884C;&#x89D2;&#x5EA6;</em></strong></p>
+<ul>
+<li>&#x4E00;&#x4E2A;Application=&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;DAG</li>
+<li>&#x4E00;&#x4E2A;DAG=&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;Stage</li>
+<li>&#x4E00;&#x4E2A;Stage=&#x82E5;&#x5E72;&#x7A84;&#x4F9D;&#x8D56;&#x7684;RDD&#x8F6C;&#x6362;</li>
+</ul>
+<p><strong><em>&#x7269;&#x7406;&#x6267;&#x884C;&#x89D2;&#x5EA6;</em></strong></p>
+<ul>
+<li>&#x4E00;&#x4E2A;Application=&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;Job</li>
+<li>&#x4E00;&#x4E2A;Job=&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;TaskSet</li>
+<li>&#x4E00;&#x4E2A;TaskSet=&#x591A;&#x4E2A;&#x6CA1;&#x6709;Shuffle&#x5173;&#x7CFB;&#x7684;Task</li>
+</ul>
+<h1 id="&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;">&#x5DE5;&#x4F5C;&#x6D41;&#x7A0B;</h1>
+<h2 id="&#x6267;&#x884C;application&#x7684;&#x4E00;&#x822C;&#x8FC7;&#x7A0B;">&#x6267;&#x884C;Application&#x7684;&#x4E00;&#x822C;&#x8FC7;&#x7A0B;</h2>
+<ul>
+<li>Driver&#x5411;&#x96C6;&#x7FA4;&#x7BA1;&#x7406;&#x5668;&#x7533;&#x8BF7;&#x8D44;&#x6E90;</li>
+<li>&#x96C6;&#x7FA4;&#x7BA1;&#x7406;&#x5668;&#x542F;&#x52A8;Executor</li>
+<li>Driver&#x5411;Executor&#x53D1;&#x9001;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x4EE3;&#x7801;&#x548C;&#x6587;&#x4EF6;</li>
+<li>Executor&#x4E0A;&#x6267;&#x884C;Task&#xFF0C;&#x8FD0;&#x884C;&#x7ED3;&#x675F;&#x540E;&#xFF0C;&#x6267;&#x884C;&#x7ED3;&#x679C;&#x4F1A;&#x8FD4;&#x56DE;&#x7ED9;Driver&#xFF0C;&#x6216;&#x5199;&#x5230;HDFS&#x7B49;</li>
+</ul>
+<h2 id="spark&#x8FD0;&#x884C;&#x6D41;&#x7A0B;&#x7279;&#x70B9;">Spark&#x8FD0;&#x884C;&#x6D41;&#x7A0B;&#x7279;&#x70B9;</h2>
+<ul>
+<li>Application&#x6709;&#x4E13;&#x5C5E;&#x7684;Executor&#x8FDB;&#x7A0B;&#xFF0C;&#x5E76;&#x4E14;&#x8BE5;&#x8FDB;&#x7A0B;&#x5728;Application&#x8FD0;&#x884C;&#x671F;&#x95F4;&#x4E00;&#x76F4;&#x9A7B;&#x7559;</li>
+<li>Executor&#x8FDB;&#x7A0B;&#x4EE5;&#x591A;&#x7EBF;&#x7A0B;&#x7684;&#x65B9;&#x5F0F;&#x8FD0;&#x884C;Task</li>
+<li>Spark&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E0E;&#x8D44;&#x6E90;&#x7BA1;&#x7406;&#x5668;&#x65E0;&#x5173;&#xFF0C;&#x53EA;&#x8981;&#x80FD;&#x591F;&#x83B7;&#x53D6;Executor&#x8FDB;&#x7A0B;&#x5E76;&#x4FDD;&#x6301;&#x901A;&#x4FE1;&#x5373;&#x53EF;</li>
+<li>Task&#x91C7;&#x7528;&#x4E86;<code>&#x6570;&#x636E;&#x672C;&#x5730;&#x6027;</code>&#x548C;<code>&#x63A8;&#x6D4B;&#x6267;&#x884C;</code>&#x7B49;&#x4F18;&#x5316;&#x673A;&#x5236;&#x63A8;&#x6D4B;&#x6267;&#x884C;&#x5C06;&#x8F83;&#x6162;&#x7684;&#x4EFB;&#x52A1;&#x518D;&#x6B21;&#x5728;&#x5176;&#x5B83;&#x8282;&#x70B9;&#x542F;&#x52A8;<ul>
+<li>&#x4E0E;Hadoop&#x4E00;&#x6837;&#xFF0C;&#x8BA1;&#x7B97;&#x5411;&#x6570;&#x636E;&#x9760;&#x62E2;</li>
+<li>&#x8BA4;&#x4E3A;&#x5206;&#x914D;&#x7684;Task&#x662F;&#x5747;&#x5300;&#x7684;&#xFF0C;&#x82E5;&#x51FA;&#x73B0;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x7279;&#x522B;&#x6162;&#xFF0C;&#x5219;&#x5728;&#x53E6;&#x5916;&#x7684;&#x8282;&#x70B9;&#x4E0A;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;</li>
+</ul>
+</li>
+</ul>
+<h2 id="dag&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;">DAG&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;</h2>
+<p>RDD&#x5728;Spark&#x67B6;&#x6784;&#x4E2D;&#x7684;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#xFF1A;</p>
+<ol>
+<li>&#x521B;&#x5EFA;RDD&#x5BF9;&#x8C61;&#xFF1B;</li>
+<li>SparkContext&#x8D1F;&#x8D23;&#x8BA1;&#x7B97;RDD&#x4E4B;&#x95F4;&#x7684;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#xFF0C;&#x6784;&#x5EFA;DAG&#xFF1B;</li>
+<li>DAGScheduler&#x8D1F;&#x8D23;&#x628A;DAG&#x56FE;&#x5206;&#x89E3;&#x6210;&#x591A;&#x4E2A;Stage&#xFF0C;&#x6BCF;&#x4E2A;Stage&#x4E2D;&#x5305;&#x542B;&#x4E86;&#x591A;&#x4E2A;Task&#xFF0C;&#x6BCF;&#x4E2A;Task&#x4F1A;&#x88AB;TaskScheduler&#x5206;&#x53D1;&#x7ED9;&#x5404;&#x4E2A;WorkerNode&#x4E0A;&#x7684;Executor&#x53BB;&#x6267;&#x884C;</li>
+</ol>
+<h2 id="spark-executor">Spark Executor</h2>
+<p>&#x4E0E;MapReduce&#x76F8;&#x6BD4;&#xFF0C;Spark&#x6240;&#x91C7;&#x7528;&#x7684;Executor&#x6709;&#x4E24;&#x4E2A;&#x4F18;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x5229;&#x7528;&#x591A;&#x7EBF;&#x7A0B;&#x6765;&#x6267;&#x884C;&#x5177;&#x4F53;&#x7684;&#x4EFB;&#x52A1;&#xFF0C;&#x51CF;&#x5C11;&#x4EFB;&#x52A1;&#x7684;&#x542F;&#x52A8;&#x5F00;&#x9500;</li>
+<li>Executor&#x4E2D;&#x6709;&#x4E00;&#x4E2A;BlockManager&#x5B58;&#x50A8;&#x6A21;&#x5757;&#xFF0C;&#x4F1A;&#x5C06;&#x5185;&#x5B58;&#x548C;&#x78C1;&#x76D8;&#x5171;&#x540C;&#x4F5C;&#x4E3A;&#x5B58;&#x50A8;&#x8BBE;&#x5907;&#xFF0C;&#x6709;&#x6548;&#x51CF;&#x5C11;IO&#x5F00;&#x9500;</li>
+</ul>
+<h1 id="&#x5BB9;&#x9519;&#x673A;&#x5236;">&#x5BB9;&#x9519;&#x673A;&#x5236;</h1>
+<h2 id="master&#x6545;&#x969C;">Master&#x6545;&#x969C;</h2>
+<p>&#x51E0;&#x4E4E;&#x6CA1;&#x6709;&#x529E;&#x6CD5;</p>
+<h2 id="worker&#x6545;&#x969C;">Worker&#x6545;&#x969C;</h2>
+<h3 id="lineage&#x673A;&#x5236;">Lineage&#x673A;&#x5236;</h3>
+<p>RDD&#x5BB9;&#x9519;&#x673A;&#x5236;&#xFF1A;&#x8840;&#x7F18;&#x5173;&#x7CFB;&#xFF08;Lineage&#xFF09;&#x3001;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x4E22;&#x5931;&#x5206;&#x533A;&#x3001;&#x65E0;&#x9700;&#x56DE;&#x6EDA;&#x7CFB;&#x7EDF;&#x3001;<strong>&#x91CD;&#x7B97;&#x8FC7;&#x7A0B;&#x5728;&#x4E0D;&#x540C;&#x8282;&#x70B9;&#x4E4B;&#x95F4;&#x5E76;&#x884C;</strong>&#x3001;&#x53EA;&#x8BB0;&#x5F55;&#x7C97;&#x7C92;&#x5EA6;&#x7684;&#x64CD;&#x4F5C;</p>
+<p>&#x6839;&#x636E;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;&#x91CD;&#x65B0;&#x8BA1;&#x7B97;&#x4E0A;&#x4E00;&#x5206;&#x533A;&#xFF1A;</p>
+<p><img src="../images/spark11.png" alt="spark11"></p>
+<ul>
+<li>&#x7A84;&#x4F9D;&#x8D56;(narrow dependency)<ul>
+<li>&#x6267;&#x884C;&#x67D0;&#x4E2A;partition&#x65F6;&#xFF0C;&#x68C0;&#x67E5;&#x7236;&#x4EB2;RDD&#x5BF9;&#x5E94;&#x7684;partition&#x662F;&#x5426;&#x5B58;&#x5728;<ul>
+<li>&#x5B58;&#x5728;&#xFF0C;&#x5373;&#x53EF;&#x6267;&#x884C;&#x5F53;&#x524D;RDD&#x5BF9;&#x5E94;&#x7684;&#x64CD;&#x4F5C;</li>
+<li>&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x91CD;&#x6784;&#x7236;&#x4EB2;RDD&#x5BF9;&#x5E94;&#x7684;partition</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x5BBD;&#x4F9D;&#x8D56;(widedependency)<ul>
+<li>&#x6267;&#x884C;&#x67D0;&#x4E2A;partition&#x65F6;&#xFF0C;&#x68C0;&#x67E5;&#x7236;&#x4EB2;RDD&#x5BF9;&#x5E94;&#x7684;partition&#x662F;&#x5426;&#x5B58;&#x5728;<ul>
+<li>&#x5B58;&#x5728;&#xFF0C;&#x5373;&#x53EF;&#x6267;&#x884C;&#x5F53;&#x524D;RDD&#x5BF9;&#x5E94;&#x7684;&#x64CD;&#x4F5C;</li>
+<li>&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x91CD;&#x6784;&#x6574;&#x4E2A;&#x7236;&#x4EB2;RDD</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="&#x4F8B;&#x5B50;">&#x4F8B;&#x5B50;</h4>
+<ol>
+<li>HadoopRDD<ul>
+<li>&#x5206;&#x533A;&#xFF1A;&#x5BF9;&#x5E94;&#x4E8E;HDFS&#x8F93;&#x5165;&#x6587;&#x4EF6;&#x7684;&#x6587;&#x4EF6;&#x5757;</li>
+<li>&#x4F9D;&#x8D56;&#xFF1A;&#x65E0;&#x4F9D;&#x8D56;</li>
+<li>&#x51FD;&#x6570;&#xFF1A;&#x8BFB;&#x53D6;&#x6BCF;&#x4E2A;&#x6587;&#x4EF6;&#x5757;</li>
+<li>&#x6700;&#x4F73;&#x4F4D;&#x7F6E;&#xFF1A;HDFS&#x7684;&#x6587;&#x4EF6;&#x5757;&#x5BF9;&#x5E94;&#x7684;&#x4F4D;&#x7F6E;</li>
+<li>&#x5206;&#x533A;&#x7B56;&#x7565;&#xFF1A;&#x65E0;</li>
+</ul>
+</li>
+<li>FilteredRDD<ul>
+<li>&#x5206;&#x533A;&#xFF1A;&#x4E0E;&#x7236;&#x4EB2;RDD&#x4E00;&#x81F4;</li>
+<li>&#x4F9D;&#x8D56;&#xFF1A;&#x4E0E;&#x7236;&#x4EB2;RDD&#x5B58;&#x5728;<strong>&#x7A84;&#x4F9D;&#x8D56;</strong></li>
+<li>&#x51FD;&#x6570;&#xFF1A;&#x8BA1;&#x7B97;&#x7236;&#x4EB2;&#x7684;&#x6BCF;&#x4E2A;&#x5206;&#x533A;&#x5E76;&#x6267;&#x884C;&#x7528;&#x6237;&#x63D0;&#x4F9B;&#x7684;&#x8FC7;&#x6EE4;&#x51FD;&#x6570;</li>
+<li>&#x6700;&#x4F73;&#x4F4D;&#x7F6E;&#xFF1A;&#x65E0;&#xFF0C;&#x4E0E;&#x7236;&#x4EB2;RDD&#x4E00;&#x81F4;</li>
+<li>&#x5206;&#x533A;&#x7B56;&#x7565;&#xFF1A;&#x65E0;</li>
+</ul>
+</li>
+<li>JoinedRDD<ul>
+<li>&#x5206;&#x533A;&#xFF1A;&#x6BCF;&#x4E2A;reduce&#x4EFB;&#x52A1;&#xFF08;&#x4E2A;&#x6570;&#x53EF;&#x6307;&#x5B9A;&#xFF09;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x5206;&#x533A;</li>
+<li>&#x4F9D;&#x8D56;&#xFF1A;&#x5E38;&#x5E38;&#x4E0E;&#x6240;&#x6709;&#x7236;&#x4EB2;RDD&#x5B58;&#x5728;&#x5BBD;&#x4F9D;&#x8D56;</li>
+<li>&#x51FD;&#x6570;&#xFF1A;&#x8BA1;&#x7B97;shuffle&#x6570;&#x636E;&#xFF0C;&#x5E76;&#x4E14;&#x6267;&#x884C;join&#x64CD;&#x4F5C;</li>
+<li>&#x6700;&#x4F73;&#x4F4D;&#x7F6E;&#xFF1A;&#x65E0;</li>
+<li>&#x5206;&#x533A;&#x7B56;&#x7565;&#xFF1A;HashPartitioner</li>
+</ul>
+</li>
+</ol>
+<h3 id="rdd&#x5B58;&#x50A8;&#x673A;&#x5236;">RDD&#x5B58;&#x50A8;&#x673A;&#x5236;</h3>
+<ul>
+<li>RDD&#x63D0;&#x4F9B;&#x7684;&#x6301;&#x4E45;&#x5316;&#xFF08;&#x7F13;&#x5B58;&#xFF09;&#x63A5;&#x53E3;<ul>
+<li>persist()&#xFF1A;&#x5BF9;&#x4E00;&#x4E2A;RDD&#x6807;&#x8BB0;&#x4E3A;&#x6301;&#x4E45;&#x5316;<ul>
+<li>&#x63A5;&#x53D7;StorageLevel&#x7C7B;&#x578B;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x914D;&#x7F6E;&#x5404;&#x79CD;&#x7EA7;&#x522B;</li>
+<li>&#x6301;&#x4E45;&#x5316;&#x540E;&#x7684;RDD&#x5C06;&#x4F1A;&#x88AB;&#x4FDD;&#x7559;&#x5728;&#x8BA1;&#x7B97;&#x8282;&#x70B9;&#x7684;&#x4E2D;&#x88AB;&#x540E;&#x9762;&#x7684;&#x884C;&#x52A8;&#x64CD;&#x4F5C;&#x91CD;&#x590D;&#x4F7F;&#x7528;</li>
+</ul>
+</li>
+<li>cache()<ul>
+<li>&#x76F8;&#x5F53;&#x4E8E;persist(MEMORY_ONLY)</li>
+<li>&#x53EF;&#x4EE5;&#x4F7F;&#x7528;unpersist()&#x65B9;&#x6CD5;&#x624B;&#x52A8;&#x5730;&#x628A;&#x6301;&#x4E45;&#x5316;&#x7684;RDD&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x79FB;&#x9664;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>&#x6CA1;&#x6709;&#x6807;&#x8BB0;&#x6301;&#x4E45;&#x5316;&#x7684;RDD&#x4F1A;&#x88AB;&#x56DE;&#x6536;&#xFF0C;&#x8282;&#x7EA6;&#x5185;&#x5B58;</li>
+</ul>
+<h3 id="&#x68C0;&#x67E5;&#x70B9;&#x673A;&#x5236;">&#x68C0;&#x67E5;&#x70B9;&#x673A;&#x5236;</h3>
+<ul>
+<li>&#x524D;&#x8FF0;&#x673A;&#x5236;&#x7684;&#x4E0D;&#x8DB3;&#x4E4B;&#x5904;<ul>
+<li>Lineage&#x53EF;&#x80FD;&#x975E;&#x5E38;&#x957F;</li>
+<li>RDD&#x5B58;&#x50A8;&#x673A;&#x5236;&#x4E3B;&#x8981;&#x9762;&#x5411;&#x672C;&#x5730;&#x78C1;&#x76D8;&#x7684;&#x5B58;&#x50A8;</li>
+</ul>
+</li>
+<li>&#x68C0;&#x67E5;&#x70B9;&#x673A;&#x5236;&#x5C06;RDD&#x5199;&#x5165;&#x53EF;&#x9760;&#x7684;&#x5916;&#x90E8;&#x5206;&#x5E03;&#x5F0F;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#xFF0C;&#x4F8B;&#x5982;HDFS<ul>
+<li>&#x5728;&#x5B9E;&#x73B0;&#x5C42;&#x9762;&#xFF0C;&#x5199;&#x68C0;&#x67E5;&#x70B9;&#x7684;&#x8FC7;&#x7A0B;&#x662F;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;job&#xFF0C;&#x4F5C;&#x4E3A;&#x540E;&#x53F0;&#x4F5C;&#x4E1A;&#x8FD0;&#x884C;</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="RPC-and-serialization.html" class="navigation navigation-prev " aria-label="Previous page: RPC And Serialization">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="sparkcoding.html" class="navigation navigation-next " aria-label="Next page: Spark 编程">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Spark 处理框架","level":"1.2.5","depth":2,"next":{"title":"Spark 编程","level":"1.2.6","depth":2,"path":"notes/sparkcoding.md","ref":"notes/sparkcoding.md","articles":[]},"previous":{"title":"RPC And Serialization","level":"1.2.4","depth":2,"path":"notes/RPC-and-serialization.md","ref":"notes/RPC-and-serialization.md","articles":[]},"dir":"ltr"},"config":{"plugins":["github","disqus","katex-plus","ga","back-to-top-button","-lunr","-search","search-pro","expandable-chapters"],"ignores":["node_modules","_book"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"disqus":{"shortName":"techzealscott","useIdentifier":false},"github":{"url":"https://github.com/scottdyt"},"search-pro":{},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"katex-plus":{},"back-to-top-button":{},"ga":{"token":"UA-116370175-1","configuration":"auto"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"zealscott","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"sortedBy":" ","variables":{},"title":"Distribution System","links":{"sidebar":{"Homepage":"https://tech.zealscott.com"}},"gitbook":"*"},"file":{"path":"notes/spark.md","mtime":"2021-01-27T05:47:45.014Z","type":"markdown"},"gitbook":{"version":"3.0.0","time":"2021-03-04T09:58:50.487Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/URI.js/1.16.1/URI.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-disqus/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-ga/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-back-to-top-button/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/buttons.js"></script>
+        
+    
+
+    </body>
+</html>
+

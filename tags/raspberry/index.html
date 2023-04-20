@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>raspberry | Scott&#39;Log</title>
+<meta name="keywords" content="" />
+<meta name="description" content="The tech document of zealscott">
+<meta name="author" content="Scott Du">
+<link rel="canonical" href="https://tech.zealscott.com/tags/raspberry/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fd126033c3455a688b2479431fed44510433c36ce61093336d94a5681fad5866.css" integrity="sha256-/RJgM8NFWmiLJHlDH&#43;1EUQQzw2zmEJMzbZSlaB&#43;tWGY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://tech.zealscott.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tech.zealscott.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tech.zealscott.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://tech.zealscott.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tech.zealscott.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://tech.zealscott.com/tags/raspberry/index.xml">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, 
+        {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '\\[', right: '\\]', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false}
+                ]
+            }
+        );"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-116370175-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<meta property="og:title" content="raspberry" />
+<meta property="og:description" content="The tech document of zealscott" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tech.zealscott.com/tags/raspberry/" /><meta property="og:image" content="https://tech.zealscott.com/papermod-cover.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tech.zealscott.com/papermod-cover.png"/>
+
+<meta name="twitter:title" content="raspberry"/>
+<meta name="twitter:description" content="The tech document of zealscott"/>
+
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://tech.zealscott.com" accesskey="h" title="Scott&#39;Log (Alt + H)">Scott&#39;Log</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://tech.zealscott.com/" title="Posts">
+                    <span>Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/deeplearning/" title="Deep Learning">
+                    <span>Deep Learning</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/curriculum/" title="Curriculum">
+                    <span>Curriculum</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/misc/" title="Misc">
+                    <span>Misc</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header">
+  <h1>raspberry</h1>
+</header>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>树莓派之BT下载器
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>配置环境 首先安装transmission：
+ sudo apt-get install transmission-daemon
+ 然后创建下载目录，一个是下载完成的目录（complete），一个是未完成的目录（incomplete），不建议将移动硬盘长时间挂载在树莓派上运行
+1 2  mkdir -p /home/pi/incomplete # for incomplete downloads mkdir /home/pi/complete # finished downloads   设置权限
+1 2 3 4 5  sudo usermod -a -G debian-transmission pi sudo chgrp debian-transmission /home/pi/incomplete sudo chgrp debian-transmission /home/pi/complete chmod 770 /home/pi/incomplete chmod 770 /home/pi/complete   修改配置文件,配置文件目录为
+ vim /etc/transmission-daemon/settings.json
+ 打开文件如图所示 修改其中的三项即可，分别为：
+1 2 3  &#34;download-dir&#34;: &#34;/home/pi/complete&#34;, &#34;incomplete-dir&#34;: &#34;/home/pi/incomplete&#34;, &#34;rpc-whitelist&#34;: &#34;192....</p>
+  </section>
+  <footer class="entry-footer"><span title='2018-02-02 22:06:22 +0800 CST'>February 2, 2018</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to 树莓派之BT下载器" href="https://tech.zealscott.com/misc/bt-downloader/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>树莓派设置静态IP地址
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>首先打开树莓派的命令行，输入：
+ sudo vi /etc/dhcpcd.conf
+ 即可用vi编辑配置文件。
+在文件末尾输入：
+1 2 3 4 5 6 7 8 9 10 11  interface eth0 static ip_address=192.168.0.10/24 static routers=192.168.0.1 static domain_name_servers=192.168.0.1 interface wlan0 static ip_address=192.168.0.200/24 static routers=192.168.0.1 static domain_name_servers=192.168.0.1   其中，eth0是有线的配置，wlan0是无线配置
+ip_address就是静态IP，后面要接/24
+routers是网关
+static domain_name_servers是DNS
+然后再在命令行执行
+ sudo reboot
+ 重启树莓派，即可根据树莓派的联网方式用静态IP连接。</p>
+  </section>
+  <footer class="entry-footer"><span title='2018-02-01 22:08:03 +0800 CST'>February 1, 2018</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to 树莓派设置静态IP地址" href="https://tech.zealscott.com/misc/static-ip/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>远程调试树莓派（PyCharm实现）
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>配置环境 首先要在个人电脑中装上PyCharm，注意，一定要是专业版的。 树莓派需已经设置好联网和SSH，并与电脑处于同一局域网下。 本文所有代码均为python3.x下可用，python2.x略有不同。
+写测试代码 首先在个人电脑中建立一个工程，写一个tkinter程序（注意文件名不可为tkinter），并在本机上测试运行。代码如下：
+1 2 3  import tkinter a = tkinter.Tk() a.mainloop()   运行成功后可以看见一个标题为Tk()的窗口。
+配置PyCharm环境 使用SSH连接树莓派 进入之前新建的python文件下，依次打开File -&gt; Settings -&gt; Project Interpreter，点旁边的小齿轮，选择Add Romote,进入环境配置。 选择SSH Credentials，Host中填写树莓派的IP地址，User name 和 Password默认为pi 和 raspberry，注意，选择Python interpreter path时，如果想使用python3版本，请务必按照截图输入，若为python2版本，则去掉后面的版本号即可。最后点击ok完成设置。 配置上传路径 依次打开Tool -&gt; Deployment -&gt; Configure,在打开的页面中Type选择SFTP协议，然后继续填写树莓派的IP地址以及用户名和密码，其余默认。 点开Mapping选项卡，配置工程目录，这里主要是设置Deployment path on server，该选项会将电脑上的文件上传到树莓派的对应位置，一般建议目录为/Desktop/py，其他可以默认，点击ok完成配置。
+上传工程 依次点击Tool -&gt; Upload to xxx,点击调试按钮自动安装调试插件，安装完成后自动开始调试。 这时候你就可以看见你的工程已经自动上传到树莓派中。
+运行程序 如果直接运行程序，也许你会发现有如下错误： 这是由于远程调试不是在桌面环境下进行的。程序不知道我们使用了显示设备，这个时候就需要手动指定显示设备。 因此，我们打开树莓派的命令行，输入
+ printenv grep DISPLAY
+ 本机显示结果为 复制这行字符，然后再该文件中添加这个参数如下：
+1 2 3  import tkinter a = tkinter....</p>
+  </section>
+  <footer class="entry-footer"><span title='2018-02-01 21:18:40 +0800 CST'>February 1, 2018</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to 远程调试树莓派（PyCharm实现）" href="https://tech.zealscott.com/misc/raspberry-python/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2>树莓派首次上手
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>准备工作  树莓派3b，一张TF卡（32G），读卡器，电源线，网线，路由器。
+ 安装操作系统 首先肯定是安装系统，我是用的比较流行的RASPBIAN系统。建议下载torrent，然后用迅雷下载会比较快。 然后再下载一个叫Win32 Disk Imager的磁盘映像工具，个人理解就是往TF卡里用iso制作系统嘛。
+前面两步都很简单，接下来，在root盘里（Windows下）根目录，添加一个__不带后缀的文件__，文件名为ssh，这会让树莓派开启ssh，方便接下来的操作。
+使用显示器进行安装 如果你身边有一个带HDMI接口的显示器，那么恭喜你，接下来的安装会变得很简单。但如果你直接将HDMI插到树莓派和显示器中，很遗憾，显示器是不会有任何显示的。我参考了这篇文章，其实就是需要你在首次运行前配置文件config.txt里的参数（也是在root盘里）。 我修改的参数如下
+1 2 3 4 5 6  _\#_ _uncomment if you get no picture on HDMI for a default &#34;safe&#34; mode_ hdmi_safe=1 overscan_left=-30 overscan_right=-30 overscan_top=-30 overscan_bottom=-30   因为我的显示器是有HDMI接口的，因此没有设置hdmi_group等信息，如果你使用VGA转换器，需要另外修改其他参数，在config.txt文件中都有很详细的解释，只要能看懂英文就应该明白：） 接下来就可以直接利用显示器操作啦，不需要我多说。
+无显示器进行安装 如果你身边没有一台显示器供你折腾，则会相对复杂一点，但我相信对于大部分人来说，这是更实用的一种选择，因为我们之后的维护和开发用自己的笔记本电脑进行操作更加方便一些。
+查找树莓派IP地址 首先我们要找到树莓派的IP地址，网上提供了很多种方法，但现在家里都应该是有路由器的，因此本文只介绍用路由器操作的方法，若你的开发环境比较复杂，可以参考这篇文章。 用网线将树莓派连接上路由器，登录路由器的管理页面，可以看见当前连接的设备。如下图所示，我们很容易就得到了树莓派的IP地址，记下来。 PuTTY软件连接树莓派 先下载一个叫PuTTY的软件，此软件可以让我们用IP地址控制树莓派。安装过程很简单不必多说，输入树莓派的初始名称pi和密码raspberry,即可用命令行控制树莓派。 但目前还不能看见图形界面。我们需要输入
+ sudo apt-get install tightvncserver
+ 安装一个名为VNC Server的软件（在电脑上也要安装），此时会提示你设置两次密码。 启动树莓派VNC Server
+ vncserver :1 -geometry 800x600
+ 如下图所示，记录下端口号：1（每个人可能不同） 使用之前得到的树莓派IP地址&#43;端口号进行登录，例如192.168.0.106:1,登录界面如下： 不出问题的话，这时候你就可以看见久违的桌面啦！ </p>
+  </section>
+  <footer class="entry-footer"><span title='2018-01-31 17:51:57 +0800 CST'>January 31, 2018</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to 树莓派首次上手" href="https://tech.zealscott.com/misc/setup/"></a>
+</article>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://tech.zealscott.com">Scott&#39;Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

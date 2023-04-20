@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.79.0" /><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Scott&#39;Log</title>
+
+<meta name="description" content="The tech document of zealscott">
+<meta name="author" content="Scott Du">
+<link rel="canonical" href="https://tech.zealscott.com/" />
+<link crossorigin="anonymous" href="/assets/css/stylesheet.min.fd126033c3455a688b2479431fed44510433c36ce61093336d94a5681fad5866.css" integrity="sha256-/RJgM8NFWmiLJHlDH&#43;1EUQQzw2zmEJMzbZSlaB&#43;tWGY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://tech.zealscott.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://tech.zealscott.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://tech.zealscott.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://tech.zealscott.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://tech.zealscott.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://tech.zealscott.com/index.xml">
+<link rel="alternate" type="application/json" href="https://tech.zealscott.com/index.json">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" integrity="sha384-g7c+Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI+sEnkvrMWph2EDg4" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js" integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC+Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa" crossorigin="anonymous"
+        onload="renderMathInElement(document.body, 
+        {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '\\[', right: '\\]', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false}
+                ]
+            }
+        );"></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-116370175-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<meta property="og:title" content="Scott&#39;Log" />
+<meta property="og:description" content="The tech document of zealscott" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://tech.zealscott.com/" /><meta property="og:image" content="https://tech.zealscott.com/papermod-cover.png"/>
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://tech.zealscott.com/papermod-cover.png"/>
+
+<meta name="twitter:title" content="Scott&#39;Log"/>
+<meta name="twitter:description" content="The tech document of zealscott"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Scott'Log",
+  "url": "https://tech.zealscott.com",
+  "description": "The tech document of zealscott",
+  "thumbnailUrl": "https://tech.zealscott.com/favicon.ico",
+  "sameAs": [
+      "index.xml", "https://github.com/zealscott", "https://www.zhihu.com/people/tao-scott/", "https://scholar.google.com/citations?hl=en\u0026user=BbvY_QsAAAAJ", "https://zealscott.com/files/Yuntao_Du_CV.pdf", "mailto: ytdu@zealscott.com"
+  ]
+}
+</script>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://tech.zealscott.com" accesskey="h" title="Scott&#39;Log (Alt + H)">Scott&#39;Log</a>
+            <span class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </span>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://tech.zealscott.com/" title="Posts">
+                    <span class="active">Posts</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/deeplearning/" title="Deep Learning">
+                    <span>Deep Learning</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/curriculum/" title="Curriculum">
+                    <span>Curriculum</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/misc/" title="Misc">
+                    <span>Misc</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://tech.zealscott.com/archives" title="Archive">
+                    <span>Archive</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>👋 Welcome to Scott&rsquo;s Tech Doc</h1>
+    </header>
+    <section class="entry-content">
+        <p>Hi, this is <a href="https://zealscott.com">Scott</a>. I’m documenting my learning notes in this blog. Currently, I&rsquo;m a PhD student at <a href="https://purdue.edu/">Purdue</a>, see my research <a href="https://research.zealscott.com">homepage</a> for more information.</p>
+    </section>
+    <footer class="entry-footer">
+        <div class="social-icons">
+    <a href="index.xml" target="_blank" rel="noopener noreferrer me" title="RsS">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 11a9 9 0 0 1 9 9" />
+    <path d="M4 4a16 16 0 0 1 16 16" />
+    <circle cx="5" cy="19" r="1" />
+</svg>
+    </a>
+    <a href="https://github.com/zealscott" target="_blank" rel="noopener noreferrer me" title="Github">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+    </path>
+</svg>
+    </a>
+    <a href="https://www.zhihu.com/people/tao-scott/" target="_blank" rel="noopener noreferrer me" title="Other">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+</svg>
+    </a>
+    <a href="https://scholar.google.com/citations?hl=en&amp;user=BbvY_QsAAAAJ" target="_blank" rel="noopener noreferrer me" title="Googlescholar">
+        <svg role="img" viewBox="0 0 24 25" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="none"
+    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+</svg>
+    </a>
+    <a href="https://zealscott.com/files/Yuntao_Du_CV.pdf" target="_blank" rel="noopener noreferrer me" title="Cv">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path
+        d="M4 4v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8.342a2 2 0 0 0-.602-1.43l-4.44-4.342A2 2 0 0 0 13.56 2H6a2 2 0 0 0-2 2z" />
+    <path d="M9 13h6" />
+    <path d="M9 17h3" />
+    <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+</svg>
+    </a>
+    <a href="mailto:%20ytdu@zealscott.com" target="_blank" rel="noopener noreferrer me" title="Email">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 21" fill="none" stroke="currentColor" stroke-width="2"
+    stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+    <polyline points="22,6 12,13 2,6"></polyline>
+</svg>
+    </a>
+</div>
+
+    </footer>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Loss functioin in neural network
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>Kullback-Leibler divergence Information theory  Quantify information of intuition1  Likely events should have low information content Less likely events should have higher information content Independent events should have additive information. For example, finding out that a tossed coin has come up as heads twice should convey twice as much information as finding out that a tossed coin has come up as heads once.   Self-information  $I(x)=-\log P(x)$ Deals only with a single outcome   Shannon entropy  $H(\mathrm{x})=\mathbb{E}_{\mathrm{x} \sim P}[I(x)]=-\mathbb{E}_{\mathrm{x} \sim P}[\log P(x)]$ Quantify the amount of uncertainty in an entire probability distribution    KL divergence and cross-entropy  Measure how different two distributions over the same random variable $x$  $D_{\mathrm{KL}}(P | Q)=\mathbb{E}_{\mathrm{x} \sim P}\left[\log \frac{P(x)}{Q(x)}\right]=\mathbb{E}_{\mathrm{x} \sim P}[\log P(x)-\log Q(x)]$   Properities  Non-negative....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-10-13 20:44:01 +0800 CST'>October 13, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to Loss functioin in neural network" href="https://tech.zealscott.com/deeplearning/misc/loss/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>在服务器上部署 Jupyter Notebook
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>安装 Ananconda  使用命令行安装  1  wget wget https://repo.continuum.io/archive/Anaconda3-5.2.0-Linux-x86_64.sh    注意，选择安装路径时，如果想要所有用户都能使用，则安装在usr/local/ananconda3目录下 注意修改/etc/profile.d下的conda.sh，指定环境变量（在登入另外的用户时会提醒） 更改源。创建~/.condarc文件，输入  1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17  channels: - defaults show_channel_urls: true channel_alias: https://mirrors.tuna.tsinghua.edu.cn/anaconda default_channels: - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2 custom_channels: conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud    至此，已经完成 python、conda 及 jupyter-notebook 的安装。  部署远程云服务  生成Jupyter Notebook配置文件  1  jupyter notebook --generate-config     生成的配置文件，后来用来设置服务器的配置...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-04-22 22:31:03 +0800 CST'>April 22, 2020</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to 在服务器上部署 Jupyter Notebook" href="https://tech.zealscott.com/misc/jupyter-notebook/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>使用 Hugo 进行持续集成写作及同步
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>我们通常会在本地计算机上写 Markdown 文件，然后使用 Hugo 建立静态博客网站。因此需要一种方法将本地文件同步到服务器上，同时实现 GitHub 集成，确保网站的可维护性。我使用了 Git hook 的方法进行同步与集成。
+服务器上 更新 1 2 3  yum update yum install nginx yum install git   新建 hugo 用户：
+1 2  adduser hugo passwd hugo   安装 hugo 安装 go 1 2  yum -y install golang go version   源码安装 1 2 3 4 5  mkdir $HOME/src cd $HOME/src git clone https://github.com/gohugoio/hugo.git cd hugo go install --tags extended   yum 安装 有些主题需要支持sass/scss功能，如果使用 yum 安装 hugo，则没办法安装extend版本，会导致编译失败。...</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-01-22 20:31:03 +0800 CST'>January 22, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to 使用 Hugo 进行持续集成写作及同步" href="https://tech.zealscott.com/misc/hugo-integration/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Go Hugo!
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>在 2020 年的春节前夕，我终于完成了博客从 Hexo 到 Hugo 的迁移。期间踩过不少坑，也有不少小朋友来问我如何开始进行个人博客写作，因此觉着是时候写点东西记录记录。
+Why Hugo 正式开始写个人博客，是两年前的春节。最开始使用了当时最流行的 Hexo 框架，选择了 Next 主题。最开始一切都很好，虽然 Hexo 框架是简单了点，但耐不住有很多热心的开发者开发了很多插件，所以基本上都能满足自己的需求。而随着博客数量越来越多，我发现 Hexo 的问题越来越让我难以忍受，那就是：速度太慢。
+举个例子，当我有 200 多篇博客的时候，用 Hexo 渲染静态网页需要将近 20 秒，这样的速度简直是不可接受的。更不要说我还有大量的静态图片、资料等等。同时，由于自己偷懒，博客中使用的图片都来自于图床，这些外链不受我控制，很多时候有打不开、加载慢的问题，让我这个强迫症觉得很不爽。
+因此2019年底，我萌发了重构个人博客的想法，一眼就看中了用 Go 语言写的 Hugo，其Slogan The world’s fastest framework for building websites也是非常吸引我。更难能可贵的是，Hugo 虽然还处于快速迭代开发的阶段，但并不是一个半成品，很多在 Hexo 上需要插件实现的功能，Hugo 上都内置了。
+Hugo vs Hexo 为了方便 Hexo 用户快速上手 Hugo，我总结了 Hugo 与 Hexo 的异同点（大部分来源于官网及这篇博文）。
+结构组织 1 2 3 4 5 6 7 8 9 10 11 12  ~/blog $ tree -L 1 ....</p>
+  </section>
+  <footer class="entry-footer"><span title='2020-01-21 20:31:03 +0800 CST'>January 21, 2020</span>&nbsp;·&nbsp;2 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to Go Hugo!" href="https://tech.zealscott.com/misc/go-hugo/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Laravel Homestead 安装小记
+    </h2>
+  </header>
+  <section class="entry-content">
+    <p>环境配置 在Laravel官网上，推荐使用Laravel Homestead虚拟机部署安装环境。Homestead是Laravel官方提供的基于Vargrant的Box，也就是虚拟机原型系统，预装了一切 Laravel 需要的东西。
+这里使用VirtualBox虚拟机，而Vagrant是一个虚拟机管理工具。
+配置Laravel环境的主要步骤有：
+ 安装VirtualBox和Vagrant 安装Homestead Vagrant Box 安装Homestead（Clone 项目） 修改配置文件（Homestead.yaml和/etc/hosts） 启动虚拟机，SSH登陆虚拟机 下载Laravel  安装VirtualBox和Vagrant 直接官网安装dmg即可：
+  VirtualBox 下载地址
+  Vagrant下载地址
+  验证是否安装成功在终端使用以下命令行，显示版本信息就 OK 了。
+1  vagrant -v   安装 Homestead Vagrant Box 在线安装 直接输入以下命令行：
+1  vagrant box add laravel/homestead   这个步骤相当于下载虚拟机的预装系统，下载文件超过1个G，实测非常慢，及时是挂VPN，也太慢。
+离线导入 下载Box 最后我选择了首先下载.box文件，然后导入的方式。
+在Vagrant官网进入Homestead box，选择最新的版本，例如8.2.1，然后进入该版本页面，如https://app.vagrantup.com/laravel/boxes/homestead/versions/8.2.1，直接在后面添加/providers/virtualbox.box组成完整的URL，即可使用迅雷等下载工具进行下载，完整的URL为：
+ https://app.vagrantup.com/laravel/boxes/homestead/versions/8.2.1/providers/virtualbox.box
+ 下载完成后得到virtualbox.box的文件，在命令行中进入该文件的目录，然后输入以下命令即可成功导入。
+ vagrant box add laravel/homestead ./virtualbox.box
+ 导入 注意，这里导入时vagrant并不知道版本信息。因此，我们需要进入box的文件夹，手动增加版本信息。...</p>
+  </section>
+  <footer class="entry-footer"><span title='2019-10-11 20:15:55 +0800 CST'>October 11, 2019</span>&nbsp;·&nbsp;1 min&nbsp;·&nbsp;Scott Du</footer>
+  <a class="entry-link" aria-label="post link to Laravel Homestead 安装小记" href="https://tech.zealscott.com/misc/laravel-installation/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="next" href="https://tech.zealscott.com/page/2/">»</a>
+  </nav>
+</footer>
+    </main>
+    
+<footer class="footer">
+    <span>&copy; 2023 <a href="https://tech.zealscott.com">Scott&#39;Log</a></span>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://git.io/hugopapermod" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
